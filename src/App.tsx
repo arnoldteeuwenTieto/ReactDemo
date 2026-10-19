@@ -32,7 +32,7 @@ function App() {
       <a className="skip-link" href="#main">Gå til hovedinnhold</a>
       <header className="site-header"><div className="header-inner">
         <div className="brand-mark" aria-hidden="true">GSI</div>
-        <div><p className="eyebrow">Grunnskolens informasjonssystem</p><h1>GSI Grunnskole – Statusside</h1></div>
+        <div><p className="eyebrow">Grunnskolens informasjonssystem</p><h1>GSI Grunnskole – Statusside (React Demo)</h1></div>
         <span className="year-chip">2026</span>
       </div></header>
       <main id="main" className="page">
