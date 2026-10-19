@@ -37,6 +37,12 @@ input::placeholder { color: #657783; }
 table { border-collapse: collapse; width: 100%; text-align: left; font-size: 13px; white-space: nowrap; }
 thead { background: #edf2f5; }
 thead th { font-size: 12px; color: #4c6372; font-weight: 600; padding: 13px 15px; }
+thead th.sortable-header { padding: 0; }
+.sort-button { display: flex; align-items: center; gap: 6px; width: 100%; padding: 13px 15px; border: 0; background: transparent; color: inherit; font: inherit; text-align: left; white-space: nowrap; cursor: pointer; }
+.sort-button:hover { background: #dfe9ef; }
+.sort-button:focus-visible { outline: 2px solid #215d78; outline-offset: -3px; }
+.sort-arrows { display: inline-flex; gap: 1px; color: #71838e; font-size: 11px; }
+.sort-arrows .active { color: #173c52; font-weight: 800; text-decoration: underline; text-underline-offset: 2px; }
 td, tbody th { padding: 16px 15px; border-bottom: 1px solid #e5ebef; }
 tbody th { font-weight: 600; }
 tr:last-child td, tr:last-child th { border-bottom: 0; }
