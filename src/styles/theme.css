@@ -1,0 +1,51 @@
+/* Exact Power Apps values. */
+:root {
+  --farge-morkgra: #303030;
+  --farge-spm-kantlinje: #DCE5F3;
+  --farge-udirgronn: #DEF2E7;
+  --farge-stalblaa: #BAC6D8;
+  --farge-stalblaa01: #DCE5F3;
+  --farge-stalblaa04: #4E6689;
+  --farge-lysegraa01: #C2C2C2;
+  --farge-lysegraa02: #F4F4F4;
+  --farge-gronn01: #DEF2E7;
+  --farge-gronn02: #BAE1CC;
+  --farge-fersken01: #F8E7E0;
+  --farge-fersken04: #9D5038;
+  --farge-kontrollfill: #F8E7E0;
+  --farge-kontrollboks: #F8E7E0;
+  --size-h2-headline: 30px;
+  --size-h1-display: 33px;
+  --size-standard-text: 12px;
+  --size-modern-standard-text: 13.044px;
+  --font-size-statusside: 10px;
+  --size-radiobutton: 32px;
+  --size-checkbox: 32px;
+  --size-border-radius: 8px;
+  --size-button-border-radius: 8px;
+  --font-body: 'Segoe UI', sans-serif;
+  --font-heading: 'Segoe UI', sans-serif;
+
+  /* Provisional demo roles. White and status colors are extensions. */
+  --surface: #FFFFFF;
+  --text: var(--farge-morkgra);
+  --text-muted: var(--farge-stalblaa04);
+  --page-background: var(--farge-lysegraa02);
+  --panel-border: var(--farge-spm-kantlinje);
+  --control-border: var(--farge-stalblaa04);
+  --action: var(--farge-stalblaa04);
+  --focus: var(--farge-fersken04);
+  --header-background: var(--farge-stalblaa04);
+  --header-accent: var(--farge-udirgronn);
+  --subtle-background: var(--farge-stalblaa01);
+  --hover-background: var(--farge-lysegraa02);
+  --selected-background: var(--farge-gronn01);
+  --status-0-text: #556370;
+  --status-0-background: #edf0f2;
+  --status-1-text: #795000;
+  --status-1-background: #fff2d5;
+  --status-2-text: #1b5c89;
+  --status-2-background: #e8f2fa;
+  --status-3-text: #236445;
+  --status-3-background: #e5f3eb;
+}
