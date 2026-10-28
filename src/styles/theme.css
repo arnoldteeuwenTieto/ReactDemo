@@ -30,7 +30,7 @@
   --surface: #FFFFFF;
   --text: var(--farge-morkgra);
   --text-muted: var(--farge-stalblaa04);
-  --page-background: var(--farge-lysegraa02);
+  --page-background: #FFFFFF;
   --panel-border: var(--farge-spm-kantlinje);
   --control-border: var(--farge-stalblaa04);
   --action: var(--farge-stalblaa04);

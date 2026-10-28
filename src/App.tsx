@@ -5,6 +5,10 @@ import { SchoolFilters } from './components/SchoolFilters'
 import type { Filters } from './components/SchoolFilters'
 import { SchoolTable } from './components/SchoolTable'
 import { Introduction } from './components/Introduction'
+import { grunnskoleSections } from './components/grunnskoleSections'
+import { demoUser } from './demoUser'
+import { GrunnskoleLayout } from './components/GrunnskoleLayout'
+import { GrunnskolePlaceholderScreen } from './components/GrunnskolePlaceholderScreen'
 import './App.css'
 
 const initialFilters: Filters = { search: '', municipality: '', year: '2026', status: '' }
@@ -13,6 +17,8 @@ function App() {
   const [filters, setFilters] = useState<Filters>(initialFilters)
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const [openSchool, setOpenSchool] = useState<School | null>(null)
+  const [currentSection, setCurrentSection] = useState(1)
+  const [showIntroduction, setShowIntroduction] = useState(true)
   const municipalities = [...new Set(schools.map(school => school.municipality))].sort((a, b) => a.localeCompare(b, 'nb'))
   const years = [...new Set(schools.map(school => school.year))].sort((a, b) => b - a)
   const query = filters.search.trim().toLocaleLowerCase('nb')
@@ -25,19 +31,66 @@ function App() {
   function openForm(school: School) {
     setSelectedId(school.id)
     setOpenSchool(school)
+    setCurrentSection(1)
+    setShowIntroduction(true)
     window.scrollTo(0, 0)
+  }
+  function goHome() {
+    setOpenSchool(null)
+    setCurrentSection(1)
+    setShowIntroduction(true)
+  }
+  function selectSection(section: number) {
+    setCurrentSection(section)
+    setShowIntroduction(false)
+  }
+  const lastSection = grunnskoleSections[grunnskoleSections.length - 1].number
+  function goPrevious() {
+    if (showIntroduction) return
+    if (currentSection === 1) setShowIntroduction(true)
+    else selectSection(currentSection - 1)
+  }
+  function goNext() {
+    if (showIntroduction) selectSection(1)
+    else if (currentSection < lastSection) selectSection(currentSection + 1)
   }
   return (
     <>
       <a className="skip-link" href="#main">Gå til hovedinnhold</a>
-      <header className="site-header"><div className="header-inner">
+      <header className={`site-header${openSchool ? ' has-open-school' : ''}`}><div className="header-inner">
         <div className="brand-mark" aria-hidden="true">GSI</div>
         <div><p className="eyebrow">Grunnskolens informasjonssystem</p><h1>GSI Grunnskole – Statusside (React Demo)</h1></div>
-        <span className="year-chip">2026</span>
+        <section className="header-user" aria-label="Brukerinformasjon (demonstrasjon)">
+          <p className="header-user-demo">Demonstrasjonsbruker</p>
+          <dl>
+            <div><dt>Navn</dt><dd>{demoUser.name}</dd></div>
+            <div><dt>E-post</dt><dd>{demoUser.email}</dd></div>
+            <div><dt>Rolle</dt><dd>{demoUser.role}</dd></div>
+          </dl>
+        </section>
       </div></header>
+      {openSchool && <section className="school-info-bar" aria-label="Valgt skole">
+        <div className="school-info-inner">
+          <p className="school-info-name">{openSchool.name}</p>
+          <p>{openSchool.municipality} kommune · {openSchool.year}</p>
+        </div>
+      </section>}
       <main id="main" className="page">
-        <nav className="breadcrumb" aria-label="Brødsmulesti"><span>GSI Grunnskole</span><span aria-hidden="true">/</span><span>{openSchool ? 'Innledning' : 'Statusside'}</span></nav>
-        {openSchool ? <Introduction school={openSchool} onBack={() => setOpenSchool(null)} /> : <>
+        {openSchool ? showIntroduction ? <Introduction
+          school={openSchool}
+          onBack={goHome}
+          onStartReporting={() => selectSection(1)}
+        /> : <GrunnskoleLayout
+          activeSection={currentSection}
+          onHome={goHome}
+          onSelectSection={selectSection}
+          onPrevious={goPrevious}
+          onNext={goNext}
+          canGoPrevious={!showIntroduction}
+          canGoNext={showIntroduction || currentSection < lastSection}
+        >
+          <GrunnskolePlaceholderScreen section={currentSection} school={openSchool} />
+        </GrunnskoleLayout> : <>
           <div className="page-heading"><div><p className="eyebrow">Rapportering · Grunnskole</p><h2>Oversikt over skolenes rapportering</h2><p>Søk etter en skole og følg status for innrapporteringen.</p></div><span className="prototype-label">Lokal prototype</span></div>
           <div className="summary-grid" aria-label="Status for filtrerte skoler">
             {statuses.map((status, index) => <div className="summary-card" key={status}><span className={`status-dot status-${index}`} aria-hidden="true" /><span>{status}</span><strong>{visibleSchools.filter(school => school.status === status).length}</strong></div>)}
