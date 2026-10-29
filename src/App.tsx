@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import { ui } from './i18n'
 import { useState } from 'react'
-import { schools, statuses } from './mockData'
+import { schools } from './mockData'
 import type { School } from './mockData'
 import { SchoolFilters } from './components/SchoolFilters'
 import type { Filters } from './components/SchoolFilters'
@@ -16,8 +16,9 @@ import { OmSkolen } from './components/OmSkolen'
 import { FormStatusBadge } from './components/FormStatusBadge'
 import { Enhetsopplysninger } from './components/Enhetsopplysninger'
 import { LanguageSwitch } from './components/LanguageSwitch'
+import { CompactStatusSummary } from './components/CompactStatusSummary'
 
-const initialFilters: Filters = { search: '', municipality: '', year: '2026', status: '' }
+const initialFilters: Filters = { search: '', municipality: '', year: '2026', statusId: '' }
 
 function App() {
   useTranslation('ui')
@@ -36,7 +37,7 @@ function App() {
     (school.name.toLocaleLowerCase('nb').includes(query) || school.organizationNumber.includes(query.replace(/\s/g, ''))) &&
     (!filters.municipality || school.municipality === filters.municipality) &&
     (!filters.year || school.year === Number(filters.year)) &&
-    (!filters.status || school.status === filters.status),
+    (filters.statusId === '' || school.statusId === Number(filters.statusId)),
   )
   function openForm(school: School) {
     setSelectedId(school.id)
@@ -67,9 +68,9 @@ function App() {
   return (
     <>
       <a className="skip-link" href="#main">{ui("Gå til hovedinnhold")}</a>
-      <header className={`site-header${openSchool ? ' has-open-school' : ''}`}><div className="header-inner">
+      <header className="site-header has-context-bar"><div className="header-inner">
         <div className="brand-mark" aria-hidden="true">{ui("GSI")}</div>
-        <div><p className="eyebrow">{ui("Grunnskolens informasjonssystem")}</p><h1>{ui("GSI Grunnskole – Statusside (React Demo)")}</h1></div>
+        <div><p className="eyebrow">{ui("Grunnskolens informasjonssystem")}</p><h1>{ui("Grunnskole")}</h1></div>
         <section className="header-user" aria-label={ui("Brukerinformasjon (demonstrasjon)")}>
           <p className="header-user-demo">{ui("Demonstrasjonsbruker")}</p>
           <dl>
@@ -79,15 +80,15 @@ function App() {
           </dl>
         </section>
       </div></header>
-      {openSchool && <section className="school-info-bar" aria-label={ui("Valgt skole")}>
+      <section className={`school-info-bar${openSchool ? '' : ' school-info-bar--overview'}`} aria-label={ui(openSchool ? 'Valgt skole' : 'Status for filtrerte skoler')}>
         <div className="school-info-inner">
           <div className="school-info-details">
-            <p className="school-info-name">{openSchool.name}</p>
-            <p>{openSchool.municipality} {ui("kommune ·")} {openSchool.year}</p>
+            <p className="school-info-name">{openSchool ? openSchool.name : ui('Skoleoversikt')}</p>
+            <p>{openSchool ? <>{openSchool.municipality} {ui("kommune ·")} {openSchool.year}</> : ui('Status for filtrerte skoler')}</p>
           </div>
-          <FormStatusBadge status={openSchool.status} />
+          {openSchool ? <FormStatusBadge statusId={openSchool.statusId} /> : <CompactStatusSummary schools={visibleSchools} />}
         </div>
-      </section>}
+      </section>
       <main id="main" className="page">
         {openSchool ? showIntroduction ? <Introduction
           school={openSchool}
@@ -104,10 +105,7 @@ function App() {
         >
           {currentSection === 1 ? <Enhetsopplysninger key={`${openSchool.id}:${openSchool.year}`} school={openSchool} /> : currentSection === 2 ? <OmSkolen key={`${openSchool.id}:${openSchool.year}`} school={openSchool} /> : <GrunnskolePlaceholderScreen section={currentSection} school={openSchool} />}
         </GrunnskoleLayout> : <>
-          <div className="page-heading"><div><p className="eyebrow">{ui("Rapportering · Grunnskole")}</p><h2>{ui("Oversikt over skolenes rapportering")}</h2><p>{ui("Søk etter en skole og følg status for innrapporteringen.")}</p></div><LanguageSwitch /></div>
-          <div className="summary-grid" aria-label={ui("Status for filtrerte skoler")}>
-            {statuses.map((status, index) => <div className="summary-card" key={status}><span className={`status-dot status-${index}`} aria-hidden="true" /><span>{ui(status)}</span><strong>{visibleSchools.filter(school => school.status === status).length}</strong></div>)}
-          </div>
+          <div className="page-heading"><div><h2>{ui("Oversikt over skolenes rapportering")}</h2><p>{ui("Søk etter en skole og følg status for innrapporteringen.")}</p></div><LanguageSwitch /></div>
           <SchoolFilters filters={filters} municipalities={municipalities} years={years} onChange={setFilters} onReset={() => setFilters(initialFilters)} />
           <section className="table-panel" aria-labelledby="schools-heading">
             <div className="table-heading"><h3 id="schools-heading">{ui("Skoler")}</h3><p aria-live="polite">{ui("Viser")} {visibleSchools.length} {ui("av")} {schoolReports.length} {ui("rapporteringer")}</p></div>

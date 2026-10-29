@@ -3,13 +3,14 @@ import { ui } from '../i18n'
 import { useState } from 'react'
 import type { School } from '../mockData'
 import { FormStatusBadge } from './FormStatusBadge'
+import { getFormStatus } from '../domain/formStatus'
 
 const sortColumns = [
   { key: 'name', label: 'Skolenavn' },
   { key: 'organizationNumber', label: 'Organisasjonsnr.' },
   { key: 'municipality', label: 'Kommune' },
   { key: 'year', label: 'År' },
-  { key: 'status', label: 'Status' },
+  { key: 'statusId', label: 'Status' },
 ] as const
 type SortKey = typeof sortColumns[number]['key']
 type SortDirection = 'ascending' | 'descending'
@@ -37,7 +38,9 @@ export function SchoolTable({ schools, selectedId, onSelect, onOpen }: SchoolTab
       ? a.year - b.year
       : key === 'organizationNumber'
         ? numericCollator.compare(a.organizationNumber.replace(/\s/g, ''), b.organizationNumber.replace(/\s/g, ''))
-        : alphabeticCollator.compare(a[key], b[key])
+        : key === 'statusId'
+          ? alphabeticCollator.compare(getFormStatus(a.statusId).label, getFormStatus(b.statusId).label)
+          : alphabeticCollator.compare(a[key], b[key])
     return direction === 'ascending' ? comparison : -comparison
   }) : schools
 
@@ -59,7 +62,7 @@ export function SchoolTable({ schools, selectedId, onSelect, onOpen }: SchoolTab
       </tr></thead>
       <tbody>{sortedSchools.map(school => <tr key={school.id} className={selectedId === school.id ? 'selected-row' : ''} onClick={() => onSelect(school.id)}>
         <td><input type="radio" name="selected-school" checked={selectedId === school.id} onChange={() => onSelect(school.id)} aria-label={ui("Velg {{school}}, {{year}}", { school: school.name, year: school.year })} /></td>
-        <th scope="row">{school.name}</th><td className="organization-number">{school.organizationNumber}</td><td>{school.municipality}</td><td>{school.year}</td><td><FormStatusBadge status={school.status} /></td>
+        <th scope="row">{school.name}</th><td className="organization-number">{school.organizationNumber}</td><td>{school.municipality}</td><td>{school.year}</td><td><FormStatusBadge statusId={school.statusId} /></td>
         <td><button className="open-button" aria-label={ui("Åpne skjema for {{school}}, {{year}}", { school: school.name, year: school.year })} onClick={event => { event.stopPropagation(); onOpen(school) }}>{ui("Åpne skjema")} <span aria-hidden="true">→</span></button></td>
       </tr>)}</tbody>
     </table>

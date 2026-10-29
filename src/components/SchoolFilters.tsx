@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import { ui } from '../i18n'
-import { statuses } from '../mockData'
-export interface Filters { search: string; municipality: string; year: string; status: string }
+import { formStatuses } from '../domain/formStatus'
+export interface Filters { search: string; municipality: string; year: string; statusId: string }
 interface SchoolFiltersProps {
   filters: Filters
   municipalities: string[]
@@ -18,7 +18,7 @@ export function SchoolFilters({ filters, municipalities, years, onChange, onRese
       <label className="search-field">{ui("Skolenavn eller organisasjonsnummer")}<input type="search" placeholder={ui("Søk etter skole …")} value={filters.search} onChange={event => update('search', event.target.value)} /></label>
       <label>{ui("Kommune")}<select value={filters.municipality} onChange={event => update('municipality', event.target.value)}><option value="">{ui("Alle kommuner")}</option>{municipalities.map(municipality => <option key={municipality}>{municipality}</option>)}</select></label>
       <label>{ui("Rapporteringsår")}<select value={filters.year} onChange={event => update('year', event.target.value)}><option value="">{ui("Alle år")}</option>{years.map(year => <option key={year} value={year}>{year}</option>)}</select></label>
-      <label>{ui("Skjemastatus")}<select value={filters.status} onChange={event => update('status', event.target.value)}><option value="">{ui("Alle statuser")}</option>{statuses.map(status => <option key={status} value={status}>{ui(status)}</option>)}</select></label>
+      <label>{ui("Skjemastatus")}<select value={filters.statusId} onChange={event => update('statusId', event.target.value)}><option value="">{ui("Alle statuser")}</option>{formStatuses.map(status => <option key={status.id} value={status.id}>{ui(status.label)}</option>)}</select></label>
     </div>
   </section>
 }

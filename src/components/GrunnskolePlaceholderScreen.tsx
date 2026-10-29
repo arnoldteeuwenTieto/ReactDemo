@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next'
 import { ui } from '../i18n'
 import { grunnskoleSections } from './grunnskoleSections'
 import type { School } from '../mockData'
+import { getFormStatus } from '../domain/formStatus'
 
 interface GrunnskolePlaceholderScreenProps {
   section: number
@@ -40,8 +41,8 @@ export function GrunnskolePlaceholderScreen({ section, school }: GrunnskolePlace
           </label>
           <label>{ui("Rapporteringsår")} <input type="text" value={school.year} disabled />
           </label>
-          <label>{ui("Status")} <select value={school.status} disabled>
-              <option value={school.status}>{ui(school.status)}</option>
+          <label>{ui("Status")} <select value={school.statusId ?? ''} disabled>
+              <option value={school.statusId ?? ''}>{ui(getFormStatus(school.statusId).label)}</option>
             </select>
           </label>
         </div>

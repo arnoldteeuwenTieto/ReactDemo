@@ -5,13 +5,17 @@ status, introduction and previous/next/home navigation are preserved.
 
 Del 2 starts with question A beneath its heading; the former school-details card
 and introductory demo explanations have been removed. The green school bar stays.
-Every numbered section uses `FormStatusBadge`, supplied by `school.statusId`.
-The optional field is currently absent from the mock records, so they display
-`Status ukjent`; the overview's older textual statuses are not converted into
-unverified workflow IDs. Labels/tones for IDs 1–8 live in `src/domain/formStatus.ts`,
-and palette variables live in `src/styles/theme.css`. The badge is display-only
-and independent of the per-question save indicators. Introduction/Status retain
-their existing badges and data.
+The school table and green selected-school bar use the same `FormStatusBadge`,
+supplied only by numeric `school.statusId`. Labels, order and tones for IDs 0–8
+live in `src/domain/formStatus.ts`; palette variables live in theme.css.
+The compact summary counts the same filtered school list by ID and always shows
+all nine categories. Filter option values are IDs (including valid ID 0), while
+labels are translated. Status sorting still compares display labels.
+The existing demo records were explicitly migrated once by user instruction:
+Ikke påbegynt→0, Under arbeid→1, Levert→2, Godkjent→4 (municipality approval).
+Future records must provide an explicit ID. Missing/invalid IDs show
+`Status ukjent`; labels such as `Godkjent` never imply an approval level.
+The status is display-only and independent of per-question save indicators.
 
 - `src/components/OmSkolen.tsx`: React form state (`form`), shared onChange/save
   handler (`save`), one-field `payload`, retry and per-field request versions.

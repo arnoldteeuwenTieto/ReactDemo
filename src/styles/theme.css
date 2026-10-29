@@ -59,4 +59,7 @@
   --form-status-grey-background: var(--status-0-background);
   --form-status-red-text: #922d2d;
   --form-status-red-background: #fbe7e7;
+  --form-status-inactive-text: #62676d;
+  --form-status-inactive-background: #f1f2f3;
+  --form-status-inactive-border: #b4b8bd;
 }
