@@ -20,7 +20,6 @@ export function GrunnskolePlaceholderScreen({ section, school }: GrunnskolePlace
           <h2>{sectionDetails.number}. {sectionDetails.title}</h2>
           {section !== 2 && <p>Her kommer rapporteringsskjemaet for {sectionDetails.title.toLocaleLowerCase('nb')}.</p>}
         </div>
-        <span className="prototype-label">Lokal prototype</span>
       </div>
       {section === 2 ? <section className="introduction-panel" aria-labelledby="school-details-heading">
         <h3 id="school-details-heading">Opplysninger om skolen</h3>

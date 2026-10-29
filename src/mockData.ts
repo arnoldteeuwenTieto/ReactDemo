@@ -7,6 +7,9 @@ export interface School {
   municipality: string
   year: number
   status: SchoolStatus
+  // Optional GSI form workflow ID (1–8). Existing overview labels are not
+  // precise enough to infer it; absent IDs must display "Status ukjent".
+  statusId?: number | null
 }
 // Fiktive skoler. Numrene er demonstrasjonsverdier, ikke gyldige organisasjonsnumre.
 export const schools: School[] = [

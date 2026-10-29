@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import type { School } from '../mockData'
-import { StatusBadge } from './StatusBadge'
+import { FormStatusBadge } from './FormStatusBadge'
 
 const sortColumns = [
   { key: 'name', label: 'Skolenavn' },
@@ -56,7 +56,7 @@ export function SchoolTable({ schools, selectedId, onSelect, onOpen }: SchoolTab
       </tr></thead>
       <tbody>{sortedSchools.map(school => <tr key={school.id} className={selectedId === school.id ? 'selected-row' : ''} onClick={() => onSelect(school.id)}>
         <td><input type="radio" name="selected-school" checked={selectedId === school.id} onChange={() => onSelect(school.id)} aria-label={`Velg ${school.name}, ${school.year}`} /></td>
-        <th scope="row">{school.name}</th><td className="organization-number">{school.organizationNumber}</td><td>{school.municipality}</td><td>{school.year}</td><td><StatusBadge status={school.status} /></td>
+        <th scope="row">{school.name}</th><td className="organization-number">{school.organizationNumber}</td><td>{school.municipality}</td><td>{school.year}</td><td><FormStatusBadge status={school.status} /></td>
         <td><button className="open-button" aria-label={`Åpne skjema for ${school.name}, ${school.year}`} onClick={event => { event.stopPropagation(); onOpen(school) }}>Åpne skjema <span aria-hidden="true">→</span></button></td>
       </tr>)}</tbody>
     </table>

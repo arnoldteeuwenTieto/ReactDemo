@@ -10,19 +10,24 @@ import { demoUser } from './demoUser'
 import { GrunnskoleLayout } from './components/GrunnskoleLayout'
 import { GrunnskolePlaceholderScreen } from './components/GrunnskolePlaceholderScreen'
 import './App.css'
+import { OmSkolen } from './components/OmSkolen'
+import { FormStatusBadge } from './components/FormStatusBadge'
 
 const initialFilters: Filters = { search: '', municipality: '', year: '2026', status: '' }
 
 function App() {
+  // One shared collection supplies both the overview and the open report.
+  const [schoolReports] = useState<School[]>(schools)
   const [filters, setFilters] = useState<Filters>(initialFilters)
   const [selectedId, setSelectedId] = useState<string | null>(null)
-  const [openSchool, setOpenSchool] = useState<School | null>(null)
+  const [openReport, setOpenReport] = useState<{ id: string; year: number } | null>(null)
+  const openSchool = schoolReports.find(school => school.id === openReport?.id && school.year === openReport.year) ?? null
   const [currentSection, setCurrentSection] = useState(1)
   const [showIntroduction, setShowIntroduction] = useState(true)
-  const municipalities = [...new Set(schools.map(school => school.municipality))].sort((a, b) => a.localeCompare(b, 'nb'))
-  const years = [...new Set(schools.map(school => school.year))].sort((a, b) => b - a)
+  const municipalities = [...new Set(schoolReports.map(school => school.municipality))].sort((a, b) => a.localeCompare(b, 'nb'))
+  const years = [...new Set(schoolReports.map(school => school.year))].sort((a, b) => b - a)
   const query = filters.search.trim().toLocaleLowerCase('nb')
-  const visibleSchools = schools.filter(school =>
+  const visibleSchools = schoolReports.filter(school =>
     (school.name.toLocaleLowerCase('nb').includes(query) || school.organizationNumber.includes(query.replace(/\s/g, ''))) &&
     (!filters.municipality || school.municipality === filters.municipality) &&
     (!filters.year || school.year === Number(filters.year)) &&
@@ -30,13 +35,13 @@ function App() {
   )
   function openForm(school: School) {
     setSelectedId(school.id)
-    setOpenSchool(school)
+    setOpenReport({ id: school.id, year: school.year })
     setCurrentSection(1)
     setShowIntroduction(true)
     window.scrollTo(0, 0)
   }
   function goHome() {
-    setOpenSchool(null)
+    setOpenReport(null)
     setCurrentSection(1)
     setShowIntroduction(true)
   }
@@ -71,8 +76,11 @@ function App() {
       </div></header>
       {openSchool && <section className="school-info-bar" aria-label="Valgt skole">
         <div className="school-info-inner">
-          <p className="school-info-name">{openSchool.name}</p>
-          <p>{openSchool.municipality} kommune · {openSchool.year}</p>
+          <div className="school-info-details">
+            <p className="school-info-name">{openSchool.name}</p>
+            <p>{openSchool.municipality} kommune · {openSchool.year}</p>
+          </div>
+          <FormStatusBadge status={openSchool.status} />
         </div>
       </section>}
       <main id="main" className="page">
@@ -89,7 +97,7 @@ function App() {
           canGoPrevious={!showIntroduction}
           canGoNext={showIntroduction || currentSection < lastSection}
         >
-          <GrunnskolePlaceholderScreen section={currentSection} school={openSchool} />
+          {currentSection === 2 ? <OmSkolen key={`${openSchool.id}:${openSchool.year}`} school={openSchool} /> : <GrunnskolePlaceholderScreen section={currentSection} school={openSchool} />}
         </GrunnskoleLayout> : <>
           <div className="page-heading"><div><p className="eyebrow">Rapportering · Grunnskole</p><h2>Oversikt over skolenes rapportering</h2><p>Søk etter en skole og følg status for innrapporteringen.</p></div><span className="prototype-label">Lokal prototype</span></div>
           <div className="summary-grid" aria-label="Status for filtrerte skoler">
@@ -97,7 +105,7 @@ function App() {
           </div>
           <SchoolFilters filters={filters} municipalities={municipalities} years={years} onChange={setFilters} onReset={() => setFilters(initialFilters)} />
           <section className="table-panel" aria-labelledby="schools-heading">
-            <div className="table-heading"><h3 id="schools-heading">Skoler</h3><p aria-live="polite">Viser {visibleSchools.length} av {schools.length} rapporteringer</p></div>
+            <div className="table-heading"><h3 id="schools-heading">Skoler</h3><p aria-live="polite">Viser {visibleSchools.length} av {schoolReports.length} rapporteringer</p></div>
             <SchoolTable schools={visibleSchools} selectedId={selectedId} onSelect={setSelectedId} onOpen={openForm} />
           </section>
         </>}

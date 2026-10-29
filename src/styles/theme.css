@@ -48,4 +48,15 @@
   --status-2-background: #e8f2fa;
   --status-3-text: #236445;
   --status-3-background: #e5f3eb;
+  /* Form-status palette, shared by every numbered reporting section. */
+  --form-status-amber-text: var(--status-1-text);
+  --form-status-amber-background: var(--status-1-background);
+  --form-status-blue-text: var(--status-2-text);
+  --form-status-blue-background: var(--status-2-background);
+  --form-status-green-text: var(--status-3-text);
+  --form-status-green-background: var(--status-3-background);
+  --form-status-grey-text: var(--status-0-text);
+  --form-status-grey-background: var(--status-0-background);
+  --form-status-red-text: #922d2d;
+  --form-status-red-background: #fbe7e7;
 }
