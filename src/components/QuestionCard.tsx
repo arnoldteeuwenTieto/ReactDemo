@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react'
+
 export type SaveStatus = 'idle' | 'saving' | 'saved' | 'error'
 interface QuestionCardProps {
   id: string
@@ -13,13 +15,29 @@ interface QuestionCardProps {
   validationIds: string[]
   onHelp: (helpId: string, trigger: HTMLButtonElement) => void
 }
-export function QuestionCard({ id, heading, kind, options, value, onChange, validation, status, onRetry, helpId, validationIds, onHelp }: QuestionCardProps) {
-  const describedBy = validation ? `${id}-validation` : undefined
+type ReadOnlyQuestionCardProps = Pick<QuestionCardProps, 'id' | 'heading' | 'helpId' | 'onHelp'> & {
+  kind: 'content'
+  children: ReactNode
+}
+
+function QuestionCardFrame({ id, heading, helpId, onHelp, children }: Pick<QuestionCardProps, 'id' | 'heading' | 'helpId' | 'onHelp'> & { children: ReactNode }) {
   return <section className="question-card" aria-labelledby={`${id}-heading`}>
     <header className="question-header">
       <h3 id={`${id}-heading`}>{heading}</h3>
       <button type="button" className="question-help-button" aria-label="Vis hjelpetekst" aria-haspopup="dialog" onClick={event => onHelp(helpId, event.currentTarget)}><span aria-hidden="true">?</span></button>
     </header>
+    {children}
+  </section>
+}
+
+export function QuestionCard(props: QuestionCardProps | ReadOnlyQuestionCardProps) {
+  if (props.kind === 'content') return <QuestionCardFrame {...props}>{props.children}</QuestionCardFrame>
+  return <InputQuestionCard {...props} />
+}
+
+function InputQuestionCard({ id, heading, kind, options, value, onChange, validation, status, onRetry, helpId, validationIds, onHelp }: QuestionCardProps) {
+  const describedBy = validation ? `${id}-validation` : undefined
+  return <QuestionCardFrame id={id} heading={heading} helpId={helpId} onHelp={onHelp}>
     <div className="question-answer">
     <fieldset aria-describedby={describedBy}>
       <legend className="visually-hidden">{heading}</legend>
@@ -34,5 +52,5 @@ export function QuestionCard({ id, heading, kind, options, value, onChange, vali
     </fieldset>
     <div className={`question-save question-save-${status}`} role="status">{status === 'saving' ? 'Lagrer...' : status === 'saved' ? 'Lagret' : status === 'error' ? <>Simulert lagringsfeil. Svaret er ikke lagret. <button className="text-button" type="button" onClick={onRetry}>Prøv igjen</button></> : 'Ikke endret'}</div>
     </div>
-  </section>
+  </QuestionCardFrame>
 }

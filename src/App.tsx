@@ -12,6 +12,7 @@ import { GrunnskolePlaceholderScreen } from './components/GrunnskolePlaceholderS
 import './App.css'
 import { OmSkolen } from './components/OmSkolen'
 import { FormStatusBadge } from './components/FormStatusBadge'
+import { Enhetsopplysninger } from './components/Enhetsopplysninger'
 
 const initialFilters: Filters = { search: '', municipality: '', year: '2026', status: '' }
 
@@ -97,7 +98,7 @@ function App() {
           canGoPrevious={!showIntroduction}
           canGoNext={showIntroduction || currentSection < lastSection}
         >
-          {currentSection === 2 ? <OmSkolen key={`${openSchool.id}:${openSchool.year}`} school={openSchool} /> : <GrunnskolePlaceholderScreen section={currentSection} school={openSchool} />}
+          {currentSection === 1 ? <Enhetsopplysninger key={`${openSchool.id}:${openSchool.year}`} school={openSchool} /> : currentSection === 2 ? <OmSkolen key={`${openSchool.id}:${openSchool.year}`} school={openSchool} /> : <GrunnskolePlaceholderScreen section={currentSection} school={openSchool} />}
         </GrunnskoleLayout> : <>
           <div className="page-heading"><div><p className="eyebrow">Rapportering · Grunnskole</p><h2>Oversikt over skolenes rapportering</h2><p>Søk etter en skole og følg status for innrapporteringen.</p></div><span className="prototype-label">Lokal prototype</span></div>
           <div className="summary-grid" aria-label="Status for filtrerte skoler">

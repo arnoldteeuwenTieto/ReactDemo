@@ -10,6 +10,10 @@ export interface HelpTextService {
 }
 
 const helpTexts: Record<string, HelpText> = {
+  'GG-H82': {
+    hjelpetekstId: 'GG-H82', overskrift: 'Enhet', format: 'text',
+    tekst: 'Demonstrasjonstekst: Her vises opplysninger om valgt skole. Siden er skrivebeskyttet. Navn og kommune i demoen bygger på de fiktive skoledataene som allerede finnes i appen.\n\nManglende opplysninger vises som «Ikke tilgjengelig». Dette er en plassholder og ikke offisiell GSI-veiledning. Ingen opplysninger hentes fra eller lagres i NSR.',
+  },
   'GG-H83': {
     hjelpetekstId: 'GG-H83', overskrift: 'Skolens målform',
     format: 'text',
