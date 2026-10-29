@@ -58,6 +58,7 @@ export const nnUi: Record<string, string> = {
   'Skolenes rapportering. Velg en rad eller åpne skolens skjema.': 'Rapporteringa frå skulane. Vel ei rad eller opne skjemaet til skulen.',
   'Velg': 'Vel', 'Handling': 'Handling', 'Åpne skjema': 'Opne skjema',
   'Ingen skoler funnet': 'Ingen skular funne', 'Prøv et annet søk eller nullstill filtrene.': 'Prøv eit anna søk eller nullstill filtera.',
+  'Ingen skoler i utvalget': 'Ingen skular i utvalet',
   'Illustrasjon av en norsk skole med trær, husker og en skolegård': 'Illustrasjon av ein norsk skule med tre, husker og ein skulegard',
   'SKOLE': 'SKULE', 'Organisasjonsnr.': 'Organisasjonsnr.', 'År': 'År',
   'Enhetsopplysninger': 'Einingsopplysningar', 'Om skolen': 'Om skulen',
