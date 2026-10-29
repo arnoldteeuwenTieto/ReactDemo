@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next'
+import { ui } from './i18n'
 import { useState } from 'react'
 import { schools, statuses } from './mockData'
 import type { School } from './mockData'
@@ -13,10 +15,12 @@ import './App.css'
 import { OmSkolen } from './components/OmSkolen'
 import { FormStatusBadge } from './components/FormStatusBadge'
 import { Enhetsopplysninger } from './components/Enhetsopplysninger'
+import { LanguageSwitch } from './components/LanguageSwitch'
 
 const initialFilters: Filters = { search: '', municipality: '', year: '2026', status: '' }
 
 function App() {
+  useTranslation('ui')
   // One shared collection supplies both the overview and the open report.
   const [schoolReports] = useState<School[]>(schools)
   const [filters, setFilters] = useState<Filters>(initialFilters)
@@ -62,24 +66,24 @@ function App() {
   }
   return (
     <>
-      <a className="skip-link" href="#main">Gå til hovedinnhold</a>
+      <a className="skip-link" href="#main">{ui("Gå til hovedinnhold")}</a>
       <header className={`site-header${openSchool ? ' has-open-school' : ''}`}><div className="header-inner">
-        <div className="brand-mark" aria-hidden="true">GSI</div>
-        <div><p className="eyebrow">Grunnskolens informasjonssystem</p><h1>GSI Grunnskole – Statusside (React Demo)</h1></div>
-        <section className="header-user" aria-label="Brukerinformasjon (demonstrasjon)">
-          <p className="header-user-demo">Demonstrasjonsbruker</p>
+        <div className="brand-mark" aria-hidden="true">{ui("GSI")}</div>
+        <div><p className="eyebrow">{ui("Grunnskolens informasjonssystem")}</p><h1>{ui("GSI Grunnskole – Statusside (React Demo)")}</h1></div>
+        <section className="header-user" aria-label={ui("Brukerinformasjon (demonstrasjon)")}>
+          <p className="header-user-demo">{ui("Demonstrasjonsbruker")}</p>
           <dl>
-            <div><dt>Navn</dt><dd>{demoUser.name}</dd></div>
-            <div><dt>E-post</dt><dd>{demoUser.email}</dd></div>
-            <div><dt>Rolle</dt><dd>{demoUser.role}</dd></div>
+            <div><dt>{ui("Navn")}</dt><dd>{ui(demoUser.name)}</dd></div>
+            <div><dt>{ui("E-post")}</dt><dd>{demoUser.email}</dd></div>
+            <div><dt>{ui("Rolle")}</dt><dd>{ui(demoUser.role)}</dd></div>
           </dl>
         </section>
       </div></header>
-      {openSchool && <section className="school-info-bar" aria-label="Valgt skole">
+      {openSchool && <section className="school-info-bar" aria-label={ui("Valgt skole")}>
         <div className="school-info-inner">
           <div className="school-info-details">
             <p className="school-info-name">{openSchool.name}</p>
-            <p>{openSchool.municipality} kommune · {openSchool.year}</p>
+            <p>{openSchool.municipality} {ui("kommune ·")} {openSchool.year}</p>
           </div>
           <FormStatusBadge status={openSchool.status} />
         </div>
@@ -100,17 +104,17 @@ function App() {
         >
           {currentSection === 1 ? <Enhetsopplysninger key={`${openSchool.id}:${openSchool.year}`} school={openSchool} /> : currentSection === 2 ? <OmSkolen key={`${openSchool.id}:${openSchool.year}`} school={openSchool} /> : <GrunnskolePlaceholderScreen section={currentSection} school={openSchool} />}
         </GrunnskoleLayout> : <>
-          <div className="page-heading"><div><p className="eyebrow">Rapportering · Grunnskole</p><h2>Oversikt over skolenes rapportering</h2><p>Søk etter en skole og følg status for innrapporteringen.</p></div><span className="prototype-label">Lokal prototype</span></div>
-          <div className="summary-grid" aria-label="Status for filtrerte skoler">
-            {statuses.map((status, index) => <div className="summary-card" key={status}><span className={`status-dot status-${index}`} aria-hidden="true" /><span>{status}</span><strong>{visibleSchools.filter(school => school.status === status).length}</strong></div>)}
+          <div className="page-heading"><div><p className="eyebrow">{ui("Rapportering · Grunnskole")}</p><h2>{ui("Oversikt over skolenes rapportering")}</h2><p>{ui("Søk etter en skole og følg status for innrapporteringen.")}</p></div><LanguageSwitch /></div>
+          <div className="summary-grid" aria-label={ui("Status for filtrerte skoler")}>
+            {statuses.map((status, index) => <div className="summary-card" key={status}><span className={`status-dot status-${index}`} aria-hidden="true" /><span>{ui(status)}</span><strong>{visibleSchools.filter(school => school.status === status).length}</strong></div>)}
           </div>
           <SchoolFilters filters={filters} municipalities={municipalities} years={years} onChange={setFilters} onReset={() => setFilters(initialFilters)} />
           <section className="table-panel" aria-labelledby="schools-heading">
-            <div className="table-heading"><h3 id="schools-heading">Skoler</h3><p aria-live="polite">Viser {visibleSchools.length} av {schoolReports.length} rapporteringer</p></div>
+            <div className="table-heading"><h3 id="schools-heading">{ui("Skoler")}</h3><p aria-live="polite">{ui("Viser")} {visibleSchools.length} {ui("av")} {schoolReports.length} {ui("rapporteringer")}</p></div>
             <SchoolTable schools={visibleSchools} selectedId={selectedId} onSelect={setSelectedId} onOpen={openForm} />
           </section>
         </>}
-        <footer className="page-footer">Demonstrasjonsdata · Alle skoler og organisasjonsnumre er fiktive. Ingen opplysninger sendes eller lagres eksternt.</footer>
+        <footer className="page-footer">{ui("Demonstrasjonsdata · Alle skoler og organisasjonsnumre er fiktive. Ingen opplysninger sendes eller lagres eksternt.")} · {ui('Demonstrasjonsoversettelser')}</footer>
       </main>
     </>
   )

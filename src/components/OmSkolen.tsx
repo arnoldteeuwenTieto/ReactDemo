@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next'
+import { ui, gsi } from '../i18n'
 import { useEffect, useRef, useState } from 'react'
 import type { School } from '../mockData'
 import { emptyDel2, questions, questionReferences, validateDel2 } from '../domain/del2'
@@ -8,6 +10,7 @@ import type { SaveStatus } from './QuestionCard'
 import { HelpDrawer } from './HelpDrawer'
 
 export function OmSkolen({ school }: { school: School }) {
+  useTranslation('ui')
   const id = mockSkjemaStatusId(school)
   const [form, setForm] = useState<Del2Data>(emptyDel2)
   const [loaded, setLoaded] = useState(false)
@@ -40,13 +43,13 @@ export function OmSkolen({ school }: { school: School }) {
     }).finally(() => { if (active.current) setLogs(getApiLogs(id)) })
   }
   return <>
-    <div className="page-heading"><h2>2. Om skolen</h2></div>
-    {!loaded ? <p role="status">{loadError ? 'Kunne ikke hente lokale demonstrasjonsdata. Last siden på nytt.' : 'Henter lokale demonstrasjonsdata...'}</p> : <div className="question-list">{questions.map(question => <QuestionCard key={question.field} id={question.field} heading={question.heading} kind={question.kind} options={question.options} value={form[question.field]} onChange={value => save(question.field, value)} validation={validation[question.field]} status={statuses[question.field] ?? 'idle'} onRetry={() => save(question.field, form[question.field])} onHelp={(helpId, trigger) => setHelp({ id: helpId, trigger })} {...questionReferences[question.field]} />)}</div>}
+    <div className="page-heading"><h2>{ui("2. Om skolen")}</h2></div>
+    {!loaded ? <p role="status">{loadError ? ui("Kunne ikke hente lokale demonstrasjonsdata. Last siden på nytt.") : ui("Henter lokale demonstrasjonsdata...")}</p> : <div className="question-list">{questions.map(question => <QuestionCard key={question.field} id={question.field} heading={gsi(question.field)} kind={question.kind} options={question.options.map(option => ({ ...option, label: gsi(`${question.field}:${String(option.value)}`) }))} value={form[question.field]} onChange={value => save(question.field, value)} validation={validation[question.field] ? ui(validation[question.field]!) : undefined} status={statuses[question.field] ?? 'idle'} onRetry={() => save(question.field, form[question.field])} onHelp={(helpId, trigger) => setHelp({ id: helpId, trigger })} {...questionReferences[question.field]} />)}</div>}
     {help && <HelpDrawer key={help.id} helpId={help.id} returnFocusTo={help.trigger} onClose={() => setHelp(null)} />}
-    <details className="api-debug"><summary>API Debug</summary>
-      <p>Valgt skole: {school.name} · {school.id} · {school.year}</p><p>SkjemaStatusId (mock): {id} · Del: 2</p>
-      <p>Kun lokal simulering. Hver sjuende lagring feiler før data endres. Avhengige oppdateringer inngår i samme simulerte operasjon.</p>
-      {logs.length ? logs.map((log, index) => <pre key={index}>{JSON.stringify(log, null, 2)}</pre>) : <p>Ingen lagringskall ennå.</p>}
+    <details className="api-debug"><summary>{ui("API Debug")}</summary>
+      <p>{ui("Valgt skole:")} {school.name} · {school.id} · {school.year}</p><p>{ui("SkjemaStatusId (mock):")} {id} {ui("· Del: 2")}</p>
+      <p>{ui("Kun lokal simulering. Hver sjuende lagring feiler før data endres. Avhengige oppdateringer inngår i samme simulerte operasjon.")}</p>
+      {logs.length ? logs.map((log, index) => <pre key={index}>{JSON.stringify(log, null, 2)}</pre>) : <p>{ui("Ingen lagringskall ennå.")}</p>}
     </details>
   </>
 }

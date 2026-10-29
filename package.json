@@ -11,8 +11,10 @@
   },
   "dependencies": {
     "dompurify": "^3.4.17",
+    "i18next": "^26.5.11",
     "react": "^19.2.8",
-    "react-dom": "^19.2.8"
+    "react-dom": "^19.2.8",
+    "react-i18next": "^17.1.9"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

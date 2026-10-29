@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next'
+import { ui } from '../i18n'
 import { useState } from 'react'
 import { grunnskoleSections } from './grunnskoleSections'
 
@@ -12,6 +14,7 @@ export function GrunnskoleNavigation({
   onHome,
   onSelectSection,
 }: GrunnskoleNavigationProps) {
+  useTranslation('ui')
   const [isOpen, setIsOpen] = useState(false)
 
   function goHome() {
@@ -33,16 +36,16 @@ export function GrunnskoleNavigation({
         aria-controls="grunnskole-section-menu"
         onClick={() => setIsOpen(open => !open)}
       >
-        {isOpen ? 'Skjul navigasjon' : 'Vis navigasjon'}
+        {isOpen ? ui("Skjul navigasjon") : ui("Vis navigasjon")}
       </button>
       <nav
         id="grunnskole-section-menu"
         className={`section-navigation-menu${isOpen ? ' is-open' : ''}`}
-        aria-label="Grunnskoleseksjoner"
+        aria-label={ui("Grunnskoleseksjoner")}
       >
         <button className="section-navigation-home" type="button" onClick={goHome}>
           <span aria-hidden="true">←</span>
-          <span>Hjem</span>
+          <span>{ui("Hjem")}</span>
         </button>
         <ol>
           {grunnskoleSections.map(section => (
@@ -54,7 +57,7 @@ export function GrunnskoleNavigation({
                 onClick={() => selectSection(section.number)}
               >
                 <span className="section-navigation-number" aria-hidden="true">{section.number}</span>
-                <span>{section.title}</span>
+                <span>{ui(section.title)}</span>
               </button>
             </li>
           ))}

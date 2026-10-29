@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next'
+import { ui } from '../i18n'
 import { useState } from 'react'
 import type { School } from '../mockData'
 import { FormStatusBadge } from './FormStatusBadge'
@@ -21,6 +23,7 @@ interface SchoolTableProps {
   onOpen: (school: School) => void
 }
 export function SchoolTable({ schools, selectedId, onSelect, onOpen }: SchoolTableProps) {
+  useTranslation('ui')
   const [sort, setSort] = useState<{ key: SortKey; direction: SortDirection } | null>(null)
   function toggleSort(key: SortKey) {
     setSort(current => ({
@@ -38,28 +41,28 @@ export function SchoolTable({ schools, selectedId, onSelect, onOpen }: SchoolTab
     return direction === 'ascending' ? comparison : -comparison
   }) : schools
 
-  return <div className="table-scroll" role="region" aria-label="Skoleoversikt" tabIndex={0}>
+  return <div className="table-scroll" role="region" aria-label={ui("Skoleoversikt")} tabIndex={0}>
     <table>
-      <caption className="visually-hidden">Skolenes rapportering. Velg en rad eller åpne skolens skjema.</caption>
+      <caption className="visually-hidden">{ui("Skolenes rapportering. Velg en rad eller åpne skolens skjema.")}</caption>
       <thead><tr>
-        <th scope="col">Velg</th>
+        <th scope="col">{ui("Velg")}</th>
         {sortColumns.map(({ key, label }) => <th key={key} scope="col" className="sortable-header" aria-sort={sort?.key === key ? sort.direction : 'none'}>
-          <button type="button" className="sort-button" onClick={() => toggleSort(key)} aria-label={`${label}: sorter ${sort?.key === key && sort.direction === 'ascending' ? 'synkende' : 'stigende'}`}>
-            {label}
+          <button type="button" className="sort-button" onClick={() => toggleSort(key)} aria-label={`${ui(label)}: sorter ${sort?.key === key && sort.direction === 'ascending' ? ui("synkende") : ui("stigende")}`}>
+            {ui(label)}
             <span className="sort-arrows" aria-hidden="true">
               <span className={sort?.key === key && sort.direction === 'ascending' ? 'active' : ''}>↑</span>
               <span className={sort?.key === key && sort.direction === 'descending' ? 'active' : ''}>↓</span>
             </span>
           </button>
         </th>)}
-        <th scope="col">Handling</th>
+        <th scope="col">{ui("Handling")}</th>
       </tr></thead>
       <tbody>{sortedSchools.map(school => <tr key={school.id} className={selectedId === school.id ? 'selected-row' : ''} onClick={() => onSelect(school.id)}>
-        <td><input type="radio" name="selected-school" checked={selectedId === school.id} onChange={() => onSelect(school.id)} aria-label={`Velg ${school.name}, ${school.year}`} /></td>
+        <td><input type="radio" name="selected-school" checked={selectedId === school.id} onChange={() => onSelect(school.id)} aria-label={ui("Velg {{school}}, {{year}}", { school: school.name, year: school.year })} /></td>
         <th scope="row">{school.name}</th><td className="organization-number">{school.organizationNumber}</td><td>{school.municipality}</td><td>{school.year}</td><td><FormStatusBadge status={school.status} /></td>
-        <td><button className="open-button" aria-label={`Åpne skjema for ${school.name}, ${school.year}`} onClick={event => { event.stopPropagation(); onOpen(school) }}>Åpne skjema <span aria-hidden="true">→</span></button></td>
+        <td><button className="open-button" aria-label={ui("Åpne skjema for {{school}}, {{year}}", { school: school.name, year: school.year })} onClick={event => { event.stopPropagation(); onOpen(school) }}>{ui("Åpne skjema")} <span aria-hidden="true">→</span></button></td>
       </tr>)}</tbody>
     </table>
-    {schools.length === 0 && <div className="empty-state"><h4>Ingen skoler funnet</h4><p>Prøv et annet søk eller nullstill filtrene.</p></div>}
+    {schools.length === 0 && <div className="empty-state"><h4>{ui("Ingen skoler funnet")}</h4><p>{ui("Prøv et annet søk eller nullstill filtrene.")}</p></div>}
   </div>
 }

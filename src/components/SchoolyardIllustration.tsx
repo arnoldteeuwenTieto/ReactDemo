@@ -1,6 +1,9 @@
+import { useTranslation } from 'react-i18next'
+import { ui } from '../i18n'
 export function SchoolyardIllustration() {
+  useTranslation('ui')
   return (
-    <svg className="schoolyard-illustration" viewBox="0 0 560 420" role="img" aria-label="Illustrasjon av en norsk skole med trær, husker og en skolegård">
+    <svg className="schoolyard-illustration" viewBox="0 0 560 420" role="img" aria-label={ui("Illustrasjon av en norsk skole med trær, husker og en skolegård")}>
       <g stroke="#667D79" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M37 281C15 216 40 96 136 60C232 24 305 56 370 42C477 20 548 112 522 218L510 310Z" fill="#EFF6F3" stroke="none" />
         <path d="M28 306Q145 272 275 294T531 301L524 376Q290 412 34 372Z" fill="#DEF2E7" stroke="none" />
@@ -18,7 +21,7 @@ export function SchoolyardIllustration() {
           <path d={`M${x + 18} 246v31m-17 -16h35`} fill="none" />
         </g>)}
         <path d="M225 188L276 188L275 208L225 209Z" fill="#DEF2E7" />
-        <text x="250" y="202" textAnchor="middle" stroke="none" fill="#4E6689" fontSize="12" fontFamily="Segoe UI, sans-serif" fontWeight="600">SKOLE</text>
+        <text x="250" y="202" textAnchor="middle" stroke="none" fill="#4E6689" fontSize="12" fontFamily="Segoe UI, sans-serif" fontWeight="600">{ui("SKOLE")}</text>
         <path d="M224 306L275 306L295 325L206 325Z" fill="#D6DDDB" />
         <path d="M236 326Q255 348 289 375" fill="none" stroke="#BAC6B9" strokeWidth="18" />
         <path d="M391 293L410 225L472 226L495 295M411 226L434 294M473 227L451 296" fill="none" />
