@@ -19,6 +19,12 @@ test('production disables demo switching even when built with the demo flag', as
   await expect(metadata).not.toContainText('undefined')
   await expect(header.locator('.header-inner')).toHaveClass(/header-inner--standard/)
   await expect(header.locator('.header-inner > *')).toHaveCount(3)
+  const title = (await header.locator('.header-title').boundingBox())!
+  const content = (await page.locator('.page-heading').boundingBox())!
+  const identity = (await header.locator('.header-identity').boundingBox())!
+  const filters = (await page.locator('.filter-panel').boundingBox())!
+  expect(title.x).toBeCloseTo(content.x, 1)
+  expect(identity.x + identity.width).toBeCloseTo(filters.x + filters.width, 1)
   expect((await header.boundingBox())!.height).toBeLessThanOrEqual(104)
   await page.getByRole('button', { name: 'Åpne skjema for Fjordgløtt barneskole, 2026', exact: true }).click()
   await page.getByRole('button', { name: 'Gå til rapporteringen' }).click()

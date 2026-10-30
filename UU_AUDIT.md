@@ -2,6 +2,39 @@
 
 Audit date: 30 October 2026 (Europe/Oslo). Scope: this React GSI prototype, not real GSI/BOGIAPI authentication or a legal compliance assessment.
 
+## Header container alignment refinement — 30 October 2026
+
+`.page` and `.header-inner` now share one rule for `width: 100%`,
+`max-width: 1440px`, centered margins and 40px inline padding, with one shared
+18px inline-padding rule below 720px. Vertical padding remains screen-specific.
+The GSI branding's left edge and the identity panel's right edge now align with
+the overview heading/filter card at desktop and responsive viewport sizes.
+
+On desktop widths of 1200px and above, the demo user/status selectors measure
+**240px / 210px**, and the identity panel measures **240px**. Smaller desktop and
+mobile grids shrink/reflow these areas without page overflow. Native dropdowns
+retain full option labels; the selected display uses sensible overflow truncation.
+The environment/version area remains between the controls and identity panel.
+Blue/beige colors, white keyboard focus outlines, DEV guards, school-status
+overrides and business rules are unchanged. Desktop header height remains
+**97.3125px**. Updated layout tests assert exact edge alignment, equality of
+computed container sizing/padding, and the requested desktop control widths;
+production alignment is also checked.
+
+Verification: `npm run test:e2e`, dedicated port 55730: **95 passed (1.8m)**,
+including all functional regressions, production safeguards and 24 axe scans.
+No new accessibility failures were reported; existing manual-review items remain.
+
+CSS classes/selectors changed in this refinement: `.page`, `.header-inner`,
+`.header-inner--standard`, `.header-demo`, and `.demo-user-selector select`, including
+their responsive rules. Obsolete header-specific mobile padding/flex declarations
+were removed so they cannot override the shared container. No React components or
+business logic were changed.
+
+Visual evidence: [desktop](artifacts/header-layout/aligned-header-1280.png),
+[narrow](artifacts/header-layout/aligned-header-375.png),
+[measurements](artifacts/header-layout/aligned-header.json).
+
 ## Current blue-header refinement — 30 October 2026
 
 The original blue header surface is restored using `--header-background`, which

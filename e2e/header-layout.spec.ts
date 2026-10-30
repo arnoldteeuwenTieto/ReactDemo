@@ -31,6 +31,17 @@ for (const width of [1024, 1280, 1440, 1920]) {
     const header = page.getByRole('banner')
     await expect(header.getByRole('heading', { name: 'Grunnskole', exact: true })).toBeVisible()
     const bounds = (await header.boundingBox())!
+    const titleBox = (await header.locator('.header-title').boundingBox())!
+    const contentBox = (await page.locator('.page-heading').boundingBox())!
+    const identityBox = (await header.locator('.header-identity').boundingBox())!
+    const filterBox = (await page.locator('.filter-panel').boundingBox())!
+    expect(titleBox.x).toBeCloseTo(contentBox.x, 1)
+    expect(identityBox.x + identityBox.width).toBeCloseTo(filterBox.x + filterBox.width, 1)
+    const containers = await page.locator('.header-inner, main.page').evaluateAll(elements => elements.map(element => {
+      const style = getComputedStyle(element)
+      return [style.width, style.maxWidth, style.paddingLeft, style.paddingRight]
+    }))
+    expect(containers[0]).toEqual(containers[1])
     await expect(header).toHaveCSS('background-color', 'rgb(78, 102, 137)')
     await expect(header.getByText('KUN DEV', { exact: true })).toBeVisible()
     expect(bounds.height).toBeLessThanOrEqual(104)
@@ -47,6 +58,14 @@ for (const width of [1024, 1280, 1440, 1920]) {
     const selectors = header.getByRole('combobox')
     const userBox = (await selectors.nth(0).boundingBox())!
     const statusBox = (await selectors.nth(1).boundingBox())!
+    if (width >= 1200) {
+      expect(userBox.width).toBeGreaterThanOrEqual(220)
+      expect(userBox.width).toBeLessThanOrEqual(250)
+      expect(statusBox.width).toBeGreaterThanOrEqual(190)
+      expect(statusBox.width).toBeLessThanOrEqual(220)
+      expect(identityBox.width).toBeGreaterThanOrEqual(220)
+      expect(identityBox.width).toBeLessThanOrEqual(250)
+    }
     expect(userBox.y).toBeCloseTo(statusBox.y, 0)
     await header.getByText('Demokontekst', { exact: true }).click()
     expect((await header.boundingBox())!.height).toBe(bounds.height)
@@ -64,6 +83,12 @@ for (const width of [768, 375, 320]) {
     const header = page.getByRole('banner')
     await expect(header.getByRole('heading', { name: 'Grunnskole', exact: true })).toBeVisible()
     await expect(header.getByRole('region', { name: 'Innlogget bruker', exact: true })).toBeVisible()
+    const title = (await header.locator('.header-title').boundingBox())!
+    const heading = (await page.locator('.page-heading').boundingBox())!
+    const identity = (await header.locator('.header-identity').boundingBox())!
+    const filters = (await page.locator('.filter-panel').boundingBox())!
+    expect(title.x).toBeCloseTo(heading.x, 1)
+    expect(identity.x + identity.width).toBeCloseTo(filters.x + filters.width, 1)
     await header.getByText('Demokontekst', { exact: true }).click()
     const horizontalBounds = await header.locator('.header-inner > *, .demo-user-popover, select').evaluateAll(elements => elements.map(element => {
       const box = element.getBoundingClientRect()

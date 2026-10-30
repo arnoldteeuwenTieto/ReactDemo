@@ -7,13 +7,14 @@
 .school-info-details { flex: 1 1 240px; min-width: 0; }
 .school-info-name { font-size: 20px; font-weight: 600; }
 .school-info-details > p:last-child { font-size: 14px; }
-.header-inner { max-width: 1600px; margin: auto; min-height: 96px; padding: 8px 24px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.8fr) minmax(88px, .45fr) minmax(160px, .85fr); align-items: center; gap: 16px; }
+.page, .header-inner { width: 100%; max-width: 1440px; margin: 0 auto; padding-inline: 40px; }
+.header-inner { min-height: 96px; padding-block: 8px; display: grid; grid-template-columns: minmax(0, 1fr) 464px 100px 240px; align-items: center; gap: 16px; }
 .brand-mark { border: 1px solid var(--header-accent); border-radius: var(--size-border-radius); font-size: 23px; letter-spacing: 2px; font-weight: 700; padding: 14px 12px; }
 .eyebrow { font-size: var(--size-standard-text); font-weight: 600; letter-spacing: .09em; text-transform: uppercase; }
 .site-header .eyebrow { color: var(--header-accent); margin-bottom: 5px; }
 h1 { font-size: var(--size-h1-display); font-weight: 600; line-height: 1.3; }
 .app-shell { display: flex; flex-direction: column; min-height: 100vh; min-height: 100dvh; }
-.page { flex: 1 0 auto; width: 100%; max-width: 1440px; margin: 0 auto; padding: 24px 40px 0; }
+.page { flex: 1 0 auto; padding-block: 24px 0; }
 .page-heading { display: flex; justify-content: space-between; align-items: center; gap: 20px; margin-bottom: 26px; }
 .page-heading .eyebrow { color: var(--text-muted); margin-bottom: 8px; }
 h2 { font-size: var(--size-h2-headline); font-weight: 600; line-height: 1.3; margin-bottom: 10px; letter-spacing: -.025em; }
@@ -194,7 +195,7 @@ dd { margin: 0; font-weight: 600; }
 .placeholder-fields input, .placeholder-fields select { width: 100%; min-height: 45px; border: 1px solid var(--control-border); border-radius: var(--size-border-radius); padding: 10px 12px; color: var(--text); }
 .placeholder-fields input:disabled, .placeholder-fields select:disabled { background: var(--subtle-background); color: var(--text-muted); opacity: 1; cursor: not-allowed; }
 @media (max-width: 1100px) { .filter-grid { grid-template-columns: repeat(3, 1fr); } .search-field { grid-column: 1 / -1; } }
-@media (max-width: 720px) { .header-inner { padding: 22px 20px; gap: 12px; flex-wrap: wrap; } h1 { font-size: 20px; } .brand-mark { font-size: 17px; padding: 10px 8px; } .header-inner > div:nth-child(2) { flex: 1; } .site-header .eyebrow { font-size: 10px; } .page { padding: 20px 18px 0; } h2 { font-size: 25px; } .page-heading { align-items: flex-start; flex-direction: column; gap: 12px; } .filter-panel { padding: 20px 16px; } .filter-grid { grid-template-columns: 1fr; gap: 16px; } .search-field { grid-column: auto; } .table-heading { padding: 18px 16px; } .introduction-panel { padding: 22px 18px; } .school-details { grid-template-columns: 1fr; } }
+@media (max-width: 720px) { h1 { font-size: 20px; } .brand-mark { font-size: 17px; padding: 10px 8px; } .site-header .eyebrow { font-size: 10px; } .page { padding: 20px 18px 0; } h2 { font-size: 25px; } .page-heading { align-items: flex-start; flex-direction: column; gap: 12px; } .filter-panel { padding: 20px 16px; } .filter-grid { grid-template-columns: 1fr; gap: 16px; } .search-field { grid-column: auto; } .table-heading { padding: 18px 16px; } .introduction-panel { padding: 22px 18px; } .school-details { grid-template-columns: 1fr; } }
 @media (max-width: 900px) {
   .introduction-grid { grid-template-columns: minmax(0, 1fr); gap: 24px; }
   .schoolyard-illustration { max-width: 440px; margin: auto; }
@@ -206,18 +207,18 @@ dd { margin: 0; font-weight: 600; }
   .placeholder-fields { grid-template-columns: minmax(0, 1fr); }
 }
 
-.header-inner--standard { grid-template-columns: minmax(0, 1fr) minmax(88px, .2fr) minmax(160px, .35fr); }
+.header-inner--standard { grid-template-columns: minmax(0, 1fr) 100px 240px; }
 .header-title, .header-demo, .header-build, .header-identity { min-width: 0; }
 .header-title { display: flex; align-items: center; gap: 12px; }
 .header-title .brand-mark { flex-shrink: 0; }
 .header-title-copy { min-width: 0; }
 .header-title .eyebrow { font-size: 9px; line-height: 1.4; overflow-wrap: anywhere; }
 .header-title h1 { font-size: 28px; line-height: 1.3; overflow-wrap: anywhere; }
-.header-demo { position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; column-gap: 14px; font-size: 12px; }
+.header-demo { position: relative; display: grid; width: 100%; max-width: 464px; grid-template-columns: minmax(0, 240px) minmax(0, 210px); align-items: start; column-gap: 14px; font-size: 12px; }
 .header-dev-label { position: absolute; right: 0; bottom: 3px; font-size: 9px; line-height: 16px; font-weight: 700; padding: 0 4px; border: 1px solid var(--header-accent); border-radius: 3px; color: var(--surface); }
 .header-user-demo { color: var(--surface); font-size: 12px; }
 .demo-user-selector { display: block; min-width: 0; }
-.demo-user-selector select { display: block; width: 100%; height: 32px; min-height: 32px; margin: 3px 0 0; padding: 4px 6px; font: inherit; color: var(--text); background: var(--surface); border: 1px solid var(--control-border); border-radius: var(--size-border-radius); }
+.demo-user-selector select { display: block; width: 100%; height: 32px; min-height: 32px; margin: 3px 0 0; padding: 4px 6px; font: inherit; color: var(--text); background: var(--surface); border: 1px solid var(--control-border); border-radius: var(--size-border-radius); text-overflow: ellipsis; }
 .demo-status-controls { grid-column: 2; grid-row: 1 / span 2; min-width: 0; }
 .demo-status-reset { color: var(--surface); min-height: 24px; padding: 2px 0; font-size: 11px; }
 .demo-user-details { position: relative; grid-column: 1; font-size: 11px; }
@@ -243,8 +244,13 @@ dd { margin: 0; font-weight: 600; }
 .header-identity dd { font-weight: 400; }
 /* UU-01: white focus indicators contrast with the restored blue control area. */
 .header-demo :focus-visible { outline: 3px solid var(--surface); outline-offset: 3px; }
+@media (min-width: 1001px) and (max-width: 1199px) {
+  .header-inner { grid-template-columns: minmax(0, 1fr) minmax(0, 1.8fr) 88px 175px; gap: 12px; }
+  .header-inner--standard { grid-template-columns: minmax(0, 1fr) 88px 220px; }
+  .header-demo { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
 @media (max-width: 1000px) {
-  .header-inner, .header-inner--standard { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-height: 0; padding: 16px 20px; gap: 16px; }
+  .header-inner, .header-inner--standard { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-height: 0; padding-block: 16px; gap: 16px; }
   .header-title { align-self: center; }
   .header-demo { grid-column: 1 / -1; grid-row: 2; }
   .header-build { grid-column: 1; }
@@ -253,13 +259,16 @@ dd { margin: 0; font-weight: 600; }
   .header-inner--standard .header-identity { grid-column: 2; grid-row: 1 / span 2; }
 }
 @media (max-width: 480px) {
-  .header-inner, .header-inner--standard { grid-template-columns: minmax(0, 1fr); padding: 16px 18px; }
+  .header-inner, .header-inner--standard { grid-template-columns: minmax(0, 1fr); padding-block: 16px; }
   .header-title h1 { font-size: 20px; }
   .header-demo { grid-column: 1; }
   .header-build, .header-identity, .header-inner--standard .header-build, .header-inner--standard .header-identity { grid-column: 1; grid-row: auto; }
   .header-build dl { display: flex; flex-wrap: wrap; gap: 12px; }
   .header-build dl > div + div { margin: 0; }
   .demo-user-popover { width: min(280px, calc(100vw - 36px)); }
+}
+@media (max-width: 720px) {
+  .page, .header-inner { padding-inline: 18px; }
 }
 .section-pagination { display: flex; justify-content: space-between; gap: 16px; margin-top: auto; padding-top: 28px; }
 .section-pagination .open-button { min-height: 44px; padding: 10px 16px; }
