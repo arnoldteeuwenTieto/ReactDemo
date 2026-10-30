@@ -17,6 +17,7 @@ import { FormStatusBadge } from './components/FormStatusBadge'
 import { Enhetsopplysninger } from './components/Enhetsopplysninger'
 import { LanguageSwitch } from './components/LanguageSwitch'
 import { CompactStatusSummary } from './components/CompactStatusSummary'
+import { AppFooter } from './components/AppFooter'
 
 const initialFilters: Filters = { search: '', municipality: '', year: '2026', statusId: '' }
 
@@ -66,7 +67,7 @@ function App() {
     else if (currentSection < lastSection) selectSection(currentSection + 1)
   }
   return (
-    <>
+    <div className="app-shell">
       <a className="skip-link" href="#main">{ui("Gå til hovedinnhold")}</a>
       <header className="site-header has-context-bar"><div className="header-inner">
         <div className="brand-mark" aria-hidden="true">{ui("GSI")}</div>
@@ -112,9 +113,10 @@ function App() {
             <SchoolTable schools={visibleSchools} selectedId={selectedId} onSelect={setSelectedId} onOpen={openForm} />
           </section>
         </>}
-        <footer className="page-footer">{ui("Demonstrasjonsdata · Alle skoler og organisasjonsnumre er fiktive. Ingen opplysninger sendes eller lagres eksternt.")} · {ui('Demonstrasjonsoversettelser')}</footer>
+        <p className="page-footer">{ui("Demonstrasjonsdata · Alle skoler og organisasjonsnumre er fiktive. Ingen opplysninger sendes eller lagres eksternt.")} · {ui('Demonstrasjonsoversettelser')}</p>
       </main>
-    </>
+      {!openSchool && <AppFooter />}
+    </div>
   )
 }
 export default App

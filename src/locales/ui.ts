@@ -2,6 +2,16 @@
 export const nnUi: Record<string, string> = {
   'Gå til hovedinnhold': 'Gå til hovudinnhald',
   'GSI': 'GSI',
+  
+// Footer links – Nynorsk translations
+'Om GSI': 'Om GSI',
+'Kontakt': 'Kontakt',
+'Personvernerklæring': 'Personvernerklæring',
+'Tilgjengelighetserklæring': 'Tilgjengelegheitserklæring',
+
+  'Lenker i bunntekst': 'Lenkjer i botntekst',
+  'Plassholder for fremtidig logo': 'Plasshaldar for framtidig logo',
+  'Logo': 'Logo',
   'Grunnskole': 'Grunnskule',
   'Grunnskolens informasjonssystem': 'Informasjonssystemet for grunnskulen',
   'GSI Grunnskole – Statusside (React Demo)': 'GSI Grunnskule – Statusside (React-demo)',

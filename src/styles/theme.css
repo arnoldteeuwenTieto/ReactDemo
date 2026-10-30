@@ -28,6 +28,7 @@
 
   /* Provisional demo roles. White and status colors are extensions. */
   --surface: #FFFFFF;
+  --footer-background: #171717;
   --text: var(--farge-morkgra);
   --text-muted: var(--farge-stalblaa04);
   --page-background: #FFFFFF;

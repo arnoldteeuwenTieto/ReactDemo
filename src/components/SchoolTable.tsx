@@ -45,7 +45,7 @@ export function SchoolTable({ schools, selectedId, onSelect, onOpen }: SchoolTab
   }) : schools
 
   return <div className="table-scroll" role="region" aria-label={ui("Skoleoversikt")} tabIndex={0}>
-    <table>
+    <table className="school-table">
       <caption className="visually-hidden">{ui("Skolenes rapportering. Velg en rad eller åpne skolens skjema.")}</caption>
       <thead><tr>
         <th scope="col">{ui("Velg")}</th>
@@ -61,8 +61,8 @@ export function SchoolTable({ schools, selectedId, onSelect, onOpen }: SchoolTab
         <th scope="col">{ui("Handling")}</th>
       </tr></thead>
       <tbody>{sortedSchools.map(school => <tr key={school.id} className={selectedId === school.id ? 'selected-row' : ''} onClick={() => onSelect(school.id)}>
-        <td><input type="radio" name="selected-school" checked={selectedId === school.id} onChange={() => onSelect(school.id)} aria-label={ui("Velg {{school}}, {{year}}", { school: school.name, year: school.year })} /></td>
-        <th scope="row">{school.name}</th><td className="organization-number">{school.organizationNumber}</td><td>{school.municipality}</td><td>{school.year}</td><td><FormStatusBadge statusId={school.statusId} /></td>
+        <td><label className="school-row-selector"><input type="radio" name="selected-school" checked={selectedId === school.id} onChange={() => onSelect(school.id)} aria-label={ui("Velg {{school}}, {{year}}", { school: school.name, year: school.year })} /></label></td>
+        <th scope="row">{school.name}</th><td className="organization-number" data-label={ui('Organisasjonsnr.')}>{school.organizationNumber}</td><td data-label={ui('Kommune')}>{school.municipality}</td><td data-label={ui('År')}>{school.year}</td><td data-label={ui('Status')}><FormStatusBadge statusId={school.statusId} /></td>
         <td><button className="open-button" aria-label={ui("Åpne skjema for {{school}}, {{year}}", { school: school.name, year: school.year })} onClick={event => { event.stopPropagation(); onOpen(school) }}>{ui("Åpne skjema")} <span aria-hidden="true">→</span></button></td>
       </tr>)}</tbody>
     </table>
