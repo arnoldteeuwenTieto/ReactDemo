@@ -10,6 +10,7 @@ interface QuestionCardProps {
   options: { label: string; value: string | number | boolean }[]
   value: string | number | boolean | null
   onChange: (value: string | number | boolean) => void
+  canEdit: boolean
   validation?: string
   status: SaveStatus
   onRetry: () => void
@@ -38,12 +39,12 @@ export function QuestionCard(props: QuestionCardProps | ReadOnlyQuestionCardProp
   return <InputQuestionCard {...props} />
 }
 
-function InputQuestionCard({ id, heading, kind, options, value, onChange, validation, status, onRetry, helpId, validationIds, onHelp }: QuestionCardProps) {
+function InputQuestionCard({ id, heading, kind, options, value, onChange, canEdit, validation, status, onRetry, helpId, validationIds, onHelp }: QuestionCardProps) {
   useTranslation('ui')
   const describedBy = validation ? `${id}-validation` : undefined
   return <QuestionCardFrame id={id} heading={heading} helpId={helpId} onHelp={onHelp}>
     <div className="question-answer">
-    <fieldset aria-describedby={describedBy}>
+    <fieldset disabled={!canEdit} aria-describedby={describedBy}>
       <legend className="visually-hidden">{heading}</legend>
       {kind === 'radio' ? <div className="question-options">{options.map((option, index) => <label key={index}>
         <input type="radio" name={id} checked={value === option.value} onChange={() => onChange(option.value)} aria-invalid={!!validation} />{option.label}
@@ -54,7 +55,7 @@ function InputQuestionCard({ id, heading, kind, options, value, onChange, valida
       {validation && <p className="question-validation" id={`${id}-validation`}>{validation}</p>}
       <p className="question-reference">{ui("Valideringsreferanser:")} {validationIds.join(', ')}{ui(". Offisielle formler er ikke implementert.")}</p>
     </fieldset>
-    <div className={`question-save question-save-${status}`} role="status">{status === 'saving' ? ui("Lagrer...") : status === 'saved' ? ui("Lagret") : status === 'error' ? <>{ui("Simulert lagringsfeil. Svaret er ikke lagret.")} <button className="text-button" type="button" onClick={onRetry}>{ui("Prøv igjen")}</button></> : ui("Ikke endret")}</div>
+    <div className={`question-save question-save-${status}`} role="status">{status === 'saving' ? ui("Lagrer...") : status === 'saved' ? ui("Lagret") : status === 'error' ? <>{ui("Simulert lagringsfeil. Svaret er ikke lagret.")} <button className="text-button" type="button" onClick={onRetry} disabled={!canEdit}>{ui("Prøv igjen")}</button></> : ui("Ikke endret")}</div>
     </div>
   </QuestionCardFrame>
 }

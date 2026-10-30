@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { ui } from './i18n'
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import { schools } from './mockData'
 import type { School } from './mockData'
 import { SchoolFilters } from './components/SchoolFilters'
@@ -8,7 +8,7 @@ import type { Filters } from './components/SchoolFilters'
 import { SchoolTable } from './components/SchoolTable'
 import { Introduction } from './components/Introduction'
 import { grunnskoleSections } from './components/grunnskoleSections'
-import { demoUser } from './demoUser'
+import { AppHeader } from './components/AppHeader'
 import { GrunnskoleLayout } from './components/GrunnskoleLayout'
 import { GrunnskolePlaceholderScreen } from './components/GrunnskolePlaceholderScreen'
 import './App.css'
@@ -18,17 +18,40 @@ import { Enhetsopplysninger } from './components/Enhetsopplysninger'
 import { LanguageSwitch } from './components/LanguageSwitch'
 import { CompactStatusSummary } from './components/CompactStatusSummary'
 import { AppFooter } from './components/AppFooter'
+import { useDemoUser } from './demoUserContext'
+import { formStatuses } from './domain/formStatus'
+import type { FormStatusId } from './domain/formStatus'
 
 const initialFilters: Filters = { search: '', municipality: '', year: '2026', statusId: '' }
+const reportKey = (school: School) => `${school.id}:${school.year}`
 
 function App() {
   useTranslation('ui')
-  // One shared collection supplies both the overview and the open report.
-  const [schoolReports] = useState<School[]>(schools)
+  const { enabled: demoEnabled } = useDemoUser()
+  // Overrides belong to this page session, never the mock records or API store.
+  const [statusOverrides, setStatusOverrides] = useState<Record<string, FormStatusId>>({})
+  const schoolReports = useMemo(() => schools.map(school => {
+    const statusId = demoEnabled ? statusOverrides[reportKey(school)] : undefined
+    return statusId === undefined ? school : { ...school, statusId }
+  }), [demoEnabled, statusOverrides])
   const [filters, setFilters] = useState<Filters>(initialFilters)
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const [openReport, setOpenReport] = useState<{ id: string; year: number } | null>(null)
   const openSchool = schoolReports.find(school => school.id === openReport?.id && school.year === openReport.year) ?? null
+  const demoSchool = openSchool ?? schoolReports.find(school => school.id === selectedId) ?? null
+  const hasStatusOverride = demoEnabled && !!demoSchool && statusOverrides[reportKey(demoSchool)] !== undefined
+  function changeDemoStatus(statusId: number) {
+    if (!demoEnabled || !demoSchool || !formStatuses.some(status => status.id === statusId)) return
+    setStatusOverrides(previous => ({ ...previous, [reportKey(demoSchool)]: statusId as FormStatusId }))
+  }
+  function resetDemoStatus() {
+    if (!demoEnabled || !demoSchool) return
+    setStatusOverrides(previous => {
+      const next = { ...previous }
+      delete next[reportKey(demoSchool)]
+      return next
+    })
+  }
   const [currentSection, setCurrentSection] = useState(1)
   const [showIntroduction, setShowIntroduction] = useState(true)
   const municipalities = [...new Set(schoolReports.map(school => school.municipality))].sort((a, b) => a.localeCompare(b, 'nb'))
@@ -69,18 +92,7 @@ function App() {
   return (
     <div className="app-shell">
       <a className="skip-link" href="#main">{ui("Gå til hovedinnhold")}</a>
-      <header className="site-header has-context-bar"><div className="header-inner">
-        <div className="brand-mark" aria-hidden="true">{ui("GSI")}</div>
-        <div><p className="eyebrow">{ui("Grunnskolens informasjonssystem")}</p><h1>{ui("Grunnskole")}</h1></div>
-        <section className="header-user" aria-label={ui("Brukerinformasjon (demonstrasjon)")}>
-          <p className="header-user-demo">{ui("Demonstrasjonsbruker")}</p>
-          <dl>
-            <div><dt>{ui("Navn")}</dt><dd>{ui(demoUser.name)}</dd></div>
-            <div><dt>{ui("E-post")}</dt><dd>{demoUser.email}</dd></div>
-            <div><dt>{ui("Rolle")}</dt><dd>{ui(demoUser.role)}</dd></div>
-          </dl>
-        </section>
-      </div></header>
+      <AppHeader school={demoSchool} hasStatusOverride={hasStatusOverride} onStatusChange={changeDemoStatus} onStatusReset={resetDemoStatus} />
       <section className={`school-info-bar${openSchool ? '' : ' school-info-bar--overview'}`} aria-label={ui(openSchool ? 'Valgt skole' : 'Status for filtrerte skoler')}>
         <div className="school-info-inner">
           <div className="school-info-details">

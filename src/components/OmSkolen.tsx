@@ -8,9 +8,13 @@ import { getApiLogs, getGsiSkjemaStatus, grunnskoleSave, mockSkjemaStatusId } fr
 import { QuestionCard } from './QuestionCard'
 import type { SaveStatus } from './QuestionCard'
 import { HelpDrawer } from './HelpDrawer'
+import { useDemoUser } from '../demoUserContext'
+import { canEditDemoReport } from '../domain/demoPermissions'
 
 export function OmSkolen({ school }: { school: School }) {
   useTranslation('ui')
+  const { enabled, selectedUser } = useDemoUser()
+  const canEdit = canEditDemoReport({ enabled, user: selectedUser, school })
   const id = mockSkjemaStatusId(school)
   const [form, setForm] = useState<Del2Data>(emptyDel2)
   const [loaded, setLoaded] = useState(false)
@@ -30,6 +34,8 @@ export function OmSkolen({ school }: { school: School }) {
   }, [id])
   const validation = validateDel2(form)
   function save(field: Del2Field, value: Del2Data[Del2Field]) {
+    // Also guards retries and callbacks: disabling inputs alone is insufficient.
+    if (!canEdit) return
     setForm(previous => ({ ...previous, [field]: value }))
     const version = (versions.current[field] ?? 0) + 1
     versions.current[field] = version
@@ -44,7 +50,8 @@ export function OmSkolen({ school }: { school: School }) {
   }
   return <>
     <div className="page-heading"><h2>{ui("2. Om skolen")}</h2></div>
-    {!loaded ? <p role="status">{loadError ? ui("Kunne ikke hente lokale demonstrasjonsdata. Last siden på nytt.") : ui("Henter lokale demonstrasjonsdata...")}</p> : <div className="question-list">{questions.map(question => <QuestionCard key={question.field} id={question.field} heading={gsi(question.field)} kind={question.kind} options={question.options.map(option => ({ ...option, label: gsi(`${question.field}:${String(option.value)}`) }))} value={form[question.field]} onChange={value => save(question.field, value)} validation={validation[question.field] ? ui(validation[question.field]!) : undefined} status={statuses[question.field] ?? 'idle'} onRetry={() => save(question.field, form[question.field])} onHelp={(helpId, trigger) => setHelp({ id: helpId, trigger })} {...questionReferences[question.field]} />)}</div>}
+    {!canEdit && <p role="note">{ui('DEMO: Skrivebeskyttet. Redigering krever status 1, skoletilgang og rolle 9 eller kommunesentral rolle 10.')}</p>}
+    {!loaded ? <p role="status">{loadError ? ui("Kunne ikke hente lokale demonstrasjonsdata. Last siden på nytt.") : ui("Henter lokale demonstrasjonsdata...")}</p> : <div className="question-list">{questions.map(question => <QuestionCard key={question.field} id={question.field} heading={gsi(question.field)} kind={question.kind} canEdit={canEdit} options={question.options.map(option => ({ ...option, label: gsi(`${question.field}:${String(option.value)}`) }))} value={form[question.field]} onChange={value => save(question.field, value)} validation={validation[question.field] ? ui(validation[question.field]!) : undefined} status={statuses[question.field] ?? 'idle'} onRetry={() => save(question.field, form[question.field])} onHelp={(helpId, trigger) => setHelp({ id: helpId, trigger })} {...questionReferences[question.field]} />)}</div>}
     {help && <HelpDrawer key={help.id} helpId={help.id} returnFocusTo={help.trigger} onClose={() => setHelp(null)} />}
     <details className="api-debug"><summary>{ui("API Debug")}</summary>
       <p>{ui("Valgt skole:")} {school.name} · {school.id} · {school.year}</p><p>{ui("SkjemaStatusId (mock):")} {id} {ui("· Del: 2")}</p>

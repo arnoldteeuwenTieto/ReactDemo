@@ -38,6 +38,7 @@
   --focus: var(--farge-fersken04);
   --header-background: var(--farge-stalblaa04);
   --header-accent: var(--farge-udirgronn);
+  --header-user-background: #F1E6D6;
   --subtle-background: var(--farge-stalblaa01);
   --hover-background: var(--farge-lysegraa02);
   --selected-background: var(--farge-gronn01);

@@ -1,0 +1,32 @@
+[
+  {
+    "width": 1280,
+    "height": 97.3125,
+    "pageWidth": 1280
+  },
+  {
+    "width": 1440,
+    "height": 97.3125,
+    "pageWidth": 1440
+  },
+  {
+    "width": 1920,
+    "height": 97.3125,
+    "pageWidth": 1920
+  },
+  {
+    "width": 768,
+    "height": 286.8125,
+    "pageWidth": 768
+  },
+  {
+    "width": 375,
+    "height": 332.3125,
+    "pageWidth": 375
+  },
+  {
+    "width": 320,
+    "height": 332.3125,
+    "pageWidth": 320
+  }
+]
