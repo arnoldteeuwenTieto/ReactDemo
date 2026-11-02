@@ -3,7 +3,7 @@ import { expect, test } from '@playwright/test'
 // Explicit requirements fixtures, independent of the production profile array.
 const profiles = [
   { id: 'demo-school-leader', name: 'Ada Fjord', role: 'Skoleleder', roleId: 9, unit: 'Fjordgløtt barneskole', scope: 'Fjordgløtt barneskole (2025 og 2026)' },
-  { id: 'demo-owner-central', name: 'Birk Vik', role: 'Skoleeier, kommune sentralt', roleId: 10, unit: 'Bergen kommune (demo)', scope: 'Bergen: Fjordgløtt og Vestlia' },
+  { id: 'demo-owner-central', name: 'Birk Vik', role: 'Skoleeier, kommune sentralt', roleId: 10, unit: 'Bergen kommune (demo)', scope: 'Bergen: Fjordgløtt, Vestlia og Bergen kommune sentralt' },
   { id: 'demo-owner-noncentral', name: 'Celine Lund', role: 'Skoleeier, ikke sentralt', roleId: 10, unit: 'Fjord skoleeier (demo)', scope: 'Fiktiv tilknytning til Fjordgløtt barneskole' },
   { id: 'demo-county', name: 'David Li', role: 'Statsforvalter', roleId: 11, unit: 'Statsforvalteren i Eksempelfylket (demo)', scope: 'Fiktivt utvalg: Fjordgløtt og Vestlia' },
   { id: 'demo-udir-admin', name: 'Elin Berg', role: 'Udir administrator', roleId: 12, unit: 'Udir (demo)', scope: 'Alle fiktive rapporteringer' },

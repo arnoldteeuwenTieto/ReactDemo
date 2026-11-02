@@ -1,5 +1,18 @@
 # Initial Universal Design / Universell utforming audit
 
+## Demo permission indicator — 2 November 2026
+
+The green selected-school header adds a compact text group named `Demotilganger`
+below the unchanged reporting-status badge. Available capabilities are written
+as text, not conveyed by color alone. Denied capabilities are omitted; absent
+access shows `Ingen tilgang`. These spans are not interactive controls, so they
+add no keyboard stops. Bokmål/Nynorsk labels use the existing translation source.
+The indicator inherits the existing dark-green text on the light-green header.
+Targeted checks cover header-only axe WCAG 2.1 A/AA, unchanged desktop height,
+right alignment and narrow-screen overflow. No full accessibility audit was run.
+Capabilities follow the supplied Power Apps matrix; the documented legacy editing
+guard remains unchanged. See [DEMO_USERS.md](DEMO_USERS.md) for those conflicts.
+
 ## Light section-validation reminders — 2 November 2026
 
 The menu now adds a small red numeric issue badge for visited/leave-attempted

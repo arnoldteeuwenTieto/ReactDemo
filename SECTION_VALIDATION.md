@@ -37,9 +37,13 @@ målform leaves two; answering SFO leaves one; setting C=8 leaves zero.
 
 `GrunnskoleNavigation` receives counts derived from each issue array's length.
 Only visited/leave-attempted sections have results. Positive counts render a small
-red badge; zero counts render no badge. The number is visually explicit and its
+red badge only after leaving the section. The active section never shows a badge,
+including on return visits; its accessible count description is also hidden.
+Existing visited/issue state and `activeSection` control visibility without new
+state. Zero counts render no badge. The number is visually explicit and its
 meaning is supplied to the unchanged menu button name via `aria-describedby`.
-The badge uses existing red and white tokens; the rest of the menu is unchanged.
+The badge uses existing red and white tokens. Its 11px text now has font-weight
+400 (previously 700); size, colors and the rest of the menu are unchanged.
 
 Del 1 is read-only, and sections 3–9 are placeholders without implemented required
 questions or local checks. No rules or errors are invented for those sections.
@@ -75,6 +79,13 @@ rapid navigation, zero-count hiding and the unimplemented full-mode boundary.
 
 ## Verification
 
+Badge-timing refinement: all five targeted section-validation tests passed,
+covering hidden active-section badges, leaving/revisiting, issue totals, zero
+counts and font-weight 400. Full suite, full accessibility audit, lint and build
+were intentionally skipped under the Level 2 local testing policy. A temporary
+test configuration used only the development server, avoiding a production build.
+
+Initial implementation verification (before the badge-timing refinement):
 `npm run lint` passed. `npm run test:e2e` passed all 103 tests, including the five
 new section-validation tests and 24 accessibility scenarios. The suite used a
 dedicated E2E port and also built and checked the production application. Badge

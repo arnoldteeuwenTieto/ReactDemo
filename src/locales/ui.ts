@@ -1,5 +1,12 @@
 // Static React UI text. Keys retain the Bokmål wording for easy review.
 export const nnUi: Record<string, string> = {
+  'Demotilganger': 'Demotilgangar',
+  'Lese': 'Lese',
+  'Redigere': 'Redigere',
+  'Levere': 'Levere',
+  'Godkjenne': 'Godkjenne',
+  'Avvise': 'Avvise',
+  'Ingen tilgang': 'Ingen tilgang',
   'Gå til hovedinnhold': 'Gå til hovudinnhald',
   'GSI': 'GSI',
   
@@ -37,6 +44,7 @@ export const nnUi: Record<string, string> = {
   'Enhet': 'Eining', 'Utvalg': 'Utval',
   'Fjordgløtt barneskole (2025 og 2026)': 'Fjordgløtt barneskole (2025 og 2026)',
   'Bergen: Fjordgløtt og Vestlia': 'Bergen: Fjordgløtt og Vestlia',
+  'Bergen: Fjordgløtt, Vestlia og Bergen kommune sentralt': 'Bergen: Fjordgløtt, Vestlia og Bergen kommune sentralt',
   'Fiktiv tilknytning til Fjordgløtt barneskole': 'Fiktiv tilknyting til Fjordgløtt barneskole',
   'Fiktivt utvalg: Fjordgløtt og Vestlia': 'Fiktivt utval: Fjordgløtt og Vestlia',
   'Alle fiktive rapporteringer': 'Alle fiktive rapporteringar',

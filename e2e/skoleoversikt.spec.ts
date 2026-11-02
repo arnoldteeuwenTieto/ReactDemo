@@ -1,11 +1,11 @@
 import { expect, test, type Page } from '@playwright/test'
 import { schools } from '../src/mockData'
 
-// Independently reviewed fixtures: IDs 1–12 are the 2026 reports; 13–15
+// Independently reviewed fixtures: IDs 1–12 and 16–20 are the 2026 reports; 13–15
 // belong to 2025. Do not import the UI's filtering/sorting/status helpers.
-const defaultIds = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']
+const defaultIds = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '16', '17', '18', '19', '20']
 // Norwegian alphabetical order, including Å after V in this dataset.
-const alphabeticalIds = ['2', '8', '1', '11', '5', '6', '4', '7', '3', '12', '9', '10']
+const alphabeticalIds = ['17', '2', '20', '8', '1', '11', '5', '6', '4', '16', '7', '3', '18', '12', '19', '9', '10']
 const statusLabels = [
   'Ikke påbegynt', 'Under behandling', 'Fullført av enheten',
   'Ikke godkjent av kommunen', 'Godkjent av kommunen',
@@ -89,12 +89,12 @@ test('sorts school names descending', async ({ page }) => {
 test('filters by municipality, combines search, and resets filters', async ({ page }) => {
   const municipality = page.getByRole('combobox', { name: 'Kommune', exact: true })
   await municipality.selectOption('Bergen')
-  await expectSchools(page, ['1', '9'])
+  await expectSchools(page, ['1', '9', '17'])
   await page.getByRole('searchbox').fill('Vestlia')
   await expectSchools(page, ['9'])
   await page.getByRole('searchbox').clear()
   await municipality.selectOption('Oslo')
-  await expectSchools(page, ['2', '7'])
+  await expectSchools(page, ['2', '7', '16'])
   await municipality.selectOption('')
   await expectSchools(page, defaultIds)
   await municipality.selectOption('Bergen')
@@ -106,11 +106,11 @@ test('filters by municipality, combines search, and resets filters', async ({ pa
 })
 
 test('status summary counts follow filters and zero-count badges are hidden', async ({ page }) => {
-  // Manual tally of 2026 records: three each of IDs 0, 1, 2 and 4.
-  await expectSummary(page, [3, 3, 3, 0, 3, 0, 0, 0, 0])
+  // Manual tally of 2026 records: eight status-1 reports; three each of statuses 0, 2 and 4.
+  await expectSummary(page, [3, 8, 3, 0, 3, 0, 0, 0, 0])
   await page.getByRole('combobox', { name: 'Kommune', exact: true }).selectOption('Bergen')
-  await expectSchools(page, ['1', '9'])
-  await expectSummary(page, [0, 1, 1, 0, 0, 0, 0, 0, 0])
+  await expectSchools(page, ['1', '9', '17'])
+  await expectSummary(page, [0, 2, 1, 0, 0, 0, 0, 0, 0])
   const table = page.getByRole('table')
   await expect(table.getByRole('row').filter({ has: page.getByRole('rowheader', { name: record('1').name, exact: true }) })
     .getByLabel('Skjemastatus: Under behandling', { exact: true })).toBeVisible()
@@ -128,7 +128,7 @@ test('status summary counts follow filters and zero-count badges are hidden', as
   await expectSchools(page, ['13', '14', '15'])
   await expectSummary(page, [0, 0, 1, 0, 2, 0, 0, 0, 0])
   await page.getByRole('button', { name: 'Nullstill filtre' }).click()
-  await expectSummary(page, [3, 3, 3, 0, 3, 0, 0, 0, 0])
+  await expectSummary(page, [3, 8, 3, 0, 3, 0, 0, 0, 0])
 })
 
 test('an unmatched search shows an empty state and no status badges', async ({ page }) => {
@@ -140,5 +140,5 @@ test('an unmatched search shows an empty state and no status badges', async ({ p
     .toHaveText('Ingen skoler i utvalget')
   await page.getByRole('searchbox').clear()
   await expectSchools(page, defaultIds)
-  await expectSummary(page, [3, 3, 3, 0, 3, 0, 0, 0, 0])
+  await expectSummary(page, [3, 8, 3, 0, 3, 0, 0, 0, 0])
 })

@@ -15,6 +15,7 @@ import './App.css'
 import './styles/buttons.css'
 import { OmSkolen } from './components/OmSkolen'
 import { FormStatusBadge } from './components/FormStatusBadge'
+import { DemoPermissionIndicator } from './components/DemoPermissionIndicator'
 import { Enhetsopplysninger } from './components/Enhetsopplysninger'
 import { LanguageSwitch } from './components/LanguageSwitch'
 import { CompactStatusSummary } from './components/CompactStatusSummary'
@@ -118,7 +119,10 @@ function App() {
             <p className="school-info-name">{openSchool ? openSchool.name : ui('Skoleoversikt')}</p>
             <p>{openSchool ? <>{openSchool.municipality} {ui("kommune ·")} {openSchool.year}</> : ui('Status for filtrerte skoler')}</p>
           </div>
-          {openSchool ? <FormStatusBadge statusId={openSchool.statusId} /> : <CompactStatusSummary schools={visibleSchools} />}
+          {openSchool ? <div className="school-info-status">
+            <FormStatusBadge statusId={openSchool.statusId} />
+            <DemoPermissionIndicator school={openSchool} />
+          </div> : <CompactStatusSummary schools={visibleSchools} />}
         </div>
       </section>
       <main id="main" className="page">
