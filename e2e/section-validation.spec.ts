@@ -1,0 +1,115 @@
+import { expect, test, type Page } from '@playwright/test'
+import { runValidation } from '../src/domain/sectionValidation'
+import { emptyDel2 } from '../src/domain/del2'
+
+const menu = (page: Page) => page.getByRole('navigation', { name: 'Grunnskoleseksjoner', exact: true })
+const section2 = (page: Page) => menu(page).getByRole('button', { name: 'Om skolen', exact: true })
+const badge = (page: Page) => section2(page).locator('.section-issue-badge')
+const language = (page: Page) => page.getByRole('group', { name: 'A. Skolens målform', exact: true })
+const lower = (page: Page) => page.getByRole('combobox', { name: 'B. Hva er normalt laveste trinn ved skolen?', exact: true })
+const upper = (page: Page) => page.getByRole('combobox', { name: 'C. Hva er normalt høyeste trinn ved skolen?', exact: true })
+
+async function openReport(page: Page, name = 'Fjordgløtt barneskole', year = 2026) {
+  await page.getByRole('button', { name: `Åpne skjema for ${name}, ${year}`, exact: true }).click()
+  await page.getByRole('button', { name: 'Gå til rapporteringen' }).click()
+  await expect(page.getByRole('heading', { name: '1. Enhetsopplysninger', exact: true })).toBeVisible()
+}
+
+test('unvisited sections have no badges; Next, menu, Previous and Home never block on issues', async ({ page }) => {
+  await page.goto('./')
+  await openReport(page)
+  await expect(menu(page).locator('.section-issue-badge')).toHaveCount(0)
+  await page.getByRole('button', { name: 'Neste', exact: true }).click()
+  await expect(language(page)).toBeVisible()
+  await expect(page.getByText('Velg et svar. (Demonstrasjonsvalidering)', { exact: true })).toHaveCount(4)
+  await expect(badge(page)).toHaveText('4')
+  await expect(section2(page)).toHaveAccessibleDescription('4 problemer i seksjonen')
+  await page.getByRole('button', { name: 'Neste', exact: true }).click()
+  await expect(page.getByRole('heading', { name: '3. Elever og timer', exact: true })).toBeVisible()
+  await expect(badge(page)).toHaveText('4')
+  await expect(menu(page).locator('.section-issue-badge')).toHaveCount(1)
+  await section2(page).click()
+  await page.getByRole('button', { name: 'Forrige', exact: true }).click()
+  await expect(page.getByRole('heading', { name: '1. Enhetsopplysninger', exact: true })).toBeVisible()
+  await expect(badge(page)).toHaveText('4')
+  await menu(page).getByRole('button', { name: 'Hjem', exact: true }).click()
+  await expect(page.getByRole('heading', { name: 'Oversikt over skolenes rapportering', exact: true })).toBeVisible()
+  await openReport(page)
+  await expect(badge(page)).toHaveText('4')
+})
+
+test('counts missing answers and one 2C/2B issue; equality fixes it and zero hides the badge', async ({ page }) => {
+  await page.goto('./')
+  await openReport(page)
+  await section2(page).click()
+  await expect(badge(page)).toHaveText('4')
+  await language(page).getByRole('radio', { name: 'Bokmål', exact: true }).check()
+  await lower(page).selectOption('8')
+  await upper(page).selectOption('7')
+  const error = 'Verdien i 2C må være lik eller høyere enn 2B.'
+  await expect(page.getByText(error, { exact: true })).toHaveCount(1)
+  await expect(page.getByRole('region', { name: 'C. Hva er normalt høyeste trinn ved skolen?', exact: true })).toContainText(error)
+  await expect(page.getByRole('region', { name: 'B. Hva er normalt laveste trinn ved skolen?', exact: true }).getByText(error, { exact: true })).toHaveCount(0)
+  // Only SFO is unanswered, plus one local rule failure = 2 issues.
+  await expect(badge(page)).toHaveText('2')
+  await page.getByRole('group', { name: 'D. Har skolen tilbud om SFO?', exact: true }).getByRole('radio', { name: 'Nei', exact: true }).check()
+  await expect(badge(page)).toHaveText('1')
+  await page.getByRole('button', { name: 'Neste', exact: true }).click()
+  await expect(page.getByRole('heading', { name: '3. Elever og timer', exact: true })).toBeVisible()
+  await expect(badge(page)).toHaveText('1')
+  await section2(page).click()
+  await expect(upper(page)).toHaveValue('7')
+  await upper(page).selectOption('8')
+  await expect(page.getByText(error, { exact: true })).toHaveCount(0)
+  await expect(badge(page)).toHaveCount(0)
+  await expect(section2(page)).not.toHaveAttribute('aria-describedby', /.+/)
+  await page.getByRole('button', { name: 'Neste', exact: true }).click()
+  await expect(badge(page)).toHaveCount(0)
+})
+
+test('validation is isolated by school and reporting year', async ({ page }) => {
+  await page.goto('./')
+  await openReport(page)
+  await section2(page).click()
+  await expect(language(page)).toBeVisible()
+  await language(page).getByRole('radio', { name: 'Nynorsk', exact: true }).check()
+  await expect(page.getByRole('region', { name: 'A. Skolens målform', exact: true }).getByRole('status')).toHaveText('Lagret')
+  await expect(badge(page)).toHaveText('3')
+  await menu(page).getByRole('button', { name: 'Hjem', exact: true }).click()
+  await page.getByRole('combobox', { name: 'Rapporteringsår', exact: true }).selectOption('2025')
+  await openReport(page, 'Fjordgløtt barneskole', 2025)
+  await expect(badge(page)).toHaveCount(0)
+  await section2(page).click()
+  await expect(badge(page)).toHaveText('4')
+  await expect(language(page).getByRole('radio', { name: 'Bokmål', exact: true })).toBeDisabled()
+  await menu(page).getByRole('button', { name: 'Hjem', exact: true }).click()
+  await page.getByRole('combobox', { name: 'Rapporteringsår', exact: true }).selectOption('2026')
+  await openReport(page, 'Vestlia ungdomsskole')
+  await expect(badge(page)).toHaveCount(0)
+  await section2(page).click()
+  await expect(badge(page)).toHaveText('4')
+  await menu(page).getByRole('button', { name: 'Hjem', exact: true }).click()
+  await openReport(page)
+  await expect(badge(page)).toHaveText('3')
+})
+
+test('rapidly leaving Del 2 before waiting for questions still validates without blocking navigation', async ({ page }) => {
+  await page.goto('./')
+  await openReport(page)
+  await section2(page).click()
+  await page.getByRole('button', { name: 'Neste', exact: true }).click()
+  await expect(page.getByRole('heading', { name: '3. Elever og timer', exact: true })).toBeVisible()
+  await expect(badge(page)).toHaveText('4')
+})
+
+test('light validation has stable issue identities and full mode is explicitly unimplemented', () => {
+  const invalid = { ...emptyDel2, GG_228_Laveste_Trinn_Paa_Skolen: 8, GG_229_Hoeyeste_Trinn_Paa_Skolen: 7 }
+  expect(runValidation({ mode: 'light', section: 2, data: invalid }).map(issue => issue.id)).toEqual([
+    'GG_227_Skolens_Maalform:required', 'GG_230_Tilbyr_SFO:required', 'del2-grade-range',
+  ])
+  const complete = { ...invalid, GG_227_Skolens_Maalform: 'Bokmål', GG_230_Tilbyr_SFO: false }
+  expect(runValidation({ mode: 'light', section: 2, data: { ...complete, GG_229_Hoeyeste_Trinn_Paa_Skolen: 8 } })).toEqual([])
+  expect(runValidation({ mode: 'light', section: 2, data: { ...complete, GG_229_Hoeyeste_Trinn_Paa_Skolen: 9 } })).toEqual([])
+  expect(runValidation({ mode: 'light', section: 1, data: invalid })).toEqual([])
+  expect(() => runValidation({ mode: 'full', section: 2, data: complete })).toThrow('Full controller validation is not implemented')
+})

@@ -117,6 +117,8 @@ export const nnUi: Record<string, string> = {
   'Henter lokale demonstrasjonsdata...': 'Hentar lokale demonstrasjonsdata...',
   'Velg et svar. (Demonstrasjonsvalidering)': 'Vel eit svar. (Demonstrasjonsvalidering)',
   'Laveste trinn må være mindre enn eller lik høyeste trinn. (Demonstrasjonsregel)': 'Lågaste trinn må vere mindre enn eller lik høgaste trinn. (Demonstrasjonsregel)',
+  'Verdien i 2C må være lik eller høyere enn 2B.': 'Verdien i 2C må vere lik eller høgare enn 2B.',
+  '{{count}} problemer i seksjonen': '{{count}} problem i seksjonen',
   'Språk': 'Språk', 'Demonstrasjonsoversettelser': 'Demonstrasjonsomsetjingar',
   'Skolerapportør (demo)': 'Skulerapportør (demo)', 'Eksempelbruker': 'Dømebrukar',
 }

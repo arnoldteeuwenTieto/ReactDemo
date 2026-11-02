@@ -39,6 +39,22 @@
   --header-background: var(--farge-stalblaa04);
   --header-accent: var(--farge-udirgronn);
   --header-user-background: #F1E6D6;
+  /* Shared action/navigation button states, derived from the existing palette. */
+  --button-background: var(--action);
+  --button-text: var(--surface);
+  --button-border: var(--action);
+  --button-radius: var(--size-button-border-radius);
+  --button-font-weight: 600;
+  --button-hover-background: var(--surface);
+  --button-hover-text: var(--action);
+  --button-hover-border: var(--action);
+  --button-active-background: color-mix(in srgb, var(--action) 85%, var(--text));
+  --button-active-text: var(--surface);
+  --button-active-border: var(--button-active-background);
+  --button-disabled-background: var(--farge-stalblaa);
+  --button-disabled-text: var(--text);
+  --button-disabled-border: var(--control-border);
+  --button-focus-color: var(--focus);
   --subtle-background: var(--farge-stalblaa01);
   --hover-background: var(--farge-lysegraa02);
   --selected-background: var(--farge-gronn01);

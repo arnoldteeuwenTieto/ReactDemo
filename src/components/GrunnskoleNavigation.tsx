@@ -5,12 +5,14 @@ import { grunnskoleSections } from './grunnskoleSections'
 
 interface GrunnskoleNavigationProps {
   activeSection: number
+  sectionIssueCounts: Record<number, number>
   onHome: () => void
   onSelectSection: (section: number) => void
 }
 
 export function GrunnskoleNavigation({
   activeSection,
+  sectionIssueCounts,
   onHome,
   onSelectSection,
 }: GrunnskoleNavigationProps) {
@@ -54,11 +56,14 @@ export function GrunnskoleNavigation({
                 className={`section-navigation-item${activeSection === section.number ? ' is-active' : ''}`}
                 type="button"
                 aria-current={activeSection === section.number ? 'page' : undefined}
+                aria-describedby={sectionIssueCounts[section.number] > 0 ? `section-${section.number}-issues` : undefined}
                 onClick={() => selectSection(section.number)}
               >
                 <span className="section-navigation-number" aria-hidden="true">{section.number}</span>
                 <span>{ui(section.title)}</span>
+                {sectionIssueCounts[section.number] > 0 && <span className="section-issue-badge" aria-hidden="true">{sectionIssueCounts[section.number]}</span>}
               </button>
+              {sectionIssueCounts[section.number] > 0 && <span className="visually-hidden" id={`section-${section.number}-issues`}>{ui('{{count}} problemer i seksjonen', { count: String(sectionIssueCounts[section.number]) })}</span>}
             </li>
           ))}
         </ol>

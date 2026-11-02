@@ -31,7 +31,7 @@ export function Enhetsopplysninger({ school, service = mockSchoolInformationServ
     <div className="page-heading"><h2>{ui("1. Enhetsopplysninger")}</h2></div>
     <QuestionCard id="del1-enhet" heading={gsi("GG-H82.question")} kind="content" helpId="GG-H82" onHelp={(id, trigger) => setHelp({ id, trigger })}>
       <div className="unit-panels" aria-busy={!details && !error}>
-        {!details ? <div className="unit-panel unit-panel-full" role="status">{error ? <>{ui("Kunne ikke hente enhetsopplysninger.")} <button className="text-button" type="button" onClick={() => { setError(false); setAttempt(value => value + 1) }}>{ui("Prøv igjen")}</button></> : ui("Henter enhetsopplysninger...")}</div> : <>
+        {!details ? <div className="unit-panel unit-panel-full" role="status">{error ? <>{ui("Kunne ikke hente enhetsopplysninger.")} <button className="gsi-button text-button" type="button" onClick={() => { setError(false); setAttempt(value => value + 1) }}>{ui("Prøv igjen")}</button></> : ui("Henter enhetsopplysninger...")}</div> : <>
           <section className="unit-panel unit-panel-full" aria-label={ui("Skolenavn")}><dl className="unit-details"><Detail label={ui("Skolenavn")} value={nsr?.Navn} /></dl></section>
           <section className="unit-panel" aria-labelledby="visiting-address-heading">
             <h4 id="visiting-address-heading">{ui("Besøksadresse")}</h4>

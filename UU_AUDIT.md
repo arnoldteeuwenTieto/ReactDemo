@@ -1,5 +1,89 @@
 # Initial Universal Design / Universell utforming audit
 
+## Light section-validation reminders — 2 November 2026
+
+The menu now adds a small red numeric issue badge for visited/leave-attempted
+sections with positive light-validation counts. Existing menu placement/styles
+and accessible button names are retained. An offscreen description connected by
+`aria-describedby` exposes the count and its meaning; the visual number is not the
+only indication available to assistive technology. Zero counts are not rendered.
+The badge uses existing `--form-status-red-text` and `--surface` tokens. Del 2's
+local grade rule is now reported once on C with the requested C>=B wording;
+required-answer reminders and their existing fieldset descriptions are retained.
+Navigation is soft and never blocks on these issues. Full controllers remain
+unimplemented and are not invoked. See [SECTION_VALIDATION.md](SECTION_VALIDATION.md).
+
+Verification: all 103 Playwright tests passed, including 24 accessibility
+scenarios; lint and the production build passed. Badge text contrast is 7.97:1
+for the existing red (#922d2d) and white tokens. These automated checks do not
+replace manual screen-reader and keyboard usability verification.
+
+## Shared-button styling — 1 November 2026
+
+### Targeted scope correction
+
+The blanket opt-in was narrowed after visual review. Section-menu/home/toggle
+controls, sorting headers, the language switch and icon-only help/close controls
+have their pre-update styles restored from Git commit `2cbb8be`. Real action buttons
+retain `gsi-button`; there is no global all-button action selector. Language controls
+retain a supplementary inset light focus ring, while their original active/inactive
+backgrounds and borders are restored. `Nullstill filtre` alone gains
+`filter-reset-button` with 6px vertical / 14px horizontal padding and unchanged
+placement. No business logic, state, routing or data structures were changed.
+
+Selectors restored in `src/App.css`: `.language-switch button`,
+`.language-switch button + button`, `.language-switch button[aria-pressed='true']`,
+`.language-switch button:focus-visible`, `.sort-button`, `.sort-button:hover`,
+`.sort-button:focus-visible`, `.school-table .sort-button`,
+`.section-navigation-home, .section-navigation-item`, their hover selector,
+`.section-navigation-item.is-active`, `.section-navigation-toggle` in its mobile
+media rule, `.question-help-button`, `.question-help-button:hover, .help-drawer-close:hover`,
+and `.help-drawer-close`. Added `.filter-reset-button`. Removed action-class
+selected-state and specialized sort/menu icon overrides from `src/styles/buttons.css`.
+`gsi-button` and its hover/active/disabled/focus rules remain unchanged for actions.
+
+Component class changes are limited to `GrunnskoleNavigation`, `LanguageSwitch`,
+`SchoolTable` (sort only), `QuestionCard` (help icon only), `HelpDrawer` (close icon
+only), and `SchoolFilters` (reset padding class). All corresponding handlers remain.
+
+Scope-correction verification: **98 passed (1.9m)** on dedicated port 58497,
+including the production build, all 24 axe scans, specialized-control comparisons,
+and normal/hover/pressed/disabled/keyboard-focus action-button checks. A first
+97-pass/1-failure run exposed a test setup issue: mouse/programmatic focus did not
+activate `:focus-visible`. Using actual Tab/Shift+Tab navigation corrected that
+test without changing application behavior or weakening its outline assertion.
+Fourteen restored CSS rules were compared directly against commit `2cbb8be` with
+no differences; the explicit language focus-ring enhancement is documented above.
+
+Native action/navigation buttons now share `gsi-button`, styled in
+`src/styles/buttons.css` using central `--button-*` variables in the existing theme.
+The reference remains Innledning's blue/white “Gå til rapporteringen” button.
+Normal and inverted-hover text contrast measure **5.8566:1**; pressed-state contrast
+is **6.6162:1**; muted grey-blue disabled-state contrast is **7.6405:1**. Disabled
+controls retain full opacity and have no hover/pressed effect. Foreground and
+background colors change immediately; only focus shadow transitions are permitted,
+and reduced-motion mode disables transitions entirely.
+
+Keyboard focus uses the existing dark indicator on white and a white indicator on
+blue. Shared action outlines have an inset white ring; specialized controls keep
+their own focus styling. Persistent language/current-section indicators remain
+distinct from pointer/keyboard press states through the restored component styles
+and unchanged ARIA states.
+Buttons keep native semantics, labels, handlers and component-specific dimensions;
+links, dropdowns, status badges and other non-button elements were not restyled.
+
+The first verification run had **97 passed / 1 failed**: an existing header test
+measured **1.0862:1** during the initial foreground/background color fade. This was
+a transient styling defect. The fade was removed; no rule or contrast threshold
+was disabled. See [BUTTON_STYLES.md](BUTTON_STYLES.md) for usage and token ownership.
+
+Final verification on dedicated port **55548**: `npm run test:e2e` completed with
+**98 passed (1.8m)**, including all 24 axe scans, three new button-style/state tests,
+all existing functional regressions, keyboard checks and the production build.
+The previous color-fade failure is resolved. No new definite axe findings were
+reported; existing manual-review findings remain open.
+`npm run lint` also passed after the shared-button integration.
+
 Audit date: 30 October 2026 (Europe/Oslo). Scope: this React GSI prototype, not real GSI/BOGIAPI authentication or a legal compliance assessment.
 
 ## Header container alignment refinement — 30 October 2026

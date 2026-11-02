@@ -23,8 +23,8 @@ export function Introduction({
         <div className="intro-copy"><h3>{ui("Velkommen til rapporteringen")}</h3><p>{ui("Her finner du innledningen til grunnskolerapporteringen for")} {school.year}{ui(". Kontroller at opplysningene ovenfor gjelder riktig skole og rapporteringsår.")}</p><p>{ui("Dette er en lokal prototype. Skjemaet viser kun demonstrasjonsdata og har ingen innsending eller tilkobling til Altinn.")}</p></div>
       </div>
       <footer className="introduction-actions">
-        <button className="open-button" type="button" onClick={onBack}><span aria-hidden="true">←</span> {ui("Tilbake til statusoversikten")}</button>
-        <button className="start-reporting-button" type="button" onClick={onStartReporting}>{ui("Gå til rapporteringen")} <span aria-hidden="true">→</span></button>
+        <button className="gsi-button open-button" type="button" onClick={onBack}><span aria-hidden="true">←</span> {ui("Tilbake til statusoversikten")}</button>
+        <button className="gsi-button start-reporting-button" type="button" onClick={onStartReporting}>{ui("Gå til rapporteringen")} <span aria-hidden="true">→</span></button>
       </footer>
     </section>
   </>

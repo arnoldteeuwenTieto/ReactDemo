@@ -13,7 +13,7 @@ export function SchoolFilters({ filters, municipalities, years, onChange, onRese
   useTranslation('ui')
   function update(key: keyof Filters, value: string) { onChange({ ...filters, [key]: value }) }
   return <section className="filter-panel" aria-labelledby="filter-heading">
-    <div className="filter-heading"><h3 id="filter-heading">{ui("Finn rapportering")}</h3><button className="text-button" onClick={onReset}>{ui("Nullstill filtre")}</button></div>
+    <div className="filter-heading"><h3 id="filter-heading">{ui("Finn rapportering")}</h3><button className="gsi-button text-button filter-reset-button" onClick={onReset}>{ui("Nullstill filtre")}</button></div>
     <div className="filter-grid">
       <label className="search-field">{ui("Skolenavn eller organisasjonsnummer")}<input type="search" placeholder={ui("Søk etter skole …")} value={filters.search} onChange={event => update('search', event.target.value)} /></label>
       <label>{ui("Kommune")}<select value={filters.municipality} onChange={event => update('municipality', event.target.value)}><option value="">{ui("Alle kommuner")}</option>{municipalities.map(municipality => <option key={municipality}>{municipality}</option>)}</select></label>

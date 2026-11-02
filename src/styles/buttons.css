@@ -1,0 +1,45 @@
+/* Opt-in styling for genuine action buttons only. Menu items, table sorting,
+   language toggles and icon-only controls retain independent component styles. */
+.gsi-button {
+  background: var(--button-background);
+  color: var(--button-text);
+  border: 1px solid var(--button-border);
+  border-radius: var(--button-radius);
+  font-weight: var(--button-font-weight);
+  text-decoration: none;
+  cursor: pointer;
+}
+.gsi-button:enabled:hover {
+  background: var(--button-hover-background);
+  color: var(--button-hover-text);
+  border-color: var(--button-hover-border);
+}
+.gsi-button:enabled:active {
+  background: var(--button-active-background);
+  color: var(--button-active-text);
+  border-color: var(--button-active-border);
+}
+.gsi-button:disabled {
+  background: var(--button-disabled-background);
+  color: var(--button-disabled-text);
+  border-color: var(--button-disabled-border);
+  opacity: 1;
+  cursor: not-allowed;
+  transition: none;
+}
+.gsi-button:focus-visible {
+  outline: 3px solid var(--button-focus-color);
+  outline-offset: 3px;
+  /* The inner light ring also remains visible where table/toggle outlines are inset. */
+  box-shadow: inset 0 0 0 2px var(--surface);
+}
+/* These controls sit on blue: retain a contrasting white keyboard outline. */
+.header-demo, .question-header, .help-drawer { --button-focus-color: var(--surface); }
+@media (prefers-reduced-motion: no-preference) {
+  /* Reversing foreground/background through a fade creates low-contrast frames.
+     Switch colors immediately; animate only the supplementary focus shadow. */
+  .gsi-button:enabled { transition: box-shadow 120ms ease; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gsi-button { transition: none; }
+}

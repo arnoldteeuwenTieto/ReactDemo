@@ -32,7 +32,7 @@ export function DemoUserHeader({ school, hasStatusOverride, onStatusChange, onSt
             {formStatuses.map(status => <option key={status.id} value={status.id}>{status.id} {ui(status.label)}</option>)}
           </select>
         </label>
-        <button className="text-button demo-status-reset" type="button" disabled={!hasStatusOverride} onClick={onStatusReset}>{ui('Tilbakestill status')}</button>
+        <button className="gsi-button text-button demo-status-reset" type="button" disabled={!hasStatusOverride} onClick={onStatusReset}>{ui('Tilbakestill status')}</button>
         {hasStatusOverride && <span id="demo-status-override" className="visually-hidden" role="status">{ui('Midlertidig DEMO-status')}</span>}
       </div>
       <details className="demo-user-details">

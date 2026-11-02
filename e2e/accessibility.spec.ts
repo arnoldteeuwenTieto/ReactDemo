@@ -79,7 +79,7 @@ test.describe('accessibility axe audit', () => {
     await openScreen(page, 'del2')
     await page.getByRole('combobox', { name: 'B. Hva er normalt laveste trinn ved skolen?', exact: true }).selectOption('8')
     await page.getByRole('combobox', { name: 'C. Hva er normalt høyeste trinn ved skolen?', exact: true }).selectOption('7')
-    await expect(page.getByText('Laveste trinn må være mindre enn eller lik høyeste trinn. (Demonstrasjonsregel)', { exact: true })).toHaveCount(2)
+    await expect(page.getByText('Verdien i 2C må være lik eller høyere enn 2B.', { exact: true })).toHaveCount(1)
     await audit(page, info)
   })
   test('Del 2 plain-text help dialog', async ({ page }, info) => {

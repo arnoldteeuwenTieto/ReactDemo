@@ -5,6 +5,7 @@ import { GrunnskoleNavigation } from './GrunnskoleNavigation'
 
 interface GrunnskoleLayoutProps {
   activeSection: number
+  sectionIssueCounts: Record<number, number>
   onHome: () => void
   onSelectSection: (section: number) => void
   children: ReactNode
@@ -16,6 +17,7 @@ interface GrunnskoleLayoutProps {
 
 export function GrunnskoleLayout({
   activeSection,
+  sectionIssueCounts,
   onHome,
   onSelectSection,
   children,
@@ -29,15 +31,16 @@ export function GrunnskoleLayout({
     <div className="section-layout">
       <GrunnskoleNavigation
         activeSection={activeSection}
+        sectionIssueCounts={sectionIssueCounts}
         onHome={onHome}
         onSelectSection={onSelectSection}
       />
       <div className="section-content">
         <div className="section-body">{children}</div>
         <nav className="section-pagination" aria-label={ui("Forrige og neste skjerm")}>
-          <button className="open-button" type="button" onClick={onPrevious} disabled={!canGoPrevious}>
+          <button className="gsi-button open-button" type="button" onClick={onPrevious} disabled={!canGoPrevious}>
             <span aria-hidden="true">←</span> {ui("Forrige")} </button>
-          <button className="open-button" type="button" onClick={onNext} disabled={!canGoNext}>{ui("Neste")} <span aria-hidden="true">→</span>
+          <button className="gsi-button open-button" type="button" onClick={onNext} disabled={!canGoNext}>{ui("Neste")} <span aria-hidden="true">→</span>
           </button>
         </nav>
       </div>

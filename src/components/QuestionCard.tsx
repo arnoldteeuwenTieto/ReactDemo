@@ -55,7 +55,7 @@ function InputQuestionCard({ id, heading, kind, options, value, onChange, canEdi
       {validation && <p className="question-validation" id={`${id}-validation`}>{validation}</p>}
       <p className="question-reference">{ui("Valideringsreferanser:")} {validationIds.join(', ')}{ui(". Offisielle formler er ikke implementert.")}</p>
     </fieldset>
-    <div className={`question-save question-save-${status}`} role="status">{status === 'saving' ? ui("Lagrer...") : status === 'saved' ? ui("Lagret") : status === 'error' ? <>{ui("Simulert lagringsfeil. Svaret er ikke lagret.")} <button className="text-button" type="button" onClick={onRetry} disabled={!canEdit}>{ui("Prøv igjen")}</button></> : ui("Ikke endret")}</div>
+    <div className={`question-save question-save-${status}`} role="status">{status === 'saving' ? ui("Lagrer...") : status === 'saved' ? ui("Lagret") : status === 'error' ? <>{ui("Simulert lagringsfeil. Svaret er ikke lagret.")} <button className="gsi-button text-button" type="button" onClick={onRetry} disabled={!canEdit}>{ui("Prøv igjen")}</button></> : ui("Ikke endret")}</div>
     </div>
   </QuestionCardFrame>
 }

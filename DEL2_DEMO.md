@@ -30,8 +30,12 @@ The status is display-only and independent of per-question save indicators.
 - `src/components/HelpTextContent.tsx`: plain text with preserved line breaks,
   or DOMPurify-sanitized HTML with an explicit tag/attribute allowlist.
 - `src/domain/del2.ts`: typed fields, documented mock language values (the option
-  labels themselves), demo grades 1–10, required/grade-consistency validation,
+  labels themselves), demo grades 1–10,
   supplied source help/validation IDs, and reusable dependent-clear rules.
+- `src/domain/sectionValidation.ts` and `src/useSectionValidation.ts`: light
+  required/local checks, one C>=B demo issue, and per-report visited-section badge
+  state. Navigation stays non-blocking. Full controller validation is unimplemented.
+  See [SECTION_VALIDATION.md](SECTION_VALIDATION.md).
 - `src/services/grunnskoleApi.ts`: asynchronous `getGsiSkjemaStatus` and
   `grunnskoleSave(mockId, 2, payload)`, in-memory `store`, per-school/year queues,
   and debug request/response logs. Sections are nested under school/year keys.

@@ -20,14 +20,6 @@ export const questions: { field: Del2Field; heading: string; kind: 'radio' | 'se
   { field: 'GG_229_Hoeyeste_Trinn_Paa_Skolen', heading: 'C. Hva er normalt høyeste trinn ved skolen?', kind: 'select', options: gradeOptions },
   { field: 'GG_230_Tilbyr_SFO', heading: 'D. Har skolen tilbud om SFO?', kind: 'radio', options: [{ label: 'Ja', value: true }, { label: 'Nei', value: false }] },
 ]
-export function validateDel2(data: Del2Data): Partial<Record<Del2Field, string>> {
-  const errors: Partial<Record<Del2Field, string>> = {}
-  for (const { field } of questions) if (data[field] === null) errors[field] = 'Velg et svar. (Demonstrasjonsvalidering)'
-  if (data.GG_228_Laveste_Trinn_Paa_Skolen !== null && data.GG_229_Hoeyeste_Trinn_Paa_Skolen !== null && data.GG_228_Laveste_Trinn_Paa_Skolen > data.GG_229_Hoeyeste_Trinn_Paa_Skolen) {
-    errors.GG_228_Laveste_Trinn_Paa_Skolen = errors.GG_229_Hoeyeste_Trinn_Paa_Skolen = 'Laveste trinn må være mindre enn eller lik høyeste trinn. (Demonstrasjonsregel)'
-  }
-  return errors
-}
 // IDs reference the source; their official formulas/content are not available.
 export const questionReferences: Record<Del2Field, { helpId: string; validationIds: string[] }> = {
   GG_227_Skolens_Maalform: { helpId: 'GG-H83', validationIds: ['GG-F2'] },

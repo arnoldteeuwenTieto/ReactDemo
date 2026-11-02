@@ -63,7 +63,7 @@ export function SchoolTable({ schools, selectedId, onSelect, onOpen }: SchoolTab
       <tbody>{sortedSchools.map(school => <tr key={school.id} className={selectedId === school.id ? 'selected-row' : ''} onClick={() => onSelect(school.id)}>
         <td><label className="school-row-selector"><input type="radio" name="selected-school" checked={selectedId === school.id} onChange={() => onSelect(school.id)} aria-label={ui("Velg {{school}}, {{year}}", { school: school.name, year: school.year })} /></label></td>
         <th scope="row">{school.name}</th><td className="organization-number" data-label={ui('Organisasjonsnr.')}>{school.organizationNumber}</td><td data-label={ui('Kommune')}>{school.municipality}</td><td data-label={ui('År')}>{school.year}</td><td data-label={ui('Status')}><FormStatusBadge statusId={school.statusId} /></td>
-        <td><button className="open-button" aria-label={ui("Åpne skjema for {{school}}, {{year}}", { school: school.name, year: school.year })} onClick={event => { event.stopPropagation(); onOpen(school) }}>{ui("Åpne skjema")} <span aria-hidden="true">→</span></button></td>
+        <td><button className="gsi-button open-button" aria-label={ui("Åpne skjema for {{school}}, {{year}}", { school: school.name, year: school.year })} onClick={event => { event.stopPropagation(); onOpen(school) }}>{ui("Åpne skjema")} <span aria-hidden="true">→</span></button></td>
       </tr>)}</tbody>
     </table>
     {schools.length === 0 && <div className="empty-state"><h4>{ui("Ingen skoler funnet")}</h4><p>{ui("Prøv et annet søk eller nullstill filtrene.")}</p></div>}

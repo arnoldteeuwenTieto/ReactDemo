@@ -66,7 +66,7 @@ export function HelpDrawer({ helpId, onClose, returnFocusTo, service = mockHelpT
         <h2 id={titleId}>{entry?.overskrift ?? ui("Hjelpetekst")}</h2>
         {error ? <p role="status">{ui("Hjelpeteksten kunne ikke hentes. Lukk panelet og prøv igjen.")}</p> : entry ? <HelpTextContent tekst={entry.tekst} format={entry.format} /> : <p role="status">{ui("Henter hjelpetekst...")}</p>}
       </div>
-      <footer className="help-drawer-footer"><button type="button" onClick={onClose}>{ui("Lukk")}</button></footer>
+      <footer className="help-drawer-footer"><button className="gsi-button" type="button" onClick={onClose}>{ui("Lukk")}</button></footer>
     </div>
   </dialog>, document.body)
 }

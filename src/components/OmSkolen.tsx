@@ -2,7 +2,8 @@ import { useTranslation } from 'react-i18next'
 import { ui, gsi } from '../i18n'
 import { useEffect, useRef, useState } from 'react'
 import type { School } from '../mockData'
-import { emptyDel2, questions, questionReferences, validateDel2 } from '../domain/del2'
+import { emptyDel2, questions, questionReferences } from '../domain/del2'
+import { runValidation } from '../domain/sectionValidation'
 import type { Del2Data, Del2Field } from '../domain/del2'
 import { getApiLogs, getGsiSkjemaStatus, grunnskoleSave, mockSkjemaStatusId } from '../services/grunnskoleApi'
 import { QuestionCard } from './QuestionCard'
@@ -11,7 +12,7 @@ import { HelpDrawer } from './HelpDrawer'
 import { useDemoUser } from '../demoUserContext'
 import { canEditDemoReport } from '../domain/demoPermissions'
 
-export function OmSkolen({ school }: { school: School }) {
+export function OmSkolen({ school, onDataChange }: { school: School; onDataChange: (data: Del2Data) => void }) {
   useTranslation('ui')
   const { enabled, selectedUser } = useDemoUser()
   const canEdit = canEditDemoReport({ enabled, user: selectedUser, school })
@@ -28,14 +29,15 @@ export function OmSkolen({ school }: { school: School }) {
     active.current = true
     let cancelled = false
     getGsiSkjemaStatus(id).then(result => {
-      if (!cancelled) { setForm(result.del2); setLoaded(true) }
+      if (!cancelled) { setForm(result.del2); setLoaded(true); onDataChange(result.del2) }
     }).catch(() => { if (!cancelled) setLoadError(true) })
     return () => { cancelled = true; active.current = false }
-  }, [id])
-  const validation = validateDel2(form)
+  }, [id, onDataChange])
+  const validation = Object.fromEntries(runValidation({ mode: 'light', section: 2, data: form }).map(issue => [issue.field, issue.message]))
   function save(field: Del2Field, value: Del2Data[Del2Field]) {
     // Also guards retries and callbacks: disabling inputs alone is insufficient.
     if (!canEdit) return
+    onDataChange({ ...form, [field]: value })
     setForm(previous => ({ ...previous, [field]: value }))
     const version = (versions.current[field] ?? 0) + 1
     versions.current[field] = version

@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { ui } from './i18n'
-import { useMemo, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import { schools } from './mockData'
 import type { School } from './mockData'
 import { SchoolFilters } from './components/SchoolFilters'
@@ -12,6 +12,7 @@ import { AppHeader } from './components/AppHeader'
 import { GrunnskoleLayout } from './components/GrunnskoleLayout'
 import { GrunnskolePlaceholderScreen } from './components/GrunnskolePlaceholderScreen'
 import './App.css'
+import './styles/buttons.css'
 import { OmSkolen } from './components/OmSkolen'
 import { FormStatusBadge } from './components/FormStatusBadge'
 import { Enhetsopplysninger } from './components/Enhetsopplysninger'
@@ -21,6 +22,9 @@ import { AppFooter } from './components/AppFooter'
 import { useDemoUser } from './demoUserContext'
 import { formStatuses } from './domain/formStatus'
 import type { FormStatusId } from './domain/formStatus'
+import type { Del2Data } from './domain/del2'
+import { useSectionValidation } from './useSectionValidation'
+import { mockSkjemaStatusId } from './services/grunnskoleApi'
 
 const initialFilters: Filters = { search: '', municipality: '', year: '2026', statusId: '' }
 const reportKey = (school: School) => `${school.id}:${school.year}`
@@ -38,6 +42,13 @@ function App() {
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const [openReport, setOpenReport] = useState<{ id: string; year: number } | null>(null)
   const openSchool = schoolReports.find(school => school.id === openReport?.id && school.year === openReport.year) ?? null
+  const { reports: validationReports, updateDel2, visitSection, leaveSection } = useSectionValidation()
+  const validationKey = openSchool ? `${mockSkjemaStatusId(openSchool)}` : null
+  const onDel2DataChange = useCallback((data: Del2Data) => {
+    if (validationKey) updateDel2(validationKey, data)
+  }, [validationKey, updateDel2])
+  const sectionIssueCounts = Object.fromEntries(Object.entries(validationKey ? validationReports[validationKey]?.issues ?? {} : {})
+    .map(([section, issues]) => [section, issues.length]))
   const demoSchool = openSchool ?? schoolReports.find(school => school.id === selectedId) ?? null
   const hasStatusOverride = demoEnabled && !!demoSchool && statusOverrides[reportKey(demoSchool)] !== undefined
   function changeDemoStatus(statusId: number) {
@@ -71,18 +82,26 @@ function App() {
     window.scrollTo(0, 0)
   }
   function goHome() {
+    if (validationKey && !showIntroduction) leaveSection(validationKey, currentSection)
     setOpenReport(null)
     setCurrentSection(1)
     setShowIntroduction(true)
   }
   function selectSection(section: number) {
+    if (validationKey) {
+      if (!showIntroduction && section !== currentSection) leaveSection(validationKey, currentSection)
+      visitSection(validationKey, section)
+    }
     setCurrentSection(section)
     setShowIntroduction(false)
   }
   const lastSection = grunnskoleSections[grunnskoleSections.length - 1].number
   function goPrevious() {
     if (showIntroduction) return
-    if (currentSection === 1) setShowIntroduction(true)
+    if (currentSection === 1) {
+      if (validationKey) leaveSection(validationKey, currentSection)
+      setShowIntroduction(true)
+    }
     else selectSection(currentSection - 1)
   }
   function goNext() {
@@ -109,6 +128,7 @@ function App() {
           onStartReporting={() => selectSection(1)}
         /> : <GrunnskoleLayout
           activeSection={currentSection}
+          sectionIssueCounts={sectionIssueCounts}
           onHome={goHome}
           onSelectSection={selectSection}
           onPrevious={goPrevious}
@@ -116,7 +136,7 @@ function App() {
           canGoPrevious={!showIntroduction}
           canGoNext={showIntroduction || currentSection < lastSection}
         >
-          {currentSection === 1 ? <Enhetsopplysninger key={`${openSchool.id}:${openSchool.year}`} school={openSchool} /> : currentSection === 2 ? <OmSkolen key={`${openSchool.id}:${openSchool.year}`} school={openSchool} /> : <GrunnskolePlaceholderScreen section={currentSection} school={openSchool} />}
+          {currentSection === 1 ? <Enhetsopplysninger key={`${openSchool.id}:${openSchool.year}`} school={openSchool} /> : currentSection === 2 ? <OmSkolen key={`${openSchool.id}:${openSchool.year}`} school={openSchool} onDataChange={onDel2DataChange} /> : <GrunnskolePlaceholderScreen section={currentSection} school={openSchool} />}
         </GrunnskoleLayout> : <>
           <div className="page-heading"><div><h2>{ui("Oversikt over skolenes rapportering")}</h2><p>{ui("Søk etter en skole og følg status for innrapporteringen.")}</p></div><LanguageSwitch /></div>
           <SchoolFilters filters={filters} municipalities={municipalities} years={years} onChange={setFilters} onReset={() => setFilters(initialFilters)} />
