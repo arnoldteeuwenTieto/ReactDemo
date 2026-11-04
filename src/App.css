@@ -7,6 +7,49 @@
 .school-info-details { flex: 1 1 240px; min-width: 0; }
 .school-info-name { font-size: 20px; font-weight: 600; }
 .school-info-details > p:last-child { font-size: 14px; }
+.imported-question { margin-block: 24px; }
+.imported-section-content { display: flow-root; background: var(--surface); border-radius: 0 0 4px 4px; }
+.imported-grid-scroll { position: relative; max-width: 100%; overflow-x: auto; contain: inline-size; }
+.imported-grid { width: 100%; min-width: calc(220px + var(--numeric-columns, 3) * 84px); table-layout: fixed; border-collapse: collapse; font-size: 13px; white-space: normal; }
+.imported-grid--genders { min-width: 540px; }
+.imported-grid--single { min-width: 320px; }
+
+
+
+.imported-choice { width: 100%; min-width: 0; height: 30px; font: inherit; }
+.imported-competence-description { margin: 10px 8px; }
+.imported-grid--competence :is(th, td) { padding-inline: 4px; }
+.imported-grid--competence thead th { text-align: center; }
+.imported-grid--competence .imported-number { padding-inline: 4px; }
+.imported-grid th, .imported-grid td { position: relative; height: 40px; padding: 4px 8px; border: 1px solid var(--farge-spm-kantlinje); vertical-align: middle; overflow-wrap: anywhere; }
+.imported-grid th { background: var(--farge-lysegraa02); text-align: left; }
+.imported-grid tbody th, .imported-grid td { background: var(--surface); font-weight: 400; }
+.imported-grid .imported-question-number { padding-inline: 2px; text-align: center; }
+.imported-number { width: 100%; max-width: 100%; height: 30px; border: 1px solid var(--control-border); border-radius: 3px; padding: 3px 6px; font: inherit; text-align: right; background: var(--surface); color: var(--text); }
+.imported-grid .imported-cell--calculated, .imported-grid .imported-total-row :is(td, th) { background: var(--field-derived-background); }
+.imported-cell-error { position: absolute; top: 100%; right: 0; z-index: 2; width: max-content; max-width: 240px; margin: 0; padding: 6px 8px; border: 1px solid currentColor; background: var(--surface); font-size: 12px; line-height: 1.4; }
+.imported-question > .imported-section-content > :is(dl, button, .imported-remark) { margin: 12px; }
+.imported-question dd { margin: 0 0 8px; padding: 4px 8px; background: var(--farge-lysegraa02); }
+.imported-actions { display: flex; flex-wrap: wrap; align-items: end; gap: 8px; margin-block: 10px; }
+.imported-remark { display: flex; flex-direction: column; gap: 4px; margin-block: 8px; }
+.imported-grid.imported-grid--financing { min-width: 332px; }
+.imported-grid.imported-grid--financing select { width: 100%; max-width: none; min-height: 30px; height: 30px; padding: 3px 6px; font: inherit; }
+.imported-grid--financing .municipality-action-cell { padding-inline: 4px; text-align: center; }
+.municipality-remove-button { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; padding: 0; border: 1px solid transparent; border-radius: 4px; background: transparent; color: var(--text-muted); font-size: 22px; line-height: 1; }
+.municipality-remove-button:not(:disabled):is(:hover, :focus-visible) { color: var(--form-status-red-text); background: var(--form-status-red-background); border-color: var(--form-status-red-text); outline-color: var(--form-status-red-text); }
+.municipality-remove-button:disabled { opacity: .45; cursor: not-allowed; }
+.imported-remark textarea, .imported-findings textarea { width: 100%; min-height: 80px; }
+.imported-question .imported-remark { width: auto; }
+.imported-findings { display: grid; gap: 12px; margin-block: 16px; }
+:root { --field-business-background: var(--farge-kontrollfill); --field-business-border: #D9A58F; --field-error-border: var(--form-status-red-text); }
+.gsi-field { background: var(--surface); border-color: var(--control-border); }
+
+.gsi-field[data-field-state='business-disabled'] { background: var(--field-business-background); border: 1px solid var(--field-business-border); opacity: 1; color: var(--text); }
+.gsi-field[aria-invalid='true'] { border-color: var(--field-error-border); }
+.field-control { position: relative; display: block; min-width: 0; }
+.field-control--locked .gsi-field { padding-right: 30px; }
+.field-rule-info { position: absolute; top: 50%; right: 2px; transform: translateY(-50%); display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; padding: 0; border: 0; background: transparent; color: var(--farge-fersken04); }
+.field-rule-tooltip { position: fixed; z-index: 1100; width: 280px; max-width: calc(100vw - 16px); padding: 10px; background: var(--surface); color: var(--text); border: 1px solid var(--field-business-border); border-radius: 4px; box-shadow: 0 3px 10px rgb(0 0 0 / 15%); font-size: 13px; line-height: 1.4; pointer-events: none; }
 .school-info-status { display: flex; flex-direction: column; align-items: flex-end; gap: 3px; max-width: 100%; }
 .demo-permission-indicator { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 3px; }
 .demo-permission-badge { border: 1px solid currentColor; border-radius: 3px; padding: 1px 5px; font-size: 11px; font-weight: 400; line-height: 1.2; }
@@ -363,3 +406,22 @@ dd { margin: 0; font-weight: 600; }
   .question-answer { padding: 16px 14px; }
   .question-card select { max-width: none; }
 }
+
+.imported-question .imported-table-heading { margin: 0; padding: 8px; }
+
+:root { --field-empty-background: #FFFFFF; --field-entered-background: #F1F3F5; --field-derived-background: #D9DDE3; }
+.section-body { min-width: 0; width: 100%; }
+.section-body .question-card { width: 100%; }
+.gsi-field[data-field-origin='user'] { background: var(--field-empty-background); }
+.gsi-field[data-field-origin='user'][data-field-filled='true'] { background: var(--field-entered-background); }
+.gsi-field:is([data-field-origin='calculated'], [data-field-origin='backend']), .gsi-field-value[data-field-origin='backend'] { background: var(--field-derived-background); }
+.gsi-field[data-field-state='business-disabled'][data-field-origin] { background: var(--field-business-background); border-color: var(--field-business-border); }
+.gsi-field[data-field-origin][aria-invalid='true'] { border-color: var(--field-error-border); }
+
+.field-control--locked { display: grid; grid-template-columns: minmax(0, 1fr) 26px; align-items: center; }
+.field-control--locked .gsi-field { padding-right: 6px; }
+.field-control--locked .field-rule-info { position: static; transform: none; grid-column: 2; }
+
+.imported-grid.imported-grid--competence { min-width: calc(220px + var(--numeric-columns, 7) * 72px); }
+.imported-grid td, .imported-grid thead th { padding-inline: 4px; }
+.imported-grid.imported-grid--competence :is(th, td) { padding-inline: 4px; }

@@ -1,0 +1,3154 @@
+{
+  "3": {
+    "groups": [
+      {
+        "id": "A",
+        "title": "A. Elever per trinn",
+        "reference": "GG_H8_U121"
+      },
+      {
+        "id": "B",
+        "title": "B. Undervisningstimer",
+        "reference": "GG_H9"
+      },
+      {
+        "id": "C",
+        "title": "C. Hvor mange av elevene er asylsøkere",
+        "reference": "GG_H10"
+      },
+      {
+        "id": "D",
+        "title": "D. Elever med tegnspråk og punktskriftopplæring",
+        "reference": "GG_H11_U14"
+      },
+      {
+        "id": "E",
+        "title": "E. Hvor mange av elevene oppgitt i 3A blir finansiert av en annen kommune?",
+        "reference": "GG_H12"
+      },
+      {
+        "id": "F",
+        "title": "F. Hjemmeundervisning",
+        "reference": "GG_H13_U16"
+      },
+      {
+        "id": "G",
+        "title": "G. Elever som ikke har møtt ved skolestart",
+        "reference": "GG_H60_U17"
+      }
+    ],
+    "fields": [
+      {
+        "key": "GG_40_Timetallsfordeling_Trinn1",
+        "control": "TextInput2_64",
+        "group": "B",
+        "questionNumber": "1",
+        "label": "Timetallsfordeling Trinn1",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord3.GG_40_Timetallsfordeling_Trinn1"
+      },
+      {
+        "key": "GG_41_Timetallsfordeling_Trinn2",
+        "control": "TextInput3_120",
+        "group": "B",
+        "questionNumber": "2",
+        "label": "Timetallsfordeling Trinn2",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord3.GG_41_Timetallsfordeling_Trinn2"
+      },
+      {
+        "key": "GG_42_Timetallsfordeling_Trinn3",
+        "control": "TextInput3_125",
+        "group": "B",
+        "questionNumber": "3",
+        "label": "Timetallsfordeling Trinn3",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord3.GG_42_Timetallsfordeling_Trinn3"
+      },
+      {
+        "key": "GG_43_Timetallsfordeling_Trinn4",
+        "control": "TextInput3_133",
+        "group": "B",
+        "questionNumber": "4",
+        "label": "Timetallsfordeling Trinn4",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord3.GG_43_Timetallsfordeling_Trinn4"
+      },
+      {
+        "key": "GG_44_Timetallsfordeling_Trinn5",
+        "control": "TextInput3_139",
+        "group": "B",
+        "questionNumber": "5",
+        "label": "Timetallsfordeling Trinn5",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord3.GG_44_Timetallsfordeling_Trinn5"
+      },
+      {
+        "key": "GG_45_Timetallsfordeling_Trinn6",
+        "control": "TextInput3_145",
+        "group": "B",
+        "questionNumber": "6",
+        "label": "Timetallsfordeling Trinn6",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord3.GG_45_Timetallsfordeling_Trinn6"
+      },
+      {
+        "key": "GG_46_Timetallsfordeling_Trinn7",
+        "control": "TextInput3_149",
+        "group": "B",
+        "questionNumber": "7",
+        "label": "Timetallsfordeling Trinn7",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord3.GG_46_Timetallsfordeling_Trinn7"
+      },
+      {
+        "key": "GG_47_Timetallsfordeling_Sum1_7",
+        "control": "TextInput3_170",
+        "group": "B",
+        "questionNumber": "8",
+        "label": "Timetallsfordeling Sum1 7",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_40_Timetallsfordeling_Trinn1",
+            "sign": 1
+          },
+          {
+            "field": "GG_41_Timetallsfordeling_Trinn2",
+            "sign": 1
+          },
+          {
+            "field": "GG_42_Timetallsfordeling_Trinn3",
+            "sign": 1
+          },
+          {
+            "field": "GG_43_Timetallsfordeling_Trinn4",
+            "sign": 1
+          },
+          {
+            "field": "GG_44_Timetallsfordeling_Trinn5",
+            "sign": 1
+          },
+          {
+            "field": "GG_45_Timetallsfordeling_Trinn6",
+            "sign": 1
+          },
+          {
+            "field": "GG_46_Timetallsfordeling_Trinn7",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord3.GG_47_Timetallsfordeling_Sum1_7\n//Sum(TextInput2_64.Text+TextInput3_120.Text+TextInput3_125.Text+TextInput3_133.Text+TextInput3_139.Text+TextInput3_145.Text+TextInput3_149.Text)"
+      },
+      {
+        "key": "GG_48_Timetallsfordeling_Trinn8",
+        "control": "TextInput3_172",
+        "group": "B",
+        "questionNumber": "9",
+        "label": "Timetallsfordeling Trinn8",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord3.GG_48_Timetallsfordeling_Trinn8"
+      },
+      {
+        "key": "GG_49_Timetallsfordeling_Trinn9",
+        "control": "TextInput3_176",
+        "group": "B",
+        "questionNumber": "10",
+        "label": "Timetallsfordeling Trinn9",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord3.GG_49_Timetallsfordeling_Trinn9"
+      },
+      {
+        "key": "GG_50_Timetallsfordeling_Trinn10",
+        "control": "TextInput3_178",
+        "group": "B",
+        "questionNumber": "11",
+        "label": "Timetallsfordeling Trinn10",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord3.GG_50_Timetallsfordeling_Trinn10"
+      },
+      {
+        "key": "GG_51_Timetallsfordeling_Sum8_10",
+        "control": "TextInput3_168",
+        "group": "B",
+        "questionNumber": "12",
+        "label": "Timetallsfordeling Sum8 10",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_48_Timetallsfordeling_Trinn8",
+            "sign": 1
+          },
+          {
+            "field": "GG_49_Timetallsfordeling_Trinn9",
+            "sign": 1
+          },
+          {
+            "field": "GG_50_Timetallsfordeling_Trinn10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord3.GG_51_Timetallsfordeling_Sum8_10\n//Sum(TextInput3_172.Text+TextInput3_176.Text+TextInput3_178.Text)"
+      },
+      {
+        "key": "GG_52_Timetallsfordeling_Sum1_10",
+        "control": "TextInput3_180",
+        "group": "B",
+        "questionNumber": "13",
+        "label": "Timetallsfordeling Sum1 10",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_47_Timetallsfordeling_Sum1_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_51_Timetallsfordeling_Sum8_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord3.GG_52_Timetallsfordeling_Sum1_10\n//Sum(TextInput3_170.Text+TextInput3_168.Text)"
+      },
+      {
+        "key": "GG_53_Antall_Asylsoekere_Trinn1",
+        "control": "TextInput2_71",
+        "group": "C",
+        "questionNumber": "1",
+        "label": "Antall Asylsøkere Trinn1",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord3.GG_53_Antall_Asylsoekere_Trinn1"
+      },
+      {
+        "key": "GG_54_Antall_Asylsoekere_Trinn2",
+        "control": "TextInput3_122",
+        "group": "C",
+        "questionNumber": "2",
+        "label": "Antall Asylsøkere Trinn2",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord3.GG_54_Antall_Asylsoekere_Trinn2"
+      },
+      {
+        "key": "GG_55_Antall_Asylsoekere_Trinn3",
+        "control": "TextInput3_128",
+        "group": "C",
+        "questionNumber": "3",
+        "label": "Antall Asylsøkere Trinn3",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord3.GG_55_Antall_Asylsoekere_Trinn3"
+      },
+      {
+        "key": "GG_56_Antall_Asylsoekere_Trinn4",
+        "control": "TextInput3_136",
+        "group": "C",
+        "questionNumber": "4",
+        "label": "Antall Asylsøkere Trinn4",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord3.GG_56_Antall_Asylsoekere_Trinn4"
+      },
+      {
+        "key": "GG_57_Antall_Asylsoekere_Trinn5",
+        "control": "TextInput3_142",
+        "group": "C",
+        "questionNumber": "5",
+        "label": "Antall Asylsøkere Trinn5",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord3.GG_57_Antall_Asylsoekere_Trinn5"
+      },
+      {
+        "key": "GG_58_Antall_Asylsoekere_Trinn6",
+        "control": "TextInput3_148",
+        "group": "C",
+        "questionNumber": "6",
+        "label": "Antall Asylsøkere Trinn6",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord3.GG_58_Antall_Asylsoekere_Trinn6"
+      },
+      {
+        "key": "GG_59_Antall_Asylsoekere_Trinn7",
+        "control": "TextInput3_150",
+        "group": "C",
+        "questionNumber": "7",
+        "label": "Antall Asylsøkere Trinn7",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord3.GG_59_Antall_Asylsoekere_Trinn7"
+      },
+      {
+        "key": "GG_60_Antall_Asylsoekere_Trinn8",
+        "control": "TextInput3_173",
+        "group": "C",
+        "questionNumber": "8",
+        "label": "Antall Asylsøkere Trinn8",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord3.GG_60_Antall_Asylsoekere_Trinn8"
+      },
+      {
+        "key": "GG_61_Antall_Asylsoekere_Trinn9",
+        "control": "TextInput3_177",
+        "group": "C",
+        "questionNumber": "9",
+        "label": "Antall Asylsøkere Trinn9",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord3.GG_61_Antall_Asylsoekere_Trinn9"
+      },
+      {
+        "key": "GG_62_Antall_Asylsoekere_Trinn10",
+        "control": "TextInput3_179",
+        "group": "C",
+        "questionNumber": "10",
+        "label": "Antall Asylsøkere Trinn10",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord3.GG_62_Antall_Asylsoekere_Trinn10"
+      },
+      {
+        "key": "GG_63_Antall_Asylsoekere_Sum1_10",
+        "control": "TextInput3_169",
+        "group": "C",
+        "questionNumber": "11",
+        "label": "Antall Asylsøkere Sum1 10",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_53_Antall_Asylsoekere_Trinn1",
+            "sign": 1
+          },
+          {
+            "field": "GG_54_Antall_Asylsoekere_Trinn2",
+            "sign": 1
+          },
+          {
+            "field": "GG_55_Antall_Asylsoekere_Trinn3",
+            "sign": 1
+          },
+          {
+            "field": "GG_56_Antall_Asylsoekere_Trinn4",
+            "sign": 1
+          },
+          {
+            "field": "GG_57_Antall_Asylsoekere_Trinn5",
+            "sign": 1
+          },
+          {
+            "field": "GG_58_Antall_Asylsoekere_Trinn6",
+            "sign": 1
+          },
+          {
+            "field": "GG_59_Antall_Asylsoekere_Trinn7",
+            "sign": 1
+          },
+          {
+            "field": "GG_60_Antall_Asylsoekere_Trinn8",
+            "sign": 1
+          },
+          {
+            "field": "GG_61_Antall_Asylsoekere_Trinn9",
+            "sign": 1
+          },
+          {
+            "field": "GG_62_Antall_Asylsoekere_Trinn10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord3.GG_63_Antall_Asylsoekere_Sum1_10\n//Sum(TextInput2_71.Text+TextInput3_122.Text+TextInput3_128.Text+TextInput3_136.Text+TextInput3_142.Text+TextInput3_148.Text+TextInput3_150.Text+TextInput3_173.Text+TextInput3_177.Text+TextInput3_179.Text)"
+      },
+      {
+        "key": "GG_64_Antall_Asylsoekere_SumJenter",
+        "control": "TextInput3_181",
+        "group": "C",
+        "questionNumber": "12",
+        "label": "Antall Asylsøkere Sum Jenter",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord3.GG_64_Antall_Asylsoekere_SumJenter"
+      },
+      {
+        "key": "GG_65_Antall_Asylsoekere_SumGutter",
+        "control": "TextInput3_182",
+        "group": "C",
+        "questionNumber": "13",
+        "label": "Antall Asylsøkere Sum Gutter",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord3.GG_65_Antall_Asylsoekere_SumGutter"
+      },
+      {
+        "key": "GG_1047_Tegnspraak_Baade_I_Og_Paa_Antall",
+        "control": "TextInput2_2",
+        "group": "D",
+        "questionNumber": "1",
+        "label": "Tegnspråk Baade I Og Paa Antall",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=//GG_66_Tegnspraak_Antall - Gammel \nnfSelectedRecord3.GG_1047_Tegnspraak_Baade_I_Og_Paa_Antall"
+      },
+      {
+        "key": "GG_1048_Tegnspraak_Kun_I_Antall",
+        "control": "TextInput2_3",
+        "group": "D",
+        "questionNumber": "2",
+        "label": "Tegnspråk Kun I Antall",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=//GG_67_Punktskrift_Antall - Gammel \nnfSelectedRecord3.GG_1048_Tegnspraak_Kun_I_Antall"
+      },
+      {
+        "key": "GG_67_Punktskrift_Antall",
+        "control": "TextInput2_4",
+        "group": "D",
+        "questionNumber": "3",
+        "label": "Punktskrift Antall",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord3.GG_67_Punktskrift_Antall"
+      },
+      {
+        "key": "GG_68_Hjemmeundervisning_Antall",
+        "control": "TextInput2_5",
+        "group": "F",
+        "questionNumber": "1",
+        "label": "Hjemmeundervisning Antall",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord3.GG_68_Hjemmeundervisning_Antall"
+      },
+      {
+        "key": "GG_69_Ikke_Moett_Antall",
+        "control": "TextInput2_6",
+        "group": "G",
+        "questionNumber": "1",
+        "label": "Ikke Moett Antall",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord3.GG_69_Ikke_Moett_Antall"
+      },
+      {
+        "key": "GG_1_Antall_Elever_Trinn1_Gutter",
+        "control": "TextInput3_247",
+        "group": "A",
+        "questionNumber": "1",
+        "label": "Antall Elever Trinn1 Gutter",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord3.GG_1_Antall_Elever_Trinn1_Gutter"
+      },
+      {
+        "key": "GG_2_Antall_Elever_Trinn1_Jenter",
+        "control": "TextInput3_54",
+        "group": "A",
+        "questionNumber": "1",
+        "label": "Antall Elever Trinn1 Jenter",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord3.GG_2_Antall_Elever_Trinn1_Jenter"
+      },
+      {
+        "key": "GG_3_Antall_Elever_Trinn1_Sum",
+        "control": "TextInput2_30",
+        "group": "A",
+        "questionNumber": "1",
+        "label": "Antall Elever Trinn1 Sum",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_1_Antall_Elever_Trinn1_Gutter",
+            "sign": 1
+          },
+          {
+            "field": "GG_2_Antall_Elever_Trinn1_Jenter",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord3.GG_3_Antall_Elever_Trinn1_Sum//Sum(TextInput3_247.Text+TextInput3_54.Text)"
+      },
+      {
+        "key": "GG_4_Antall_Elever_Trinn2_Gutter",
+        "control": "TextInput3_113",
+        "group": "A",
+        "questionNumber": "2",
+        "label": "Antall Elever Trinn2 Gutter",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord3.GG_4_Antall_Elever_Trinn2_Gutter"
+      },
+      {
+        "key": "GG_5_Antall_Elever_Trinn2_Jenter",
+        "control": "TextInput3_115",
+        "group": "A",
+        "questionNumber": "2",
+        "label": "Antall Elever Trinn2 Jenter",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord3.GG_5_Antall_Elever_Trinn2_Jenter"
+      },
+      {
+        "key": "GG_6_Antall_Elever_Trinn2_Sum",
+        "control": "TextInput2_50",
+        "group": "A",
+        "questionNumber": "2",
+        "label": "Antall Elever Trinn2 Sum",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_4_Antall_Elever_Trinn2_Gutter",
+            "sign": 1
+          },
+          {
+            "field": "GG_5_Antall_Elever_Trinn2_Jenter",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord3.GG_6_Antall_Elever_Trinn2_Sum\n//Sum(TextInput3_113.Text+TextInput3_115.Text)"
+      },
+      {
+        "key": "GG_7_Antall_Elever_Trinn3_Gutter",
+        "control": "TextInput3_117",
+        "group": "A",
+        "questionNumber": "3",
+        "label": "Antall Elever Trinn3 Gutter",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord3.GG_7_Antall_Elever_Trinn3_Gutter"
+      },
+      {
+        "key": "GG_8_Antall_Elever_Trinn3_Jenter",
+        "control": "TextInput3_118",
+        "group": "A",
+        "questionNumber": "3",
+        "label": "Antall Elever Trinn3 Jenter",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord3.GG_8_Antall_Elever_Trinn3_Jenter"
+      },
+      {
+        "key": "GG_9_Antall_Elever_Trinn3_Sum",
+        "control": "TextInput2_52",
+        "group": "A",
+        "questionNumber": "3",
+        "label": "Antall Elever Trinn3 Sum",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_7_Antall_Elever_Trinn3_Gutter",
+            "sign": 1
+          },
+          {
+            "field": "GG_8_Antall_Elever_Trinn3_Jenter",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord3.GG_9_Antall_Elever_Trinn3_Sum\n//Sum(TextInput3_117.Text+TextInput3_118.Text)"
+      },
+      {
+        "key": "GG_10_Antall_Elever_Trinn4_Gutter",
+        "control": "TextInput3_119",
+        "group": "A",
+        "questionNumber": "4",
+        "label": "Antall Elever Trinn4 Gutter",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord3.GG_10_Antall_Elever_Trinn4_Gutter"
+      },
+      {
+        "key": "GG_11_Antall_Elever_Trinn4_Jenter",
+        "control": "TextInput3_121",
+        "group": "A",
+        "questionNumber": "4",
+        "label": "Antall Elever Trinn4 Jenter",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord3.GG_11_Antall_Elever_Trinn4_Jenter"
+      },
+      {
+        "key": "GG_12_Antall_Elever_Trinn4_Sum",
+        "control": "TextInput2_54",
+        "group": "A",
+        "questionNumber": "4",
+        "label": "Antall Elever Trinn4 Sum",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_10_Antall_Elever_Trinn4_Gutter",
+            "sign": 1
+          },
+          {
+            "field": "GG_11_Antall_Elever_Trinn4_Jenter",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord3.GG_12_Antall_Elever_Trinn4_Sum\n//Sum(TextInput3_119.Text+TextInput3_121.Text)"
+      },
+      {
+        "key": "GG_13_Antall_Elever_Trinn5_Gutter",
+        "control": "TextInput3_123",
+        "group": "A",
+        "questionNumber": "5",
+        "label": "Antall Elever Trinn5 Gutter",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord3.GG_13_Antall_Elever_Trinn5_Gutter"
+      },
+      {
+        "key": "GG_14_Antall_Elever_Trinn5_Jenter",
+        "control": "TextInput3_124",
+        "group": "A",
+        "questionNumber": "5",
+        "label": "Antall Elever Trinn5 Jenter",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord3.GG_14_Antall_Elever_Trinn5_Jenter"
+      },
+      {
+        "key": "GG_15_Antall_Elever_Trinn5_Sum",
+        "control": "TextInput2_55",
+        "group": "A",
+        "questionNumber": "5",
+        "label": "Antall Elever Trinn5 Sum",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_13_Antall_Elever_Trinn5_Gutter",
+            "sign": 1
+          },
+          {
+            "field": "GG_14_Antall_Elever_Trinn5_Jenter",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord3.GG_15_Antall_Elever_Trinn5_Sum\n//Sum(TextInput3_123.Text+TextInput3_124.Text)"
+      },
+      {
+        "key": "GG_16_Antall_Elever_Trinn6_Gutter",
+        "control": "TextInput3_126",
+        "group": "A",
+        "questionNumber": "6",
+        "label": "Antall Elever Trinn6 Gutter",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord3.GG_16_Antall_Elever_Trinn6_Gutter"
+      },
+      {
+        "key": "GG_17_Antall_Elever_Trinn6_Jenter",
+        "control": "TextInput3_127",
+        "group": "A",
+        "questionNumber": "6",
+        "label": "Antall Elever Trinn6 Jenter",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord3.GG_17_Antall_Elever_Trinn6_Jenter"
+      },
+      {
+        "key": "GG_18_Antall_Elever_Trinn6_Sum",
+        "control": "TextInput2_56",
+        "group": "A",
+        "questionNumber": "6",
+        "label": "Antall Elever Trinn6 Sum",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_16_Antall_Elever_Trinn6_Gutter",
+            "sign": 1
+          },
+          {
+            "field": "GG_17_Antall_Elever_Trinn6_Jenter",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord3.GG_18_Antall_Elever_Trinn6_Sum\n//Sum(TextInput3_126.Text+TextInput3_127.Text)"
+      },
+      {
+        "key": "GG_19_Antall_Elever_Trinn7_Gutter",
+        "control": "TextInput3_131",
+        "group": "A",
+        "questionNumber": "7",
+        "label": "Antall Elever Trinn7 Gutter",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord3.GG_19_Antall_Elever_Trinn7_Gutter"
+      },
+      {
+        "key": "GG_20_Antall_Elever_Trinn7_Jenter",
+        "control": "TextInput3_132",
+        "group": "A",
+        "questionNumber": "7",
+        "label": "Antall Elever Trinn7 Jenter",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord3.GG_20_Antall_Elever_Trinn7_Jenter"
+      },
+      {
+        "key": "GG_21_Antall_Elever_Trinn7_Sum",
+        "control": "TextInput2_57",
+        "group": "A",
+        "questionNumber": "7",
+        "label": "Antall Elever Trinn7 Sum",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_19_Antall_Elever_Trinn7_Gutter",
+            "sign": 1
+          },
+          {
+            "field": "GG_20_Antall_Elever_Trinn7_Jenter",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord3.GG_21_Antall_Elever_Trinn7_Sum\n//Sum(TextInput3_131.Text+TextInput3_132.Text)"
+      },
+      {
+        "key": "GG_22_Antall_Elever_Trinn1_7_SumGutter",
+        "control": "TextInput3_134",
+        "group": "A",
+        "questionNumber": "8",
+        "label": "Antall Elever Trinn1 7 Sum Gutter",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_1_Antall_Elever_Trinn1_Gutter",
+            "sign": 1
+          },
+          {
+            "field": "GG_4_Antall_Elever_Trinn2_Gutter",
+            "sign": 1
+          },
+          {
+            "field": "GG_7_Antall_Elever_Trinn3_Gutter",
+            "sign": 1
+          },
+          {
+            "field": "GG_10_Antall_Elever_Trinn4_Gutter",
+            "sign": 1
+          },
+          {
+            "field": "GG_13_Antall_Elever_Trinn5_Gutter",
+            "sign": 1
+          },
+          {
+            "field": "GG_16_Antall_Elever_Trinn6_Gutter",
+            "sign": 1
+          },
+          {
+            "field": "GG_19_Antall_Elever_Trinn7_Gutter",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord3.GG_22_Antall_Elever_Trinn1_7_SumGutter\n//Sum(TextInput3_247.Text+TextInput3_113.Text+TextInput3_117.Text+TextInput3_119.Text+TextInput3_123.Text+TextInput3_126.Text+TextInput3_131.Text)"
+      },
+      {
+        "key": "GG_23_Antall_Elever_Trinn1_7_SumJenter",
+        "control": "TextInput3_135",
+        "group": "A",
+        "questionNumber": "8",
+        "label": "Antall Elever Trinn1 7 Sum Jenter",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_2_Antall_Elever_Trinn1_Jenter",
+            "sign": 1
+          },
+          {
+            "field": "GG_5_Antall_Elever_Trinn2_Jenter",
+            "sign": 1
+          },
+          {
+            "field": "GG_8_Antall_Elever_Trinn3_Jenter",
+            "sign": 1
+          },
+          {
+            "field": "GG_11_Antall_Elever_Trinn4_Jenter",
+            "sign": 1
+          },
+          {
+            "field": "GG_14_Antall_Elever_Trinn5_Jenter",
+            "sign": 1
+          },
+          {
+            "field": "GG_17_Antall_Elever_Trinn6_Jenter",
+            "sign": 1
+          },
+          {
+            "field": "GG_20_Antall_Elever_Trinn7_Jenter",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord3.GG_23_Antall_Elever_Trinn1_7_SumJenter\n//Sum(TextInput3_54.Text+TextInput3_115.Text+TextInput3_118.Text+TextInput3_121.Text+TextInput3_124.Text+TextInput3_127.Text+TextInput3_132.Text)"
+      },
+      {
+        "key": "GG_24_Antall_Elever_Trinn1_7_SumTotalt",
+        "control": "TextInput2_59",
+        "group": "A",
+        "questionNumber": "8",
+        "label": "Antall Elever Trinn1 7 Sum Totalt",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_22_Antall_Elever_Trinn1_7_SumGutter",
+            "sign": 1
+          },
+          {
+            "field": "GG_23_Antall_Elever_Trinn1_7_SumJenter",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord3.GG_24_Antall_Elever_Trinn1_7_SumTotalt\n//Sum(TextInput3_134.Text+TextInput3_135.Text)"
+      },
+      {
+        "key": "GG_25_Antall_Elever_Trinn8_Gutter",
+        "control": "TextInput3_137",
+        "group": "A",
+        "questionNumber": "9",
+        "label": "Antall Elever Trinn8 Gutter",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord3.GG_25_Antall_Elever_Trinn8_Gutter"
+      },
+      {
+        "key": "GG_26_Antall_Elever_Trinn8_Jenter",
+        "control": "TextInput3_138",
+        "group": "A",
+        "questionNumber": "9",
+        "label": "Antall Elever Trinn8 Jenter",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord3.GG_26_Antall_Elever_Trinn8_Jenter"
+      },
+      {
+        "key": "GG_27_Antall_Elever_Trinn8_Sum",
+        "control": "TextInput2_60",
+        "group": "A",
+        "questionNumber": "9",
+        "label": "Antall Elever Trinn8 Sum",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_25_Antall_Elever_Trinn8_Gutter",
+            "sign": 1
+          },
+          {
+            "field": "GG_26_Antall_Elever_Trinn8_Jenter",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord3.GG_27_Antall_Elever_Trinn8_Sum\n//Sum(TextInput3_137.Text+TextInput3_138.Text)"
+      },
+      {
+        "key": "GG_28_Antall_Elever_Trinn9_Gutter",
+        "control": "TextInput3_143",
+        "group": "A",
+        "questionNumber": "10",
+        "label": "Antall Elever Trinn9 Gutter",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord3.GG_28_Antall_Elever_Trinn9_Gutter"
+      },
+      {
+        "key": "GG_29_Antall_Elever_Trinn9_Jenter",
+        "control": "TextInput3_144",
+        "group": "A",
+        "questionNumber": "10",
+        "label": "Antall Elever Trinn9 Jenter",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord3.GG_29_Antall_Elever_Trinn9_Jenter"
+      },
+      {
+        "key": "GG_30_Antall_Elever_Trinn9_Sum",
+        "control": "TextInput2_62",
+        "group": "A",
+        "questionNumber": "10",
+        "label": "Antall Elever Trinn9 Sum",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_28_Antall_Elever_Trinn9_Gutter",
+            "sign": 1
+          },
+          {
+            "field": "GG_29_Antall_Elever_Trinn9_Jenter",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord3.GG_30_Antall_Elever_Trinn9_Sum\n//Sum(TextInput3_143.Text+TextInput3_144.Text)"
+      },
+      {
+        "key": "GG_31_Antall_Elever_Trinn10_Gutter",
+        "control": "TextInput3_146",
+        "group": "A",
+        "questionNumber": "11",
+        "label": "Antall Elever Trinn10 Gutter",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord3.GG_31_Antall_Elever_Trinn10_Gutter"
+      },
+      {
+        "key": "GG_32_Antall_Elever_Trinn10_Jenter",
+        "control": "TextInput3_147",
+        "group": "A",
+        "questionNumber": "11",
+        "label": "Antall Elever Trinn10 Jenter",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord3.GG_32_Antall_Elever_Trinn10_Jenter"
+      },
+      {
+        "key": "GG_33_Antall_Elever_Trinn10_Sum",
+        "control": "TextInput2_63",
+        "group": "A",
+        "questionNumber": "11",
+        "label": "Antall Elever Trinn10 Sum",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_31_Antall_Elever_Trinn10_Gutter",
+            "sign": 1
+          },
+          {
+            "field": "GG_32_Antall_Elever_Trinn10_Jenter",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord3.GG_33_Antall_Elever_Trinn10_Sum\n//Sum(TextInput3_146.Text+TextInput3_147.Text)"
+      },
+      {
+        "key": "GG_34_Antall_Elever_Trinn8_10_SumGutter",
+        "control": "TextInput3_151",
+        "group": "A",
+        "questionNumber": "12",
+        "label": "Antall Elever Trinn8 10 Sum Gutter",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_25_Antall_Elever_Trinn8_Gutter",
+            "sign": 1
+          },
+          {
+            "field": "GG_28_Antall_Elever_Trinn9_Gutter",
+            "sign": 1
+          },
+          {
+            "field": "GG_31_Antall_Elever_Trinn10_Gutter",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord3.GG_34_Antall_Elever_Trinn8_10_SumGutter\n//Sum(TextInput3_137.Text+TextInput3_143.Text+TextInput3_146.Text)"
+      },
+      {
+        "key": "GG_35_Antall_Elever_Trinn8_10_SumJenter",
+        "control": "TextInput3_152",
+        "group": "A",
+        "questionNumber": "12",
+        "label": "Antall Elever Trinn8 10 Sum Jenter",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_26_Antall_Elever_Trinn8_Jenter",
+            "sign": 1
+          },
+          {
+            "field": "GG_29_Antall_Elever_Trinn9_Jenter",
+            "sign": 1
+          },
+          {
+            "field": "GG_32_Antall_Elever_Trinn10_Jenter",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord3.GG_35_Antall_Elever_Trinn8_10_SumJenter\n//Sum(TextInput3_138.Text+TextInput3_144.Text+TextInput3_147.Text)"
+      },
+      {
+        "key": "GG_36_Antall_Elever_Trinn8_10_SumTotalt",
+        "control": "TextInput2_67",
+        "group": "A",
+        "questionNumber": "12",
+        "label": "Antall Elever Trinn8 10 Sum Totalt",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_34_Antall_Elever_Trinn8_10_SumGutter",
+            "sign": 1
+          },
+          {
+            "field": "GG_35_Antall_Elever_Trinn8_10_SumJenter",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord3.GG_36_Antall_Elever_Trinn8_10_SumTotalt\n//Sum(TextInput3_151.Text+TextInput3_152.Text)"
+      },
+      {
+        "key": "GG_37_Antall_Elever_Sum_Gutter",
+        "control": "TextInput3_166",
+        "group": "A",
+        "questionNumber": "13",
+        "label": "Antall Elever Sum Gutter",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_22_Antall_Elever_Trinn1_7_SumGutter",
+            "sign": 1
+          },
+          {
+            "field": "GG_34_Antall_Elever_Trinn8_10_SumGutter",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord3.GG_37_Antall_Elever_Sum_Gutter\n//Sum(TextInput3_134.Text+TextInput3_151.Text)"
+      },
+      {
+        "key": "GG_38_Antall_Elever_Sum_Jenter",
+        "control": "TextInput3_167",
+        "group": "A",
+        "questionNumber": "13",
+        "label": "Antall Elever Sum Jenter",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_23_Antall_Elever_Trinn1_7_SumJenter",
+            "sign": 1
+          },
+          {
+            "field": "GG_35_Antall_Elever_Trinn8_10_SumJenter",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord3.GG_38_Antall_Elever_Sum_Jenter\n//Sum(TextInput3_135.Text+TextInput3_152.Text)"
+      },
+      {
+        "key": "GG_39_Antall_Elever_Sum_EleverTotalt",
+        "control": "TextInput2_68",
+        "group": "A",
+        "questionNumber": "13",
+        "label": "Antall Elever Sum Elever Totalt",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_24_Antall_Elever_Trinn1_7_SumTotalt",
+            "sign": 1
+          },
+          {
+            "field": "GG_36_Antall_Elever_Trinn8_10_SumTotalt",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord3.GG_39_Antall_Elever_Sum_EleverTotalt\n//Sum(TextInput2_59.Text+TextInput2_67.Text)"
+      }
+    ],
+    "controllers": [
+      "GG-A1",
+      "GG-A111",
+      "GG-A127",
+      "GG-A145",
+      "GG-A146",
+      "GG-A147",
+      "GG-A148",
+      "GG-A149",
+      "GG-A150",
+      "GG-A151",
+      "GG-A152",
+      "GG-A153",
+      "GG-A154",
+      "GG-A18",
+      "GG-A2",
+      "GG-A32",
+      "GG-A35",
+      "GG-A42",
+      "GG-A59",
+      "GG-A60",
+      "GG-A7",
+      "GG-A8",
+      "GG-F106",
+      "GG-F107",
+      "GG-F111",
+      "GG-F126",
+      "GG-F127",
+      "GG-F128",
+      "GG-F129",
+      "GG-F130",
+      "GG-F131",
+      "GG-F132",
+      "GG-F133",
+      "GG-F134",
+      "GG-F135",
+      "GG-F24",
+      "GG-F25",
+      "GG-F26",
+      "GG-F27",
+      "GG-F28",
+      "GG-F29",
+      "GG-F30",
+      "GG-F31",
+      "GG-F32",
+      "GG-F33",
+      "GG-F50",
+      "GG-F65"
+    ]
+  },
+  "4": {
+    "groups": [
+      {
+        "id": "A",
+        "title": "A. Årstimer til undervisning totalt",
+        "reference": "GG_H14_U18"
+      },
+      {
+        "id": "B",
+        "title": "B. Årstimer til spesialundervisning og andre ressurser",
+        "reference": "GG_H15_U21"
+      },
+      {
+        "id": "C",
+        "title": "C. Sum årstimer utført av undervisningspersonale",
+        "reference": "GG_H16_U35"
+      },
+      {
+        "id": "D",
+        "title": "D. Årstimer til andre oppgaver utført av undervisningspersonale",
+        "reference": "GG_H17_U36"
+      },
+      {
+        "id": "E",
+        "title": "E. Årstimer til elevrettet arbeid utført av assistenter og annet personale (ikke undervisnings-personale)",
+        "reference": "GG_H18_U37"
+      }
+    ],
+    "fields": [
+      {
+        "key": "GG_70_Antall_timer_undervisning_trinn1_4",
+        "control": "TextInput3_52",
+        "group": "A",
+        "questionNumber": "1",
+        "label": "Antall timer undervisning trinn1 4",
+        "readOnly": false,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_70_Antall_timer_undervisning_trinn1_4"
+      },
+      {
+        "key": "GG_71_Antall_Timer_Undervisning_Trinn5_7",
+        "control": "TextInput3_69",
+        "group": "A",
+        "questionNumber": "1",
+        "label": "Antall Timer Undervisning Trinn5 7",
+        "readOnly": false,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_71_Antall_Timer_Undervisning_Trinn5_7"
+      },
+      {
+        "key": "GG_890_Antall_Timer_Undervisning_Sum1_7",
+        "control": "TextInput3_70",
+        "group": "A",
+        "questionNumber": "1",
+        "label": "Antall Timer Undervisning Sum1 7",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_70_Antall_timer_undervisning_trinn1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_71_Antall_Timer_Undervisning_Trinn5_7",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=//Legg til denne når db er oppdatert\nnfSelectedRecord4.GG_890_Antall_Timer_Undervisning_Sum1_7\n//Value(TextInput3_52.Text+TextInput3_69.Text)"
+      },
+      {
+        "key": "GG_72_Antall_Timer_Undervisning_Trinn8_10",
+        "control": "TextInput3_71",
+        "group": "A",
+        "questionNumber": "1",
+        "label": "Antall Timer Undervisning Trinn8 10",
+        "readOnly": false,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_72_Antall_Timer_Undervisning_Trinn8_10"
+      },
+      {
+        "key": "GG_73_Antall_Timer_Undervisning_Sum1_10",
+        "control": "TextInput2_37",
+        "group": "A",
+        "questionNumber": "1",
+        "label": "Antall Timer Undervisning Sum1 10",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_70_Antall_timer_undervisning_trinn1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_71_Antall_Timer_Undervisning_Trinn5_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_72_Antall_Timer_Undervisning_Trinn8_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord4.GG_73_Antall_Timer_Undervisning_Sum1_10\n//Value(TextInput3_52.Text+TextInput3_69.Text+TextInput3_71.Text)"
+      },
+      {
+        "key": "GG_74_Aarstimer_Underkompetent_Personale_Trinn1_4",
+        "control": "TextInput3_249",
+        "group": "A",
+        "questionNumber": "2",
+        "label": "Årstimer Underkompetent Personale Trinn1 4",
+        "readOnly": false,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_74_Aarstimer_Underkompetent_Personale_Trinn1_4"
+      },
+      {
+        "key": "GG_75_Aarstimer_Underkompetent_Personale_Trinn5_7",
+        "control": "TextInput3_250",
+        "group": "A",
+        "questionNumber": "2",
+        "label": "Årstimer Underkompetent Personale Trinn5 7",
+        "readOnly": false,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_75_Aarstimer_Underkompetent_Personale_Trinn5_7"
+      },
+      {
+        "key": "GG_891_Sum_Aarstimer_Underkompetent_Personale_Trinn1_7",
+        "control": "TextInput3_251",
+        "group": "A",
+        "questionNumber": "2",
+        "label": "Sum Årstimer Underkompetent Personale Trinn1 7",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_74_Aarstimer_Underkompetent_Personale_Trinn1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_75_Aarstimer_Underkompetent_Personale_Trinn5_7",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=//Legg til når db er oppdatert\nnfSelectedRecord4.GG_891_Sum_Aarstimer_Underkompetent_Personale_Trinn1_7\n//Value(TextInput3_249.Text+TextInput3_250.Text)"
+      },
+      {
+        "key": "GG_76_Aarstimer_Underkompetent_Personale_Trinn8_10",
+        "control": "TextInput3_252",
+        "group": "A",
+        "questionNumber": "2",
+        "label": "Årstimer Underkompetent Personale Trinn8 10",
+        "readOnly": false,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_76_Aarstimer_Underkompetent_Personale_Trinn8_10"
+      },
+      {
+        "key": "GG_77_Sum_Aarstimer_Underkompetent_Personale_Trinn1_10",
+        "control": "TextInput2_102",
+        "group": "A",
+        "questionNumber": "2",
+        "label": "Sum Årstimer Underkompetent Personale Trinn1 10",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_74_Aarstimer_Underkompetent_Personale_Trinn1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_75_Aarstimer_Underkompetent_Personale_Trinn5_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_76_Aarstimer_Underkompetent_Personale_Trinn8_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord4.GG_77_Sum_Aarstimer_Underkompetent_Personale_Trinn1_10\n//Value(TextInput3_249.Text+TextInput3_250.Text+TextInput3_252.Text)"
+      },
+      {
+        "key": "GG_78_Sum_Aarstimer_Undervisning_Trinn1_4",
+        "control": "TextInput3_253",
+        "group": "A",
+        "questionNumber": "3",
+        "label": "Sum Årstimer Undervisning Trinn1 4",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_70_Antall_timer_undervisning_trinn1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_74_Aarstimer_Underkompetent_Personale_Trinn1_4",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord4.GG_78_Sum_Aarstimer_Undervisning_Trinn1_4\n//Value(TextInput3_52.Text+TextInput3_249.Text)"
+      },
+      {
+        "key": "GG_79_Sum_Aarstimer_Undervisning_Trinn5_7",
+        "control": "TextInput3_254",
+        "group": "A",
+        "questionNumber": "3",
+        "label": "Sum Årstimer Undervisning Trinn5 7",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_71_Antall_Timer_Undervisning_Trinn5_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_75_Aarstimer_Underkompetent_Personale_Trinn5_7",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord4.GG_79_Sum_Aarstimer_Undervisning_Trinn5_7\n//Value(TextInput3_69.Text+TextInput3_250.Text)"
+      },
+      {
+        "key": "GG_888_Sum_Aarstimer_Undervisning_Trinn1_7",
+        "control": "TextInput3_257",
+        "group": "A",
+        "questionNumber": "3",
+        "label": "Sum Årstimer Undervisning Trinn1 7",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_890_Antall_Timer_Undervisning_Sum1_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_891_Sum_Aarstimer_Underkompetent_Personale_Trinn1_7",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord4.GG_888_Sum_Aarstimer_Undervisning_Trinn1_7\n//Legg til computed column\n\n//Value(TextInput3_70.Text+TextInput3_251.Text)"
+      },
+      {
+        "key": "GG_80_Sum_Aarstimer_Undervisning_Trinn8_10",
+        "control": "TextInput3_258",
+        "group": "A",
+        "questionNumber": "3",
+        "label": "Sum Årstimer Undervisning Trinn8 10",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_72_Antall_Timer_Undervisning_Trinn8_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_76_Aarstimer_Underkompetent_Personale_Trinn8_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord4.GG_80_Sum_Aarstimer_Undervisning_Trinn8_10\n//Value(TextInput3_71.Text+TextInput3_252.Text)"
+      },
+      {
+        "key": "GG_81_Sum_Aarstimer_Undervisning_Trinn1_10",
+        "control": "TextInput2_103",
+        "group": "A",
+        "questionNumber": "3",
+        "label": "Sum Årstimer Undervisning Trinn1 10",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_73_Antall_Timer_Undervisning_Sum1_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_77_Sum_Aarstimer_Underkompetent_Personale_Trinn1_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord4.GG_81_Sum_Aarstimer_Undervisning_Trinn1_10\n//Value(TextInput2_37.Text+TextInput2_102.Text)"
+      },
+      {
+        "key": "GG_232_Spesialundervisning_Enkeltvedtak_Trinn1_4",
+        "control": "TextInput3_259",
+        "group": "B",
+        "questionNumber": "1",
+        "label": "Spesialundervisning Enkeltvedtak Trinn1 4",
+        "readOnly": false,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=//Oppdatert \nnfSelectedRecord4.GG_232_Spesialundervisning_Enkeltvedtak_Trinn1_4\n//nfSelectedRecord4.GG_81_Spesialundervisning_Enkeltvedtak_Trinn1_4"
+      },
+      {
+        "key": "GG_82_Spesialundervisning_Enkeltvedtak_Trinn5_7",
+        "control": "TextInput3_260",
+        "group": "B",
+        "questionNumber": "1",
+        "label": "Spesialundervisning Enkeltvedtak Trinn5 7",
+        "readOnly": false,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_82_Spesialundervisning_Enkeltvedtak_Trinn5_7"
+      },
+      {
+        "key": "GG_892_Sum_Spesialundervisning_Enkeltvedtak_Trinn1_7",
+        "control": "TextInput3_261",
+        "group": "B",
+        "questionNumber": "1",
+        "label": "Sum Spesialundervisning Enkeltvedtak Trinn1 7",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_232_Spesialundervisning_Enkeltvedtak_Trinn1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_82_Spesialundervisning_Enkeltvedtak_Trinn5_7",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=//Oppdater når db er klar \nnfSelectedRecord4.GG_892_Sum_Spesialundervisning_Enkeltvedtak_Trinn1_7\n\n//Value(TextInput3_259.Text+TextInput3_260.Text)"
+      },
+      {
+        "key": "GG_83_Spesialundervisning_Enkeltvedtak_Trinn8_10",
+        "control": "TextInput3_262",
+        "group": "B",
+        "questionNumber": "1",
+        "label": "Spesialundervisning Enkeltvedtak Trinn8 10",
+        "readOnly": false,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_83_Spesialundervisning_Enkeltvedtak_Trinn8_10"
+      },
+      {
+        "key": "GG_84_Sum_Spesialundervisning_Enkeltvedtak_Trinn1_10",
+        "control": "TextInput2_104",
+        "group": "B",
+        "questionNumber": "1",
+        "label": "Sum Spesialundervisning Enkeltvedtak Trinn1 10",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_232_Spesialundervisning_Enkeltvedtak_Trinn1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_82_Spesialundervisning_Enkeltvedtak_Trinn5_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_83_Spesialundervisning_Enkeltvedtak_Trinn8_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord4.GG_84_Sum_Spesialundervisning_Enkeltvedtak_Trinn1_10\n//Value(TextInput3_259.Text+TextInput3_260.Text+TextInput3_262.Text)"
+      },
+      {
+        "key": "GG_85_Norskopplaering_Enkeltvedtak_Trinn1_4",
+        "control": "TextInput3_263",
+        "group": "B",
+        "questionNumber": "2",
+        "label": "Norskopplaering Enkeltvedtak Trinn1 4",
+        "readOnly": false,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_85_Norskopplaering_Enkeltvedtak_Trinn1_4"
+      },
+      {
+        "key": "GG_86_Norskopplaering_Enkeltvedtak_Trinn5_7",
+        "control": "TextInput3_264",
+        "group": "B",
+        "questionNumber": "2",
+        "label": "Norskopplaering Enkeltvedtak Trinn5 7",
+        "readOnly": false,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_86_Norskopplaering_Enkeltvedtak_Trinn5_7"
+      },
+      {
+        "key": "GG_893_Sum_Norskopplaering_Enkeltvedtak_Trinn1_7",
+        "control": "TextInput3_265",
+        "group": "B",
+        "questionNumber": "2",
+        "label": "Sum Norskopplaering Enkeltvedtak Trinn1 7",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_85_Norskopplaering_Enkeltvedtak_Trinn1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_86_Norskopplaering_Enkeltvedtak_Trinn5_7",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=//Oppdater når db er klar \nnfSelectedRecord4.GG_893_Sum_Norskopplaering_Enkeltvedtak_Trinn1_7\n//Value(TextInput3_263.Text+TextInput3_264.Text)"
+      },
+      {
+        "key": "GG_87_Norskopplaering_Enkeltvedtak_Trinn8_10",
+        "control": "TextInput3_266",
+        "group": "B",
+        "questionNumber": "2",
+        "label": "Norskopplaering Enkeltvedtak Trinn8 10",
+        "readOnly": false,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_87_Norskopplaering_Enkeltvedtak_Trinn8_10"
+      },
+      {
+        "key": "GG_88_Sum_Norskopplaering_Enkeltvedtak_Trinn1_10",
+        "control": "TextInput2_105",
+        "group": "B",
+        "questionNumber": "2",
+        "label": "Sum Norskopplaering Enkeltvedtak Trinn1 10",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_85_Norskopplaering_Enkeltvedtak_Trinn1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_86_Norskopplaering_Enkeltvedtak_Trinn5_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_87_Norskopplaering_Enkeltvedtak_Trinn8_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord4.GG_88_Sum_Norskopplaering_Enkeltvedtak_Trinn1_10\n//Value(TextInput3_263.Text+TextInput3_264.Text+TextInput3_266.Text)"
+      },
+      {
+        "key": "GG_89_Morsmaalsopplaering_Trinn1_4",
+        "control": "TextInput3_267",
+        "group": "B",
+        "questionNumber": "3",
+        "label": "Morsmaalsopplaering Trinn1 4",
+        "readOnly": false,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_89_Morsmaalsopplaering_Trinn1_4"
+      },
+      {
+        "key": "GG_90_Morsmaalsopplaering_Trinn5_7",
+        "control": "TextInput3_268",
+        "group": "B",
+        "questionNumber": "3",
+        "label": "Morsmaalsopplaering Trinn5 7",
+        "readOnly": false,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_90_Morsmaalsopplaering_Trinn5_7"
+      },
+      {
+        "key": "GG_894_Sum_Morsmaalsopplaering_Trinn1_7",
+        "control": "TextInput3_269",
+        "group": "B",
+        "questionNumber": "3",
+        "label": "Sum Morsmaalsopplaering Trinn1 7",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_89_Morsmaalsopplaering_Trinn1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_90_Morsmaalsopplaering_Trinn5_7",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=//Legg til nytt felt db \n\nnfSelectedRecord4.GG_894_Sum_Morsmaalsopplaering_Trinn1_7\n//Value(TextInput3_267.Text+TextInput3_268.Text)"
+      },
+      {
+        "key": "GG_91_Morsmaalsopplaering_Trinn8_10",
+        "control": "TextInput3_270",
+        "group": "B",
+        "questionNumber": "3",
+        "label": "Morsmaalsopplaering Trinn8 10",
+        "readOnly": false,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_91_Morsmaalsopplaering_Trinn8_10"
+      },
+      {
+        "key": "GG_92_Sum_Morsmaalsopplaering_Trinn1_10",
+        "control": "TextInput2_106",
+        "group": "B",
+        "questionNumber": "3",
+        "label": "Sum Morsmaalsopplaering Trinn1 10",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_89_Morsmaalsopplaering_Trinn1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_90_Morsmaalsopplaering_Trinn5_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_91_Morsmaalsopplaering_Trinn8_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord4.GG_92_Sum_Morsmaalsopplaering_Trinn1_10\n//Value(TextInput3_267.Text+TextInput3_268.Text+TextInput3_270.Text)"
+      },
+      {
+        "key": "GG_93_Tospraaklig_Fagopplaering_Trinn1_4",
+        "control": "TextInput3_273",
+        "group": "B",
+        "questionNumber": "4",
+        "label": "Tospraaklig Fagopplaering Trinn1 4",
+        "readOnly": false,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_93_Tospraaklig_Fagopplaering_Trinn1_4"
+      },
+      {
+        "key": "GG_94_Tospraaklig_Fagopplaering_Trinn5_7",
+        "control": "TextInput3_274",
+        "group": "B",
+        "questionNumber": "4",
+        "label": "Tospraaklig Fagopplaering Trinn5 7",
+        "readOnly": false,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_94_Tospraaklig_Fagopplaering_Trinn5_7"
+      },
+      {
+        "key": "GG_895_Sum_Tospraaklig_Fagopplaering_Trinn1_7",
+        "control": "TextInput3_275",
+        "group": "B",
+        "questionNumber": "4",
+        "label": "Sum Tospraaklig Fagopplaering Trinn1 7",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_93_Tospraaklig_Fagopplaering_Trinn1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_94_Tospraaklig_Fagopplaering_Trinn5_7",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord4.GG_895_Sum_Tospraaklig_Fagopplaering_Trinn1_7\n//Value(TextInput3_273.Text+TextInput3_274.Text)"
+      },
+      {
+        "key": "GG_95_Tospraaklig_Fagopplaering_Trinn8_10",
+        "control": "TextInput3_276",
+        "group": "B",
+        "questionNumber": "4",
+        "label": "Tospraaklig Fagopplaering Trinn8 10",
+        "readOnly": false,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_95_Tospraaklig_Fagopplaering_Trinn8_10"
+      },
+      {
+        "key": "GG_96_Sum_Tospraaklig_Fagopplaering_Trinn1_10",
+        "control": "TextInput2_107",
+        "group": "B",
+        "questionNumber": "4",
+        "label": "Sum Tospraaklig Fagopplaering Trinn1 10",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_93_Tospraaklig_Fagopplaering_Trinn1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_94_Tospraaklig_Fagopplaering_Trinn5_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_95_Tospraaklig_Fagopplaering_Trinn8_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord4.GG_96_Sum_Tospraaklig_Fagopplaering_Trinn1_10\n//Value(TextInput3_273.Text+TextInput3_274.Text+TextInput3_276.Text)"
+      },
+      {
+        "key": "GG_97_Tilrettelagt_Opplaering_Trinn1_4",
+        "control": "TextInput3_281",
+        "group": "B",
+        "questionNumber": "5",
+        "label": "Tilrettelagt Opplæring Trinn1 4",
+        "readOnly": false,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_97_Tilrettelagt_Opplaering_Trinn1_4"
+      },
+      {
+        "key": "GG_98_Tilrettelagt_Opplaering_Trinn5_7",
+        "control": "TextInput3_282",
+        "group": "B",
+        "questionNumber": "5",
+        "label": "Tilrettelagt Opplæring Trinn5 7",
+        "readOnly": false,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_98_Tilrettelagt_Opplaering_Trinn5_7"
+      },
+      {
+        "key": "GG_896_Sum_Tilrettelagt_Opplaering_Trinn1_7",
+        "control": "TextInput3_283",
+        "group": "B",
+        "questionNumber": "5",
+        "label": "Sum Tilrettelagt Opplæring Trinn1 7",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_97_Tilrettelagt_Opplaering_Trinn1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_98_Tilrettelagt_Opplaering_Trinn5_7",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=//Legg til nytt felt db \n\nnfSelectedRecord4.GG_896_Sum_Tilrettelagt_Opplaering_Trinn1_7\n//Value(TextInput3_281.Text+TextInput3_282.Text)"
+      },
+      {
+        "key": "GG_99_Tilrettelagt_Opplaering_Trinn8_10",
+        "control": "TextInput3_284",
+        "group": "B",
+        "questionNumber": "5",
+        "label": "Tilrettelagt Opplæring Trinn8 10",
+        "readOnly": false,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_99_Tilrettelagt_Opplaering_Trinn8_10"
+      },
+      {
+        "key": "GG_100_Sum_Tilrettelagt_Opplaering_Trinn1_10",
+        "control": "TextInput2_108",
+        "group": "B",
+        "questionNumber": "5",
+        "label": "Sum Tilrettelagt Opplæring Trinn1 10",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_97_Tilrettelagt_Opplaering_Trinn1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_98_Tilrettelagt_Opplaering_Trinn5_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_99_Tilrettelagt_Opplaering_Trinn8_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord4.GG_100_Sum_Tilrettelagt_Opplaering_Trinn1_10\n//Value(TextInput3_281.Text+TextInput3_282.Text+TextInput3_284.Text)"
+      },
+      {
+        "key": "GG_101_Samisk_Extra_Ressurser_Trinn1_4",
+        "control": "TextInput3_289",
+        "group": "B",
+        "questionNumber": "6",
+        "label": "Samisk Extra Ressurser Trinn1 4",
+        "readOnly": false,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_101_Samisk_Extra_Ressurser_Trinn1_4"
+      },
+      {
+        "key": "GG_102_Samisk_Extra_Ressurser_Trinn5_7",
+        "control": "TextInput3_291",
+        "group": "B",
+        "questionNumber": "6",
+        "label": "Samisk Extra Ressurser Trinn5 7",
+        "readOnly": false,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_102_Samisk_Extra_Ressurser_Trinn5_7"
+      },
+      {
+        "key": "GG_897_Sum_Samisk_Extra_Ressurser_Trinn1_7",
+        "control": "TextInput3_292",
+        "group": "B",
+        "questionNumber": "6",
+        "label": "Sum Samisk Extra Ressurser Trinn1 7",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_101_Samisk_Extra_Ressurser_Trinn1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_102_Samisk_Extra_Ressurser_Trinn5_7",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=//Legg til nytt felt db \n\nnfSelectedRecord4.GG_897_Sum_Samisk_Extra_Ressurser_Trinn1_7\n//Value(TextInput3_289.Text+TextInput3_291.Text)"
+      },
+      {
+        "key": "GG_103_Samisk_Extra_Ressurser_Trinn8_10",
+        "control": "TextInput3_293",
+        "group": "B",
+        "questionNumber": "6",
+        "label": "Samisk Extra Ressurser Trinn8 10",
+        "readOnly": false,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_103_Samisk_Extra_Ressurser_Trinn8_10"
+      },
+      {
+        "key": "GG_104_Sum_Samisk_Extra_Ressurser_Trinn1_10",
+        "control": "TextInput2_109",
+        "group": "B",
+        "questionNumber": "6",
+        "label": "Sum Samisk Extra Ressurser Trinn1 10",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_101_Samisk_Extra_Ressurser_Trinn1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_102_Samisk_Extra_Ressurser_Trinn5_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_103_Samisk_Extra_Ressurser_Trinn8_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord4.GG_104_Sum_Samisk_Extra_Ressurser_Trinn1_10\n//Value(TextInput3_289.Text+TextInput3_291.Text+TextInput3_293.Text)"
+      },
+      {
+        "key": "GG_105_Samisk_Extra_Ressurser_Enkeltelev_Eller_Gruppe_Trinn1_4",
+        "control": "TextInput3_308",
+        "group": "B",
+        "questionNumber": "7",
+        "label": "Samisk Extra Ressurser Enkeltelev Eller Gruppe Trinn1 4",
+        "readOnly": false,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_105_Samisk_Extra_Ressurser_Enkeltelev_Eller_Gruppe_Trinn1_4"
+      },
+      {
+        "key": "GG_106_Samisk_Extra_Ressurser_Enkeltelev_Eller_Gruppe_Trinn5_7",
+        "control": "TextInput3_310",
+        "group": "B",
+        "questionNumber": "7",
+        "label": "Samisk Extra Ressurser Enkeltelev Eller Gruppe Trinn5 7",
+        "readOnly": false,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_106_Samisk_Extra_Ressurser_Enkeltelev_Eller_Gruppe_Trinn5_7"
+      },
+      {
+        "key": "GG_898_Sum_Samisk_Extra_Ressurser_Enkeltelev_Eller_Gruppe_1_7",
+        "control": "TextInput3_314",
+        "group": "B",
+        "questionNumber": "7",
+        "label": "Sum Samisk Extra Ressurser Enkeltelev Eller Gruppe 1 7",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_105_Samisk_Extra_Ressurser_Enkeltelev_Eller_Gruppe_Trinn1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_106_Samisk_Extra_Ressurser_Enkeltelev_Eller_Gruppe_Trinn5_7",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=//Legg til nytt felt db \n\nnfSelectedRecord4.GG_898_Sum_Samisk_Extra_Ressurser_Enkeltelev_Eller_Gruppe_1_7\n//Value(TextInput3_308.Text+TextInput3_310.Text)"
+      },
+      {
+        "key": "GG_107_Samisk_Extra_Ressurser_Enkeltelev_Eller_Gruppe_Trinn8_10",
+        "control": "TextInput3_315",
+        "group": "B",
+        "questionNumber": "7",
+        "label": "Samisk Extra Ressurser Enkeltelev Eller Gruppe Trinn8 10",
+        "readOnly": false,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_107_Samisk_Extra_Ressurser_Enkeltelev_Eller_Gruppe_Trinn8_10"
+      },
+      {
+        "key": "GG_108_Sum_Samisk_Extra_Ressurser_Enkeltelev_Eller_Gruppe_1_10",
+        "control": "TextInput2_110",
+        "group": "B",
+        "questionNumber": "7",
+        "label": "Sum Samisk Extra Ressurser Enkeltelev Eller Gruppe 1 10",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_105_Samisk_Extra_Ressurser_Enkeltelev_Eller_Gruppe_Trinn1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_106_Samisk_Extra_Ressurser_Enkeltelev_Eller_Gruppe_Trinn5_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_107_Samisk_Extra_Ressurser_Enkeltelev_Eller_Gruppe_Trinn8_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord4.GG_108_Sum_Samisk_Extra_Ressurser_Enkeltelev_Eller_Gruppe_1_10\n//Value(TextInput3_308.Text+TextInput3_310.Text+TextInput3_315.Text)"
+      },
+      {
+        "key": "GG_109_Annen_Maalform_Extra_Ressurser_Trinn1_4",
+        "control": "TextInput3_316",
+        "group": "B",
+        "questionNumber": "8",
+        "label": "Annen Maalform Extra Ressurser Trinn1 4",
+        "readOnly": false,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_109_Annen_Maalform_Extra_Ressurser_Trinn1_4"
+      },
+      {
+        "key": "GG_110_Annen_Maalform_Extra_Ressurser_Trinn5_7",
+        "control": "TextInput3_317",
+        "group": "B",
+        "questionNumber": "8",
+        "label": "Annen Maalform Extra Ressurser Trinn5 7",
+        "readOnly": false,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_110_Annen_Maalform_Extra_Ressurser_Trinn5_7"
+      },
+      {
+        "key": "GG_899_Sum_Annen_Maalform_Extra_Ressurser_Trinn1_7",
+        "control": "TextInput3_318",
+        "group": "B",
+        "questionNumber": "8",
+        "label": "Sum Annen Maalform Extra Ressurser Trinn1 7",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_109_Annen_Maalform_Extra_Ressurser_Trinn1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_110_Annen_Maalform_Extra_Ressurser_Trinn5_7",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=//Legg til nytt felt db \n\nnfSelectedRecord4.GG_899_Sum_Annen_Maalform_Extra_Ressurser_Trinn1_7\n//Value(TextInput3_316.Text+TextInput3_317.Text)"
+      },
+      {
+        "key": "GG_111_Annen_Maalform_Extra_Ressurser_Trinn8_10",
+        "control": "TextInput3_319",
+        "group": "B",
+        "questionNumber": "8",
+        "label": "Annen Maalform Extra Ressurser Trinn8 10",
+        "readOnly": false,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_111_Annen_Maalform_Extra_Ressurser_Trinn8_10"
+      },
+      {
+        "key": "GG_112_Sum_Annen_Maalform_Extra_Ressurser_Trinn1_10",
+        "control": "TextInput2_111",
+        "group": "B",
+        "questionNumber": "8",
+        "label": "Sum Annen Maalform Extra Ressurser Trinn1 10",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_109_Annen_Maalform_Extra_Ressurser_Trinn1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_110_Annen_Maalform_Extra_Ressurser_Trinn5_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_111_Annen_Maalform_Extra_Ressurser_Trinn8_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord4.GG_112_Sum_Annen_Maalform_Extra_Ressurser_Trinn1_10\n//Value(TextInput3_316.Text+TextInput3_317.Text+TextInput3_319.Text)"
+      },
+      {
+        "key": "GG_113_Kvensk_Andrespraak_Trinn1_4",
+        "control": "TextInput3_320",
+        "group": "B",
+        "questionNumber": "9",
+        "label": "Kvensk Andrespraak Trinn1 4",
+        "readOnly": false,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_113_Kvensk_Andrespraak_Trinn1_4"
+      },
+      {
+        "key": "GG_114_Kvensk_Andrespraak_Trinn5_7",
+        "control": "TextInput3_321",
+        "group": "B",
+        "questionNumber": "9",
+        "label": "Kvensk Andrespraak Trinn5 7",
+        "readOnly": false,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_114_Kvensk_Andrespraak_Trinn5_7"
+      },
+      {
+        "key": "GG_900_Sum_Kvensk_Andrespraak_Trinn1_7",
+        "control": "TextInput3_322",
+        "group": "B",
+        "questionNumber": "9",
+        "label": "Sum Kvensk Andrespraak Trinn1 7",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_113_Kvensk_Andrespraak_Trinn1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_114_Kvensk_Andrespraak_Trinn5_7",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord4.GG_900_Sum_Kvensk_Andrespraak_Trinn1_7\r\n//Value(TextInput3_320.Text+TextInput3_321.Text) "
+      },
+      {
+        "key": "GG_115_Kvensk_Andrespraak_Trinn8_10",
+        "control": "TextInput3_323",
+        "group": "B",
+        "questionNumber": "9",
+        "label": "Kvensk Andrespraak Trinn8 10",
+        "readOnly": false,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_115_Kvensk_Andrespraak_Trinn8_10"
+      },
+      {
+        "key": "GG_116_Sum_Kvensk_Andrespraak_Trinn1_10",
+        "control": "TextInput2_114",
+        "group": "B",
+        "questionNumber": "9",
+        "label": "Sum Kvensk Andrespraak Trinn1 10",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_113_Kvensk_Andrespraak_Trinn1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_114_Kvensk_Andrespraak_Trinn5_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_115_Kvensk_Andrespraak_Trinn8_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord4.GG_116_Sum_Kvensk_Andrespraak_Trinn1_10\n//Value(TextInput3_320.Text+TextInput3_321.Text+TextInput3_323.Text)"
+      },
+      {
+        "key": "GG_117_Finsk_Andrespraak_Trinn1_4",
+        "control": "TextInput3_324",
+        "group": "B",
+        "questionNumber": "10",
+        "label": "Finsk Andrespraak Trinn1 4",
+        "readOnly": false,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_117_Finsk_Andrespraak_Trinn1_4"
+      },
+      {
+        "key": "GG_118_Finsk_Andrespraak_Trinn5_7",
+        "control": "TextInput3_325",
+        "group": "B",
+        "questionNumber": "10",
+        "label": "Finsk Andrespraak Trinn5 7",
+        "readOnly": false,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_118_Finsk_Andrespraak_Trinn5_7"
+      },
+      {
+        "key": "GG_901_Sum_Finsk_Andrespraak_Trinn1_7",
+        "control": "TextInput3_330",
+        "group": "B",
+        "questionNumber": "10",
+        "label": "Sum Finsk Andrespraak Trinn1 7",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_117_Finsk_Andrespraak_Trinn1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_118_Finsk_Andrespraak_Trinn5_7",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=//Legg til nytt felt db \n\nnfSelectedRecord4.GG_901_Sum_Finsk_Andrespraak_Trinn1_7\n//Value(TextInput3_324.Text+TextInput3_325.Text)"
+      },
+      {
+        "key": "GG_119_Finsk_Andrespraak_Trinn8_10",
+        "control": "TextInput3_331",
+        "group": "B",
+        "questionNumber": "10",
+        "label": "Finsk Andrespraak Trinn8 10",
+        "readOnly": false,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_119_Finsk_Andrespraak_Trinn8_10"
+      },
+      {
+        "key": "GG_120_Sum_Finsk_Andrespraak_Trinn1_10",
+        "control": "TextInput2_115",
+        "group": "B",
+        "questionNumber": "10",
+        "label": "Sum Finsk Andrespraak Trinn1 10",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_117_Finsk_Andrespraak_Trinn1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_118_Finsk_Andrespraak_Trinn5_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_119_Finsk_Andrespraak_Trinn8_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord4.GG_120_Sum_Finsk_Andrespraak_Trinn1_10\n//Value(TextInput3_324.Text+TextInput3_325.Text+TextInput3_331.Text)"
+      },
+      {
+        "key": "GG_121_Tegnspraak_Trinn1_4",
+        "control": "TextInput3_332",
+        "group": "B",
+        "questionNumber": "11",
+        "label": "Tegnspråk Trinn1 4",
+        "readOnly": false,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_121_Tegnspraak_Trinn1_4"
+      },
+      {
+        "key": "GG_122_Tegnspraak_Trinn5_7",
+        "control": "TextInput3_333",
+        "group": "B",
+        "questionNumber": "11",
+        "label": "Tegnspråk Trinn5 7",
+        "readOnly": false,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_122_Tegnspraak_Trinn5_7"
+      },
+      {
+        "key": "GG_902_Sum_Tegnspraak_Trinn1_7",
+        "control": "TextInput3_334",
+        "group": "B",
+        "questionNumber": "11",
+        "label": "Sum Tegnspråk Trinn1 7",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_121_Tegnspraak_Trinn1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_122_Tegnspraak_Trinn5_7",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=//Legg til nytt felt db \n\nnfSelectedRecord4.GG_902_Sum_Tegnspraak_Trinn1_7\n//Value(TextInput3_332.Text+TextInput3_333.Text)"
+      },
+      {
+        "key": "GG_123_Tegnspraak_Trinn8_10",
+        "control": "TextInput3_335",
+        "group": "B",
+        "questionNumber": "11",
+        "label": "Tegnspråk Trinn8 10",
+        "readOnly": false,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_123_Tegnspraak_Trinn8_10"
+      },
+      {
+        "key": "GG_124_Sum_Tegnspraak_Trinn1_10",
+        "control": "TextInput2_117",
+        "group": "B",
+        "questionNumber": "11",
+        "label": "Sum Tegnspråk Trinn1 10",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_121_Tegnspraak_Trinn1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_122_Tegnspraak_Trinn5_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_123_Tegnspraak_Trinn8_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord4.GG_124_Sum_Tegnspraak_Trinn1_10\n//Value(TextInput3_332.Text+TextInput3_333.Text+TextInput3_335.Text)"
+      },
+      {
+        "key": "GG_125_Punktskrift_Trinn1_4",
+        "control": "TextInput3_336",
+        "group": "B",
+        "questionNumber": "12",
+        "label": "Punktskrift Trinn1 4",
+        "readOnly": false,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_125_Punktskrift_Trinn1_4"
+      },
+      {
+        "key": "GG_126_Punktskrift_Trinn5_7",
+        "control": "TextInput3_337",
+        "group": "B",
+        "questionNumber": "12",
+        "label": "Punktskrift Trinn5 7",
+        "readOnly": false,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_126_Punktskrift_Trinn5_7"
+      },
+      {
+        "key": "GG_903_Sum_Punktskrift_Trinn1_7",
+        "control": "TextInput3_338",
+        "group": "B",
+        "questionNumber": "12",
+        "label": "Sum Punktskrift Trinn1 7",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_125_Punktskrift_Trinn1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_126_Punktskrift_Trinn5_7",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=//Legg til nytt felt db \nnfSelectedRecord4.GG_903_Sum_Punktskrift_Trinn1_7\n//Value(TextInput3_336.Text+TextInput3_337.Text)"
+      },
+      {
+        "key": "GG_127_Punktskrift_Trinn8_10",
+        "control": "TextInput3_339",
+        "group": "B",
+        "questionNumber": "12",
+        "label": "Punktskrift Trinn8 10",
+        "readOnly": false,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_127_Punktskrift_Trinn8_10"
+      },
+      {
+        "key": "GG_128_Sum_Punktskrift_Trinn1_10",
+        "control": "TextInput2_118",
+        "group": "B",
+        "questionNumber": "12",
+        "label": "Sum Punktskrift Trinn1 10",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_125_Punktskrift_Trinn1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_126_Punktskrift_Trinn5_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_127_Punktskrift_Trinn8_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord4.GG_128_Sum_Punktskrift_Trinn1_10\n//Value(TextInput3_336.Text+TextInput3_337.Text+TextInput3_339.Text)"
+      },
+      {
+        "key": "GG_129_Sum_Spesialundervisning_Ressurser_Trinn1_4",
+        "control": "TextInput3_340",
+        "group": "B",
+        "questionNumber": "13",
+        "label": "Sum Spesialundervisning Ressurser Trinn1 4",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_232_Spesialundervisning_Enkeltvedtak_Trinn1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_85_Norskopplaering_Enkeltvedtak_Trinn1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_89_Morsmaalsopplaering_Trinn1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_93_Tospraaklig_Fagopplaering_Trinn1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_97_Tilrettelagt_Opplaering_Trinn1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_101_Samisk_Extra_Ressurser_Trinn1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_105_Samisk_Extra_Ressurser_Enkeltelev_Eller_Gruppe_Trinn1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_109_Annen_Maalform_Extra_Ressurser_Trinn1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_113_Kvensk_Andrespraak_Trinn1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_117_Finsk_Andrespraak_Trinn1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_121_Tegnspraak_Trinn1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_125_Punktskrift_Trinn1_4",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord4.GG_129_Sum_Spesialundervisning_Ressurser_Trinn1_4\n//Value(TextInput3_259.Text+TextInput3_263.Text+TextInput3_267.Text+TextInput3_273.Text+TextInput3_281.Text+TextInput3_289.Text+TextInput3_308.Text+TextInput3_316.Text+TextInput3_320.Text+TextInput3_324.Text+TextInput3_332.Text+TextInput3_336.Text)"
+      },
+      {
+        "key": "GG_130_Sum_Spesialundervisning_Ressurser_Trinn5_7",
+        "control": "TextInput3_341",
+        "group": "B",
+        "questionNumber": "13",
+        "label": "Sum Spesialundervisning Ressurser Trinn5 7",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_82_Spesialundervisning_Enkeltvedtak_Trinn5_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_86_Norskopplaering_Enkeltvedtak_Trinn5_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_90_Morsmaalsopplaering_Trinn5_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_94_Tospraaklig_Fagopplaering_Trinn5_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_98_Tilrettelagt_Opplaering_Trinn5_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_102_Samisk_Extra_Ressurser_Trinn5_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_106_Samisk_Extra_Ressurser_Enkeltelev_Eller_Gruppe_Trinn5_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_110_Annen_Maalform_Extra_Ressurser_Trinn5_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_114_Kvensk_Andrespraak_Trinn5_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_118_Finsk_Andrespraak_Trinn5_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_122_Tegnspraak_Trinn5_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_126_Punktskrift_Trinn5_7",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord4.GG_130_Sum_Spesialundervisning_Ressurser_Trinn5_7\n//Value(TextInput3_260.Text+TextInput3_264.Text+TextInput3_268.Text+TextInput3_274.Text+TextInput3_282.Text+TextInput3_291.Text+TextInput3_310.Text+TextInput3_317.Text+TextInput3_321.Text+TextInput3_325.Text+TextInput3_333.Text+TextInput3_337.Text)"
+      },
+      {
+        "key": "GG_889_Sum_Spesialundervisning_Ressurser_Trinn1_7",
+        "control": "TextInput3_342",
+        "group": "B",
+        "questionNumber": "13",
+        "label": "Sum Spesialundervisning Ressurser Trinn1 7",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_129_Sum_Spesialundervisning_Ressurser_Trinn1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_130_Sum_Spesialundervisning_Ressurser_Trinn5_7",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=//Legg til nytt felt db \n\nnfSelectedRecord4.GG_889_Sum_Spesialundervisning_Ressurser_Trinn1_7\n//Value(TextInput3_340.Text+TextInput3_341.Text)"
+      },
+      {
+        "key": "GG_131_Sum_Spesialundervisning_Ressurser_Trinn8_10",
+        "control": "TextInput3_343",
+        "group": "B",
+        "questionNumber": "13",
+        "label": "Sum Spesialundervisning Ressurser Trinn8 10",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_83_Spesialundervisning_Enkeltvedtak_Trinn8_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_87_Norskopplaering_Enkeltvedtak_Trinn8_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_91_Morsmaalsopplaering_Trinn8_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_95_Tospraaklig_Fagopplaering_Trinn8_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_99_Tilrettelagt_Opplaering_Trinn8_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_103_Samisk_Extra_Ressurser_Trinn8_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_107_Samisk_Extra_Ressurser_Enkeltelev_Eller_Gruppe_Trinn8_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_111_Annen_Maalform_Extra_Ressurser_Trinn8_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_115_Kvensk_Andrespraak_Trinn8_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_119_Finsk_Andrespraak_Trinn8_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_123_Tegnspraak_Trinn8_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_127_Punktskrift_Trinn8_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord4.GG_131_Sum_Spesialundervisning_Ressurser_Trinn8_10\n//Value(TextInput3_262.Text+TextInput3_266.Text+TextInput3_270.Text+TextInput3_276.Text+TextInput3_284.Text+TextInput3_293.Text+TextInput3_315.Text+TextInput3_319.Text+TextInput3_323.Text+TextInput3_331.Text+TextInput3_335.Text+TextInput3_339.Text)"
+      },
+      {
+        "key": "GG_132_Sum_Spesialundervisning_Ressurser_Trinn1_10",
+        "control": "TextInput2_119",
+        "group": "B",
+        "questionNumber": "13",
+        "label": "Sum Spesialundervisning Ressurser Trinn1 10",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_129_Sum_Spesialundervisning_Ressurser_Trinn1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_130_Sum_Spesialundervisning_Ressurser_Trinn5_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_131_Sum_Spesialundervisning_Ressurser_Trinn8_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord4.GG_132_Sum_Spesialundervisning_Ressurser_Trinn1_10\n//Value(TextInput3_340.Text+TextInput3_341.Text+TextInput3_343.Text)"
+      },
+      {
+        "key": "GG_133_Andre_Aarstimer_Undervisningspersonale_Trinn1_7",
+        "control": "TextInput3_58",
+        "group": "D",
+        "questionNumber": "1",
+        "label": "Andre Årstimer Undervisningspersonale Trinn1 7",
+        "readOnly": false,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_133_Andre_Aarstimer_Undervisningspersonale_Trinn1_7"
+      },
+      {
+        "key": "GG_134_Andre_Aarstimer_Undervisningspersonale_Trinn8_10",
+        "control": "TextInput3_59",
+        "group": "D",
+        "questionNumber": "1",
+        "label": "Andre Årstimer Undervisningspersonale Trinn8 10",
+        "readOnly": false,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_134_Andre_Aarstimer_Undervisningspersonale_Trinn8_10"
+      },
+      {
+        "key": "GG_135_Sum_Andre_Aarstimer_Undervisningspersonale_Trinn1_10",
+        "control": "TextInput2_32",
+        "group": "D",
+        "questionNumber": "1",
+        "label": "Sum Andre Årstimer Undervisningspersonale Trinn1 10",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_133_Andre_Aarstimer_Undervisningspersonale_Trinn1_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_134_Andre_Aarstimer_Undervisningspersonale_Trinn8_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord4.GG_135_Sum_Andre_Aarstimer_Undervisningspersonale_Trinn1_10\n//Value(TextInput3_58.Text+TextInput3_59.Text)"
+      },
+      {
+        "key": "GG_1043_Sum_Aarstimer_Trinn1_4",
+        "control": "TextInput3_285",
+        "group": "C",
+        "questionNumber": "1",
+        "label": "Sum Årstimer Trinn1 4",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_1043_Sum_Aarstimer_Trinn1_4"
+      },
+      {
+        "key": "GG_1044_Sum_Aarstimer_Trinn5_7",
+        "control": "TextInput3_286",
+        "group": "C",
+        "questionNumber": "1",
+        "label": "Sum Årstimer Trinn5 7",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_1044_Sum_Aarstimer_Trinn5_7"
+      },
+      {
+        "key": "GG_1045_Sum_Aarstimer_Trinn1_7",
+        "control": "TextInput3_287",
+        "group": "C",
+        "questionNumber": "1",
+        "label": "Sum Årstimer Trinn1 7",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_1045_Sum_Aarstimer_Trinn1_7"
+      },
+      {
+        "key": "GG_1046_Sum_Aarstimer_Trinn8_10",
+        "control": "TextInput3_288",
+        "group": "C",
+        "questionNumber": "1",
+        "label": "Sum Årstimer Trinn8 10",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_1046_Sum_Aarstimer_Trinn8_10"
+      },
+      {
+        "key": "GG_136_Sum_Aarstimer_Trinn1_10",
+        "control": "TextInput2_116",
+        "group": "C",
+        "questionNumber": "1",
+        "label": "Sum Årstimer Trinn1 10",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_136_Sum_Aarstimer_Trinn1_10"
+      },
+      {
+        "key": "GG_136_Sum_Aarstimer_Trinn1_10",
+        "control": "TextInput2_97",
+        "group": "C",
+        "questionNumber": "1",
+        "label": "Sum Årstimer Trinn1 10",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_136_Sum_Aarstimer_Trinn1_10\n//A3-C1\n//Value(TextInput2_17.Text-TextInput2_19.Text)"
+      },
+      {
+        "key": "GG_137_Aarstimer_Barne_Ungdomsarbeidere_Trinn1_4",
+        "control": "TextInput3_60",
+        "group": "E",
+        "questionNumber": "1",
+        "label": "Årstimer Barne Ungdomsarbeidere Trinn1 4",
+        "readOnly": false,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_137_Aarstimer_Barne_Ungdomsarbeidere_Trinn1_4"
+      },
+      {
+        "key": "GG_138_Aarstimer_Barne_Ungdomsarbeidere_Trinn5_7",
+        "control": "TextInput3_61",
+        "group": "E",
+        "questionNumber": "1",
+        "label": "Årstimer Barne Ungdomsarbeidere Trinn5 7",
+        "readOnly": false,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_138_Aarstimer_Barne_Ungdomsarbeidere_Trinn5_7"
+      },
+      {
+        "key": "GG_139_Aarstimer_Barne_Ungdomsarbeidere_Trinn8_10",
+        "control": "TextInput3_62",
+        "group": "E",
+        "questionNumber": "1",
+        "label": "Årstimer Barne Ungdomsarbeidere Trinn8 10",
+        "readOnly": false,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_139_Aarstimer_Barne_Ungdomsarbeidere_Trinn8_10"
+      },
+      {
+        "key": "GG_140_Sum_Aarstimer_Barne_Ungdomsarbeidere_Trinn1_10",
+        "control": "TextInput2_33",
+        "group": "E",
+        "questionNumber": "1",
+        "label": "Sum Årstimer Barne Ungdomsarbeidere Trinn1 10",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_137_Aarstimer_Barne_Ungdomsarbeidere_Trinn1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_138_Aarstimer_Barne_Ungdomsarbeidere_Trinn5_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_139_Aarstimer_Barne_Ungdomsarbeidere_Trinn8_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord4.GG_140_Sum_Aarstimer_Barne_Ungdomsarbeidere_Trinn1_10\n//Value(TextInput3_60.Text+TextInput3_61.Text+TextInput3_62.Text)"
+      },
+      {
+        "key": "GG_141_Aarstimer_Vernepleier_Barnevernspedagoger_Sosionomer_Trinn1_4",
+        "control": "TextInput3_63",
+        "group": "E",
+        "questionNumber": "2",
+        "label": "Årstimer Vernepleier Barnevernspedagoger Sosionomer Trinn1 4",
+        "readOnly": false,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_141_Aarstimer_Vernepleier_Barnevernspedagoger_Sosionomer_Trinn1_4"
+      },
+      {
+        "key": "GG_142_Aarstimer_Vernepleier_Barnevernspedagoger_Sosionomer_Trinn5_7",
+        "control": "TextInput3_64",
+        "group": "E",
+        "questionNumber": "2",
+        "label": "Årstimer Vernepleier Barnevernspedagoger Sosionomer Trinn5 7",
+        "readOnly": false,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_142_Aarstimer_Vernepleier_Barnevernspedagoger_Sosionomer_Trinn5_7"
+      },
+      {
+        "key": "GG_143_Aarstimer_Vernepleier_Barnevernspedagoger_Sosionomer_Trinn8_10",
+        "control": "TextInput3_65",
+        "group": "E",
+        "questionNumber": "2",
+        "label": "Årstimer Vernepleier Barnevernspedagoger Sosionomer Trinn8 10",
+        "readOnly": false,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_143_Aarstimer_Vernepleier_Barnevernspedagoger_Sosionomer_Trinn8_10"
+      },
+      {
+        "key": "GG_144_Sum_Aarstimer_Vernepleier_Barnevernspedagoger_Sosionomer_Trinn1_10",
+        "control": "TextInput2_35",
+        "group": "E",
+        "questionNumber": "2",
+        "label": "Sum Årstimer Vernepleier Barnevernspedagoger Sosionomer Trinn1 10",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_141_Aarstimer_Vernepleier_Barnevernspedagoger_Sosionomer_Trinn1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_142_Aarstimer_Vernepleier_Barnevernspedagoger_Sosionomer_Trinn5_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_143_Aarstimer_Vernepleier_Barnevernspedagoger_Sosionomer_Trinn8_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord4.GG_144_Sum_Aarstimer_Vernepleier_Barnevernspedagoger_Sosionomer_Trinn1_10\n//Value(TextInput3_63.Text+TextInput3_64.Text+TextInput3_65.Text)"
+      },
+      {
+        "key": "GG_145_Aarstimer_Hoeyskole_Universitetsutdanning_Trinn1_4",
+        "control": "TextInput3_72",
+        "group": "E",
+        "questionNumber": "3",
+        "label": "Årstimer Høyskole Universitetsutdanning Trinn1 4",
+        "readOnly": false,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_145_Aarstimer_Hoeyskole_Universitetsutdanning_Trinn1_4"
+      },
+      {
+        "key": "GG_146_Aarstimer_Hoeyskole_Universitetsutdanning_Trinn5_7",
+        "control": "TextInput3_73",
+        "group": "E",
+        "questionNumber": "3",
+        "label": "Årstimer Høyskole Universitetsutdanning Trinn5 7",
+        "readOnly": false,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_146_Aarstimer_Hoeyskole_Universitetsutdanning_Trinn5_7"
+      },
+      {
+        "key": "GG_147_Aarstimer_Hoeyskole_Universitetsutdanning_Trinn8_10",
+        "control": "TextInput3_74",
+        "group": "E",
+        "questionNumber": "3",
+        "label": "Årstimer Høyskole Universitetsutdanning Trinn8 10",
+        "readOnly": false,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_147_Aarstimer_Hoeyskole_Universitetsutdanning_Trinn8_10"
+      },
+      {
+        "key": "GG_148_Sum_Aarstimer_Hoeyskole_Universitetsutdanning_Trinn1_10",
+        "control": "TextInput2_38",
+        "group": "E",
+        "questionNumber": "3",
+        "label": "Sum Årstimer Høyskole Universitetsutdanning Trinn1 10",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_145_Aarstimer_Hoeyskole_Universitetsutdanning_Trinn1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_146_Aarstimer_Hoeyskole_Universitetsutdanning_Trinn5_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_147_Aarstimer_Hoeyskole_Universitetsutdanning_Trinn8_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord4.GG_148_Sum_Aarstimer_Hoeyskole_Universitetsutdanning_Trinn1_10\n//Value(TextInput3_72.Text+TextInput3_73.Text+TextInput3_74.Text)"
+      },
+      {
+        "key": "GG_149_Aarstimer_Annen_Bakgrunn_Trinn1_4",
+        "control": "TextInput3_75",
+        "group": "E",
+        "questionNumber": "4",
+        "label": "Årstimer Annen Bakgrunn Trinn1 4",
+        "readOnly": false,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_149_Aarstimer_Annen_Bakgrunn_Trinn1_4"
+      },
+      {
+        "key": "GG_150_Aarstimer_Annen_Bakgrunn_Trinn5_7",
+        "control": "TextInput3_76",
+        "group": "E",
+        "questionNumber": "4",
+        "label": "Årstimer Annen Bakgrunn Trinn5 7",
+        "readOnly": false,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_150_Aarstimer_Annen_Bakgrunn_Trinn5_7"
+      },
+      {
+        "key": "GG_151_Aarstimer_Annen_Bakgrunn_Trinn8_10",
+        "control": "TextInput3_77",
+        "group": "E",
+        "questionNumber": "4",
+        "label": "Årstimer Annen Bakgrunn Trinn8 10",
+        "readOnly": false,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_151_Aarstimer_Annen_Bakgrunn_Trinn8_10"
+      },
+      {
+        "key": "GG_152_Sum_Aarstimer_Annen_Bakgrunn_Trinn1_10",
+        "control": "TextInput2_39",
+        "group": "E",
+        "questionNumber": "4",
+        "label": "Sum Årstimer Annen Bakgrunn Trinn1 10",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_149_Aarstimer_Annen_Bakgrunn_Trinn1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_150_Aarstimer_Annen_Bakgrunn_Trinn5_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_151_Aarstimer_Annen_Bakgrunn_Trinn8_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord4.GG_152_Sum_Aarstimer_Annen_Bakgrunn_Trinn1_10\n//Value(TextInput3_75.Text+TextInput3_76.Text+TextInput3_77.Text)"
+      },
+      {
+        "key": "GG_153_Totalt_Assistenttimer_Elevrettet_Arbeid_Trinn1_4",
+        "control": "TextInput3_78",
+        "group": "E",
+        "questionNumber": "5",
+        "label": "Totalt Assistenttimer Elevrettet Arbeid Trinn1 4",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_137_Aarstimer_Barne_Ungdomsarbeidere_Trinn1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_141_Aarstimer_Vernepleier_Barnevernspedagoger_Sosionomer_Trinn1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_145_Aarstimer_Hoeyskole_Universitetsutdanning_Trinn1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_149_Aarstimer_Annen_Bakgrunn_Trinn1_4",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord4.GG_153_Totalt_Assistenttimer_Elevrettet_Arbeid_Trinn1_4\n//Value(TextInput3_60.Text+TextInput3_63.Text+TextInput3_72.Text+TextInput3_75.Text)"
+      },
+      {
+        "key": "GG_154_Totalt_Assistenttimer_Elevrettet_Arbeid_Trinn5_7",
+        "control": "TextInput3_79",
+        "group": "E",
+        "questionNumber": "5",
+        "label": "Totalt Assistenttimer Elevrettet Arbeid Trinn5 7",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_138_Aarstimer_Barne_Ungdomsarbeidere_Trinn5_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_142_Aarstimer_Vernepleier_Barnevernspedagoger_Sosionomer_Trinn5_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_146_Aarstimer_Hoeyskole_Universitetsutdanning_Trinn5_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_150_Aarstimer_Annen_Bakgrunn_Trinn5_7",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord4.GG_154_Totalt_Assistenttimer_Elevrettet_Arbeid_Trinn5_7\n//Value(TextInput3_61.Text+TextInput3_64.Text+TextInput3_73.Text+TextInput3_76.Text)"
+      },
+      {
+        "key": "GG_155_Totalt_Assistenttimer_Elevrettet_Arbeid_Trinn8_10",
+        "control": "TextInput3_80",
+        "group": "E",
+        "questionNumber": "5",
+        "label": "Totalt Assistenttimer Elevrettet Arbeid Trinn8 10",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_139_Aarstimer_Barne_Ungdomsarbeidere_Trinn8_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_143_Aarstimer_Vernepleier_Barnevernspedagoger_Sosionomer_Trinn8_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_147_Aarstimer_Hoeyskole_Universitetsutdanning_Trinn8_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_151_Aarstimer_Annen_Bakgrunn_Trinn8_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord4.GG_155_Totalt_Assistenttimer_Elevrettet_Arbeid_Trinn8_10\n//Value(TextInput3_62.Text+TextInput3_65.Text+TextInput3_74.Text+TextInput3_77.Text)"
+      },
+      {
+        "key": "GG_156_Totalt_Assistenttimer_Elevrettet_Arbeid_Trinn1_10",
+        "control": "TextInput2_40",
+        "group": "E",
+        "questionNumber": "5",
+        "label": "Totalt Assistenttimer Elevrettet Arbeid Trinn1 10",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_153_Totalt_Assistenttimer_Elevrettet_Arbeid_Trinn1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_154_Totalt_Assistenttimer_Elevrettet_Arbeid_Trinn5_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_155_Totalt_Assistenttimer_Elevrettet_Arbeid_Trinn8_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord4.GG_156_Totalt_Assistenttimer_Elevrettet_Arbeid_Trinn1_10\n//Value(TextInput3_78.Text+TextInput3_79.Text+TextInput3_80.Text)"
+      },
+      {
+        "key": "GG_157_Aarstimer_Spesialundervisning_Enkeltvedtak_E5_Trinn1_4",
+        "control": "TextInput3_277",
+        "group": "E",
+        "questionNumber": "6",
+        "label": "Årstimer Spesialundervisning Enkeltvedtak E5 Trinn1 4",
+        "readOnly": false,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_157_Aarstimer_Spesialundervisning_Enkeltvedtak_E5_Trinn1_4"
+      },
+      {
+        "key": "GG_158_Aarstimer_Spesialundervisning_Enkeltvedtak_Trinn5_7",
+        "control": "TextInput3_278",
+        "group": "E",
+        "questionNumber": "6",
+        "label": "Årstimer Spesialundervisning Enkeltvedtak Trinn5 7",
+        "readOnly": false,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_158_Aarstimer_Spesialundervisning_Enkeltvedtak_Trinn5_7"
+      },
+      {
+        "key": "GG_159_Aarstimer_Spesialundervisning_Enkeltvedtak_Trinn8_10",
+        "control": "TextInput3_279",
+        "group": "E",
+        "questionNumber": "6",
+        "label": "Årstimer Spesialundervisning Enkeltvedtak Trinn8 10",
+        "readOnly": false,
+        "maxDigits": 6,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord4.GG_159_Aarstimer_Spesialundervisning_Enkeltvedtak_Trinn8_10"
+      },
+      {
+        "key": "GG_160_Aarstimer_Spesialundervisning_Enkeltvedtak_Trinn1_10",
+        "control": "TextInput2_98",
+        "group": "E",
+        "questionNumber": "6",
+        "label": "Årstimer Spesialundervisning Enkeltvedtak Trinn1 10",
+        "readOnly": true,
+        "maxDigits": 6,
+        "terms": [
+          {
+            "field": "GG_157_Aarstimer_Spesialundervisning_Enkeltvedtak_E5_Trinn1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_158_Aarstimer_Spesialundervisning_Enkeltvedtak_Trinn5_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_159_Aarstimer_Spesialundervisning_Enkeltvedtak_Trinn8_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord4.GG_160_Aarstimer_Spesialundervisning_Enkeltvedtak_Trinn1_10\n//Value(TextInput3_277.Text+TextInput3_278.Text+TextInput3_279.Text)"
+      }
+    ],
+    "controllers": [
+      "GG-A116",
+      "GG-A121",
+      "GG-A128",
+      "GG-A129",
+      "GG-A130",
+      "GG-A136",
+      "GG-A137",
+      "GG-A138",
+      "GG-A139",
+      "GG-A140",
+      "GG-A143",
+      "GG-A15",
+      "GG-A156",
+      "GG-A157",
+      "GG-A159",
+      "GG-A160",
+      "GG-A161",
+      "GG-A162",
+      "GG-A165",
+      "GG-A20",
+      "GG-A3",
+      "GG-A38",
+      "GG-A39",
+      "GG-A4",
+      "GG-A43",
+      "GG-A46",
+      "GG-A47",
+      "GG-A48",
+      "GG-A5",
+      "GG-A52",
+      "GG-A56",
+      "GG-A57",
+      "GG-A58",
+      "GG-A81",
+      "GG-A84",
+      "GG-A90",
+      "GG-F1",
+      "GG-F114",
+      "GG-F138",
+      "GG-F139",
+      "GG-F156",
+      "GG-F35",
+      "GG-F54",
+      "GG-F68",
+      "GG-F8"
+    ]
+  }
+}

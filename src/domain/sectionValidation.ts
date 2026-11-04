@@ -10,6 +10,10 @@ export interface SectionIssue {
   message: string
 }
 
+export function editableDel2Issues(data: Del2Data, canEdit: boolean) {
+  return runValidation({ mode: 'light', section: 2, data }).filter(issue => canEdit || issue.kind !== 'required')
+}
+
 // One entry point for future modes. Navigation/data entry must request light.
 // Do not return a misleading successful full validation before it is implemented.
 export function runValidation({ mode, section, data }: {

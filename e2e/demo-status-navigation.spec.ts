@@ -113,8 +113,8 @@ test('opening a previous-year report resolves that report through every reportin
   await expectSchoolStatus(page, 'Fjordgløtt barneskole', '4', 'Godkjent av kommunen')
   await status(page).selectOption('1')
   await page.getByRole('button', { name: 'Gå til rapporteringen' }).click()
-  const sections = ['Enhetsopplysninger', 'Om skolen', 'Elever og timer', 'Årstimer', 'Årsverk og ansatte',
-    'Lærere og assistenter', 'Spesialundervisning', 'Særskilt språkopplæring', 'Opplæringsspråk']
+  const sections = ['Enhetsopplysninger', 'Om skolen', 'Elever og timer', 'Årstimer', 'Lærere og assistenter',
+    'Årsverk og ansatte', 'Spesialundervisning', 'Særskilt språkopplæring', 'Opplæringsspråk', 'Fremmedspråk, fordypning eller arbeidslivsfag', 'Kontroller', 'Fullfør']
   for (const section of sections) {
     await page.getByRole('navigation', { name: 'Grunnskoleseksjoner', exact: true })
       .getByRole('button', { name: section, exact: true }).click()

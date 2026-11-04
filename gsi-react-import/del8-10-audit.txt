@@ -1,0 +1,585 @@
+
+SCREEN 8 CONTROLS 254
+
+CARD A. Særskilt norskopplæring {"Control":"DataCard@1.0.2","Variant":"BlankCard","DisplayMode":"=nfDisplayMode","Height":"=780","Width":"=1126","X":"=0","Y":"=2"}
+HEADER Comp_liba_DatacardBkgGSI_2 =//"A. Særskilt norskopplæring"
+LookUp(nfViewSprak, BeregnetId = "GG_H33_U78").HovedsporsmalTekst
+TEXT Label4_423 =""
+TEXT Label4_424 =//"Antall elever som får særskilt norskopplæring"
+LookUp(nfViewSprak, BeregnetId = "GG_H33_U78").UndersporsmalTekst
+TEXT Label4_425 =//"Antall elever som følger læreplanen i grunnlegende norsk for språklige minoriteter"
+LookUp(nfViewSprak, BeregnetId = "GG_H33_U79").UndersporsmalTekst
+TEXT Label4_427 ="1"
+FIELD Local_Comp_Input_Number_1 =
+If(IsBlank(nfSelectedRecord8.GG_335_Antall_Elever_Saerskilt_Norsk_Opplaering_Trinn_1), "", nfSelectedRecord8.GG_335_Antall_Elever_Saerskilt_Norsk_Opplaering_Trinn_1) MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_4 =nfSelectedRecord8.GG_346_Antall_Elever_Grunnleggende_Norsk_For_Spraaklige_Minoriteter_Trinn_1 MODE =nfDisplayMode
+TEXT Label4_431 ="2"
+FIELD Local_Comp_Input_Number_5 =nfSelectedRecord8.GG_336_Antall_Elever_Saerskilt_Norsk_Opplaering_Trinn_2 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_6 =nfSelectedRecord8.GG_347_Antall_Elever_Grunnleggende_Norsk_For_Spraaklige_Minoriteter_Trinn_2 MODE =nfDisplayMode
+TEXT Label4_433 ="3"
+FIELD Local_Comp_Input_Number_8 =nfSelectedRecord8.GG_337_Antall_Elever_Saerskilt_Norsk_Opplaering_Trinn_3 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_9 =nfSelectedRecord8.GG_348_Antall_Elever_Grunnleggende_Norsk_For_Spraaklige_Minoriteter_Trinn_3 MODE =nfDisplayMode
+TEXT Label4_435 ="4"
+FIELD Local_Comp_Input_Number_7 =nfSelectedRecord8.GG_338_Antall_Elever_Saerskilt_Norsk_Opplaering_Trinn_4 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_12 =nfSelectedRecord8.GG_349_Antall_Elever_Grunnleggende_Norsk_For_Spraaklige_Minoriteter_Trinn_4 MODE =nfDisplayMode
+TEXT Label4_437 ="5"
+FIELD Local_Comp_Input_Number_10 =nfSelectedRecord8.GG_339_Antall_Elever_Saerskilt_Norsk_Opplaering_Trinn_5 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_13 =nfSelectedRecord8.GG_350_Antall_Elever_Grunnleggende_Norsk_For_Spraaklige_Minoriteter_Trinn_5 MODE =nfDisplayMode
+TEXT Label4_439 ="6"
+FIELD Local_Comp_Input_Number_11 =nfSelectedRecord8.GG_340_Antall_Elever_Saerskilt_Norsk_Opplaering_Trinn_6 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_14 =nfSelectedRecord8.GG_351_Antall_Elever_Grunnleggende_Norsk_For_Spraaklige_Minoriteter_Trinn_6 MODE =nfDisplayMode
+TEXT Label4_441 ="7"
+FIELD Local_Comp_Input_Number_15 =nfSelectedRecord8.GG_341_Antall_Elever_Saerskilt_Norsk_Opplaering_Trinn_7 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_16 =nfSelectedRecord8.GG_352_Antall_Elever_Grunnleggende_Norsk_For_Spraaklige_Minoriteter_Trinn_7 MODE =nfDisplayMode
+TEXT Label4_443 ="8"
+FIELD Local_Comp_Input_Number_17 =nfSelectedRecord8.GG_342_Antall_Elever_Saerskilt_Norsk_Opplaering_Trinn_8 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_18 =nfSelectedRecord8.GG_353_Antall_Elever_Grunnleggende_Norsk_For_Spraaklige_Minoriteter_Trinn_8 MODE =nfDisplayMode
+TEXT Label4_445 ="9"
+FIELD Local_Comp_Input_Number_19 =nfSelectedRecord8.GG_343_Antall_Elever_Saerskilt_Norsk_Opplaering_Trinn_9 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_20 =nfSelectedRecord8.GG_354_Antall_Elever_Grunnleggende_Norsk_For_Spraaklige_Minoriteter_Trinn_9 MODE =nfDisplayMode
+TEXT Label4_447 ="10"
+FIELD Local_Comp_Input_Number_21 =nfSelectedRecord8.GG_344_Antall_Elever_Saerskilt_Norsk_Opplaering_Trinn_10 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_22 =nfSelectedRecord8.GG_355_Antall_Elever_Grunnleggende_Norsk_For_Spraaklige_Minoriteter_Trinn_10 MODE =nfDisplayMode
+TEXT Label4_449 ="11"
+FIELD TextInput3_271 =nfSelectedRecord8.GG_345_Sum_Elever_Saerskilt_Norsk_Opplaering MODE =DisplayMode.View
+FIELD TextInput3_272 =nfSelectedRecord8.GG_356_Sum_Elever_Grunnleggende_Norsk_For_Spraaklige_Minoriteter
+
+/*Sum(
+  Local_Comp_Input_Number_4.SumText +
+    Local_Comp_Input_Number_6.SumText +
+    Local_Comp_Input_Number_9.SumText +
+    Local_Comp_Input_Number_12.SumText +
+    Local_Comp_Input_Number_13.SumText +
+    Local_Comp_Input_Number_14.SumText +
+    Local_Comp_Input_Number_16.SumText +
+    Local_Comp_Input_Number_18.SumText +
+    Local_Comp_Input_Number_20.SumText +
+    Local_Comp_Input_Number_22.SumText
+)*/ MODE =DisplayMode.View
+
+CARD B. Elever i egne undervisningsgrupper for språklige minoriteter {"Control":"DataCard@1.0.2","Variant":"BlankCard","DisplayMode":"=nfDisplayMode","Height":"=100","Width":"=1126","X":"=0","Y":"=3"}
+HEADER Comp_liba_DatacardBkgGSI_3 =//"B. Elever i egne undervisningsgrupper for språklige minoriteter"
+LookUp(nfViewSprak, BeregnetId = "GG_H34_U80").HovedsporsmalTekst
+TEXT Label4_467 =""
+TEXT Label4_471 ="1"
+TEXT Label4_472 =//"Antall elever som hovedsakelig får undervisning i egne undervisningsgrupper for språklige minoriteter "
+LookUp(nfViewSprak, BeregnetId = "GG_H34_U80").UndersporsmalTekst
+FIELD Local_Comp_Input_Number_23 =nfSelectedRecord8.GG_357_Antall_Elever_Hovedsakelig_Undervisning_Egne_Undervisningsgrupper_Spraaklige_Minoriteter_Gutter MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_24 =nfSelectedRecord8.GG_358_Antall_Elever_Hovedsakelig_Undervisning_Egne_Undervisningsgrupper_Spraaklige_Minoriteter_Jenter MODE =nfDisplayMode
+FIELD TextInput2_112 =nfSelectedRecord8.GG_359_Sum_Elever_Hovedsakelig_Undervisning_Egne_Undervisningsgrupper_Spraaklige_Minoriteter MODE =DisplayMode.View
+TEXT Label4_473 ="2"
+TEXT Label4_474 =//"Hvor mange av elevene på raden over er asylsøkere"
+LookUp(nfViewSprak, BeregnetId = "GG_H34_U81").UndersporsmalTekst
+FIELD Local_Comp_Input_Number_25 =nfSelectedRecord8.GG_360_Antall_Elever_Hovedsakelig_Undervisning_Egne_Undervisningsgrupper_Spraaklige_Minoriteter_Asylsoeker_Gutter MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_26 =nfSelectedRecord8.GG_361_Antall_Elever_Hovedsakelig_Undervisning_Egne_Undervisningsgrupper_Spraaklige_Minoriteter_Asylsoeker_Jenter MODE =nfDisplayMode
+FIELD TextInput2_113 =nfSelectedRecord8.GG_362_Sum_Elever_Hovedsakelig_Undervisning_Egne_Undervisningsgrupper_Spraaklige_Minoriteter_Asylsoeker MODE =DisplayMode.View
+
+CARD C. Antall elever som får morsmålsopplæring, tospråklig fagopplæring eller tilrettelagt opplæring {"Control":"DataCard@1.0.2","Variant":"BlankCard","DisplayMode":"=nfDisplayMode","Height":"=100","Width":"=1126","X":"=0","Y":"=4"}
+HEADER Comp_liba_DatacardBkgGSI_4 =//"C. Antall elever som får morsmålsopplæring, tospråklig fagopplæring eller tilrettelagt opplæring"
+LookUp(nfViewSprak, BeregnetId = "GG_H35_U82").HovedsporsmalTekst
+TEXT Label4_16 =//"Morsmål"
+LookUp(nfViewSprak, BeregnetId = "GG_H35_U82").UndersporsmalTekst
+TEXT Label4_479 =//"Elever med bare morsmålsopplæring"
+LookUp(nfViewSprak, BeregnetId = "GG_H35_U83").UndersporsmalTekst
+TEXT Label4_481 =//"Elever med bare tospråklig fagopplæring"
+LookUp(nfViewSprak, BeregnetId = "GG_H35_U84").UndersporsmalTekst
+TEXT Label4_482 =//"Elever med både morsmålopplæring og tospråklig fagopplæring"
+LookUp(nfViewSprak, BeregnetId = "GG_H35_U85").UndersporsmalTekst
+TEXT Label4_483 =//"Elever med tilrettelagt opplæring"
+LookUp(nfViewSprak, BeregnetId = "GG_H35_U86").UndersporsmalTekst
+ITEMS Gallery_2 =ColGG8SpC  //Filter(GrunnskoleOpplaeringssprakSamiskKvenskFinsk, GsiGrunnskoleSvarDel8Id=nfSelectedRecord8.GsiGrunnskoleSvarDel8Id)
+
+
+
+TEXT Label4_545 =ThisItem.RowNumber
+ITEMS ComboboxCanvas2 =//Table({Tekst: Blank(), Value: Blank()} , ShowColumns(Filter(nfViewSprakSvarAlternativer, SprakInputFeltId = 370), Tekst, Verdi))
+//Table({Tekst:Blank(),Value:Blank()},ShowColumns(Filter(nfViewSprakSvarAlternativer,SprakInputFeltId=370&&!(Tekst in ColGG8SpC.GG_869_Morsmaal)),Tekst,Verdi))
+//BOGI-3061
+SortByColumns(
+    Table(
+        { Tekst: Blank(), Verdi: Blank() },
+        ShowColumns(
+            Filter(
+                nfViewSprakSvarAlternativer,
+                SprakInputFeltId = 370 &&
+                !(Tekst in ColGG8SpC.GG_869_Morsmaal)
+            ),
+            Tekst,
+            Verdi
+        )
+    ),
+    "Tekst",
+    SortOrder.Ascending
+)
+FIELD TextInput3_326 =LookUp(ShadowColGG8SpC,SprakOpplaeringId =ThisItem.SprakOpplaeringId).GG_870_Elever_med_bare_morsmaalsopplaering
+ MODE =If(vargblPatchingInProgress || ThisItem.GG_869_Morsmaal = Blank() && ThisItem.GG_870_Elever_med_bare_morsmaalsopplaering = Blank() && ThisItem.GG_871_Elever_med_bare_tospraaklig_fagopplaering = Blank() && ThisItem.GG_872_Elever_med_baade_morsmaalopplaering_og_tospraaklig_fagopplaering = Blank() && ThisItem.GG_873_Elever_med_tilrettelagt_opplaering = Blank(), DisplayMode.Disabled, nfDisplayMode)
+FIELD TextInput3_327 =LookUp(ShadowColGG8SpC,SprakOpplaeringId =ThisItem.SprakOpplaeringId).GG_871_Elever_med_bare_tospraaklig_fagopplaering MODE =If(vargblPatchingInProgress || ThisItem.GG_869_Morsmaal = Blank(), DisplayMode.Disabled, nfDisplayMode)
+FIELD TextInput3_328 =LookUp(ShadowColGG8SpC,SprakOpplaeringId =ThisItem.SprakOpplaeringId).GG_872_Elever_med_baade_morsmaalopplaering_og_tospraaklig_fagopplaering MODE =If(vargblPatchingInProgress || ThisItem.GG_869_Morsmaal = Blank(), DisplayMode.Disabled, nfDisplayMode)
+FIELD TextInput3_329 =LookUp(ShadowColGG8SpC,SprakOpplaeringId =ThisItem.SprakOpplaeringId).GG_873_Elever_med_tilrettelagt_opplaering MODE =If(vargblPatchingInProgress || ThisItem.GG_869_Morsmaal = Blank(), DisplayMode.Disabled, nfDisplayMode)
+TEXT TextCanvas4_5 =
+   IfError(Value(TextInput3_326.Text), 0) +
+   IfError(Value(TextInput3_327.Text), 0) +
+   IfError(Value(TextInput3_328.Text), 0) +
+   IfError(Value(TextInput3_329.Text), 0)
+
+TEXT Label4_493 =Gallery_2.AllItemsCount+1
+TEXT Button3_4 ="Legg til rad"
+
+CARD 8D {"Control":"DataCard@1.0.2","Variant":"BlankCard","Height":"=100","Width":"=1126","X":"=0","Y":"=5"}
+HEADER Comp_liba_DatacardBkgGSI_56 =//"D. Elever med forsterket opplæring fra andre kommuner"
+LookUp(nfViewSprak, BeregnetId = "GG_H65_U134").HovedsporsmalTekst
+TEXT Label4_98 =""
+TEXT Label4_551 ="Kommune"
+ITEMS Gallery_7 =ColGG8SpD  //Filter(GrunnskoleOpplaeringssprakSamiskKvenskFinsk, GsiGrunnskoleSvarDel8Id=nfSelectedRecord8.GsiGrunnskoleSvarDel8Id)
+TEXT Label4_99 =ThisItem.RowNumber
+ITEMS ComboboxCanvas2_5 =//Sorter på kommunenavn i en liste 
+
+//BOGI-3906
+   SortByColumns(
+    Filter(
+        colViewKommune,
+        Kommunenavn = ThisItem.GG_916_Forstaerket_SpraakOpplaering_Annen_Kommune ||
+        (
+            !(Kommunenavn in ColGG8SpD.GG_916_Forstaerket_SpraakOpplaering_Annen_Kommune) &&
+            Kommunenavn <> nfLookupNSR.Kommunenavn
+        )
+    ),
+    "Kommunenavn",
+    SortOrder.Ascending
+)
+FIELD TextInput2_8 =ThisItem.GG_917_Elever_Forstaerket_SpraakOpplaering_Annen_Kommune MODE =If(vargblPatchingInProgress || ThisItem.GG_916_Forstaerket_SpraakOpplaering_Annen_Kommune = Blank(), DisplayMode.Disabled, nfDisplayMode)
+TEXT Label4_909 =Gallery_7.AllItemsCount+1
+FIELD TextInput2_122 =Sum(Filter(ColGG8SpD,GsiGrunnskoleSvarDel8Id = nfSelectedRecord8.GsiGrunnskoleSvarDel8Id),GG_917_Elever_Forstaerket_SpraakOpplaering_Annen_Kommune) MODE =DisplayMode.View
+TEXT Button3_8 ="Legg til rad"
+
+SCREEN 9 CONTROLS 415
+
+CARD A. Hvor mange elever får spesialundervisning etter enkeltvedtak?_2 {"Control":"DataCard@1.0.2","Variant":"BlankCard","DisplayMode":"=nfDisplayMode","Height":"=780","Width":"=1126","X":"=0","Y":"=3"}
+HEADER Comp_liba_DatacardBkgGSI_36 =//"A. Opplæringsspråk"
+LookUp(nfViewSprak, BeregnetId = "GG_H36_U87").HovedsporsmalTekst
+TEXT Label4_557 =
+TEXT Label4_558 =//"Antall elever fordelt etter hovedmål eller opplæringsmålform"
+LookUp(nfViewSprak, BeregnetId = "GG_H36_U87").UndersporsmalTekst
+TEXT Label4_559 =//"Elevtall (hentet fra 3A)"
+LookUp(nfViewSprak, BeregnetId = "GG_H36_U88").UndersporsmalTekst
+TEXT Label4_515 =""
+TEXT Label4_516 ="Bokmål"
+TEXT Label4_517 ="Nynorsk"
+TEXT Label4_561 ="Andre"
+TEXT Label4_519 ="1"
+FIELD Local_Comp_Input_Number_27 =nfSelectedRecord9.GG_368_Antall_Elever_Bokmaal_Trinn_1 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_28 =nfSelectedRecord9.GG_379_Antall_Elever_Nynorsk_Trinn_1 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_29 =nfSelectedRecord9.GG_390_Antall_Elever_Samisk_Trinn_1 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_30 =nfSelectedRecord9.GG_401_Antall_Elever_Annen_Opplaeringsmaalform_Trinn_1 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_31 =nfSelectedRecord9.GG_412_Sum_Elever_Opplaeringsmaalform_Trinn_1 MODE =DisplayMode.View
+FIELD Local_Comp_Input_Number_32 =nfSelectedRecord3.GG_3_Antall_Elever_Trinn1_Sum MODE =DisplayMode.View
+TEXT Label4_521 ="2"
+FIELD Local_Comp_Input_Number_33 =nfSelectedRecord9.GG_369_Antall_Elever_Bokmaal_Trinn_2 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_34 =nfSelectedRecord9.GG_380_Antall_Elever_Nynorsk_Trinn_2 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_35 =nfSelectedRecord9.GG_391_Antall_Elever_Samisk_Trinn_2 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_36 =nfSelectedRecord9.GG_402_Antall_Elever_Annen_Opplaeringsmaalform_Trinn_2 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_37 =nfSelectedRecord9.GG_413_Sum_Elever_Opplaeringsmaalform_Trinn_2 MODE =DisplayMode.View
+FIELD Local_Comp_Input_Number_38 =nfSelectedRecord3.GG_6_Antall_Elever_Trinn2_Sum MODE =DisplayMode.View
+TEXT Label4_523 ="3"
+FIELD Local_Comp_Input_Number_39 =nfSelectedRecord9.GG_370_Antall_Elever_Bokmaal_Trinn_3 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_40 =nfSelectedRecord9.GG_381_Antall_Elever_Nynorsk_Trinn_3 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_41 =nfSelectedRecord9.GG_392_Antall_Elever_Samisk_Trinn_3 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_42 =nfSelectedRecord9.GG_403_Antall_Elever_Annen_Opplaeringsmaalform_Trinn_3 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_43 =nfSelectedRecord9.GG_414_Sum_Elever_Opplaeringsmaalform_Trinn_3 MODE =DisplayMode.View
+FIELD Local_Comp_Input_Number_44 =nfSelectedRecord3.GG_9_Antall_Elever_Trinn3_Sum MODE =DisplayMode.View
+TEXT Label4_525 ="4"
+FIELD Local_Comp_Input_Number_45 =nfSelectedRecord9.GG_371_Antall_Elever_Bokmaal_Trinn_4 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_46 =nfSelectedRecord9.GG_382_Antall_Elever_Nynorsk_Trinn_4 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_47 =nfSelectedRecord9.GG_393_Antall_Elever_Samisk_Trinn_4 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_48 =nfSelectedRecord9.GG_404_Antall_Elever_Annen_Opplaeringsmaalform_Trinn_4 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_49 =nfSelectedRecord9.GG_415_Sum_Elever_Opplaeringsmaalform_Trinn_4 MODE =DisplayMode.View
+FIELD Local_Comp_Input_Number_50 =nfSelectedRecord3.GG_12_Antall_Elever_Trinn4_Sum MODE =DisplayMode.View
+TEXT Label4_527 ="5"
+FIELD Local_Comp_Input_Number_51 =nfSelectedRecord9.GG_372_Antall_Elever_Bokmaal_Trinn_5 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_52 =nfSelectedRecord9.GG_383_Antall_Elever_Nynorsk_Trinn_5 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_53 =nfSelectedRecord9.GG_394_Antall_Elever_Samisk_Trinn_5 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_54 =nfSelectedRecord9.GG_405_Antall_Elever_Annen_Opplaeringsmaalform_Trinn_5 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_55 =nfSelectedRecord9.GG_416_Sum_Elever_Opplaeringsmaalform_Trinn_5 MODE =DisplayMode.View
+FIELD Local_Comp_Input_Number_56 =nfSelectedRecord3.GG_15_Antall_Elever_Trinn5_Sum MODE =DisplayMode.View
+TEXT Label4_529 ="6"
+FIELD Local_Comp_Input_Number_57 =nfSelectedRecord9.GG_373_Antall_Elever_Bokmaal_Trinn_6 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_58 =nfSelectedRecord9.GG_384_Antall_Elever_Nynorsk_Trinn_6 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_59 =nfSelectedRecord9.GG_395_Antall_Elever_Samisk_Trinn_6 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_60 =nfSelectedRecord9.GG_406_Antall_Elever_Annen_Opplaeringsmaalform_Trinn_6 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_61 =nfSelectedRecord9.GG_417_Sum_Elever_Opplaeringsmaalform_Trinn_6 MODE =DisplayMode.View
+FIELD Local_Comp_Input_Number_62 =nfSelectedRecord3.GG_18_Antall_Elever_Trinn6_Sum MODE =DisplayMode.View
+TEXT Label4_531 ="7"
+FIELD Local_Comp_Input_Number_63 =nfSelectedRecord9.GG_374_Antall_Elever_Bokmaal_Trinn_7 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_64 =nfSelectedRecord9.GG_385_Antall_Elever_Nynorsk_Trinn_7 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_65 =nfSelectedRecord9.GG_396_Antall_Elever_Samisk_Trinn_7 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_66 =nfSelectedRecord9.GG_407_Antall_Elever_Annen_Opplaeringsmaalform_Trinn_7 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_67 =nfSelectedRecord9.GG_418_Sum_Elever_Opplaeringsmaalform_Trinn_7 MODE =DisplayMode.View
+FIELD Local_Comp_Input_Number_68 =nfSelectedRecord3.GG_21_Antall_Elever_Trinn7_Sum MODE =DisplayMode.View
+TEXT Label4_533 ="8"
+FIELD Local_Comp_Input_Number_69 =nfSelectedRecord9.GG_375_Antall_Elever_Bokmaal_Trinn_8 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_70 =nfSelectedRecord9.GG_386_Antall_Elever_Nynorsk_Trinn_8 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_71 =nfSelectedRecord9.GG_397_Antall_Elever_Samisk_Trinn_8 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_72 =nfSelectedRecord9.GG_408_Antall_Elever_Annen_Opplaeringsmaalform_Trinn_8 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_73 =nfSelectedRecord9.GG_419_Sum_Elever_Opplaeringsmaalform_Trinn_8 MODE =DisplayMode.View
+FIELD Local_Comp_Input_Number_74 =nfSelectedRecord3.GG_27_Antall_Elever_Trinn8_Sum MODE =DisplayMode.View
+TEXT Label4_535 ="9"
+FIELD Local_Comp_Input_Number_75 =nfSelectedRecord9.GG_376_Antall_Elever_Bokmaal_Trinn_9 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_76 =nfSelectedRecord9.GG_387_Antall_Elever_Nynorsk_Trinn_9 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_77 =nfSelectedRecord9.GG_398_Antall_Elever_Samisk_Trinn_9 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_78 =nfSelectedRecord9.GG_409_Antall_Elever_Annen_Opplaeringsmaalform_Trinn_9 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_79 =nfSelectedRecord9.GG_420_Sum_Elever_Opplaeringsmaalform_Trinn_9 MODE =DisplayMode.View
+FIELD Local_Comp_Input_Number_80 =nfSelectedRecord3.GG_30_Antall_Elever_Trinn9_Sum MODE =DisplayMode.View
+TEXT Label4_537 ="10"
+FIELD Local_Comp_Input_Number_81 =nfSelectedRecord9.GG_377_Antall_Elever_Bokmaal_Trinn_10 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_82 =nfSelectedRecord9.GG_388_Antall_Elever_Nynorsk_Trinn_10 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_83 =nfSelectedRecord9.GG_399_Antall_Elever_Samisk_Trinn_10 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_84 =nfSelectedRecord9.GG_410_Antall_Elever_Annen_Opplaeringsmaalform_Trinn_10 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_85 =nfSelectedRecord9.GG_421_Sum_Elever_Opplaeringsmaalform_Trinn_10 MODE =DisplayMode.View
+FIELD Local_Comp_Input_Number_86 =nfSelectedRecord3.GG_33_Antall_Elever_Trinn10_Sum MODE =DisplayMode.View
+TEXT Label4_539 ="11"
+FIELD TextInput3_384 =nfSelectedRecord9.GG_378_Sum_Elever_Bokmaal_Trinn_1_10 MODE =DisplayMode.View
+FIELD TextInput3_388 =nfSelectedRecord9.GG_389_Sum_Elever_Nynorsk_Trinn_1_10 MODE =DisplayMode.View
+FIELD TextInput3_385 =nfSelectedRecord9.GG_400_Sum_Elever_Samisk_Trinn_1_10 MODE =DisplayMode.View
+FIELD TextInput3_386 =nfSelectedRecord9.GG_411_Sum_Elever_Annen_Opplaeringsmaalform_Trinn_1_10 MODE =DisplayMode.View
+FIELD TextInput2_137 =//Sum(TextInput3_384.Text+TextInput3_388.Text+TextInput3_385.Text+TextInput3_386.Text)
+nfSelectedRecord9.GG_422_Sum_Elever_Opplaeringsmaalform_Trinn_1_10 MODE =DisplayMode.View
+FIELD TextInput3_387 =nfSelectedRecord3.GG_39_Antall_Elever_Sum_EleverTotalt MODE =DisplayMode.View
+
+CARD C. Samisk/kvensk/finsk {"Control":"DataCard@1.0.2","Variant":"BlankCard","DisplayMode":"=nfDisplayMode","Height":"=352","Width":"=1126","X":"=0","Y":"=5"}
+HEADER Comp_liba_DatacardBkgGSI_38 =//"C. Elever med opplæring i samiske språk, kvensk og finsk"
+LookUp(nfViewSprak, BeregnetId = "GG_H38_U122").HovedsporsmalTekst
+TEXT Label4_574 =""
+TEXT Label4_575 =//"Elever fordelt på trinn"
+LookUp(nfViewSprak, BeregnetId = "GG_H38_U122").UndersporsmalTekst
+TEXT Label4_541 ="Språk"
+TEXT Label4_542 ="1."
+TEXT Label4_543 ="2."
+TEXT Label4_562 ="3."
+TEXT Label4_563 ="4."
+TEXT Label4_564 ="5."
+TEXT Label4_544 ="6."
+TEXT Label4_549 ="7."
+TEXT Label4_547 ="8."
+TEXT Label4_548 ="9."
+TEXT Label4_550 ="10."
+ITEMS Gallery2_1 =ColGG9SpC
+TEXT Label4_635 =ThisItem.RowNumber
+VISIBLE ComboboxCanvas2_4 =ThisItem.ShowCombobox
+ITEMS ComboboxCanvas2_4 =Table({Tekst: Blank(), Value: Blank()} , 
+ShowColumns(
+   Filter(nfViewSprakSvarAlternativer, 
+          SprakInputFeltId = 897 && 
+          !(Tekst in ColGG9SpC.GG_915_Opplaering_Samisk_Kvensk_Finsk)), 
+   Tekst, Verdi))
+
+// Table({Tekst: Blank(), Value: Blank()} , ShowColumns(Filter(nfViewSprakSvarAlternativer, SprakInputFeltId = 897), Tekst, Verdi))
+
+
+
+
+
+/* Table(
+   {Tekst: Blank(), Value: Blank()},
+   ShowColumns(
+       Filter(
+           nfViewSprakSvarAlternativer,
+           SprakInputFeltId = 897 && 
+           !ThisItem.GG_915_Opplaering_Samisk_Kvensk_Finsk in Filter(GrunnskoleOpplaeringssprakSamiskKvenskFinsk, GsiGrunnskoleSvarDel9Id = nfSelectedRecord9.GsiGrunnskoleSvarDel9Id).GG_915_Opplaering_Samisk_Kvensk_Finsk
+       ),
+       Tekst,
+       Verdi
+   )
+)*/
+FIELD TextInput4 =ThisItem.GG_915_Opplaering_Samisk_Kvensk_Finsk MODE =DisplayMode.View
+VISIBLE TextInput4 =!ThisItem.ShowCombobox
+FIELD TextInput3 =LookUp(ShadowColGG9SpC,OpplaeringssprakSamiskKvenskFinskId = ThisItem.OpplaeringssprakSamiskKvenskFinskId).GG_904_Antall_Elever_Opplaering_Trinn_1 MODE =If(vargblPatchingInProgress || ThisItem.GG_915_Opplaering_Samisk_Kvensk_Finsk = Blank(), DisplayMode.Disabled, nfDisplayMode)
+FIELD TextInput3_1 =LookUp(ShadowColGG9SpC,OpplaeringssprakSamiskKvenskFinskId = ThisItem.OpplaeringssprakSamiskKvenskFinskId).GG_905_Antall_Elever_Opplaering_Trinn_2 MODE =If(vargblPatchingInProgress || ThisItem.GG_915_Opplaering_Samisk_Kvensk_Finsk = Blank(), DisplayMode.Disabled, nfDisplayMode)
+FIELD TextInput3_4 =LookUp(ShadowColGG9SpC,OpplaeringssprakSamiskKvenskFinskId = ThisItem.OpplaeringssprakSamiskKvenskFinskId).GG_906_Antall_Elever_Opplaering_Trinn_3 MODE =If(vargblPatchingInProgress || ThisItem.GG_915_Opplaering_Samisk_Kvensk_Finsk = Blank(), DisplayMode.Disabled, nfDisplayMode)
+FIELD TextInput3_5 =LookUp(ShadowColGG9SpC,OpplaeringssprakSamiskKvenskFinskId = ThisItem.OpplaeringssprakSamiskKvenskFinskId).GG_907_Antall_Elever_Opplaering_Trinn_4 MODE =If(vargblPatchingInProgress || ThisItem.GG_915_Opplaering_Samisk_Kvensk_Finsk = Blank(), DisplayMode.Disabled, nfDisplayMode)
+FIELD TextInput3_6 =LookUp(ShadowColGG9SpC,OpplaeringssprakSamiskKvenskFinskId = ThisItem.OpplaeringssprakSamiskKvenskFinskId).GG_908_Antall_Elever_Opplaering_Trinn_5 MODE =If(vargblPatchingInProgress || ThisItem.GG_915_Opplaering_Samisk_Kvensk_Finsk = Blank(), DisplayMode.Disabled, nfDisplayMode)
+FIELD TextInput3_346 =LookUp(ShadowColGG9SpC,OpplaeringssprakSamiskKvenskFinskId = ThisItem.OpplaeringssprakSamiskKvenskFinskId).GG_909_Antall_Elever_Opplaering_Trinn_6 MODE =If(vargblPatchingInProgress || ThisItem.GG_915_Opplaering_Samisk_Kvensk_Finsk = Blank(), DisplayMode.Disabled, nfDisplayMode)
+FIELD TextInput3_347 =LookUp(ShadowColGG9SpC,OpplaeringssprakSamiskKvenskFinskId = ThisItem.OpplaeringssprakSamiskKvenskFinskId).GG_910_Antall_Elever_Opplaering_Trinn_7 MODE =If(vargblPatchingInProgress || ThisItem.GG_915_Opplaering_Samisk_Kvensk_Finsk = Blank(), DisplayMode.Disabled, nfDisplayMode)
+FIELD TextInput3_348 =LookUp(ShadowColGG9SpC,OpplaeringssprakSamiskKvenskFinskId = ThisItem.OpplaeringssprakSamiskKvenskFinskId).GG_911_Antall_Elever_Opplaering_Trinn_8 MODE =If(vargblPatchingInProgress || ThisItem.GG_915_Opplaering_Samisk_Kvensk_Finsk = Blank(), DisplayMode.Disabled, nfDisplayMode)
+FIELD TextInput3_349 =LookUp(ShadowColGG9SpC,OpplaeringssprakSamiskKvenskFinskId = ThisItem.OpplaeringssprakSamiskKvenskFinskId).GG_912_Antall_Elever_Opplaering_Trinn_9 MODE =If(vargblPatchingInProgress || ThisItem.GG_915_Opplaering_Samisk_Kvensk_Finsk = Blank(), DisplayMode.Disabled, nfDisplayMode)
+FIELD TextInput3_350 =LookUp(ShadowColGG9SpC,OpplaeringssprakSamiskKvenskFinskId = ThisItem.OpplaeringssprakSamiskKvenskFinskId).GG_913_Antall_Elever_Opplaering_Trinn_10 MODE =If(vargblPatchingInProgress || ThisItem.GG_915_Opplaering_Samisk_Kvensk_Finsk = Blank(), DisplayMode.Disabled, nfDisplayMode)
+TEXT TextCanvas4 =
+//ThisItem.GG_914_Total_Sum_Antall_Elever_Opplaering_Trinn_1_10
+
+
+ IfError(Value(TextInput3.Text), 0) +
+ IfError(Value(TextInput3_1.Text), 0) +
+ IfError(Value(TextInput3_4.Text), 0) +
+ IfError(Value(TextInput3_5.Text), 0) +
+ IfError(Value(TextInput3_6.Text), 0) +
+ IfError(Value(TextInput3_346.Text), 0) +
+ IfError(Value(TextInput3_347.Text), 0) +
+ IfError(Value(TextInput3_348.Text), 0) +
+ IfError(Value(TextInput3_349.Text), 0) +
+ IfError(Value(TextInput3_350.Text), 0)
+
+
+
+
+
+//Sum(TextInput3.Text+TextInput3_1.Text+TextInput3_4.Text+TextInput3_5.Text+TextInput3_6.Text+TextInput3_346.Text+TextInput3_347.Text+TextInput3_348.Text+TextInput3_349.Text+TextInput3_350.Text)
+/*Sum(ThisItem.GG_904_Antall_Elever_Opplaering_Trinn_1+
+ThisItem.GG_905_Antall_Elever_Opplaering_Trinn_2+
+ThisItem.GG_906_Antall_Elever_Opplaering_Trinn_3+
+ThisItem.GG_907_Antall_Elever_Opplaering_Trinn_4+
+ThisItem.GG_908_Antall_Elever_Opplaering_Trinn_5+
+ThisItem.GG_909_Antall_Elever_Opplaering_Trinn_6+
+ThisItem.GG_910_Antall_Elever_Opplaering_Trinn_7+
+ThisItem.GG_911_Antall_Elever_Opplaering_Trinn_8+
+ThisItem.GG_912_Antall_Elever_Opplaering_Trinn_9+
+ThisItem.GG_913_Antall_Elever_Opplaering_Trinn_10)*/
+TEXT Label4_578 =Gallery2_1.AllItemsCount+1
+TEXT Label8_1 =Sum(Filter(ShadowColGG9SpC, GsiGrunnskoleSvarDel9Id = nfSelectedRecord9.GsiGrunnskoleSvarDel9Id),GG_904_Antall_Elever_Opplaering_Trinn_1)
+TEXT Label8_10 =Sum(Filter(ShadowColGG9SpC, GsiGrunnskoleSvarDel9Id = nfSelectedRecord9.GsiGrunnskoleSvarDel9Id),GG_905_Antall_Elever_Opplaering_Trinn_2)
+TEXT Label8_15 =Sum(Filter(ShadowColGG9SpC, GsiGrunnskoleSvarDel9Id = nfSelectedRecord9.GsiGrunnskoleSvarDel9Id),GG_906_Antall_Elever_Opplaering_Trinn_3)
+TEXT Label8_16 =Sum(Filter(ShadowColGG9SpC, GsiGrunnskoleSvarDel9Id = nfSelectedRecord9.GsiGrunnskoleSvarDel9Id),GG_907_Antall_Elever_Opplaering_Trinn_4)
+TEXT Label8_32 =Sum(Filter(ShadowColGG9SpC, GsiGrunnskoleSvarDel9Id = nfSelectedRecord9.GsiGrunnskoleSvarDel9Id),GG_908_Antall_Elever_Opplaering_Trinn_5)
+TEXT Label8_17 =Sum(Filter(ShadowColGG9SpC, GsiGrunnskoleSvarDel9Id = nfSelectedRecord9.GsiGrunnskoleSvarDel9Id),GG_909_Antall_Elever_Opplaering_Trinn_6)
+TEXT Label8_18 =Sum(Filter(ShadowColGG9SpC, GsiGrunnskoleSvarDel9Id = nfSelectedRecord9.GsiGrunnskoleSvarDel9Id),GG_910_Antall_Elever_Opplaering_Trinn_7)
+TEXT Label8_19 =Sum(Filter(ShadowColGG9SpC, GsiGrunnskoleSvarDel9Id = nfSelectedRecord9.GsiGrunnskoleSvarDel9Id),GG_911_Antall_Elever_Opplaering_Trinn_8)
+TEXT Label8_29 =Sum(Filter(ShadowColGG9SpC, GsiGrunnskoleSvarDel9Id = nfSelectedRecord9.GsiGrunnskoleSvarDel9Id),GG_912_Antall_Elever_Opplaering_Trinn_9)
+TEXT Label8_30 =Sum(Filter(ShadowColGG9SpC, GsiGrunnskoleSvarDel9Id = nfSelectedRecord9.GsiGrunnskoleSvarDel9Id),GG_913_Antall_Elever_Opplaering_Trinn_10)
+TEXT Label8_31 =//Sum(Filter(ShadowColGG9SpC, GsiGrunnskoleSvarDel9Id = nfSelectedRecord9.GsiGrunnskoleSvarDel9Id),GG_914_Total_Sum_Antall_Elever_Opplaering_Trinn_1_10)
+
+ IfError(Value(Label8_1.Text), 0) +
+ IfError(Value(Label8_10.Text), 0) +
+ IfError(Value(Label8_15.Text), 0) +
+ IfError(Value(Label8_16.Text), 0) +
+ IfError(Value(Label8_32.Text), 0) +
+ IfError(Value(Label8_17.Text), 0) +
+ IfError(Value(Label8_18.Text), 0) +
+ IfError(Value(Label8_19.Text), 0) +
+ IfError(Value(Label8_29.Text), 0) +
+ IfError(Value(Label8_30.Text), 0) 
+
+TEXT Button3_3 ="Legg til rad"
+
+CARD B. Elevgrupper med annet språk {"Control":"DataCard@1.0.2","Variant":"BlankCard","DisplayMode":"=nfDisplayMode","Height":"=325","Width":"=1126","X":"=0","Y":"=4"}
+HEADER Comp_liba_DatacardBkgGSI_37 =LookUp(nfViewSprak, BeregnetId = "GG_H37_U89").HovedsporsmalTekst
+TEXT Label4_426 =""
+TEXT Label4_451 ="Elevgrupper"
+TEXT Label4_453 ="1"
+TEXT Label4_454 =//"Antall elevgrupper og antall elever som har undervisning på et annet norsk skriftspråk enn kommunen har vedtatt"
+LookUp(nfViewSprak, BeregnetId = "GG_H37_U89").UndersporsmalTekst
+FIELD Local_Comp_Input_Number_87 =nfSelectedRecord9.GG_423_Antall_Elevgrupper_Undervisning_Annet_Norsk_Skriftspraak_Enn_Vedtatt MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_88 =nfSelectedRecord9.GG_424_Antall_Elever_Undervisning_Annet_Norsk_Skriftspraak_Enn_Vedtatt MODE =nfDisplayMode
+TEXT Label4_455 ="2"
+TEXT Label4_456 =//"Antall elevgrupper og antall elever som får undervisning på samisk utenfor samiske disktrikt"
+LookUp(nfViewSprak, BeregnetId = "GG_H37_U90").UndersporsmalTekst
+FIELD Local_Comp_Input_Number_90 =nfSelectedRecord9.GG_425_Antall_Elevgrupper_Undervisning_Samisk_Utenfor_Samisk_Distrikt MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_89 =nfSelectedRecord9.GG_426_Antall_Elever_Undervisning_Samisk_Utenfor_Samisk_Distrikt MODE =nfDisplayMode
+
+CARD 9D {"Control":"DataCard@1.0.2","Variant":"BlankCard","Height":"=100","Width":"=1126","X":"=0","Y":"=6"}
+HEADER Comp_liba_DatacardBkgGSI_58 =//"E. Årstimer til elevrettet arbeid utført av assistenter og annet personale (ikke undervisnings-personale)"
+//"D. Fjernundervisning-Todo:legg in NN"
+LookUp(nfViewSprak, BeregnetId = "GG_H63_U123").HovedsporsmalTekst
+TEXT Label4_641 =
+//"TODO: Elever med fjernundervisning i samisk skal registreres både i 9C og 9D"
+LookUp(nfViewSprak, BeregnetId = "GG_H63_U123").UndersporsmalTekst
+TEXT Label4_632 =
+TEXT Label4_638 ="1"
+FIELD Local_Comp_Input_Number_151 =nfSelectedRecord9.GG_932_Antall_Elever_Fjernundervisning_Samisk_Forstesprak_Trinn_1_4 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_152 =nfSelectedRecord9.GG_933_Antall_Elever_Fjernundervisning_Samisk_Forstesprak_Trinn_5_7 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_153 =nfSelectedRecord9.GG_934_Antall_Elever_Fjernundervisning_Samisk_Forstesprak_Trinn_8_10 MODE =nfDisplayMode
+FIELD TextInput2_121 =nfSelectedRecord9.GG_935_Sum_Antall_Elever_Fjernundervisning_Samisk_Forstesprak
+//Value(TextInput3_351.Text+TextInput3_352.Text+TextInput3_353.Text) MODE =DisplayMode.View
+TEXT Label4_642 ="2"
+FIELD Local_Comp_Input_Number_158 =nfSelectedRecord9.GG_936_Antall_Elever_Fjernundervisning_Samisk_Andresprak_Trinn_1_4 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_159 =nfSelectedRecord9.GG_937_Antall_Elever_Fjernundervisning_Samisk_Andresprak_Trinn_5_7 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_160 =nfSelectedRecord9.GG_938_Antall_Elever_Fjernundervisning_Samisk_Andresprak_Trinn_8_10 MODE =nfDisplayMode
+FIELD TextInput2_123 =//Computed ?
+nfSelectedRecord9.GG_939_Sum_Antall_Elever_Fjernundervisning_Samisk_Andresprak
+//Value(TextInput3_357.Text+TextInput3_358.Text+TextInput3_359.Text) MODE =DisplayMode.View
+TEXT Label4_782 ="3"
+TEXT Label4_783 =//"TODO: Sum elever med fjernundervisning i samisk"
+LookUp(nfViewSprak, BeregnetId = "GG_H63_U126").UndersporsmalTekst
+FIELD TextInput3_363 =nfSelectedRecord9.GG_940_Sum_Antall_Elever_Fjernundervisning_Samisk_Trinn_1_4
+//Value(TextInput3_351.Text+TextInput3_357.Text) MODE =DisplayMode.View
+FIELD TextInput3_364 =nfSelectedRecord9.GG_941_Sum_Antall_Elever_Fjernundervisning_Samisk_Trinn_5_7
+//Value(TextInput3_352.Text+TextInput3_358.Text) MODE =DisplayMode.View
+FIELD TextInput3_365 =nfSelectedRecord9.GG_942_Sum_Antall_Elever_Fjernundervisning_Samisk_Trinn_8_10
+//Value(TextInput3_353.Text+TextInput3_359.Text) MODE =DisplayMode.View
+FIELD TextInput2_125 =nfSelectedRecord9.GG_943_Total_Sum_Antall_Elever_Fjernundervisning_Samisk_Trinn_1_10
+//Value(TextInput3_363.Text+TextInput3_364.Text+TextInput3_365.Text) MODE =DisplayMode.View
+
+SCREEN 10 CONTROLS 454
+
+CARD A. Elever med fremmedspråk, fordypning eller arbeidslivsfag {"Control":"DataCard@1.0.2","Variant":"BlankCard","DisplayMode":"=nfDisplayMode","Height":"=900","Width":"=Parent.Width","X":"=0","Y":"=3"}
+HEADER Comp_liba_DatacardBkgGSI_39 =//"A. Elever med fremmedspråk, fordypning eller arbeidslivsfag"
+LookUp(nfViewSprak, BeregnetId = "GG_H39_U136").HovedsporsmalTekst
+TEXT Label4_651 ="1"
+TEXT Label4_652 ="Tysk"
+FIELD Local_Comp_Input_Number_183 =nfSelectedRecord10.GG_537_Antall_Gutter_Tysk_Trinn_8 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_182 =nfSelectedRecord10.GG_538_Antall_Jenter_Tysk_Trinn_8 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_131 =nfSelectedRecord10.GG_539_Sum_Tysk_Trinn_8 MODE =DisplayMode.View
+FIELD Local_Comp_Input_Number_184 =nfSelectedRecord10.GG_540_Antall_Gutter_Tysk_Trinn_9 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_185 =nfSelectedRecord10.GG_541_Antall_Jenter_Tysk_Trinn_9 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_132 =nfSelectedRecord10.GG_542_Sum_Tysk_Trinn_9 MODE =DisplayMode.View
+FIELD Local_Comp_Input_Number_186 =nfSelectedRecord10.GG_543_Antall_Gutter_Tysk_Trinn_10 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_187 =nfSelectedRecord10.GG_544_Antall_Jenter_Tysk_Trinn_10 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_174 =nfSelectedRecord10.GG_545_Sum_Tysk_Trinn_10 MODE =DisplayMode.View
+TEXT Label4_653 ="2"
+TEXT Label4_654 ="Fransk"
+FIELD Local_Comp_Input_Number_188 =nfSelectedRecord10.GG_547_Antall_Gutter_Fransk_Trinn_8 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_189 =nfSelectedRecord10.GG_548_Antall_Jenter_Fransk_Trinn_8 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_177 =nfSelectedRecord10.GG_549_Sum_Fransk_Trinn_8 MODE =DisplayMode.View
+FIELD Local_Comp_Input_Number_190 =nfSelectedRecord10.GG_550_Antall_Gutter_Fransk_Trinn_9 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_191 =nfSelectedRecord10.GG_551_Antall_Jenter_Fransk_Trinn_9 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_178 =nfSelectedRecord10.GG_552_Sum_Fransk_Trinn_9 MODE =DisplayMode.View
+FIELD Local_Comp_Input_Number_192 =nfSelectedRecord10.GG_553_Antall_Gutter_Fransk_Trinn_10 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_193 =nfSelectedRecord10.GG_554_Antall_Jenter_Fransk_Trinn_10 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_179 =nfSelectedRecord10.GG_555_Sum_Fransk_Trinn_10 MODE =DisplayMode.View
+TEXT Label4_655 ="3"
+TEXT Label4_656 ="Spansk"
+FIELD Local_Comp_Input_Number_194 =nfSelectedRecord10.GG_557_Antall_Gutter_Spansk_Trinn_8 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_195 =nfSelectedRecord10.GG_558_Antall_Jenter_Spansk_Trinn_8 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_180 =nfSelectedRecord10.GG_559_Sum_Spansk_Trinn_8 MODE =DisplayMode.View
+FIELD Local_Comp_Input_Number_196 =nfSelectedRecord10.GG_560_Antall_Gutter_Spansk_Trinn_9 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_197 =nfSelectedRecord10.GG_561_Antall_Jenter_Spansk_Trinn_9 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_181 =nfSelectedRecord10.GG_562_Sum_Spansk_Trinn_9 MODE =DisplayMode.View
+FIELD Local_Comp_Input_Number_198 =nfSelectedRecord10.GG_563_Antall_Gutter_Spansk_Trinn_10 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_199 =nfSelectedRecord10.GG_564_Antall_Jenter_Spansk_Trinn_10 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_260 =nfSelectedRecord10.GG_565_Sum_Spansk_Trinn_10 MODE =DisplayMode.View
+TEXT Label4_657 ="4"
+TEXT Label4_658 ="Italiensk"
+FIELD Local_Comp_Input_Number_200 =nfSelectedRecord10.GG_567_Antall_Gutter_Italiensk_Trinn_8 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_201 =nfSelectedRecord10.GG_568_Antall_Jenter_Italiensk_Trinn_8 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_279 =nfSelectedRecord10.GG_569_Sum_Italiensk_Trinn_8 MODE =DisplayMode.View
+FIELD Local_Comp_Input_Number_202 =nfSelectedRecord10.GG_570_Antall_Gutter_Italiensk_Trinn_9 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_203 =nfSelectedRecord10.GG_571_Antall_Jenter_Italiensk_Trinn_9 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_262 =nfSelectedRecord10.GG_572_Sum_Italiensk_Trinn_9 MODE =DisplayMode.View
+FIELD Local_Comp_Input_Number_204 =nfSelectedRecord10.GG_573_Antall_Gutter_Italiensk_Trinn_10 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_205 =nfSelectedRecord10.GG_574_Antall_Jenter_Italiensk_Trinn_10 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_277 =nfSelectedRecord10.GG_575_Sum_Italiensk_Trinn_10 MODE =DisplayMode.View
+TEXT Label4_659 ="5"
+TEXT Label4_663 ="Russisk"
+FIELD Local_Comp_Input_Number_206 =nfSelectedRecord10.GG_577_Antall_Gutter_Russisk_Trinn_8 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_207 =nfSelectedRecord10.GG_578_Antall_Jenter_Russisk_Trinn_8 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_280 =nfSelectedRecord10.GG_579_Sum_Russisk_Trinn_8 MODE =DisplayMode.View
+FIELD Local_Comp_Input_Number_208 =nfSelectedRecord10.GG_580_Antall_Gutter_Russisk_Trinn_9 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_209 =nfSelectedRecord10.GG_581_Antall_Jenter_Russisk_Trinn_9 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_281 =nfSelectedRecord10.GG_582_Sum_Russisk_Trinn_9 MODE =DisplayMode.View
+FIELD Local_Comp_Input_Number_210 =nfSelectedRecord10.GG_583_Antall_Gutter_Russisk_Trinn_10 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_211 =nfSelectedRecord10.GG_584_Antall_Jenter_Russisk_Trinn_10 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_282 =nfSelectedRecord10.GG_585_Sum_Russisk_Trinn_10 MODE =DisplayMode.View
+TEXT Label4_664 ="6"
+TEXT Label4_665 ="Andre språk"
+FIELD Local_Comp_Input_Number_212 =nfSelectedRecord10.GG_587_Antall_Gutter_Andre_Spraak_Trinn_8 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_213 =nfSelectedRecord10.GG_588_Antall_Jenter_Andre_Spraak_Trinn_8 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_284 =nfSelectedRecord10.GG_589_Sum_Andre_Spraak_Trinn_8 MODE =DisplayMode.View
+FIELD Local_Comp_Input_Number_214 =nfSelectedRecord10.GG_590_Antall_Gutter_Andre_Spraak_Trinn_9 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_215 =nfSelectedRecord10.GG_591_Antall_Jenter_Andre_Spraak_Trinn_9 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_285 =nfSelectedRecord10.GG_592_Sum_Andre_Spraak_Trinn_9 MODE =DisplayMode.View
+FIELD Local_Comp_Input_Number_216 =nfSelectedRecord10.GG_593_Antall_Gutter_Andre_Spraak_Trinn_10 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_217 =nfSelectedRecord10.GG_594_Antall_Jenter_Andre_Spraak_Trinn_10 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_286 =nfSelectedRecord10.GG_595_Sum_Andre_Spraak_Trinn_10 MODE =DisplayMode.View
+TEXT Label4_666 ="7"
+TEXT Label4_667 ="Fordypning engelsk"
+FIELD Local_Comp_Input_Number_218 =nfSelectedRecord10.GG_597_Antall_Gutter_Fordypning_Engelsk_Trinn_8 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_219 =nfSelectedRecord10.GG_598_Antall_Jenter_Fordypning_Engelsk_Trinn_8 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_288 =nfSelectedRecord10.GG_599_Sum_Fordypning_Engelsk_Trinn_8 MODE =DisplayMode.View
+FIELD Local_Comp_Input_Number_220 =nfSelectedRecord10.GG_600_Antall_Gutter_Fordypning_Engelsk_Trinn_9 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_221 =nfSelectedRecord10.GG_601_Antall_Jenter_Fordypning_Engelsk_Trinn_9 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_289 =nfSelectedRecord10.GG_602_Sum_Fordypning_Engelsk_Trinn_9 MODE =DisplayMode.View
+FIELD Local_Comp_Input_Number_222 =nfSelectedRecord10.GG_603_Antall_Gutter_Fordypning_Engelsk_Trinn_10 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_223 =nfSelectedRecord10.GG_604_Antall_Jenter_Fordypning_Engelsk_Trinn_10 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_290 =nfSelectedRecord10.GG_605_Sum_Fordypning_Engelsk_Trinn_10 MODE =DisplayMode.View
+TEXT Label4_668 ="8"
+TEXT Label4_669 ="Fordypning norsk"
+FIELD Local_Comp_Input_Number_224 =nfSelectedRecord10.GG_607_Antall_Gutter_Fordypning_Norsk_Trinn_8 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_225 =nfSelectedRecord10.GG_608_Antall_Jenter_Fordypning_Norsk_Trinn_8 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_292 =nfSelectedRecord10.GG_609_Sum_Fordypning_Norsk_Trinn_8 MODE =DisplayMode.View
+FIELD Local_Comp_Input_Number_226 =nfSelectedRecord10.GG_610_Antall_Gutter_Fordypning_Norsk_Trinn_9 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_227 =nfSelectedRecord10.GG_611_Antall_Jenter_Fordypning_Norsk_Trinn_9 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_293 =nfSelectedRecord10.GG_612_Sum_Fordypning_Norsk_Trinn_9 MODE =DisplayMode.View
+FIELD Local_Comp_Input_Number_228 =nfSelectedRecord10.GG_613_Antall_Gutter_Fordypning_Norsk_Trinn_10 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_229 =nfSelectedRecord10.GG_614_Antall_Jenter_Fordypning_Norsk_Trinn_10 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_294 =nfSelectedRecord10.GG_615_Sum_Fordypning_Norsk_Trinn_10 MODE =DisplayMode.View
+TEXT Label4_670 ="9"
+TEXT Label4_671 ="Fordypning samisk"
+FIELD Local_Comp_Input_Number_230 =nfSelectedRecord10.GG_617_Antall_Gutter_Fordypning_Samisk_Trinn_8 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_231 =nfSelectedRecord10.GG_618_Antall_Jenter_Fordypning_Samisk_Trinn_8 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_296 =nfSelectedRecord10.GG_619_Sum_Fordypning_Samisk_Trinn_8 MODE =DisplayMode.View
+FIELD Local_Comp_Input_Number_232 =nfSelectedRecord10.GG_620_Antall_Gutter_Fordypning_Samisk_Trinn_9 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_233 =nfSelectedRecord10.GG_621_Antall_Jenter_Fordypning_Samisk_Trinn_9 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_297 =nfSelectedRecord10.GG_622_Sum_Fordypning_Samisk_Trinn_9 MODE =DisplayMode.View
+FIELD Local_Comp_Input_Number_234 =nfSelectedRecord10.GG_623_Antall_Gutter_Fordypning_Samisk_Trinn_10 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_235 =nfSelectedRecord10.GG_624_Antall_Jenter_Fordypning_Samisk_Trinn_10 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_298 =nfSelectedRecord10.GG_625_Sum_Fordypning_Samisk_Trinn_10 MODE =DisplayMode.View
+TEXT Label4_674 ="10"
+TEXT Label4_709 ="Arbeidslivsfag"
+FIELD Local_Comp_Input_Number_236 =nfSelectedRecord10.GG_627_Antall_Gutter_Arbeidslivsfag_Trinn_8 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_237 =nfSelectedRecord10.GG_628_Antall_Jenter_Arbeidslivsfag_Trinn_8 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_300 =nfSelectedRecord10.GG_629_Sum_Arbeidslivsfag_Trinn_8 MODE =DisplayMode.View
+FIELD Local_Comp_Input_Number_238 =nfSelectedRecord10.GG_630_Antall_Gutter_Arbeidslivsfag_Trinn_9 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_239 =nfSelectedRecord10.GG_631_Antall_Jenter_Arbeidslivsfag_Trinn_9 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_301 =nfSelectedRecord10.GG_632_Sum_Arbeidslivsfag_Trinn_9 MODE =DisplayMode.View
+FIELD Local_Comp_Input_Number_240 =nfSelectedRecord10.GG_633_Antall_Gutter_Arbeidslivsfag_Trinn_10 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_241 =nfSelectedRecord10.GG_634_Antall_Jenter_Arbeidslivsfag_Trinn_10 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_302 =nfSelectedRecord10.GG_635_Sum_Arbeidslivsfag_Trinn_10 MODE =DisplayMode.View
+TEXT Label4_710 ="11"
+TEXT Label4_711 ="Fordypning matematikk"
+FIELD Local_Comp_Input_Number_242 =nfSelectedRecord10.GG_637_Antall_Gutter_Fordypning_Matematikk_Trinn_8 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_244 =nfSelectedRecord10.GG_638_Antall_Jenter_Fordypning_Matematikk_Trinn_8 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_304 =nfSelectedRecord10.GG_639_Sum_Fordypning_Matematikk_Trinn_8 MODE =DisplayMode.View
+FIELD Local_Comp_Input_Number_245 =nfSelectedRecord10.GG_640_Antall_Gutter_Fordypning_Matematikk_Trinn_9 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_249 =nfSelectedRecord10.GG_641_Antall_Jenter_Fordypning_Matematikk_Trinn_9 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_306 =nfSelectedRecord10.GG_642_Sum_Fordypning_Matematikk_Trinn_9 MODE =DisplayMode.View
+FIELD Local_Comp_Input_Number_250 =nfSelectedRecord10.GG_643_Antall_Gutter_Fordypning_Matematikk_Trinn_10 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_253 =nfSelectedRecord10.GG_644_Antall_Jenter_Fordypning_Matematikk_Trinn_10 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_307 =nfSelectedRecord10.GG_645_Sum_Fordypning_Matematikk_Trinn_10 MODE =DisplayMode.View
+TEXT Label4_712 ="12"
+TEXT Label4_713 ="Fordypning i arbeid"
+FIELD Local_Comp_Input_Number_243 =nfSelectedRecord10.GG_647_Antall_Gutter_Fordypning_Arbeid_Trinn_8 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_246 =nfSelectedRecord10.GG_648_Antall_Jenter_Fordypning_Arbeid_Trinn_8 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_309 =nfSelectedRecord10.GG_649_Sum_Fordypning_Arbeid_Trinn_8 MODE =DisplayMode.View
+FIELD Local_Comp_Input_Number_247 =nfSelectedRecord10.GG_650_Antall_Gutter_Fordypning_Arbeid_Trinn_9 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_248 =nfSelectedRecord10.GG_651_Antall_Jenter_Fordypning_Arbeid_Trinn_9 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_305 =nfSelectedRecord10.GG_652_Sum_Fordypning_Arbeid_Trinn_9 MODE =DisplayMode.View
+FIELD Local_Comp_Input_Number_251 =nfSelectedRecord10.GG_653_Antall_Gutter_Fordypning_Arbeid_Trinn_10 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_252 =nfSelectedRecord10.GG_654_Antall_Jenter_Fordypning_Arbeid_Trinn_10 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_310 =nfSelectedRecord10.GG_655_Sum_Fordypning_Arbeid_Trinn_10 MODE =DisplayMode.View
+TEXT Label4_857 ="13"
+FIELD Local_Comp_Input_Number_254 =nfSelectedRecord10.GG_984_Sum_Fremmedspraak_Fordypning_Arbeidslivsfag_Gutter_Trinn_8 MODE =DisplayMode.View
+FIELD Local_Comp_Input_Number_255 =nfSelectedRecord10.GG_985_Sum_Fremmedspraak_Fordypning_Arbeidslivsfag_Jenter_Trinn_8 MODE =DisplayMode.View
+FIELD Local_Comp_Input_Number_313 =nfSelectedRecord10.GG_986_Sum_Fremmedspraak_Fordypning_Arbeidslivsfag_Gutter_Jenter_Trinn_8 MODE =DisplayMode.View
+FIELD Local_Comp_Input_Number_256 =nfSelectedRecord10.GG_987_Sum_Fremmedspraak_Fordypning_Arbeidslivsfag_Gutter_Trinn_9 MODE =DisplayMode.View
+FIELD Local_Comp_Input_Number_257 =nfSelectedRecord10.GG_988_Sum_Fremmedspraak_Fordypning_Arbeidslivsfag_Jenter_Trinn_9 MODE =DisplayMode.View
+FIELD Local_Comp_Input_Number_314 =nfSelectedRecord10.GG_989_Sum_Fremmedspraak_Fordypning_Arbeidslivsfag_Gutter_Jenter_Trinn_9 MODE =DisplayMode.View
+FIELD Local_Comp_Input_Number_258 =nfSelectedRecord10.GG_990_Sum_Fremmedspraak_Fordypning_Arbeidslivsfag_Gutter_Trinn_10 MODE =DisplayMode.View
+FIELD Local_Comp_Input_Number_259 =nfSelectedRecord10.GG_991_Sum_Fremmedspraak_Fordypning_Arbeidslivsfag_Jenter_Trinn_10 MODE =DisplayMode.View
+FIELD Local_Comp_Input_Number_315 =nfSelectedRecord10.GG_992_Sum_Fremmedspraak_Fordypning_Arbeidslivsfag_Gutter_Jenter_Trinn_10 MODE =DisplayMode.View
+TEXT Label4_714 ="Sum 8. - 10. trinn"
+FIELD Local_Comp_Input_Number_175 =nfSelectedRecord10.GG_546_Sum_Tysk_Trinn_8_10 MODE =DisplayMode.View
+FIELD Local_Comp_Input_Number_176 =nfSelectedRecord10.GG_556_Sum_Fransk_Trinn_8_10 MODE =DisplayMode.View
+FIELD Local_Comp_Input_Number_261 =nfSelectedRecord10.GG_566_Sum_Spansk_Trinn_8_10 MODE =DisplayMode.View
+FIELD Local_Comp_Input_Number_278 =nfSelectedRecord10.GG_576_Sum_Italiensk_Trinn_8_10 MODE =DisplayMode.View
+FIELD Local_Comp_Input_Number_283 =nfSelectedRecord10.GG_586_Sum_Russisk_Trinn_8_10 MODE =DisplayMode.View
+FIELD Local_Comp_Input_Number_287 =nfSelectedRecord10.GG_596_Sum_Andre_Spraak_Trinn_8_10 MODE =DisplayMode.View
+FIELD Local_Comp_Input_Number_291 =nfSelectedRecord10.GG_606_Sum_Fordypning_Engelsk_Trinn_8_10 MODE =DisplayMode.View
+FIELD Local_Comp_Input_Number_295 =nfSelectedRecord10.GG_616_Sum_Fordypning_Norsk_Trinn_8_10 MODE =DisplayMode.View
+FIELD Local_Comp_Input_Number_299 =nfSelectedRecord10.GG_626_Sum_Fordypning_Samisk_Trinn_8_10 MODE =DisplayMode.View
+FIELD Local_Comp_Input_Number_303 =nfSelectedRecord10.GG_636_Sum_Arbeidslivsfag_Trinn_8_10 MODE =DisplayMode.View
+FIELD Local_Comp_Input_Number_308 =nfSelectedRecord10.GG_646_Sum_Fordypning_Matematikk_Trinn_8_10 MODE =DisplayMode.View
+FIELD Local_Comp_Input_Number_311 =nfSelectedRecord10.GG_656_Sum_Fordypning_Arbeid_Trinn_8_10 MODE =DisplayMode.View
+FIELD Local_Comp_Input_Number_312 =nfSelectedRecord10.GG_993_Sum_Fremmedspraak_Fordypning_Arbeidslivsfag_Gutter_Jenter_Trinn_1_10 MODE =DisplayMode.View
+
+CARD B. Elever uten fremmedspråk, fordypning eller arbeidslivsfag {"Control":"DataCard@1.0.2","Variant":"BlankCard","DisplayMode":"=nfDisplayMode","Height":"=100","Width":"=Parent.Width","X":"=0","Y":"=4"}
+HEADER Comp_liba_DatacardBkgGSI_40 =//"B. Elever uten fremmedspråk, fordypning eller arbeidslivsfag"
+LookUp(nfViewSprak, BeregnetId = "GG_H40").HovedsporsmalTekst
+TEXT Label4_620 ="1"
+FIELD Local_Comp_Input_Number_263 =nfSelectedRecord10.GG_657_Antall_Gutter_Uten_Fordypning_Fremmedspraak_Eller_Arbeidslivsfag_Trinn_8 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_264 =nfSelectedRecord10.GG_658_Antall_Jenter_Uten_Fordypning_Fremmedspraak_Eller_Arbeidslivsfag_Trinn_8 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_316 =nfSelectedRecord10.GG_659_Sum_Uten_Fordypning_Fremmedspraak_Eller_Arbeidslivsfag_Trinn_8 MODE =DisplayMode.View
+FIELD Local_Comp_Input_Number_265 =nfSelectedRecord10.GG_660_Antall_Gutter_Uten_Fordypning_Fremmedspraak_Eller_Arbeidslivsfag_Trinn_9 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_266 =nfSelectedRecord10.GG_661_Antall_Jenter_Uten_Fordypning_Fremmedspraak_Eller_Arbeidslivsfag_Trinn_9 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_317 =nfSelectedRecord10.GG_662_Sum_Uten_Fordypning_Fremmedspraak_Eller_Arbeidslivsfag_Trinn_9 MODE =DisplayMode.View
+FIELD Local_Comp_Input_Number_267 =nfSelectedRecord10.GG_663_Antall_Gutter_Uten_Fordypning_Fremmedspraak_Eller_Arbeidslivsfag_Trinn_10 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_268 =nfSelectedRecord10.GG_664_Antall_Jenter_Uten_Fordypning_Fremmedspraak_Eller_Arbeidslivsfag_Trinn_10 MODE =nfDisplayMode
+FIELD Local_Comp_Input_Number_318 =nfSelectedRecord10.GG_665_Sum_Uten_Fordypning_Fremmedspraak_Eller_Arbeidslivsfag_Trinn_10 MODE =DisplayMode.View
+TEXT Label4_644 ="Sum 8. - 10. trinn"
+FIELD Local_Comp_Input_Number_319 =nfSelectedRecord10.GG_666_Sum_Uten_Fordypning_Fremmedspraak_Eller_Arbeidslivsfag_Trinn_8_10 MODE =DisplayMode.View

@@ -1,5 +1,12 @@
+import { importedUi } from './importedUi'
 // Static React UI text. Keys retain the Bokmål wording for easy review.
 export const nnUi: Record<string, string> = {
+  'Skolen har trinn {{lowest}}–{{highest}}. Tilgjengelige trinn styres av del 2 B og C (laveste og høyeste trinn).': 'Skulen har trinn {{lowest}}–{{highest}}. Tilgjengelege trinn blir styrte av del 2 B og C (lågaste og høgaste trinn).',
+  'Velg et svar.': 'Vel eit svar.',
+  ...importedUi,
+  'Fjern {{municipality}}': 'Fjern {{municipality}}',
+  'Fjern rad {{number}}': 'Fjern rad {{number}}',
+  'Finansiering fra annen kommune': 'Finansiering frå annan kommune',
   'Demotilganger': 'Demotilgangar',
   'Lese': 'Lese',
   'Redigere': 'Redigere',

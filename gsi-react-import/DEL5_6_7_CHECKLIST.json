@@ -1,0 +1,431 @@
+{
+  "5": {
+    "groups": [
+      {
+        "id": "A",
+        "title": "A. Antall lærere",
+        "reference": "GG_H19_U43"
+      },
+      {
+        "id": "B",
+        "title": "B. Annet personale i elevrettet arbeid",
+        "reference": "GG_H20_U46"
+      },
+      {
+        "id": "C",
+        "title": "C. Antall ansatte med spesialpedagogisk kompetanse",
+        "reference": "GG_H130_U385"
+      },
+      {
+        "id": "D",
+        "title": "D. Kompetansekrav for undervisning",
+        "reference": "GG_H22_U52",
+        "tables": [
+          "1–7. trinn",
+          "8–10. trinn"
+        ]
+      },
+      {
+        "id": "E",
+        "title": "E. Ansatte som gir individuelt tilrettelagt opplæring",
+        "reference": "GG_H61_U116"
+      }
+    ],
+    "visibleFields": 63,
+    "hidden": [
+      {
+        "control": "TextInput3_164",
+        "key": "GG_219_Antall_Laerere_Underkompetent_Trinn_1_7",
+        "reason": "Visible=false on control/ancestor"
+      },
+      {
+        "control": "TextInput3_165",
+        "key": "GG_220_Antall_Laerere_Underkompetent_Trinn_8_10",
+        "reason": "Visible=false on control/ancestor"
+      },
+      {
+        "control": "TextInput3_280",
+        "key": "GG_1022_Sum_Laerere_Underkompetente_Trinn_1_10",
+        "reason": "Visible=false on control/ancestor"
+      },
+      {
+        "control": "TextInput3_354",
+        "key": "GG_994_Antall_Ansatte_Underviser_1_7_Og_8_10_Oppfyller_Kompetansekrav_1_7",
+        "reason": "Visible=false on control/ancestor"
+      },
+      {
+        "control": "TextInput3_356",
+        "key": "GG_995_Antall_Ansatte_1_4_Oppfyller_Kompetansekrav_5_10_1_7",
+        "reason": "Visible=false on control/ancestor"
+      }
+    ],
+    "backendOwned": [
+      "GG_1080_Sum_Antall_Ansatte_Spesialpedagogisk_Kompetanse",
+      "GG_1025_Sum_Antall_Ansatte_Som_Gir_Individuelt_Tilrettelagt_Opplæring"
+    ],
+    "decimal": [],
+    "controllers": [
+      "GG-A108",
+      "GG-A113",
+      "GG-A114",
+      "GG-A115",
+      "GG-A117",
+      "GG-A118",
+      "GG-A126",
+      "GG-A134",
+      "GG-A16",
+      "GG-A162",
+      "GG-A17",
+      "GG-A33",
+      "GG-A63",
+      "GG-A72",
+      "GG-A75",
+      "GG-A80",
+      "GG-A89",
+      "GG-A91",
+      "GG-A92",
+      "GG-A93",
+      "GG-A94",
+      "GG-A95",
+      "GG-A96",
+      "GG-A97",
+      "GG-F115",
+      "GG-F116",
+      "GG-F117",
+      "GG-F118",
+      "GG-F119",
+      "GG-F120",
+      "GG-F121",
+      "GG-F122",
+      "GG-F123",
+      "GG-F124",
+      "GG-F34",
+      "GG-F36"
+    ]
+  },
+  "6": {
+    "groups": [
+      {
+        "id": "A",
+        "title": "A. Årsverk til lederoppgaver",
+        "reference": "GG_H23_U53"
+      },
+      {
+        "id": "B",
+        "title": "B. Årsramme for undervisning",
+        "reference": "GG_H24_U56"
+      },
+      {
+        "id": "C",
+        "title": "C. Årsverk utført av annet personale",
+        "reference": "GG_H25_U58"
+      },
+      {
+        "id": "D",
+        "title": "D. Beregnede årsverk til undervisning",
+        "reference": "GG_H64_U128"
+      }
+    ],
+    "visibleFields": 11,
+    "hidden": [],
+    "backendOwned": [
+      "GG_1049_Beregnede_Arsverk_Til_Undervisning_Trinn_1_4",
+      "GG_1050_Beregnede_Arsverk_Til_Undervisning_Trinn_5_7",
+      "GG_1051_Beregnede_Arsverk_Til_Undervisning_Trinn_8_10",
+      "GG_944_Sum_Beregnede_Arsverk_Til_Undervisning"
+    ],
+    "decimal": [
+      {
+        "key": "GG_221_Antall_Aarsverk_Rektor",
+        "max": 9999,
+        "minExclusive": 0,
+        "precision": 2
+      },
+      {
+        "key": "GG_222_Antall_Aarsverk_Undervisningsinspektoer",
+        "max": 9999,
+        "minExclusive": 0,
+        "precision": 2
+      },
+      {
+        "key": "GG_223_Sum_Aarsverk_Administrative_Oppgaver",
+        "max": 9999,
+        "minExclusive": 0,
+        "precision": 2
+      },
+      {
+        "key": "GG_226_Antall_Aarsverk_Skolebibliotekar",
+        "max": 9999,
+        "minExclusive": 0,
+        "precision": 2
+      },
+      {
+        "key": "GG_227_Antall_Aarsverk_Kontorteknisk_Personale",
+        "max": 9999,
+        "minExclusive": 0,
+        "precision": 2
+      },
+      {
+        "key": "GG_1049_Beregnede_Arsverk_Til_Undervisning_Trinn_1_4"
+      },
+      {
+        "key": "GG_1050_Beregnede_Arsverk_Til_Undervisning_Trinn_5_7"
+      },
+      {
+        "key": "GG_1051_Beregnede_Arsverk_Til_Undervisning_Trinn_8_10"
+      },
+      {
+        "key": "GG_944_Sum_Beregnede_Arsverk_Til_Undervisning"
+      }
+    ],
+    "controllers": [
+      "GG-A125",
+      "GG-A132",
+      "GG-A133",
+      "GG-A21",
+      "GG-A53",
+      "GG-A54",
+      "GG-A55",
+      "GG-F140",
+      "GG-F141",
+      "GG-F74"
+    ]
+  },
+  "7": {
+    "groups": [
+      {
+        "id": "A",
+        "title": "A. Hvor mange elever får spesialundervisning etter enkeltvedtak?",
+        "reference": "GG_H26_U60",
+        "sourceCard": "A. Hvor mange elever får spesialundervisning etter enkeltvedtak?",
+        "sourceOrder": 3,
+        "textReferences": [
+          "GG_H26_U60"
+        ],
+        "controllers": [
+          "GG-A40",
+          "GG-A44",
+          "GG-A45",
+          "GG-F19"
+        ]
+      },
+      {
+        "id": "B",
+        "title": "B. Individuell tilrettelegging",
+        "reference": "GG_H32_U77",
+        "sourceCard": "7B",
+        "sourceOrder": 4,
+        "textReferences": [
+          "GG_H32_U77",
+          "GG_H32_U129",
+          "GG_H32_U130",
+          "GG_H32_U131"
+        ],
+        "controllers": [
+          "BK-A10",
+          "GG-A73",
+          "GG-F108"
+        ],
+        "columnGroups": [
+          {
+            "title": "Med individuelt tilrettelagt opplæring",
+            "table": "Med individuelt tilrettelagt opplæring",
+            "columns": [
+              {
+                "fieldColumn": "Gutter",
+                "label": "Gutter"
+              },
+              {
+                "fieldColumn": "Jenter",
+                "label": "Jenter"
+              },
+              {
+                "fieldColumn": "Sum",
+                "label": "Sum"
+              }
+            ]
+          },
+          {
+            "title": "Uten individuelt tilrettelagt opplæring",
+            "table": "Uten individuelt tilrettelagt opplæring",
+            "columns": [
+              {
+                "fieldColumn": "Gutter",
+                "label": "Gutter"
+              },
+              {
+                "fieldColumn": "Jenter",
+                "label": "Jenter"
+              },
+              {
+                "fieldColumn": "Sum",
+                "label": "Sum"
+              }
+            ]
+          },
+          {
+            "title": "Totalt",
+            "table": "Totalt",
+            "columns": [
+              {
+                "fieldColumn": "Sum",
+                "label": "Sum"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "C",
+        "title": "C. Faste avdelinger for spesialundervisning",
+        "reference": "GG_H27_U61",
+        "sourceCard": "C. Faste avdelinger for spesialundervisning.",
+        "sourceOrder": 5,
+        "textReferences": [
+          "GG_H27_U133",
+          "GG_H27_U61"
+        ],
+        "controllers": [
+          "GG-A51",
+          "GG-F69",
+          "GG-F113"
+        ]
+      },
+      {
+        "id": "D",
+        "title": "D. Alternativ opplæringsarena",
+        "reference": "GG_H28_U62",
+        "sourceCard": "D. Alternativ opplæringsarena",
+        "sourceOrder": 6,
+        "textReferences": [
+          "GG_H28_U62"
+        ],
+        "controllers": [
+          "BK-A10",
+          "GG-A83"
+        ]
+      },
+      {
+        "id": "E",
+        "title": "E. Organisering av spesialundervisning",
+        "reference": "GG_H29_U63",
+        "sourceCard": "E. Organisering av spesialundervisning",
+        "sourceOrder": 7,
+        "textReferences": [
+          "GG_H29_U63",
+          "GG_H29_U64",
+          "GG_H29_U65",
+          "GG_H29_U66"
+        ],
+        "controllers": [
+          "GG-F57",
+          "GG-F58"
+        ]
+      },
+      {
+        "id": "F",
+        "title": "F. Tildelte timer til spesialundervisning med undervisningspersonale",
+        "reference": "GG_H30_U67",
+        "sourceCard": "F. Tildelte timer til spesialundervisning med undervisningspersonale",
+        "sourceOrder": 8,
+        "textReferences": [
+          "GG_H30_U67",
+          "GG_H30_U68",
+          "GG_H30_U69",
+          "GG_H30_U70",
+          "GG_H30_U71"
+        ],
+        "controllers": [
+          "GG-A87",
+          "GG-A88",
+          "GG-F61",
+          "GG-F142",
+          "GG-F143",
+          "GG-F144",
+          "GG-F147",
+          "GG-F148",
+          "GG-F149",
+          "GG-F150"
+        ]
+      },
+      {
+        "id": "G",
+        "title": "G. Antall elever som har vedtak om personlig assistanse eller timer med assistent i videreført vedtak om spesialundervisning",
+        "reference": "GG_H31_U72",
+        "sourceCard": "G. Tildelte timer til spesialundervisning med assistent",
+        "sourceOrder": 9,
+        "textReferences": [
+          "GG_H31_U72",
+          "GG_H31_U73",
+          "GG_H31_U74",
+          "GG_H31_U75",
+          "GG_H31_U76"
+        ],
+        "controllers": []
+      },
+      {
+        "id": "H",
+        "title": "H. Elever med individuell tilrettelegging fra andre kommuner",
+        "reference": "GG_H62_U135",
+        "sourceCard": "7H",
+        "sourceOrder": 10,
+        "textReferences": [
+          "GG_H62_U135"
+        ],
+        "controllers": [
+          "GG-A141",
+          "GG-F51"
+        ],
+        "description": "Registrer kommune og antall elever med individuell tilrettelegging fra andre kommuner."
+      }
+    ],
+    "visibleFields": 114,
+    "hidden": [
+      {
+        "control": "TextInput2_227",
+        "key": "GG_925_Antall_Elever_Individuell_Uten_Tilrettelagt_Opplaering_Sum_Rad_1",
+        "reason": "Repeated view of same bound value"
+      },
+      {
+        "control": "TextInput2_222",
+        "key": "GG_925_Antall_Elever_Individuell_Uten_Tilrettelagt_Opplaering_Sum_Rad_1",
+        "reason": "Repeated view of same bound value"
+      }
+    ],
+    "backendOwned": [
+      "GG_925_Antall_Elever_Individuell_Uten_Tilrettelagt_Opplaering_Sum_Rad_1",
+      "GG_922_Antall_Elever_Individuell_Tilrettelagt_Opplaering_Sum_Rad_1",
+      "GG_1018_Total_Antall_Elever_Individuell_Uten_Tilrettelagt_Opplaering_Rad_1",
+      "GG_928_Antall_Elever_Individuell_Tilrettelagt_Opplaering_Sum_Rad_2",
+      "GG_931_Antall_Elever_Individuell_Uten_Tilrettelagt_Opplaering_Sum_Rad_2",
+      "GG_1019_Total_Antall_Elever_Individuell_Uten_Tilrettelagt_Opplaering_Rad_2"
+    ],
+    "decimal": [],
+    "controllers": [
+      "GG-A141",
+      "GG-A40",
+      "GG-A44",
+      "GG-A45",
+      "GG-A51",
+      "GG-A73",
+      "GG-A83",
+      "GG-A87",
+      "GG-A88",
+      "GG-F108",
+      "GG-F113",
+      "GG-F142",
+      "GG-F143",
+      "GG-F144",
+      "GG-F147",
+      "GG-F148",
+      "GG-F149",
+      "GG-F150",
+      "GG-F19",
+      "GG-F51",
+      "GG-F57",
+      "GG-F58",
+      "GG-F61",
+      "GG-F69"
+    ]
+  }
+}

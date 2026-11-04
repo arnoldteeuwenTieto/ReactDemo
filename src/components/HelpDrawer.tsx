@@ -11,11 +11,12 @@ interface HelpDrawerProps {
   onClose: () => void
   returnFocusTo: HTMLButtonElement
   service?: HelpTextService
+  showReference?: boolean
 }
 
 // Mount one drawer for the active help ID. Native modal dialog provides focus
 // containment and makes the rest of the document inert, including for AT users.
-export function HelpDrawer({ helpId, onClose, returnFocusTo, service = mockHelpTextService }: HelpDrawerProps) {
+export function HelpDrawer({ helpId, onClose, returnFocusTo, service = mockHelpTextService, showReference = true }: HelpDrawerProps) {
   const { i18n } = useTranslation('ui')
   const language = i18n.language === 'nn' ? 'nn' : 'nb'
   const dialogRef = useRef<HTMLDialogElement>(null)
@@ -62,7 +63,7 @@ export function HelpDrawer({ helpId, onClose, returnFocusTo, service = mockHelpT
         </button>
       </header>
       <div className="help-drawer-content" tabIndex={0}>
-        <p className="help-drawer-id">{helpId} {ui("· Demonstrasjon")}</p>
+        {showReference && <p className="help-drawer-id">{helpId} {ui("· Demonstrasjon")}</p>}
         <h2 id={titleId}>{entry?.overskrift ?? ui("Hjelpetekst")}</h2>
         {error ? <p role="status">{ui("Hjelpeteksten kunne ikke hentes. Lukk panelet og prøv igjen.")}</p> : entry ? <HelpTextContent tekst={entry.tekst} format={entry.format} /> : <p role="status">{ui("Henter hjelpetekst...")}</p>}
       </div>

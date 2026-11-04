@@ -8,9 +8,10 @@ import { mockSchoolInformationService } from '../services/schoolInformationServi
 import type { SchoolInformationService } from '../services/schoolInformationService'
 import { QuestionCard } from './QuestionCard'
 import { HelpDrawer } from './HelpDrawer'
+import { ReportingValue } from './ReportingFields'
 
 function Detail({ label, value }: { label: string; value: string | null | undefined }) {
-  return <div className="unit-detail"><dt>{label}</dt><dd>{value?.trim() ? value : ui(displaySchoolDetail(value))}</dd></div>
+  return <div className="unit-detail"><dt>{label}</dt><ReportingValue sectionRef="1" reportValue={value} data-field-state="calculated">{value?.trim() ? value : ui(displaySchoolDetail(value))}</ReportingValue></div>
 }
 
 export function Enhetsopplysninger({ school, service = mockSchoolInformationService }: { school: School; service?: SchoolInformationService }) {

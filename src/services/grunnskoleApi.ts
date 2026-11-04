@@ -7,6 +7,19 @@ export interface SaveResponse { ok: true; savedAt: string; dependentOperations: 
 export interface ApiLog { schoolId: string; skjemaStatusId: string; section: number; operation: string; payload: object; response: object; timestamp: string }
 type Sections = Record<number, Record<string, unknown>>
 const store = new Map<string, Sections>()
+let revision = 0
+const listeners = new Set<() => void>()
+export function subscribeMockReports(listener: () => void) { listeners.add(listener); return () => { listeners.delete(listener) } }
+export function getMockReportRevision() { return revision }
+function notifyMockReports() { revision++; listeners.forEach(listener => listener()) }
+export function readMockSection(key: string, section: number): Record<string, unknown> { return { ...store.get(key)?.[section] } }
+// Shared in-memory store only. Callers must enforce their centralized demo guards.
+export function patchMockSection(key: string, section: number, patch: Record<string, unknown>) {
+  const sections = store.get(key) ?? {}
+  sections[section] = { ...sections[section], ...patch }
+  store.set(key, sections)
+  notifyMockReports()
+}
 const queues = new Map<string, Promise<unknown>>()
 const logs: ApiLog[] = []
 let attempt = 0
@@ -39,6 +52,7 @@ export function grunnskoleSave(skjemaStatusId: string, del: 2, data: Partial<Del
       if (!operation.warning) sections[operation.del] = { ...sections[operation.del], ...operation.payload }
     }
     store.set(skjemaStatusId, sections)
+    notifyMockReports()
     const response: SaveResponse = { ok: true, savedAt: timestamp, dependentOperations }
     logs.push({ schoolId: skjemaStatusId.split(':')[1], skjemaStatusId, section: del, operation: 'GrunnskoleSave', payload, response, timestamp })
     return response

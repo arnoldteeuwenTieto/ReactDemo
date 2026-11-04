@@ -1,0 +1,3065 @@
+{
+  "8": {
+    "groups": [
+      {
+        "id": "A",
+        "title": "A. Særskilt norskopplæring",
+        "reference": "GG_H33_U78",
+        "sourceCard": "A. Særskilt norskopplæring",
+        "sourceOrder": 2,
+        "textReferences": [
+          "GG_H33_U78",
+          "GG_H33_U79"
+        ],
+        "controllers": [
+          "GG-A41",
+          "GG-F37",
+          "GG-F59",
+          "GG-F110"
+        ],
+        "helpId": "GG-H117"
+      },
+      {
+        "id": "B",
+        "title": "B. Elever i egne undervisningsgrupper for språklige minoriteter",
+        "reference": "GG_H34_U80",
+        "sourceCard": "B. Elever i egne undervisningsgrupper for språklige minoriteter",
+        "sourceOrder": 3,
+        "textReferences": [
+          "GG_H34_U80",
+          "GG_H34_U81"
+        ],
+        "controllers": [
+          "GG-A164",
+          "GG-A163",
+          "GG-A36",
+          "GG-A120",
+          "GG-F62"
+        ],
+        "helpId": "GG-H118"
+      },
+      {
+        "id": "C",
+        "title": "C. Antall elever som får morsmålsopplæring, tospråklig fagopplæring eller tilrettelagt opplæring",
+        "reference": "GG_H35_U82",
+        "sourceCard": "C. Antall elever som får morsmålsopplæring, tospråklig fagopplæring eller tilrettelagt opplæring",
+        "sourceOrder": 4,
+        "textReferences": [
+          "GG_H35_U82",
+          "GG_H35_U83",
+          "GG_H35_U84",
+          "GG_H35_U85",
+          "GG_H35_U86"
+        ],
+        "controllers": [
+          "GG-A6",
+          "GG-A22",
+          "GG-A23",
+          "GG-A24",
+          "GG-A79",
+          "GG-F53",
+          "GG-F66"
+        ],
+        "helpId": "GG-H119"
+      },
+      {
+        "id": "D",
+        "title": "D. Elever med forsterket opplæring fra andre kommuner",
+        "reference": "GG_H65_U134",
+        "sourceCard": "8D",
+        "sourceOrder": 5,
+        "textReferences": [
+          "GG_H65_U134"
+        ],
+        "controllers": [
+          "BK-A10",
+          "GG-A50",
+          "GG-A142",
+          "GG-F52"
+        ],
+        "helpId": "GG-H120"
+      }
+    ],
+    "fields": [
+      {
+        "key": "GG_335_Antall_Elever_Saerskilt_Norsk_Opplaering_Trinn_1",
+        "control": "Local_Comp_Input_Number_1",
+        "group": "A",
+        "question": "1",
+        "column": "Særskilt norskopplæring",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_346_Antall_Elever_Grunnleggende_Norsk_For_Spraaklige_Minoriteter_Trinn_1",
+        "control": "Local_Comp_Input_Number_4",
+        "group": "A",
+        "question": "1",
+        "column": "Grunnleggende norsk for språklige minoriteter",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_336_Antall_Elever_Saerskilt_Norsk_Opplaering_Trinn_2",
+        "control": "Local_Comp_Input_Number_5",
+        "group": "A",
+        "question": "2",
+        "column": "Særskilt norskopplæring",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_347_Antall_Elever_Grunnleggende_Norsk_For_Spraaklige_Minoriteter_Trinn_2",
+        "control": "Local_Comp_Input_Number_6",
+        "group": "A",
+        "question": "2",
+        "column": "Grunnleggende norsk for språklige minoriteter",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_337_Antall_Elever_Saerskilt_Norsk_Opplaering_Trinn_3",
+        "control": "Local_Comp_Input_Number_8",
+        "group": "A",
+        "question": "3",
+        "column": "Særskilt norskopplæring",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_348_Antall_Elever_Grunnleggende_Norsk_For_Spraaklige_Minoriteter_Trinn_3",
+        "control": "Local_Comp_Input_Number_9",
+        "group": "A",
+        "question": "3",
+        "column": "Grunnleggende norsk for språklige minoriteter",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_338_Antall_Elever_Saerskilt_Norsk_Opplaering_Trinn_4",
+        "control": "Local_Comp_Input_Number_7",
+        "group": "A",
+        "question": "4",
+        "column": "Særskilt norskopplæring",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_349_Antall_Elever_Grunnleggende_Norsk_For_Spraaklige_Minoriteter_Trinn_4",
+        "control": "Local_Comp_Input_Number_12",
+        "group": "A",
+        "question": "4",
+        "column": "Grunnleggende norsk for språklige minoriteter",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_339_Antall_Elever_Saerskilt_Norsk_Opplaering_Trinn_5",
+        "control": "Local_Comp_Input_Number_10",
+        "group": "A",
+        "question": "5",
+        "column": "Særskilt norskopplæring",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_350_Antall_Elever_Grunnleggende_Norsk_For_Spraaklige_Minoriteter_Trinn_5",
+        "control": "Local_Comp_Input_Number_13",
+        "group": "A",
+        "question": "5",
+        "column": "Grunnleggende norsk for språklige minoriteter",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_340_Antall_Elever_Saerskilt_Norsk_Opplaering_Trinn_6",
+        "control": "Local_Comp_Input_Number_11",
+        "group": "A",
+        "question": "6",
+        "column": "Særskilt norskopplæring",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_351_Antall_Elever_Grunnleggende_Norsk_For_Spraaklige_Minoriteter_Trinn_6",
+        "control": "Local_Comp_Input_Number_14",
+        "group": "A",
+        "question": "6",
+        "column": "Grunnleggende norsk for språklige minoriteter",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_341_Antall_Elever_Saerskilt_Norsk_Opplaering_Trinn_7",
+        "control": "Local_Comp_Input_Number_15",
+        "group": "A",
+        "question": "7",
+        "column": "Særskilt norskopplæring",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_352_Antall_Elever_Grunnleggende_Norsk_For_Spraaklige_Minoriteter_Trinn_7",
+        "control": "Local_Comp_Input_Number_16",
+        "group": "A",
+        "question": "7",
+        "column": "Grunnleggende norsk for språklige minoriteter",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_342_Antall_Elever_Saerskilt_Norsk_Opplaering_Trinn_8",
+        "control": "Local_Comp_Input_Number_17",
+        "group": "A",
+        "question": "8",
+        "column": "Særskilt norskopplæring",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_353_Antall_Elever_Grunnleggende_Norsk_For_Spraaklige_Minoriteter_Trinn_8",
+        "control": "Local_Comp_Input_Number_18",
+        "group": "A",
+        "question": "8",
+        "column": "Grunnleggende norsk for språklige minoriteter",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_343_Antall_Elever_Saerskilt_Norsk_Opplaering_Trinn_9",
+        "control": "Local_Comp_Input_Number_19",
+        "group": "A",
+        "question": "9",
+        "column": "Særskilt norskopplæring",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_354_Antall_Elever_Grunnleggende_Norsk_For_Spraaklige_Minoriteter_Trinn_9",
+        "control": "Local_Comp_Input_Number_20",
+        "group": "A",
+        "question": "9",
+        "column": "Grunnleggende norsk for språklige minoriteter",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_344_Antall_Elever_Saerskilt_Norsk_Opplaering_Trinn_10",
+        "control": "Local_Comp_Input_Number_21",
+        "group": "A",
+        "question": "10",
+        "column": "Særskilt norskopplæring",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_355_Antall_Elever_Grunnleggende_Norsk_For_Spraaklige_Minoriteter_Trinn_10",
+        "control": "Local_Comp_Input_Number_22",
+        "group": "A",
+        "question": "10",
+        "column": "Grunnleggende norsk for språklige minoriteter",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_345_Sum_Elever_Saerskilt_Norsk_Opplaering",
+        "control": "TextInput3_271",
+        "group": "A",
+        "question": "11",
+        "column": "Særskilt norskopplæring",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_356_Sum_Elever_Grunnleggende_Norsk_For_Spraaklige_Minoriteter",
+        "control": "TextInput3_272",
+        "group": "A",
+        "question": "11",
+        "column": "Grunnleggende norsk for språklige minoriteter",
+        "readOnly": true,
+        "terms": [
+          {
+            "field": "GG_346_Antall_Elever_Grunnleggende_Norsk_For_Spraaklige_Minoriteter_Trinn_1",
+            "sign": 1
+          },
+          {
+            "field": "GG_347_Antall_Elever_Grunnleggende_Norsk_For_Spraaklige_Minoriteter_Trinn_2",
+            "sign": 1
+          },
+          {
+            "field": "GG_348_Antall_Elever_Grunnleggende_Norsk_For_Spraaklige_Minoriteter_Trinn_3",
+            "sign": 1
+          },
+          {
+            "field": "GG_349_Antall_Elever_Grunnleggende_Norsk_For_Spraaklige_Minoriteter_Trinn_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_350_Antall_Elever_Grunnleggende_Norsk_For_Spraaklige_Minoriteter_Trinn_5",
+            "sign": 1
+          },
+          {
+            "field": "GG_351_Antall_Elever_Grunnleggende_Norsk_For_Spraaklige_Minoriteter_Trinn_6",
+            "sign": 1
+          },
+          {
+            "field": "GG_352_Antall_Elever_Grunnleggende_Norsk_For_Spraaklige_Minoriteter_Trinn_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_353_Antall_Elever_Grunnleggende_Norsk_For_Spraaklige_Minoriteter_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_354_Antall_Elever_Grunnleggende_Norsk_For_Spraaklige_Minoriteter_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_355_Antall_Elever_Grunnleggende_Norsk_For_Spraaklige_Minoriteter_Trinn_10",
+            "sign": 1
+          }
+        ]
+      },
+      {
+        "key": "GG_357_Antall_Elever_Hovedsakelig_Undervisning_Egne_Undervisningsgrupper_Spraaklige_Minoriteter_Gutter",
+        "control": "Local_Comp_Input_Number_23",
+        "group": "B",
+        "question": "1",
+        "column": "Gutter",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_358_Antall_Elever_Hovedsakelig_Undervisning_Egne_Undervisningsgrupper_Spraaklige_Minoriteter_Jenter",
+        "control": "Local_Comp_Input_Number_24",
+        "group": "B",
+        "question": "1",
+        "column": "Jenter",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_359_Sum_Elever_Hovedsakelig_Undervisning_Egne_Undervisningsgrupper_Spraaklige_Minoriteter",
+        "control": "TextInput2_112",
+        "group": "B",
+        "question": "1",
+        "column": "Sum",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_360_Antall_Elever_Hovedsakelig_Undervisning_Egne_Undervisningsgrupper_Spraaklige_Minoriteter_Asylsoeker_Gutter",
+        "control": "Local_Comp_Input_Number_25",
+        "group": "B",
+        "question": "2",
+        "column": "Gutter",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_361_Antall_Elever_Hovedsakelig_Undervisning_Egne_Undervisningsgrupper_Spraaklige_Minoriteter_Asylsoeker_Jenter",
+        "control": "Local_Comp_Input_Number_26",
+        "group": "B",
+        "question": "2",
+        "column": "Jenter",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_362_Sum_Elever_Hovedsakelig_Undervisning_Egne_Undervisningsgrupper_Spraaklige_Minoriteter_Asylsoeker",
+        "control": "TextInput2_113",
+        "group": "B",
+        "question": "2",
+        "column": "Sum",
+        "readOnly": true,
+        "terms": []
+      }
+    ],
+    "backendOwned": [
+      "GG_345_Sum_Elever_Saerskilt_Norsk_Opplaering",
+      "GG_359_Sum_Elever_Hovedsakelig_Undervisning_Egne_Undervisningsgrupper_Spraaklige_Minoriteter",
+      "GG_362_Sum_Elever_Hovedsakelig_Undervisning_Egne_Undervisningsgrupper_Spraaklige_Minoriteter_Asylsoeker"
+    ],
+    "controllers": [
+      "GG-A120",
+      "GG-A142",
+      "GG-A163",
+      "GG-A164",
+      "GG-A22",
+      "GG-A23",
+      "GG-A24",
+      "GG-A36",
+      "GG-A41",
+      "GG-A50",
+      "GG-A6",
+      "GG-A79",
+      "GG-F110",
+      "GG-F37",
+      "GG-F52",
+      "GG-F53",
+      "GG-F59",
+      "GG-F62",
+      "GG-F66"
+    ]
+  },
+  "9": {
+    "groups": [
+      {
+        "id": "A",
+        "title": "A. Opplæringsspråk",
+        "reference": "GG_H36_U87",
+        "sourceCard": "A. Hvor mange elever får spesialundervisning etter enkeltvedtak?_2",
+        "sourceOrder": 3,
+        "textReferences": [
+          "GG_H36_U87",
+          "GG_H36_U88"
+        ],
+        "controllers": [
+          "GG-F9",
+          "GG-F10",
+          "GG-F11",
+          "GG-F12",
+          "GG-F13",
+          "GG-F14",
+          "GG-F15",
+          "GG-F16",
+          "GG-F17",
+          "GG-F18",
+          "GG-A98",
+          "GG-A99",
+          "GG-A100",
+          "GG-A101",
+          "GG-A102",
+          "GG-A103",
+          "GG-A104",
+          "GG-A105",
+          "GG-A106",
+          "GG-A107"
+        ],
+        "helpId": "GG-H121",
+        "description": "Antall elever fordelt etter hovedmål eller opplæringsmålform. Elevtall hentes fra del 3 A.",
+        "columnGroups": [
+          {
+            "title": "Antall elever fordelt etter hovedmål eller opplæringsmålform",
+            "table": "Målform",
+            "columns": [
+              {
+                "fieldColumn": "Bokmål",
+                "label": "Bokmål"
+              },
+              {
+                "fieldColumn": "Nynorsk",
+                "label": "Nynorsk"
+              },
+              {
+                "fieldColumn": "Samisk",
+                "label": "Samisk"
+              },
+              {
+                "fieldColumn": "Andre",
+                "label": "Andre"
+              },
+              {
+                "fieldColumn": "Sum",
+                "label": "Sum"
+              }
+            ]
+          },
+          {
+            "title": "Elevtall (hentet fra 3 A)",
+            "table": "Elevtall",
+            "columns": [
+              {
+                "fieldColumn": "Elevtall (hentet fra 3 A)",
+                "label": "Elever"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B",
+        "title": "B. Elevgrupper med annet språk",
+        "reference": "GG_H37_U89",
+        "sourceCard": "B. Elevgrupper med annet språk",
+        "sourceOrder": 4,
+        "textReferences": [
+          "GG_H37_U89",
+          "GG_H37_U90"
+        ],
+        "controllers": [
+          "GG-A25",
+          "GG-A49",
+          "GG-A56",
+          "GG-A86",
+          "GG-A155"
+        ],
+        "helpId": "GG-H122"
+      },
+      {
+        "id": "C",
+        "title": "C. Elever med opplæring i samiske språk, kvensk og finsk",
+        "reference": "GG_H38_U122",
+        "sourceCard": "C. Samisk/kvensk/finsk",
+        "sourceOrder": 5,
+        "textReferences": [
+          "GG_H38_U122"
+        ],
+        "controllers": [
+          "GG-A14"
+        ],
+        "helpId": "GG-H123"
+      },
+      {
+        "id": "D",
+        "title": "D. Fjernundervisning",
+        "reference": "GG_H63_U123",
+        "sourceCard": "9D",
+        "sourceOrder": 6,
+        "textReferences": [
+          "GG_H63_U123",
+          "GG_H63_U124",
+          "GG_H63_U125",
+          "GG_H63_U126"
+        ],
+        "controllers": [],
+        "helpId": "GG-H124",
+        "description": "Elever med fjernundervisning i samisk skal registreres både i 9 C og 9 D."
+      }
+    ],
+    "fields": [
+      {
+        "key": "GG_368_Antall_Elever_Bokmaal_Trinn_1",
+        "control": "Local_Comp_Input_Number_27",
+        "group": "A",
+        "question": "1",
+        "column": "Bokmål",
+        "table": "Målform",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_379_Antall_Elever_Nynorsk_Trinn_1",
+        "control": "Local_Comp_Input_Number_28",
+        "group": "A",
+        "question": "1",
+        "column": "Nynorsk",
+        "table": "Målform",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_390_Antall_Elever_Samisk_Trinn_1",
+        "control": "Local_Comp_Input_Number_29",
+        "group": "A",
+        "question": "1",
+        "column": "Samisk",
+        "table": "Målform",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_401_Antall_Elever_Annen_Opplaeringsmaalform_Trinn_1",
+        "control": "Local_Comp_Input_Number_30",
+        "group": "A",
+        "question": "1",
+        "column": "Andre",
+        "table": "Målform",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_412_Sum_Elever_Opplaeringsmaalform_Trinn_1",
+        "control": "Local_Comp_Input_Number_31",
+        "group": "A",
+        "question": "1",
+        "column": "Sum",
+        "table": "Målform",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_3_Antall_Elever_Trinn1_Sum",
+        "control": "Local_Comp_Input_Number_32",
+        "group": "A",
+        "question": "1",
+        "column": "Elevtall (hentet fra 3 A)",
+        "table": "Elevtall",
+        "readOnly": true,
+        "sourceSection": 3,
+        "terms": []
+      },
+      {
+        "key": "GG_369_Antall_Elever_Bokmaal_Trinn_2",
+        "control": "Local_Comp_Input_Number_33",
+        "group": "A",
+        "question": "2",
+        "column": "Bokmål",
+        "table": "Målform",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_380_Antall_Elever_Nynorsk_Trinn_2",
+        "control": "Local_Comp_Input_Number_34",
+        "group": "A",
+        "question": "2",
+        "column": "Nynorsk",
+        "table": "Målform",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_391_Antall_Elever_Samisk_Trinn_2",
+        "control": "Local_Comp_Input_Number_35",
+        "group": "A",
+        "question": "2",
+        "column": "Samisk",
+        "table": "Målform",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_402_Antall_Elever_Annen_Opplaeringsmaalform_Trinn_2",
+        "control": "Local_Comp_Input_Number_36",
+        "group": "A",
+        "question": "2",
+        "column": "Andre",
+        "table": "Målform",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_413_Sum_Elever_Opplaeringsmaalform_Trinn_2",
+        "control": "Local_Comp_Input_Number_37",
+        "group": "A",
+        "question": "2",
+        "column": "Sum",
+        "table": "Målform",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_6_Antall_Elever_Trinn2_Sum",
+        "control": "Local_Comp_Input_Number_38",
+        "group": "A",
+        "question": "2",
+        "column": "Elevtall (hentet fra 3 A)",
+        "table": "Elevtall",
+        "readOnly": true,
+        "sourceSection": 3,
+        "terms": []
+      },
+      {
+        "key": "GG_370_Antall_Elever_Bokmaal_Trinn_3",
+        "control": "Local_Comp_Input_Number_39",
+        "group": "A",
+        "question": "3",
+        "column": "Bokmål",
+        "table": "Målform",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_381_Antall_Elever_Nynorsk_Trinn_3",
+        "control": "Local_Comp_Input_Number_40",
+        "group": "A",
+        "question": "3",
+        "column": "Nynorsk",
+        "table": "Målform",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_392_Antall_Elever_Samisk_Trinn_3",
+        "control": "Local_Comp_Input_Number_41",
+        "group": "A",
+        "question": "3",
+        "column": "Samisk",
+        "table": "Målform",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_403_Antall_Elever_Annen_Opplaeringsmaalform_Trinn_3",
+        "control": "Local_Comp_Input_Number_42",
+        "group": "A",
+        "question": "3",
+        "column": "Andre",
+        "table": "Målform",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_414_Sum_Elever_Opplaeringsmaalform_Trinn_3",
+        "control": "Local_Comp_Input_Number_43",
+        "group": "A",
+        "question": "3",
+        "column": "Sum",
+        "table": "Målform",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_9_Antall_Elever_Trinn3_Sum",
+        "control": "Local_Comp_Input_Number_44",
+        "group": "A",
+        "question": "3",
+        "column": "Elevtall (hentet fra 3 A)",
+        "table": "Elevtall",
+        "readOnly": true,
+        "sourceSection": 3,
+        "terms": []
+      },
+      {
+        "key": "GG_371_Antall_Elever_Bokmaal_Trinn_4",
+        "control": "Local_Comp_Input_Number_45",
+        "group": "A",
+        "question": "4",
+        "column": "Bokmål",
+        "table": "Målform",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_382_Antall_Elever_Nynorsk_Trinn_4",
+        "control": "Local_Comp_Input_Number_46",
+        "group": "A",
+        "question": "4",
+        "column": "Nynorsk",
+        "table": "Målform",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_393_Antall_Elever_Samisk_Trinn_4",
+        "control": "Local_Comp_Input_Number_47",
+        "group": "A",
+        "question": "4",
+        "column": "Samisk",
+        "table": "Målform",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_404_Antall_Elever_Annen_Opplaeringsmaalform_Trinn_4",
+        "control": "Local_Comp_Input_Number_48",
+        "group": "A",
+        "question": "4",
+        "column": "Andre",
+        "table": "Målform",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_415_Sum_Elever_Opplaeringsmaalform_Trinn_4",
+        "control": "Local_Comp_Input_Number_49",
+        "group": "A",
+        "question": "4",
+        "column": "Sum",
+        "table": "Målform",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_12_Antall_Elever_Trinn4_Sum",
+        "control": "Local_Comp_Input_Number_50",
+        "group": "A",
+        "question": "4",
+        "column": "Elevtall (hentet fra 3 A)",
+        "table": "Elevtall",
+        "readOnly": true,
+        "sourceSection": 3,
+        "terms": []
+      },
+      {
+        "key": "GG_372_Antall_Elever_Bokmaal_Trinn_5",
+        "control": "Local_Comp_Input_Number_51",
+        "group": "A",
+        "question": "5",
+        "column": "Bokmål",
+        "table": "Målform",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_383_Antall_Elever_Nynorsk_Trinn_5",
+        "control": "Local_Comp_Input_Number_52",
+        "group": "A",
+        "question": "5",
+        "column": "Nynorsk",
+        "table": "Målform",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_394_Antall_Elever_Samisk_Trinn_5",
+        "control": "Local_Comp_Input_Number_53",
+        "group": "A",
+        "question": "5",
+        "column": "Samisk",
+        "table": "Målform",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_405_Antall_Elever_Annen_Opplaeringsmaalform_Trinn_5",
+        "control": "Local_Comp_Input_Number_54",
+        "group": "A",
+        "question": "5",
+        "column": "Andre",
+        "table": "Målform",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_416_Sum_Elever_Opplaeringsmaalform_Trinn_5",
+        "control": "Local_Comp_Input_Number_55",
+        "group": "A",
+        "question": "5",
+        "column": "Sum",
+        "table": "Målform",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_15_Antall_Elever_Trinn5_Sum",
+        "control": "Local_Comp_Input_Number_56",
+        "group": "A",
+        "question": "5",
+        "column": "Elevtall (hentet fra 3 A)",
+        "table": "Elevtall",
+        "readOnly": true,
+        "sourceSection": 3,
+        "terms": []
+      },
+      {
+        "key": "GG_373_Antall_Elever_Bokmaal_Trinn_6",
+        "control": "Local_Comp_Input_Number_57",
+        "group": "A",
+        "question": "6",
+        "column": "Bokmål",
+        "table": "Målform",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_384_Antall_Elever_Nynorsk_Trinn_6",
+        "control": "Local_Comp_Input_Number_58",
+        "group": "A",
+        "question": "6",
+        "column": "Nynorsk",
+        "table": "Målform",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_395_Antall_Elever_Samisk_Trinn_6",
+        "control": "Local_Comp_Input_Number_59",
+        "group": "A",
+        "question": "6",
+        "column": "Samisk",
+        "table": "Målform",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_406_Antall_Elever_Annen_Opplaeringsmaalform_Trinn_6",
+        "control": "Local_Comp_Input_Number_60",
+        "group": "A",
+        "question": "6",
+        "column": "Andre",
+        "table": "Målform",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_417_Sum_Elever_Opplaeringsmaalform_Trinn_6",
+        "control": "Local_Comp_Input_Number_61",
+        "group": "A",
+        "question": "6",
+        "column": "Sum",
+        "table": "Målform",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_18_Antall_Elever_Trinn6_Sum",
+        "control": "Local_Comp_Input_Number_62",
+        "group": "A",
+        "question": "6",
+        "column": "Elevtall (hentet fra 3 A)",
+        "table": "Elevtall",
+        "readOnly": true,
+        "sourceSection": 3,
+        "terms": []
+      },
+      {
+        "key": "GG_374_Antall_Elever_Bokmaal_Trinn_7",
+        "control": "Local_Comp_Input_Number_63",
+        "group": "A",
+        "question": "7",
+        "column": "Bokmål",
+        "table": "Målform",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_385_Antall_Elever_Nynorsk_Trinn_7",
+        "control": "Local_Comp_Input_Number_64",
+        "group": "A",
+        "question": "7",
+        "column": "Nynorsk",
+        "table": "Målform",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_396_Antall_Elever_Samisk_Trinn_7",
+        "control": "Local_Comp_Input_Number_65",
+        "group": "A",
+        "question": "7",
+        "column": "Samisk",
+        "table": "Målform",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_407_Antall_Elever_Annen_Opplaeringsmaalform_Trinn_7",
+        "control": "Local_Comp_Input_Number_66",
+        "group": "A",
+        "question": "7",
+        "column": "Andre",
+        "table": "Målform",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_418_Sum_Elever_Opplaeringsmaalform_Trinn_7",
+        "control": "Local_Comp_Input_Number_67",
+        "group": "A",
+        "question": "7",
+        "column": "Sum",
+        "table": "Målform",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_21_Antall_Elever_Trinn7_Sum",
+        "control": "Local_Comp_Input_Number_68",
+        "group": "A",
+        "question": "7",
+        "column": "Elevtall (hentet fra 3 A)",
+        "table": "Elevtall",
+        "readOnly": true,
+        "sourceSection": 3,
+        "terms": []
+      },
+      {
+        "key": "GG_375_Antall_Elever_Bokmaal_Trinn_8",
+        "control": "Local_Comp_Input_Number_69",
+        "group": "A",
+        "question": "8",
+        "column": "Bokmål",
+        "table": "Målform",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_386_Antall_Elever_Nynorsk_Trinn_8",
+        "control": "Local_Comp_Input_Number_70",
+        "group": "A",
+        "question": "8",
+        "column": "Nynorsk",
+        "table": "Målform",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_397_Antall_Elever_Samisk_Trinn_8",
+        "control": "Local_Comp_Input_Number_71",
+        "group": "A",
+        "question": "8",
+        "column": "Samisk",
+        "table": "Målform",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_408_Antall_Elever_Annen_Opplaeringsmaalform_Trinn_8",
+        "control": "Local_Comp_Input_Number_72",
+        "group": "A",
+        "question": "8",
+        "column": "Andre",
+        "table": "Målform",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_419_Sum_Elever_Opplaeringsmaalform_Trinn_8",
+        "control": "Local_Comp_Input_Number_73",
+        "group": "A",
+        "question": "8",
+        "column": "Sum",
+        "table": "Målform",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_27_Antall_Elever_Trinn8_Sum",
+        "control": "Local_Comp_Input_Number_74",
+        "group": "A",
+        "question": "8",
+        "column": "Elevtall (hentet fra 3 A)",
+        "table": "Elevtall",
+        "readOnly": true,
+        "sourceSection": 3,
+        "terms": []
+      },
+      {
+        "key": "GG_376_Antall_Elever_Bokmaal_Trinn_9",
+        "control": "Local_Comp_Input_Number_75",
+        "group": "A",
+        "question": "9",
+        "column": "Bokmål",
+        "table": "Målform",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_387_Antall_Elever_Nynorsk_Trinn_9",
+        "control": "Local_Comp_Input_Number_76",
+        "group": "A",
+        "question": "9",
+        "column": "Nynorsk",
+        "table": "Målform",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_398_Antall_Elever_Samisk_Trinn_9",
+        "control": "Local_Comp_Input_Number_77",
+        "group": "A",
+        "question": "9",
+        "column": "Samisk",
+        "table": "Målform",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_409_Antall_Elever_Annen_Opplaeringsmaalform_Trinn_9",
+        "control": "Local_Comp_Input_Number_78",
+        "group": "A",
+        "question": "9",
+        "column": "Andre",
+        "table": "Målform",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_420_Sum_Elever_Opplaeringsmaalform_Trinn_9",
+        "control": "Local_Comp_Input_Number_79",
+        "group": "A",
+        "question": "9",
+        "column": "Sum",
+        "table": "Målform",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_30_Antall_Elever_Trinn9_Sum",
+        "control": "Local_Comp_Input_Number_80",
+        "group": "A",
+        "question": "9",
+        "column": "Elevtall (hentet fra 3 A)",
+        "table": "Elevtall",
+        "readOnly": true,
+        "sourceSection": 3,
+        "terms": []
+      },
+      {
+        "key": "GG_377_Antall_Elever_Bokmaal_Trinn_10",
+        "control": "Local_Comp_Input_Number_81",
+        "group": "A",
+        "question": "10",
+        "column": "Bokmål",
+        "table": "Målform",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_388_Antall_Elever_Nynorsk_Trinn_10",
+        "control": "Local_Comp_Input_Number_82",
+        "group": "A",
+        "question": "10",
+        "column": "Nynorsk",
+        "table": "Målform",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_399_Antall_Elever_Samisk_Trinn_10",
+        "control": "Local_Comp_Input_Number_83",
+        "group": "A",
+        "question": "10",
+        "column": "Samisk",
+        "table": "Målform",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_410_Antall_Elever_Annen_Opplaeringsmaalform_Trinn_10",
+        "control": "Local_Comp_Input_Number_84",
+        "group": "A",
+        "question": "10",
+        "column": "Andre",
+        "table": "Målform",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_421_Sum_Elever_Opplaeringsmaalform_Trinn_10",
+        "control": "Local_Comp_Input_Number_85",
+        "group": "A",
+        "question": "10",
+        "column": "Sum",
+        "table": "Målform",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_33_Antall_Elever_Trinn10_Sum",
+        "control": "Local_Comp_Input_Number_86",
+        "group": "A",
+        "question": "10",
+        "column": "Elevtall (hentet fra 3 A)",
+        "table": "Elevtall",
+        "readOnly": true,
+        "sourceSection": 3,
+        "terms": []
+      },
+      {
+        "key": "GG_378_Sum_Elever_Bokmaal_Trinn_1_10",
+        "control": "TextInput3_384",
+        "group": "A",
+        "question": "11",
+        "column": "Bokmål",
+        "table": "Målform",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_389_Sum_Elever_Nynorsk_Trinn_1_10",
+        "control": "TextInput3_388",
+        "group": "A",
+        "question": "11",
+        "column": "Nynorsk",
+        "table": "Målform",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_400_Sum_Elever_Samisk_Trinn_1_10",
+        "control": "TextInput3_385",
+        "group": "A",
+        "question": "11",
+        "column": "Samisk",
+        "table": "Målform",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_411_Sum_Elever_Annen_Opplaeringsmaalform_Trinn_1_10",
+        "control": "TextInput3_386",
+        "group": "A",
+        "question": "11",
+        "column": "Andre",
+        "table": "Målform",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_422_Sum_Elever_Opplaeringsmaalform_Trinn_1_10",
+        "control": "TextInput2_137",
+        "group": "A",
+        "question": "11",
+        "column": "Sum",
+        "table": "Målform",
+        "readOnly": true,
+        "terms": [
+          {
+            "field": "GG_378_Sum_Elever_Bokmaal_Trinn_1_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_389_Sum_Elever_Nynorsk_Trinn_1_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_400_Sum_Elever_Samisk_Trinn_1_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_411_Sum_Elever_Annen_Opplaeringsmaalform_Trinn_1_10",
+            "sign": 1
+          }
+        ]
+      },
+      {
+        "key": "GG_39_Antall_Elever_Sum_EleverTotalt",
+        "control": "TextInput3_387",
+        "group": "A",
+        "question": "11",
+        "column": "Elevtall (hentet fra 3 A)",
+        "table": "Elevtall",
+        "readOnly": true,
+        "sourceSection": 3,
+        "terms": []
+      },
+      {
+        "key": "GG_423_Antall_Elevgrupper_Undervisning_Annet_Norsk_Skriftspraak_Enn_Vedtatt",
+        "control": "Local_Comp_Input_Number_87",
+        "group": "B",
+        "question": "1",
+        "column": "Elevgrupper",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_424_Antall_Elever_Undervisning_Annet_Norsk_Skriftspraak_Enn_Vedtatt",
+        "control": "Local_Comp_Input_Number_88",
+        "group": "B",
+        "question": "1",
+        "column": "Elever",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_425_Antall_Elevgrupper_Undervisning_Samisk_Utenfor_Samisk_Distrikt",
+        "control": "Local_Comp_Input_Number_90",
+        "group": "B",
+        "question": "2",
+        "column": "Elevgrupper",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_426_Antall_Elever_Undervisning_Samisk_Utenfor_Samisk_Distrikt",
+        "control": "Local_Comp_Input_Number_89",
+        "group": "B",
+        "question": "2",
+        "column": "Elever",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_932_Antall_Elever_Fjernundervisning_Samisk_Forstesprak_Trinn_1_4",
+        "control": "Local_Comp_Input_Number_151",
+        "group": "D",
+        "question": "1",
+        "column": "1.–4. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_933_Antall_Elever_Fjernundervisning_Samisk_Forstesprak_Trinn_5_7",
+        "control": "Local_Comp_Input_Number_152",
+        "group": "D",
+        "question": "1",
+        "column": "5.–7. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_934_Antall_Elever_Fjernundervisning_Samisk_Forstesprak_Trinn_8_10",
+        "control": "Local_Comp_Input_Number_153",
+        "group": "D",
+        "question": "1",
+        "column": "8.–10. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_935_Sum_Antall_Elever_Fjernundervisning_Samisk_Forstesprak",
+        "control": "TextInput2_121",
+        "group": "D",
+        "question": "1",
+        "column": "Sum",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_936_Antall_Elever_Fjernundervisning_Samisk_Andresprak_Trinn_1_4",
+        "control": "Local_Comp_Input_Number_158",
+        "group": "D",
+        "question": "2",
+        "column": "1.–4. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_937_Antall_Elever_Fjernundervisning_Samisk_Andresprak_Trinn_5_7",
+        "control": "Local_Comp_Input_Number_159",
+        "group": "D",
+        "question": "2",
+        "column": "5.–7. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_938_Antall_Elever_Fjernundervisning_Samisk_Andresprak_Trinn_8_10",
+        "control": "Local_Comp_Input_Number_160",
+        "group": "D",
+        "question": "2",
+        "column": "8.–10. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_939_Sum_Antall_Elever_Fjernundervisning_Samisk_Andresprak",
+        "control": "TextInput2_123",
+        "group": "D",
+        "question": "2",
+        "column": "Sum",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_940_Sum_Antall_Elever_Fjernundervisning_Samisk_Trinn_1_4",
+        "control": "TextInput3_363",
+        "group": "D",
+        "question": "3",
+        "column": "1.–4. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_941_Sum_Antall_Elever_Fjernundervisning_Samisk_Trinn_5_7",
+        "control": "TextInput3_364",
+        "group": "D",
+        "question": "3",
+        "column": "5.–7. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_942_Sum_Antall_Elever_Fjernundervisning_Samisk_Trinn_8_10",
+        "control": "TextInput3_365",
+        "group": "D",
+        "question": "3",
+        "column": "8.–10. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_943_Total_Sum_Antall_Elever_Fjernundervisning_Samisk_Trinn_1_10",
+        "control": "TextInput2_125",
+        "group": "D",
+        "question": "3",
+        "column": "1.–10. trinn",
+        "readOnly": true,
+        "terms": [
+          {
+            "field": "GG_940_Sum_Antall_Elever_Fjernundervisning_Samisk_Trinn_1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_941_Sum_Antall_Elever_Fjernundervisning_Samisk_Trinn_5_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_942_Sum_Antall_Elever_Fjernundervisning_Samisk_Trinn_8_10",
+            "sign": 1
+          }
+        ]
+      }
+    ],
+    "backendOwned": [
+      "GG_412_Sum_Elever_Opplaeringsmaalform_Trinn_1",
+      "GG_413_Sum_Elever_Opplaeringsmaalform_Trinn_2",
+      "GG_414_Sum_Elever_Opplaeringsmaalform_Trinn_3",
+      "GG_415_Sum_Elever_Opplaeringsmaalform_Trinn_4",
+      "GG_416_Sum_Elever_Opplaeringsmaalform_Trinn_5",
+      "GG_417_Sum_Elever_Opplaeringsmaalform_Trinn_6",
+      "GG_418_Sum_Elever_Opplaeringsmaalform_Trinn_7",
+      "GG_419_Sum_Elever_Opplaeringsmaalform_Trinn_8",
+      "GG_420_Sum_Elever_Opplaeringsmaalform_Trinn_9",
+      "GG_421_Sum_Elever_Opplaeringsmaalform_Trinn_10",
+      "GG_378_Sum_Elever_Bokmaal_Trinn_1_10",
+      "GG_389_Sum_Elever_Nynorsk_Trinn_1_10",
+      "GG_400_Sum_Elever_Samisk_Trinn_1_10",
+      "GG_411_Sum_Elever_Annen_Opplaeringsmaalform_Trinn_1_10",
+      "GG_935_Sum_Antall_Elever_Fjernundervisning_Samisk_Forstesprak",
+      "GG_939_Sum_Antall_Elever_Fjernundervisning_Samisk_Andresprak",
+      "GG_940_Sum_Antall_Elever_Fjernundervisning_Samisk_Trinn_1_4",
+      "GG_941_Sum_Antall_Elever_Fjernundervisning_Samisk_Trinn_5_7",
+      "GG_942_Sum_Antall_Elever_Fjernundervisning_Samisk_Trinn_8_10"
+    ],
+    "controllers": [
+      "GG-A100",
+      "GG-A101",
+      "GG-A102",
+      "GG-A103",
+      "GG-A104",
+      "GG-A105",
+      "GG-A106",
+      "GG-A107",
+      "GG-A14",
+      "GG-A155",
+      "GG-A25",
+      "GG-A49",
+      "GG-A56",
+      "GG-A86",
+      "GG-A98",
+      "GG-A99",
+      "GG-F10",
+      "GG-F11",
+      "GG-F12",
+      "GG-F13",
+      "GG-F14",
+      "GG-F15",
+      "GG-F16",
+      "GG-F17",
+      "GG-F18",
+      "GG-F9"
+    ]
+  },
+  "10": {
+    "groups": [
+      {
+        "id": "A",
+        "title": "A. Elever med fremmedspråk, fordypning eller arbeidslivsfag",
+        "reference": "GG_H39_U136",
+        "sourceCard": "A. Elever med fremmedspråk, fordypning eller arbeidslivsfag",
+        "sourceOrder": 3,
+        "textReferences": [
+          "GG_H39_U136",
+          "GG_H39_U137"
+        ],
+        "controllers": [
+          "GG-A19",
+          "GG-F20",
+          "GG-F21",
+          "GG-F22"
+        ],
+        "helpId": "GG-H125",
+        "columnGroups": [
+          {
+            "title": "8. trinn",
+            "table": "8. trinn",
+            "columns": [
+              {
+                "fieldColumn": "Gutter",
+                "label": "Gutter"
+              },
+              {
+                "fieldColumn": "Jenter",
+                "label": "Jenter"
+              },
+              {
+                "fieldColumn": "Sum",
+                "label": "Sum"
+              }
+            ]
+          },
+          {
+            "title": "9. trinn",
+            "table": "9. trinn",
+            "columns": [
+              {
+                "fieldColumn": "Gutter",
+                "label": "Gutter"
+              },
+              {
+                "fieldColumn": "Jenter",
+                "label": "Jenter"
+              },
+              {
+                "fieldColumn": "Sum",
+                "label": "Sum"
+              }
+            ]
+          },
+          {
+            "title": "10. trinn",
+            "table": "10. trinn",
+            "columns": [
+              {
+                "fieldColumn": "Gutter",
+                "label": "Gutter"
+              },
+              {
+                "fieldColumn": "Jenter",
+                "label": "Jenter"
+              },
+              {
+                "fieldColumn": "Sum",
+                "label": "Sum"
+              }
+            ]
+          },
+          {
+            "title": "Sum 8.–10. trinn",
+            "table": "Sum 8.–10. trinn",
+            "columns": [
+              {
+                "fieldColumn": "Sum",
+                "label": "Sum"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "B",
+        "title": "B. Elever uten fremmedspråk, fordypning eller arbeidslivsfag",
+        "reference": "GG_H40",
+        "sourceCard": "B. Elever uten fremmedspråk, fordypning eller arbeidslivsfag",
+        "sourceOrder": 4,
+        "textReferences": [
+          "GG_H40"
+        ],
+        "controllers": [],
+        "helpId": "GG-H130",
+        "columnGroups": [
+          {
+            "title": "8. trinn",
+            "table": "8. trinn",
+            "columns": [
+              {
+                "fieldColumn": "Gutter",
+                "label": "Gutter"
+              },
+              {
+                "fieldColumn": "Jenter",
+                "label": "Jenter"
+              },
+              {
+                "fieldColumn": "Sum",
+                "label": "Sum"
+              }
+            ]
+          },
+          {
+            "title": "9. trinn",
+            "table": "9. trinn",
+            "columns": [
+              {
+                "fieldColumn": "Gutter",
+                "label": "Gutter"
+              },
+              {
+                "fieldColumn": "Jenter",
+                "label": "Jenter"
+              },
+              {
+                "fieldColumn": "Sum",
+                "label": "Sum"
+              }
+            ]
+          },
+          {
+            "title": "10. trinn",
+            "table": "10. trinn",
+            "columns": [
+              {
+                "fieldColumn": "Gutter",
+                "label": "Gutter"
+              },
+              {
+                "fieldColumn": "Jenter",
+                "label": "Jenter"
+              },
+              {
+                "fieldColumn": "Sum",
+                "label": "Sum"
+              }
+            ]
+          },
+          {
+            "title": "Sum 8.–10. trinn",
+            "table": "Sum 8.–10. trinn",
+            "columns": [
+              {
+                "fieldColumn": "Sum",
+                "label": "Sum"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "key": "GG_537_Antall_Gutter_Tysk_Trinn_8",
+        "control": "Local_Comp_Input_Number_183",
+        "group": "A",
+        "question": "1",
+        "column": "Gutter",
+        "table": "8. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_538_Antall_Jenter_Tysk_Trinn_8",
+        "control": "Local_Comp_Input_Number_182",
+        "group": "A",
+        "question": "1",
+        "column": "Jenter",
+        "table": "8. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_539_Sum_Tysk_Trinn_8",
+        "control": "Local_Comp_Input_Number_131",
+        "group": "A",
+        "question": "1",
+        "column": "Sum",
+        "table": "8. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_540_Antall_Gutter_Tysk_Trinn_9",
+        "control": "Local_Comp_Input_Number_184",
+        "group": "A",
+        "question": "1",
+        "column": "Gutter",
+        "table": "9. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_541_Antall_Jenter_Tysk_Trinn_9",
+        "control": "Local_Comp_Input_Number_185",
+        "group": "A",
+        "question": "1",
+        "column": "Jenter",
+        "table": "9. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_542_Sum_Tysk_Trinn_9",
+        "control": "Local_Comp_Input_Number_132",
+        "group": "A",
+        "question": "1",
+        "column": "Sum",
+        "table": "9. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_543_Antall_Gutter_Tysk_Trinn_10",
+        "control": "Local_Comp_Input_Number_186",
+        "group": "A",
+        "question": "1",
+        "column": "Gutter",
+        "table": "10. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_544_Antall_Jenter_Tysk_Trinn_10",
+        "control": "Local_Comp_Input_Number_187",
+        "group": "A",
+        "question": "1",
+        "column": "Jenter",
+        "table": "10. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_545_Sum_Tysk_Trinn_10",
+        "control": "Local_Comp_Input_Number_174",
+        "group": "A",
+        "question": "1",
+        "column": "Sum",
+        "table": "10. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_547_Antall_Gutter_Fransk_Trinn_8",
+        "control": "Local_Comp_Input_Number_188",
+        "group": "A",
+        "question": "2",
+        "column": "Gutter",
+        "table": "8. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_548_Antall_Jenter_Fransk_Trinn_8",
+        "control": "Local_Comp_Input_Number_189",
+        "group": "A",
+        "question": "2",
+        "column": "Jenter",
+        "table": "8. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_549_Sum_Fransk_Trinn_8",
+        "control": "Local_Comp_Input_Number_177",
+        "group": "A",
+        "question": "2",
+        "column": "Sum",
+        "table": "8. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_550_Antall_Gutter_Fransk_Trinn_9",
+        "control": "Local_Comp_Input_Number_190",
+        "group": "A",
+        "question": "2",
+        "column": "Gutter",
+        "table": "9. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_551_Antall_Jenter_Fransk_Trinn_9",
+        "control": "Local_Comp_Input_Number_191",
+        "group": "A",
+        "question": "2",
+        "column": "Jenter",
+        "table": "9. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_552_Sum_Fransk_Trinn_9",
+        "control": "Local_Comp_Input_Number_178",
+        "group": "A",
+        "question": "2",
+        "column": "Sum",
+        "table": "9. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_553_Antall_Gutter_Fransk_Trinn_10",
+        "control": "Local_Comp_Input_Number_192",
+        "group": "A",
+        "question": "2",
+        "column": "Gutter",
+        "table": "10. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_554_Antall_Jenter_Fransk_Trinn_10",
+        "control": "Local_Comp_Input_Number_193",
+        "group": "A",
+        "question": "2",
+        "column": "Jenter",
+        "table": "10. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_555_Sum_Fransk_Trinn_10",
+        "control": "Local_Comp_Input_Number_179",
+        "group": "A",
+        "question": "2",
+        "column": "Sum",
+        "table": "10. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_557_Antall_Gutter_Spansk_Trinn_8",
+        "control": "Local_Comp_Input_Number_194",
+        "group": "A",
+        "question": "3",
+        "column": "Gutter",
+        "table": "8. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_558_Antall_Jenter_Spansk_Trinn_8",
+        "control": "Local_Comp_Input_Number_195",
+        "group": "A",
+        "question": "3",
+        "column": "Jenter",
+        "table": "8. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_559_Sum_Spansk_Trinn_8",
+        "control": "Local_Comp_Input_Number_180",
+        "group": "A",
+        "question": "3",
+        "column": "Sum",
+        "table": "8. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_560_Antall_Gutter_Spansk_Trinn_9",
+        "control": "Local_Comp_Input_Number_196",
+        "group": "A",
+        "question": "3",
+        "column": "Gutter",
+        "table": "9. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_561_Antall_Jenter_Spansk_Trinn_9",
+        "control": "Local_Comp_Input_Number_197",
+        "group": "A",
+        "question": "3",
+        "column": "Jenter",
+        "table": "9. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_562_Sum_Spansk_Trinn_9",
+        "control": "Local_Comp_Input_Number_181",
+        "group": "A",
+        "question": "3",
+        "column": "Sum",
+        "table": "9. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_563_Antall_Gutter_Spansk_Trinn_10",
+        "control": "Local_Comp_Input_Number_198",
+        "group": "A",
+        "question": "3",
+        "column": "Gutter",
+        "table": "10. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_564_Antall_Jenter_Spansk_Trinn_10",
+        "control": "Local_Comp_Input_Number_199",
+        "group": "A",
+        "question": "3",
+        "column": "Jenter",
+        "table": "10. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_565_Sum_Spansk_Trinn_10",
+        "control": "Local_Comp_Input_Number_260",
+        "group": "A",
+        "question": "3",
+        "column": "Sum",
+        "table": "10. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_567_Antall_Gutter_Italiensk_Trinn_8",
+        "control": "Local_Comp_Input_Number_200",
+        "group": "A",
+        "question": "4",
+        "column": "Gutter",
+        "table": "8. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_568_Antall_Jenter_Italiensk_Trinn_8",
+        "control": "Local_Comp_Input_Number_201",
+        "group": "A",
+        "question": "4",
+        "column": "Jenter",
+        "table": "8. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_569_Sum_Italiensk_Trinn_8",
+        "control": "Local_Comp_Input_Number_279",
+        "group": "A",
+        "question": "4",
+        "column": "Sum",
+        "table": "8. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_570_Antall_Gutter_Italiensk_Trinn_9",
+        "control": "Local_Comp_Input_Number_202",
+        "group": "A",
+        "question": "4",
+        "column": "Gutter",
+        "table": "9. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_571_Antall_Jenter_Italiensk_Trinn_9",
+        "control": "Local_Comp_Input_Number_203",
+        "group": "A",
+        "question": "4",
+        "column": "Jenter",
+        "table": "9. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_572_Sum_Italiensk_Trinn_9",
+        "control": "Local_Comp_Input_Number_262",
+        "group": "A",
+        "question": "4",
+        "column": "Sum",
+        "table": "9. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_573_Antall_Gutter_Italiensk_Trinn_10",
+        "control": "Local_Comp_Input_Number_204",
+        "group": "A",
+        "question": "4",
+        "column": "Gutter",
+        "table": "10. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_574_Antall_Jenter_Italiensk_Trinn_10",
+        "control": "Local_Comp_Input_Number_205",
+        "group": "A",
+        "question": "4",
+        "column": "Jenter",
+        "table": "10. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_575_Sum_Italiensk_Trinn_10",
+        "control": "Local_Comp_Input_Number_277",
+        "group": "A",
+        "question": "4",
+        "column": "Sum",
+        "table": "10. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_577_Antall_Gutter_Russisk_Trinn_8",
+        "control": "Local_Comp_Input_Number_206",
+        "group": "A",
+        "question": "5",
+        "column": "Gutter",
+        "table": "8. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_578_Antall_Jenter_Russisk_Trinn_8",
+        "control": "Local_Comp_Input_Number_207",
+        "group": "A",
+        "question": "5",
+        "column": "Jenter",
+        "table": "8. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_579_Sum_Russisk_Trinn_8",
+        "control": "Local_Comp_Input_Number_280",
+        "group": "A",
+        "question": "5",
+        "column": "Sum",
+        "table": "8. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_580_Antall_Gutter_Russisk_Trinn_9",
+        "control": "Local_Comp_Input_Number_208",
+        "group": "A",
+        "question": "5",
+        "column": "Gutter",
+        "table": "9. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_581_Antall_Jenter_Russisk_Trinn_9",
+        "control": "Local_Comp_Input_Number_209",
+        "group": "A",
+        "question": "5",
+        "column": "Jenter",
+        "table": "9. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_582_Sum_Russisk_Trinn_9",
+        "control": "Local_Comp_Input_Number_281",
+        "group": "A",
+        "question": "5",
+        "column": "Sum",
+        "table": "9. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_583_Antall_Gutter_Russisk_Trinn_10",
+        "control": "Local_Comp_Input_Number_210",
+        "group": "A",
+        "question": "5",
+        "column": "Gutter",
+        "table": "10. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_584_Antall_Jenter_Russisk_Trinn_10",
+        "control": "Local_Comp_Input_Number_211",
+        "group": "A",
+        "question": "5",
+        "column": "Jenter",
+        "table": "10. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_585_Sum_Russisk_Trinn_10",
+        "control": "Local_Comp_Input_Number_282",
+        "group": "A",
+        "question": "5",
+        "column": "Sum",
+        "table": "10. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_587_Antall_Gutter_Andre_Spraak_Trinn_8",
+        "control": "Local_Comp_Input_Number_212",
+        "group": "A",
+        "question": "6",
+        "column": "Gutter",
+        "table": "8. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_588_Antall_Jenter_Andre_Spraak_Trinn_8",
+        "control": "Local_Comp_Input_Number_213",
+        "group": "A",
+        "question": "6",
+        "column": "Jenter",
+        "table": "8. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_589_Sum_Andre_Spraak_Trinn_8",
+        "control": "Local_Comp_Input_Number_284",
+        "group": "A",
+        "question": "6",
+        "column": "Sum",
+        "table": "8. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_590_Antall_Gutter_Andre_Spraak_Trinn_9",
+        "control": "Local_Comp_Input_Number_214",
+        "group": "A",
+        "question": "6",
+        "column": "Gutter",
+        "table": "9. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_591_Antall_Jenter_Andre_Spraak_Trinn_9",
+        "control": "Local_Comp_Input_Number_215",
+        "group": "A",
+        "question": "6",
+        "column": "Jenter",
+        "table": "9. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_592_Sum_Andre_Spraak_Trinn_9",
+        "control": "Local_Comp_Input_Number_285",
+        "group": "A",
+        "question": "6",
+        "column": "Sum",
+        "table": "9. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_593_Antall_Gutter_Andre_Spraak_Trinn_10",
+        "control": "Local_Comp_Input_Number_216",
+        "group": "A",
+        "question": "6",
+        "column": "Gutter",
+        "table": "10. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_594_Antall_Jenter_Andre_Spraak_Trinn_10",
+        "control": "Local_Comp_Input_Number_217",
+        "group": "A",
+        "question": "6",
+        "column": "Jenter",
+        "table": "10. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_595_Sum_Andre_Spraak_Trinn_10",
+        "control": "Local_Comp_Input_Number_286",
+        "group": "A",
+        "question": "6",
+        "column": "Sum",
+        "table": "10. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_597_Antall_Gutter_Fordypning_Engelsk_Trinn_8",
+        "control": "Local_Comp_Input_Number_218",
+        "group": "A",
+        "question": "7",
+        "column": "Gutter",
+        "table": "8. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_598_Antall_Jenter_Fordypning_Engelsk_Trinn_8",
+        "control": "Local_Comp_Input_Number_219",
+        "group": "A",
+        "question": "7",
+        "column": "Jenter",
+        "table": "8. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_599_Sum_Fordypning_Engelsk_Trinn_8",
+        "control": "Local_Comp_Input_Number_288",
+        "group": "A",
+        "question": "7",
+        "column": "Sum",
+        "table": "8. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_600_Antall_Gutter_Fordypning_Engelsk_Trinn_9",
+        "control": "Local_Comp_Input_Number_220",
+        "group": "A",
+        "question": "7",
+        "column": "Gutter",
+        "table": "9. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_601_Antall_Jenter_Fordypning_Engelsk_Trinn_9",
+        "control": "Local_Comp_Input_Number_221",
+        "group": "A",
+        "question": "7",
+        "column": "Jenter",
+        "table": "9. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_602_Sum_Fordypning_Engelsk_Trinn_9",
+        "control": "Local_Comp_Input_Number_289",
+        "group": "A",
+        "question": "7",
+        "column": "Sum",
+        "table": "9. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_603_Antall_Gutter_Fordypning_Engelsk_Trinn_10",
+        "control": "Local_Comp_Input_Number_222",
+        "group": "A",
+        "question": "7",
+        "column": "Gutter",
+        "table": "10. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_604_Antall_Jenter_Fordypning_Engelsk_Trinn_10",
+        "control": "Local_Comp_Input_Number_223",
+        "group": "A",
+        "question": "7",
+        "column": "Jenter",
+        "table": "10. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_605_Sum_Fordypning_Engelsk_Trinn_10",
+        "control": "Local_Comp_Input_Number_290",
+        "group": "A",
+        "question": "7",
+        "column": "Sum",
+        "table": "10. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_607_Antall_Gutter_Fordypning_Norsk_Trinn_8",
+        "control": "Local_Comp_Input_Number_224",
+        "group": "A",
+        "question": "8",
+        "column": "Gutter",
+        "table": "8. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_608_Antall_Jenter_Fordypning_Norsk_Trinn_8",
+        "control": "Local_Comp_Input_Number_225",
+        "group": "A",
+        "question": "8",
+        "column": "Jenter",
+        "table": "8. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_609_Sum_Fordypning_Norsk_Trinn_8",
+        "control": "Local_Comp_Input_Number_292",
+        "group": "A",
+        "question": "8",
+        "column": "Sum",
+        "table": "8. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_610_Antall_Gutter_Fordypning_Norsk_Trinn_9",
+        "control": "Local_Comp_Input_Number_226",
+        "group": "A",
+        "question": "8",
+        "column": "Gutter",
+        "table": "9. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_611_Antall_Jenter_Fordypning_Norsk_Trinn_9",
+        "control": "Local_Comp_Input_Number_227",
+        "group": "A",
+        "question": "8",
+        "column": "Jenter",
+        "table": "9. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_612_Sum_Fordypning_Norsk_Trinn_9",
+        "control": "Local_Comp_Input_Number_293",
+        "group": "A",
+        "question": "8",
+        "column": "Sum",
+        "table": "9. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_613_Antall_Gutter_Fordypning_Norsk_Trinn_10",
+        "control": "Local_Comp_Input_Number_228",
+        "group": "A",
+        "question": "8",
+        "column": "Gutter",
+        "table": "10. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_614_Antall_Jenter_Fordypning_Norsk_Trinn_10",
+        "control": "Local_Comp_Input_Number_229",
+        "group": "A",
+        "question": "8",
+        "column": "Jenter",
+        "table": "10. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_615_Sum_Fordypning_Norsk_Trinn_10",
+        "control": "Local_Comp_Input_Number_294",
+        "group": "A",
+        "question": "8",
+        "column": "Sum",
+        "table": "10. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_617_Antall_Gutter_Fordypning_Samisk_Trinn_8",
+        "control": "Local_Comp_Input_Number_230",
+        "group": "A",
+        "question": "9",
+        "column": "Gutter",
+        "table": "8. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_618_Antall_Jenter_Fordypning_Samisk_Trinn_8",
+        "control": "Local_Comp_Input_Number_231",
+        "group": "A",
+        "question": "9",
+        "column": "Jenter",
+        "table": "8. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_619_Sum_Fordypning_Samisk_Trinn_8",
+        "control": "Local_Comp_Input_Number_296",
+        "group": "A",
+        "question": "9",
+        "column": "Sum",
+        "table": "8. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_620_Antall_Gutter_Fordypning_Samisk_Trinn_9",
+        "control": "Local_Comp_Input_Number_232",
+        "group": "A",
+        "question": "9",
+        "column": "Gutter",
+        "table": "9. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_621_Antall_Jenter_Fordypning_Samisk_Trinn_9",
+        "control": "Local_Comp_Input_Number_233",
+        "group": "A",
+        "question": "9",
+        "column": "Jenter",
+        "table": "9. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_622_Sum_Fordypning_Samisk_Trinn_9",
+        "control": "Local_Comp_Input_Number_297",
+        "group": "A",
+        "question": "9",
+        "column": "Sum",
+        "table": "9. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_623_Antall_Gutter_Fordypning_Samisk_Trinn_10",
+        "control": "Local_Comp_Input_Number_234",
+        "group": "A",
+        "question": "9",
+        "column": "Gutter",
+        "table": "10. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_624_Antall_Jenter_Fordypning_Samisk_Trinn_10",
+        "control": "Local_Comp_Input_Number_235",
+        "group": "A",
+        "question": "9",
+        "column": "Jenter",
+        "table": "10. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_625_Sum_Fordypning_Samisk_Trinn_10",
+        "control": "Local_Comp_Input_Number_298",
+        "group": "A",
+        "question": "9",
+        "column": "Sum",
+        "table": "10. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_627_Antall_Gutter_Arbeidslivsfag_Trinn_8",
+        "control": "Local_Comp_Input_Number_236",
+        "group": "A",
+        "question": "10",
+        "column": "Gutter",
+        "table": "8. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_628_Antall_Jenter_Arbeidslivsfag_Trinn_8",
+        "control": "Local_Comp_Input_Number_237",
+        "group": "A",
+        "question": "10",
+        "column": "Jenter",
+        "table": "8. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_629_Sum_Arbeidslivsfag_Trinn_8",
+        "control": "Local_Comp_Input_Number_300",
+        "group": "A",
+        "question": "10",
+        "column": "Sum",
+        "table": "8. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_630_Antall_Gutter_Arbeidslivsfag_Trinn_9",
+        "control": "Local_Comp_Input_Number_238",
+        "group": "A",
+        "question": "10",
+        "column": "Gutter",
+        "table": "9. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_631_Antall_Jenter_Arbeidslivsfag_Trinn_9",
+        "control": "Local_Comp_Input_Number_239",
+        "group": "A",
+        "question": "10",
+        "column": "Jenter",
+        "table": "9. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_632_Sum_Arbeidslivsfag_Trinn_9",
+        "control": "Local_Comp_Input_Number_301",
+        "group": "A",
+        "question": "10",
+        "column": "Sum",
+        "table": "9. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_633_Antall_Gutter_Arbeidslivsfag_Trinn_10",
+        "control": "Local_Comp_Input_Number_240",
+        "group": "A",
+        "question": "10",
+        "column": "Gutter",
+        "table": "10. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_634_Antall_Jenter_Arbeidslivsfag_Trinn_10",
+        "control": "Local_Comp_Input_Number_241",
+        "group": "A",
+        "question": "10",
+        "column": "Jenter",
+        "table": "10. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_635_Sum_Arbeidslivsfag_Trinn_10",
+        "control": "Local_Comp_Input_Number_302",
+        "group": "A",
+        "question": "10",
+        "column": "Sum",
+        "table": "10. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_637_Antall_Gutter_Fordypning_Matematikk_Trinn_8",
+        "control": "Local_Comp_Input_Number_242",
+        "group": "A",
+        "question": "11",
+        "column": "Gutter",
+        "table": "8. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_638_Antall_Jenter_Fordypning_Matematikk_Trinn_8",
+        "control": "Local_Comp_Input_Number_244",
+        "group": "A",
+        "question": "11",
+        "column": "Jenter",
+        "table": "8. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_639_Sum_Fordypning_Matematikk_Trinn_8",
+        "control": "Local_Comp_Input_Number_304",
+        "group": "A",
+        "question": "11",
+        "column": "Sum",
+        "table": "8. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_640_Antall_Gutter_Fordypning_Matematikk_Trinn_9",
+        "control": "Local_Comp_Input_Number_245",
+        "group": "A",
+        "question": "11",
+        "column": "Gutter",
+        "table": "9. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_641_Antall_Jenter_Fordypning_Matematikk_Trinn_9",
+        "control": "Local_Comp_Input_Number_249",
+        "group": "A",
+        "question": "11",
+        "column": "Jenter",
+        "table": "9. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_642_Sum_Fordypning_Matematikk_Trinn_9",
+        "control": "Local_Comp_Input_Number_306",
+        "group": "A",
+        "question": "11",
+        "column": "Sum",
+        "table": "9. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_643_Antall_Gutter_Fordypning_Matematikk_Trinn_10",
+        "control": "Local_Comp_Input_Number_250",
+        "group": "A",
+        "question": "11",
+        "column": "Gutter",
+        "table": "10. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_644_Antall_Jenter_Fordypning_Matematikk_Trinn_10",
+        "control": "Local_Comp_Input_Number_253",
+        "group": "A",
+        "question": "11",
+        "column": "Jenter",
+        "table": "10. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_645_Sum_Fordypning_Matematikk_Trinn_10",
+        "control": "Local_Comp_Input_Number_307",
+        "group": "A",
+        "question": "11",
+        "column": "Sum",
+        "table": "10. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_647_Antall_Gutter_Fordypning_Arbeid_Trinn_8",
+        "control": "Local_Comp_Input_Number_243",
+        "group": "A",
+        "question": "12",
+        "column": "Gutter",
+        "table": "8. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_648_Antall_Jenter_Fordypning_Arbeid_Trinn_8",
+        "control": "Local_Comp_Input_Number_246",
+        "group": "A",
+        "question": "12",
+        "column": "Jenter",
+        "table": "8. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_649_Sum_Fordypning_Arbeid_Trinn_8",
+        "control": "Local_Comp_Input_Number_309",
+        "group": "A",
+        "question": "12",
+        "column": "Sum",
+        "table": "8. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_650_Antall_Gutter_Fordypning_Arbeid_Trinn_9",
+        "control": "Local_Comp_Input_Number_247",
+        "group": "A",
+        "question": "12",
+        "column": "Gutter",
+        "table": "9. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_651_Antall_Jenter_Fordypning_Arbeid_Trinn_9",
+        "control": "Local_Comp_Input_Number_248",
+        "group": "A",
+        "question": "12",
+        "column": "Jenter",
+        "table": "9. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_652_Sum_Fordypning_Arbeid_Trinn_9",
+        "control": "Local_Comp_Input_Number_305",
+        "group": "A",
+        "question": "12",
+        "column": "Sum",
+        "table": "9. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_653_Antall_Gutter_Fordypning_Arbeid_Trinn_10",
+        "control": "Local_Comp_Input_Number_251",
+        "group": "A",
+        "question": "12",
+        "column": "Gutter",
+        "table": "10. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_654_Antall_Jenter_Fordypning_Arbeid_Trinn_10",
+        "control": "Local_Comp_Input_Number_252",
+        "group": "A",
+        "question": "12",
+        "column": "Jenter",
+        "table": "10. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_655_Sum_Fordypning_Arbeid_Trinn_10",
+        "control": "Local_Comp_Input_Number_310",
+        "group": "A",
+        "question": "12",
+        "column": "Sum",
+        "table": "10. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_984_Sum_Fremmedspraak_Fordypning_Arbeidslivsfag_Gutter_Trinn_8",
+        "control": "Local_Comp_Input_Number_254",
+        "group": "A",
+        "question": "13",
+        "column": "Gutter",
+        "table": "8. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_985_Sum_Fremmedspraak_Fordypning_Arbeidslivsfag_Jenter_Trinn_8",
+        "control": "Local_Comp_Input_Number_255",
+        "group": "A",
+        "question": "13",
+        "column": "Jenter",
+        "table": "8. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_986_Sum_Fremmedspraak_Fordypning_Arbeidslivsfag_Gutter_Jenter_Trinn_8",
+        "control": "Local_Comp_Input_Number_313",
+        "group": "A",
+        "question": "13",
+        "column": "Sum",
+        "table": "8. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_987_Sum_Fremmedspraak_Fordypning_Arbeidslivsfag_Gutter_Trinn_9",
+        "control": "Local_Comp_Input_Number_256",
+        "group": "A",
+        "question": "13",
+        "column": "Gutter",
+        "table": "9. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_988_Sum_Fremmedspraak_Fordypning_Arbeidslivsfag_Jenter_Trinn_9",
+        "control": "Local_Comp_Input_Number_257",
+        "group": "A",
+        "question": "13",
+        "column": "Jenter",
+        "table": "9. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_989_Sum_Fremmedspraak_Fordypning_Arbeidslivsfag_Gutter_Jenter_Trinn_9",
+        "control": "Local_Comp_Input_Number_314",
+        "group": "A",
+        "question": "13",
+        "column": "Sum",
+        "table": "9. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_990_Sum_Fremmedspraak_Fordypning_Arbeidslivsfag_Gutter_Trinn_10",
+        "control": "Local_Comp_Input_Number_258",
+        "group": "A",
+        "question": "13",
+        "column": "Gutter",
+        "table": "10. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_991_Sum_Fremmedspraak_Fordypning_Arbeidslivsfag_Jenter_Trinn_10",
+        "control": "Local_Comp_Input_Number_259",
+        "group": "A",
+        "question": "13",
+        "column": "Jenter",
+        "table": "10. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_992_Sum_Fremmedspraak_Fordypning_Arbeidslivsfag_Gutter_Jenter_Trinn_10",
+        "control": "Local_Comp_Input_Number_315",
+        "group": "A",
+        "question": "13",
+        "column": "Sum",
+        "table": "10. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_546_Sum_Tysk_Trinn_8_10",
+        "control": "Local_Comp_Input_Number_175",
+        "group": "A",
+        "question": "1",
+        "column": "Sum",
+        "table": "Sum 8.–10. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_556_Sum_Fransk_Trinn_8_10",
+        "control": "Local_Comp_Input_Number_176",
+        "group": "A",
+        "question": "2",
+        "column": "Sum",
+        "table": "Sum 8.–10. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_566_Sum_Spansk_Trinn_8_10",
+        "control": "Local_Comp_Input_Number_261",
+        "group": "A",
+        "question": "3",
+        "column": "Sum",
+        "table": "Sum 8.–10. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_576_Sum_Italiensk_Trinn_8_10",
+        "control": "Local_Comp_Input_Number_278",
+        "group": "A",
+        "question": "4",
+        "column": "Sum",
+        "table": "Sum 8.–10. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_586_Sum_Russisk_Trinn_8_10",
+        "control": "Local_Comp_Input_Number_283",
+        "group": "A",
+        "question": "5",
+        "column": "Sum",
+        "table": "Sum 8.–10. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_596_Sum_Andre_Spraak_Trinn_8_10",
+        "control": "Local_Comp_Input_Number_287",
+        "group": "A",
+        "question": "6",
+        "column": "Sum",
+        "table": "Sum 8.–10. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_606_Sum_Fordypning_Engelsk_Trinn_8_10",
+        "control": "Local_Comp_Input_Number_291",
+        "group": "A",
+        "question": "7",
+        "column": "Sum",
+        "table": "Sum 8.–10. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_616_Sum_Fordypning_Norsk_Trinn_8_10",
+        "control": "Local_Comp_Input_Number_295",
+        "group": "A",
+        "question": "8",
+        "column": "Sum",
+        "table": "Sum 8.–10. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_626_Sum_Fordypning_Samisk_Trinn_8_10",
+        "control": "Local_Comp_Input_Number_299",
+        "group": "A",
+        "question": "9",
+        "column": "Sum",
+        "table": "Sum 8.–10. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_636_Sum_Arbeidslivsfag_Trinn_8_10",
+        "control": "Local_Comp_Input_Number_303",
+        "group": "A",
+        "question": "10",
+        "column": "Sum",
+        "table": "Sum 8.–10. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_646_Sum_Fordypning_Matematikk_Trinn_8_10",
+        "control": "Local_Comp_Input_Number_308",
+        "group": "A",
+        "question": "11",
+        "column": "Sum",
+        "table": "Sum 8.–10. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_656_Sum_Fordypning_Arbeid_Trinn_8_10",
+        "control": "Local_Comp_Input_Number_311",
+        "group": "A",
+        "question": "12",
+        "column": "Sum",
+        "table": "Sum 8.–10. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_993_Sum_Fremmedspraak_Fordypning_Arbeidslivsfag_Gutter_Jenter_Trinn_1_10",
+        "control": "Local_Comp_Input_Number_312",
+        "group": "A",
+        "question": "13",
+        "column": "Sum",
+        "table": "Sum 8.–10. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_657_Antall_Gutter_Uten_Fordypning_Fremmedspraak_Eller_Arbeidslivsfag_Trinn_8",
+        "control": "Local_Comp_Input_Number_263",
+        "group": "B",
+        "question": "1",
+        "column": "Gutter",
+        "table": "8. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_658_Antall_Jenter_Uten_Fordypning_Fremmedspraak_Eller_Arbeidslivsfag_Trinn_8",
+        "control": "Local_Comp_Input_Number_264",
+        "group": "B",
+        "question": "1",
+        "column": "Jenter",
+        "table": "8. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_659_Sum_Uten_Fordypning_Fremmedspraak_Eller_Arbeidslivsfag_Trinn_8",
+        "control": "Local_Comp_Input_Number_316",
+        "group": "B",
+        "question": "1",
+        "column": "Sum",
+        "table": "8. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_660_Antall_Gutter_Uten_Fordypning_Fremmedspraak_Eller_Arbeidslivsfag_Trinn_9",
+        "control": "Local_Comp_Input_Number_265",
+        "group": "B",
+        "question": "1",
+        "column": "Gutter",
+        "table": "9. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_661_Antall_Jenter_Uten_Fordypning_Fremmedspraak_Eller_Arbeidslivsfag_Trinn_9",
+        "control": "Local_Comp_Input_Number_266",
+        "group": "B",
+        "question": "1",
+        "column": "Jenter",
+        "table": "9. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_662_Sum_Uten_Fordypning_Fremmedspraak_Eller_Arbeidslivsfag_Trinn_9",
+        "control": "Local_Comp_Input_Number_317",
+        "group": "B",
+        "question": "1",
+        "column": "Sum",
+        "table": "9. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_663_Antall_Gutter_Uten_Fordypning_Fremmedspraak_Eller_Arbeidslivsfag_Trinn_10",
+        "control": "Local_Comp_Input_Number_267",
+        "group": "B",
+        "question": "1",
+        "column": "Gutter",
+        "table": "10. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_664_Antall_Jenter_Uten_Fordypning_Fremmedspraak_Eller_Arbeidslivsfag_Trinn_10",
+        "control": "Local_Comp_Input_Number_268",
+        "group": "B",
+        "question": "1",
+        "column": "Jenter",
+        "table": "10. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_665_Sum_Uten_Fordypning_Fremmedspraak_Eller_Arbeidslivsfag_Trinn_10",
+        "control": "Local_Comp_Input_Number_318",
+        "group": "B",
+        "question": "1",
+        "column": "Sum",
+        "table": "10. trinn",
+        "readOnly": true,
+        "terms": []
+      },
+      {
+        "key": "GG_666_Sum_Uten_Fordypning_Fremmedspraak_Eller_Arbeidslivsfag_Trinn_8_10",
+        "control": "Local_Comp_Input_Number_319",
+        "group": "B",
+        "question": "1",
+        "column": "Sum",
+        "table": "Sum 8.–10. trinn",
+        "readOnly": true,
+        "terms": []
+      }
+    ],
+    "backendOwned": [
+      "GG_539_Sum_Tysk_Trinn_8",
+      "GG_542_Sum_Tysk_Trinn_9",
+      "GG_545_Sum_Tysk_Trinn_10",
+      "GG_549_Sum_Fransk_Trinn_8",
+      "GG_552_Sum_Fransk_Trinn_9",
+      "GG_555_Sum_Fransk_Trinn_10",
+      "GG_559_Sum_Spansk_Trinn_8",
+      "GG_562_Sum_Spansk_Trinn_9",
+      "GG_565_Sum_Spansk_Trinn_10",
+      "GG_569_Sum_Italiensk_Trinn_8",
+      "GG_572_Sum_Italiensk_Trinn_9",
+      "GG_575_Sum_Italiensk_Trinn_10",
+      "GG_579_Sum_Russisk_Trinn_8",
+      "GG_582_Sum_Russisk_Trinn_9",
+      "GG_585_Sum_Russisk_Trinn_10",
+      "GG_589_Sum_Andre_Spraak_Trinn_8",
+      "GG_592_Sum_Andre_Spraak_Trinn_9",
+      "GG_595_Sum_Andre_Spraak_Trinn_10",
+      "GG_599_Sum_Fordypning_Engelsk_Trinn_8",
+      "GG_602_Sum_Fordypning_Engelsk_Trinn_9",
+      "GG_605_Sum_Fordypning_Engelsk_Trinn_10",
+      "GG_609_Sum_Fordypning_Norsk_Trinn_8",
+      "GG_612_Sum_Fordypning_Norsk_Trinn_9",
+      "GG_615_Sum_Fordypning_Norsk_Trinn_10",
+      "GG_619_Sum_Fordypning_Samisk_Trinn_8",
+      "GG_622_Sum_Fordypning_Samisk_Trinn_9",
+      "GG_625_Sum_Fordypning_Samisk_Trinn_10",
+      "GG_629_Sum_Arbeidslivsfag_Trinn_8",
+      "GG_632_Sum_Arbeidslivsfag_Trinn_9",
+      "GG_635_Sum_Arbeidslivsfag_Trinn_10",
+      "GG_639_Sum_Fordypning_Matematikk_Trinn_8",
+      "GG_642_Sum_Fordypning_Matematikk_Trinn_9",
+      "GG_645_Sum_Fordypning_Matematikk_Trinn_10",
+      "GG_649_Sum_Fordypning_Arbeid_Trinn_8",
+      "GG_652_Sum_Fordypning_Arbeid_Trinn_9",
+      "GG_655_Sum_Fordypning_Arbeid_Trinn_10",
+      "GG_984_Sum_Fremmedspraak_Fordypning_Arbeidslivsfag_Gutter_Trinn_8",
+      "GG_985_Sum_Fremmedspraak_Fordypning_Arbeidslivsfag_Jenter_Trinn_8",
+      "GG_986_Sum_Fremmedspraak_Fordypning_Arbeidslivsfag_Gutter_Jenter_Trinn_8",
+      "GG_987_Sum_Fremmedspraak_Fordypning_Arbeidslivsfag_Gutter_Trinn_9",
+      "GG_988_Sum_Fremmedspraak_Fordypning_Arbeidslivsfag_Jenter_Trinn_9",
+      "GG_989_Sum_Fremmedspraak_Fordypning_Arbeidslivsfag_Gutter_Jenter_Trinn_9",
+      "GG_990_Sum_Fremmedspraak_Fordypning_Arbeidslivsfag_Gutter_Trinn_10",
+      "GG_991_Sum_Fremmedspraak_Fordypning_Arbeidslivsfag_Jenter_Trinn_10",
+      "GG_992_Sum_Fremmedspraak_Fordypning_Arbeidslivsfag_Gutter_Jenter_Trinn_10",
+      "GG_546_Sum_Tysk_Trinn_8_10",
+      "GG_556_Sum_Fransk_Trinn_8_10",
+      "GG_566_Sum_Spansk_Trinn_8_10",
+      "GG_576_Sum_Italiensk_Trinn_8_10",
+      "GG_586_Sum_Russisk_Trinn_8_10",
+      "GG_596_Sum_Andre_Spraak_Trinn_8_10",
+      "GG_606_Sum_Fordypning_Engelsk_Trinn_8_10",
+      "GG_616_Sum_Fordypning_Norsk_Trinn_8_10",
+      "GG_626_Sum_Fordypning_Samisk_Trinn_8_10",
+      "GG_636_Sum_Arbeidslivsfag_Trinn_8_10",
+      "GG_646_Sum_Fordypning_Matematikk_Trinn_8_10",
+      "GG_656_Sum_Fordypning_Arbeid_Trinn_8_10",
+      "GG_993_Sum_Fremmedspraak_Fordypning_Arbeidslivsfag_Gutter_Jenter_Trinn_1_10",
+      "GG_659_Sum_Uten_Fordypning_Fremmedspraak_Eller_Arbeidslivsfag_Trinn_8",
+      "GG_662_Sum_Uten_Fordypning_Fremmedspraak_Eller_Arbeidslivsfag_Trinn_9",
+      "GG_665_Sum_Uten_Fordypning_Fremmedspraak_Eller_Arbeidslivsfag_Trinn_10",
+      "GG_666_Sum_Uten_Fordypning_Fremmedspraak_Eller_Arbeidslivsfag_Trinn_8_10"
+    ],
+    "controllers": [
+      "GG-A19",
+      "GG-F20",
+      "GG-F21",
+      "GG-F22"
+    ]
+  }
+}

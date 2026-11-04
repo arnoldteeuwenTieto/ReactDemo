@@ -1,0 +1,4311 @@
+{
+  "5": {
+    "groups": [
+      {
+        "id": "A",
+        "title": "A. Antall lærere",
+        "reference": "GG_H19_U43"
+      },
+      {
+        "id": "B",
+        "title": "B. Annet personale i elevrettet arbeid",
+        "reference": "GG_H20_U46"
+      },
+      {
+        "id": "C",
+        "title": "C. Antall ansatte med spesialpedagogisk kompetanse",
+        "reference": "GG_H130_U385"
+      },
+      {
+        "id": "D",
+        "title": "D. Kompetansekrav for undervisning",
+        "reference": "GG_H22_U52",
+        "tables": [
+          "1–7. trinn",
+          "8–10. trinn"
+        ]
+      },
+      {
+        "id": "E",
+        "title": "E. Ansatte som gir individuelt tilrettelagt opplæring",
+        "reference": "GG_H61_U116"
+      }
+    ],
+    "fields": [
+      {
+        "key": "GG_173_Utdannings_Yrkesraadgivere_Menn",
+        "control": "TextInput3_153",
+        "group": "B",
+        "questionNumber": "1",
+        "label": "Utdannings- og yrkesrådgivere",
+        "rowLabel": "Utdannings- og yrkesrådgivere",
+        "column": "Menn",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord5.GG_173_Utdannings_Yrkesraadgivere_Menn"
+      },
+      {
+        "key": "GG_174_Utdannings_Yrkesraadgivere_Kvinner",
+        "control": "TextInput3_154",
+        "group": "B",
+        "questionNumber": "1",
+        "label": "Utdannings- og yrkesrådgivere",
+        "rowLabel": "Utdannings- og yrkesrådgivere",
+        "column": "Kvinner",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord5.GG_174_Utdannings_Yrkesraadgivere_Kvinner"
+      },
+      {
+        "key": "GG_175_Sum_Utdannings_Yrkesraadgivere",
+        "control": "TextInput3_159",
+        "group": "B",
+        "questionNumber": "1",
+        "label": "Utdannings- og yrkesrådgivere",
+        "rowLabel": "Utdannings- og yrkesrådgivere",
+        "column": "Sum",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [
+          {
+            "field": "GG_173_Utdannings_Yrkesraadgivere_Menn",
+            "sign": 1
+          },
+          {
+            "field": "GG_174_Utdannings_Yrkesraadgivere_Kvinner",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord5.GG_175_Sum_Utdannings_Yrkesraadgivere\n//Sum(TextInput3_153.Text+TextInput3_154.Text)"
+      },
+      {
+        "key": "GG_176_Sosialpedagogiske_Raadgivere_Menn",
+        "control": "TextInput3_155",
+        "group": "B",
+        "questionNumber": "2",
+        "label": "Sosialpedagogiske rådgivere",
+        "rowLabel": "Sosialpedagogiske rådgivere",
+        "column": "Menn",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord5.GG_176_Sosialpedagogiske_Raadgivere_Menn"
+      },
+      {
+        "key": "GG_177_Sosialpedagogiske_Raadgivere_Kvinner",
+        "control": "TextInput3_156",
+        "group": "B",
+        "questionNumber": "2",
+        "label": "Sosialpedagogiske rådgivere",
+        "rowLabel": "Sosialpedagogiske rådgivere",
+        "column": "Kvinner",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord5.GG_177_Sosialpedagogiske_Raadgivere_Kvinner"
+      },
+      {
+        "key": "GG_178_Sum_Sosialpedagogiske_Raadgivere",
+        "control": "TextInput3_160",
+        "group": "B",
+        "questionNumber": "2",
+        "label": "Sosialpedagogiske rådgivere",
+        "rowLabel": "Sosialpedagogiske rådgivere",
+        "column": "Sum",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [
+          {
+            "field": "GG_176_Sosialpedagogiske_Raadgivere_Menn",
+            "sign": 1
+          },
+          {
+            "field": "GG_177_Sosialpedagogiske_Raadgivere_Kvinner",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord5.GG_178_Sum_Sosialpedagogiske_Raadgivere\n//Sum(TextInput3_155.Text+TextInput3_156.Text)"
+      },
+      {
+        "key": "GG_179_Assistent_oevrige_Elevrettet_Personale_Menn",
+        "control": "TextInput3_157",
+        "group": "B",
+        "questionNumber": "3",
+        "label": "Assistenter og øvrig elevrettet personale",
+        "rowLabel": "Assistenter og øvrig elevrettet personale",
+        "column": "Menn",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord5.GG_179_Assistent_oevrige_Elevrettet_Personale_Menn"
+      },
+      {
+        "key": "GG_180_Assistent_Oevrige_Elevrettet_Personale_Kvinner",
+        "control": "TextInput3_158",
+        "group": "B",
+        "questionNumber": "3",
+        "label": "Assistenter og øvrig elevrettet personale",
+        "rowLabel": "Assistenter og øvrig elevrettet personale",
+        "column": "Kvinner",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord5.GG_180_Assistent_Oevrige_Elevrettet_Personale_Kvinner"
+      },
+      {
+        "key": "GG_181_Sum_Assistent_Oevrige_Elevrettet_Personale",
+        "control": "TextInput3_161",
+        "group": "B",
+        "questionNumber": "3",
+        "label": "Assistenter og øvrig elevrettet personale",
+        "rowLabel": "Assistenter og øvrig elevrettet personale",
+        "column": "Sum",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [
+          {
+            "field": "GG_179_Assistent_oevrige_Elevrettet_Personale_Menn",
+            "sign": 1
+          },
+          {
+            "field": "GG_180_Assistent_Oevrige_Elevrettet_Personale_Kvinner",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord5.GG_181_Sum_Assistent_Oevrige_Elevrettet_Personale\n//Sum(TextInput3_157.Text+TextInput3_158.Text)"
+      },
+      {
+        "key": "GG_161_Antall_Laerere_Totalt_Trinn1_4",
+        "control": "TextInput3_103",
+        "group": "A",
+        "questionNumber": "1",
+        "label": "Antall lærere totalt",
+        "rowLabel": "Antall lærere totalt",
+        "column": "1–4. trinn",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord5.GG_161_Antall_Laerere_Totalt_Trinn1_4"
+      },
+      {
+        "key": "GG_162_Antall_Laerere_Totalt_Trinn5_7",
+        "control": "TextInput3_104",
+        "group": "A",
+        "questionNumber": "1",
+        "label": "Antall lærere totalt",
+        "rowLabel": "Antall lærere totalt",
+        "column": "5–7. trinn",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord5.GG_162_Antall_Laerere_Totalt_Trinn5_7"
+      },
+      {
+        "key": "GG_163_Antall_Laerere_Totalt_Trinn8_10",
+        "control": "TextInput3_105",
+        "group": "A",
+        "questionNumber": "1",
+        "label": "Antall lærere totalt",
+        "rowLabel": "Antall lærere totalt",
+        "column": "8–10. trinn",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord5.GG_163_Antall_Laerere_Totalt_Trinn8_10"
+      },
+      {
+        "key": "GG_164_Antall_Laerere_Totalt_Menn",
+        "control": "TextInput3_106",
+        "group": "A",
+        "questionNumber": "1",
+        "label": "Antall lærere totalt",
+        "rowLabel": "Antall lærere totalt",
+        "column": "Menn",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord5.GG_164_Antall_Laerere_Totalt_Menn"
+      },
+      {
+        "key": "GG_165_Antall_Laerere_Totalt_Kvinner",
+        "control": "TextInput3_107",
+        "group": "A",
+        "questionNumber": "1",
+        "label": "Antall lærere totalt",
+        "rowLabel": "Antall lærere totalt",
+        "column": "Kvinner",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord5.GG_165_Antall_Laerere_Totalt_Kvinner"
+      },
+      {
+        "key": "GG_166_Sum_Antall_Laerere",
+        "control": "TextInput2_51",
+        "group": "A",
+        "questionNumber": "1",
+        "label": "Antall lærere totalt",
+        "rowLabel": "Antall lærere totalt",
+        "column": "Sum",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [
+          {
+            "field": "GG_161_Antall_Laerere_Totalt_Trinn1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_162_Antall_Laerere_Totalt_Trinn5_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_163_Antall_Laerere_Totalt_Trinn8_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord5.GG_166_Sum_Antall_Laerere\n\n//Sum(TextInput3_103.Text+TextInput3_104.Text+TextInput3_105.Text)"
+      },
+      {
+        "key": "GG_167_Antall_Kontaktlaerere_Trinn1_4",
+        "control": "TextInput3_108",
+        "group": "A",
+        "questionNumber": "2",
+        "label": "Antall kontaktlærere",
+        "rowLabel": "Antall kontaktlærere",
+        "column": "1–4. trinn",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord5.GG_167_Antall_Kontaktlaerere_Trinn1_4"
+      },
+      {
+        "key": "GG_168_Antall_Kontaktlaerere_Trinn5_7",
+        "control": "TextInput3_109",
+        "group": "A",
+        "questionNumber": "2",
+        "label": "Antall kontaktlærere",
+        "rowLabel": "Antall kontaktlærere",
+        "column": "5–7. trinn",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord5.GG_168_Antall_Kontaktlaerere_Trinn5_7"
+      },
+      {
+        "key": "GG_169_Antall_Kontaktlaerere_Trinn8_10",
+        "control": "TextInput3_110",
+        "group": "A",
+        "questionNumber": "2",
+        "label": "Antall kontaktlærere",
+        "rowLabel": "Antall kontaktlærere",
+        "column": "8–10. trinn",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord5.GG_169_Antall_Kontaktlaerere_Trinn8_10"
+      },
+      {
+        "key": "GG_170_Antall_Kontaktlaerere_Menn",
+        "control": "TextInput3_111",
+        "group": "A",
+        "questionNumber": "2",
+        "label": "Antall kontaktlærere",
+        "rowLabel": "Antall kontaktlærere",
+        "column": "Menn",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord5.GG_170_Antall_Kontaktlaerere_Menn"
+      },
+      {
+        "key": "GG_171_Antall_Kontaktlaerere_Kvinner",
+        "control": "TextInput3_112",
+        "group": "A",
+        "questionNumber": "2",
+        "label": "Antall kontaktlærere",
+        "rowLabel": "Antall kontaktlærere",
+        "column": "Kvinner",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord5.GG_171_Antall_Kontaktlaerere_Kvinner"
+      },
+      {
+        "key": "GG_172_Sum_Antall_Kontaktlaerere",
+        "control": "TextInput2_53",
+        "group": "A",
+        "questionNumber": "2",
+        "label": "Antall kontaktlærere",
+        "rowLabel": "Antall kontaktlærere",
+        "column": "Sum",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [
+          {
+            "field": "GG_167_Antall_Kontaktlaerere_Trinn1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_168_Antall_Kontaktlaerere_Trinn5_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_169_Antall_Kontaktlaerere_Trinn8_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord5.GG_172_Sum_Antall_Kontaktlaerere\n//Sum(TextInput3_108.Text+TextInput3_109.Text+TextInput3_110.Text)"
+      },
+      {
+        "key": "GG_1078_Antall_Ansatte_Spesialpedagogisk_Kompetanse_Menn",
+        "control": "TextInput3_162",
+        "group": "C",
+        "questionNumber": "1",
+        "label": "Ansatte med spesialpedagogisk kompetanse",
+        "rowLabel": "Ansatte med spesialpedagogisk kompetanse",
+        "column": "Menn",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=//nfSelectedRecord5.GG_217_Antall_Laerere_Kompetente_Trinn_1_7\n//BOGI-3927\n\nnfSelectedRecord5.GG_1078_Antall_Ansatte_Spesialpedagogisk_Kompetanse_Menn"
+      },
+      {
+        "key": "GG_1079_Antall_Ansatte_Spesialpedagogisk_Kompetanse_Kvinner",
+        "control": "TextInput3_163",
+        "group": "C",
+        "questionNumber": "1",
+        "label": "Ansatte med spesialpedagogisk kompetanse",
+        "rowLabel": "Ansatte med spesialpedagogisk kompetanse",
+        "column": "Kvinner",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=//nfSelectedRecord5.GG_218_Antall_Laerere_Kompetente_Trinn_8_10\n//BOGI-3927\nnfSelectedRecord5.GG_1079_Antall_Ansatte_Spesialpedagogisk_Kompetanse_Kvinner"
+      },
+      {
+        "key": "GG_1080_Sum_Antall_Ansatte_Spesialpedagogisk_Kompetanse",
+        "control": "TextInput3_248",
+        "group": "C",
+        "questionNumber": "1",
+        "label": "Ansatte med spesialpedagogisk kompetanse",
+        "rowLabel": "Ansatte med spesialpedagogisk kompetanse",
+        "column": "Sum",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=//nfSelectedRecord5.GG_218_Antall_Laerere_Kompetente_Trinn_8_10\n//nfSelectedRecord5.GG_1021_Sum_Laerere_Kompetente_Trinn_1_10\n//BOGI-3927\n\nnfSelectedRecord5.GG_1080_Sum_Antall_Ansatte_Spesialpedagogisk_Kompetanse"
+      },
+      {
+        "key": "GG_219_Antall_Laerere_Underkompetent_Trinn_1_7",
+        "control": "TextInput3_164",
+        "group": "C",
+        "questionNumber": "2",
+        "label": "Antall",
+        "rowLabel": "Antall",
+        "column": "1–7. trinn",
+        "readOnly": false,
+        "hidden": true,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord5.GG_219_Antall_Laerere_Underkompetent_Trinn_1_7"
+      },
+      {
+        "key": "GG_220_Antall_Laerere_Underkompetent_Trinn_8_10",
+        "control": "TextInput3_165",
+        "group": "C",
+        "questionNumber": "2",
+        "label": "Antall",
+        "rowLabel": "Antall",
+        "column": "8–10. trinn",
+        "readOnly": false,
+        "hidden": true,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord5.GG_220_Antall_Laerere_Underkompetent_Trinn_8_10"
+      },
+      {
+        "key": "GG_1022_Sum_Laerere_Underkompetente_Trinn_1_10",
+        "control": "TextInput3_280",
+        "group": "C",
+        "questionNumber": "2",
+        "label": "Antall",
+        "rowLabel": "Antall",
+        "column": "1–10. trinn",
+        "readOnly": true,
+        "hidden": true,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord5.GG_1022_Sum_Laerere_Underkompetente_Trinn_1_10"
+      },
+      {
+        "key": "GG_994_Antall_Ansatte_Underviser_1_7_Og_8_10_Oppfyller_Kompetansekrav_1_7",
+        "control": "TextInput3_354",
+        "group": "C",
+        "questionNumber": "3",
+        "label": "Antall",
+        "rowLabel": "Antall",
+        "column": "Sum",
+        "readOnly": false,
+        "hidden": true,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord5.GG_994_Antall_Ansatte_Underviser_1_7_Og_8_10_Oppfyller_Kompetansekrav_1_7\n//\"TODO: Legg til i db\""
+      },
+      {
+        "key": "GG_995_Antall_Ansatte_1_4_Oppfyller_Kompetansekrav_5_10_1_7",
+        "control": "TextInput3_356",
+        "group": "C",
+        "questionNumber": "4",
+        "label": "Antall",
+        "rowLabel": "Antall",
+        "column": "Sum",
+        "readOnly": false,
+        "hidden": true,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord5.GG_995_Antall_Ansatte_1_4_Oppfyller_Kompetansekrav_5_10_1_7"
+      },
+      {
+        "key": "GG_182_Antall_Laerere_Norsk_Min_30_Poeng_Trinn_1_7",
+        "control": "TextInput3_66",
+        "group": "D",
+        "questionNumber": "1",
+        "label": "Norsk",
+        "rowLabel": "Norsk",
+        "column": "Minst 30 studiepoeng",
+        "table": "1–7. trinn",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord5.GG_182_Antall_Laerere_Norsk_Min_30_Poeng_Trinn_1_7"
+      },
+      {
+        "key": "GG_183_Antall_Laerere_Norsk_0_29_Poeng_Trinn_1_7",
+        "control": "TextInput3_67",
+        "group": "D",
+        "questionNumber": "1",
+        "label": "Norsk",
+        "rowLabel": "Norsk",
+        "column": "0–29 studiepoeng",
+        "table": "1–7. trinn",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord5.GG_183_Antall_Laerere_Norsk_0_29_Poeng_Trinn_1_7"
+      },
+      {
+        "key": "GG_184_Antall_Laerere_Sum_Norsk_Trinn_1_7",
+        "control": "TextInput2_36",
+        "group": "D",
+        "questionNumber": "1",
+        "label": "Norsk",
+        "rowLabel": "Norsk",
+        "column": "Sum",
+        "table": "1–7. trinn",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [
+          {
+            "field": "GG_182_Antall_Laerere_Norsk_Min_30_Poeng_Trinn_1_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_183_Antall_Laerere_Norsk_0_29_Poeng_Trinn_1_7",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord5.GG_184_Antall_Laerere_Sum_Norsk_Trinn_1_7\n//Sum(TextInput3_66.Text+TextInput3_67.Text)"
+      },
+      {
+        "key": "GG_185_Antall_Laerere_Norsk_Min_60_Poeng_Trinn_8_10",
+        "control": "TextInput3_68",
+        "group": "D",
+        "questionNumber": "1",
+        "label": "Norsk",
+        "rowLabel": "Norsk",
+        "column": "Minst 60 studiepoeng",
+        "table": "8–10. trinn",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord5.GG_185_Antall_Laerere_Norsk_Min_60_Poeng_Trinn_8_10"
+      },
+      {
+        "key": "GG_186_Antall_Laerere_Norsk_30_59_Poeng_Trinn_8_10",
+        "control": "TextInput3_93",
+        "group": "D",
+        "questionNumber": "1",
+        "label": "Norsk",
+        "rowLabel": "Norsk",
+        "column": "30–59 studiepoeng",
+        "table": "8–10. trinn",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord5.GG_186_Antall_Laerere_Norsk_30_59_Poeng_Trinn_8_10"
+      },
+      {
+        "key": "GG_187_Antall_Laerere_Norsk_0_29_Poeng_Trinn_8_10",
+        "control": "TextInput3_94",
+        "group": "D",
+        "questionNumber": "1",
+        "label": "Norsk",
+        "rowLabel": "Norsk",
+        "column": "0–29 studiepoeng",
+        "table": "8–10. trinn",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord5.GG_187_Antall_Laerere_Norsk_0_29_Poeng_Trinn_8_10"
+      },
+      {
+        "key": "GG_188_Antall_Laerere_Sum_Norsk_Trinn_8_10",
+        "control": "TextInput2_45",
+        "group": "D",
+        "questionNumber": "1",
+        "label": "Norsk",
+        "rowLabel": "Norsk",
+        "column": "Sum",
+        "table": "8–10. trinn",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [
+          {
+            "field": "GG_185_Antall_Laerere_Norsk_Min_60_Poeng_Trinn_8_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_186_Antall_Laerere_Norsk_30_59_Poeng_Trinn_8_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_187_Antall_Laerere_Norsk_0_29_Poeng_Trinn_8_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord5.GG_188_Antall_Laerere_Sum_Norsk_Trinn_8_10\n//Sum(TextInput3_68.Text+TextInput3_93.Text+TextInput3_94.Text)"
+      },
+      {
+        "key": "GG_189_Antall_Laerere_Matematikk_Min_30_Poeng_Trinn_1_7",
+        "control": "TextInput3_81",
+        "group": "D",
+        "questionNumber": "2",
+        "label": "Matematikk",
+        "rowLabel": "Matematikk",
+        "column": "Minst 30 studiepoeng",
+        "table": "1–7. trinn",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord5.GG_189_Antall_Laerere_Matematikk_Min_30_Poeng_Trinn_1_7"
+      },
+      {
+        "key": "GG_190_Antall_Laerere_Matematikk_0_29_Poeng_Trinn_1_7",
+        "control": "TextInput3_82",
+        "group": "D",
+        "questionNumber": "2",
+        "label": "Matematikk",
+        "rowLabel": "Matematikk",
+        "column": "0–29 studiepoeng",
+        "table": "1–7. trinn",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord5.GG_190_Antall_Laerere_Matematikk_0_29_Poeng_Trinn_1_7"
+      },
+      {
+        "key": "GG_191_Antall_Laerere_Matematikk_Norsk_Trinn_1_7",
+        "control": "TextInput2_41",
+        "group": "D",
+        "questionNumber": "2",
+        "label": "Matematikk",
+        "rowLabel": "Matematikk",
+        "column": "Sum",
+        "table": "1–7. trinn",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [
+          {
+            "field": "GG_189_Antall_Laerere_Matematikk_Min_30_Poeng_Trinn_1_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_190_Antall_Laerere_Matematikk_0_29_Poeng_Trinn_1_7",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord5.GG_191_Antall_Laerere_Matematikk_Norsk_Trinn_1_7\n//Sum(TextInput3_81.Text+TextInput3_82.Text)"
+      },
+      {
+        "key": "GG_192_Antall_Laerere_Matematikk_Min_60_Poeng_Trinn_8_10",
+        "control": "TextInput3_83",
+        "group": "D",
+        "questionNumber": "2",
+        "label": "Matematikk",
+        "rowLabel": "Matematikk",
+        "column": "Minst 60 studiepoeng",
+        "table": "8–10. trinn",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord5.GG_192_Antall_Laerere_Matematikk_Min_60_Poeng_Trinn_8_10"
+      },
+      {
+        "key": "GG_193_Antall_Laerere_Matematikk_30_59_Poeng_Trinn_8_10",
+        "control": "TextInput3_95",
+        "group": "D",
+        "questionNumber": "2",
+        "label": "Matematikk",
+        "rowLabel": "Matematikk",
+        "column": "30–59 studiepoeng",
+        "table": "8–10. trinn",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord5.GG_193_Antall_Laerere_Matematikk_30_59_Poeng_Trinn_8_10"
+      },
+      {
+        "key": "GG_194_Antall_Laerere_Matematikk_0_29_Poeng_Trinn_8_10",
+        "control": "TextInput3_96",
+        "group": "D",
+        "questionNumber": "2",
+        "label": "Matematikk",
+        "rowLabel": "Matematikk",
+        "column": "0–29 studiepoeng",
+        "table": "8–10. trinn",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord5.GG_194_Antall_Laerere_Matematikk_0_29_Poeng_Trinn_8_10"
+      },
+      {
+        "key": "GG_195_Antall_Laerere_Sum_Matematikk_Trinn_8_10",
+        "control": "TextInput2_46",
+        "group": "D",
+        "questionNumber": "2",
+        "label": "Matematikk",
+        "rowLabel": "Matematikk",
+        "column": "Sum",
+        "table": "8–10. trinn",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [
+          {
+            "field": "GG_192_Antall_Laerere_Matematikk_Min_60_Poeng_Trinn_8_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_193_Antall_Laerere_Matematikk_30_59_Poeng_Trinn_8_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_194_Antall_Laerere_Matematikk_0_29_Poeng_Trinn_8_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord5.GG_195_Antall_Laerere_Sum_Matematikk_Trinn_8_10\n//Sum(TextInput3_83.Text+TextInput3_95.Text+TextInput3_96.Text)"
+      },
+      {
+        "key": "GG_196_Antall_Laerere_Engelsk_Min_30_Poeng_Trinn_1_7",
+        "control": "TextInput3_84",
+        "group": "D",
+        "questionNumber": "3",
+        "label": "Engelsk",
+        "rowLabel": "Engelsk",
+        "column": "Minst 30 studiepoeng",
+        "table": "1–7. trinn",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord5.GG_196_Antall_Laerere_Engelsk_Min_30_Poeng_Trinn_1_7"
+      },
+      {
+        "key": "GG_197_Antall_Laerere_Engelsk_0_29_Poeng_Trinn_1_7",
+        "control": "TextInput3_85",
+        "group": "D",
+        "questionNumber": "3",
+        "label": "Engelsk",
+        "rowLabel": "Engelsk",
+        "column": "0–29 studiepoeng",
+        "table": "1–7. trinn",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord5.GG_197_Antall_Laerere_Engelsk_0_29_Poeng_Trinn_1_7"
+      },
+      {
+        "key": "GG_198_Antall_Laerere_Sum_Engelsk_Trinn_1_7",
+        "control": "TextInput2_42",
+        "group": "D",
+        "questionNumber": "3",
+        "label": "Engelsk",
+        "rowLabel": "Engelsk",
+        "column": "Sum",
+        "table": "1–7. trinn",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [
+          {
+            "field": "GG_196_Antall_Laerere_Engelsk_Min_30_Poeng_Trinn_1_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_197_Antall_Laerere_Engelsk_0_29_Poeng_Trinn_1_7",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord5.GG_198_Antall_Laerere_Sum_Engelsk_Trinn_1_7\n//Sum(TextInput3_84.Text+TextInput3_85.Text)"
+      },
+      {
+        "key": "GG_199_Antall_Laerere_Engelsk_Min_60_Poeng_Trinn_8_10",
+        "control": "TextInput3_86",
+        "group": "D",
+        "questionNumber": "3",
+        "label": "Engelsk",
+        "rowLabel": "Engelsk",
+        "column": "Minst 60 studiepoeng",
+        "table": "8–10. trinn",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord5.GG_199_Antall_Laerere_Engelsk_Min_60_Poeng_Trinn_8_10"
+      },
+      {
+        "key": "GG_200_Antall_Laerere_Engelsk_30_59_Poeng_Trinn_8_10",
+        "control": "TextInput3_97",
+        "group": "D",
+        "questionNumber": "3",
+        "label": "Engelsk",
+        "rowLabel": "Engelsk",
+        "column": "30–59 studiepoeng",
+        "table": "8–10. trinn",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord5.GG_200_Antall_Laerere_Engelsk_30_59_Poeng_Trinn_8_10"
+      },
+      {
+        "key": "GG_201_Antall_Laerere_Engelsk_0_29_Poeng_Trinn_8_10",
+        "control": "TextInput3_98",
+        "group": "D",
+        "questionNumber": "3",
+        "label": "Engelsk",
+        "rowLabel": "Engelsk",
+        "column": "0–29 studiepoeng",
+        "table": "8–10. trinn",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord5.GG_201_Antall_Laerere_Engelsk_0_29_Poeng_Trinn_8_10"
+      },
+      {
+        "key": "GG_202_Antall_Laerere_Sum_Engelsk_Trinn_8_10",
+        "control": "TextInput2_47",
+        "group": "D",
+        "questionNumber": "3",
+        "label": "Engelsk",
+        "rowLabel": "Engelsk",
+        "column": "Sum",
+        "table": "8–10. trinn",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [
+          {
+            "field": "GG_199_Antall_Laerere_Engelsk_Min_60_Poeng_Trinn_8_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_200_Antall_Laerere_Engelsk_30_59_Poeng_Trinn_8_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_201_Antall_Laerere_Engelsk_0_29_Poeng_Trinn_8_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord5.GG_202_Antall_Laerere_Sum_Engelsk_Trinn_8_10\n//Sum(TextInput3_86.Text+TextInput3_97.Text+TextInput3_98.Text)"
+      },
+      {
+        "key": "GG_203_Antall_Laerere_Samisk_Min_30_Poeng_Trinn_1_7",
+        "control": "TextInput3_87",
+        "group": "D",
+        "questionNumber": "4",
+        "label": "Samisk",
+        "rowLabel": "Samisk",
+        "column": "Minst 30 studiepoeng",
+        "table": "1–7. trinn",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord5.GG_203_Antall_Laerere_Samisk_Min_30_Poeng_Trinn_1_7"
+      },
+      {
+        "key": "GG_204_Antall_Laerere_Samisk_0_29_Poeng_Trinn_1_7",
+        "control": "TextInput3_88",
+        "group": "D",
+        "questionNumber": "4",
+        "label": "Samisk",
+        "rowLabel": "Samisk",
+        "column": "0–29 studiepoeng",
+        "table": "1–7. trinn",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord5.GG_204_Antall_Laerere_Samisk_0_29_Poeng_Trinn_1_7"
+      },
+      {
+        "key": "GG_205_Antall_Laerere_Sum_Samisk_Trinn_1_7",
+        "control": "TextInput2_43",
+        "group": "D",
+        "questionNumber": "4",
+        "label": "Samisk",
+        "rowLabel": "Samisk",
+        "column": "Sum",
+        "table": "1–7. trinn",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [
+          {
+            "field": "GG_203_Antall_Laerere_Samisk_Min_30_Poeng_Trinn_1_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_204_Antall_Laerere_Samisk_0_29_Poeng_Trinn_1_7",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord5.GG_205_Antall_Laerere_Sum_Samisk_Trinn_1_7\n//Sum(TextInput3_87.Text+TextInput3_88.Text)"
+      },
+      {
+        "key": "GG_206_Antall_Laerere_Samisk_Min_60_Poeng_Trinn_8_10",
+        "control": "TextInput3_89",
+        "group": "D",
+        "questionNumber": "4",
+        "label": "Samisk",
+        "rowLabel": "Samisk",
+        "column": "Minst 60 studiepoeng",
+        "table": "8–10. trinn",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord5.GG_206_Antall_Laerere_Samisk_Min_60_Poeng_Trinn_8_10"
+      },
+      {
+        "key": "GG_207_Antall_Laerere_Samisk_30_59_Poeng_Trinn_8_10",
+        "control": "TextInput3_99",
+        "group": "D",
+        "questionNumber": "4",
+        "label": "Samisk",
+        "rowLabel": "Samisk",
+        "column": "30–59 studiepoeng",
+        "table": "8–10. trinn",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord5.GG_207_Antall_Laerere_Samisk_30_59_Poeng_Trinn_8_10"
+      },
+      {
+        "key": "GG_208_Antall_Laerere_Samisk_0_29_Poeng_Trinn_8_10",
+        "control": "TextInput3_100",
+        "group": "D",
+        "questionNumber": "4",
+        "label": "Samisk",
+        "rowLabel": "Samisk",
+        "column": "0–29 studiepoeng",
+        "table": "8–10. trinn",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord5.GG_208_Antall_Laerere_Samisk_0_29_Poeng_Trinn_8_10"
+      },
+      {
+        "key": "GG_209_Antall_Laerere_Sum_Samisk_Trinn_8_10",
+        "control": "TextInput2_48",
+        "group": "D",
+        "questionNumber": "4",
+        "label": "Samisk",
+        "rowLabel": "Samisk",
+        "column": "Sum",
+        "table": "8–10. trinn",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [
+          {
+            "field": "GG_206_Antall_Laerere_Samisk_Min_60_Poeng_Trinn_8_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_207_Antall_Laerere_Samisk_30_59_Poeng_Trinn_8_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_208_Antall_Laerere_Samisk_0_29_Poeng_Trinn_8_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord5.GG_209_Antall_Laerere_Sum_Samisk_Trinn_8_10\n//Sum(TextInput3_89.Text+TextInput3_99.Text+TextInput3_100.Text)"
+      },
+      {
+        "key": "GG_210_Antall_Laerere_Norsk_Tegnspraak_Min_30_Poeng_Trinn_1_7",
+        "control": "TextInput3_90",
+        "group": "D",
+        "questionNumber": "5",
+        "label": "Norsk tegnspråk",
+        "rowLabel": "Norsk tegnspråk",
+        "column": "Minst 30 studiepoeng",
+        "table": "1–7. trinn",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord5.GG_210_Antall_Laerere_Norsk_Tegnspraak_Min_30_Poeng_Trinn_1_7"
+      },
+      {
+        "key": "GG_211_Antall_Laerere_Norsk_Tegnspraak_0_29_Poeng_Trinn_1_7",
+        "control": "TextInput3_91",
+        "group": "D",
+        "questionNumber": "5",
+        "label": "Norsk tegnspråk",
+        "rowLabel": "Norsk tegnspråk",
+        "column": "0–29 studiepoeng",
+        "table": "1–7. trinn",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord5.GG_211_Antall_Laerere_Norsk_Tegnspraak_0_29_Poeng_Trinn_1_7"
+      },
+      {
+        "key": "GG_212_Antall_Laerere_Sum_Norsk_Tegnspraak_Trinn_1_7",
+        "control": "TextInput2_44",
+        "group": "D",
+        "questionNumber": "5",
+        "label": "Norsk tegnspråk",
+        "rowLabel": "Norsk tegnspråk",
+        "column": "Sum",
+        "table": "1–7. trinn",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [
+          {
+            "field": "GG_210_Antall_Laerere_Norsk_Tegnspraak_Min_30_Poeng_Trinn_1_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_211_Antall_Laerere_Norsk_Tegnspraak_0_29_Poeng_Trinn_1_7",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord5.GG_212_Antall_Laerere_Sum_Norsk_Tegnspraak_Trinn_1_7\n//Sum(TextInput3_90.Text+TextInput3_91.Text)"
+      },
+      {
+        "key": "GG_213_Antall_Laerere_Norsk_Tegnspraak_Min_60_Poeng_Trinn_8_10",
+        "control": "TextInput3_92",
+        "group": "D",
+        "questionNumber": "5",
+        "label": "Norsk tegnspråk",
+        "rowLabel": "Norsk tegnspråk",
+        "column": "Minst 60 studiepoeng",
+        "table": "8–10. trinn",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord5.GG_213_Antall_Laerere_Norsk_Tegnspraak_Min_60_Poeng_Trinn_8_10"
+      },
+      {
+        "key": "GG_214_Antall_Laerere_Norsk_Tegnspraak_30_59_Trinn_8_10",
+        "control": "TextInput3_101",
+        "group": "D",
+        "questionNumber": "5",
+        "label": "Norsk tegnspråk",
+        "rowLabel": "Norsk tegnspråk",
+        "column": "30–59 studiepoeng",
+        "table": "8–10. trinn",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord5.GG_214_Antall_Laerere_Norsk_Tegnspraak_30_59_Trinn_8_10"
+      },
+      {
+        "key": "GG_215_Antall_Laerere_Norsk_Tegnspraak_0_29_Poeng_Trinn_8_10",
+        "control": "TextInput3_102",
+        "group": "D",
+        "questionNumber": "5",
+        "label": "Norsk tegnspråk",
+        "rowLabel": "Norsk tegnspråk",
+        "column": "0–29 studiepoeng",
+        "table": "8–10. trinn",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord5.GG_215_Antall_Laerere_Norsk_Tegnspraak_0_29_Poeng_Trinn_8_10"
+      },
+      {
+        "key": "GG_216_Antall_Laerere_Sum_Norsk_Tegnspraak_Trinn_8_10",
+        "control": "TextInput2_49",
+        "group": "D",
+        "questionNumber": "5",
+        "label": "Norsk tegnspråk",
+        "rowLabel": "Norsk tegnspråk",
+        "column": "Sum",
+        "table": "8–10. trinn",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [
+          {
+            "field": "GG_213_Antall_Laerere_Norsk_Tegnspraak_Min_60_Poeng_Trinn_8_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_214_Antall_Laerere_Norsk_Tegnspraak_30_59_Trinn_8_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_215_Antall_Laerere_Norsk_Tegnspraak_0_29_Poeng_Trinn_8_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord5.GG_216_Antall_Laerere_Sum_Norsk_Tegnspraak_Trinn_8_10\n//Sum(TextInput3_92.Text+TextInput3_101.Text+TextInput3_102.Text)"
+      },
+      {
+        "key": "GG_920_Antall_Ansatte_Oppfyller_Kompetansekrav_Laererstilling",
+        "control": "TextInput3_361",
+        "group": "E",
+        "questionNumber": "1",
+        "label": "Ansatte som oppfyller kompetansekravene for lærerstilling",
+        "rowLabel": "Ansatte som oppfyller kompetansekravene for lærerstilling",
+        "column": "Antall ansatte",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord5.GG_920_Antall_Ansatte_Oppfyller_Kompetansekrav_Laererstilling"
+      },
+      {
+        "key": "GG_921_Antall_Ansatte_Utdanning_Universitet_Hoyskole_Egna_Opplaeringsloven",
+        "control": "TextInput3_366",
+        "group": "E",
+        "questionNumber": "2",
+        "label": "Ansatte med egnet universitets- eller høyskoleutdanning",
+        "rowLabel": "Ansatte med egnet universitets- eller høyskoleutdanning",
+        "column": "Antall ansatte",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord5.GG_921_Antall_Ansatte_Utdanning_Universitet_Hoyskole_Egna_Opplaeringsloven"
+      },
+      {
+        "key": "GG_222_Antall_Ansatte_Annen_Bakgrunn",
+        "control": "TextInput3_368",
+        "group": "E",
+        "questionNumber": "3",
+        "label": "Ansatte med annen bakgrunn",
+        "rowLabel": "Ansatte med annen bakgrunn",
+        "column": "Antall ansatte",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord5.GG_222_Antall_Ansatte_Annen_Bakgrunn"
+      },
+      {
+        "key": "GG_1025_Sum_Antall_Ansatte_Som_Gir_Individuelt_Tilrettelagt_Opplæring",
+        "control": "TextInput3_377",
+        "group": "E",
+        "questionNumber": "4",
+        "label": "Sum ansatte som gir individuelt tilrettelagt opplæring",
+        "rowLabel": "Sum ansatte som gir individuelt tilrettelagt opplæring",
+        "column": "Antall ansatte",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=//nfSelectedRecord5.GG_222._Antall_Ansatte_Annen_Bakgrunn\nnfSelectedRecord5.GG_1025_Sum_Antall_Ansatte_Som_Gir_Individuelt_Tilrettelagt_Opplæring"
+      }
+    ],
+    "controllers": [
+      "GG-A108",
+      "GG-A113",
+      "GG-A114",
+      "GG-A115",
+      "GG-A117",
+      "GG-A118",
+      "GG-A126",
+      "GG-A134",
+      "GG-A16",
+      "GG-A162",
+      "GG-A17",
+      "GG-A33",
+      "GG-A63",
+      "GG-A72",
+      "GG-A75",
+      "GG-A80",
+      "GG-A89",
+      "GG-A91",
+      "GG-A92",
+      "GG-A93",
+      "GG-A94",
+      "GG-A95",
+      "GG-A96",
+      "GG-A97",
+      "GG-F115",
+      "GG-F116",
+      "GG-F117",
+      "GG-F118",
+      "GG-F119",
+      "GG-F120",
+      "GG-F121",
+      "GG-F122",
+      "GG-F123",
+      "GG-F124",
+      "GG-F34",
+      "GG-F36"
+    ]
+  },
+  "6": {
+    "groups": [
+      {
+        "id": "A",
+        "title": "A. Årsverk til lederoppgaver",
+        "reference": "GG_H23_U53"
+      },
+      {
+        "id": "B",
+        "title": "B. Årsramme for undervisning",
+        "reference": "GG_H24_U56"
+      },
+      {
+        "id": "C",
+        "title": "C. Årsverk utført av annet personale",
+        "reference": "GG_H25_U58"
+      },
+      {
+        "id": "D",
+        "title": "D. Beregnede årsverk til undervisning",
+        "reference": "GG_H64_U128"
+      }
+    ],
+    "fields": [
+      {
+        "key": "GG_224_Aarsramme_Undervisning_Trinn_1_7",
+        "control": "TextInput3_129",
+        "group": "B",
+        "questionNumber": "1",
+        "label": "Årsramme for undervisning",
+        "rowLabel": "Årsramme for undervisning",
+        "column": "1–7. trinn",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord6.GG_224_Aarsramme_Undervisning_Trinn_1_7"
+      },
+      {
+        "key": "GG_225_Aarsramme_Undervisning_Trinn_8_10",
+        "control": "TextInput3_130",
+        "group": "B",
+        "questionNumber": "1",
+        "label": "Årsramme for undervisning",
+        "rowLabel": "Årsramme for undervisning",
+        "column": "8–10. trinn",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord6.GG_225_Aarsramme_Undervisning_Trinn_8_10"
+      },
+      {
+        "key": "GG_221_Antall_Aarsverk_Rektor",
+        "control": "TextInput2_65",
+        "group": "A",
+        "questionNumber": "1",
+        "label": "Rektor",
+        "rowLabel": "Rektor",
+        "column": "Årsverk",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "decimal",
+        "minimumExclusive": 0,
+        "maximum": 9999,
+        "precision": 2,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord6.GG_221_Antall_Aarsverk_Rektor"
+      },
+      {
+        "key": "GG_222_Antall_Aarsverk_Undervisningsinspektoer",
+        "control": "TextInput2_66",
+        "group": "A",
+        "questionNumber": "2",
+        "label": "Undervisningsinspektør / avdelingsleder",
+        "rowLabel": "Undervisningsinspektør / avdelingsleder",
+        "column": "Årsverk",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "decimal",
+        "minimumExclusive": 0,
+        "maximum": 9999,
+        "precision": 2,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord6.GG_222_Antall_Aarsverk_Undervisningsinspektoer"
+      },
+      {
+        "key": "GG_223_Sum_Aarsverk_Administrative_Oppgaver",
+        "control": "TextInput2_58",
+        "group": "A",
+        "questionNumber": "3",
+        "label": "Sum årsverk til administrative og pedagogiske lederoppgaver",
+        "rowLabel": "Sum årsverk til administrative og pedagogiske lederoppgaver",
+        "column": "Årsverk",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "decimal",
+        "minimumExclusive": 0,
+        "maximum": 9999,
+        "precision": 2,
+        "terms": [
+          {
+            "field": "GG_221_Antall_Aarsverk_Rektor",
+            "sign": 1
+          },
+          {
+            "field": "GG_222_Antall_Aarsverk_Undervisningsinspektoer",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=Round(nfSelectedRecord6.GG_223_Sum_Aarsverk_Administrative_Oppgaver,2)\n\n//Sjekk om denne summerer riktig med komma\n//Sum(TextInput2_65.Text+TextInput2_66.Text)"
+      },
+      {
+        "key": "GG_226_Antall_Aarsverk_Skolebibliotekar",
+        "control": "TextInput2_69",
+        "group": "C",
+        "questionNumber": "1",
+        "label": "Skolebibliotekarer",
+        "rowLabel": "Skolebibliotekarer",
+        "column": "Årsverk",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "decimal",
+        "minimumExclusive": 0,
+        "maximum": 9999,
+        "precision": 2,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord6.GG_226_Antall_Aarsverk_Skolebibliotekar"
+      },
+      {
+        "key": "GG_227_Antall_Aarsverk_Kontorteknisk_Personale",
+        "control": "TextInput2_70",
+        "group": "C",
+        "questionNumber": "2",
+        "label": "Kontorteknisk personale",
+        "rowLabel": "Kontorteknisk personale",
+        "column": "Årsverk",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "decimal",
+        "minimumExclusive": 0,
+        "maximum": 9999,
+        "precision": 2,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord6.GG_227_Antall_Aarsverk_Kontorteknisk_Personale"
+      },
+      {
+        "key": "GG_1049_Beregnede_Arsverk_Til_Undervisning_Trinn_1_4",
+        "control": "Label19",
+        "group": "D",
+        "questionNumber": "1",
+        "label": "Beregnede årsverk til undervisning",
+        "rowLabel": "Beregnede årsverk til undervisning",
+        "column": "1–4. trinn",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "decimal",
+        "terms": [],
+        "sourceFormula": "=   //BOGI3804\r\n    nfSelectedRecord6.GG_1049_Beregnede_Arsverk_Til_Undervisning_Trinn_1_4\r\n\r\n    \r\n//nfSumBeregnendeårsverk\r\n\r\n/*Round(\r\nIf(\r\n   IsBlank(nfSelectedRecord4.GG_81_Sum_Aarstimer_Undervisning_Trinn1_10) || \r\n   IsBlank(nfSelectedRecord6.GG_225_Aarsramme_Undervisning_Trinn_8_10) || \r\n   IsBlank(nfSelectedRecord6.GG_224_Aarsramme_Undervisning_Trinn_1_7) || \r\n   (nfSelectedRecord6.GG_225_Aarsramme_Undervisning_Trinn_8_10 + nfSelectedRecord6.GG_224_Aarsramme_Undervisning_Trinn_1_7) = 0,\r\n   0, // Return 0 or an appropriate value if any part is blank or if division by zero would occur\r\n   nfSelectedRecord4.GG_81_Sum_Aarstimer_Undervisning_Trinn1_10 / \r\n   (nfSelectedRecord6.GG_225_Aarsramme_Undervisning_Trinn_8_10 + nfSelectedRecord6.GG_224_Aarsramme_Undervisning_Trinn_1_7)\r\n) //end if\r\n,1) *///round 1 desimal*/\r\n\r\n/*\r\nRound(\r\nIfError(\r\n    If(\r\n        nfSelectedRecord6.GG_224_Aarsramme_Undervisning_Trinn_1_7 = 0,\r\n        0,\r\n        nfSelectedRecord4.GG_78_Sum_Aarstimer_Undervisning_Trinn1_4 / nfSelectedRecord6.GG_224_Aarsramme_Undervisning_Trinn_1_7\r\n    ),0),\r\n    2)\r\n    */\r\n\r\n "
+      },
+      {
+        "key": "GG_1050_Beregnede_Arsverk_Til_Undervisning_Trinn_5_7",
+        "control": "Label19_45",
+        "group": "D",
+        "questionNumber": "1",
+        "label": "Beregnede årsverk til undervisning",
+        "rowLabel": "Beregnede årsverk til undervisning",
+        "column": "5–7. trinn",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "decimal",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord6.GG_1050_Beregnede_Arsverk_Til_Undervisning_Trinn_5_7\n\n\n//nfSumBeregnendeårsverk\n\n/*Round(\nIf(\n   IsBlank(nfSelectedRecord4.GG_81_Sum_Aarstimer_Undervisning_Trinn1_10) || \n   IsBlank(nfSelectedRecord6.GG_225_Aarsramme_Undervisning_Trinn_8_10) || \n   IsBlank(nfSelectedRecord6.GG_224_Aarsramme_Undervisning_Trinn_1_7) || \n   (nfSelectedRecord6.GG_225_Aarsramme_Undervisning_Trinn_8_10 + nfSelectedRecord6.GG_224_Aarsramme_Undervisning_Trinn_1_7) = 0,\n   0, // Return 0 or an appropriate value if any part is blank or if division by zero would occur\n   nfSelectedRecord4.GG_81_Sum_Aarstimer_Undervisning_Trinn1_10 / \n   (nfSelectedRecord6.GG_225_Aarsramme_Undervisning_Trinn_8_10 + nfSelectedRecord6.GG_224_Aarsramme_Undervisning_Trinn_1_7)\n) //end if\n,1) *///round 1 desimal*/\n\n\n\n"
+      },
+      {
+        "key": "GG_1051_Beregnede_Arsverk_Til_Undervisning_Trinn_8_10",
+        "control": "Label19_46",
+        "group": "D",
+        "questionNumber": "1",
+        "label": "Beregnede årsverk til undervisning",
+        "rowLabel": "Beregnede årsverk til undervisning",
+        "column": "8–10. trinn",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "decimal",
+        "terms": [],
+        "sourceFormula": "=//BOGI-3804\nnfSelectedRecord6.GG_1051_Beregnede_Arsverk_Til_Undervisning_Trinn_8_10\n\n\n\n//nfSumBeregnendeårsverk\n\n/*Round(\nIf(\n   IsBlank(nfSelectedRecord4.GG_81_Sum_Aarstimer_Undervisning_Trinn1_10) || \n   IsBlank(nfSelectedRecord6.GG_225_Aarsramme_Undervisning_Trinn_8_10) || \n   IsBlank(nfSelectedRecord6.GG_224_Aarsramme_Undervisning_Trinn_1_7) || \n   (nfSelectedRecord6.GG_225_Aarsramme_Undervisning_Trinn_8_10 + nfSelectedRecord6.GG_224_Aarsramme_Undervisning_Trinn_1_7) = 0,\n   0, // Return 0 or an appropriate value if any part is blank or if division by zero would occur\n   nfSelectedRecord4.GG_81_Sum_Aarstimer_Undervisning_Trinn1_10 / \n   (nfSelectedRecord6.GG_225_Aarsramme_Undervisning_Trinn_8_10 + nfSelectedRecord6.GG_224_Aarsramme_Undervisning_Trinn_1_7)\n) //end if\n,1) *///round 1 desimal*/\n\n/*\nRound(\n IfError(\n    If(\n        nfSelectedRecord6.GG_225_Aarsramme_Undervisning_Trinn_8_10 = 0,\n        0,\n        nfSelectedRecord4.GG_80_Sum_Aarstimer_Undervisning_Trinn8_10 / nfSelectedRecord6.GG_225_Aarsramme_Undervisning_Trinn_8_10\n    ),0),\n    2) \n    */\n"
+      },
+      {
+        "key": "GG_944_Sum_Beregnede_Arsverk_Til_Undervisning",
+        "control": "Label19_47",
+        "group": "D",
+        "questionNumber": "1",
+        "label": "Beregnede årsverk til undervisning",
+        "rowLabel": "Beregnede årsverk til undervisning",
+        "column": "Årsverk",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "decimal",
+        "terms": [],
+        "sourceFormula": "=\nnfSelectedRecord6.GG_944_Sum_Beregnede_Arsverk_Til_Undervisning\n//nfSumBeregnendeårsverk\n\n/*Round(\nIf(\n   IsBlank(nfSelectedRecord4.GG_81_Sum_Aarstimer_Undervisning_Trinn1_10) || \n   IsBlank(nfSelectedRecord6.GG_225_Aarsramme_Undervisning_Trinn_8_10) || \n   IsBlank(nfSelectedRecord6.GG_224_Aarsramme_Undervisning_Trinn_1_7) || \n   (nfSelectedRecord6.GG_225_Aarsramme_Undervisning_Trinn_8_10 + nfSelectedRecord6.GG_224_Aarsramme_Undervisning_Trinn_1_7) = 0,\n   0, // Return 0 or an appropriate value if any part is blank or if division by zero would occur\n   nfSelectedRecord4.GG_81_Sum_Aarstimer_Undervisning_Trinn1_10 / \n   (nfSelectedRecord6.GG_225_Aarsramme_Undervisning_Trinn_8_10 + nfSelectedRecord6.GG_224_Aarsramme_Undervisning_Trinn_1_7)\n) //end if\n,1) *///round 1 desimal*/\n/*\nRound(\n    IfError(\n        If(nfSelectedRecord6.GG_224_Aarsramme_Undervisning_Trinn_1_7 = 0, 0,\n            nfSelectedRecord4.GG_78_Sum_Aarstimer_Undervisning_Trinn1_4 / nfSelectedRecord6.GG_224_Aarsramme_Undervisning_Trinn_1_7\n        ), 0\n    ), 2\n) + \nRound(\n    IfError(\n        If(nfSelectedRecord6.GG_224_Aarsramme_Undervisning_Trinn_1_7 = 0, 0,\n            nfSelectedRecord4.GG_79_Sum_Aarstimer_Undervisning_Trinn5_7 / nfSelectedRecord6.GG_224_Aarsramme_Undervisning_Trinn_1_7\n        ), 0\n    ), 2\n) + \nRound(\n    IfError(\n        If(nfSelectedRecord6.GG_225_Aarsramme_Undervisning_Trinn_8_10 = 0, 0,\n            nfSelectedRecord4.GG_80_Sum_Aarstimer_Undervisning_Trinn8_10 / nfSelectedRecord6.GG_225_Aarsramme_Undervisning_Trinn_8_10\n        ), 0\n    ), 2\n)*/"
+      }
+    ],
+    "controllers": [
+      "GG-A125",
+      "GG-A132",
+      "GG-A133",
+      "GG-A21",
+      "GG-A53",
+      "GG-A54",
+      "GG-A55",
+      "GG-F140",
+      "GG-F141",
+      "GG-F74"
+    ]
+  },
+  "7": {
+    "groups": [
+      {
+        "id": "A",
+        "title": "A. Hvor mange elever får spesialundervisning etter enkeltvedtak?",
+        "reference": "GG_H26_U60",
+        "sourceCard": "A. Hvor mange elever får spesialundervisning etter enkeltvedtak?",
+        "sourceOrder": 3,
+        "textReferences": [
+          "GG_H26_U60"
+        ],
+        "controllers": [
+          "GG-A40",
+          "GG-A44",
+          "GG-A45",
+          "GG-F19"
+        ]
+      },
+      {
+        "id": "B",
+        "title": "B. Individuell tilrettelegging",
+        "reference": "GG_H32_U77",
+        "sourceCard": "7B",
+        "sourceOrder": 4,
+        "textReferences": [
+          "GG_H32_U77",
+          "GG_H32_U129",
+          "GG_H32_U130",
+          "GG_H32_U131"
+        ],
+        "controllers": [
+          "BK-A10",
+          "GG-A73",
+          "GG-F108"
+        ],
+        "columnGroups": [
+          {
+            "title": "Med individuelt tilrettelagt opplæring",
+            "table": "Med individuelt tilrettelagt opplæring",
+            "columns": [
+              {
+                "fieldColumn": "Gutter",
+                "label": "Gutter"
+              },
+              {
+                "fieldColumn": "Jenter",
+                "label": "Jenter"
+              },
+              {
+                "fieldColumn": "Sum",
+                "label": "Sum"
+              }
+            ]
+          },
+          {
+            "title": "Uten individuelt tilrettelagt opplæring",
+            "table": "Uten individuelt tilrettelagt opplæring",
+            "columns": [
+              {
+                "fieldColumn": "Gutter",
+                "label": "Gutter"
+              },
+              {
+                "fieldColumn": "Jenter",
+                "label": "Jenter"
+              },
+              {
+                "fieldColumn": "Sum",
+                "label": "Sum"
+              }
+            ]
+          },
+          {
+            "title": "Totalt",
+            "table": "Totalt",
+            "columns": [
+              {
+                "fieldColumn": "Sum",
+                "label": "Sum"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "C",
+        "title": "C. Faste avdelinger for spesialundervisning",
+        "reference": "GG_H27_U61",
+        "sourceCard": "C. Faste avdelinger for spesialundervisning.",
+        "sourceOrder": 5,
+        "textReferences": [
+          "GG_H27_U133",
+          "GG_H27_U61"
+        ],
+        "controllers": [
+          "GG-A51",
+          "GG-F69",
+          "GG-F113"
+        ]
+      },
+      {
+        "id": "D",
+        "title": "D. Alternativ opplæringsarena",
+        "reference": "GG_H28_U62",
+        "sourceCard": "D. Alternativ opplæringsarena",
+        "sourceOrder": 6,
+        "textReferences": [
+          "GG_H28_U62"
+        ],
+        "controllers": [
+          "BK-A10",
+          "GG-A83"
+        ]
+      },
+      {
+        "id": "E",
+        "title": "E. Organisering av spesialundervisning",
+        "reference": "GG_H29_U63",
+        "sourceCard": "E. Organisering av spesialundervisning",
+        "sourceOrder": 7,
+        "textReferences": [
+          "GG_H29_U63",
+          "GG_H29_U64",
+          "GG_H29_U65",
+          "GG_H29_U66"
+        ],
+        "controllers": [
+          "GG-F57",
+          "GG-F58"
+        ]
+      },
+      {
+        "id": "F",
+        "title": "F. Tildelte timer til spesialundervisning med undervisningspersonale",
+        "reference": "GG_H30_U67",
+        "sourceCard": "F. Tildelte timer til spesialundervisning med undervisningspersonale",
+        "sourceOrder": 8,
+        "textReferences": [
+          "GG_H30_U67",
+          "GG_H30_U68",
+          "GG_H30_U69",
+          "GG_H30_U70",
+          "GG_H30_U71"
+        ],
+        "controllers": [
+          "GG-A87",
+          "GG-A88",
+          "GG-F61",
+          "GG-F142",
+          "GG-F143",
+          "GG-F144",
+          "GG-F147",
+          "GG-F148",
+          "GG-F149",
+          "GG-F150"
+        ]
+      },
+      {
+        "id": "G",
+        "title": "G. Antall elever som har vedtak om personlig assistanse eller timer med assistent i videreført vedtak om spesialundervisning",
+        "reference": "GG_H31_U72",
+        "sourceCard": "G. Tildelte timer til spesialundervisning med assistent",
+        "sourceOrder": 9,
+        "textReferences": [
+          "GG_H31_U72",
+          "GG_H31_U73",
+          "GG_H31_U74",
+          "GG_H31_U75",
+          "GG_H31_U76"
+        ],
+        "controllers": []
+      },
+      {
+        "id": "H",
+        "title": "H. Elever med individuell tilrettelegging fra andre kommuner",
+        "reference": "GG_H62_U135",
+        "sourceCard": "7H",
+        "sourceOrder": 10,
+        "textReferences": [
+          "GG_H62_U135"
+        ],
+        "controllers": [
+          "GG-A141",
+          "GG-F51"
+        ],
+        "description": "Registrer kommune og antall elever med individuell tilrettelegging fra andre kommuner."
+      }
+    ],
+    "fields": [
+      {
+        "key": "GG_232_Antall_Elever_Spesialundervisning_Gutter_Trinn_1",
+        "control": "TextInput3_114",
+        "group": "A",
+        "questionNumber": "1",
+        "label": "1. trinn",
+        "rowLabel": "1. trinn",
+        "column": "Gutter",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": true,
+        "excludeInapplicableFromSums": true,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_232_Antall_Elever_Spesialundervisning_Gutter_Trinn_1"
+      },
+      {
+        "key": "GG_233_Antall_Elever_Spesialundervisning_Jenter_Trinn_1",
+        "control": "TextInput3_116",
+        "group": "A",
+        "questionNumber": "1",
+        "label": "1. trinn",
+        "rowLabel": "1. trinn",
+        "column": "Jenter",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": true,
+        "excludeInapplicableFromSums": true,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_233_Antall_Elever_Spesialundervisning_Jenter_Trinn_1"
+      },
+      {
+        "key": "GG_234_Sum_Elever_Spesialundervisning_Trinn_1",
+        "control": "TextInput2_61",
+        "group": "A",
+        "questionNumber": "1",
+        "label": "1. trinn",
+        "rowLabel": "1. trinn",
+        "column": "Sum",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": true,
+        "excludeInapplicableFromSums": true,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [
+          {
+            "field": "GG_232_Antall_Elever_Spesialundervisning_Gutter_Trinn_1",
+            "sign": 1
+          },
+          {
+            "field": "GG_233_Antall_Elever_Spesialundervisning_Jenter_Trinn_1",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord7.GG_234_Sum_Elever_Spesialundervisning_Trinn_1\n//Sum(TextInput3_114.Text+TextInput3_116.Text)"
+      },
+      {
+        "key": "GG_235_Antall_Elever_Spesialundervisning_Gutter_Trinn_2",
+        "control": "TextInput3_140",
+        "group": "A",
+        "questionNumber": "2",
+        "label": "2. trinn",
+        "rowLabel": "2. trinn",
+        "column": "Gutter",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": true,
+        "excludeInapplicableFromSums": true,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_235_Antall_Elever_Spesialundervisning_Gutter_Trinn_2"
+      },
+      {
+        "key": "GG_236_Antall_Elever_Spesialundervisning_Jenter_Trinn_2",
+        "control": "TextInput3_141",
+        "group": "A",
+        "questionNumber": "2",
+        "label": "2. trinn",
+        "rowLabel": "2. trinn",
+        "column": "Jenter",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": true,
+        "excludeInapplicableFromSums": true,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_236_Antall_Elever_Spesialundervisning_Jenter_Trinn_2"
+      },
+      {
+        "key": "GG_237_Sum_Elever_Spesialundervisning_Trinn_2",
+        "control": "TextInput2_72",
+        "group": "A",
+        "questionNumber": "2",
+        "label": "2. trinn",
+        "rowLabel": "2. trinn",
+        "column": "Sum",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": true,
+        "excludeInapplicableFromSums": true,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [
+          {
+            "field": "GG_235_Antall_Elever_Spesialundervisning_Gutter_Trinn_2",
+            "sign": 1
+          },
+          {
+            "field": "GG_236_Antall_Elever_Spesialundervisning_Jenter_Trinn_2",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord7.GG_237_Sum_Elever_Spesialundervisning_Trinn_2\n//Sum(TextInput3_140.Text+TextInput3_141.Text)"
+      },
+      {
+        "key": "GG_238_Antall_Elever_Spesialundervisning_Gutter_Trinn_3",
+        "control": "TextInput3_171",
+        "group": "A",
+        "questionNumber": "3",
+        "label": "3. trinn",
+        "rowLabel": "3. trinn",
+        "column": "Gutter",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": true,
+        "excludeInapplicableFromSums": true,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_238_Antall_Elever_Spesialundervisning_Gutter_Trinn_3"
+      },
+      {
+        "key": "GG_239_Antall_Elever_Spesialundervisning_Jenter_Trinn_3",
+        "control": "TextInput3_174",
+        "group": "A",
+        "questionNumber": "3",
+        "label": "3. trinn",
+        "rowLabel": "3. trinn",
+        "column": "Jenter",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": true,
+        "excludeInapplicableFromSums": true,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_239_Antall_Elever_Spesialundervisning_Jenter_Trinn_3"
+      },
+      {
+        "key": "GG_240_Sum_Elever_Spesialundervisning_Trinn_3",
+        "control": "TextInput2_73",
+        "group": "A",
+        "questionNumber": "3",
+        "label": "3. trinn",
+        "rowLabel": "3. trinn",
+        "column": "Sum",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": true,
+        "excludeInapplicableFromSums": true,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [
+          {
+            "field": "GG_238_Antall_Elever_Spesialundervisning_Gutter_Trinn_3",
+            "sign": 1
+          },
+          {
+            "field": "GG_239_Antall_Elever_Spesialundervisning_Jenter_Trinn_3",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord7.GG_240_Sum_Elever_Spesialundervisning_Trinn_3\n//Sum(TextInput3_171.Text+TextInput3_174.Text)"
+      },
+      {
+        "key": "GG_241_Antall_Elever_Spesialundervisning_Gutter_Trinn_4",
+        "control": "TextInput3_175",
+        "group": "A",
+        "questionNumber": "4",
+        "label": "4. trinn",
+        "rowLabel": "4. trinn",
+        "column": "Gutter",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": true,
+        "excludeInapplicableFromSums": true,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_241_Antall_Elever_Spesialundervisning_Gutter_Trinn_4"
+      },
+      {
+        "key": "GG_242_Antall_Elever_Spesialundervisning_Jenter_Trinn_4",
+        "control": "TextInput3_183",
+        "group": "A",
+        "questionNumber": "4",
+        "label": "4. trinn",
+        "rowLabel": "4. trinn",
+        "column": "Jenter",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": true,
+        "excludeInapplicableFromSums": true,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_242_Antall_Elever_Spesialundervisning_Jenter_Trinn_4"
+      },
+      {
+        "key": "GG_243_Sum_Elever_Spesialundervisning_Trinn_4",
+        "control": "TextInput2_74",
+        "group": "A",
+        "questionNumber": "4",
+        "label": "4. trinn",
+        "rowLabel": "4. trinn",
+        "column": "Sum",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": true,
+        "excludeInapplicableFromSums": true,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [
+          {
+            "field": "GG_241_Antall_Elever_Spesialundervisning_Gutter_Trinn_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_242_Antall_Elever_Spesialundervisning_Jenter_Trinn_4",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord7.GG_243_Sum_Elever_Spesialundervisning_Trinn_4\n//Sum(TextInput3_175.Text+TextInput3_183.Text)"
+      },
+      {
+        "key": "GG_244_Antall_Elever_Spesialundervisning_Gutter_Trinn_5",
+        "control": "TextInput3_184",
+        "group": "A",
+        "questionNumber": "5",
+        "label": "5. trinn",
+        "rowLabel": "5. trinn",
+        "column": "Gutter",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": true,
+        "excludeInapplicableFromSums": true,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_244_Antall_Elever_Spesialundervisning_Gutter_Trinn_5"
+      },
+      {
+        "key": "GG_245_Antall_Elever_Spesialundervisning_Jenter_Trinn_5",
+        "control": "TextInput3_185",
+        "group": "A",
+        "questionNumber": "5",
+        "label": "5. trinn",
+        "rowLabel": "5. trinn",
+        "column": "Jenter",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": true,
+        "excludeInapplicableFromSums": true,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_245_Antall_Elever_Spesialundervisning_Jenter_Trinn_5"
+      },
+      {
+        "key": "GG_246_Sum_Elever_Spesialundervisning_Trinn_5",
+        "control": "TextInput2_75",
+        "group": "A",
+        "questionNumber": "5",
+        "label": "5. trinn",
+        "rowLabel": "5. trinn",
+        "column": "Sum",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": true,
+        "excludeInapplicableFromSums": true,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [
+          {
+            "field": "GG_244_Antall_Elever_Spesialundervisning_Gutter_Trinn_5",
+            "sign": 1
+          },
+          {
+            "field": "GG_245_Antall_Elever_Spesialundervisning_Jenter_Trinn_5",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=    nfSelectedRecord7.GG_246_Sum_Elever_Spesialundervisning_Trinn_5\n//Sum(TextInput3_184.Text+TextInput3_185.Text)"
+      },
+      {
+        "key": "GG_247_Antall_Elever_Spesialundervisning_Gutter_Trinn_6",
+        "control": "TextInput3_186",
+        "group": "A",
+        "questionNumber": "6",
+        "label": "6. trinn",
+        "rowLabel": "6. trinn",
+        "column": "Gutter",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": true,
+        "excludeInapplicableFromSums": true,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_247_Antall_Elever_Spesialundervisning_Gutter_Trinn_6"
+      },
+      {
+        "key": "GG_248_Antall_Elever_Spesialundervisning_Jenter_Trinn_6",
+        "control": "TextInput3_187",
+        "group": "A",
+        "questionNumber": "6",
+        "label": "6. trinn",
+        "rowLabel": "6. trinn",
+        "column": "Jenter",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": true,
+        "excludeInapplicableFromSums": true,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_248_Antall_Elever_Spesialundervisning_Jenter_Trinn_6"
+      },
+      {
+        "key": "GG_249_Sum_Elever_Spesialundervisning_Trinn_6",
+        "control": "TextInput2_76",
+        "group": "A",
+        "questionNumber": "6",
+        "label": "6. trinn",
+        "rowLabel": "6. trinn",
+        "column": "Sum",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": true,
+        "excludeInapplicableFromSums": true,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [
+          {
+            "field": "GG_247_Antall_Elever_Spesialundervisning_Gutter_Trinn_6",
+            "sign": 1
+          },
+          {
+            "field": "GG_248_Antall_Elever_Spesialundervisning_Jenter_Trinn_6",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord7.GG_249_Sum_Elever_Spesialundervisning_Trinn_6\n//Sum(TextInput3_186.Text+TextInput3_187.Text)"
+      },
+      {
+        "key": "GG_250_Antall_Elever_Spesialundervisning_Gutter_Trinn_7",
+        "control": "TextInput3_188",
+        "group": "A",
+        "questionNumber": "7",
+        "label": "7. trinn",
+        "rowLabel": "7. trinn",
+        "column": "Gutter",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": true,
+        "excludeInapplicableFromSums": true,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_250_Antall_Elever_Spesialundervisning_Gutter_Trinn_7"
+      },
+      {
+        "key": "GG_251_Antall_Elever_Spesialundervisning_Jenter_Trinn_7",
+        "control": "TextInput3_189",
+        "group": "A",
+        "questionNumber": "7",
+        "label": "7. trinn",
+        "rowLabel": "7. trinn",
+        "column": "Jenter",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": true,
+        "excludeInapplicableFromSums": true,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_251_Antall_Elever_Spesialundervisning_Jenter_Trinn_7"
+      },
+      {
+        "key": "GG_252_Sum_Elever_Spesialundervisning_Trinn_7",
+        "control": "TextInput2_77",
+        "group": "A",
+        "questionNumber": "7",
+        "label": "7. trinn",
+        "rowLabel": "7. trinn",
+        "column": "Sum",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": true,
+        "excludeInapplicableFromSums": true,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [
+          {
+            "field": "GG_250_Antall_Elever_Spesialundervisning_Gutter_Trinn_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_251_Antall_Elever_Spesialundervisning_Jenter_Trinn_7",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord7.GG_252_Sum_Elever_Spesialundervisning_Trinn_7\n//Sum(TextInput3_188.Text+TextInput3_189.Text)"
+      },
+      {
+        "key": "GG_253_Antall_Elever_Spesialundervisning_Gutter_Trinn_8",
+        "control": "TextInput3_192",
+        "group": "A",
+        "questionNumber": "8",
+        "label": "8. trinn",
+        "rowLabel": "8. trinn",
+        "column": "Gutter",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": true,
+        "excludeInapplicableFromSums": true,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_253_Antall_Elever_Spesialundervisning_Gutter_Trinn_8"
+      },
+      {
+        "key": "GG_254_Antall_Elever_Spesialundervisning_Jenter_Trinn_8",
+        "control": "TextInput3_193",
+        "group": "A",
+        "questionNumber": "8",
+        "label": "8. trinn",
+        "rowLabel": "8. trinn",
+        "column": "Jenter",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": true,
+        "excludeInapplicableFromSums": true,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_254_Antall_Elever_Spesialundervisning_Jenter_Trinn_8"
+      },
+      {
+        "key": "GG_255_Sum_Elever_Spesialundervisning_Trinn_8",
+        "control": "TextInput2_79",
+        "group": "A",
+        "questionNumber": "8",
+        "label": "8. trinn",
+        "rowLabel": "8. trinn",
+        "column": "Sum",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": true,
+        "excludeInapplicableFromSums": true,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [
+          {
+            "field": "GG_253_Antall_Elever_Spesialundervisning_Gutter_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_254_Antall_Elever_Spesialundervisning_Jenter_Trinn_8",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord7.GG_255_Sum_Elever_Spesialundervisning_Trinn_8\n//Sum(TextInput3_192.Text+TextInput3_193.Text)"
+      },
+      {
+        "key": "GG_256_Antall_Elever_Spesialundervisning_Gutter_Trinn_9",
+        "control": "TextInput3_194",
+        "group": "A",
+        "questionNumber": "9",
+        "label": "9. trinn",
+        "rowLabel": "9. trinn",
+        "column": "Gutter",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": true,
+        "excludeInapplicableFromSums": true,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_256_Antall_Elever_Spesialundervisning_Gutter_Trinn_9"
+      },
+      {
+        "key": "GG_257_Antall_Elever_Spesialundervisning_Jenter_Trinn_9",
+        "control": "TextInput3_195",
+        "group": "A",
+        "questionNumber": "9",
+        "label": "9. trinn",
+        "rowLabel": "9. trinn",
+        "column": "Jenter",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": true,
+        "excludeInapplicableFromSums": true,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_257_Antall_Elever_Spesialundervisning_Jenter_Trinn_9"
+      },
+      {
+        "key": "GG_258_Sum_Elever_Spesialundervisning_Trinn_9",
+        "control": "TextInput2_80",
+        "group": "A",
+        "questionNumber": "9",
+        "label": "9. trinn",
+        "rowLabel": "9. trinn",
+        "column": "Sum",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": true,
+        "excludeInapplicableFromSums": true,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [
+          {
+            "field": "GG_256_Antall_Elever_Spesialundervisning_Gutter_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_257_Antall_Elever_Spesialundervisning_Jenter_Trinn_9",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord7.GG_258_Sum_Elever_Spesialundervisning_Trinn_9\n//Sum(TextInput3_194.Text+TextInput3_195.Text)"
+      },
+      {
+        "key": "GG_259_Antall_Elever_Spesialundervisning_Gutter_Trinn_10",
+        "control": "TextInput3_196",
+        "group": "A",
+        "questionNumber": "10",
+        "label": "10. trinn",
+        "rowLabel": "10. trinn",
+        "column": "Gutter",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": true,
+        "excludeInapplicableFromSums": true,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_259_Antall_Elever_Spesialundervisning_Gutter_Trinn_10"
+      },
+      {
+        "key": "GG_260_Antall_Elever_Spesialundervisning_Jenter_Trinn_10",
+        "control": "TextInput3_197",
+        "group": "A",
+        "questionNumber": "10",
+        "label": "10. trinn",
+        "rowLabel": "10. trinn",
+        "column": "Jenter",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": true,
+        "excludeInapplicableFromSums": true,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_260_Antall_Elever_Spesialundervisning_Jenter_Trinn_10"
+      },
+      {
+        "key": "GG_261_Sum_Elever_Spesialundervisning_Trinn_10",
+        "control": "TextInput2_81",
+        "group": "A",
+        "questionNumber": "10",
+        "label": "10. trinn",
+        "rowLabel": "10. trinn",
+        "column": "Sum",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": true,
+        "excludeInapplicableFromSums": true,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [
+          {
+            "field": "GG_259_Antall_Elever_Spesialundervisning_Gutter_Trinn_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_260_Antall_Elever_Spesialundervisning_Jenter_Trinn_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord7.GG_261_Sum_Elever_Spesialundervisning_Trinn_10\n//Sum(TextInput3_196.Text+TextInput3_197.Text)"
+      },
+      {
+        "key": "GG_262_Sum_Elever_Spesialundervisning_Gutter_Trinn_1_10",
+        "control": "TextInput3_198",
+        "group": "A",
+        "questionNumber": "11",
+        "label": "Sum elever",
+        "rowLabel": "Sum elever",
+        "column": "Gutter",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": true,
+        "excludeInapplicableFromSums": true,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [
+          {
+            "field": "GG_232_Antall_Elever_Spesialundervisning_Gutter_Trinn_1",
+            "sign": 1
+          },
+          {
+            "field": "GG_235_Antall_Elever_Spesialundervisning_Gutter_Trinn_2",
+            "sign": 1
+          },
+          {
+            "field": "GG_238_Antall_Elever_Spesialundervisning_Gutter_Trinn_3",
+            "sign": 1
+          },
+          {
+            "field": "GG_241_Antall_Elever_Spesialundervisning_Gutter_Trinn_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_244_Antall_Elever_Spesialundervisning_Gutter_Trinn_5",
+            "sign": 1
+          },
+          {
+            "field": "GG_247_Antall_Elever_Spesialundervisning_Gutter_Trinn_6",
+            "sign": 1
+          },
+          {
+            "field": "GG_250_Antall_Elever_Spesialundervisning_Gutter_Trinn_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_253_Antall_Elever_Spesialundervisning_Gutter_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_256_Antall_Elever_Spesialundervisning_Gutter_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_259_Antall_Elever_Spesialundervisning_Gutter_Trinn_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord7.GG_262_Sum_Elever_Spesialundervisning_Gutter_Trinn_1_10\n//Sum(TextInput3_114.Text+TextInput3_140.Text+TextInput3_171.Text+TextInput3_175.Text+TextInput3_184.Text+TextInput3_186.Text+TextInput3_188.Text+TextInput3_192.Text+TextInput3_194.Text+TextInput3_196.Text)"
+      },
+      {
+        "key": "GG_263_Sum_Elever_Spesialundervisning_Jenter_Trinn_1_10",
+        "control": "TextInput3_199",
+        "group": "A",
+        "questionNumber": "11",
+        "label": "Sum elever",
+        "rowLabel": "Sum elever",
+        "column": "Jenter",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": true,
+        "excludeInapplicableFromSums": true,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [
+          {
+            "field": "GG_233_Antall_Elever_Spesialundervisning_Jenter_Trinn_1",
+            "sign": 1
+          },
+          {
+            "field": "GG_236_Antall_Elever_Spesialundervisning_Jenter_Trinn_2",
+            "sign": 1
+          },
+          {
+            "field": "GG_239_Antall_Elever_Spesialundervisning_Jenter_Trinn_3",
+            "sign": 1
+          },
+          {
+            "field": "GG_242_Antall_Elever_Spesialundervisning_Jenter_Trinn_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_245_Antall_Elever_Spesialundervisning_Jenter_Trinn_5",
+            "sign": 1
+          },
+          {
+            "field": "GG_248_Antall_Elever_Spesialundervisning_Jenter_Trinn_6",
+            "sign": 1
+          },
+          {
+            "field": "GG_251_Antall_Elever_Spesialundervisning_Jenter_Trinn_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_254_Antall_Elever_Spesialundervisning_Jenter_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_257_Antall_Elever_Spesialundervisning_Jenter_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_260_Antall_Elever_Spesialundervisning_Jenter_Trinn_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord7.GG_263_Sum_Elever_Spesialundervisning_Jenter_Trinn_1_10\n//Sum(TextInput3_116.Text+TextInput3_141.Text+TextInput3_174.Text+TextInput3_183.Text+TextInput3_185.Text+TextInput3_187.Text+TextInput3_189.Text+TextInput3_193.Text+TextInput3_195.Text+TextInput3_197.Text)"
+      },
+      {
+        "key": "GG_264_Sum_Elever_Spesialundervisning_Trinn_1_10",
+        "control": "TextInput2_82",
+        "group": "A",
+        "questionNumber": "11",
+        "label": "Sum elever",
+        "rowLabel": "Sum elever",
+        "column": "Sum",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": true,
+        "excludeInapplicableFromSums": true,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [
+          {
+            "field": "GG_262_Sum_Elever_Spesialundervisning_Gutter_Trinn_1_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_263_Sum_Elever_Spesialundervisning_Jenter_Trinn_1_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord7.GG_264_Sum_Elever_Spesialundervisning_Trinn_1_10\n//Sum(TextInput3_198.Text+TextInput3_199.Text)"
+      },
+      {
+        "key": "GG_270_Antall_Elever_Alternativ_Opplaeringsarena_Trinn_1_7",
+        "control": "TextInput3_191",
+        "group": "D",
+        "questionNumber": "1",
+        "label": "Elever på alternativ opplæringsarena",
+        "rowLabel": "Elever på alternativ opplæringsarena",
+        "column": "1.–7. trinn",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_270_Antall_Elever_Alternativ_Opplaeringsarena_Trinn_1_7"
+      },
+      {
+        "key": "GG_271_Antall_Elever_Alternativ_Opplaeringsarena_Trinn_8_10",
+        "control": "TextInput3_200",
+        "group": "D",
+        "questionNumber": "1",
+        "label": "Elever på alternativ opplæringsarena",
+        "rowLabel": "Elever på alternativ opplæringsarena",
+        "column": "8.–10. trinn",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_271_Antall_Elever_Alternativ_Opplaeringsarena_Trinn_8_10"
+      },
+      {
+        "key": "GG_272_Antall_Elever_Alternativ_Opplaeringsarena_Gutter",
+        "control": "TextInput3_201",
+        "group": "D",
+        "questionNumber": "1",
+        "label": "Elever på alternativ opplæringsarena",
+        "rowLabel": "Elever på alternativ opplæringsarena",
+        "column": "Gutter",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_272_Antall_Elever_Alternativ_Opplaeringsarena_Gutter"
+      },
+      {
+        "key": "GG_273_Antall_Elever_Alternativ_Opplaeringsarena_Jenter",
+        "control": "TextInput3_202",
+        "group": "D",
+        "questionNumber": "1",
+        "label": "Elever på alternativ opplæringsarena",
+        "rowLabel": "Elever på alternativ opplæringsarena",
+        "column": "Jenter",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_273_Antall_Elever_Alternativ_Opplaeringsarena_Jenter"
+      },
+      {
+        "key": "GG_274_Sum_Elever_Alternativ_Opplaeringsarena",
+        "control": "TextInput2_78",
+        "group": "D",
+        "questionNumber": "1",
+        "label": "Elever på alternativ opplæringsarena",
+        "rowLabel": "Elever på alternativ opplæringsarena",
+        "column": "Sum",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [
+          {
+            "field": "GG_270_Antall_Elever_Alternativ_Opplaeringsarena_Trinn_1_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_271_Antall_Elever_Alternativ_Opplaeringsarena_Trinn_8_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord7.GG_274_Sum_Elever_Alternativ_Opplaeringsarena\n//Sum(TextInput3_191.Text+TextInput3_200.Text)"
+      },
+      {
+        "key": "GG_265_Antall_Elever_Fast_Avdeling_Spesialundervisning_Trinn_1_7",
+        "control": "TextInput3_203",
+        "group": "C",
+        "questionNumber": "1",
+        "label": "Elever i faste avdelinger for spesialundervisning",
+        "rowLabel": "Elever i faste avdelinger for spesialundervisning",
+        "column": "1.–7. trinn",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_265_Antall_Elever_Fast_Avdeling_Spesialundervisning_Trinn_1_7"
+      },
+      {
+        "key": "GG_266_Antall_Elever_Fast_Avdeling_Spesialundervisning_Trinn_8_10",
+        "control": "TextInput3_204",
+        "group": "C",
+        "questionNumber": "1",
+        "label": "Elever i faste avdelinger for spesialundervisning",
+        "rowLabel": "Elever i faste avdelinger for spesialundervisning",
+        "column": "8.–10. trinn",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_266_Antall_Elever_Fast_Avdeling_Spesialundervisning_Trinn_8_10"
+      },
+      {
+        "key": "GG_267_Antall_Elever_Fast_Avdeling_Spesialundervisning_Gutter",
+        "control": "TextInput3_205",
+        "group": "C",
+        "questionNumber": "1",
+        "label": "Elever i faste avdelinger for spesialundervisning",
+        "rowLabel": "Elever i faste avdelinger for spesialundervisning",
+        "column": "Gutter",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_267_Antall_Elever_Fast_Avdeling_Spesialundervisning_Gutter"
+      },
+      {
+        "key": "GG_268_Antall_Elever_Fast_Avdeling_Spesialundervisning_Jenter",
+        "control": "TextInput3_206",
+        "group": "C",
+        "questionNumber": "1",
+        "label": "Elever i faste avdelinger for spesialundervisning",
+        "rowLabel": "Elever i faste avdelinger for spesialundervisning",
+        "column": "Jenter",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_268_Antall_Elever_Fast_Avdeling_Spesialundervisning_Jenter"
+      },
+      {
+        "key": "GG_269_Sum_Elever_Fast_Avdeling_Spesialundervisning",
+        "control": "TextInput2_83",
+        "group": "C",
+        "questionNumber": "1",
+        "label": "Elever i faste avdelinger for spesialundervisning",
+        "rowLabel": "Elever i faste avdelinger for spesialundervisning",
+        "column": "Sum",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [
+          {
+            "field": "GG_265_Antall_Elever_Fast_Avdeling_Spesialundervisning_Trinn_1_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_266_Antall_Elever_Fast_Avdeling_Spesialundervisning_Trinn_8_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord7.GG_269_Sum_Elever_Fast_Avdeling_Spesialundervisning\n//Sum(TextInput3_203.Text+TextInput3_204.Text)"
+      },
+      {
+        "key": "GG_275_Antall_Elever_Spesialundervisning_Hovedsakelig_Ordinaer_Klasse_Gutter",
+        "control": "TextInput3_190",
+        "group": "E",
+        "questionNumber": "1",
+        "label": "Hovedsakelig i ordinær klasse",
+        "rowLabel": "Hovedsakelig i ordinær klasse",
+        "column": "Gutter",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_275_Antall_Elever_Spesialundervisning_Hovedsakelig_Ordinaer_Klasse_Gutter"
+      },
+      {
+        "key": "GG_276_Antall_Elever_Spesialundervisning_Hovedsakelig_Ordinaer_Klasse_Jenter",
+        "control": "TextInput3_207",
+        "group": "E",
+        "questionNumber": "1",
+        "label": "Hovedsakelig i ordinær klasse",
+        "rowLabel": "Hovedsakelig i ordinær klasse",
+        "column": "Jenter",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_276_Antall_Elever_Spesialundervisning_Hovedsakelig_Ordinaer_Klasse_Jenter"
+      },
+      {
+        "key": "GG_277_Sum_Elever_Spesialundervisning_Hovedsakelig_Ordinaer_Klasse",
+        "control": "TextInput2_84",
+        "group": "E",
+        "questionNumber": "1",
+        "label": "Hovedsakelig i ordinær klasse",
+        "rowLabel": "Hovedsakelig i ordinær klasse",
+        "column": "Sum",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [
+          {
+            "field": "GG_275_Antall_Elever_Spesialundervisning_Hovedsakelig_Ordinaer_Klasse_Gutter",
+            "sign": 1
+          },
+          {
+            "field": "GG_276_Antall_Elever_Spesialundervisning_Hovedsakelig_Ordinaer_Klasse_Jenter",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord7.GG_277_Sum_Elever_Spesialundervisning_Hovedsakelig_Ordinaer_Klasse\n//Sum(TextInput3_190.Text+TextInput3_207.Text)"
+      },
+      {
+        "key": "GG_278_Antall_Elever_Spesialundervisning_Hovedsakelig_Gruppe_6_Eller_Flere_Gutter",
+        "control": "TextInput3_208",
+        "group": "E",
+        "questionNumber": "2",
+        "label": "Hovedsakelig i grupper med seks eller flere elever",
+        "rowLabel": "Hovedsakelig i grupper med seks eller flere elever",
+        "column": "Gutter",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_278_Antall_Elever_Spesialundervisning_Hovedsakelig_Gruppe_6_Eller_Flere_Gutter"
+      },
+      {
+        "key": "GG_279_Antall_Elever_Spesialundervisning_Hovedsakelig_Gruppe_6_Eller_Flere_Jenter",
+        "control": "TextInput3_209",
+        "group": "E",
+        "questionNumber": "2",
+        "label": "Hovedsakelig i grupper med seks eller flere elever",
+        "rowLabel": "Hovedsakelig i grupper med seks eller flere elever",
+        "column": "Jenter",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_279_Antall_Elever_Spesialundervisning_Hovedsakelig_Gruppe_6_Eller_Flere_Jenter"
+      },
+      {
+        "key": "GG_280_Sum_Elever_Spesialundervisning_Hovedsakelig_Gruppe_6_Eller_Flere",
+        "control": "TextInput2_85",
+        "group": "E",
+        "questionNumber": "2",
+        "label": "Hovedsakelig i grupper med seks eller flere elever",
+        "rowLabel": "Hovedsakelig i grupper med seks eller flere elever",
+        "column": "Sum",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [
+          {
+            "field": "GG_278_Antall_Elever_Spesialundervisning_Hovedsakelig_Gruppe_6_Eller_Flere_Gutter",
+            "sign": 1
+          },
+          {
+            "field": "GG_279_Antall_Elever_Spesialundervisning_Hovedsakelig_Gruppe_6_Eller_Flere_Jenter",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord7.GG_280_Sum_Elever_Spesialundervisning_Hovedsakelig_Gruppe_6_Eller_Flere\n//Sum(TextInput3_208.Text+TextInput3_209.Text)"
+      },
+      {
+        "key": "GG_281_Antall_Elever_Spesialundervisning_Hovedsakelig_Gruppe_2_Til_5_Gutter",
+        "control": "TextInput3_210",
+        "group": "E",
+        "questionNumber": "3",
+        "label": "Hovedsakelig i grupper med to til fem elever",
+        "rowLabel": "Hovedsakelig i grupper med to til fem elever",
+        "column": "Gutter",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_281_Antall_Elever_Spesialundervisning_Hovedsakelig_Gruppe_2_Til_5_Gutter"
+      },
+      {
+        "key": "GG_282_Antall_Elever_Spesialundervisning_Hovedsakelig_Gruppe_2_Til_5_Jenter",
+        "control": "TextInput3_211",
+        "group": "E",
+        "questionNumber": "3",
+        "label": "Hovedsakelig i grupper med to til fem elever",
+        "rowLabel": "Hovedsakelig i grupper med to til fem elever",
+        "column": "Jenter",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_282_Antall_Elever_Spesialundervisning_Hovedsakelig_Gruppe_2_Til_5_Jenter"
+      },
+      {
+        "key": "GG_283_Sum_Elever_Spesialundervisning_Hovedsakelig_Gruppe_2_Til_5",
+        "control": "TextInput2_86",
+        "group": "E",
+        "questionNumber": "3",
+        "label": "Hovedsakelig i grupper med to til fem elever",
+        "rowLabel": "Hovedsakelig i grupper med to til fem elever",
+        "column": "Sum",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [
+          {
+            "field": "GG_281_Antall_Elever_Spesialundervisning_Hovedsakelig_Gruppe_2_Til_5_Gutter",
+            "sign": 1
+          },
+          {
+            "field": "GG_282_Antall_Elever_Spesialundervisning_Hovedsakelig_Gruppe_2_Til_5_Jenter",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord7.GG_283_Sum_Elever_Spesialundervisning_Hovedsakelig_Gruppe_2_Til_5\n//Sum(TextInput3_210.Text+TextInput3_211.Text)"
+      },
+      {
+        "key": "GG_284_Antall_Elever_Spesialundervisning_Hovedsakelig_Alene_Gutter",
+        "control": "TextInput3_212",
+        "group": "E",
+        "questionNumber": "4",
+        "label": "Hovedsakelig alene",
+        "rowLabel": "Hovedsakelig alene",
+        "column": "Gutter",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_284_Antall_Elever_Spesialundervisning_Hovedsakelig_Alene_Gutter"
+      },
+      {
+        "key": "GG_285_Antall_Elever_Spesialundervisning_Hovedsakelig_Alene_Jenter",
+        "control": "TextInput3_213",
+        "group": "E",
+        "questionNumber": "4",
+        "label": "Hovedsakelig alene",
+        "rowLabel": "Hovedsakelig alene",
+        "column": "Jenter",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_285_Antall_Elever_Spesialundervisning_Hovedsakelig_Alene_Jenter"
+      },
+      {
+        "key": "GG_286_Sum_Elever_Spesialundervisning_Hovedsakelig_Alene",
+        "control": "TextInput2_87",
+        "group": "E",
+        "questionNumber": "4",
+        "label": "Hovedsakelig alene",
+        "rowLabel": "Hovedsakelig alene",
+        "column": "Sum",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [
+          {
+            "field": "GG_284_Antall_Elever_Spesialundervisning_Hovedsakelig_Alene_Gutter",
+            "sign": 1
+          },
+          {
+            "field": "GG_285_Antall_Elever_Spesialundervisning_Hovedsakelig_Alene_Jenter",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord7.GG_286_Sum_Elever_Spesialundervisning_Hovedsakelig_Alene\n//Sum(TextInput3_212.Text+TextInput3_213.Text)"
+      },
+      {
+        "key": "GG_287_AE_Spesial_Uvpersonale_1_75_Timer_Trinn_1_4",
+        "control": "TextInput3_214",
+        "group": "F",
+        "questionNumber": "1",
+        "label": "Antall elever som får 1–75 timer per år.",
+        "rowLabel": "Antall elever som får 1–75 timer per år.",
+        "column": "1.–4. trinn",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_287_AE_Spesial_Uvpersonale_1_75_Timer_Trinn_1_4"
+      },
+      {
+        "key": "GG_288_AE_Spesial_Uvpersonale_1_75_Timer_Trinn_5_7",
+        "control": "TextInput3_215",
+        "group": "F",
+        "questionNumber": "1",
+        "label": "Antall elever som får 1–75 timer per år.",
+        "rowLabel": "Antall elever som får 1–75 timer per år.",
+        "column": "5.–7. trinn",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_288_AE_Spesial_Uvpersonale_1_75_Timer_Trinn_5_7"
+      },
+      {
+        "key": "GG_289_AE_Spesial_Uvpersonale_1_75_Timer_Trinn_8_10",
+        "control": "TextInput3_216",
+        "group": "F",
+        "questionNumber": "1",
+        "label": "Antall elever som får 1–75 timer per år.",
+        "rowLabel": "Antall elever som får 1–75 timer per år.",
+        "column": "8.–10. trinn",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_289_AE_Spesial_Uvpersonale_1_75_Timer_Trinn_8_10"
+      },
+      {
+        "key": "GG_290_AE_Spesial_Uvpersonale_1_75_Timer_Gutter",
+        "control": "TextInput3_217",
+        "group": "F",
+        "questionNumber": "1",
+        "label": "Antall elever som får 1–75 timer per år.",
+        "rowLabel": "Antall elever som får 1–75 timer per år.",
+        "column": "Gutter",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_290_AE_Spesial_Uvpersonale_1_75_Timer_Gutter"
+      },
+      {
+        "key": "GG_291_AE_Spesial_Uvpersonale_1_75_Timer_Jenter",
+        "control": "TextInput3_218",
+        "group": "F",
+        "questionNumber": "1",
+        "label": "Antall elever som får 1–75 timer per år.",
+        "rowLabel": "Antall elever som får 1–75 timer per år.",
+        "column": "Jenter",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_291_AE_Spesial_Uvpersonale_1_75_Timer_Jenter"
+      },
+      {
+        "key": "GG_292_SE_Spesial_Uvpersonale_1_75_Timer",
+        "control": "TextInput2_88",
+        "group": "F",
+        "questionNumber": "1",
+        "label": "Antall elever som får 1–75 timer per år.",
+        "rowLabel": "Antall elever som får 1–75 timer per år.",
+        "column": "Sum",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [
+          {
+            "field": "GG_287_AE_Spesial_Uvpersonale_1_75_Timer_Trinn_1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_288_AE_Spesial_Uvpersonale_1_75_Timer_Trinn_5_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_289_AE_Spesial_Uvpersonale_1_75_Timer_Trinn_8_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord7.GG_292_SE_Spesial_Uvpersonale_1_75_Timer\n//Sum(TextInput3_214.Text+TextInput3_215.Text+TextInput3_216.Text)"
+      },
+      {
+        "key": "GG_293_AE_Spesial_Uvpersonale_76_190_Timer_Trinn_1_4",
+        "control": "TextInput3_219",
+        "group": "F",
+        "questionNumber": "2",
+        "label": "Antall elever som får 76–190 timer per år.",
+        "rowLabel": "Antall elever som får 76–190 timer per år.",
+        "column": "1.–4. trinn",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_293_AE_Spesial_Uvpersonale_76_190_Timer_Trinn_1_4"
+      },
+      {
+        "key": "GG_294_AE_Spesial_Uvpersonale_76_190_Timer_Trinn_5_7",
+        "control": "TextInput3_220",
+        "group": "F",
+        "questionNumber": "2",
+        "label": "Antall elever som får 76–190 timer per år.",
+        "rowLabel": "Antall elever som får 76–190 timer per år.",
+        "column": "5.–7. trinn",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_294_AE_Spesial_Uvpersonale_76_190_Timer_Trinn_5_7"
+      },
+      {
+        "key": "GG_295_AE_Spesial_Uvpersonale_76_190_Timer_Trinn_8_10",
+        "control": "TextInput3_221",
+        "group": "F",
+        "questionNumber": "2",
+        "label": "Antall elever som får 76–190 timer per år.",
+        "rowLabel": "Antall elever som får 76–190 timer per år.",
+        "column": "8.–10. trinn",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_295_AE_Spesial_Uvpersonale_76_190_Timer_Trinn_8_10"
+      },
+      {
+        "key": "GG_296_AE_Spesial_Uvpersonale_76_190_Timer_Gutter",
+        "control": "TextInput3_222",
+        "group": "F",
+        "questionNumber": "2",
+        "label": "Antall elever som får 76–190 timer per år.",
+        "rowLabel": "Antall elever som får 76–190 timer per år.",
+        "column": "Gutter",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_296_AE_Spesial_Uvpersonale_76_190_Timer_Gutter"
+      },
+      {
+        "key": "GG_297_AE_Spesial_Uvpersonale_76_190_Timer_Jenter",
+        "control": "TextInput3_223",
+        "group": "F",
+        "questionNumber": "2",
+        "label": "Antall elever som får 76–190 timer per år.",
+        "rowLabel": "Antall elever som får 76–190 timer per år.",
+        "column": "Jenter",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_297_AE_Spesial_Uvpersonale_76_190_Timer_Jenter"
+      },
+      {
+        "key": "GG_298_SE_Spesial_Uvpersonale_76_190_Timer",
+        "control": "TextInput2_89",
+        "group": "F",
+        "questionNumber": "2",
+        "label": "Antall elever som får 76–190 timer per år.",
+        "rowLabel": "Antall elever som får 76–190 timer per år.",
+        "column": "Sum",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [
+          {
+            "field": "GG_293_AE_Spesial_Uvpersonale_76_190_Timer_Trinn_1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_294_AE_Spesial_Uvpersonale_76_190_Timer_Trinn_5_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_295_AE_Spesial_Uvpersonale_76_190_Timer_Trinn_8_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord7.GG_298_SE_Spesial_Uvpersonale_76_190_Timer\n//Sum(TextInput3_219.Text+TextInput3_220.Text+TextInput3_221.Text)"
+      },
+      {
+        "key": "GG_299_AE_Spesial_Uvpersonale_191_270_Timer_Trinn_1_4",
+        "control": "TextInput3_224",
+        "group": "F",
+        "questionNumber": "3",
+        "label": "Antall elever som får 191–270 timer per år.",
+        "rowLabel": "Antall elever som får 191–270 timer per år.",
+        "column": "1.–4. trinn",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_299_AE_Spesial_Uvpersonale_191_270_Timer_Trinn_1_4"
+      },
+      {
+        "key": "GG_300_AE_Spesial_Uvpersonale_191_270_Timer_Trinn_5_7",
+        "control": "TextInput3_225",
+        "group": "F",
+        "questionNumber": "3",
+        "label": "Antall elever som får 191–270 timer per år.",
+        "rowLabel": "Antall elever som får 191–270 timer per år.",
+        "column": "5.–7. trinn",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_300_AE_Spesial_Uvpersonale_191_270_Timer_Trinn_5_7"
+      },
+      {
+        "key": "GG_301_AE_Spesial_Uvpersonale_191_270_Timer_Trinn_8_10",
+        "control": "TextInput3_226",
+        "group": "F",
+        "questionNumber": "3",
+        "label": "Antall elever som får 191–270 timer per år.",
+        "rowLabel": "Antall elever som får 191–270 timer per år.",
+        "column": "8.–10. trinn",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_301_AE_Spesial_Uvpersonale_191_270_Timer_Trinn_8_10"
+      },
+      {
+        "key": "GG_302_AE_Spesial_Uvpersonale_191_270_Timer_Gutter",
+        "control": "TextInput3_227",
+        "group": "F",
+        "questionNumber": "3",
+        "label": "Antall elever som får 191–270 timer per år.",
+        "rowLabel": "Antall elever som får 191–270 timer per år.",
+        "column": "Gutter",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_302_AE_Spesial_Uvpersonale_191_270_Timer_Gutter"
+      },
+      {
+        "key": "GG_303_AE_Spesial_Uvpersonale_191_270_Timer_Jenter",
+        "control": "TextInput3_228",
+        "group": "F",
+        "questionNumber": "3",
+        "label": "Antall elever som får 191–270 timer per år.",
+        "rowLabel": "Antall elever som får 191–270 timer per år.",
+        "column": "Jenter",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_303_AE_Spesial_Uvpersonale_191_270_Timer_Jenter"
+      },
+      {
+        "key": "GG_304_SE_Spesial_Uvpersonale_191_270_Timer",
+        "control": "TextInput2_90",
+        "group": "F",
+        "questionNumber": "3",
+        "label": "Antall elever som får 191–270 timer per år.",
+        "rowLabel": "Antall elever som får 191–270 timer per år.",
+        "column": "Sum",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [
+          {
+            "field": "GG_299_AE_Spesial_Uvpersonale_191_270_Timer_Trinn_1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_300_AE_Spesial_Uvpersonale_191_270_Timer_Trinn_5_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_301_AE_Spesial_Uvpersonale_191_270_Timer_Trinn_8_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord7.GG_304_SE_Spesial_Uvpersonale_191_270_Timer\n//Sum(TextInput3_224.Text+TextInput3_225.Text+TextInput3_226.Text)"
+      },
+      {
+        "key": "GG_305_AE_Spesial_Uvpersonale_Over_271_Timer_Trinn_1_4",
+        "control": "TextInput3_229",
+        "group": "F",
+        "questionNumber": "4",
+        "label": "Antall elever som får 271 timer eller mer per år.",
+        "rowLabel": "Antall elever som får 271 timer eller mer per år.",
+        "column": "1.–4. trinn",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_305_AE_Spesial_Uvpersonale_Over_271_Timer_Trinn_1_4"
+      },
+      {
+        "key": "GG_306_AE_Spesial_Uvpersonale_Over_271_Timer_Trinn_5_7",
+        "control": "TextInput3_230",
+        "group": "F",
+        "questionNumber": "4",
+        "label": "Antall elever som får 271 timer eller mer per år.",
+        "rowLabel": "Antall elever som får 271 timer eller mer per år.",
+        "column": "5.–7. trinn",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_306_AE_Spesial_Uvpersonale_Over_271_Timer_Trinn_5_7"
+      },
+      {
+        "key": "GG_307_AE_Spesial_Uvpersonale_Over_271_Timer_Trinn_8_10",
+        "control": "TextInput3_231",
+        "group": "F",
+        "questionNumber": "4",
+        "label": "Antall elever som får 271 timer eller mer per år.",
+        "rowLabel": "Antall elever som får 271 timer eller mer per år.",
+        "column": "8.–10. trinn",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_307_AE_Spesial_Uvpersonale_Over_271_Timer_Trinn_8_10"
+      },
+      {
+        "key": "GG_308_AE_Spesial_Uvpersonale_Over_271_Timer_Gutter",
+        "control": "TextInput3_232",
+        "group": "F",
+        "questionNumber": "4",
+        "label": "Antall elever som får 271 timer eller mer per år.",
+        "rowLabel": "Antall elever som får 271 timer eller mer per år.",
+        "column": "Gutter",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_308_AE_Spesial_Uvpersonale_Over_271_Timer_Gutter"
+      },
+      {
+        "key": "GG_309_AE_Spesial_Uvpersonale_Over_271_Timer_Jenter",
+        "control": "TextInput3_233",
+        "group": "F",
+        "questionNumber": "4",
+        "label": "Antall elever som får 271 timer eller mer per år.",
+        "rowLabel": "Antall elever som får 271 timer eller mer per år.",
+        "column": "Jenter",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_309_AE_Spesial_Uvpersonale_Over_271_Timer_Jenter"
+      },
+      {
+        "key": "GG_310_SE_Spesial_Uvpersonale_Over_271_Timer",
+        "control": "TextInput2_91",
+        "group": "F",
+        "questionNumber": "4",
+        "label": "Antall elever som får 271 timer eller mer per år.",
+        "rowLabel": "Antall elever som får 271 timer eller mer per år.",
+        "column": "Sum",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [
+          {
+            "field": "GG_305_AE_Spesial_Uvpersonale_Over_271_Timer_Trinn_1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_306_AE_Spesial_Uvpersonale_Over_271_Timer_Trinn_5_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_307_AE_Spesial_Uvpersonale_Over_271_Timer_Trinn_8_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord7.GG_310_SE_Spesial_Uvpersonale_Over_271_Timer\n//Sum(TextInput3_229.Text+TextInput3_230.Text+TextInput3_231.Text)"
+      },
+      {
+        "key": "GG_311_SE_Spesial_Uvpersonale_Trinn_1_4",
+        "control": "TextInput3_234",
+        "group": "F",
+        "questionNumber": "5",
+        "label": "Sum elever som får timer med undervisningspersonale.",
+        "rowLabel": "Sum elever som får timer med undervisningspersonale.",
+        "column": "1.–4. trinn",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [
+          {
+            "field": "GG_287_AE_Spesial_Uvpersonale_1_75_Timer_Trinn_1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_293_AE_Spesial_Uvpersonale_76_190_Timer_Trinn_1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_299_AE_Spesial_Uvpersonale_191_270_Timer_Trinn_1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_305_AE_Spesial_Uvpersonale_Over_271_Timer_Trinn_1_4",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord7.GG_311_SE_Spesial_Uvpersonale_Trinn_1_4\n//Sum(TextInput3_214.Text+TextInput3_219.Text+TextInput3_224.Text+TextInput3_229.Text)"
+      },
+      {
+        "key": "GG_312_SE_Spesial_Uvpersonale_Trinn_5_7",
+        "control": "TextInput3_235",
+        "group": "F",
+        "questionNumber": "5",
+        "label": "Sum elever som får timer med undervisningspersonale.",
+        "rowLabel": "Sum elever som får timer med undervisningspersonale.",
+        "column": "5.–7. trinn",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [
+          {
+            "field": "GG_288_AE_Spesial_Uvpersonale_1_75_Timer_Trinn_5_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_294_AE_Spesial_Uvpersonale_76_190_Timer_Trinn_5_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_300_AE_Spesial_Uvpersonale_191_270_Timer_Trinn_5_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_306_AE_Spesial_Uvpersonale_Over_271_Timer_Trinn_5_7",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord7.GG_312_SE_Spesial_Uvpersonale_Trinn_5_7\n//Sum(TextInput3_215.Text+TextInput3_220.Text+TextInput3_225.Text+TextInput3_230.Text)"
+      },
+      {
+        "key": "GG_313_SE_Spesial_Uvpersonale_Trinn_8_10",
+        "control": "TextInput3_236",
+        "group": "F",
+        "questionNumber": "5",
+        "label": "Sum elever som får timer med undervisningspersonale.",
+        "rowLabel": "Sum elever som får timer med undervisningspersonale.",
+        "column": "8.–10. trinn",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [
+          {
+            "field": "GG_289_AE_Spesial_Uvpersonale_1_75_Timer_Trinn_8_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_295_AE_Spesial_Uvpersonale_76_190_Timer_Trinn_8_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_301_AE_Spesial_Uvpersonale_191_270_Timer_Trinn_8_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_307_AE_Spesial_Uvpersonale_Over_271_Timer_Trinn_8_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord7.GG_313_SE_Spesial_Uvpersonale_Trinn_8_10\n//Sum(TextInput3_216.Text+TextInput3_221.Text+TextInput3_226.Text+TextInput3_231.Text)"
+      },
+      {
+        "key": "GG_314_SE_Spesial_Uvpersonale_Gutter",
+        "control": "TextInput3_237",
+        "group": "F",
+        "questionNumber": "5",
+        "label": "Sum elever som får timer med undervisningspersonale.",
+        "rowLabel": "Sum elever som får timer med undervisningspersonale.",
+        "column": "Gutter",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [
+          {
+            "field": "GG_290_AE_Spesial_Uvpersonale_1_75_Timer_Gutter",
+            "sign": 1
+          },
+          {
+            "field": "GG_296_AE_Spesial_Uvpersonale_76_190_Timer_Gutter",
+            "sign": 1
+          },
+          {
+            "field": "GG_302_AE_Spesial_Uvpersonale_191_270_Timer_Gutter",
+            "sign": 1
+          },
+          {
+            "field": "GG_308_AE_Spesial_Uvpersonale_Over_271_Timer_Gutter",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord7.GG_314_SE_Spesial_Uvpersonale_Gutter\n//Sum(TextInput3_217.Text+TextInput3_222.Text+TextInput3_227.Text+TextInput3_232.Text)"
+      },
+      {
+        "key": "GG_315_SE_Spesial_Uvpersonale_Jenter",
+        "control": "TextInput3_238",
+        "group": "F",
+        "questionNumber": "5",
+        "label": "Sum elever som får timer med undervisningspersonale.",
+        "rowLabel": "Sum elever som får timer med undervisningspersonale.",
+        "column": "Jenter",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [
+          {
+            "field": "GG_291_AE_Spesial_Uvpersonale_1_75_Timer_Jenter",
+            "sign": 1
+          },
+          {
+            "field": "GG_297_AE_Spesial_Uvpersonale_76_190_Timer_Jenter",
+            "sign": 1
+          },
+          {
+            "field": "GG_303_AE_Spesial_Uvpersonale_191_270_Timer_Jenter",
+            "sign": 1
+          },
+          {
+            "field": "GG_309_AE_Spesial_Uvpersonale_Over_271_Timer_Jenter",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord7.GG_315_SE_Spesial_Uvpersonale_Jenter\n//Sum(TextInput3_218.Text+TextInput3_223.Text+TextInput3_228.Text+TextInput3_233.Text)"
+      },
+      {
+        "key": "GG_316_SE_Spesial_Uvpersonale",
+        "control": "TextInput2_92",
+        "group": "F",
+        "questionNumber": "5",
+        "label": "Sum elever som får timer med undervisningspersonale.",
+        "rowLabel": "Sum elever som får timer med undervisningspersonale.",
+        "column": "Sum",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [
+          {
+            "field": "GG_311_SE_Spesial_Uvpersonale_Trinn_1_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_312_SE_Spesial_Uvpersonale_Trinn_5_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_313_SE_Spesial_Uvpersonale_Trinn_8_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord7.GG_316_SE_Spesial_Uvpersonale\n//Sum(TextInput3_234.Text+TextInput3_235.Text+TextInput3_236.Text)"
+      },
+      {
+        "key": "GG_317_Antall_Elever_Spesialundervisning_Assistent_1_75_Timer_Gutter",
+        "control": "TextInput3_239",
+        "group": "G",
+        "questionNumber": "1",
+        "label": "Antall elever som får 1–75 timer per år.",
+        "rowLabel": "Antall elever som får 1–75 timer per år.",
+        "column": "Gutter",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_317_Antall_Elever_Spesialundervisning_Assistent_1_75_Timer_Gutter"
+      },
+      {
+        "key": "GG_318_Antall_Elever_Spesialundervisning_Assistent_1_75_Timer_Jenter",
+        "control": "TextInput3_240",
+        "group": "G",
+        "questionNumber": "1",
+        "label": "Antall elever som får 1–75 timer per år.",
+        "rowLabel": "Antall elever som får 1–75 timer per år.",
+        "column": "Jenter",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_318_Antall_Elever_Spesialundervisning_Assistent_1_75_Timer_Jenter"
+      },
+      {
+        "key": "GG_319_Sum_Elever_Spesialundervisning_Assistent_1_75_Timer",
+        "control": "TextInput2_93",
+        "group": "G",
+        "questionNumber": "1",
+        "label": "Antall elever som får 1–75 timer per år.",
+        "rowLabel": "Antall elever som får 1–75 timer per år.",
+        "column": "Sum",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [
+          {
+            "field": "GG_317_Antall_Elever_Spesialundervisning_Assistent_1_75_Timer_Gutter",
+            "sign": 1
+          },
+          {
+            "field": "GG_318_Antall_Elever_Spesialundervisning_Assistent_1_75_Timer_Jenter",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord7.GG_319_Sum_Elever_Spesialundervisning_Assistent_1_75_Timer\n//Sum(TextInput3_239.Text+TextInput3_240.Text)"
+      },
+      {
+        "key": "GG_320_Antall_Elever_Spesialundervisning_Assistent_76_190_Timer_Gutter",
+        "control": "TextInput3_241",
+        "group": "G",
+        "questionNumber": "2",
+        "label": "Antall elever som får 76–190 timer per år.",
+        "rowLabel": "Antall elever som får 76–190 timer per år.",
+        "column": "Gutter",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_320_Antall_Elever_Spesialundervisning_Assistent_76_190_Timer_Gutter"
+      },
+      {
+        "key": "GG_321_Antall_Elever_Spesialundervisning_Assistent_76_190_Timer_Jenter",
+        "control": "TextInput3_242",
+        "group": "G",
+        "questionNumber": "2",
+        "label": "Antall elever som får 76–190 timer per år.",
+        "rowLabel": "Antall elever som får 76–190 timer per år.",
+        "column": "Jenter",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_321_Antall_Elever_Spesialundervisning_Assistent_76_190_Timer_Jenter"
+      },
+      {
+        "key": "GG_322_Sum_Elever_Spesialundervisning_Assistent_76_190_Timer",
+        "control": "TextInput2_94",
+        "group": "G",
+        "questionNumber": "2",
+        "label": "Antall elever som får 76–190 timer per år.",
+        "rowLabel": "Antall elever som får 76–190 timer per år.",
+        "column": "Sum",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [
+          {
+            "field": "GG_320_Antall_Elever_Spesialundervisning_Assistent_76_190_Timer_Gutter",
+            "sign": 1
+          },
+          {
+            "field": "GG_321_Antall_Elever_Spesialundervisning_Assistent_76_190_Timer_Jenter",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord7.GG_322_Sum_Elever_Spesialundervisning_Assistent_76_190_Timer\n//Sum(TextInput3_241.Text+TextInput3_242.Text)"
+      },
+      {
+        "key": "GG_323_Antall_Elever_Spesialundervisning_Assistent_191_270_Timer_Gutter",
+        "control": "TextInput3_243",
+        "group": "G",
+        "questionNumber": "3",
+        "label": "Antall elever som får 191–270 timer per år.",
+        "rowLabel": "Antall elever som får 191–270 timer per år.",
+        "column": "Gutter",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_323_Antall_Elever_Spesialundervisning_Assistent_191_270_Timer_Gutter"
+      },
+      {
+        "key": "GG_324_Antall_Elever_Spesialundervisning_Assistent_191_270_Timer_Jenter",
+        "control": "TextInput3_244",
+        "group": "G",
+        "questionNumber": "3",
+        "label": "Antall elever som får 191–270 timer per år.",
+        "rowLabel": "Antall elever som får 191–270 timer per år.",
+        "column": "Jenter",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_324_Antall_Elever_Spesialundervisning_Assistent_191_270_Timer_Jenter"
+      },
+      {
+        "key": "GG_325_Sum_Elever_Spesialundervisning_Assistent_191_270_Timer",
+        "control": "TextInput2_95",
+        "group": "G",
+        "questionNumber": "3",
+        "label": "Antall elever som får 191–270 timer per år.",
+        "rowLabel": "Antall elever som får 191–270 timer per år.",
+        "column": "Sum",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [
+          {
+            "field": "GG_323_Antall_Elever_Spesialundervisning_Assistent_191_270_Timer_Gutter",
+            "sign": 1
+          },
+          {
+            "field": "GG_324_Antall_Elever_Spesialundervisning_Assistent_191_270_Timer_Jenter",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord7.GG_325_Sum_Elever_Spesialundervisning_Assistent_191_270_Timer\n//Sum(TextInput3_243.Text+TextInput3_244.Text)"
+      },
+      {
+        "key": "GG_326_Antall_Elever_Spesialundervisning_Assistent_Over_271_Timer_Gutter",
+        "control": "TextInput3_245",
+        "group": "G",
+        "questionNumber": "4",
+        "label": "Antall elever som får 271 timer eller mer per år.",
+        "rowLabel": "Antall elever som får 271 timer eller mer per år.",
+        "column": "Gutter",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_326_Antall_Elever_Spesialundervisning_Assistent_Over_271_Timer_Gutter"
+      },
+      {
+        "key": "GG_327_Antall_Elever_Spesialundervisning_Assistent_Over_271_Timer_Jenter",
+        "control": "TextInput3_246",
+        "group": "G",
+        "questionNumber": "4",
+        "label": "Antall elever som får 271 timer eller mer per år.",
+        "rowLabel": "Antall elever som får 271 timer eller mer per år.",
+        "column": "Jenter",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_327_Antall_Elever_Spesialundervisning_Assistent_Over_271_Timer_Jenter"
+      },
+      {
+        "key": "GG_328_Sum_Elever_Spesialundervisning_Assistent_Over_271_Timer",
+        "control": "TextInput2_96",
+        "group": "G",
+        "questionNumber": "4",
+        "label": "Antall elever som får 271 timer eller mer per år.",
+        "rowLabel": "Antall elever som får 271 timer eller mer per år.",
+        "column": "Sum",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [
+          {
+            "field": "GG_326_Antall_Elever_Spesialundervisning_Assistent_Over_271_Timer_Gutter",
+            "sign": 1
+          },
+          {
+            "field": "GG_327_Antall_Elever_Spesialundervisning_Assistent_Over_271_Timer_Jenter",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord7.GG_328_Sum_Elever_Spesialundervisning_Assistent_Over_271_Timer\n\n//Sum(TextInput3_245.Text+TextInput3_246.Text)"
+      },
+      {
+        "key": "GG_329_Sum_Elever_Spesialundervisning_Assistent_Gutter",
+        "control": "TextInput3_255",
+        "group": "G",
+        "questionNumber": "5",
+        "label": "Sum elever som får timer med assistent.",
+        "rowLabel": "Sum elever som får timer med assistent.",
+        "column": "Gutter",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [
+          {
+            "field": "GG_317_Antall_Elever_Spesialundervisning_Assistent_1_75_Timer_Gutter",
+            "sign": 1
+          },
+          {
+            "field": "GG_320_Antall_Elever_Spesialundervisning_Assistent_76_190_Timer_Gutter",
+            "sign": 1
+          },
+          {
+            "field": "GG_323_Antall_Elever_Spesialundervisning_Assistent_191_270_Timer_Gutter",
+            "sign": 1
+          },
+          {
+            "field": "GG_326_Antall_Elever_Spesialundervisning_Assistent_Over_271_Timer_Gutter",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord7.GG_329_Sum_Elever_Spesialundervisning_Assistent_Gutter\n//Sum(TextInput3_239.Text+TextInput3_241.Text+TextInput3_243.Text+TextInput3_245.Text)"
+      },
+      {
+        "key": "GG_330_Sum_Elever_Spesialundervisning_Assistent_Jenter",
+        "control": "TextInput3_256",
+        "group": "G",
+        "questionNumber": "5",
+        "label": "Sum elever som får timer med assistent.",
+        "rowLabel": "Sum elever som får timer med assistent.",
+        "column": "Jenter",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [
+          {
+            "field": "GG_318_Antall_Elever_Spesialundervisning_Assistent_1_75_Timer_Jenter",
+            "sign": 1
+          },
+          {
+            "field": "GG_321_Antall_Elever_Spesialundervisning_Assistent_76_190_Timer_Jenter",
+            "sign": 1
+          },
+          {
+            "field": "GG_324_Antall_Elever_Spesialundervisning_Assistent_191_270_Timer_Jenter",
+            "sign": 1
+          },
+          {
+            "field": "GG_327_Antall_Elever_Spesialundervisning_Assistent_Over_271_Timer_Jenter",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord7.GG_330_Sum_Elever_Spesialundervisning_Assistent_Jenter\n//Sum(TextInput3_240.Text+TextInput3_242.Text+TextInput3_244.Text+TextInput3_246.Text)"
+      },
+      {
+        "key": "GG_331_Sum_Elever_Spesialundervisning_Assistent",
+        "control": "TextInput2_101",
+        "group": "G",
+        "questionNumber": "5",
+        "label": "Sum elever som får timer med assistent.",
+        "rowLabel": "Sum elever som får timer med assistent.",
+        "column": "Sum",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [
+          {
+            "field": "GG_329_Sum_Elever_Spesialundervisning_Assistent_Gutter",
+            "sign": 1
+          },
+          {
+            "field": "GG_330_Sum_Elever_Spesialundervisning_Assistent_Jenter",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord7.GG_331_Sum_Elever_Spesialundervisning_Assistent\n//Sum(TextInput3_255.Text+TextInput3_256.Text)"
+      },
+      {
+        "key": "GG_925_Antall_Elever_Individuell_Uten_Tilrettelagt_Opplaering_Sum_Rad_1",
+        "control": "TextInput2_226",
+        "group": "B",
+        "questionNumber": "1",
+        "label": "Antall elever – spørsmål 1",
+        "rowLabel": "Antall elever – spørsmål 1",
+        "column": "Sum",
+        "table": "Uten individuelt tilrettelagt opplæring",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_925_Antall_Elever_Individuell_Uten_Tilrettelagt_Opplaering_Sum_Rad_1"
+      },
+      {
+        "key": "GG_920_Antall_Elever_Individuell_Tilrettelagt_Opplaering_Gutter_Rad_1",
+        "control": "Local_Comp_Input_Number_269",
+        "group": "B",
+        "questionNumber": "1",
+        "label": "Antall elever – spørsmål 1",
+        "rowLabel": "Antall elever – spørsmål 1",
+        "column": "Gutter",
+        "table": "Med individuelt tilrettelagt opplæring",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_920_Antall_Elever_Individuell_Tilrettelagt_Opplaering_Gutter_Rad_1"
+      },
+      {
+        "key": "GG_921_Antall_Elever_Individuell_Tilrettelagt_Opplaering_Jenter_Rad_1",
+        "control": "Local_Comp_Input_Number_270",
+        "group": "B",
+        "questionNumber": "1",
+        "label": "Antall elever – spørsmål 1",
+        "rowLabel": "Antall elever – spørsmål 1",
+        "column": "Jenter",
+        "table": "Med individuelt tilrettelagt opplæring",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_921_Antall_Elever_Individuell_Tilrettelagt_Opplaering_Jenter_Rad_1"
+      },
+      {
+        "key": "GG_922_Antall_Elever_Individuell_Tilrettelagt_Opplaering_Sum_Rad_1",
+        "control": "TextInput2_221",
+        "group": "B",
+        "questionNumber": "1",
+        "label": "Antall elever – spørsmål 1",
+        "rowLabel": "Antall elever – spørsmål 1",
+        "column": "Sum",
+        "table": "Med individuelt tilrettelagt opplæring",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_922_Antall_Elever_Individuell_Tilrettelagt_Opplaering_Sum_Rad_1"
+      },
+      {
+        "key": "GG_923_Antall_Elever_Individuell_Uten_Tilrettelagt_Opplaering_Gutter_Rad_1",
+        "control": "Local_Comp_Input_Number_271",
+        "group": "B",
+        "questionNumber": "1",
+        "label": "Antall elever – spørsmål 1",
+        "rowLabel": "Antall elever – spørsmål 1",
+        "column": "Gutter",
+        "table": "Uten individuelt tilrettelagt opplæring",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_923_Antall_Elever_Individuell_Uten_Tilrettelagt_Opplaering_Gutter_Rad_1"
+      },
+      {
+        "key": "GG_924_Antall_Elever_Individuell_Uten_Tilrettelagt_Opplaering_Jenter_Rad_1",
+        "control": "Local_Comp_Input_Number_272",
+        "group": "B",
+        "questionNumber": "1",
+        "label": "Antall elever – spørsmål 1",
+        "rowLabel": "Antall elever – spørsmål 1",
+        "column": "Jenter",
+        "table": "Uten individuelt tilrettelagt opplæring",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_924_Antall_Elever_Individuell_Uten_Tilrettelagt_Opplaering_Jenter_Rad_1"
+      },
+      {
+        "key": "GG_1018_Total_Antall_Elever_Individuell_Uten_Tilrettelagt_Opplaering_Rad_1",
+        "control": "TextInput2_228",
+        "group": "B",
+        "questionNumber": "1",
+        "label": "Antall elever – spørsmål 1",
+        "rowLabel": "Antall elever – spørsmål 1",
+        "column": "Sum",
+        "table": "Totalt",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_1018_Total_Antall_Elever_Individuell_Uten_Tilrettelagt_Opplaering_Rad_1"
+      },
+      {
+        "key": "GG_926_Antall_Elever_Individuell_Tilrettelagt_Opplaering_Gutter_Rad_2",
+        "control": "Local_Comp_Input_Number_273",
+        "group": "B",
+        "questionNumber": "2",
+        "label": "Antall elever – spørsmål 2",
+        "rowLabel": "Antall elever – spørsmål 2",
+        "column": "Gutter",
+        "table": "Med individuelt tilrettelagt opplæring",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_926_Antall_Elever_Individuell_Tilrettelagt_Opplaering_Gutter_Rad_2"
+      },
+      {
+        "key": "GG_927_Antall_Elever_Individuell_Tilrettelagt_Opplaering_Jenter_Rad_2",
+        "control": "Local_Comp_Input_Number_136",
+        "group": "B",
+        "questionNumber": "2",
+        "label": "Antall elever – spørsmål 2",
+        "rowLabel": "Antall elever – spørsmål 2",
+        "column": "Jenter",
+        "table": "Med individuelt tilrettelagt opplæring",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_927_Antall_Elever_Individuell_Tilrettelagt_Opplaering_Jenter_Rad_2"
+      },
+      {
+        "key": "GG_928_Antall_Elever_Individuell_Tilrettelagt_Opplaering_Sum_Rad_2",
+        "control": "TextInput2_223",
+        "group": "B",
+        "questionNumber": "2",
+        "label": "Antall elever – spørsmål 2",
+        "rowLabel": "Antall elever – spørsmål 2",
+        "column": "Sum",
+        "table": "Med individuelt tilrettelagt opplæring",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_928_Antall_Elever_Individuell_Tilrettelagt_Opplaering_Sum_Rad_2"
+      },
+      {
+        "key": "GG_929_Antall_Elever_Individuell_Uten_Tilrettelagt_Opplaering_Gutter_Rad_2",
+        "control": "Local_Comp_Input_Number_275",
+        "group": "B",
+        "questionNumber": "2",
+        "label": "Antall elever – spørsmål 2",
+        "rowLabel": "Antall elever – spørsmål 2",
+        "column": "Gutter",
+        "table": "Uten individuelt tilrettelagt opplæring",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_929_Antall_Elever_Individuell_Uten_Tilrettelagt_Opplaering_Gutter_Rad_2"
+      },
+      {
+        "key": "GG_930_Antall_Elever_Individuell_Uten_Tilrettelagt_Opplaering_Jenter_Rad_2",
+        "control": "Local_Comp_Input_Number_135",
+        "group": "B",
+        "questionNumber": "2",
+        "label": "Antall elever – spørsmål 2",
+        "rowLabel": "Antall elever – spørsmål 2",
+        "column": "Jenter",
+        "table": "Uten individuelt tilrettelagt opplæring",
+        "readOnly": false,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_930_Antall_Elever_Individuell_Uten_Tilrettelagt_Opplaering_Jenter_Rad_2"
+      },
+      {
+        "key": "GG_931_Antall_Elever_Individuell_Uten_Tilrettelagt_Opplaering_Sum_Rad_2",
+        "control": "TextInput2_225",
+        "group": "B",
+        "questionNumber": "2",
+        "label": "Antall elever – spørsmål 2",
+        "rowLabel": "Antall elever – spørsmål 2",
+        "column": "Sum",
+        "table": "Uten individuelt tilrettelagt opplæring",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_931_Antall_Elever_Individuell_Uten_Tilrettelagt_Opplaering_Sum_Rad_2"
+      },
+      {
+        "key": "GG_1019_Total_Antall_Elever_Individuell_Uten_Tilrettelagt_Opplaering_Rad_2",
+        "control": "TextInput2_229",
+        "group": "B",
+        "questionNumber": "2",
+        "label": "Antall elever – spørsmål 2",
+        "rowLabel": "Antall elever – spørsmål 2",
+        "column": "Sum",
+        "table": "Totalt",
+        "readOnly": true,
+        "hidden": false,
+        "gradeRestricted": false,
+        "excludeInapplicableFromSums": false,
+        "maxDigits": 4,
+        "numericKind": "integer",
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord7.GG_1019_Total_Antall_Elever_Individuell_Uten_Tilrettelagt_Opplaering_Rad_2"
+      }
+    ],
+    "controllers": [
+      "GG-A141",
+      "GG-A40",
+      "GG-A44",
+      "GG-A45",
+      "GG-A51",
+      "GG-A73",
+      "GG-A83",
+      "GG-A87",
+      "GG-A88",
+      "GG-F108",
+      "GG-F113",
+      "GG-F142",
+      "GG-F143",
+      "GG-F144",
+      "GG-F147",
+      "GG-F148",
+      "GG-F149",
+      "GG-F150",
+      "GG-F19",
+      "GG-F51",
+      "GG-F57",
+      "GG-F58",
+      "GG-F61",
+      "GG-F69"
+    ]
+  }
+}

@@ -1,0 +1,948 @@
+Screens:
+  Del18_Fullfør:
+    Properties:
+      OnVisible: "=\r\nUpdateContext({varlclOpplysningerGittAv: Blank(),\r\n\r\n//Disse er kun lagt inn for å få appen til å hente inn nye verdier på disse, slik at den ikke får fra andre barnehager brukeren har vært innom \r\nForcehenteverdi_Merknad_Kommune: LookUp(GsiGrunnskoleSvar, Organisasjonsnummer = vargblGallerySelectedSkole.Organisasjonsnummer && Ar =vargblSelectedYear ).MerknadKommune,\r\nForcehenteverdi_MerknadSkole: LookUp(GsiGrunnskoleSvar, Organisasjonsnummer = vargblGallerySelectedSkole.Organisasjonsnummer && Ar = vargblSelectedYear).MerknadSkole\r\n});\r\n\r\n//Rolle Leder og Kommune sentralt skal begge kunne fylle ut og levere skjema. Dermed skal også deres informasjon lagres i spm A.\r\nSet(Iskommunesentralt, If((nfLoginRole.RolleId = 10 && !IsBlank(Find(\"kommune sentralt\", vargblGallerySelectedSkole.Navn))), nfLoginRole.RolleId = 10, false));\r\n\r\nSet (varHarMistetTilgang ,  IsBlank( LookUp( Tilgang, TilgangId = nfTilgangstabell.TilgangId,  TilgangId  )) ); // BOGI-3494\r\n\r\n\r\nIf( (nfLoginRole.RolleId = 9 || Iskommunesentralt ) && nfDisplayMode = DisplayMode.Edit,\r\nWith({MyRole: \r\n\r\nIf(IsBlank(nfLoginRole.RolleId), \"N/A\",\r\n\r\nIf(\r\n    nfLoginRole.RolleId = 9, \"Skoleleder\",\r\n    nfLoginRole.RolleId = 10 && Iskommunesentralt, \"Kommune sentralt\",\r\n    nfLoginRole.RolleId = 10, \"Skoleeier (kommune)\",\r\n    nfLoginRole.RolleId = 11, \"Statsforvalter\",\r\n    nfLoginRole.RolleId = 12, \"Udir administrator\",\r\n    nfLoginRole.RolleId = 13, \"Udir brukerstøtte\"\r\n))\r\n\r\n},\r\nConcurrent(\r\n    //Årsmelding = Patch(BasilArsmeldingSvar, nfSelectedRecord, {'BA-10-opplysning_av_navn': \r\n    Patch(GsiGrunnskoleSvar, nfSelectedRecord, {OpplysningerGittAv: \r\n\r\n    JSON(\r\n        {\r\n            Navn: IfError(Office365Users.MyProfile().DisplayName , nfUserId),\r\n            Epost: nfTilgangstabell.UserMail,\r\n            Rolle: MyRole\r\n        }\r\n    )\r\n\r\n    }), UpdateContext({varlclOpplysningerGittAv:     JSON(\r\n        {\r\n            Navn: IfError(Office365Users.MyProfile().DisplayName , nfUserId),\r\n            Epost: nfTilgangstabell.UserMail,\r\n            Rolle: MyRole\r\n        }\r\n    )})\r\n)\r\n        \r\n));\r\n\r\nIf(!IsBlank(nfSelectedRecord.OpplysningerGittAv),\r\nUpdateContext({varlclOpplysningerGittAv: nfSelectedRecord.OpplysningerGittAv}))\r\n//Årsmelding = UpdateContext({varlclOpplysningerGittAv: nfSelectedRecord.'BA-10-opplysning_av_navn'}))\r\n"
+    Children:
+      - MainScreenContainer2_14:
+          Control: GroupContainer@1.5.0
+          Variant: AutoLayout
+          Properties:
+            DropShadow: =DropShadow.None
+            Height: =Parent.Height
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutOverflowY: =LayoutOverflow.Scroll
+            Width: =Parent.Width
+          Children:
+            - HeaderContainer3_18:
+                Control: GroupContainer@1.5.0
+                Variant: AutoLayout
+                Properties:
+                  AlignInContainer: =AlignInContainer.SetByContainer
+                  DropShadow: =DropShadow.None
+                  FillPortions: =0
+                  Height: =Local_comp_GSI_Header_2.Height
+                  LayoutAlignItems: =LayoutAlignItems.Stretch
+                  LayoutDirection: =LayoutDirection.Vertical
+                  LayoutMaxHeight: =
+                  LayoutMaxWidth: =
+                  Visible: =If(Parent.Width < 800, false, true)
+                  Width: =Parent.Width
+                Children:
+                  - Local_comp_GSI_Header_2:
+                      Control: CanvasComponent
+                      ComponentName: Local_comp_GSI_Header
+                      Properties:
+                        Beliggenhet: |-
+                          =/*Switch(nfLoginRole.RolleId,
+                          9, vargblLookupNSR.Kommunenavn,
+                          10, vargblLookupNSR.Kommunenavn,
+                          11, vargblLookupNSR.Fylkesnavn, 
+                          12, "Utdanningsdirektoratet",
+                          13, "Utdanningsdirektoratet")*/
+                        CurrentScreen: ="Text"
+                        Custom_Environment: |
+                          =nfEnv_Name
+                        Custom_Input_Role: =nfLoginRole.RolleId
+                        Custom_SolutionVersion: |+
+                          =//Henter solution versjon
+                          nfSolutionVersion
+
+
+                        Custom_Version: =nfAppVersion
+                        Fill: =RGBA(255, 255, 255, 1)
+                        Font: =Font.'Segoe UI'
+                        Header: =App.ActiveScreen
+                        Height: =80
+                        HideShowReponsiveNavbar: =Set(vargblResponsiveShowNavbar, !vargblResponsiveShowNavbar)
+                        Kommunenavn: =nfLookupNSR.Kommunenavn
+                        LayoutMaxHeight: =
+                        LayoutMaxWidth: =
+                        Navn: =nfLookupNSR.Navn
+                        Rolleid: =nfLoginRole.RolleId
+                        Skole: =//vargblLookupNSR.Navn
+                        Width: =App.Width
+            - InnholdsContainer_15:
+                Control: GroupContainer@1.5.0
+                Variant: AutoLayout
+                Properties:
+                  AlignInContainer: =AlignInContainer.SetByContainer
+                  DropShadow: =DropShadow.None
+                  Height: '=Parent.Height - HeaderContainer3_18.Height '
+                  LayoutAlignItems: =LayoutAlignItems.Stretch
+                  LayoutDirection: =LayoutDirection.Horizontal
+                  LayoutMaxHeight: =
+                  LayoutMaxWidth: =
+                  Width: =Parent.Width
+                Children:
+                  - NavigasjonsContainer2_15:
+                      Control: GroupContainer@1.5.0
+                      Variant: AutoLayout
+                      Properties:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        Height: =Parent.Height
+                        LayoutDirection: =LayoutDirection.Horizontal
+                        LayoutMaxHeight: =
+                        LayoutMaxWidth: =
+                        PaddingLeft: =10
+                        Width: =If(Del18_Fullfør.Size >2 || vargblResponsiveShowNavbar  , 260, 0)
+                      Children:
+                        - Local_comp_navbar_16:
+                            Control: CanvasComponent
+                            ComponentName: Local_comp_navbar
+                            Properties:
+                              Fill: =Color.Transparent
+                              Height: = Parent.Height
+                              Input_Statussteg_Table: "=Table(\r\n    {Steg: 1, Status: Statussteg1},\r\n    {Steg: 2, Status: Statussteg2},\r\n    {Steg: 3, Status: Statussteg3},\r\n    {Steg: 4, Status: Statussteg4},\r\n    {Steg: 5, Status: Statussteg5},\r\n    {Steg: 6, Status: Statussteg6},\r\n    {Steg: 7, Status: Statussteg7},\r\n    {Steg: 8, Status: Statussteg8},\r\n    {Steg: 9, Status: Statussteg9},\r\n    {Steg: 10, Status: Statussteg10},\r\n    {Steg: 11, Status: Statussteg11},\r\n    {Steg: 12, Status: Statussteg12},\r\n    {Steg: 13, Status: Statussteg13},\r\n    {Steg: 14, Status: Statussteg14},\r\n    {Steg: 15, Status: Statussteg15},\r\n    {Steg: 16, Status: Statussteg16},\r\n    {Steg: 17, Status: Statussteg17},\r\n    {Steg: 18, Status: nfTotalStatus}\r\n   \r\n\r\n)\r\n\r\n\r\n"
+                              LayoutMaxHeight: =
+                              LayoutMaxWidth: =
+                              NavigationItems: |+
+                                =vargblNavbarItems
+
+
+                                /*Table(
+                                    {
+                                        Steg: "1",
+                                        Tittel: "Enhetsopplysninger",
+                                        Naviger_to_screen: Del1
+                                        ,Status: Statussteg1
+                                    },
+                                    {
+                                        Steg: "2",
+                                        Tittel: "Om skolen",
+                                        Naviger_to_screen: Del2
+                                        ,Status: Statussteg2
+                                    },
+                                    {
+                                        Steg: "3",
+                                        Tittel: "Elever og timer",
+                                        Naviger_to_screen: Del3
+                                        ,Status: Statussteg3
+                                    },
+                                    {
+                                        Steg: "4",
+                                        Tittel: "Årstimer",
+                                        Naviger_to_screen: Del4
+                                        ,Status: Statussteg4
+                                    },
+                                    {
+                                        Steg: "5",
+                                        Tittel: "Lærere og assistenter",
+                                        Naviger_to_screen: Del5
+                                        ,Status: Statussteg5
+                                    },
+                                    {
+                                        Steg: "6",
+                                        Tittel: "Årsverk og ansatte",
+                                        Naviger_to_screen: Del6
+                                        ,Status: Statussteg6
+                                    }
+                                    ,
+                                    {
+                                        Steg: "7",
+                                        Tittel: "Spesialundervisning",
+                                        Naviger_to_screen: Del7
+                                        ,Status: Statussteg7
+                                    }
+                                    ,
+                                    {
+                                        Steg: "8",
+                                        Tittel: "Særskilt språkopplæring",
+                                        Naviger_to_screen: Del8
+                                        ,Status: Statussteg8
+                                    }
+                                    ,
+                                    {
+                                        Steg: "9",
+                                        Tittel: "Opplæringsspråk",
+                                        Naviger_to_screen: Del9
+                                        //,Status: Del9
+                                    }
+                                    ,
+                                    {
+                                        Steg: "10",
+                                        Tittel: "Fremmedspråk, språklig fordypning og arbeidslivsfag",
+                                        Naviger_to_screen: Del10
+                                        //,Status: Del10
+                                    }
+                                    ,
+                                    {
+                                        Steg: "11",
+                                        Tittel: "Valgfag",
+                                        Naviger_to_screen: Del11
+                                        //,Status: Del11
+                                    }
+                                    ,
+                                    {
+                                        Steg: "12",
+                                        Tittel: "Fysisk aktivitet og leksehjelp",
+                                        Naviger_to_screen: Del12
+                                        //,Status: Del11
+                                    }
+                                    ,
+                                    {
+                                        Steg: "13",
+                                        Tittel: "Andre opplysninger",
+                                        Naviger_to_screen: Del13
+                                        //,Status: Del11
+                                    }
+                                      ,
+                                    {
+                                        Steg: "14",
+                                        Tittel: "Skolefritidsordningen (SFO)",
+                                        Naviger_to_screen: Del14
+                                        //,Status: Del11
+                                    }
+                                    ,
+                                    {
+                                        Steg: "15",
+                                        Tittel: "Kontroller",
+                                        Naviger_to_screen: 'Del17 - Kontroller'
+                                        ,Status: Statussteg15
+                                    }
+                                    ,
+                                    {
+                                        Steg: "16",
+                                        Tittel: "Fullfør",
+                                        Naviger_to_screen: 'Del18 - Fullfør'
+                                        ,Status: nfTotalStatus
+                                    }
+                                )*/
+
+                              Standardfarge: =Color.White
+                              StardardTekstFarge: =RGBA(48, 48, 48, 1)
+                              Valgsteg_farge: =RGBA(48, 48, 48, 1)
+                              Valgtsteg_tekstfarge: =Color.White
+                              Width: =250
+                  - SpmContainer2_15:
+                      Control: GroupContainer@1.5.0
+                      Variant: AutoLayout
+                      Properties:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        DropShadow: =DropShadow.None
+                        Height: =Parent.Height
+                        LayoutAlignItems: =LayoutAlignItems.Stretch
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutMaxHeight: =
+                        LayoutMaxWidth: =
+                        Width: =Parent.Width - NavigasjonsContainer2_15.Width
+                      Children:
+                        - SpmInnholdContainer2_15:
+                            Control: GroupContainer@1.5.0
+                            Variant: AutoLayout
+                            Properties:
+                              DropShadow: =DropShadow.None
+                              Height: =Parent.Height
+                              LayoutDirection: =LayoutDirection.Vertical
+                              LayoutMaxHeight: =
+                              LayoutMaxWidth: =
+                              Width: =Parent.Width
+                            Children:
+                              - Container4_29:
+                                  Control: GroupContainer@1.5.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    DropShadow: =DropShadow.None
+                                    Height: =
+                                    LayoutDirection: =LayoutDirection.Vertical
+                                    LayoutMaxHeight: =
+                                    LayoutMaxWidth: =
+                                    Width: =Parent.Width
+                                  Children:
+                                    - Container4_30:
+                                        Control: GroupContainer@1.5.0
+                                        Variant: AutoLayout
+                                        Properties:
+                                          DropShadow: =DropShadow.None
+                                          Height: =
+                                          LayoutDirection: =LayoutDirection.Vertical
+                                          LayoutMaxHeight: =
+                                          LayoutMaxWidth: =
+                                          Width: =Parent.Width
+                                        Children:
+                                          - ScrollSkjema-Canvas_steg10:
+                                              Control: FluidGrid@2.3.0
+                                              Properties:
+                                                AlignInContainer: =AlignInContainer.SetByContainer
+                                                BorderThickness: =0
+                                                Height: =523
+                                                LayoutMaxHeight: =
+                                                LayoutMaxWidth: =
+                                                Width: =Parent.Width
+                                                X: =300
+                                                Y: =38
+                                              Children:
+                                                - A) Opplysningene er gitt av:
+                                                    Control: DataCard@1.0.2
+                                                    Properties:
+                                                      BorderColor: =Color.White
+                                                      Fill: =Color.Transparent
+                                                      Height: =254
+                                                      Width: =1126
+                                                      X: =0
+                                                      Y: =1
+                                                    Children:
+                                                      - Comp_liba_DatacardBkg_33:
+                                                          Control: CanvasComponent
+                                                          ComponentName: Comp_liba_DatacardBkg
+                                                          Properties:
+                                                            CompBody_Height: =100
+                                                            HTMLCodedTxtHeader: =""
+                                                            Height: =220
+                                                            Label_Button: ="Text"
+                                                            TxtHeader: |-
+                                                              =//"A. Opplysningene er gitt av (navn)"
+                                                              LookUp(nfViewSprak, BeregnetId = "GG_H57").HovedsporsmalTekst
+                                                            VisDrawer: |-
+                                                              =Set (vargblVisDrawer ,true) ;       
+                                                              Set(vargblDrawerHjelpetekst,LookUp(colHjelpetekster, HjelpetekstId = "GG-H79" ,Tekst));
+                                                              Set(vargblDrawerOverskrift,LookUp(colHjelpetekster, HjelpetekstId = "GG-H79" ,Overskrift));
+                                                              Com_liba_spmtegn_drawer_GSI_18.SetFocusDrawer();
+                                                            VisSpmTegn: =true
+                                                            Width: =IfError(If(App.Width > 896, 896, App.Width-10),896)
+                                                      - Container_Opplysninger_er_gitt_av:
+                                                          Control: GroupContainer@1.5.0
+                                                          Variant: AutoLayout
+                                                          Properties:
+                                                            BorderColor: =Color.Transparent
+                                                            BorderThickness: =3
+                                                            DropShadow: =DropShadow.None
+                                                            Fill: =farge_stalblaa04
+                                                            Height: "=//Comp_liba_DatacardBkg_1.Height_verdi_spørsmål - 5\r\n\r\nContainer_Headings_Ansatte_1.Height + Container_AnsatteOpplysning_1.Height "
+                                                            LayoutDirection: =LayoutDirection.Vertical
+                                                            LayoutGap: =2
+                                                            PaddingBottom: =2
+                                                            PaddingTop: =2
+                                                            Width: =Comp_liba_DatacardBkg_33.Width_verdi_spørsmål
+                                                            X: =Comp_liba_DatacardBkg_33.X_verdi_spørsmål
+                                                            Y: =Comp_liba_DatacardBkg_33.Y_verdi_spørsmål
+                                                          Children:
+                                                            - Container_Headings_Ansatte_1:
+                                                                Control: GroupContainer@1.5.0
+                                                                Variant: AutoLayout
+                                                                Properties:
+                                                                  AlignInContainer: =AlignInContainer.SetByContainer
+                                                                  DropShadow: =DropShadow.None
+                                                                  Fill: =Color.Transparent
+                                                                  FillPortions: =0
+                                                                  Height: =40
+                                                                  LayoutAlignItems: =LayoutAlignItems.Center
+                                                                  LayoutDirection: =LayoutDirection.Horizontal
+                                                                  LayoutGap: =3
+                                                                  LayoutMaxHeight: =
+                                                                  LayoutMaxWidth: =
+                                                                  LayoutMinHeight: =50
+                                                                  RadiusBottomLeft: =5
+                                                                  RadiusBottomRight: =5
+                                                                  RadiusTopLeft: =5
+                                                                  RadiusTopRight: =5
+                                                                  Width: '=Parent.Width '
+                                                                Children:
+                                                                  - Container17_1:
+                                                                      Control: GroupContainer@1.5.0
+                                                                      Variant: ManualLayout
+                                                                      Properties:
+                                                                        DropShadow: =DropShadow.None
+                                                                        Fill: =farge_gronn01
+                                                                        FillPortions: =3
+                                                                        LayoutMaxHeight: =
+                                                                        LayoutMaxWidth: =
+                                                                        LayoutMinHeight: =0
+                                                                        LayoutMinWidth: =100
+                                                                      Children:
+                                                                        - Label_Header_Navn_1:
+                                                                            Control: Label@2.5.1
+                                                                            Properties:
+                                                                              BorderColor: =farge_stalblaa01
+                                                                              DisplayMode: =nfDisplayMode
+                                                                              Fill: =Color.Transparent
+                                                                              Font: =FontHeading
+                                                                              FontWeight: =FontWeight.Semibold
+                                                                              OnSelect: =
+                                                                              PaddingBottom: =0
+                                                                              PaddingRight: =0
+                                                                              PaddingTop: =0
+                                                                              Size: =14
+                                                                              Text: |-
+                                                                                =//"Navn"
+                                                                                LookUp(ColTekstDiverse, ID = 88).Tekst
+                                                                              Width: =290
+                                                                  - Container17_2:
+                                                                      Control: GroupContainer@1.5.0
+                                                                      Variant: ManualLayout
+                                                                      Properties:
+                                                                        DropShadow: =DropShadow.None
+                                                                        Fill: =farge_gronn01
+                                                                        FillPortions: =3
+                                                                        LayoutMaxHeight: =
+                                                                        LayoutMaxWidth: =
+                                                                        LayoutMinHeight: =0
+                                                                        LayoutMinWidth: =100
+                                                                      Children:
+                                                                        - Label_Header_E-post_1:
+                                                                            Control: Label@2.5.1
+                                                                            Properties:
+                                                                              BorderColor: =farge_stalblaa01
+                                                                              DisplayMode: =nfDisplayMode
+                                                                              Fill: =Color.Transparent
+                                                                              Font: =FontHeading
+                                                                              FontWeight: =FontWeight.Semibold
+                                                                              OnSelect: =
+                                                                              PaddingBottom: =0
+                                                                              PaddingRight: =0
+                                                                              PaddingTop: =0
+                                                                              Size: =14
+                                                                              Text: |-
+                                                                                =//"E-post"
+                                                                                LookUp(ColTekstDiverse, ID = 89).Tekst
+                                                                              Width: =290
+                                                                  - Container17_3:
+                                                                      Control: GroupContainer@1.5.0
+                                                                      Variant: ManualLayout
+                                                                      Properties:
+                                                                        DropShadow: =DropShadow.None
+                                                                        Fill: =farge_gronn01
+                                                                        FillPortions: =2
+                                                                        LayoutMaxHeight: =
+                                                                        LayoutMaxWidth: =
+                                                                        LayoutMinHeight: =0
+                                                                        LayoutMinWidth: =100
+                                                                      Children:
+                                                                        - Label_Header_Rolle_1:
+                                                                            Control: Label@2.5.1
+                                                                            Properties:
+                                                                              BorderColor: =farge_stalblaa01
+                                                                              DisplayMode: =nfDisplayMode
+                                                                              Fill: =Color.Transparent
+                                                                              Font: =FontHeading
+                                                                              FontWeight: =FontWeight.Semibold
+                                                                              OnSelect: =
+                                                                              PaddingBottom: =0
+                                                                              PaddingRight: =0
+                                                                              PaddingTop: =0
+                                                                              Size: =14
+                                                                              Text: |-
+                                                                                =//"Rolle"
+                                                                                LookUp(ColTekstDiverse, ID = 90).Tekst
+                                                                              Width: =214
+                                                            - Container_AnsatteOpplysning_1:
+                                                                Control: GroupContainer@1.5.0
+                                                                Variant: AutoLayout
+                                                                Properties:
+                                                                  AlignInContainer: =AlignInContainer.SetByContainer
+                                                                  DropShadow: =DropShadow.None
+                                                                  FillPortions: =0
+                                                                  Height: =If(Label_Epost.Height <=50, 50, Label_Epost.Height + 10)
+                                                                  LayoutDirection: =LayoutDirection.Horizontal
+                                                                  LayoutGap: =3
+                                                                  LayoutMaxHeight: =
+                                                                  LayoutMaxWidth: =
+                                                                  LayoutMinHeight: =50
+                                                                  Width: =Parent.Width
+                                                                Children:
+                                                                  - Label_Navn:
+                                                                      Control: Label@2.5.1
+                                                                      Properties:
+                                                                        DisplayMode: =nfDisplayMode
+                                                                        Fill: =Color.White
+                                                                        FillPortions: =3
+                                                                        Height: =Parent.Height
+                                                                        LayoutMaxHeight: =
+                                                                        LayoutMaxWidth: =
+                                                                        Text: =Text(ParseJSON(varlclOpplysningerGittAv).Navn)
+                                                                  - Label_Epost:
+                                                                      Control: Label@2.5.1
+                                                                      Properties:
+                                                                        AlignInContainer: =AlignInContainer.Stretch
+                                                                        AutoHeight: =true
+                                                                        DisplayMode: =nfDisplayMode
+                                                                        Fill: =Color.White
+                                                                        FillPortions: =3
+                                                                        Height: =50
+                                                                        LayoutMaxHeight: =
+                                                                        LayoutMaxWidth: =
+                                                                        LayoutMinHeight: =50
+                                                                        PaddingBottom: =10
+                                                                        PaddingRight: =10
+                                                                        PaddingTop: =13
+                                                                        Text: =Text(ParseJSON(varlclOpplysningerGittAv).Epost)
+                                                                  - Label_Rolle:
+                                                                      Control: Label@2.5.1
+                                                                      Properties:
+                                                                        DisplayMode: =nfDisplayMode
+                                                                        Fill: =Color.White
+                                                                        FillPortions: =2
+                                                                        Height: =Parent.Height
+                                                                        LayoutMaxHeight: =
+                                                                        LayoutMaxWidth: =
+                                                                        Text: =Text(ParseJSON(varlclOpplysningerGittAv).Rolle)
+                                                - Overskrift:
+                                                    Control: DataCard@1.0.2
+                                                    Variant: BlankCard
+                                                    Properties:
+                                                      DisplayMode: =nfDisplayMode
+                                                      Height: =38
+                                                      Width: =1126
+                                                      X: =0
+                                                      Y: =0
+                                                    Children:
+                                                      - Container_steg10:
+                                                          Control: GroupContainer@1.5.0
+                                                          Variant: ManualLayout
+                                                          Properties:
+                                                            DropShadow: =DropShadow.None
+                                                            Height: =96
+                                                            Width: =Parent.Width
+                                                          Children:
+                                                            - Overskrift_steg10:
+                                                                Control: Label@2.5.1
+                                                                Properties:
+                                                                  DisplayMode: =nfDisplayMode
+                                                                  Font: =FontHeading
+                                                                  FontWeight: =FontWeight.Semibold
+                                                                  Height: =96
+                                                                  Size: =20
+                                                                  Text: ="18. " & LookUp(ColTekstDiverse, ID = 216).Tekst
+                                                                  Width: =Parent.Width - 60
+                                                - B) Merknader fra skole:
+                                                    Control: DataCard@1.0.2
+                                                    Variant: BlankCard
+                                                    Properties:
+                                                      Height: =300
+                                                      Width: =1126
+                                                      X: =0
+                                                      Y: =2
+                                                    Children:
+                                                      - Comp_liba_DatacardBkg_34:
+                                                          Control: CanvasComponent
+                                                          ComponentName: Comp_liba_DatacardBkg
+                                                          Properties:
+                                                            CompBody_Height: =100
+                                                            HTMLCodedTxtHeader: =""
+                                                            Height: =300
+                                                            Label_Button: ="Text"
+                                                            TxtHeader: |-
+                                                              =//"B. Merknader fra barnehagen:"
+                                                              LookUp(nfViewSprak, BeregnetId = "GG_H58").HovedsporsmalTekst
+                                                            VisDrawer: |-
+                                                              =Set (vargblVisDrawer ,true) ;       
+                                                              Set(vargblDrawerHjelpetekst,LookUp(colHjelpetekster, HjelpetekstId = "GG-H80" ,Tekst));
+                                                              Set(vargblDrawerOverskrift,LookUp(colHjelpetekster, HjelpetekstId = "GG-H80" ,Overskrift));
+                                                              Com_liba_spmtegn_drawer_GSI_18.SetFocusDrawer();
+                                                            VisSpmTegn: =true
+                                                            Width: =IfError(If(App.Width > 896, 896, App.Width-10),896)
+                                                      - Textinput_kommentar_BHG:
+                                                          Control: Classic/TextInput@2.3.2
+                                                          Properties:
+                                                            AccessibleLabel: ="Fyll merknader fra barnehagen"
+                                                            BorderColor: =
+                                                            BorderThickness: =0
+                                                            Default: |-
+                                                              =//nfSelectedRecord.MerknadSkole
+                                                              LookUp(GsiGrunnskoleSvar, Organisasjonsnummer = vargblGallerySelectedSkole.Organisasjonsnummer&& Ar =vargblSelectedYear ).MerknadSkole
+                                                            DelayOutput: =true
+                                                            DisplayMode: |-
+                                                              =//Skrivetilgang om man er Leder eller Kommune sentralt 
+                                                              If((nfLoginRole.RolleId = 9 || Iskommunesentralt) && LookUp(SkjemaStatus, SkjemaStatusId = vargblSkjemaStatusId).StatusId = 1, nfDisplayMode, DisplayMode.Disabled)
+                                                            Fill: =Color.White
+                                                            Height: =Comp_liba_DatacardBkg_34.Height_verdi_spørsmål
+                                                            MaxLength: =300
+                                                            Mode: =TextMode.MultiLine
+                                                            OnChange: |-
+                                                              =Patch(GsiGrunnskoleSvar,nfSelectedRecord,{MerknadSkole: Self.Text})
+                                                            PaddingLeft: =5
+                                                            Reset: |-
+                                                              =false
+                                                              //vargblResetController
+                                                            Tooltip: =
+                                                            Width: =Comp_liba_DatacardBkg_34.Width_verdi_spørsmål
+                                                            X: =Comp_liba_DatacardBkg_34.X_verdi_spørsmål
+                                                            Y: =Comp_liba_DatacardBkg_34.Y_verdi_spørsmål
+                                                - C) Merknader fra kommunen:
+                                                    Control: DataCard@1.0.2
+                                                    Variant: BlankCard
+                                                    Properties:
+                                                      Height: =250
+                                                      Width: =1126
+                                                      X: =0
+                                                      Y: =3
+                                                    Children:
+                                                      - Comp_liba_DatacardBkg_35:
+                                                          Control: CanvasComponent
+                                                          ComponentName: Comp_liba_DatacardBkg
+                                                          Properties:
+                                                            CompBody_Height: =100
+                                                            HTMLCodedTxtHeader: =""
+                                                            Height: =300
+                                                            Label_Button: ="Text"
+                                                            TxtHeader: |-
+                                                              =//"C. Merknader fra kommunen:"
+                                                              LookUp(nfViewSprak, BeregnetId = "GG_H59").HovedsporsmalTekst
+                                                            VisDrawer: |-
+                                                              =Set (vargblVisDrawer ,true) ;       
+                                                              Set(vargblDrawerHjelpetekst,LookUp(colHjelpetekster, HjelpetekstId = "GG-H81" ,Tekst));
+                                                              Set(vargblDrawerOverskrift,LookUp(colHjelpetekster, HjelpetekstId = "GG-H81" ,Overskrift));
+                                                              Com_liba_spmtegn_drawer_GSI_18.SetFocusDrawer();
+                                                            VisSpmTegn: =true
+                                                            Width: =IfError(If(App.Width > 896, 896, App.Width-10),896)
+                                                      - Textinput_kommentar_Kommunen:
+                                                          Control: Classic/TextInput@2.3.2
+                                                          Properties:
+                                                            AccessibleLabel: ="Fyll merknader fra kommunen"
+                                                            BorderColor: =
+                                                            BorderThickness: =0
+                                                            Default: |-
+                                                              =//nfSelectedRecord.MerknadKommune
+                                                              LookUp(GsiGrunnskoleSvar, Organisasjonsnummer = vargblGallerySelectedSkole.Organisasjonsnummer && Ar =vargblSelectedYear).MerknadKommune
+                                                            DelayOutput: =true
+                                                            DisabledColor: =Color.Black
+                                                            DisabledFill: =farge_lysegraa02
+                                                            DisplayMode: |-
+                                                              =
+                                                              //If(nfLoginRole.RolleId = 10, DisplayMode.Edit, DisplayMode.Disabled)
+                                                              /*If(nfLoginRole.RolleId = 10 && LookUp(GSIGrunnskoleViewTilgangstabell, Organisasjonsnummer = vargblGallerySelectedSkole.Organisasjonsnummer && Ar = vargblSelectedYear).Status_Grunnskole  >= 2, DisplayMode.Edit, DisplayMode.Disabled)*/
+
+                                                              If(
+                                                                  ((nfLoginRole.RolleId = 10)  || (nfLoginRole.RolleId = 10 && !IsBlank(Find ("kommune sentralt" ,vargblGallerySelectedSkole.Navn)))) && LookUp(colSPOCTypedTable, Organisasjonsnummer = vargblGallerySelectedSkole.Organisasjonsnummer && Ar = vargblSelectedYear).Status_Grunnskole  >= 2, DisplayMode.Edit, DisplayMode.Disabled)
+
+                                                              /*
+                                                              If((nfLoginRole.RolleId = 10)  || (nfLoginRole.RolleId = 10 && !IsBlank(Find ("kommune sentralt" ,vargblGallerySelectedSkole.Navn))) && LookUp(GSIGrunnskoleViewTilgangstabell, Organisasjonsnummer = vargblGallerySelectedSkole.Organisasjonsnummer && Ar = vargblSelectedYear).Status_Grunnskole  >= 2, DisplayMode.Edit, DisplayMode.Disabled)
+                                                              */
+                                                            Fill: =Color.White
+                                                            Height: =Comp_liba_DatacardBkg_35.Height_verdi_spørsmål
+                                                            MaxLength: =999
+                                                            Mode: =TextMode.MultiLine
+                                                            OnChange: |-
+                                                              =
+                                                                  Patch(GsiGrunnskoleSvar,nfSelectedRecord,
+                                                                   {
+                                                                       MerknadKommune: Self.Text
+                                                                   })
+                                                            PaddingLeft: =5
+                                                            Reset: |
+                                                              =false
+                                                              //vargblResetController
+                                                            Size: =Size_StandardText
+                                                            Tooltip: =
+                                                            Width: =Comp_liba_DatacardBkg_35.Width_verdi_spørsmål
+                                                            X: =Comp_liba_DatacardBkg_35.X_verdi_spørsmål
+                                                            Y: =Comp_liba_DatacardBkg_35.Y_verdi_spørsmål
+                        - FooterContainer10:
+                            Control: GroupContainer@1.5.0
+                            Variant: AutoLayout
+                            Properties:
+                              AlignInContainer: =AlignInContainer.SetByContainer
+                              DropShadow: =DropShadow.None
+                              FillPortions: =0
+                              Height: =50
+                              LayoutDirection: =LayoutDirection.Vertical
+                              LayoutMaxHeight: =
+                              LayoutMaxWidth: =
+                              Width: =Parent.Width
+                            Children:
+                              - Container35:
+                                  Control: GroupContainer@1.5.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    AlignInContainer: =AlignInContainer.SetByContainer
+                                    DropShadow: =DropShadow.None
+                                    LayoutDirection: =LayoutDirection.Horizontal
+                                    LayoutMaxHeight: =
+                                    LayoutMaxWidth: =
+                                    LayoutMinHeight: =40
+                                    LayoutMinWidth: =100
+                                    Width: =Max(896)
+                                  Children:
+                                    - Container35_2:
+                                        Control: GroupContainer@1.5.0
+                                        Variant: AutoLayout
+                                        Properties:
+                                          DropShadow: =DropShadow.None
+                                          LayoutDirection: =LayoutDirection.Horizontal
+                                          LayoutGap: =10
+                                          LayoutMaxHeight: =
+                                          LayoutMaxWidth: =
+                                          LayoutMinHeight: =40
+                                          LayoutMinWidth: =100
+                                          PaddingLeft: =5
+                                        Children:
+                                          - Forrige_1:
+                                              Control: Classic/Button@2.2.0
+                                              Properties:
+                                                AlignInContainer: =AlignInContainer.Center
+                                                BorderColor: =Color.Black
+                                                Color: =RGBA(241, 244, 249, 1)
+                                                Fill: =Color.Black
+                                                Font: =FontHeading
+                                                Height: =30
+                                                HoverColor: =RGBA(255, 255, 255, 1)
+                                                LayoutMaxHeight: =
+                                                LayoutMaxWidth: =
+                                                LayoutMinHeight: =70
+                                                LayoutMinWidth: =50
+                                                OnSelect: =Navigate(Del17_Kontroller)
+                                                RadiusBottomLeft: =2
+                                                RadiusBottomRight: =2
+                                                RadiusTopLeft: =2
+                                                RadiusTopRight: =2
+                                                Size: =10
+                                                Text: ="Forrige"
+                                                Width: =90
+                                          - Neste_1:
+                                              Control: Classic/Button@2.2.0
+                                              Properties:
+                                                AlignInContainer: =AlignInContainer.Center
+                                                BorderColor: =Color.Black
+                                                Color: =RGBA(255, 255, 255, 1)
+                                                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                                                DisabledColor: =RGBA(0, 0, 0, 0)
+                                                DisabledFill: =RGBA(0, 0, 0, 0)
+                                                DisplayMode: =DisplayMode.Disabled
+                                                Fill: =Color.Black
+                                                Font: =FontHeading
+                                                Height: =30
+                                                HoverColor: =RGBA(255, 255, 255, 1)
+                                                LayoutMaxHeight: =
+                                                LayoutMaxWidth: =
+                                                LayoutMinHeight: =70
+                                                LayoutMinWidth: =50
+                                                OnSelect: =
+                                                RadiusBottomLeft: =2
+                                                RadiusBottomRight: =2
+                                                RadiusTopLeft: =2
+                                                RadiusTopRight: =2
+                                                Size: =10
+                                                Text: ="Neste"
+                                                Width: =90
+                                          - Lukk_1:
+                                              Control: Classic/Button@2.2.0
+                                              Properties:
+                                                AlignInContainer: =AlignInContainer.Center
+                                                BorderColor: =Color.Black
+                                                Color: =RGBA(0, 0, 0, 1)
+                                                Fill: =Color.Transparent
+                                                Font: =FontHeading
+                                                Height: =30
+                                                HoverColor: =RGBA(255, 255, 255, 1)
+                                                LayoutMaxHeight: =
+                                                LayoutMaxWidth: =
+                                                LayoutMinHeight: =70
+                                                LayoutMinWidth: =50
+                                                OnSelect: =Navigate('Forside_Statusside')
+                                                RadiusBottomLeft: =2
+                                                RadiusBottomRight: =2
+                                                RadiusTopLeft: =2
+                                                RadiusTopRight: =2
+                                                Size: =10
+                                                Text: ="Lukk"
+                                                Width: =90
+                                                Y: =3
+                                    - Container35_3:
+                                        Control: GroupContainer@1.5.0
+                                        Variant: AutoLayout
+                                        Properties:
+                                          DropShadow: =DropShadow.None
+                                          LayoutDirection: =LayoutDirection.Horizontal
+                                          LayoutGap: =5
+                                          LayoutJustifyContent: =LayoutJustifyContent.End
+                                          LayoutMaxHeight: =
+                                          LayoutMaxWidth: =
+                                          LayoutMinHeight: =40
+                                          LayoutMinWidth: =100
+                                          PaddingRight: =5
+                                        Children:
+                                          - Lever_Skjema:
+                                              Control: Classic/Button@2.2.0
+                                              Properties:
+                                                AlignInContainer: =AlignInContainer.Center
+                                                BorderColor: =Color.Black
+                                                Color: =RGBA(241, 244, 249, 1)
+                                                DisplayMode: |-
+                                                  =
+                                                  /*If( nfTotalStatus = true && vargblGallerySelectedSkole.Status_Grunnskole = 1 && nfKontrollerSkjema ,    DisplayMode.Edit,   DisplayMode.Disabled)*/
+
+                                                  If((Statussteg1*Statussteg2*Statussteg3*Statussteg4*Statussteg5*Statussteg6*Statussteg7*Statussteg8*Statussteg9*Statussteg10*Statussteg11*Statussteg12*Statussteg13*Statussteg14*Statussteg15*Statussteg16)=1
+                                                  &&LookUp(SkjemaStatus,SkjemaStatusId=vargblSkjemaStatusId).StatusId=1,DisplayMode.Edit,DisplayMode.Disabled)
+                                                Fill: =Color.Black
+                                                Font: =FontHeading
+                                                FontWeight: =FontWeight.Bold
+                                                Height: =30
+                                                HoverColor: =RGBA(255, 255, 255, 1)
+                                                LayoutMaxHeight: =
+                                                LayoutMaxWidth: =
+                                                LayoutMinHeight: =70
+                                                LayoutMinWidth: =50
+                                                OnSelect: |
+                                                  =
+                                                  // Refresh og ta med bare aktive kontrollere (false) + Lagre disse slik at kommentarer på deaktive advarsler forsvinner. 
+                                                  // Kopiere nye oppdatere statuser fra nfKontrolleretable , kombinere disse med kommentar fra colKontrollereSkole
+                                                  // Dette gjøres på grunn av at man trenger one the fly status via formulas, men formulas kan ikke patches med kommentarer
+                                                  //BOGI-3524
+                                                  // 1) hente oppdataterte Status på kontrollere til temp collection
+                                                  ClearCollect(  tempcolKontrollereSkole,   Filter (DropColumns( // Rydder bort unødvendig tekst i json, denne sendes som en del av selected record å bør være så liten som mulig
+                                                                                  nfKontrolleretable,
+                                                                                      HovedsporsmalBokmal,
+                                                                                      HovedsporsmalNynorsk,
+                                                                                      KontrollTekstBokmal,
+                                                                                      KontrollTekstNynorsk,
+                                                                                      Tekst, 
+                                                                                      DatabaseFeltNavn
+                                                                                  ) , Status = false)   );
+                                                  // 2) kopiere in alle kommentarer inn i temp collection
+                                                  ForAll(                          
+                                                      tempcolKontrollereSkole As t,
+                                                      Patch(
+                                                          tempcolKontrollereSkole,
+                                                          t,
+                                                          {
+                                                              KontrollKommentar: LookUp(
+                                                                  colKontrollereSkole,
+                                                                  KontrollerId = t.KontrollerId,
+                                                                  KontrollKommentar
+                                                              )
+                                                          }
+                                                      )
+                                                  );
+                                                  // 3)  kopiere over temp til orginal
+                                                  ClearCollect(colKontrollereSkole,  tempcolKontrollereSkole);  
+
+
+                                                  If( nfDisplayMode = DisplayMode.Edit,  // Patch bare om du har skrivrettigheter 
+                                                          Patch(GsiGrunnskoleSvar,nfSelectedRecord, {  Kontrollere:JSON(colKontrollereSkole)  })
+                                                  );
+                                                  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+                                                  Navigate(Kvittering);
+
+                                                  Set(vargblLeverGodkjennAvvise, "Lever skjema")
+                                                RadiusBottomLeft: =2
+                                                RadiusBottomRight: =2
+                                                RadiusTopLeft: =2
+                                                RadiusTopRight: =2
+                                                Size: =10
+                                                Text: ="Lever skjema"
+                                                Visible: "=/*\r\n    Roller \r\n        Rolle = 9 , RolleNavn: \"Skoleleder\" \r\n        Rolle = 10 ,    RolleNavn: \"Skoleeier (kommune)\", \r\n        Rolle = 11 ,    RolleNavn: \"Statsforvalter\", \r\n        Rolle = 12 ,    RolleNavn: \"Udir administrator\"\r\n        Rolle = 13 ,    RolleNavn: \"Udir administrator\"\r\n*/\r\n \r\n//If(nfLoginRole.RolleId = 9 && nfTotalStatus = true  , true, false)\r\n\r\nIf(\r\n(nfLoginRole.RolleId = 9 || (nfLoginRole.RolleId = 10 && !IsBlank(Find (\"kommune sentralt\", vargblGallerySelectedSkole.Navn))))  && nfTotalStatus = true  , true, false)\r\n\r\n\r\n//If(!(nfLoginRole.RolleId in nfGruppeLeseTilgang) || (nfLoginRole.RolleId = 10 && !IsBlank(Find (\"kommune sentralt\", vargblGallerySelectedSkole.Navn)))"
+                                                Width: =150
+                                          - Godkjenn:
+                                              Control: Classic/Button@2.2.0
+                                              Properties:
+                                                AlignInContainer: =AlignInContainer.Center
+                                                BorderColor: =Color.Black
+                                                Color: =RGBA(241, 244, 249, 1)
+                                                DisplayMode: "=//TODO: Brukes ikke lenger ?? GSIGrunnskoleViewTilgangstabell\r\nWith(\r\n    {\r\n        StatusId: LookUp(\r\n            colSPOCTypedTable, \r\n            Organisasjonsnummer = vargblGallerySelectedSkole.Organisasjonsnummer && Ar = vargblSelectedYear\r\n        ).Status_Grunnskole\r\n    },\r\n    If(\r\n        // Hvis man er Skoleeier (kommune) skal man KUN kunne godkjenne ved Status = 2, \"Fullført\"\r\n        nfLoginRole.RolleId = 10 && StatusId in [2, 5, 7], \r\n        DisplayMode.Edit, \r\n\r\n        // Check for private school or specific role and status\r\n        nfLoginRole.RolleId = 11 && StatusId in [2, 4, 7] && (LookUp(NsrEnhet, Organisasjonsnummer = vargblGallerySelectedSkole.Organisasjonsnummer).ErPrivatskole || !IsBlank(Find(\"kommune sentralt\", vargblGallerySelectedSkole.Navn))) ||\r\n        (nfLoginRole.RolleId = 11 && StatusId in [4, 7]), \r\n        DisplayMode.Edit, \r\n        DisplayMode.Disabled\r\n        )\r\n)\r\n\r\n\r\n//TODO: Brukes ikke lenger ?? GSIGrunnskoleViewTilgangstabell\r\n/*With({StatusId: LookUp(GSIGrunnskoleViewTilgangstabell, Organisasjonsnummer = vargblGallerySelectedSkole.Organisasjonsnummer && Ar = vargblSelectedYear).Status_Grunnskole},\r\n\r\nIf(\r\n    //Hvis man er Skoleeier (kommune) skal man KUN kunne godkjenne ved Status = 2, \"Fullført\"\r\n    nfLoginRole.RolleId = 10 && StatusId in [2,5,7]  , DisplayMode.Edit, \r\n     \r\n    //Hvis man er Statsforvalter skal man KUN kunne godkjenne/avvise skjema om status er \"Godkjent av kommunen\" \r\n    nfLoginRole.RolleId = 11 && StatusId in [4,7], DisplayMode.Edit, \r\n\r\n     \r\n    DisplayMode.Disabled\r\n     \r\n    )\r\n)*/\r\n/*      Roller \r\n        Rolle = 9 , RolleNavn: \"Skoleleder\" \r\n        Rolle = 10 ,    RolleNavn: \"Skoleeier (kommune)\", \r\n        Rolle = 11 ,    RolleNavn: \"Statsforvalter\", \r\n        Rolle = 12 ,    RolleNavn: \"Udir administrator\"\r\n        Rolle = 13 ,    RolleNavn: \"Udir administrator\"\r\n    \r\n    Statuser\r\n       Status  = 0 || Status = Blank() , \"Ikke Påbegynt\",\r\n       Status = 1, \"Under behandling\",\r\n       Status = 2, \"Fullført \",\r\n       Status = 3, \"Ikke godkjent av kommunen\",\r\n       Status = 4, \"Godkjent av kommunen\",\r\n       Status = 5, \"Ikke godkjent av statsforvalter\",\r\n       Status = 6, \"Godkjent av statsforvalter\"\r\n       Status = 7, \"Ikke godkjent av UDIR\"\r\n\r\n*/\r\n\r\n"
+                                                Fill: =Color.Black
+                                                Font: =FontHeading
+                                                Height: =30
+                                                HoverColor: =RGBA(255, 255, 255, 1)
+                                                LayoutMaxHeight: =
+                                                LayoutMaxWidth: =
+                                                LayoutMinHeight: =70
+                                                LayoutMinWidth: =50
+                                                OnSelect: |+
+                                                  =Navigate(Kvittering);
+                                                  Set(vargblLeverGodkjennAvvise, "Godkjenn");
+
+
+
+                                                RadiusBottomLeft: =2
+                                                RadiusBottomRight: =2
+                                                RadiusTopLeft: =2
+                                                RadiusTopRight: =2
+                                                Size: =10
+                                                Text: ="Godkjenn"
+                                                Visible: "=If(nfLoginRole.RolleId in [10,11], true, false) // ref BOGI-2697: UDIR-admin skal kunne avvise skjema, men ikke godkjenne\r\n/*\r\n  \r\n      Roller \r\n        Rolle = 9 , RolleNavn: \"Skoleleder\" \r\n        Rolle = 10 ,    RolleNavn: \"Skoleeier (kommune)\", \r\n        Rolle = 11 ,    RolleNavn: \"Statsforvalter\", \r\n        Rolle = 12 ,    RolleNavn: \"Udir administrator\"\r\n        Rolle = 13 ,    RolleNavn: \"Udir administrator\"\r\n*/\r\n \r\n"
+                                                Width: =90
+                                          - Avvis:
+                                              Control: Classic/Button@2.2.0
+                                              Properties:
+                                                AlignInContainer: =AlignInContainer.Center
+                                                BorderColor: =Color.Black
+                                                Color: =RGBA(241, 244, 249, 1)
+                                                DisplayMode: "=\r\nWith({StatusId: LookUp(colSPOCTypedTable, Organisasjonsnummer = vargblGallerySelectedSkole.Organisasjonsnummer && Ar = vargblSelectedYear).Status_Grunnskole},\r\n\r\nIf(\r\n    \r\n    //Hvis man er Skoleeier (kommune) skal man KUN avvise ved følgende statuser: Status = 2, \"Fullført\" Status = 5, \"Ikke godkjent av statsforvalter\" \r\n    nfLoginRole.RolleId = 10 && StatusId in [2,5,7]  , DisplayMode.Edit, \r\n     \r\n    //Hvis man er Statsforvalter skal ALLTID kunne avvise ved følgende statuser: Status = 2, \"Fullført\" Status = 4, \"Godkjent av kommunen\" Status = 7, \"Ikke godkjent av UDIR\"\r\n    nfLoginRole.RolleId = 11 && StatusId in [2,4,7], DisplayMode.Edit, \r\n\r\n    //Udir admin skal alltid kunne avvise, så lenge statusen ikke er 7 eller 1 (under behandling)\r\n    nfLoginRole.RolleId = 12 && StatusId <> 7 && StatusId <> 1 ,DisplayMode.Edit,\r\n     \r\nDisplayMode.Disabled\r\n     \r\n    )\r\n)\r\n\r\n\r\n/* \r\n      Roller \r\n        Rolle = 9 , RolleNavn: \"Skoleleder\" \r\n        Rolle = 10 ,    RolleNavn: \"Skoleeier (kommune)\", \r\n        Rolle = 11 ,    RolleNavn: \"Statsforvalter\", \r\n        Rolle = 12 ,    RolleNavn: \"Udir administrator\"\r\n        Rolle = 13 ,    RolleNavn: \"Udir administrator\"\r\n    \r\n    Statuser\r\n       ThisItem.Status_Arsmelding = 0 || ThisItem.Status_Arsmelding = Blank() , \"Ikke Påbegynt\",\r\n       ThisItem.Status_Arsmelding = 1, \"Under behandling\",\r\n       ThisItem.Status_Arsmelding = 2, \"Fullført \",\r\n       ThisItem.Status_Arsmelding = 3, \"Ikke godkjent av kommunen\",\r\n       ThisItem.Status_Arsmelding = 4, \"Godkjent av kommunen\",\r\n       ThisItem.Status_Arsmelding = 5, \"Ikke godkjent av statsforvalter\",\r\n       ThisItem.Status_Arsmelding = 6, \"Godkjent av statsforvalter\"\r\n    \r\n    Statuser Grunnskole\r\n       ThisItem.Status_Grunnskole=  0,  \"Ikke Påbegynt\"\r\n       ThisItem.Status_Grunnskole = 1, \"Under behandling\"\r\n       ThisItem.Status_Grunnskole = 2, \"Fullført av barnehagen\"\r\n       ThisItem.Status_Grunnskole = 3, \"Ikke godkjent av kommunen\"\r\n       ThisItem.Status_Grunnskole = 4, \"Godkjent av kommunen\"\r\n       ThisItem.Status_Grunnskole = 5, \"Ikke godkjent av statsforvalter\"\r\n       ThisItem.Status_Grunnskole = 6, \"Godkjent av statsforvalter\"\r\n       ThisItem.Status_Grunnskole = 7, \"Ikke godkjent av Udir\"\r\n       ThisItem.Status_Grunnskole = 8, /\"Inaktiv\" \r\n*/\r\n\r\n"
+                                                Fill: =Color.Black
+                                                Font: =FontHeading
+                                                Height: =30
+                                                HoverColor: =RGBA(255, 255, 255, 1)
+                                                LayoutMaxHeight: =
+                                                LayoutMaxWidth: =
+                                                LayoutMinHeight: =70
+                                                LayoutMinWidth: =50
+                                                OnSelect: |+
+                                                  =Navigate(Kvittering);
+                                                  Set(vargblLeverGodkjennAvvise, "Avvis");
+
+
+                                                RadiusBottomLeft: =2
+                                                RadiusBottomRight: =2
+                                                RadiusTopLeft: =2
+                                                RadiusTopRight: =2
+                                                Size: =10
+                                                Text: ="Avvis"
+                                                Visible: |+
+                                                  =If(nfLoginRole.RolleId in [10,11,12], true, false)
+                                                  /*
+                                                   Roller  
+                                                          Rolle = 9 , RolleNavn: "Skoleleder" 
+                                                          Rolle = 10 ,    RolleNavn: "Skoleeier (kommune)", 
+                                                          Rolle = 11 ,    RolleNavn: "Statsforvalter", 
+                                                          Rolle = 12 ,    RolleNavn: "Udir administrator"
+                                                          Rolle = 13 ,    RolleNavn: "Udir administrator"
+                                                  */
+
+
+
+                                                Width: =90
+      - Spmtegn_drawer_bagrunn_Steg2_15:
+          Control: Rectangle@2.3.0
+          Properties:
+            DisplayMode: =nfDisplayMode
+            Fill: =RGBA(0, 0, 0, 0.40)
+            Height: =Parent.Height
+            Visible: =vargblVisDrawer
+            Width: =Parent.Width
+      - Com_liba_spmtegn_drawer_GSI_18:
+          Control: CanvasComponent
+          ComponentName: Com_liba_spmtegn_drawer
+          Properties:
+            Custom_skjul: =Set(vargblVisDrawer, false)
+            Fill: =RGBA(78, 102, 137, 1)
+            Height: =Parent.Height
+            Hjelpetekst: |-
+              =//"Tekst"
+              vargblDrawerHjelpetekst
+            Overskrift: |-
+              =//"Overskrift"
+              vargblDrawerOverskrift
+            Visible: =vargblVisDrawer
+            Width: =375
+            X: =Parent.Width -375
+      - Popup_MistetTilgang_22:
+          Control: CanvasComponent
+          ComponentName: Popup_MistetTilgang
+          Properties:
+            Height: |-
+              =/*
+              If(Or(varHarMistetTilgang,nfHarMistetTilgang)&&LookUp('Environment Variable Values','Environment Variable Definition'.'Schema Name'="bogi_env_name").Value in ["test","qa","prod",
+                     // "dev"
+              ],App.Height,0)
+              */
+
+              If(
+                  nfHarMistetTilgang &&
+                  Lower(Trim(vargblEnvironment)) in ["test", "qa", "prod", "dev"],
+                  Parent.Height,
+                  0
+              )
+            Visible: |-
+              =//true
+              //Satt til false i dev for å kunne redigere skjema 
+              If(vargblEnvironment <> "dev", true, false)
+            Width: =App.Width
+            nfHarMistetTilgang: =varHarMistetTilgang

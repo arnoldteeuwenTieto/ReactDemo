@@ -1,5 +1,81 @@
 # Initial Universal Design / Universell utforming audit
 
+## Compact Del 3E financing table — 3 November 2026
+
+Financing records now use a native four-column table with column headers, numbered
+row headers and labelled dropdown/count controls. The last column has no visible
+heading but retains a screen-reader label. Delete icons have contextual names
+(`Fjern Oslo`, or a row number when unselected), existing keyboard focus plus a
+subtle red hover/focus state, and native disabled semantics for read-only users.
+The sum is a labelled grey read-only input. Existing business-rule explanations
+and validation messages are retained without expanding normal row heights.
+
+Targeted geometry checks found no overlapping controls or page-level horizontal
+overflow at 1280, 768, 390 and 320px. The financing-only axe WCAG 2.1 A/AA check
+passed with no violations, and desktop/mobile screenshots were inspected. The
+18 targeted regression tests passed; this was not a full accessibility audit.
+
+## Shared field states and active badges — 3 November 2026
+
+Blocking-error badges now remain visible for active sections and use the shared
+validation projection. Warnings/unsupported rules are not announced as error
+counts. Existing active menu styles, keyboard navigation and badge descriptions
+remain. Required validation excludes permission-disabled and business-inapplicable
+controls; actual applicable data errors can still be reported in read-only views.
+
+Business-disabled controls use #F8E7E0 with #D9A58F borders, distinct from grey
+calculated/permission-read-only controls. Focusable lock buttons explain the rule
+through a tooltip and linked accessible description, identifying Del 2 B/C or
+Del 3 E. Escape/blur/scroll dismiss the tooltip; native disabled controls cannot be
+edited. Validation errors retain text/aria-invalid rather than color alone.
+Inactive-control borders are not treated as active control contrast requirements;
+lock icons retain the existing dark terracotta color and keyboard focus indicator.
+
+Targeted tests cover grade ranges, roles, retained excluded values, totals, badge
+updates, disabled required fields and keyboard explanations. Scoped axe checks
+passed for the business-disabled states. These checks do not replace a full manual
+screen-reader or zoom audit. See [SECTION_VALIDATION.md](SECTION_VALIDATION.md).
+
+## Compact imported-screen UI refinement — 3 November 2026
+
+The shared numeric tables now expose readable labels including source question
+numbers, descriptions and column names. Technical binding/controller codes are
+kept internally. Tables retain captions and row/column headers; calculated inputs
+remain explicitly read-only with grey backgrounds. Invalid entered values keep
+`aria-invalid` and accessible descriptions, with visible feedback on blur rather
+than repeated default error text. Existing keyboard focus styling is preserved.
+Imported help drawers suppress reference IDs without changing their modal/focus
+behavior or the existing Del 1/2 drawers.
+
+The duplicate language switches were removed from all four imported views;
+application-level language selection remains in use. Targeted axe checks found
+no WCAG 2.1 A/AA violations on the four screens. Five targeted tests passed after
+correcting a locale-specific test locator; desktop and 390px mobile layouts were
+checked. This is not a full manual accessibility audit; practical screen-reader,
+zoom and complete language review remain manual checks.
+
+## Imported Del 3, Del 4, Del 17 and Del 18 — 3 November 2026
+
+Targeted axe WCAG 2.1 A/AA checks found no violations on the four imported screens.
+Numeric tables use captions, row/column headers and uniquely labelled inputs;
+read-only calculated values remain distinct from editable controls. The existing
+help drawer and native modal confirmation preserve keyboard focus behavior.
+Local errors, warnings and unsupported controls have text descriptions. Controller
+comments and remarks have labels. Bokmål/Nynorsk use the existing resource system,
+with explicit Norwegian source fallbacks where official text tables are absent.
+
+Responsive verification found and fixed page overflow caused by absolute hidden
+input labels outside the scroll container's positioning context. Imported grids
+now establish their own context and scroll internally on narrow screens; their
+text wrapping overrides the overview table's inherited no-wrap rule. A source
+coverage check also caught a collapsed Del 4 total, now restored.
+
+The targeted automated checks and screenshot inspection do not replace manual
+screen-reader table navigation, practical keyboard usability, zoom/reflow and
+complete language review. No full accessibility audit was run. Scope, missing
+formulas and test results are recorded in
+[gsi-react-import/IMPLEMENTATION.md](gsi-react-import/IMPLEMENTATION.md).
+
 ## Demo permission indicator — 2 November 2026
 
 The green selected-school header adds a compact text group named `Demotilganger`

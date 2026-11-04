@@ -11,6 +11,7 @@ import { grunnskoleSections } from './components/grunnskoleSections'
 import { AppHeader } from './components/AppHeader'
 import { GrunnskoleLayout } from './components/GrunnskoleLayout'
 import { GrunnskolePlaceholderScreen } from './components/GrunnskolePlaceholderScreen'
+import { ReportingDeveloperTools } from './components/ReportingDeveloperTools'
 import './App.css'
 import './styles/buttons.css'
 import { OmSkolen } from './components/OmSkolen'
@@ -26,13 +27,15 @@ import type { FormStatusId } from './domain/formStatus'
 import type { Del2Data } from './domain/del2'
 import { useSectionValidation } from './useSectionValidation'
 import { mockSkjemaStatusId } from './services/grunnskoleApi'
+import { ImportedNumericSection } from './components/ImportedNumericSection'
+import { ImportedWorkflowSection } from './components/ImportedWorkflowSection'
 
 const initialFilters: Filters = { search: '', municipality: '', year: '2026', statusId: '' }
 const reportKey = (school: School) => `${school.id}:${school.year}`
 
 function App() {
   useTranslation('ui')
-  const { enabled: demoEnabled } = useDemoUser()
+  const { enabled: demoEnabled, selectedUser } = useDemoUser()
   // Overrides belong to this page session, never the mock records or API store.
   const [statusOverrides, setStatusOverrides] = useState<Record<string, FormStatusId>>({})
   const schoolReports = useMemo(() => schools.map(school => {
@@ -43,13 +46,11 @@ function App() {
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const [openReport, setOpenReport] = useState<{ id: string; year: number } | null>(null)
   const openSchool = schoolReports.find(school => school.id === openReport?.id && school.year === openReport.year) ?? null
-  const { reports: validationReports, updateDel2, visitSection, leaveSection } = useSectionValidation()
+  const { sectionIssueCounts, updateDel2, visitSection, leaveSection } = useSectionValidation({ enabled: demoEnabled, user: selectedUser, school: openSchool })
   const validationKey = openSchool ? `${mockSkjemaStatusId(openSchool)}` : null
   const onDel2DataChange = useCallback((data: Del2Data) => {
     if (validationKey) updateDel2(validationKey, data)
   }, [validationKey, updateDel2])
-  const sectionIssueCounts = Object.fromEntries(Object.entries(validationKey ? validationReports[validationKey]?.issues ?? {} : {})
-    .map(([section, issues]) => [section, issues.length]))
   const demoSchool = openSchool ?? schoolReports.find(school => school.id === selectedId) ?? null
   const hasStatusOverride = demoEnabled && !!demoSchool && statusOverrides[reportKey(demoSchool)] !== undefined
   function changeDemoStatus(statusId: number) {
@@ -103,11 +104,11 @@ function App() {
       if (validationKey) leaveSection(validationKey, currentSection)
       setShowIntroduction(true)
     }
-    else selectSection(currentSection - 1)
+    else selectSection(grunnskoleSections[grunnskoleSections.findIndex(item => item.number === currentSection) - 1].number)
   }
   function goNext() {
     if (showIntroduction) selectSection(1)
-    else if (currentSection < lastSection) selectSection(currentSection + 1)
+    else if (currentSection < lastSection) selectSection(grunnskoleSections[grunnskoleSections.findIndex(item => item.number === currentSection) + 1].number)
   }
   return (
     <div className="app-shell">
@@ -140,7 +141,7 @@ function App() {
           canGoPrevious={!showIntroduction}
           canGoNext={showIntroduction || currentSection < lastSection}
         >
-          {currentSection === 1 ? <Enhetsopplysninger key={`${openSchool.id}:${openSchool.year}`} school={openSchool} /> : currentSection === 2 ? <OmSkolen key={`${openSchool.id}:${openSchool.year}`} school={openSchool} onDataChange={onDel2DataChange} /> : <GrunnskolePlaceholderScreen section={currentSection} school={openSchool} />}
+          {currentSection === 1 ? <Enhetsopplysninger key={`${openSchool.id}:${openSchool.year}`} school={openSchool} /> : currentSection === 2 ? <OmSkolen key={`${openSchool.id}:${openSchool.year}`} school={openSchool} onDataChange={onDel2DataChange} /> : currentSection === 3 || currentSection === 4 || currentSection === 5 || currentSection === 6 || currentSection === 7 || currentSection === 8 || currentSection === 9 || currentSection === 10 ? <ImportedNumericSection key={`${openSchool.id}:${openSchool.year}:${currentSection}`} school={openSchool} section={currentSection} /> : currentSection === 17 || currentSection === 18 ? <ImportedWorkflowSection key={`${openSchool.id}:${openSchool.year}:${currentSection}`} school={openSchool} section={currentSection} onSection={selectSection} onStatusChange={changeDemoStatus} /> : <GrunnskolePlaceholderScreen section={currentSection} school={openSchool} />}
         </GrunnskoleLayout> : <>
           <div className="page-heading"><div><h2>{ui("Oversikt over skolenes rapportering")}</h2><p>{ui("Søk etter en skole og følg status for innrapporteringen.")}</p></div><LanguageSwitch /></div>
           <SchoolFilters filters={filters} municipalities={municipalities} years={years} onChange={setFilters} onReset={() => setFilters(initialFilters)} />
@@ -152,6 +153,7 @@ function App() {
         <p className="page-footer">{ui("Demonstrasjonsdata · Alle skoler og organisasjonsnumre er fiktive. Ingen opplysninger sendes eller lagres eksternt.")} · {ui('Demonstrasjonsoversettelser')}</p>
       </main>
       {!openSchool && <AppFooter />}
+      <ReportingDeveloperTools />
     </div>
   )
 }

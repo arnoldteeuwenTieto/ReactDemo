@@ -1,3 +1,4 @@
+import { ReportingInput, ReportingSelect } from './ReportingFields'
 import { useTranslation } from 'react-i18next'
 import { ui } from '../i18n'
 import { grunnskoleSections } from './grunnskoleSections'
@@ -37,13 +38,13 @@ export function GrunnskolePlaceholderScreen({ section, school }: GrunnskolePlace
         <h3 id="placeholder-heading">{ui("Eksempelfelter")}</h3>
         <p>{ui("Dette er en demonstrasjon. Feltene er deaktivert, og opplysningene lagres ikke.")}</p>
         <div className="placeholder-fields">
-          <label>{ui("Skolens navn")} <input type="text" value={school.name} disabled />
+          <label>{ui("Skolens navn")} <ReportingInput className="gsi-field" origin="backend" sectionRef={String(section)} type="text" value={school.name} disabled />
           </label>
-          <label>{ui("Rapporteringsår")} <input type="text" value={school.year} disabled />
+          <label>{ui("Rapporteringsår")} <ReportingInput className="gsi-field" origin="backend" sectionRef={String(section)} type="text" value={school.year} disabled />
           </label>
-          <label>{ui("Status")} <select value={school.statusId ?? ''} disabled>
+          <label>{ui("Status")} <ReportingSelect className="gsi-field" origin="backend" sectionRef={String(section)} value={school.statusId ?? ''} disabled>
               <option value={school.statusId ?? ''}>{ui(getFormStatus(school.statusId).label)}</option>
-            </select>
+            </ReportingSelect>
           </label>
         </div>
       </section>}

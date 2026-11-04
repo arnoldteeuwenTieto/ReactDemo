@@ -37,15 +37,19 @@ are invented fixtures, not claims about GSI jurisdiction or ownership.
 The context contains profile metadata and an explicit mock access scope, marked
 `baseline-edit-only`. `canEditDemoReport` permits Del 2 editing only with an enabled
 demo context, StatusId 1, explicit selected-report access in `schoolIds`, and
-RolleId 9 or RolleId 10 with `municipalityCentral === true` (Iskommunesentralt).
+RolleId 9 or RolleId 10 with the legacy profile flag `municipalityCentral === true`.
+That legacy flag is distinct from the selected unit's BOGIAPI `IsKommunesentralt`.
 All other cases are read-only, including missing context and production builds.
 Inputs, local-save callbacks and retries enforce the same rule. Switching users
 updates permission immediately without clearing answers. Already initiated local
 saves may finish; switching users does not initiate new saves. Del 1 remains
-read-only. Help, navigation and the overview remain available. No submission,
-approval or rejection workflow is implemented; the header only describes the
-explicitly specified demo permissions below. Administrative/support actions
-remain unimplemented.
+read-only. Help, navigation and the overview remain available. Imported Del 3/4
+fields and Del 18 mock actions use the centralized matrix capabilities below,
+with explicit unit access and the selected-unit boolean. This does not change
+the earlier Del 2 guard. Del 18 confirms supported local approval/rejection
+transitions and keeps submission blocked by unresolved completeness/validation.
+See [the import implementation](gsi-react-import/IMPLEMENTATION.md). No real
+backend or administrative/support workflow is implemented.
 There is no authentication
 integration; future backend authorization must use authenticated server identity,
 never this context, browser storage or a client-provided role ID.
@@ -95,7 +99,7 @@ lint, TypeScript checks and build were intentionally skipped for this refinement
 
 R=Redigere, L=Lese, S=Levere, G=Godkjenne, A=Avvise. Unknown/invalid statuses
 and missing access/context grant no capabilities. Status 7 deliberately lacks S.
-These centralized capabilities are reusable by future action controls, which may
+These centralized capabilities are reused by the imported action controls, which may
 also require complete answers and other specified prerequisites.
 
 ### Existing authorization conflicts — preserved explicitly

@@ -1,0 +1,231 @@
+
+CARD A. Hvor mange elever får spesialundervisning etter enkeltvedtak? Y =3 Visible undefined
+HEADER Comp_liba_DatacardBkgGSI_29 =//"A. Hvor mange elever får spesialundervisning etter enkeltvedtak?"
+LookUp(nfViewSprak, BeregnetId = "GG_H26_U60").HovedsporsmalTekst
+TEXT Label4_246 =""
+TEXT Label4_327 ="1"
+FIELD TextInput3_114 =nfSelectedRecord7.GG_232_Antall_Elever_Spesialundervisning_Gutter_Trinn_1 =nfDisplayMode
+FIELD TextInput3_116 =nfSelectedRecord7.GG_233_Antall_Elever_Spesialundervisning_Jenter_Trinn_1 =nfDisplayMode
+FIELD TextInput2_61 =nfSelectedRecord7.GG_234_Sum_Elever_Spesialundervisning_Trinn_1
+//Sum(TextInput3_114.Text+TextInput3_116.Text) =DisplayMode.View
+TEXT Label4_331 ="2"
+FIELD TextInput3_140 =nfSelectedRecord7.GG_235_Antall_Elever_Spesialundervisning_Gutter_Trinn_2 =nfDisplayMode
+FIELD TextInput3_141 =nfSelectedRecord7.GG_236_Antall_Elever_Spesialundervisning_Jenter_Trinn_2 =nfDisplayMode
+FIELD TextInput2_72 =nfSelectedRecord7.GG_237_Sum_Elever_Spesialundervisning_Trinn_2
+//Sum(TextInput3_140.Text+TextInput3_141.Text) =DisplayMode.View
+TEXT Label4_343 ="3"
+FIELD TextInput3_171 =nfSelectedRecord7.GG_238_Antall_Elever_Spesialundervisning_Gutter_Trinn_3 =nfDisplayMode
+FIELD TextInput3_174 =nfSelectedRecord7.GG_239_Antall_Elever_Spesialundervisning_Jenter_Trinn_3 =nfDisplayMode
+FIELD TextInput2_73 =nfSelectedRecord7.GG_240_Sum_Elever_Spesialundervisning_Trinn_3
+//Sum(TextInput3_171.Text+TextInput3_174.Text) =DisplayMode.View
+TEXT Label4_345 ="4"
+FIELD TextInput3_175 =nfSelectedRecord7.GG_241_Antall_Elever_Spesialundervisning_Gutter_Trinn_4 =nfDisplayMode
+FIELD TextInput3_183 =nfSelectedRecord7.GG_242_Antall_Elever_Spesialundervisning_Jenter_Trinn_4 =nfDisplayMode
+FIELD TextInput2_74 =nfSelectedRecord7.GG_243_Sum_Elever_Spesialundervisning_Trinn_4
+//Sum(TextInput3_175.Text+TextInput3_183.Text) =DisplayMode.View
+TEXT Label4_347 ="5"
+FIELD TextInput3_184 =nfSelectedRecord7.GG_244_Antall_Elever_Spesialundervisning_Gutter_Trinn_5 =nfDisplayMode
+FIELD TextInput3_185 =nfSelectedRecord7.GG_245_Antall_Elever_Spesialundervisning_Jenter_Trinn_5 =nfDisplayMode
+FIELD TextInput2_75 =    nfSelectedRecord7.GG_246_Sum_Elever_Spesialundervisning_Trinn_5
+//Sum(TextInput3_184.Text+TextInput3_185.Text) =DisplayMode.View
+TEXT Label4_349 ="6"
+FIELD TextInput3_186 =nfSelectedRecord7.GG_247_Antall_Elever_Spesialundervisning_Gutter_Trinn_6 =nfDisplayMode
+FIELD TextInput3_187 =nfSelectedRecord7.GG_248_Antall_Elever_Spesialundervisning_Jenter_Trinn_6 =nfDisplayMode
+FIELD TextInput2_76 =nfSelectedRecord7.GG_249_Sum_Elever_Spesialundervisning_Trinn_6
+//Sum(TextInput3_186.Text+TextInput3_187.Text) =DisplayMode.View
+TEXT Label4_351 ="7"
+FIELD TextInput3_188 =nfSelectedRecord7.GG_250_Antall_Elever_Spesialundervisning_Gutter_Trinn_7 =nfDisplayMode
+FIELD TextInput3_189 =nfSelectedRecord7.GG_251_Antall_Elever_Spesialundervisning_Jenter_Trinn_7 =nfDisplayMode
+FIELD TextInput2_77 =nfSelectedRecord7.GG_252_Sum_Elever_Spesialundervisning_Trinn_7
+//Sum(TextInput3_188.Text+TextInput3_189.Text) =DisplayMode.View
+TEXT Label4_355 ="8"
+FIELD TextInput3_192 =nfSelectedRecord7.GG_253_Antall_Elever_Spesialundervisning_Gutter_Trinn_8 =nfDisplayMode
+FIELD TextInput3_193 =nfSelectedRecord7.GG_254_Antall_Elever_Spesialundervisning_Jenter_Trinn_8 =nfDisplayMode
+FIELD TextInput2_79 =nfSelectedRecord7.GG_255_Sum_Elever_Spesialundervisning_Trinn_8
+//Sum(TextInput3_192.Text+TextInput3_193.Text) =DisplayMode.View
+TEXT Label4_357 ="9"
+FIELD TextInput3_194 =nfSelectedRecord7.GG_256_Antall_Elever_Spesialundervisning_Gutter_Trinn_9 =nfDisplayMode
+FIELD TextInput3_195 =nfSelectedRecord7.GG_257_Antall_Elever_Spesialundervisning_Jenter_Trinn_9 =nfDisplayMode
+FIELD TextInput2_80 =nfSelectedRecord7.GG_258_Sum_Elever_Spesialundervisning_Trinn_9
+//Sum(TextInput3_194.Text+TextInput3_195.Text) =DisplayMode.View
+TEXT Label4_359 ="10"
+FIELD TextInput3_196 =nfSelectedRecord7.GG_259_Antall_Elever_Spesialundervisning_Gutter_Trinn_10 =nfDisplayMode
+FIELD TextInput3_197 =nfSelectedRecord7.GG_260_Antall_Elever_Spesialundervisning_Jenter_Trinn_10 =nfDisplayMode
+FIELD TextInput2_81 =nfSelectedRecord7.GG_261_Sum_Elever_Spesialundervisning_Trinn_10
+//Sum(TextInput3_196.Text+TextInput3_197.Text) =DisplayMode.View
+TEXT Label4_361 ="11"
+FIELD TextInput3_198 =nfSelectedRecord7.GG_262_Sum_Elever_Spesialundervisning_Gutter_Trinn_1_10
+//Sum(TextInput3_114.Text+TextInput3_140.Text+TextInput3_171.Text+TextInput3_175.Text+TextInput3_184.Text+TextInput3_186.Text+TextInput3_188.Text+TextInput3_192.Text+TextInput3_194.Text+TextInput3_196.Text) =DisplayMode.View
+FIELD TextInput3_199 =nfSelectedRecord7.GG_263_Sum_Elever_Spesialundervisning_Jenter_Trinn_1_10
+//Sum(TextInput3_116.Text+TextInput3_141.Text+TextInput3_174.Text+TextInput3_183.Text+TextInput3_185.Text+TextInput3_187.Text+TextInput3_189.Text+TextInput3_193.Text+TextInput3_195.Text+TextInput3_197.Text) =DisplayMode.View
+FIELD TextInput2_82 =nfSelectedRecord7.GG_264_Sum_Elever_Spesialundervisning_Trinn_1_10
+//Sum(TextInput3_198.Text+TextInput3_199.Text) =DisplayMode.View
+
+CARD D. Alternativ opplæringsarena Y =6 Visible undefined
+HEADER Comp_liba_DatacardBkgGSI_31 =//"C. Alternativ opplæringsarena"
+LookUp(nfViewSprak, BeregnetId = "GG_H28_U62").HovedsporsmalTekst
+TEXT Label4_364 =""
+TEXT Label4_370 ="1"
+FIELD TextInput3_191 =nfSelectedRecord7.GG_270_Antall_Elever_Alternativ_Opplaeringsarena_Trinn_1_7 =nfDisplayMode
+FIELD TextInput3_200 =nfSelectedRecord7.GG_271_Antall_Elever_Alternativ_Opplaeringsarena_Trinn_8_10 =nfDisplayMode
+FIELD TextInput3_201 =nfSelectedRecord7.GG_272_Antall_Elever_Alternativ_Opplaeringsarena_Gutter =nfDisplayMode
+FIELD TextInput3_202 =nfSelectedRecord7.GG_273_Antall_Elever_Alternativ_Opplaeringsarena_Jenter =nfDisplayMode
+FIELD TextInput2_78 =nfSelectedRecord7.GG_274_Sum_Elever_Alternativ_Opplaeringsarena
+//Sum(TextInput3_191.Text+TextInput3_200.Text) =DisplayMode.View
+
+CARD C. Faste avdelinger for spesialundervisning. Y =5 Visible undefined
+HEADER Comp_liba_DatacardBkgGSI_30 =//"B. Faste avdelinger for spesialundervisning"
+LookUp(nfViewSprak, BeregnetId = "GG_H27_U61").HovedsporsmalTekst
+TEXT Label4_372 =""
+TEXT Label4_378 ="1"
+FIELD TextInput3_203 =nfSelectedRecord7.GG_265_Antall_Elever_Fast_Avdeling_Spesialundervisning_Trinn_1_7 =nfDisplayMode
+FIELD TextInput3_204 =nfSelectedRecord7.GG_266_Antall_Elever_Fast_Avdeling_Spesialundervisning_Trinn_8_10 =nfDisplayMode
+FIELD TextInput3_205 =nfSelectedRecord7.GG_267_Antall_Elever_Fast_Avdeling_Spesialundervisning_Gutter =nfDisplayMode
+FIELD TextInput3_206 =nfSelectedRecord7.GG_268_Antall_Elever_Fast_Avdeling_Spesialundervisning_Jenter =nfDisplayMode
+FIELD TextInput2_83 =nfSelectedRecord7.GG_269_Sum_Elever_Fast_Avdeling_Spesialundervisning
+//Sum(TextInput3_203.Text+TextInput3_204.Text) =DisplayMode.View
+
+CARD E. Organisering av spesialundervisning Y =7 Visible undefined
+HEADER Comp_liba_DatacardBkgGSI_32 =//"D. Organisering av spesialundervisning"
+LookUp(nfViewSprak, BeregnetId = "GG_H29_U63").HovedsporsmalTekst
+TEXT Label4_353 =""
+TEXT Label4_381 ="1"
+FIELD TextInput3_190 =nfSelectedRecord7.GG_275_Antall_Elever_Spesialundervisning_Hovedsakelig_Ordinaer_Klasse_Gutter =nfDisplayMode
+FIELD TextInput3_207 =nfSelectedRecord7.GG_276_Antall_Elever_Spesialundervisning_Hovedsakelig_Ordinaer_Klasse_Jenter =nfDisplayMode
+FIELD TextInput2_84 =nfSelectedRecord7.GG_277_Sum_Elever_Spesialundervisning_Hovedsakelig_Ordinaer_Klasse
+//Sum(TextInput3_190.Text+TextInput3_207.Text) =DisplayMode.View
+TEXT Label4_383 ="2"
+FIELD TextInput3_208 =nfSelectedRecord7.GG_278_Antall_Elever_Spesialundervisning_Hovedsakelig_Gruppe_6_Eller_Flere_Gutter =nfDisplayMode
+FIELD TextInput3_209 =nfSelectedRecord7.GG_279_Antall_Elever_Spesialundervisning_Hovedsakelig_Gruppe_6_Eller_Flere_Jenter =nfDisplayMode
+FIELD TextInput2_85 =nfSelectedRecord7.GG_280_Sum_Elever_Spesialundervisning_Hovedsakelig_Gruppe_6_Eller_Flere
+//Sum(TextInput3_208.Text+TextInput3_209.Text) =DisplayMode.View
+TEXT Label4_385 ="3"
+FIELD TextInput3_210 =nfSelectedRecord7.GG_281_Antall_Elever_Spesialundervisning_Hovedsakelig_Gruppe_2_Til_5_Gutter =nfDisplayMode
+FIELD TextInput3_211 =nfSelectedRecord7.GG_282_Antall_Elever_Spesialundervisning_Hovedsakelig_Gruppe_2_Til_5_Jenter =nfDisplayMode
+FIELD TextInput2_86 =nfSelectedRecord7.GG_283_Sum_Elever_Spesialundervisning_Hovedsakelig_Gruppe_2_Til_5
+//Sum(TextInput3_210.Text+TextInput3_211.Text) =DisplayMode.View
+TEXT Label4_387 ="4"
+FIELD TextInput3_212 =nfSelectedRecord7.GG_284_Antall_Elever_Spesialundervisning_Hovedsakelig_Alene_Gutter =nfDisplayMode
+FIELD TextInput3_213 =nfSelectedRecord7.GG_285_Antall_Elever_Spesialundervisning_Hovedsakelig_Alene_Jenter =nfDisplayMode
+FIELD TextInput2_87 =nfSelectedRecord7.GG_286_Sum_Elever_Spesialundervisning_Hovedsakelig_Alene
+//Sum(TextInput3_212.Text+TextInput3_213.Text) =DisplayMode.View
+
+CARD F. Tildelte timer til spesialundervisning med undervisningspersonale Y =8 Visible undefined
+HEADER Comp_liba_DatacardBkgGSI_33 =//"E. Tildelte timer til spesialundervisning med undervisningspersonale"
+LookUp(nfViewSprak, BeregnetId = "GG_H30_U67").HovedsporsmalTekst
+TEXT Label4_398 ="1"
+FIELD TextInput3_214 =nfSelectedRecord7.GG_287_AE_Spesial_Uvpersonale_1_75_Timer_Trinn_1_4 =nfDisplayMode
+FIELD TextInput3_215 =nfSelectedRecord7.GG_288_AE_Spesial_Uvpersonale_1_75_Timer_Trinn_5_7 =nfDisplayMode
+FIELD TextInput3_216 =nfSelectedRecord7.GG_289_AE_Spesial_Uvpersonale_1_75_Timer_Trinn_8_10 =nfDisplayMode
+FIELD TextInput3_217 =nfSelectedRecord7.GG_290_AE_Spesial_Uvpersonale_1_75_Timer_Gutter =nfDisplayMode
+FIELD TextInput3_218 =nfSelectedRecord7.GG_291_AE_Spesial_Uvpersonale_1_75_Timer_Jenter =nfDisplayMode
+FIELD TextInput2_88 =nfSelectedRecord7.GG_292_SE_Spesial_Uvpersonale_1_75_Timer
+//Sum(TextInput3_214.Text+TextInput3_215.Text+TextInput3_216.Text) =DisplayMode.View
+TEXT Label4_400 ="2"
+FIELD TextInput3_219 =nfSelectedRecord7.GG_293_AE_Spesial_Uvpersonale_76_190_Timer_Trinn_1_4 =nfDisplayMode
+FIELD TextInput3_220 =nfSelectedRecord7.GG_294_AE_Spesial_Uvpersonale_76_190_Timer_Trinn_5_7 =nfDisplayMode
+FIELD TextInput3_221 =nfSelectedRecord7.GG_295_AE_Spesial_Uvpersonale_76_190_Timer_Trinn_8_10 =nfDisplayMode
+FIELD TextInput3_222 =nfSelectedRecord7.GG_296_AE_Spesial_Uvpersonale_76_190_Timer_Gutter =nfDisplayMode
+FIELD TextInput3_223 =nfSelectedRecord7.GG_297_AE_Spesial_Uvpersonale_76_190_Timer_Jenter =nfDisplayMode
+FIELD TextInput2_89 =nfSelectedRecord7.GG_298_SE_Spesial_Uvpersonale_76_190_Timer
+//Sum(TextInput3_219.Text+TextInput3_220.Text+TextInput3_221.Text) =DisplayMode.View
+TEXT Label4_402 ="3"
+FIELD TextInput3_224 =nfSelectedRecord7.GG_299_AE_Spesial_Uvpersonale_191_270_Timer_Trinn_1_4 =nfDisplayMode
+FIELD TextInput3_225 =nfSelectedRecord7.GG_300_AE_Spesial_Uvpersonale_191_270_Timer_Trinn_5_7 =nfDisplayMode
+FIELD TextInput3_226 =nfSelectedRecord7.GG_301_AE_Spesial_Uvpersonale_191_270_Timer_Trinn_8_10 =nfDisplayMode
+FIELD TextInput3_227 =nfSelectedRecord7.GG_302_AE_Spesial_Uvpersonale_191_270_Timer_Gutter =nfDisplayMode
+FIELD TextInput3_228 =nfSelectedRecord7.GG_303_AE_Spesial_Uvpersonale_191_270_Timer_Jenter =nfDisplayMode
+FIELD TextInput2_90 =nfSelectedRecord7.GG_304_SE_Spesial_Uvpersonale_191_270_Timer
+//Sum(TextInput3_224.Text+TextInput3_225.Text+TextInput3_226.Text) =DisplayMode.View
+TEXT Label4_404 ="4"
+FIELD TextInput3_229 =nfSelectedRecord7.GG_305_AE_Spesial_Uvpersonale_Over_271_Timer_Trinn_1_4 =nfDisplayMode
+FIELD TextInput3_230 =nfSelectedRecord7.GG_306_AE_Spesial_Uvpersonale_Over_271_Timer_Trinn_5_7 =nfDisplayMode
+FIELD TextInput3_231 =nfSelectedRecord7.GG_307_AE_Spesial_Uvpersonale_Over_271_Timer_Trinn_8_10 =nfDisplayMode
+FIELD TextInput3_232 =nfSelectedRecord7.GG_308_AE_Spesial_Uvpersonale_Over_271_Timer_Gutter =nfDisplayMode
+FIELD TextInput3_233 =nfSelectedRecord7.GG_309_AE_Spesial_Uvpersonale_Over_271_Timer_Jenter =nfDisplayMode
+FIELD TextInput2_91 =nfSelectedRecord7.GG_310_SE_Spesial_Uvpersonale_Over_271_Timer
+//Sum(TextInput3_229.Text+TextInput3_230.Text+TextInput3_231.Text) =DisplayMode.View
+TEXT Label4_406 ="5"
+FIELD TextInput3_234 =nfSelectedRecord7.GG_311_SE_Spesial_Uvpersonale_Trinn_1_4
+//Sum(TextInput3_214.Text+TextInput3_219.Text+TextInput3_224.Text+TextInput3_229.Text) =DisplayMode.View
+FIELD TextInput3_235 =nfSelectedRecord7.GG_312_SE_Spesial_Uvpersonale_Trinn_5_7
+//Sum(TextInput3_215.Text+TextInput3_220.Text+TextInput3_225.Text+TextInput3_230.Text) =DisplayMode.View
+FIELD TextInput3_236 =nfSelectedRecord7.GG_313_SE_Spesial_Uvpersonale_Trinn_8_10
+//Sum(TextInput3_216.Text+TextInput3_221.Text+TextInput3_226.Text+TextInput3_231.Text) =DisplayMode.View
+FIELD TextInput3_237 =nfSelectedRecord7.GG_314_SE_Spesial_Uvpersonale_Gutter
+//Sum(TextInput3_217.Text+TextInput3_222.Text+TextInput3_227.Text+TextInput3_232.Text) =DisplayMode.View
+FIELD TextInput3_238 =nfSelectedRecord7.GG_315_SE_Spesial_Uvpersonale_Jenter
+//Sum(TextInput3_218.Text+TextInput3_223.Text+TextInput3_228.Text+TextInput3_233.Text) =DisplayMode.View
+FIELD TextInput2_92 =nfSelectedRecord7.GG_316_SE_Spesial_Uvpersonale
+//Sum(TextInput3_234.Text+TextInput3_235.Text+TextInput3_236.Text) =DisplayMode.View
+
+CARD G. Tildelte timer til spesialundervisning med assistent Y =9 Visible undefined
+HEADER Comp_liba_DatacardBkgGSI_34 =//"F. Tildelte timer til spesialundervisning med assistent"
+LookUp(nfViewSprak, BeregnetId = "GG_H31_U72").HovedsporsmalTekst
+TEXT Label4_389 =""
+TEXT Label4_409 ="1"
+FIELD TextInput3_239 =nfSelectedRecord7.GG_317_Antall_Elever_Spesialundervisning_Assistent_1_75_Timer_Gutter =nfDisplayMode
+FIELD TextInput3_240 =nfSelectedRecord7.GG_318_Antall_Elever_Spesialundervisning_Assistent_1_75_Timer_Jenter =nfDisplayMode
+FIELD TextInput2_93 =nfSelectedRecord7.GG_319_Sum_Elever_Spesialundervisning_Assistent_1_75_Timer
+//Sum(TextInput3_239.Text+TextInput3_240.Text) =DisplayMode.View
+TEXT Label4_411 ="2"
+FIELD TextInput3_241 =nfSelectedRecord7.GG_320_Antall_Elever_Spesialundervisning_Assistent_76_190_Timer_Gutter =nfDisplayMode
+FIELD TextInput3_242 =nfSelectedRecord7.GG_321_Antall_Elever_Spesialundervisning_Assistent_76_190_Timer_Jenter =nfDisplayMode
+FIELD TextInput2_94 =nfSelectedRecord7.GG_322_Sum_Elever_Spesialundervisning_Assistent_76_190_Timer
+//Sum(TextInput3_241.Text+TextInput3_242.Text) =DisplayMode.View
+TEXT Label4_413 ="3"
+FIELD TextInput3_243 =nfSelectedRecord7.GG_323_Antall_Elever_Spesialundervisning_Assistent_191_270_Timer_Gutter =nfDisplayMode
+FIELD TextInput3_244 =nfSelectedRecord7.GG_324_Antall_Elever_Spesialundervisning_Assistent_191_270_Timer_Jenter =nfDisplayMode
+FIELD TextInput2_95 =nfSelectedRecord7.GG_325_Sum_Elever_Spesialundervisning_Assistent_191_270_Timer
+//Sum(TextInput3_243.Text+TextInput3_244.Text) =DisplayMode.View
+TEXT Label4_415 ="4"
+FIELD TextInput3_245 =nfSelectedRecord7.GG_326_Antall_Elever_Spesialundervisning_Assistent_Over_271_Timer_Gutter =nfDisplayMode
+FIELD TextInput3_246 =nfSelectedRecord7.GG_327_Antall_Elever_Spesialundervisning_Assistent_Over_271_Timer_Jenter =nfDisplayMode
+FIELD TextInput2_96 =nfSelectedRecord7.GG_328_Sum_Elever_Spesialundervisning_Assistent_Over_271_Timer
+
+//Sum(TextInput3_245.Text+TextInput3_246.Text) =DisplayMode.View
+TEXT Label4_429 ="5"
+FIELD TextInput3_255 =nfSelectedRecord7.GG_329_Sum_Elever_Spesialundervisning_Assistent_Gutter
+//Sum(TextInput3_239.Text+TextInput3_241.Text+TextInput3_243.Text+TextInput3_245.Text) =DisplayMode.View
+FIELD TextInput3_256 =nfSelectedRecord7.GG_330_Sum_Elever_Spesialundervisning_Assistent_Jenter
+//Sum(TextInput3_240.Text+TextInput3_242.Text+TextInput3_244.Text+TextInput3_246.Text) =DisplayMode.View
+FIELD TextInput2_101 =nfSelectedRecord7.GG_331_Sum_Elever_Spesialundervisning_Assistent
+//Sum(TextInput3_255.Text+TextInput3_256.Text) =DisplayMode.View
+
+CARD 7H Y =10 Visible undefined
+HEADER Comp_liba_DatacardBkgGSI_57 =LookUp(nfViewSprak, BeregnetId = "GG_H62_U135").HovedsporsmalTekst
+TEXT Label4_849 =
+LookUp(nfViewSprak, BeregnetId = "GG_H62_U135").UndersporsmalTekst
+TEXT Label4_100 =""
+TEXT Label4_553 ="Kommune"
+TEXT Label4_101 =ThisItem.RowNumber
+FIELD TextInput2_9 =ThisItem.GG_919_Elever_Individuell_Tilrettelagt_Opplaering =If(vargblPatchingInProgress || ThisItem.GG_918_Individuell_Tilrettelagt_Opplaering = Blank(), DisplayMode.Disabled, nfDisplayMode)
+TEXT Label4_886 =Gallery_8.AllItemsCount+1
+TEXT Label4_888 =Sum(ColGG7SpH,GG_919_Elever_Individuell_Tilrettelagt_Opplaering)
+TEXT Button3_6 ="Legg til rad"
+
+CARD 7B Y =4 Visible undefined
+HEADER Comp_liba_DatacardBkgGSI_63 =//"B. Elever uten fremmedspråk, fordypning eller arbeidslivsfag"
+LookUp(nfViewSprak, BeregnetId = "GG_H32_U77").HovedsporsmalTekst
+TEXT Label4_847 =LookUp(nfViewSprak, BeregnetId = "GG_H32_U77").UndersporsmalTekst
+TEXT Label4_848 =LookUp(nfViewSprak, BeregnetId = "GG_H32_U129").UndersporsmalTekst
+TEXT Label4_859 ="1"
+TEXT Label4_860 =LookUp(nfViewSprak, BeregnetId = "GG_H32_U130").UndersporsmalTekst
+FIELD TextInput2_226 =nfSelectedRecord7.GG_925_Antall_Elever_Individuell_Uten_Tilrettelagt_Opplaering_Sum_Rad_1 =DisplayMode.View
+FIELD TextInput2_227 =nfSelectedRecord7.GG_925_Antall_Elever_Individuell_Uten_Tilrettelagt_Opplaering_Sum_Rad_1 =DisplayMode.View
+FIELD Local_Comp_Input_Number_269 =nfSelectedRecord7.GG_920_Antall_Elever_Individuell_Tilrettelagt_Opplaering_Gutter_Rad_1 =nfDisplayMode
+FIELD Local_Comp_Input_Number_270 =nfSelectedRecord7.GG_921_Antall_Elever_Individuell_Tilrettelagt_Opplaering_Jenter_Rad_1 =nfDisplayMode
+FIELD TextInput2_221 =nfSelectedRecord7.GG_922_Antall_Elever_Individuell_Tilrettelagt_Opplaering_Sum_Rad_1 =DisplayMode.View
+FIELD Local_Comp_Input_Number_271 =nfSelectedRecord7.GG_923_Antall_Elever_Individuell_Uten_Tilrettelagt_Opplaering_Gutter_Rad_1 =nfDisplayMode
+FIELD Local_Comp_Input_Number_272 =nfSelectedRecord7.GG_924_Antall_Elever_Individuell_Uten_Tilrettelagt_Opplaering_Jenter_Rad_1 =nfDisplayMode
+FIELD TextInput2_222 =nfSelectedRecord7.GG_925_Antall_Elever_Individuell_Uten_Tilrettelagt_Opplaering_Sum_Rad_1 =DisplayMode.View
+FIELD TextInput2_228 =nfSelectedRecord7.GG_1018_Total_Antall_Elever_Individuell_Uten_Tilrettelagt_Opplaering_Rad_1 =DisplayMode.View
+TEXT Label4_861 ="2"
+TEXT Label4_862 =LookUp(nfViewSprak, BeregnetId = "GG_H32_U131").UndersporsmalTekst
+FIELD Local_Comp_Input_Number_273 =nfSelectedRecord7.GG_926_Antall_Elever_Individuell_Tilrettelagt_Opplaering_Gutter_Rad_2 =nfDisplayMode
+FIELD Local_Comp_Input_Number_136 =nfSelectedRecord7.GG_927_Antall_Elever_Individuell_Tilrettelagt_Opplaering_Jenter_Rad_2 =nfDisplayMode
+FIELD TextInput2_223 =nfSelectedRecord7.GG_928_Antall_Elever_Individuell_Tilrettelagt_Opplaering_Sum_Rad_2 =DisplayMode.View
+FIELD Local_Comp_Input_Number_275 =nfSelectedRecord7.GG_929_Antall_Elever_Individuell_Uten_Tilrettelagt_Opplaering_Gutter_Rad_2 =nfDisplayMode
+FIELD Local_Comp_Input_Number_135 =nfSelectedRecord7.GG_930_Antall_Elever_Individuell_Uten_Tilrettelagt_Opplaering_Jenter_Rad_2 =nfDisplayMode
+FIELD TextInput2_225 =nfSelectedRecord7.GG_931_Antall_Elever_Individuell_Uten_Tilrettelagt_Opplaering_Sum_Rad_2 =DisplayMode.View
+FIELD TextInput2_229 =nfSelectedRecord7.GG_1019_Total_Antall_Elever_Individuell_Uten_Tilrettelagt_Opplaering_Rad_2 =DisplayMode.View

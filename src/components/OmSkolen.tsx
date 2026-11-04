@@ -3,7 +3,7 @@ import { ui, gsi } from '../i18n'
 import { useEffect, useRef, useState } from 'react'
 import type { School } from '../mockData'
 import { emptyDel2, questions, questionReferences } from '../domain/del2'
-import { runValidation } from '../domain/sectionValidation'
+import { editableDel2Issues } from '../domain/sectionValidation'
 import type { Del2Data, Del2Field } from '../domain/del2'
 import { getApiLogs, getGsiSkjemaStatus, grunnskoleSave, mockSkjemaStatusId } from '../services/grunnskoleApi'
 import { QuestionCard } from './QuestionCard'
@@ -33,7 +33,7 @@ export function OmSkolen({ school, onDataChange }: { school: School; onDataChang
     }).catch(() => { if (!cancelled) setLoadError(true) })
     return () => { cancelled = true; active.current = false }
   }, [id, onDataChange])
-  const validation = Object.fromEntries(runValidation({ mode: 'light', section: 2, data: form }).map(issue => [issue.field, issue.message]))
+  const validation = Object.fromEntries(editableDel2Issues(form, canEdit).map(issue => [issue.field, issue.message]))
   function save(field: Del2Field, value: Del2Data[Del2Field]) {
     // Also guards retries and callbacks: disabling inputs alone is insufficient.
     if (!canEdit) return

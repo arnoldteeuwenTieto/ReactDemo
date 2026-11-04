@@ -1,50 +1,36 @@
-import { useCallback, useRef, useState } from 'react'
+import { useCallback, useState, useSyncExternalStore } from 'react'
 import type { Del2Data } from './domain/del2'
-import { runValidation } from './domain/sectionValidation'
-import type { SectionIssue } from './domain/sectionValidation'
-import { getGsiSkjemaStatus } from './services/grunnskoleApi'
+import { editableDel2Issues } from './domain/sectionValidation'
+import { isBlockingFinding, sectionFindings, numericSections } from './domain/importedReporting'
+import type { Finding } from './domain/importedReporting'
+import { canEditDemoReport, getDemoReportPermissions } from './domain/demoPermissions'
+import type { DemoPermissionContext } from './domain/demoPermissions'
+import { getMockReportRevision, mockSkjemaStatusId, subscribeMockReports } from './services/grunnskoleApi'
+import { readImportedReport } from './services/importedReportService'
 
-interface ReportValidation {
-  visited: Record<number, boolean>
-  issues: Record<number, SectionIssue[]>
-}
-
-export function useSectionValidation() {
-  const [reports, setReports] = useState<Record<string, ReportValidation>>({})
-  // Validation snapshots only: the form/API remain the owners of actual answers.
-  const snapshots = useRef<Record<string, Del2Data>>({})
-
+export function useSectionValidation(context: DemoPermissionContext) {
+  const [reports, setReports] = useState<Record<string, { visited: Record<number, boolean> }>>({})
+  // Latest visible Del 2 answers, including its existing optimistic save state.
+  const [snapshots, setSnapshots] = useState<Record<string, Del2Data>>({})
+  useSyncExternalStore(subscribeMockReports, getMockReportRevision)
   const updateDel2 = useCallback((key: string, data: Del2Data) => {
-    snapshots.current[key] = { ...data }
-    const issues = runValidation({ mode: 'light', section: 2, data })
-    setReports(previous => {
-      const report = previous[key] ?? { visited: {}, issues: {} }
-      if (!report.visited[2]) return previous
-      return { ...previous, [key]: { ...report, issues: { ...report.issues, 2: issues } } }
-    })
+    setSnapshots(previous => ({ ...previous, [key]: { ...data } }))
   }, [])
-
   const visitSection = useCallback((key: string, section: number) => {
-    const data = snapshots.current[key]
-    setReports(previous => {
-      const report = previous[key] ?? { visited: {}, issues: {} }
-      const issues = section === 2 && !data ? report.issues : {
-        ...report.issues, [section]: runValidation({ mode: 'light', section, data }),
-      }
-      return { ...previous, [key]: { visited: { ...report.visited, [section]: true }, issues } }
-    })
+    setReports(previous => ({ ...previous, [key]: { visited: { ...previous[key]?.visited, [section]: true } } }))
   }, [])
-
-  const leaveSection = useCallback((key: string, section: number) => {
-    visitSection(key, section)
-    // If navigation occurs before the form finishes loading, finish a read-only
-    // snapshot fetch independently. Never block navigation or replace newer edits.
-    if (section === 2 && !snapshots.current[key]) {
-      void getGsiSkjemaStatus(key).then(result => {
-        if (!snapshots.current[key]) updateDel2(key, result.del2)
-      }).catch(() => { /* No fabricated issue count when source data cannot load. */ })
-    }
-  }, [visitSection, updateDel2])
-
-  return { reports, updateDel2, visitSection, leaveSection }
+  const leaveSection = visitSection
+  const rights = getDemoReportPermissions(context)
+  const issuesBySection: Record<number, Finding[]> = {}
+  if (context.school && rights.read) {
+    const key = mockSkjemaStatusId(context.school)
+    const report = readImportedReport(key)
+    report.del2 = snapshots[key] ?? report.del2
+    issuesBySection[2] = editableDel2Issues(report.del2, canEditDemoReport(context)).map(issue => ({ ...issue, kind: 'error' }))
+    for (const section of numericSections) issuesBySection[section] = sectionFindings(section, report, context.school.municipality, rights.edit)
+  }
+  // Sidebar is presentational: active section and visit history never suppress errors.
+  const sectionIssueCounts = Object.fromEntries(Object.entries(issuesBySection)
+    .map(([section, issues]) => [section, issues.filter(isBlockingFinding).length]))
+  return { reports, issuesBySection, sectionIssueCounts, updateDel2, visitSection, leaveSection }
 }

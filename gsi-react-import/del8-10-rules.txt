@@ -1,0 +1,247 @@
+SCREEN 8 MODES ["=nfDisplayMode","=DisplayMode.View","=//If(vargblPatchingInProgress, DisplayMode.Disabled, nfDisplayMode)\nnfDisplayMode","=If(vargblPatchingInProgress || ThisItem.GG_869_Morsmaal = Blank() && ThisItem.GG_870_Elever_med_bare_morsmaalsopplaering = Blank() && ThisItem.GG_871_Elever_med_bare_tospraaklig_fagopplaering = Blank() && ThisItem.GG_872_Elever_med_baade_morsmaalopplaering_og_tospraaklig_fagopplaering = Blank() && ThisItem.GG_873_Elever_med_tilrettelagt_opplaering = Blank(), DisplayMode.Disabled, nfDisplayMode)","=If(vargblPatchingInProgress || ThisItem.GG_869_Morsmaal = Blank(), DisplayMode.Disabled, nfDisplayMode)","= If(vargblPatchingInProgress , DisplayMode.Disabled, nfDisplayMode)","=If(vargblPatchingInProgress , DisplayMode.Disabled, nfDisplayMode)","=//nfDisplayMode\nDisplayMode.View","=If(vargblPatchingInProgress, DisplayMode.Disabled, nfDisplayMode)","=If(vargblPatchingInProgress || ThisItem.GG_916_Forstaerket_SpraakOpplaering_Annen_Kommune = Blank(), DisplayMode.Disabled, nfDisplayMode)"] VISIBILITY ["=If(Parent.Width < 888, false, true)","=If(Parent.Width > 888, false, true)","=vargblVisDrawer","=vargblShowspinnerPageloading","=If(vargblEnvironment <> \"dev\", true, false)"]
+{"name":"Local_Comp_Input_Number_1","Control":"CanvasComponent","ComponentName":"Local_Comp_Input_Number","AntallSiffer":"=4","Default":"=\nIf(IsBlank(nfSelectedRecord8.GG_335_Antall_Elever_Saerskilt_Norsk_Opplaering_Trinn_1), \"\", nfSelectedRecord8.GG_335_Antall_Elever_Saerskilt_Norsk_Opplaering_Trinn_1)","Displaymode":"=nfDisplayMode","Fill":"=//RGBA(0, 0, 0, 0)\nIf(nfKontrollerSkjema && (Kontroll_GG_F59 = false) && (nfSelectedRecord8.GG_335_Antall_Elever_Saerskilt_Norsk_Opplaering_Trinn_1 <> Blank()) && (nfSelectedRecord8.GG_335_Antall_Elever_Saerskilt_Norsk_Opplaering_Trinn_1 > nfSelectedRecord3.GG_3_Antall_Elever_Trinn1_Sum) , farge_kontrollfill, Color.White)","Height":"=Parent.Height","Input_BackgroundColor":"=RGBA(255, 255, 255, 1)","KunPositiveTall":"=false","LayoutMaxHeight":"=","LayoutMaxWidth":"=","Onchange":"=Patch(\n   GsiGrunnskoleSvarDel8,\n    nfSelectedRecord8,\n    {GG_335_Antall_Elever_Saerskilt_Norsk_Opplaering_Trinn_1:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);\n","Reset":"=true","TillatNull":"=true","TusenskilleTegn":"=vargblTusenSkilleTegn","Width":"=Parent.Width"}
+{"name":"Local_Comp_Input_Number_4","Control":"CanvasComponent","ComponentName":"Local_Comp_Input_Number","AntallSiffer":"=4","Default":"=nfSelectedRecord8.GG_346_Antall_Elever_Grunnleggende_Norsk_For_Spraaklige_Minoriteter_Trinn_1","Displaymode":"=nfDisplayMode","Height":"=Parent.Height","Input_BackgroundColor":"=RGBA(255, 255, 255, 1)","KunPositiveTall":"=true","LayoutMaxHeight":"=","LayoutMaxWidth":"=","Onchange":"=Patch(\n   GsiGrunnskoleSvarDel8,\n    nfSelectedRecord8,\n    {GG_346_Antall_Elever_Grunnleggende_Norsk_For_Spraaklige_Minoriteter_Trinn_1: HeltallsFilter(OutPatchVerdi,true,4,false) }\n);\nIf(HeltallsFilter(OutPatchVerdi,true,4,false) = Blank(), \nUpdateContext({varlclResetInput:true});\nUpdateContext({varlclResetInput:false});\n);\n","Reset":"=true","TillatNull":"=true","TusenskilleTegn":"=vargblTusenSkilleTegn","Width":"=Parent.Width"}
+{"name":"Local_Comp_Input_Number_5","Control":"CanvasComponent","ComponentName":"Local_Comp_Input_Number","AntallSiffer":"=4","Default":"=nfSelectedRecord8.GG_336_Antall_Elever_Saerskilt_Norsk_Opplaering_Trinn_2","Displaymode":"=nfDisplayMode","Fill":"=//RGBA(0, 0, 0, 0)\nIf(nfKontrollerSkjema && (Kontroll_GG_F59 = false) && (nfSelectedRecord8.GG_336_Antall_Elever_Saerskilt_Norsk_Opplaering_Trinn_2 > nfSelectedRecord3.GG_6_Antall_Elever_Trinn2_Sum), farge_kontrollfill, Color.White)","Height":"=Parent.Height","Input_BackgroundColor":"=RGBA(255, 255, 255, 1)","KunPositiveTall":"=true","LayoutMaxHeight":"=","LayoutMaxWidth":"=","Onchange":"=Patch(\n   GsiGrunnskoleSvarDel8,\n    nfSelectedRecord8,\n    {GG_336_Antall_Elever_Saerskilt_Norsk_Opplaering_Trinn_2:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);\nIf(HeltallsFilter(OutPatchVerdi,true,4,false) = Blank(), \nUpdateContext({varlclResetInput:true});\nUpdateContext({varlclResetInput:false});\n);\n","Reset":"=true","TillatNull":"=true","TusenskilleTegn":"=vargblTusenSkilleTegn","Width":"=Parent.Width"}
+CALCULATIONS [{"name":"TextInput3_326","OnChange":"=//Set(vargblPatchingInProgress, true);\n\n\nWith(\n  {\n      patchedValue: If(\n          IsMatch(Self.Text, \"^[1-9]\\d*$\" ),\n          Value(Self.Text),\n          Blank()\n      )\n  },\n  Patch(\n      GsiGrunnskoleSprakOpplaering,\n      LookUp(GsiGrunnskoleSprakOpplaering, GsiGrunnskoleSvarDel8Id = nfSelectedRecord8.GsiGrunnskoleSvarDel8Id && SprakOpplaeringId = ThisItem.SprakOpplaeringId),\n      {\n          GG_870_Elever_med_bare_morsmaalsopplaering: patchedValue\n      }\n  );\n   Patch(ShadowColGG8SpC,   LookUp(ShadowColGG8SpC,SprakOpplaeringId =ThisItem.SprakOpplaeringId),\n    {\n            GG_870_Elever_med_bare_morsmaalsopplaering: patchedValue\n        });\n\n  If(IsBlank(patchedValue), Reset(Self));\n\n\n  UpdateIf(ShadowColGG8SpC, SprakOpplaeringId =ThisItem.SprakOpplaeringId,\n    {GG_874_Sum_Elever_morsmaal_tospraaklig_tilrettelagtopplaering:\n        Sum(\n        If(IsNumeric(TextInput3_326.Text), Value(TextInput3_326.Text), 0) +\n        If(IsNumeric(TextInput3_327.Text), Value(TextInput3_327.Text), 0) +\n        If(IsNumeric(TextInput3_328.Text), Value(TextInput3_328.Text), 0) +\n        If(IsNumeric(TextInput3_329.Text), Value(TextInput3_329.Text), 0))\n    })\n)\n\n\n\n\n//Refresh collection with new values \n//ClearCollect(ColGG8SpC,AddColumns(ShowColumns(Filter(GrunnskoleOpplaeringssprakSamiskKvenskFinsk, GsiGrunnskoleSvarDel8Id=nfSelectedRecord8.GsiGrunnskoleSvarDel8Id),GG_869_Morsmaal, GG_870_Elever_med_bare_morsmaalsopplaering,GG_871_Elever_med_bare_tospraaklig_fagopplaering,GG_872_Elever_med_baade_morsmaalopplaering_og_tospraaklig_fagopplaering,GG_873_Elever_med_tilrettelagt_opplaering, SprakOpplaeringId),RowNumber,0)) ;\n//AddColumns( );\n\n//Sett oppdatert index i Rownumber\n //ClearCollect(ColGG8SpC,      ForAll(Sequence(CountRows(ColGG8SpC)),            Patch(            Last(FirstN(ColGG8SpC, Value)),                {RowNumber: Value}        )    )        );\n\n\n\n//Patch sum\n//Patch(GsiGrunnskoleSvarDel8, nfSelectedRecord8, {GG_367_Sum_Elever_Morsmaalopplaering_Tospraaklig_Fagopplaering_Eller_Tilrettelagt_Opplaering: Value(TextInput2_120.Text),GG_363_Sum_Elever_Bare_Morsmaalopplaering: Sum(Filter(GrunnskoleOpplaeringssprakSamiskKvenskFinsk, GsiGrunnskoleSvarDel8Id=nfSelectedRecord8.GsiGrunnskoleSvarDel8Id),GG_870_Elever_med_bare_morsmaalsopplaering) });"},{"name":"TextInput3_327","OnChange":"=\n\n\nWith(\n  {\n      patchedValue: If(\n          IsMatch(Self.Text, \"^[1-9]\\d*$\" ),\n          Value(Self.Text),\n          Blank()\n      )\n  },\n  Patch(\n      GsiGrunnskoleSprakOpplaering,\n      LookUp(GsiGrunnskoleSprakOpplaering, GsiGrunnskoleSvarDel8Id = nfSelectedRecord8.GsiGrunnskoleSvarDel8Id && SprakOpplaeringId = ThisItem.SprakOpplaeringId),\n      {\n          GG_871_Elever_med_bare_tospraaklig_fagopplaering: patchedValue\n      }\n  );\n\n   Patch(ShadowColGG8SpC,   LookUp(ShadowColGG8SpC,SprakOpplaeringId =ThisItem.SprakOpplaeringId),\n    {\n            GG_871_Elever_med_bare_tospraaklig_fagopplaering: patchedValue\n        });\n\n  If(IsBlank(patchedValue), Reset(Self));\n    //Oppdatere summering\n    UpdateIf(ShadowColGG8SpC, SprakOpplaeringId =ThisItem.SprakOpplaeringId,\n    {GG_874_Sum_Elever_morsmaal_tospraaklig_tilrettelagtopplaering:\n        Sum(\n        If(IsNumeric(TextInput3_326.Text), Value(TextInput3_326.Text), 0) +\n        If(IsNumeric(TextInput3_327.Text), Value(TextInput3_327.Text), 0) +\n        If(IsNumeric(TextInput3_328.Text), Value(TextInput3_328.Text), 0) +\n        If(IsNumeric(TextInput3_329.Text), Value(TextInput3_329.Text), 0))\n    })\n)\n\n//Refresh collection with new values \n//ClearCollect(ColGG8SpC,AddColumns(ShowColumns(Filter(GsiGrunnskoleSprakOpplaering, GsiGrunnskoleSvarDel8Id=nfSelectedRecord8.GsiGrunnskoleSvarDel8Id),GG_869_Morsmaal, GG_870_Elever_med_bare_morsmaalsopplaering,GG_871_Elever_med_bare_tospraaklig_fagopplaering,GG_872_Elever_med_baade_morsmaalopplaering_og_tospraaklig_fagopplaering,GG_873_Elever_med_tilrettelagt_opplaering, SprakOpplaeringId),RowNumber,0)) ;\n\n//Patch sum\n//Patch(GsiGrunnskoleSvarDel8, nfSelectedRecord8, {GG_367_Sum_Elever_Morsmaalopplaering_Tospraaklig_Fagopplaering_Eller_Tilrettelagt_Opplaering: Value(TextInput2_120.Text),GG_364_Sum_Elever_Bare_Tospraaklig_Fagopplaering: Sum(Filter(GsiGrunnskoleSprakOpplaering, GsiGrunnskoleSvarDel8Id=nfSelectedRecord8.GsiGrunnskoleSvarDel8Id),GG_871_Elever_med_bare_tospraaklig_fagopplaering) })"},{"name":"TextInput3_328","OnChange":"=\n\n\nWith(\n  {\n      patchedValue: If(\n          IsMatch(Self.Text, \"^[1-9]\\d*$\" ),\n          Value(Self.Text),\n          Blank()\n      )\n  },\n  Patch(\n      GsiGrunnskoleSprakOpplaering,\n      LookUp(GsiGrunnskoleSprakOpplaering, GsiGrunnskoleSvarDel8Id = nfSelectedRecord8.GsiGrunnskoleSvarDel8Id && SprakOpplaeringId = ThisItem.SprakOpplaeringId),\n      {\n          GG_872_Elever_med_baade_morsmaalopplaering_og_tospraaklig_fagopplaering: patchedValue\n      }\n  );\n\n   Patch(ShadowColGG8SpC,   LookUp(ShadowColGG8SpC,SprakOpplaeringId =ThisItem.SprakOpplaeringId),\n    {\n            GG_872_Elever_med_baade_morsmaalopplaering_og_tospraaklig_fagopplaering: patchedValue\n        });\n  If(IsBlank(patchedValue), Reset(Self));\n\n    //Oppdatere summering\n    UpdateIf(ShadowColGG8SpC, SprakOpplaeringId =ThisItem.SprakOpplaeringId,\n    {GG_874_Sum_Elever_morsmaal_tospraaklig_tilrettelagtopplaering:\n        Sum(\n        If(IsNumeric(TextInput3_326.Text), Value(TextInput3_326.Text), 0) +\n        If(IsNumeric(TextInput3_327.Text), Value(TextInput3_327.Text), 0) +\n        If(IsNumeric(TextInput3_328.Text), Value(TextInput3_328.Text), 0) +\n        If(IsNumeric(TextInput3_329.Text), Value(TextInput3_329.Text), 0))\n    })\n)\n\n//Refresh collection with new values \n//ClearCollect(ColGG8SpC,AddColumns(ShowColumns(Filter(GsiGrunnskoleSprakOpplaering, GsiGrunnskoleSvarDel8Id=nfSelectedRecord8.GsiGrunnskoleSvarDel8Id),GG_869_Morsmaal, GG_870_Elever_med_bare_morsmaalsopplaering,GG_871_Elever_med_bare_tospraaklig_fagopplaering,GG_872_Elever_med_baade_morsmaalopplaering_og_tospraaklig_fagopplaering,GG_873_Elever_med_tilrettelagt_opplaering, SprakOpplaeringId),RowNumber,0)) ;\n\n\n//Patch sum\n//Patch(GsiGrunnskoleSvarDel8, nfSelectedRecord8, {GG_367_Sum_Elever_Morsmaalopplaering_Tospraaklig_Fagopplaering_Eller_Tilrettelagt_Opplaering: Value(TextInput2_120.Text), GG_365_Sum_Elever_Morsmaalopplaering_Og_Tospraaklig_Fagopplaering: Sum(Filter(GsiGrunnskoleSprakOpplaering, GsiGrunnskoleSvarDel8Id=nfSelectedRecord8.GsiGrunnskoleSvarDel8Id),GG_872_Elever_med_baade_morsmaalopplaering_og_tospraaklig_fagopplaering)})"},{"name":"TextInput3_329","OnChange":"=\r\n\r\n\r\nWith(\r\n  {\r\n      patchedValue: If(\r\n          IsMatch(Self.Text, \"^[1-9]\\d*$\" ),\r\n          Value(Self.Text),\r\n          Blank()\r\n      )\r\n  },\r\n  Patch(\r\n      GsiGrunnskoleSprakOpplaering,\r\n      LookUp(GsiGrunnskoleSprakOpplaering, GsiGrunnskoleSvarDel8Id = nfSelectedRecord8.GsiGrunnskoleSvarDel8Id && SprakOpplaeringId = ThisItem.SprakOpplaeringId),\r\n      {\r\n          GG_873_Elever_med_tilrettelagt_opplaering: patchedValue\r\n      }\r\n  );\r\n\r\n  Patch(ShadowColGG8SpC,   LookUp(ShadowColGG8SpC,SprakOpplaeringId =ThisItem.SprakOpplaeringId),\r\n    {\r\n            GG_873_Elever_med_tilrettelagt_opplaering: patchedValue\r\n        });\r\n  If(IsBlank(patchedValue), Reset(Self));\r\n  \r\n    //Oppdatere summering\r\n    UpdateIf(ShadowColGG8SpC, SprakOpplaeringId =ThisItem.SprakOpplaeringId,\r\n    {GG_874_Sum_Elever_morsmaal_tospraaklig_tilrettelagtopplaering:\r\n        Sum(\r\n        If(IsNumeric(TextInput3_326.Text), Value(TextInput3_326.Text), 0) +\r\n        If(IsNumeric(TextInput3_327.Text), Value(TextInput3_327.Text), 0) +\r\n        If(IsNumeric(TextInput3_328.Text), Value(TextInput3_328.Text), 0) +\r\n        If(IsNumeric(TextInput3_329.Text), Value(TextInput3_329.Text), 0))\r\n    })\r\n)\r\n\r\n\r\n//Refresh collection with new values \r\n//ClearCollect(ColGG8SpC,AddColumns(ShowColumns(Filter(GsiGrunnskoleSprakOpplaering, GsiGrunnskoleSvarDel8Id=nfSelectedRecord8.GsiGrunnskoleSvarDel8Id),GG_869_Morsmaal, GG_870_Elever_med_bare_morsmaalsopplaering,GG_871_Elever_med_bare_tospraaklig_fagopplaering,GG_872_Elever_med_baade_morsmaalopplaering_og_tospraaklig_fagopplaering,GG_873_Elever_med_tilrettelagt_opplaering, SprakOpplaeringId),RowNumber,0)) ;\r\n\r\n\r\n//Patch sum\r\n//Patch(GsiGrunnskoleSvarDel8, nfSelectedRecord8, {GG_367_Sum_Elever_Morsmaalopplaering_Tospraaklig_Fagopplaering_Eller_Tilrettelagt_Opplaering: Value(TextInput2_120.Text), GG_366_Sum_Elever_Tilrettelagt_Opplaering: Sum(Filter(GsiGrunnskoleSprakOpplaering, GsiGrunnskoleSvarDel8Id=nfSelectedRecord8.GsiGrunnskoleSvarDel8Id),GG_873_Elever_med_tilrettelagt_opplaering)})"}]
+ACTION Icon3_3 =Set(vargblPatchingInProgress, true);
+
+With({RemoveID:  Gallery_2.Selected.SprakOpplaeringId},
+RemoveIf(GsiGrunnskoleSprakOpplaering, SprakOpplaeringId = RemoveID );
+RemoveIf(ShadowColGG8SpC, SprakOpplaeringId = RemoveID );
+RemoveIf(ColGG8SpC, SprakOpplaeringId = RemoveID );
+);//End with
+/*
+ClearCollect(ColGG8SpC,AddColumns(ShowColumns(Filter(GsiGrunnskoleSprakOpplaering, GsiGrunnskoleSvarDel8Id=nfSelectedRecord8.GsiGrunnskoleSvarDel8Id),GG_869_Morsmaal, GG_870_Elever_med_bare_morsmaalsopplaering,GG_871_Elever_med_bare_tospraaklig_fagopplaering,GG_872_Elever_med_baade_morsmaalopplaering_og_tospraaklig_fagopplaering,GG_873_Elever_med_tilrettelagt_opplaering, GG_874_Sum_Elever_morsmaal_tospraaklig_tilrettelagtopplaering, SprakOpplaeringId,GsiGrunnskoleSvarDel8Id),RowNumber,0)) ;
+*/
+ClearCollect(ColGG8SpC,
+          ForAll(Sequence(CountRows(ColGG8SpC)),
+                Patch(            Last(FirstN(ColGG8SpC, Value)), 
+                   {RowNumber: Value}        )    )    
+        );
+
+/*
+ClearCollect(ShadowColGG8SpC,AddColumns(ShowColumns(Filter(GsiGrunnskoleSprakOpplaering, GsiGrunnskoleSvarDel8Id=nfSelectedRecord8.GsiGrunnskoleSvarDel8Id),GG_869_Morsmaal, GG_870_Elever_med_bare_morsmaalsopplaering,GG_871_Elever_med_bare_tospraaklig_fagopplaering,GG_872_Elever_med_baade_morsmaalopplaering_og_tospraaklig_fagopplaering,GG_873_Elever_med_tilrettelagt_opplaering,GG_874_Sum_Elever_morsmaal_tospraaklig_tilrettelagtopplaering, SprakOpplaeringId,GsiGrunnskoleSvarDel8Id),RowNumber,0)); // brukes til kontrollere og dynamisk default verdi i tabell
+*/
+
+
+
+   ClearCollect(ShadowColGG8SpC,
+          ForAll(Sequence(CountRows(ShadowColGG8SpC)),
+                Patch(            Last(FirstN(ShadowColGG8SpC, Value)), 
+                   {RowNumber: Value}        )    )    
+        );
+
+
+
+Set(vargblPatchingInProgress, false);
+ACTION Button3_4 =Set(
+    vargblPatchingInProgress,
+    true
+);
+With(
+    {
+        NewRecord: Patch(
+            GsiGrunnskoleSprakOpplaering,
+            Defaults(GsiGrunnskoleSprakOpplaering),
+            {GsiGrunnskoleSvarDel8Id: nfSelectedRecord8.GsiGrunnskoleSvarDel8Id}
+        )
+    },
+    Patch(
+        ColGG8SpC,
+        Defaults(ColGG8SpC),
+        {
+            SprakOpplaeringId: NewRecord.SprakOpplaeringId,
+            GG_870_Elever_med_bare_morsmaalsopplaering: Blank(),
+            GG_871_Elever_med_bare_tospraaklig_fagopplaering: Blank(),
+            GG_872_Elever_med_baade_morsmaalopplaering_og_tospraaklig_fagopplaering: Blank(),
+            GG_873_Elever_med_tilrettelagt_opplaering: Blank(),
+            GsiGrunnskoleSvarDel8Id: nfSelectedRecord8.GsiGrunnskoleSvarDel8Id,
+            RowNumber: Gallery_2.AllItemsCount + 1
+        }
+    );
+    Patch(
+        ShadowColGG8SpC,
+        Defaults(ShadowColGG8SpC),
+        {
+            SprakOpplaeringId: NewRecord.SprakOpplaeringId,
+            GG_870_Elever_med_bare_morsmaalsopplaering: Blank(),
+            GG_871_Elever_med_bare_tospraaklig_fagopplaering: Blank(),
+            GG_872_Elever_med_baade_morsmaalopplaering_og_tospraaklig_fagopplaering: Blank(),
+            GG_873_Elever_med_tilrettelagt_opplaering: Blank(),
+            GsiGrunnskoleSvarDel8Id: nfSelectedRecord8.GsiGrunnskoleSvarDel8Id,
+            RowNumber: Gallery_2.AllItemsCount + 1
+        }
+    )
+);
+Set(
+    vargblReset,
+    true
+);
+Set(
+    vargblReset,
+    false
+);
+Set(
+    vargblPatchingInProgress,
+    false
+);
+ACTION Icon3_4 =
+Set(vargblPatchingInProgress, true);
+With({removeline : Gallery_7.Selected.SprakOpplaeringAnnenKommuneId  },
+
+RemoveIf(ColGG8SpD, SprakOpplaeringAnnenKommuneId = removeline);
+RemoveIf(GsiGrunnskoleSprakOpplaeringAnnenKommune, SprakOpplaeringAnnenKommuneId = removeline ));
+
+
+
+ClearCollect(ColGG8SpD,
+     ForAll(Sequence(CountRows(ColGG8SpD)),
+   Patch(Last(FirstN(ColGG8SpD, Value)),
+   {RowNumber: Value}))
+);
+        
+Set(vargblPatchingInProgress, false);
+ACTION Button3_8 =
+Set(vargblPatchingInProgress, true);
+    
+
+
+
+
+
+Patch(ColGG8SpD, Defaults(ColGG8SpD),{SprakOpplaeringAnnenKommuneId: 
+Patch(GsiGrunnskoleSprakOpplaeringAnnenKommune, Defaults(GsiGrunnskoleSprakOpplaeringAnnenKommune), {GsiGrunnskoleSvarDel8Id :nfSelectedRecord8.GsiGrunnskoleSvarDel8Id}).SprakOpplaeringAnnenKommuneId
+,RowNumber:Gallery_7.AllItemsCount+1, GsiGrunnskoleSvarDel8Id: nfSelectedRecord8.GsiGrunnskoleSvarDel8Id});
+//Refresh collection with new values 
+
+
+Set(vargblReset, true);
+Set(vargblReset, false);
+Set(vargblPatchingInProgress, false);
+
+
+SCREEN 9 MODES ["=nfDisplayMode","=DisplayMode.View","=If(vargblPatchingInProgress || ThisItem.GG_915_Opplaering_Samisk_Kvensk_Finsk = Blank(), DisplayMode.Disabled, nfDisplayMode)","= If(vargblPatchingInProgress , DisplayMode.Disabled, nfDisplayMode)","=If(vargblPatchingInProgress , DisplayMode.Disabled, nfDisplayMode)","=//nfDisplayMode\nDisplayMode.View"] VISIBILITY ["=If(Parent.Width < 800, false, true)","=ThisItem.ShowCombobox","=!ThisItem.ShowCombobox","=If(Parent.Width > 800, false, true)","=vargblVisDrawer","=If(vargblEnvironment <> \"dev\", true, false)"]
+{"name":"Local_Comp_Input_Number_27","Control":"CanvasComponent","ComponentName":"Local_Comp_Input_Number","AntallSiffer":"=4","Default":"=nfSelectedRecord9.GG_368_Antall_Elever_Bokmaal_Trinn_1","Displaymode":"=nfDisplayMode","Height":"=Parent.Height","Input_BackgroundColor":"=RGBA(255, 255, 255, 1)","KunPositiveTall":"=true","LayoutMaxHeight":"=","LayoutMaxWidth":"=","Onchange":"=\nPatch(\n   GsiGrunnskoleSvarDel9,\n    nfSelectedRecord9,\n    {GG_368_Antall_Elever_Bokmaal_Trinn_1:HeltallsFilter(OutPatchVerdi,true,4,false)}\n);\n\n\n\n\n","Reset":"=true","TillatNull":"=true","TusenskilleTegn":"=vargblTusenSkilleTegn","Width":"=Parent.Width"}
+{"name":"Local_Comp_Input_Number_28","Control":"CanvasComponent","ComponentName":"Local_Comp_Input_Number","AntallSiffer":"=4","Default":"=nfSelectedRecord9.GG_379_Antall_Elever_Nynorsk_Trinn_1","Displaymode":"=nfDisplayMode","Height":"=Parent.Height","Input_BackgroundColor":"=RGBA(255, 255, 255, 1)","KunPositiveTall":"=true","LayoutMaxHeight":"=","LayoutMaxWidth":"=","Onchange":"=\nPatch(\n   GsiGrunnskoleSvarDel9,\n    nfSelectedRecord9,\n    {GG_379_Antall_Elever_Nynorsk_Trinn_1:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);","Reset":"=true","TillatNull":"=true","TusenskilleTegn":"=vargblTusenSkilleTegn","Width":"=Parent.Width"}
+{"name":"Local_Comp_Input_Number_29","Control":"CanvasComponent","ComponentName":"Local_Comp_Input_Number","AntallSiffer":"=4","Default":"=nfSelectedRecord9.GG_390_Antall_Elever_Samisk_Trinn_1","Displaymode":"=nfDisplayMode","Height":"=Parent.Height","Input_BackgroundColor":"=RGBA(255, 255, 255, 1)","KunPositiveTall":"=true","LayoutMaxHeight":"=","LayoutMaxWidth":"=","Onchange":"=\nPatch(\n   GsiGrunnskoleSvarDel9,\n    nfSelectedRecord9,\n    {GG_390_Antall_Elever_Samisk_Trinn_1:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);\n\n\n\n\n","Reset":"=true","TillatNull":"=true","TusenskilleTegn":"=vargblTusenSkilleTegn","Width":"=Parent.Width"}
+CALCULATIONS [{"name":"TextInput3","OnChange":"=//Set(vargblPatchingInProgress, true);\r\n\r\n//Patch først verdi på rad til collection for å spare ytelse \r\n//Patch(ColGG9SpC, ThisItem, {GG_904_Antall_Elever_Opplaering_Trinn_1: HeltallsFilter(Self.Text, true,4,false)    });\r\n//Patch så til den dynamiske tabellen som er koblet mot svarDel3\r\n\r\n\r\n\r\nWith(\r\n  {\r\n      patchedValue: If(\r\n          IsMatch(Self.Text, \"^[1-9]\\d*$\" ),\r\n          Value(Self.Text),\r\n          Blank()\r\n      )\r\n  },\r\n  Patch(ShadowColGG9SpC, LookUp(ShadowColGG9SpC,OpplaeringssprakSamiskKvenskFinskId = ThisItem.OpplaeringssprakSamiskKvenskFinskId),{GG_904_Antall_Elever_Opplaering_Trinn_1:patchedValue});\r\n  Patch(\r\n      GrunnskoleOpplaeringssprakSamiskKvenskFinsk,\r\n      LookUp(GrunnskoleOpplaeringssprakSamiskKvenskFinsk, OpplaeringssprakSamiskKvenskFinskId = ThisItem.OpplaeringssprakSamiskKvenskFinskId),\r\n      {\r\n          GG_904_Antall_Elever_Opplaering_Trinn_1: patchedValue\r\n      }\r\n  );\r\n  \r\n  If(IsBlank(patchedValue), Reset(Self));\r\n//Oppdatere collection sumverdi\r\nUpdateIf(ShadowColGG9SpC, OpplaeringssprakSamiskKvenskFinskId = ThisItem.OpplaeringssprakSamiskKvenskFinskId, \r\n  {GG_914_Total_Sum_Antall_Elever_Opplaering_Trinn_1_10: Sum(\r\n Coalesce(If(IsNumeric(TextInput3.Text), Value(TextInput3.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_1.Text), Value(TextInput3_1.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_4.Text), Value(TextInput3_4.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_5.Text), Value(TextInput3_5.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_6.Text), Value(TextInput3_6.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_346.Text), Value(TextInput3_346.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_347.Text), Value(TextInput3_347.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_348.Text), Value(TextInput3_348.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_349.Text), Value(TextInput3_349.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_350.Text), Value(TextInput3_350.Text), Blank()), 0))}\r\n)\r\n)\r\n"},{"name":"TextInput3_1","OnChange":"=//Set(vargblPatchingInProgress, true);\r\n\r\n//Patch først verdi på rad til collection for å spare ytelse \r\n//Patch(ColGG9SpC, ThisItem, {GG_905_Antall_Elever_Opplaering_Trinn_2: HeltallsFilter(Self.Text, true,4,false)});\r\n//Patch så til den dynamiske tabellen som er koblet mot svarDel3\r\n Patch(ShadowColGG9SpC, LookUp(ShadowColGG9SpC,OpplaeringssprakSamiskKvenskFinskId = ThisItem.OpplaeringssprakSamiskKvenskFinskId),{GG_905_Antall_Elever_Opplaering_Trinn_2:If(IsMatch(Self.Text, \"^[1-9]\\d*$\" ),Value(Self.Text),Blank())});\r\n  Patch(\r\n      GrunnskoleOpplaeringssprakSamiskKvenskFinsk,\r\n      LookUp(GrunnskoleOpplaeringssprakSamiskKvenskFinsk, OpplaeringssprakSamiskKvenskFinskId = ThisItem.OpplaeringssprakSamiskKvenskFinskId),\r\n      {\r\n          GG_905_Antall_Elever_Opplaering_Trinn_2: If(IsMatch(Self.Text, \"^[1-9]\\d*$\" ),Value(Self.Text),Blank())\r\n      }\r\n  );\r\n \r\n  \r\n  \r\n  If(!IsMatch(Self.Text, \"^[1-9]\\d*$\" ), Reset(Self));\r\n\r\n  //Oppdatere collection sumverdi\r\nUpdateIf(ShadowColGG9SpC, OpplaeringssprakSamiskKvenskFinskId = ThisItem.OpplaeringssprakSamiskKvenskFinskId, \r\n  {GG_914_Total_Sum_Antall_Elever_Opplaering_Trinn_1_10: Sum(\r\n Coalesce(If(IsNumeric(TextInput3.Text), Value(TextInput3.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_1.Text), Value(TextInput3_1.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_4.Text), Value(TextInput3_4.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_5.Text), Value(TextInput3_5.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_6.Text), Value(TextInput3_6.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_346.Text), Value(TextInput3_346.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_347.Text), Value(TextInput3_347.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_348.Text), Value(TextInput3_348.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_349.Text), Value(TextInput3_349.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_350.Text), Value(TextInput3_350.Text), Blank()), 0))}\r\n);\r\n\r\n"},{"name":"TextInput3_4","OnChange":"=//Set(vargblPatchingInProgress, true);\r\n\r\n//Patch først verdi på rad til collection for å spare ytelse \r\n//Patch(ColGG9SpC, ThisItem, {GG_906_Antall_Elever_Opplaering_Trinn_3: HeltallsFilter(Self.Text, true,4,false)});\r\n//Patch så til den dynamiske tabellen som er koblet mot svarDel3\r\nWith(\r\n  {\r\n      patchedValue: If(\r\n          IsMatch(Self.Text, \"^[1-9]\\d*$\" ),\r\n          Value(Self.Text),\r\n          Blank()\r\n      )\r\n  },\r\n  Patch(ShadowColGG9SpC, LookUp(ShadowColGG9SpC,OpplaeringssprakSamiskKvenskFinskId = ThisItem.OpplaeringssprakSamiskKvenskFinskId),{GG_906_Antall_Elever_Opplaering_Trinn_3:patchedValue});\r\n  Patch(\r\n      GrunnskoleOpplaeringssprakSamiskKvenskFinsk,\r\n      LookUp(GrunnskoleOpplaeringssprakSamiskKvenskFinsk, OpplaeringssprakSamiskKvenskFinskId = ThisItem.OpplaeringssprakSamiskKvenskFinskId),\r\n      {\r\n          GG_906_Antall_Elever_Opplaering_Trinn_3: patchedValue\r\n      }\r\n  );\r\n  \r\n  If(IsBlank(patchedValue), Reset(Self));\r\n  //Oppdatere collection sumverdi\r\nUpdateIf(ShadowColGG9SpC, OpplaeringssprakSamiskKvenskFinskId = ThisItem.OpplaeringssprakSamiskKvenskFinskId, \r\n  {GG_914_Total_Sum_Antall_Elever_Opplaering_Trinn_1_10: Sum(\r\n Coalesce(If(IsNumeric(TextInput3.Text), Value(TextInput3.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_1.Text), Value(TextInput3_1.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_4.Text), Value(TextInput3_4.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_5.Text), Value(TextInput3_5.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_6.Text), Value(TextInput3_6.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_346.Text), Value(TextInput3_346.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_347.Text), Value(TextInput3_347.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_348.Text), Value(TextInput3_348.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_349.Text), Value(TextInput3_349.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_350.Text), Value(TextInput3_350.Text), Blank()), 0))}\r\n)\r\n)"},{"name":"TextInput3_5","OnChange":"=//Set(vargblPatchingInProgress, true);\r\n\r\n//Patch først verdi på rad til collection for å spare ytelse \r\n//Patch(ColGG9SpC, ThisItem, {GG_907_Antall_Elever_Opplaering_Trinn_4: HeltallsFilter(Self.Text, true,4,false)});\r\n//Patch så til den dynamiske tabellen som er koblet mot svarDel3\r\nWith(\r\n  {\r\n      patchedValue: If(\r\n          IsMatch(Self.Text, \"^[1-9]\\d*$\" ),\r\n          Value(Self.Text),\r\n          Blank()\r\n      )\r\n  },\r\n   Patch(ShadowColGG9SpC, LookUp(ShadowColGG9SpC,OpplaeringssprakSamiskKvenskFinskId = ThisItem.OpplaeringssprakSamiskKvenskFinskId),{GG_907_Antall_Elever_Opplaering_Trinn_4:patchedValue});\r\n  Patch(\r\n      GrunnskoleOpplaeringssprakSamiskKvenskFinsk,\r\n      LookUp(GrunnskoleOpplaeringssprakSamiskKvenskFinsk, OpplaeringssprakSamiskKvenskFinskId = ThisItem.OpplaeringssprakSamiskKvenskFinskId),\r\n      {\r\n          GG_907_Antall_Elever_Opplaering_Trinn_4: patchedValue\r\n      }\r\n  );\r\n  \r\n  If(IsBlank(patchedValue), Reset(Self));\r\n  //Oppdatere collection sumverdi\r\nUpdateIf(ShadowColGG9SpC, OpplaeringssprakSamiskKvenskFinskId = ThisItem.OpplaeringssprakSamiskKvenskFinskId, \r\n  {GG_914_Total_Sum_Antall_Elever_Opplaering_Trinn_1_10: Sum(\r\n Coalesce(If(IsNumeric(TextInput3.Text), Value(TextInput3.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_1.Text), Value(TextInput3_1.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_4.Text), Value(TextInput3_4.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_5.Text), Value(TextInput3_5.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_6.Text), Value(TextInput3_6.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_346.Text), Value(TextInput3_346.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_347.Text), Value(TextInput3_347.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_348.Text), Value(TextInput3_348.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_349.Text), Value(TextInput3_349.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_350.Text), Value(TextInput3_350.Text), Blank()), 0))}\r\n)\r\n)"},{"name":"TextInput3_6","OnChange":"=//Set(vargblPatchingInProgress, true);\r\n\r\n//Patch først verdi på rad til collection for å spare ytelse \r\n//Patch(ColGG9SpC, ThisItem, {GG_908_Antall_Elever_Opplaering_Trinn_5: HeltallsFilter(Self.Text, true,4,false)});\r\n//Patch så til den dynamiske tabellen som er koblet mot svarDel3\r\nWith(\r\n  {\r\n      patchedValue: If(\r\n          IsMatch(Self.Text, \"^[1-9]\\d*$\" ),\r\n          Value(Self.Text),\r\n          Blank()\r\n      )\r\n  },\r\n  Patch(ShadowColGG9SpC, LookUp(ShadowColGG9SpC,OpplaeringssprakSamiskKvenskFinskId = ThisItem.OpplaeringssprakSamiskKvenskFinskId),{GG_908_Antall_Elever_Opplaering_Trinn_5:patchedValue});\r\n  Patch(\r\n      GrunnskoleOpplaeringssprakSamiskKvenskFinsk,\r\n      LookUp(GrunnskoleOpplaeringssprakSamiskKvenskFinsk, OpplaeringssprakSamiskKvenskFinskId = ThisItem.OpplaeringssprakSamiskKvenskFinskId),\r\n      {\r\n          GG_908_Antall_Elever_Opplaering_Trinn_5: patchedValue\r\n      }\r\n  );\r\n  \r\n  If(IsBlank(patchedValue), Reset(Self));\r\n  //Oppdatere collection sumverdi\r\nUpdateIf(ShadowColGG9SpC, OpplaeringssprakSamiskKvenskFinskId = ThisItem.OpplaeringssprakSamiskKvenskFinskId, \r\n  {GG_914_Total_Sum_Antall_Elever_Opplaering_Trinn_1_10: Sum(\r\n Coalesce(If(IsNumeric(TextInput3.Text), Value(TextInput3.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_1.Text), Value(TextInput3_1.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_4.Text), Value(TextInput3_4.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_5.Text), Value(TextInput3_5.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_6.Text), Value(TextInput3_6.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_346.Text), Value(TextInput3_346.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_347.Text), Value(TextInput3_347.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_348.Text), Value(TextInput3_348.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_349.Text), Value(TextInput3_349.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_350.Text), Value(TextInput3_350.Text), Blank()), 0))}\r\n)\r\n)"},{"name":"TextInput3_346","OnChange":"=//Set(vargblPatchingInProgress, true);\r\n\r\n//Patch først verdi på rad til collection for å spare ytelse \r\n//Patch(ColGG9SpC, ThisItem, {GG_909_Antall_Elever_Opplaering_Trinn_6: HeltallsFilter(Self.Text, true,4,false)});\r\n//Patch så til den dynamiske tabellen som er koblet mot svarDel3\r\nWith(\r\n  {\r\n      patchedValue: If(\r\n          IsMatch(Self.Text, \"^[1-9]\\d*$\" ),\r\n          Value(Self.Text),\r\n          Blank()\r\n      )\r\n  },\r\n   Patch(ShadowColGG9SpC, LookUp(ShadowColGG9SpC,OpplaeringssprakSamiskKvenskFinskId = ThisItem.OpplaeringssprakSamiskKvenskFinskId),{GG_909_Antall_Elever_Opplaering_Trinn_6:patchedValue});\r\n  Patch(\r\n      GrunnskoleOpplaeringssprakSamiskKvenskFinsk,\r\n      LookUp(GrunnskoleOpplaeringssprakSamiskKvenskFinsk, OpplaeringssprakSamiskKvenskFinskId = ThisItem.OpplaeringssprakSamiskKvenskFinskId),\r\n      {\r\n          GG_909_Antall_Elever_Opplaering_Trinn_6: patchedValue\r\n      }\r\n  );\r\n \r\n  If(IsBlank(patchedValue), Reset(Self));\r\n  //Oppdatere collection sumverdi\r\nUpdateIf(ShadowColGG9SpC, OpplaeringssprakSamiskKvenskFinskId = ThisItem.OpplaeringssprakSamiskKvenskFinskId, \r\n  {GG_914_Total_Sum_Antall_Elever_Opplaering_Trinn_1_10: Sum(\r\n Coalesce(If(IsNumeric(TextInput3.Text), Value(TextInput3.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_1.Text), Value(TextInput3_1.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_4.Text), Value(TextInput3_4.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_5.Text), Value(TextInput3_5.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_6.Text), Value(TextInput3_6.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_346.Text), Value(TextInput3_346.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_347.Text), Value(TextInput3_347.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_348.Text), Value(TextInput3_348.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_349.Text), Value(TextInput3_349.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_350.Text), Value(TextInput3_350.Text), Blank()), 0))}\r\n)\r\n)"},{"name":"TextInput3_347","OnChange":"=//Set(vargblPatchingInProgress, true);\r\n\r\n//Patch først verdi på rad til collection for å spare ytelse \r\n//Patch(ColGG9SpC, ThisItem, {GG_910_Antall_Elever_Opplaering_Trinn_7: HeltallsFilter(Self.Text, true,4,false)});\r\n//Patch så til den dynamiske tabellen som er koblet mot svarDel3\r\nWith(\r\n  {\r\n      patchedValue: If(\r\n          IsMatch(Self.Text, \"^[1-9]\\d*$\" ),\r\n          Value(Self.Text),\r\n          Blank()\r\n      )\r\n  },\r\n  Patch(ShadowColGG9SpC, LookUp(ShadowColGG9SpC,OpplaeringssprakSamiskKvenskFinskId = ThisItem.OpplaeringssprakSamiskKvenskFinskId),{GG_910_Antall_Elever_Opplaering_Trinn_7:patchedValue});\r\n  Patch(\r\n      GrunnskoleOpplaeringssprakSamiskKvenskFinsk,\r\n      LookUp(GrunnskoleOpplaeringssprakSamiskKvenskFinsk, OpplaeringssprakSamiskKvenskFinskId = ThisItem.OpplaeringssprakSamiskKvenskFinskId),\r\n      {\r\n          GG_910_Antall_Elever_Opplaering_Trinn_7: patchedValue\r\n      }\r\n  );\r\n    \r\n  If(IsBlank(patchedValue), Reset(Self));\r\n  //Oppdatere collection sumverdi\r\nUpdateIf(ShadowColGG9SpC, OpplaeringssprakSamiskKvenskFinskId = ThisItem.OpplaeringssprakSamiskKvenskFinskId, \r\n  {GG_914_Total_Sum_Antall_Elever_Opplaering_Trinn_1_10: Sum(\r\n Coalesce(If(IsNumeric(TextInput3.Text), Value(TextInput3.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_1.Text), Value(TextInput3_1.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_4.Text), Value(TextInput3_4.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_5.Text), Value(TextInput3_5.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_6.Text), Value(TextInput3_6.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_346.Text), Value(TextInput3_346.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_347.Text), Value(TextInput3_347.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_348.Text), Value(TextInput3_348.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_349.Text), Value(TextInput3_349.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_350.Text), Value(TextInput3_350.Text), Blank()), 0))}\r\n)\r\n)\r\n\r\n"},{"name":"TextInput3_348","OnChange":"=//Set(vargblPatchingInProgress, true);\r\n\r\n//Patch først verdi på rad til collection for å spare ytelse \r\n//Patch(ColGG9SpC, ThisItem, {GG_911_Antall_Elever_Opplaering_Trinn_8: HeltallsFilter(Self.Text, true,4,false)});\r\n//Patch så til den dynamiske tabellen som er koblet mot svarDel3\r\nWith(\r\n  {\r\n      patchedValue: If(\r\n          IsMatch(Self.Text, \"^[1-9]\\d*$\" ),\r\n          Value(Self.Text),\r\n          Blank()\r\n      )\r\n  },\r\n   Patch(ShadowColGG9SpC, LookUp(ShadowColGG9SpC,OpplaeringssprakSamiskKvenskFinskId = ThisItem.OpplaeringssprakSamiskKvenskFinskId),{GG_911_Antall_Elever_Opplaering_Trinn_8:patchedValue});\r\n  Patch(\r\n      GrunnskoleOpplaeringssprakSamiskKvenskFinsk,\r\n      LookUp(GrunnskoleOpplaeringssprakSamiskKvenskFinsk, OpplaeringssprakSamiskKvenskFinskId = ThisItem.OpplaeringssprakSamiskKvenskFinskId),\r\n      {\r\n          GG_911_Antall_Elever_Opplaering_Trinn_8: patchedValue\r\n      }\r\n  );\r\n \r\n  If(IsBlank(patchedValue), Reset(Self));\r\n  //Oppdatere collection sumverdi\r\nUpdateIf(ShadowColGG9SpC, OpplaeringssprakSamiskKvenskFinskId = ThisItem.OpplaeringssprakSamiskKvenskFinskId, \r\n  {GG_914_Total_Sum_Antall_Elever_Opplaering_Trinn_1_10: Sum(\r\n Coalesce(If(IsNumeric(TextInput3.Text), Value(TextInput3.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_1.Text), Value(TextInput3_1.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_4.Text), Value(TextInput3_4.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_5.Text), Value(TextInput3_5.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_6.Text), Value(TextInput3_6.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_346.Text), Value(TextInput3_346.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_347.Text), Value(TextInput3_347.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_348.Text), Value(TextInput3_348.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_349.Text), Value(TextInput3_349.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_350.Text), Value(TextInput3_350.Text), Blank()), 0))}\r\n)\r\n)\r\n\r\n"},{"name":"TextInput3_349","OnChange":"=//Set(vargblPatchingInProgress, true);\r\n\r\n//Patch først verdi på rad til collection for å spare ytelse \r\n//Patch(ColGG9SpC, ThisItem, {GG_912_Antall_Elever_Opplaering_Trinn_9: HeltallsFilter(Self.Text, true,4,false)});\r\n//Patch så til den dynamiske tabellen som er koblet mot svarDel3\r\nWith(\r\n  {\r\n      patchedValue: If(\r\n          IsMatch(Self.Text, \"^[1-9]\\d*$\" ),\r\n          Value(Self.Text),\r\n          Blank()\r\n      )\r\n  },\r\n  Patch(ShadowColGG9SpC, LookUp(ShadowColGG9SpC,OpplaeringssprakSamiskKvenskFinskId = ThisItem.OpplaeringssprakSamiskKvenskFinskId),{GG_912_Antall_Elever_Opplaering_Trinn_9:patchedValue});\r\n  Patch(\r\n      GrunnskoleOpplaeringssprakSamiskKvenskFinsk,\r\n      LookUp(GrunnskoleOpplaeringssprakSamiskKvenskFinsk, OpplaeringssprakSamiskKvenskFinskId = ThisItem.OpplaeringssprakSamiskKvenskFinskId),\r\n      {\r\n          GG_912_Antall_Elever_Opplaering_Trinn_9: patchedValue\r\n      }\r\n  );\r\n  \r\n  If(IsBlank(patchedValue), Reset(Self));\r\n  //Oppdatere collection sumverdi\r\nUpdateIf(ShadowColGG9SpC, OpplaeringssprakSamiskKvenskFinskId = ThisItem.OpplaeringssprakSamiskKvenskFinskId, \r\n  {GG_914_Total_Sum_Antall_Elever_Opplaering_Trinn_1_10: Sum(\r\n Coalesce(If(IsNumeric(TextInput3.Text), Value(TextInput3.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_1.Text), Value(TextInput3_1.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_4.Text), Value(TextInput3_4.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_5.Text), Value(TextInput3_5.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_6.Text), Value(TextInput3_6.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_346.Text), Value(TextInput3_346.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_347.Text), Value(TextInput3_347.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_348.Text), Value(TextInput3_348.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_349.Text), Value(TextInput3_349.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_350.Text), Value(TextInput3_350.Text), Blank()), 0))}\r\n)\r\n)\r\n\r\n"},{"name":"TextInput3_350","OnChange":"=//Set(vargblPatchingInProgress, true);\r\n\r\n//Patch først verdi på rad til collection for å spare ytelse \r\n//Patch(ColGG9SpC, ThisItem, {GG_913_Antall_Elever_Opplaering_Trinn_10: HeltallsFilter(Self.Text, true,4,false)});\r\n//Patch så til den dynamiske tabellen som er koblet mot svarDel3\r\nWith(\r\n  {\r\n      patchedValue: If(\r\n          IsMatch(Self.Text, \"^[1-9]\\d*$\" ),\r\n          Value(Self.Text),\r\n          Blank()\r\n      )\r\n  },\r\n  Patch(ShadowColGG9SpC, LookUp(ShadowColGG9SpC,OpplaeringssprakSamiskKvenskFinskId = ThisItem.OpplaeringssprakSamiskKvenskFinskId),{GG_913_Antall_Elever_Opplaering_Trinn_10:patchedValue});\r\n  Patch(\r\n      GrunnskoleOpplaeringssprakSamiskKvenskFinsk,\r\n      LookUp(GrunnskoleOpplaeringssprakSamiskKvenskFinsk, OpplaeringssprakSamiskKvenskFinskId = ThisItem.OpplaeringssprakSamiskKvenskFinskId),\r\n      {\r\n          GG_913_Antall_Elever_Opplaering_Trinn_10: patchedValue\r\n      }\r\n  );\r\n  \r\n  If(IsBlank(patchedValue), Reset(Self));\r\n\r\n  //Oppdatere collection sumverdi\r\nUpdateIf(ShadowColGG9SpC, OpplaeringssprakSamiskKvenskFinskId = ThisItem.OpplaeringssprakSamiskKvenskFinskId, \r\n  {GG_914_Total_Sum_Antall_Elever_Opplaering_Trinn_1_10: Sum(\r\n Coalesce(If(IsNumeric(TextInput3.Text), Value(TextInput3.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_1.Text), Value(TextInput3_1.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_4.Text), Value(TextInput3_4.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_5.Text), Value(TextInput3_5.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_6.Text), Value(TextInput3_6.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_346.Text), Value(TextInput3_346.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_347.Text), Value(TextInput3_347.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_348.Text), Value(TextInput3_348.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_349.Text), Value(TextInput3_349.Text), Blank()), 0) +\r\n Coalesce(If(IsNumeric(TextInput3_350.Text), Value(TextInput3_350.Text), Blank()), 0))}\r\n)\r\n)\r\n\r\n"}]
+ACTION TextInput4 =//Patch(ColGG9SpC,ThisItem,{ShowCombobox:true})
+ACTION Icon3_2 =Set(vargblPatchingInProgress, true);
+With( { RemoveID : Gallery2_1.Selected.OpplaeringssprakSamiskKvenskFinskId},
+
+RemoveIf(GrunnskoleOpplaeringssprakSamiskKvenskFinsk, OpplaeringssprakSamiskKvenskFinskId = RemoveID );
+
+RemoveIf(ShadowColGG9SpC, OpplaeringssprakSamiskKvenskFinskId = RemoveID );
+RemoveIf(ColGG9SpC, OpplaeringssprakSamiskKvenskFinskId = RemoveID );
+);// End with
+
+
+
+     ClearCollect(ColGG9SpC,
+   AddColumns(
+       ShowColumns(
+           Filter(GrunnskoleOpplaeringssprakSamiskKvenskFinsk, GsiGrunnskoleSvarDel9Id = nfSelectedRecord9.GsiGrunnskoleSvarDel9Id),
+           OpplaeringssprakSamiskKvenskFinskId,
+           GsiGrunnskoleSvarDel9Id,
+           GG_904_Antall_Elever_Opplaering_Trinn_1,
+           GG_905_Antall_Elever_Opplaering_Trinn_2,
+           GG_906_Antall_Elever_Opplaering_Trinn_3,
+           GG_907_Antall_Elever_Opplaering_Trinn_4,
+           GG_908_Antall_Elever_Opplaering_Trinn_5,
+           GG_909_Antall_Elever_Opplaering_Trinn_6,
+           GG_910_Antall_Elever_Opplaering_Trinn_7,
+           GG_911_Antall_Elever_Opplaering_Trinn_8,
+           GG_912_Antall_Elever_Opplaering_Trinn_9,
+           GG_913_Antall_Elever_Opplaering_Trinn_10,
+           GG_914_Total_Sum_Antall_Elever_Opplaering_Trinn_1_10,
+           GG_915_Opplaering_Samisk_Kvensk_Finsk
+       ),
+       RowNumber, 0, // Initialize RowNumber as Blank
+       ShowCombobox, If(ThisRecord.GG_915_Opplaering_Samisk_Kvensk_Finsk = Blank(),true, false)
+   ));
+
+
+ ClearCollect(ColGG9SpC,
+    ForAll(
+        Sequence(CountRows(ColGG9SpC)),
+        Patch(
+            ColGG9SpC,
+            LookUp(ColGG9SpC, RowNumber =0 ), // Look for the record with RowNumber initialized to Blank
+            {RowNumber: Value} // Assign RowNumber starting from 1
+        )
+    ));
+
+
+
+  ClearCollect(ShadowColGG9SpC,
+   AddColumns(
+       ShowColumns(
+           Filter(GrunnskoleOpplaeringssprakSamiskKvenskFinsk, GsiGrunnskoleSvarDel9Id = nfSelectedRecord9.GsiGrunnskoleSvarDel9Id),
+           OpplaeringssprakSamiskKvenskFinskId,
+           GsiGrunnskoleSvarDel9Id,
+           GG_904_Antall_Elever_Opplaering_Trinn_1,
+           GG_905_Antall_Elever_Opplaering_Trinn_2,
+           GG_906_Antall_Elever_Opplaering_Trinn_3,
+           GG_907_Antall_Elever_Opplaering_Trinn_4,
+           GG_908_Antall_Elever_Opplaering_Trinn_5,
+           GG_909_Antall_Elever_Opplaering_Trinn_6,
+           GG_910_Antall_Elever_Opplaering_Trinn_7,
+           GG_911_Antall_Elever_Opplaering_Trinn_8,
+           GG_912_Antall_Elever_Opplaering_Trinn_9,
+           GG_913_Antall_Elever_Opplaering_Trinn_10,
+           GG_914_Total_Sum_Antall_Elever_Opplaering_Trinn_1_10,
+           GG_915_Opplaering_Samisk_Kvensk_Finsk
+       ),
+       RowNumber, 0, // Initialize RowNumber as Blank
+       ShowCombobox, If(ThisRecord.GG_915_Opplaering_Samisk_Kvensk_Finsk = Blank(),true, false)
+   ));
+
+
+
+
+    ClearCollect(ShadowColGG9SpC,
+    ForAll(
+        Sequence(CountRows(ShadowColGG9SpC)),
+        Patch(
+            ShadowColGG9SpC,
+            LookUp(ShadowColGG9SpC, RowNumber =0 ), // Look for the record with RowNumber initialized to Blank
+            {RowNumber: Value} // Assign RowNumber starting from 1
+        )
+    ));
+
+    Set(vargblPatchingInProgress, false);
+ACTION Button3_3 =
+Set(vargblPatchingInProgress, true);
+    With(
+        {
+            NewRecord: Patch(GrunnskoleOpplaeringssprakSamiskKvenskFinsk, Defaults(GrunnskoleOpplaeringssprakSamiskKvenskFinsk), {GsiGrunnskoleSvarDel9Id: nfSelectedRecord9.GsiGrunnskoleSvarDel9Id})
+        },
+        Patch(ColGG9SpC, Defaults(ColGG9SpC), {
+            OpplaeringssprakSamiskKvenskFinskId: NewRecord.OpplaeringssprakSamiskKvenskFinskId,
+            GG_914_Total_Sum_Antall_Elever_Opplaering_Trinn_1_10:0,
+            RowNumber: Gallery2_1.AllItemsCount + 1,
+            ShowCombobox: true,
+            GsiGrunnskoleSvarDel9Id: nfSelectedRecord9.GsiGrunnskoleSvarDel9Id
+        });
+        Patch(ShadowColGG9SpC, Defaults(ShadowColGG9SpC), {
+            OpplaeringssprakSamiskKvenskFinskId: NewRecord.OpplaeringssprakSamiskKvenskFinskId,
+            GG_914_Total_Sum_Antall_Elever_Opplaering_Trinn_1_10:0,
+            RowNumber: Gallery2_1.AllItemsCount + 1,
+            ShowCombobox: true,
+            GsiGrunnskoleSvarDel9Id: nfSelectedRecord9.GsiGrunnskoleSvarDel9Id
+        });
+        
+        );//End with()
+    
+        
+
+        Set(vargblReset, true);
+        Set(vargblReset, false);
+        Set(vargblPatchingInProgress, false);
+
+
+SCREEN 10 MODES ["=nfDisplayMode","=DisplayMode.View"] VISIBILITY ["=If(Parent.Width < 800, false, true)","=If(MainScreenContainer2_8.Width > 801, false, true)","=vargblVisDrawer","=If(vargblEnvironment <> \"dev\", true, false)"]
+{"name":"Local_Comp_Input_Number_183","Control":"CanvasComponent","ComponentName":"Local_Comp_Input_Number","AlignInContainer":"=AlignInContainer.Start","AntallSiffer":"=4","Default":"=nfSelectedRecord10.GG_537_Antall_Gutter_Tysk_Trinn_8","Displaymode":"=nfDisplayMode","Height":"=Parent.Height","Input_BackgroundColor":"=RGBA(255, 255, 255, 1)","KunPositiveTall":"=true","LayoutMaxHeight":"=","LayoutMaxWidth":"=","Onchange":"=\nPatch(\n   GsiGrunnskoleSvarDel10,\n    nfSelectedRecord10,\n    {GG_537_Antall_Gutter_Tysk_Trinn_8:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);\n\n\n\n\n","Reset":"=true","TillatNull":"=true","TusenskilleTegn":"=vargblTusenSkilleTegn","Width":"=Parent.Width"}
+{"name":"Local_Comp_Input_Number_182","Control":"CanvasComponent","ComponentName":"Local_Comp_Input_Number","AntallSiffer":"=4","Default":"=nfSelectedRecord10.GG_538_Antall_Jenter_Tysk_Trinn_8","Displaymode":"=nfDisplayMode","Height":"=Parent.Height","Input_BackgroundColor":"=RGBA(255, 255, 255, 1)","KunPositiveTall":"=true","LayoutMaxHeight":"=","LayoutMaxWidth":"=","Onchange":"=\nPatch(\n   GsiGrunnskoleSvarDel10,\n    nfSelectedRecord10,\n    {GG_538_Antall_Jenter_Tysk_Trinn_8:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);\n\n\n\n\n","Reset":"=true","TillatNull":"=true","TusenskilleTegn":"=vargblTusenSkilleTegn","Width":"=Parent.Width"}
+{"name":"Local_Comp_Input_Number_131","Control":"CanvasComponent","ComponentName":"Local_Comp_Input_Number","AntallSiffer":"=","Default":"=nfSelectedRecord10.GG_539_Sum_Tysk_Trinn_8","Displaymode":"=DisplayMode.View","Height":"=Parent.Height","Input_BackgroundColor":"=RGBA(255, 255, 255, 1)","KunPositiveTall":"=true","LayoutMaxHeight":"=","LayoutMaxWidth":"=","Onchange":"=\n\n\n\n\n\n","Reset":"=true","TillatNull":"=true","TusenskilleTegn":"=vargblTusenSkilleTegn","Width":"=Parent.Width"}
+CALCULATIONS []

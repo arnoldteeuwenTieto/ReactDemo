@@ -1,0 +1,4 @@
+.dev-field-tooltip { position: fixed; z-index: 1200; width: 320px; max-width: calc(100vw - 16px); max-height: calc(100vh - 16px); overflow: auto; padding: 10px; border: 1px solid var(--control-border); border-radius: 4px; background: var(--surface); color: var(--text); box-shadow: 0 3px 10px rgb(0 0 0 / 15%); font-size: 13px; }
+.dev-field-tooltip dl { display: block; }
+.dev-field-tooltip dt { font-weight: 600; margin-top: 6px; }
+.dev-field-tooltip dd { font-weight: 400; overflow-wrap: anywhere; }

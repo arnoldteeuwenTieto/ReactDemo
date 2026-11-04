@@ -1,0 +1,5 @@
+import fs from 'node:fs';import {controls} from './inspect-powerapps.mjs';
+let output='';
+for(const section of [5,6,7]){let ns=controls[section],map=new Map(ns.map(n=>[n.name,n]));output+='\nSECTION '+section+'\n';for(const n of ns){if(n.props.Input_HeaderText)output+='HEADER '+n.name+' '+n.props.Input_HeaderText+'\n';if(n.props.Default&&/\.GG_/.test(n.props.Default)){let ancestors=[];let p=n;while(p){if(p.props.Visible)ancestors.push(p.name+': '+p.props.Visible);p=map.get(p.parent)}output+=JSON.stringify({control:n.name,key:n.props.Default.match(/(?:nfSelectedRecord\d+|ThisItem)\.(GG_\w+)/)?.[1],default:n.props.Default,mode:n.props.DisplayMode,format:n.props.Format,filter:n.props.OnChange?.match(/(?:Heltall|Desimal|DesimalTall|Decimal|If|Round|Value)\w*\([^\n]*\)/g),visible:ancestors})+'\n';}}
+output+='OTHER '+JSON.stringify(ns.filter(n=>n.props.Items||(/Input|Combo|Radio/.test(n.props.Control??'')&&!n.props.Default)).map(n=>({control:n.name,props:n.props})))+'\n';}
+fs.writeFileSync('gsi-react-import/staff-compact.txt',output);

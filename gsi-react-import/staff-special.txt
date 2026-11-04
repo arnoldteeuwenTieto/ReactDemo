@@ -1,0 +1,127 @@
+SECTION 5
+{"name":"Local_Comp_Input_Number_130","props":{"Control":"CanvasComponent","ComponentName":"Local_Comp_Input_Number","AntallSiffer":"=4","Default":"=nfSelectedRecord8.GG_335_Antall_Elever_Saerskilt_Norsk_Opplaering_Trinn_1","Displaymode":"=nfDisplayMode","Height":"=Parent.Height","Input_BackgroundColor":"=RGBA(255, 255, 255, 1)","KunPositiveTall":"=false","LayoutMaxHeight":"=","LayoutMaxWidth":"=","Onchange":"=\nPatch(\n   GsiGrunnskoleSvarDel8,\n    nfSelectedRecord8,\n    {GG_335_Antall_Elever_Saerskilt_Norsk_Opplaering_Trinn_1:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);\nReset(Self);","Reset":"=true","TillatNull":"=true","TusenskilleTegn":"=vargblTusenSkilleTegn","Visible":"=false","Width":"=Parent.Width"}}
+SECTION 6
+{"name":"Label4_229","props":{"Control":"Label@2.5.1","AutoHeight":"=true","DisplayMode":"=DisplayMode.View","Font":"=FontBody","Height":"=51","LayoutMaxHeight":"=","LayoutMaxWidth":"=","PaddingBottom":"=14","PaddingLeft":"=10","PaddingTop":"=14","Size":"=Size_StandardText","Text":"=//\"Årsramme for undervisning\"\nLookUp(nfViewSprak, BeregnetId = \"GG_H24_U57\").UndersporsmalTekst","Width":"=Parent.Width"}}
+TextInput3_129 CHANGE =Patch(
+    GsiGrunnskoleSvarDel6,
+    nfSelectedRecord6,
+    {GG_224_Aarsramme_Undervisning_Trinn_1_7: HeltallsFilter(Self.Text, true,4,false)}
+);
+
+If(
+    HeltallsFilter(Self.Text, true,4,false) = Blank(),
+    Reset(Self)
+);
+
+'sqldb-gsi-dev-ne_2'.dboUpdateSummationsGrunnskoleDel6Arsverk({SkjemaStatusId: vargblSkjemaStatusId});
+
+
+
+
+
+TextInput3_130 CHANGE =Patch(
+    GsiGrunnskoleSvarDel6,
+    nfSelectedRecord6,
+    {GG_225_Aarsramme_Undervisning_Trinn_8_10: HeltallsFilter(Self.Text, true,4,false)}
+);
+If(
+    HeltallsFilter(Self.Text, true,4,false) = Blank(),
+    Reset(Self)
+);
+
+
+'sqldb-gsi-dev-ne_2'.dboUpdateSummationsGrunnskoleDel6Arsverk({SkjemaStatusId: vargblSkjemaStatusId});
+{"name":"Label4_252","props":{"Control":"Label@2.5.1","DisplayMode":"=DisplayMode.View","Font":"=FontBody","Height":"=51","LayoutMaxHeight":"=","LayoutMaxWidth":"=","PaddingBottom":"=14","PaddingLeft":"=10","PaddingTop":"=14","Size":"=Size_StandardText","Text":"=//\"Rektor/assisterende rektor\"\nLookUp(nfViewSprak, BeregnetId = \"GG_H23_U53\").UndersporsmalTekst","Width":"=Parent.Width"}}
+TextInput2_65 CHANGE =
+
+    If(
+    
+    ( !IsMatch((Self.Text), "^[0-9]+(?:[.,][0-9]+)?$") || Value(Self.Text) = Blank() || Value(Self.Text) = 0 || Value(Self.Text) > 9999),
+    Patch(GsiGrunnskoleSvarDel6,nfSelectedRecord6,{GG_221_Antall_Aarsverk_Rektor: Blank() });
+        Reset(Self), 
+    
+    
+    Len(Self.Text) > 3 && IsMatch((Self.Text), "^[0-9]+(?:[.,][0-9]+)?$" ), 
+        Patch(GsiGrunnskoleSvarDel6,nfSelectedRecord6,{GG_221_Antall_Aarsverk_Rektor:Round(Value (Self.Text),2)});Reset(Self), 
+    
+    
+    Patch(GsiGrunnskoleSvarDel6,nfSelectedRecord6,{GG_221_Antall_Aarsverk_Rektor: Value(Self.Text) })
+    
+    
+    );
+
+
+{"name":"Label4_254","props":{"Control":"Label@2.5.1","AutoHeight":"=true","DisplayMode":"=DisplayMode.View","Font":"=FontBody","Height":"=51","LayoutMaxHeight":"=","LayoutMaxWidth":"=","PaddingBottom":"=14","PaddingLeft":"=10","PaddingTop":"=14","Size":"=Size_StandardText","Text":"=//\"Undervisningsinspektør/avdelingsleder\"\nLookUp(nfViewSprak, BeregnetId = \"GG_H23_U54\").UndersporsmalTekst","Width":"=Parent.Width"}}
+TextInput2_66 CHANGE =
+
+    If(
+    
+    ( !IsMatch((Self.Text), "^[0-9]+(?:[.,][0-9]+)?$" ) || Value(Self.Text) = Blank() || Value(Self.Text) = 0 || Value(Self.Text) > 9999)
+        , Patch(GsiGrunnskoleSvarDel6,nfSelectedRecord6,{GG_222_Antall_Aarsverk_Undervisningsinspektoer: Blank() });
+        Reset(Self), 
+    
+    IsMatch((Self.Text), "^[0-9]+(?:[.,][0-9]+)?$" ), 
+        Patch(GsiGrunnskoleSvarDel6,nfSelectedRecord6,{GG_222_Antall_Aarsverk_Undervisningsinspektoer:Round(Value (Self.Text),2)});Reset(Self), 
+    Reset(Self));
+{"name":"Label4_233","props":{"Control":"Label@2.5.1","AutoHeight":"=true","DisplayMode":"=DisplayMode.View","Font":"=FontBody","Height":"=51","LayoutMaxHeight":"=","LayoutMaxWidth":"=","PaddingBottom":"=14","PaddingLeft":"=10","PaddingTop":"=14","Size":"=Size_StandardText","Text":"=//\"Sum årsverk personale med administrative og pedagogiske lederoppgaver\"\nLookUp(nfViewSprak, BeregnetId = \"GG_H23_U55\").UndersporsmalTekst","Width":"=Parent.Width"}}
+TextInput2_58 CHANGE =
+
+If(
+    
+    ( !IsMatch((Self.Text), "^[0-9]+(?:[.,][0-9]+)?$" ) || Value(Self.Text) = Blank() || Value(Self.Text) = 0 || Value(Self.Text) > 99)
+        , Patch(GsiGrunnskoleSvarDel6,nfSelectedRecord6,{GG_223_Sum_Aarsverk_Administrative_Oppgaver: Blank() });
+        Reset(Self), 
+    
+    IsMatch((Self.Text), "^[0-9]+(?:[.,][0-9]+)?$" ), 
+        Patch(GsiGrunnskoleSvarDel6,nfSelectedRecord6,{GG_223_Sum_Aarsverk_Administrative_Oppgaver:Round(Value (Self.Text),2)});Reset(Self), 
+    Reset(Self));
+{"name":"Label4_262","props":{"Control":"Label@2.5.1","AutoHeight":"=true","DisplayMode":"=DisplayMode.View","Font":"=FontBody","Height":"=51","LayoutMaxHeight":"=","LayoutMaxWidth":"=","PaddingBottom":"=14","PaddingLeft":"=10","PaddingTop":"=14","Size":"=Size_StandardText","Text":"=//\"Skolebibliotekarer\"\nLookUp(nfViewSprak, BeregnetId = \"GG_H25_U58\").UndersporsmalTekst","Width":"=Parent.Width"}}
+TextInput2_69 CHANGE =
+
+  If(
+    
+    ( !IsMatch((Self.Text), "^[0-9]+(?:[.,][0-9]+)?$") || Value(Self.Text) = Blank() || Value(Self.Text) = 0 || Value(Self.Text) > 9999),
+    Patch(GsiGrunnskoleSvarDel6,nfSelectedRecord6,{GG_226_Antall_Aarsverk_Skolebibliotekar: Blank() });
+        Reset(Self), 
+    
+    
+    Len(Self.Text) > 3 && IsMatch((Self.Text), "^[0-9]+(?:[.,][0-9]+)?$" ), 
+        Patch(GsiGrunnskoleSvarDel6,nfSelectedRecord6,{GG_226_Antall_Aarsverk_Skolebibliotekar:Round(Value (Self.Text),2)});Reset(Self), 
+    
+    
+    Patch(GsiGrunnskoleSvarDel6,nfSelectedRecord6,{GG_226_Antall_Aarsverk_Skolebibliotekar: Value(Self.Text) })
+    
+    
+    );
+{"name":"Label4_264","props":{"Control":"Label@2.5.1","AutoHeight":"=true","DisplayMode":"=DisplayMode.View","Font":"=FontBody","Height":"=51","LayoutMaxHeight":"=","LayoutMaxWidth":"=","PaddingBottom":"=14","PaddingLeft":"=10","PaddingTop":"=14","Size":"=Size_StandardText","Text":"=//\"Kontorteknisk personale\"\nLookUp(nfViewSprak, BeregnetId = \"GG_H25_U59\").UndersporsmalTekst","Width":"=Parent.Width"}}
+TextInput2_70 CHANGE =
+
+  If(
+    
+    ( !IsMatch((Self.Text), "^[0-9]+(?:[.,][0-9]+)?$") || Value(Self.Text) = Blank() || Value(Self.Text) = 0 || Value(Self.Text) > 9999),
+    Patch(GsiGrunnskoleSvarDel6,nfSelectedRecord6,{GG_227_Antall_Aarsverk_Kontorteknisk_Personale: Blank() });
+        Reset(Self), 
+    
+    
+    Len(Self.Text) > 3 && IsMatch((Self.Text), "^[0-9]+(?:[.,][0-9]+)?$" ), 
+        Patch(GsiGrunnskoleSvarDel6,nfSelectedRecord6,{GG_227_Antall_Aarsverk_Kontorteknisk_Personale:Round(Value (Self.Text),2)});Reset(Self), 
+    
+    
+    Patch(GsiGrunnskoleSvarDel6,nfSelectedRecord6,{GG_227_Antall_Aarsverk_Kontorteknisk_Personale: Value(Self.Text) })
+    
+    
+    );
+{"name":"Label4_920","props":{"Control":"Label@2.5.1","AutoHeight":"=true","DisplayMode":"=DisplayMode.View","Font":"=FontBody","Height":"=51","LayoutMaxHeight":"=","LayoutMaxWidth":"=","PaddingBottom":"=14","PaddingLeft":"=10","PaddingTop":"=14","Size":"=Size_StandardText","Text":"=//\"Årsramme for undervisning\"\nLookUp(nfViewSprak, BeregnetId = \"GG_H64_U128\").UndersporsmalTekst","Width":"=Parent.Width"}}
+{"name":"Label19","props":{"Control":"Label@2.5.1","Align":"=Align.Right","DisplayMode":"=DisplayMode.View","Height":"=Parent.Height","LayoutMaxHeight":"=","LayoutMaxWidth":"=","Size":"=Size_StandardText","Text":"=   //BOGI3804\r\n    nfSelectedRecord6.GG_1049_Beregnede_Arsverk_Til_Undervisning_Trinn_1_4\r\n\r\n    \r\n//nfSumBeregnendeårsverk\r\n\r\n/*Round(\r\nIf(\r\n   IsBlank(nfSelectedRecord4.GG_81_Sum_Aarstimer_Undervisning_Trinn1_10) || \r\n   IsBlank(nfSelectedRecord6.GG_225_Aarsramme_Undervisning_Trinn_8_10) || \r\n   IsBlank(nfSelectedRecord6.GG_224_Aarsramme_Undervisning_Trinn_1_7) || \r\n   (nfSelectedRecord6.GG_225_Aarsramme_Undervisning_Trinn_8_10 + nfSelectedRecord6.GG_224_Aarsramme_Undervisning_Trinn_1_7) = 0,\r\n   0, // Return 0 or an appropriate value if any part is blank or if division by zero would occur\r\n   nfSelectedRecord4.GG_81_Sum_Aarstimer_Undervisning_Trinn1_10 / \r\n   (nfSelectedRecord6.GG_225_Aarsramme_Undervisning_Trinn_8_10 + nfSelectedRecord6.GG_224_Aarsramme_Undervisning_Trinn_1_7)\r\n) //end if\r\n,1) *///round 1 desimal*/\r\n\r\n/*\r\nRound(\r\nIfError(\r\n    If(\r\n        nfSelectedRecord6.GG_224_Aarsramme_Undervisning_Trinn_1_7 = 0,\r\n        0,\r\n        nfSelectedRecord4.GG_78_Sum_Aarstimer_Undervisning_Trinn1_4 / nfSelectedRecord6.GG_224_Aarsramme_Undervisning_Trinn_1_7\r\n    ),0),\r\n    2)\r\n    */\r\n\r\n ","Width":"=Parent.Width"}}
+{"name":"Label19_45","props":{"Control":"Label@2.5.1","Align":"=Align.Right","DisplayMode":"=DisplayMode.View","Height":"=Parent.Height","LayoutMaxHeight":"=","LayoutMaxWidth":"=","Size":"=Size_StandardText","Text":"=nfSelectedRecord6.GG_1050_Beregnede_Arsverk_Til_Undervisning_Trinn_5_7\n\n\n//nfSumBeregnendeårsverk\n\n/*Round(\nIf(\n   IsBlank(nfSelectedRecord4.GG_81_Sum_Aarstimer_Undervisning_Trinn1_10) || \n   IsBlank(nfSelectedRecord6.GG_225_Aarsramme_Undervisning_Trinn_8_10) || \n   IsBlank(nfSelectedRecord6.GG_224_Aarsramme_Undervisning_Trinn_1_7) || \n   (nfSelectedRecord6.GG_225_Aarsramme_Undervisning_Trinn_8_10 + nfSelectedRecord6.GG_224_Aarsramme_Undervisning_Trinn_1_7) = 0,\n   0, // Return 0 or an appropriate value if any part is blank or if division by zero would occur\n   nfSelectedRecord4.GG_81_Sum_Aarstimer_Undervisning_Trinn1_10 / \n   (nfSelectedRecord6.GG_225_Aarsramme_Undervisning_Trinn_8_10 + nfSelectedRecord6.GG_224_Aarsramme_Undervisning_Trinn_1_7)\n) //end if\n,1) *///round 1 desimal*/\n\n\n\n","Width":"=Parent.Width"}}
+{"name":"Label19_46","props":{"Control":"Label@2.5.1","Align":"=Align.Right","DisplayMode":"=DisplayMode.View","Height":"=Parent.Height","Size":"=Size_StandardText","Text":"=//BOGI-3804\nnfSelectedRecord6.GG_1051_Beregnede_Arsverk_Til_Undervisning_Trinn_8_10\n\n\n\n//nfSumBeregnendeårsverk\n\n/*Round(\nIf(\n   IsBlank(nfSelectedRecord4.GG_81_Sum_Aarstimer_Undervisning_Trinn1_10) || \n   IsBlank(nfSelectedRecord6.GG_225_Aarsramme_Undervisning_Trinn_8_10) || \n   IsBlank(nfSelectedRecord6.GG_224_Aarsramme_Undervisning_Trinn_1_7) || \n   (nfSelectedRecord6.GG_225_Aarsramme_Undervisning_Trinn_8_10 + nfSelectedRecord6.GG_224_Aarsramme_Undervisning_Trinn_1_7) = 0,\n   0, // Return 0 or an appropriate value if any part is blank or if division by zero would occur\n   nfSelectedRecord4.GG_81_Sum_Aarstimer_Undervisning_Trinn1_10 / \n   (nfSelectedRecord6.GG_225_Aarsramme_Undervisning_Trinn_8_10 + nfSelectedRecord6.GG_224_Aarsramme_Undervisning_Trinn_1_7)\n) //end if\n,1) *///round 1 desimal*/\n\n/*\nRound(\n IfError(\n    If(\n        nfSelectedRecord6.GG_225_Aarsramme_Undervisning_Trinn_8_10 = 0,\n        0,\n        nfSelectedRecord4.GG_80_Sum_Aarstimer_Undervisning_Trinn8_10 / nfSelectedRecord6.GG_225_Aarsramme_Undervisning_Trinn_8_10\n    ),0),\n    2) \n    */\n","Width":"=Parent.Width"}}
+{"name":"Label19_47","props":{"Control":"Label@2.5.1","Align":"=Align.Right","DisplayMode":"=DisplayMode.View","Height":"=Parent.Height","LayoutMaxHeight":"=","LayoutMaxWidth":"=","Size":"=Size_StandardText","Text":"=\nnfSelectedRecord6.GG_944_Sum_Beregnede_Arsverk_Til_Undervisning\n//nfSumBeregnendeårsverk\n\n/*Round(\nIf(\n   IsBlank(nfSelectedRecord4.GG_81_Sum_Aarstimer_Undervisning_Trinn1_10) || \n   IsBlank(nfSelectedRecord6.GG_225_Aarsramme_Undervisning_Trinn_8_10) || \n   IsBlank(nfSelectedRecord6.GG_224_Aarsramme_Undervisning_Trinn_1_7) || \n   (nfSelectedRecord6.GG_225_Aarsramme_Undervisning_Trinn_8_10 + nfSelectedRecord6.GG_224_Aarsramme_Undervisning_Trinn_1_7) = 0,\n   0, // Return 0 or an appropriate value if any part is blank or if division by zero would occur\n   nfSelectedRecord4.GG_81_Sum_Aarstimer_Undervisning_Trinn1_10 / \n   (nfSelectedRecord6.GG_225_Aarsramme_Undervisning_Trinn_8_10 + nfSelectedRecord6.GG_224_Aarsramme_Undervisning_Trinn_1_7)\n) //end if\n,1) *///round 1 desimal*/\n/*\nRound(\n    IfError(\n        If(nfSelectedRecord6.GG_224_Aarsramme_Undervisning_Trinn_1_7 = 0, 0,\n            nfSelectedRecord4.GG_78_Sum_Aarstimer_Undervisning_Trinn1_4 / nfSelectedRecord6.GG_224_Aarsramme_Undervisning_Trinn_1_7\n        ), 0\n    ), 2\n) + \nRound(\n    IfError(\n        If(nfSelectedRecord6.GG_224_Aarsramme_Undervisning_Trinn_1_7 = 0, 0,\n            nfSelectedRecord4.GG_79_Sum_Aarstimer_Undervisning_Trinn5_7 / nfSelectedRecord6.GG_224_Aarsramme_Undervisning_Trinn_1_7\n        ), 0\n    ), 2\n) + \nRound(\n    IfError(\n        If(nfSelectedRecord6.GG_225_Aarsramme_Undervisning_Trinn_8_10 = 0, 0,\n            nfSelectedRecord4.GG_80_Sum_Aarstimer_Undervisning_Trinn8_10 / nfSelectedRecord6.GG_225_Aarsramme_Undervisning_Trinn_8_10\n        ), 0\n    ), 2\n)*/","Width":"=Parent.Width"}}
+SECTION 7
+{"name":"Local_Comp_Input_Number_269","props":{"Control":"CanvasComponent","ComponentName":"Local_Comp_Input_Number","AlignInContainer":"=AlignInContainer.Start","AntallSiffer":"=4","Default":"=nfSelectedRecord7.GG_920_Antall_Elever_Individuell_Tilrettelagt_Opplaering_Gutter_Rad_1","Displaymode":"=nfDisplayMode","Height":"=Parent.Height","Input_BackgroundColor":"=RGBA(255, 255, 255, 1)","KunPositiveTall":"=true","LayoutMaxHeight":"=","LayoutMaxWidth":"=","Onchange":"=\nPatch(\n   GsiGrunnskoleSvarDel7,\n    nfSelectedRecord7,\n    {GG_920_Antall_Elever_Individuell_Tilrettelagt_Opplaering_Gutter_Rad_1:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);\n\n\n\n\n","Reset":"=true","TillatNull":"=true","TusenskilleTegn":"=vargblTusenSkilleTegn","Width":"=Parent.Width"}}
+{"name":"Local_Comp_Input_Number_270","props":{"Control":"CanvasComponent","ComponentName":"Local_Comp_Input_Number","AntallSiffer":"=4","Default":"=nfSelectedRecord7.GG_921_Antall_Elever_Individuell_Tilrettelagt_Opplaering_Jenter_Rad_1","Displaymode":"=nfDisplayMode","Height":"=Parent.Height","Input_BackgroundColor":"=RGBA(255, 255, 255, 1)","KunPositiveTall":"=true","LayoutMaxHeight":"=","LayoutMaxWidth":"=","Onchange":"=\nPatch(\n   GsiGrunnskoleSvarDel7,\n    nfSelectedRecord7,\n    {GG_921_Antall_Elever_Individuell_Tilrettelagt_Opplaering_Jenter_Rad_1:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);\n\n\n\n\n","Reset":"=true","TillatNull":"=true","TusenskilleTegn":"=vargblTusenSkilleTegn","Width":"=Parent.Width"}}
+{"name":"Local_Comp_Input_Number_271","props":{"Control":"CanvasComponent","ComponentName":"Local_Comp_Input_Number","AntallSiffer":"=4","Default":"=nfSelectedRecord7.GG_923_Antall_Elever_Individuell_Uten_Tilrettelagt_Opplaering_Gutter_Rad_1","Displaymode":"=nfDisplayMode","Height":"=Parent.Height","Input_BackgroundColor":"=RGBA(255, 255, 255, 1)","KunPositiveTall":"=true","LayoutMaxHeight":"=","LayoutMaxWidth":"=","Onchange":"=\nPatch(\n   GsiGrunnskoleSvarDel7,\n    nfSelectedRecord7,\n    {GG_923_Antall_Elever_Individuell_Uten_Tilrettelagt_Opplaering_Gutter_Rad_1:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);\n\n\n\n\n","Reset":"=true","TillatNull":"=true","TusenskilleTegn":"=vargblTusenSkilleTegn","Width":"=Parent.Width"}}
+{"name":"Local_Comp_Input_Number_272","props":{"Control":"CanvasComponent","ComponentName":"Local_Comp_Input_Number","AntallSiffer":"=4","Default":"=nfSelectedRecord7.GG_924_Antall_Elever_Individuell_Uten_Tilrettelagt_Opplaering_Jenter_Rad_1","Displaymode":"=nfDisplayMode","Height":"=Parent.Height","Input_BackgroundColor":"=RGBA(255, 255, 255, 1)","KunPositiveTall":"=true","LayoutMaxHeight":"=","LayoutMaxWidth":"=","Onchange":"=\nPatch(\n   GsiGrunnskoleSvarDel7,\n    nfSelectedRecord7,\n    {GG_924_Antall_Elever_Individuell_Uten_Tilrettelagt_Opplaering_Jenter_Rad_1:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);\n\n\n\n\n","Reset":"=true","TillatNull":"=true","TusenskilleTegn":"=vargblTusenSkilleTegn","Width":"=Parent.Width"}}
+{"name":"Local_Comp_Input_Number_273","props":{"Control":"CanvasComponent","ComponentName":"Local_Comp_Input_Number","AlignInContainer":"=AlignInContainer.Start","AntallSiffer":"=4","Default":"=nfSelectedRecord7.GG_926_Antall_Elever_Individuell_Tilrettelagt_Opplaering_Gutter_Rad_2","Displaymode":"=nfDisplayMode","Height":"=Parent.Height","Input_BackgroundColor":"=RGBA(255, 255, 255, 1)","KunPositiveTall":"=true","LayoutMaxHeight":"=","LayoutMaxWidth":"=","Onchange":"=\nPatch(\n   GsiGrunnskoleSvarDel7,\n    nfSelectedRecord7,\n    {GG_926_Antall_Elever_Individuell_Tilrettelagt_Opplaering_Gutter_Rad_2:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);\n\n\n\n\n","Reset":"=true","TillatNull":"=true","TusenskilleTegn":"=vargblTusenSkilleTegn","Width":"=Parent.Width"}}
+{"name":"Local_Comp_Input_Number_136","props":{"Control":"CanvasComponent","ComponentName":"Local_Comp_Input_Number","AntallSiffer":"=4","Default":"=nfSelectedRecord7.GG_927_Antall_Elever_Individuell_Tilrettelagt_Opplaering_Jenter_Rad_2","Displaymode":"=nfDisplayMode","Height":"=Parent.Height","Input_BackgroundColor":"=RGBA(255, 255, 255, 1)","KunPositiveTall":"=true","LayoutMaxHeight":"=","LayoutMaxWidth":"=","Onchange":"=\nPatch(\n   GsiGrunnskoleSvarDel7,\n    nfSelectedRecord7,\n    {GG_927_Antall_Elever_Individuell_Tilrettelagt_Opplaering_Jenter_Rad_2:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);\n\n\n\n\n","Reset":"=true","TillatNull":"=true","TusenskilleTegn":"=vargblTusenSkilleTegn","Width":"=Parent.Width"}}
+{"name":"Local_Comp_Input_Number_275","props":{"Control":"CanvasComponent","ComponentName":"Local_Comp_Input_Number","AntallSiffer":"=4","Default":"=nfSelectedRecord7.GG_929_Antall_Elever_Individuell_Uten_Tilrettelagt_Opplaering_Gutter_Rad_2","Displaymode":"=nfDisplayMode","Height":"=Parent.Height","Input_BackgroundColor":"=RGBA(255, 255, 255, 1)","KunPositiveTall":"=true","LayoutMaxHeight":"=","LayoutMaxWidth":"=","Onchange":"=\nPatch(\n   GsiGrunnskoleSvarDel7,\n    nfSelectedRecord7,\n    {GG_929_Antall_Elever_Individuell_Uten_Tilrettelagt_Opplaering_Gutter_Rad_2:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);\n\n\n\n\n","Reset":"=true","TillatNull":"=true","TusenskilleTegn":"=vargblTusenSkilleTegn","Width":"=Parent.Width"}}
+{"name":"Local_Comp_Input_Number_135","props":{"Control":"CanvasComponent","ComponentName":"Local_Comp_Input_Number","AntallSiffer":"=4","Default":"=nfSelectedRecord7.GG_930_Antall_Elever_Individuell_Uten_Tilrettelagt_Opplaering_Jenter_Rad_2","Displaymode":"=nfDisplayMode","Height":"=Parent.Height","Input_BackgroundColor":"=RGBA(255, 255, 255, 1)","KunPositiveTall":"=true","LayoutMaxHeight":"=","LayoutMaxWidth":"=","Onchange":"=Patch(\n    GsiGrunnskoleSvarDel7,\n    nfSelectedRecord7,\n    {GG_930_Antall_Elever_Individuell_Uten_Tilrettelagt_Opplaering_Jenter_Rad_2: HeltallsFilter(OutPatchVerdi,true,4,false)}\n);","Reset":"=true","TillatNull":"=true","TusenskilleTegn":"=vargblTusenSkilleTegn","Width":"=Parent.Width"}}

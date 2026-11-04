@@ -1,0 +1,713 @@
+Screens:
+  Del17_Kontroller:
+    Properties:
+      OnVisible: "=// ====================================================================\r\n// Screen Del17 - OnVisible\r\n// Safer order:\r\n// 1) access check\r\n// 2) rebuild Del17 validation values FIRST\r\n// 3) rebuild active false controllers from fresh Status formulas\r\n// 4) merge comments\r\n// 5) patch once at the end\r\n// ====================================================================\r\n\r\n// ----------------------------------------------------\r\n// 0. Access check\r\n// ----------------------------------------------------\r\nSet(\r\n    varHarMistetTilgang,\r\n    IsBlank(\r\n        LookUp(\r\n            Tilgang,\r\n            TilgangId = nfTilgangstabell.TilgangId,\r\n            TilgangId\r\n        )\r\n    )\r\n);\r\n\r\n// ----------------------------------------------------\r\n// 1. OPTIONAL: refresh/reload source-backed data first\r\n// Only keep this if stale selected records are a real issue.\r\n// Adjust data sources / Set(...) statements to your app.\r\n// ----------------------------------------------------\r\n// Refresh(GsiGrunnskoleSvar);\r\n// Refresh(Tilgang);\r\n// Refresh(nfKontrolleretable);\r\n\r\n// Example if needed:\r\n// Set(nfSelectedRecord,  LookUp(GsiGrunnskoleSvar, GsiGrunnskoleSvarId = nfSelectedRecord.GsiGrunnskoleSvarId));\r\n// Set(nfSelectedRecord2, ...);\r\n// Set(nfSelectedRecord3, ...);\r\n// etc.\r\n\r\n// ----------------------------------------------------\r\n// 2. Build Del17 values FIRST\r\n// This must happen before anything reads nfKontrolleretable.Status\r\n// ----------------------------------------------------\r\nClearCollect(\r\n    ColDel17Kontrolleroverikt,\r\n    Table(\r\n        {KontrollerId: \"GG-A14\", Placeholder: \"(X)\", Value: Text(Coalesce(nfSelectedRecord9.GG_400_Sum_Elever_Samisk_Trinn_1_10, 0))},\r\n        {KontrollerId: \"GG-A14\", Placeholder: \"(Y)\", Value: Text(\r\n            Sum(\r\n                Filter(\r\n                    ShadowColGG9SpC,\r\n                    (\r\n                        GG_915_Opplaering_Samisk_Kvensk_Finsk = \"Lulesamisk som førstespråk\" ||\r\n                        GG_915_Opplaering_Samisk_Kvensk_Finsk = \"Sørsamisk som førstespråk\" ||\r\n                        GG_915_Opplaering_Samisk_Kvensk_Finsk = \"Nordsamisk som førstespråk\"\r\n                    ) &&\r\n                    GsiGrunnskoleSvarDel9Id = nfSelectedRecord9.GsiGrunnskoleSvarDel9Id\r\n                ),\r\n                GG_914_Total_Sum_Antall_Elever_Opplaering_Trinn_1_10\r\n            )\r\n        )},\r\n\r\n        {KontrollerId: \"GG-A15\", Placeholder: \"{X}\", Value: Text(\r\n            Sum(\r\n                Filter(\r\n                    ShadowColGG9SpC,\r\n                    GG_915_Opplaering_Samisk_Kvensk_Finsk = \"Finsk som andrespråk\" &&\r\n                    GsiGrunnskoleSvarDel9Id = nfSelectedRecord9.GsiGrunnskoleSvarDel9Id\r\n                ),\r\n                GG_914_Total_Sum_Antall_Elever_Opplaering_Trinn_1_10\r\n            )\r\n        )},\r\n\r\n        {KontrollerId: \"GG-A16\", Placeholder: \"(X)\", Value: Text(\r\n            nfSelectedRecord5.GG_161_Antall_Laerere_Totalt_Trinn1_4 +\r\n            nfSelectedRecord5.GG_162_Antall_Laerere_Totalt_Trinn5_7 +\r\n            nfSelectedRecord5.GG_163_Antall_Laerere_Totalt_Trinn8_10\r\n        )},\r\n        {KontrollerId: \"GG-A16\", Placeholder: \"{Y}\", Value: Text(Coalesce(nfSelectedRecord5.GG_164_Antall_Laerere_Totalt_Menn, 0))},\r\n        {KontrollerId: \"GG-A16\", Placeholder: \"{Z}\", Value: Text(Coalesce(nfSelectedRecord5.GG_165_Antall_Laerere_Totalt_Kvinner, 0))},       \r\n\r\n            { KontrollerId: \"GG-A17\", Placeholder: \"(X)\", Value: Text( Sum(nfSelectedRecord5.GG_161_Antall_Laerere_Totalt_Trinn1_4+nfSelectedRecord5.GG_162_Antall_Laerere_Totalt_Trinn5_7 + nfSelectedRecord5.GG_163_Antall_Laerere_Totalt_Trinn8_10)) },\r\n            { KontrollerId: \"GG-A17\", Placeholder: \"(Y)\", Value: Text(Coalesce(nfSelectedRecord5.GG_170_Antall_Kontaktlaerere_Menn,0)) },\r\n            { KontrollerId: \"GG-A17\", Placeholder: \"(Z)\", Value: Text(Coalesce(nfSelectedRecord5.GG_171_Antall_Kontaktlaerere_Kvinner,0)) },\r\n            { KontrollerId: \"GG-A18\", Placeholder: \"(X)-(Y)\", Value: $\"{Coalesce( nfSelectedRecord2.GG_228_Laveste_Trinn_Paa_Skolen,0)}-{ Coalesce(nfSelectedRecord2.GG_229_Hoeyeste_Trinn_Paa_Skolen,0)}\" },\r\n            { KontrollerId: \"GG-A19\", Placeholder: \"(X)\", Value: Text(Coalesce(nfSelectedRecord10.GG_993_Sum_Fremmedspraak_Fordypning_Arbeidslivsfag_Gutter_Jenter_Trinn_1_10,0)) },\r\n            { KontrollerId: \"GG-A19\", Placeholder: \"(Y)\", Value: Text(Coalesce(nfSelectedRecord10.GG_666_Sum_Uten_Fordypning_Fremmedspraak_Eller_Arbeidslivsfag_Trinn_8_10,0)) },\r\n            { KontrollerId: \"GG-A19\", Placeholder: \"(Z)\", Value: Text(Coalesce(nfSelectedRecord3.GG_36_Antall_Elever_Trinn8_10_SumTotalt,0)) },\r\n            { KontrollerId: \"GG-A20\", Placeholder: \"(Y)\", Value: Text(Coalesce(nfSelectedRecord4.GG_160_Aarstimer_Spesialundervisning_Enkeltvedtak_Trinn1_10,0)) },\r\n            { KontrollerId: \"GG-A20\", Placeholder: \"(X)\", Value: Text(Coalesce(nfSelectedRecord7.GG_331_Sum_Elever_Spesialundervisning_Assistent,0)) },{ KontrollerId: \"GG-A22\", Placeholder: \"(X)\", Value: Coalesce(nfSelectedRecord4.GG_96_Sum_Tospraaklig_Fagopplaering_Trinn1_10,0) },\r\n            { KontrollerId: \"GG-A22\", Placeholder: \"(Y)\", Value: nfSum_GG_871FromShadowColGG8SpC },\r\n            { KontrollerId: \"GG-A22\", Placeholder: \"(Z)\", Value: nfSum_GG_872FromShadowColGG8SpC },\r\n            { KontrollerId: \"GG-A23\", Placeholder: \"(X)\", Value: Coalesce(nfSelectedRecord4.GG_92_Sum_Morsmaalsopplaering_Trinn1_10,0) },\r\n            { KontrollerId: \"GG-A23\", Placeholder: \"(Y)\", Value: nfSum_GG_870FromShadowColGG8SpC},\r\n            { KontrollerId: \"GG-A23\", Placeholder: \"(Z)\", Value: nfSum_GG_872FromShadowColGG8SpC },\r\n            { KontrollerId: \"GG-A24\", Placeholder: \"(X)\", Value: Coalesce(nfSelectedRecord4.GG_100_Sum_Tilrettelagt_Opplaering_Trinn1_10,0) },\r\n            { KontrollerId: \"GG-A24\", Placeholder: \"(Y)\", Value: nfSum_GG_873FromShadowColGG8SpC },\r\n   \r\n       \r\n           { KontrollerId: \"GG-A26\", Placeholder: \"(X)\",  Value: $\"{Coalesce(nfSelectedRecord12.GG_711_Antall_Timer_Tilbydd_Leksehjelp_Trinn_1, 0)}\"},\r\n           { KontrollerId: \"GG-A27\", Placeholder: \"(X)\",  Value: $\"{Coalesce(nfSelectedRecord12.GG_712_Antall_Timer_Tilbydd_Leksehjelp_Trinn_2, 0)}\"},\r\n           { KontrollerId: \"GG-A28\", Placeholder: \"(X)\",  Value: $\"{Coalesce(nfSelectedRecord12.GG_713_Antall_Timer_Tilbydd_Leksehjelp_Trinn_3, 0)}\"},\r\n           { KontrollerId: \"GG-A29\", Placeholder: \"(X)\",  Value: $\"{Coalesce(nfSelectedRecord12.GG_714_Antall_Timer_Tilbydd_Leksehjelp_Trinn_4, 0)}\"},\r\n           { KontrollerId: \"GG-A53\", Placeholder: \"(X)\", Value: Text(Coalesce(nfSelectedRecord6.GG_221_Antall_Aarsverk_Rektor, 0)) },\r\n           { KontrollerId: \"GG-A54\", Placeholder: \"(X)\", Value: Text(Coalesce(nfSelectedRecord6.GG_222_Antall_Aarsverk_Undervisningsinspektoer, 0) )},\r\n           { KontrollerId: \"GG-A55\", Placeholder: \"(X)\", Value: Text(Coalesce(nfSelectedRecord6.GG_222_Antall_Aarsverk_Undervisningsinspektoer, 0)) },\r\n           { KontrollerId: \"GG-A30\", Placeholder: \"(X}\", Value: Text(Coalesce(nfSelectedRecord12.GG_698_Sum_Elevtimer_Fysisk_Aktivitet, 0) )},\r\n           { KontrollerId: \"GG-A35\", Placeholder: \"(X)-(Y)\", Value: $\"{Coalesce(nfSelectedRecord2.GG_228_Laveste_Trinn_Paa_Skolen, 0)}-{Coalesce( nfSelectedRecord2.GG_229_Hoeyeste_Trinn_Paa_Skolen, 0)}\" },\r\n\r\n           { KontrollerId: \"GG-A38\", Placeholder: \"(X)\", Value: $\"{nfSum_GG_874FromShadowColGG8SpC}\" },\r\n           { KontrollerId: \"GG-F24\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord3.GG_3_Antall_Elever_Trinn1_Sum) },\r\n           { KontrollerId: \"GG-F25\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord3.GG_6_Antall_Elever_Trinn2_Sum) },\r\n           { KontrollerId: \"GG-F26\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord3.GG_9_Antall_Elever_Trinn3_Sum) },\r\n           { KontrollerId: \"GG-F27\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord3.GG_12_Antall_Elever_Trinn4_Sum) },\r\n           { KontrollerId: \"GG-F28\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord3.GG_15_Antall_Elever_Trinn5_Sum) },\r\n           { KontrollerId: \"GG-F29\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord3.GG_18_Antall_Elever_Trinn6_Sum) },\r\n           { KontrollerId: \"GG-F30\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord3.GG_21_Antall_Elever_Trinn7_Sum) },\r\n           { KontrollerId: \"GG-F31\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord3.GG_27_Antall_Elever_Trinn8_Sum) },\r\n           { KontrollerId: \"GG-F32\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord3.GG_30_Antall_Elever_Trinn9_Sum) },\r\n           { KontrollerId: \"GG-F33\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord3.GG_33_Antall_Elever_Trinn10_Sum) },\r\n           { KontrollerId: \"GG-F34\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord3.GG_39_Antall_Elever_Sum_EleverTotalt) },\r\n           { KontrollerId: \"GG-F35\", Placeholder: \"(x)\",  Value: $\"{Coalesce(nfSelectedRecord4.GG_132_Sum_Spesialundervisning_Ressurser_Trinn1_10-nfSelectedRecord4.GG_81_Sum_Aarstimer_Undervisning_Trinn1_10,0)}\"},\r\n           { KontrollerId: \"GG-F36\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord4.GG_81_Sum_Aarstimer_Undervisning_Trinn1_10) },\r\n           { KontrollerId: \"GG-F36\", Placeholder: \"(Y)\", Value: Text(nfSelectedRecord5.GG_166_Sum_Antall_Laerere) },\r\n           { KontrollerId: \"GG-F40\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord12.GG_700_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_1) },\r\n           { KontrollerId: \"GG-F41\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord12.GG_701_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_2) },\r\n           { KontrollerId: \"GG-F42\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord12.GG_702_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_3) },\r\n           { KontrollerId: \"GG-F43\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord12.GG_703_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_4) },\r\n           { KontrollerId: \"GG-F44\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord12.GG_704_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_5) },\r\n           { KontrollerId: \"GG-F45\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord12.GG_705_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_6) },\r\n           { KontrollerId: \"GG-F46\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord12.GG_706_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_7) },\r\n           { KontrollerId: \"GG-F47\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord12.GG_707_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_8) },\r\n           { KontrollerId: \"GG-F48\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord12.GG_708_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_9) },\r\n           { KontrollerId: \"GG-F49\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord12.GG_709_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_10) },\r\n           { KontrollerId: \"GG-F55\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord12.GG_698_Sum_Elevtimer_Fysisk_Aktivitet) },\r\n           { KontrollerId: \"GG-F74\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord6.GG_221_Antall_Aarsverk_Rektor) },\r\n           { KontrollerId: \"GG-F85\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord13.GG_826_Sum_Digitale_Enheter_Trinn_1) },\r\n           { KontrollerId: \"GG-F86\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord13.GG_827_Sum_Digitale_Enheter_Trinn_2) },\r\n           { KontrollerId: \"GG-F87\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord13.GG_828_Sum_Digitale_Enheter_Trinn_3) },\r\n           { KontrollerId: \"GG-F88\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord13.GG_829_Sum_Digitale_Enheter_Trinn_4) },\r\n           { KontrollerId: \"GG-F89\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord13.GG_830_Sum_Digitale_Enheter_Trinn_5) },\r\n           { KontrollerId: \"GG-F90\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord13.GG_831_Sum_Digitale_Enheter_Trinn_6) },\r\n           { KontrollerId: \"GG-F91\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord13.GG_832_Sum_Digitale_Enheter_Trinn_7) },\r\n           { KontrollerId: \"GG-F92\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord13.GG_833_Sum_Digitale_Enheter_Trinn_8) },\r\n           { KontrollerId: \"GG-F93\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord13.GG_834_Sum_Digitale_Enheter_Trinn_9) },\r\n           { KontrollerId: \"GG-F94\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord13.GG_835_Sum_Digitale_Enheter_Trinn_10) },\r\n           { KontrollerId: \"GG-F95\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord13.GG_826_Sum_Digitale_Enheter_Trinn_1 - nfSelectedRecord3.GG_3_Antall_Elever_Trinn1_Sum) },\r\n           { KontrollerId: \"GG-F96\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord13.GG_827_Sum_Digitale_Enheter_Trinn_2 - nfSelectedRecord3.GG_6_Antall_Elever_Trinn2_Sum) },\r\n           { KontrollerId: \"GG-F97\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord13.GG_828_Sum_Digitale_Enheter_Trinn_3 - nfSelectedRecord3.GG_9_Antall_Elever_Trinn3_Sum) },\r\n           { KontrollerId: \"GG-F98\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord13.GG_829_Sum_Digitale_Enheter_Trinn_4 - nfSelectedRecord3.GG_12_Antall_Elever_Trinn4_Sum) },\r\n           { KontrollerId: \"GG-F99\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord13.GG_830_Sum_Digitale_Enheter_Trinn_5 - nfSelectedRecord3.GG_15_Antall_Elever_Trinn5_Sum) },\r\n           { KontrollerId: \"GG-100\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord13.GG_831_Sum_Digitale_Enheter_Trinn_6 - nfSelectedRecord3.GG_18_Antall_Elever_Trinn6_Sum) },\r\n           { KontrollerId: \"GG-F101\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord13.GG_832_Sum_Digitale_Enheter_Trinn_7 - nfSelectedRecord3.GG_21_Antall_Elever_Trinn7_Sum) },\r\n           { KontrollerId: \"GG-F102\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord13.GG_833_Sum_Digitale_Enheter_Trinn_8 - nfSelectedRecord3.GG_27_Antall_Elever_Trinn8_Sum) },\r\n           { KontrollerId: \"GG-F103\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord13.GG_834_Sum_Digitale_Enheter_Trinn_9 - nfSelectedRecord3.GG_30_Antall_Elever_Trinn9_Sum) },\r\n           { KontrollerId: \"GG-F104\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord13.GG_835_Sum_Digitale_Enheter_Trinn_10 - nfSelectedRecord3.GG_33_Antall_Elever_Trinn10_Sum) },\r\n           {KontrollerId: \"GG-F108\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord7.GG_922_Antall_Elever_Individuell_Tilrettelagt_Opplaering_Sum_Rad_1)},\r\n           {KontrollerId: \"GG-F108\", Placeholder: \"(Y)\", Value: Text(nfSelectedRecord7.GG_264_Sum_Elever_Spesialundervisning_Trinn_1_10)},\r\n           { KontrollerId: \"GG-A90\", Placeholder:  \"(X)\", Value: Text(nfSelectedRecord5.GG_181_Sum_Assistent_Oevrige_Elevrettet_Personale) },\r\n           { KontrollerId: \"GG-A117\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord5.GG_161_Antall_Laerere_Totalt_Trinn1_4 +nfSelectedRecord5.GG_162_Antall_Laerere_Totalt_Trinn5_7 ) },\r\n           { KontrollerId: \"GG-A117\", Placeholder: \"(Y)\", Value: Text(Sum(nfSelectedRecord5.GG_217_Antall_Laerere_Kompetente_Trinn_1_7 + nfSelectedRecord5.GG_219_Antall_Laerere_Underkompetent_Trinn_1_7 +nfSelectedRecord5.GG_995_Antall_Ansatte_1_4_Oppfyller_Kompetansekrav_5_10_1_7)) },\r\n           { KontrollerId: \"GG-A118\", Placeholder: \"(X)\", Value: Text(Coalesce(nfSelectedRecord5.GG_163_Antall_Laerere_Totalt_Trinn8_10, 0)) },\r\n           { KontrollerId: \"GG-A118\", Placeholder: \"(Y)\", Value: Text(Sum(nfSelectedRecord5.GG_218_Antall_Laerere_Kompetente_Trinn_8_10 +nfSelectedRecord5.GG_220_Antall_Laerere_Underkompetent_Trinn_8_10 +nfSelectedRecord5.GG_994_Antall_Ansatte_Underviser_1_7_Og_8_10_Oppfyller_Kompetansekrav_1_7)) },\r\n           {KontrollerId: \"GG-A132\", Placeholder:  \"(X)\", Value: Text(Coalesce(nfSelectedRecord6.GG_225_Aarsramme_Undervisning_Trinn_8_10, 0)) },\r\n           {KontrollerId: \"GG-A133\", Placeholder:  \"(X)\", Value: Text(Coalesce(nfSelectedRecord6.GG_224_Aarsramme_Undervisning_Trinn_1_7, 0)) },\r\n           { KontrollerId: \"GG-A35\", Placeholder: \"(Y)\", Value: Text(nfSelectedRecord4.GG_132_Sum_Spesialundervisning_Ressurser_Trinn1_10 - nfSelectedRecord4.GG_81_Sum_Aarstimer_Undervisning_Trinn1_10) },\r\n           { KontrollerId: \"GG-A56\", Placeholder: \"{x)\", Value: Text(nfSelectedRecord4.GG_108_Sum_Samisk_Extra_Ressurser_Enkeltelev_Eller_Gruppe_1_10) },\r\n           { KontrollerId: \"GG-A84\", Placeholder: \"{X}\", Value: Text(nfSelectedRecord9.GG_426_Antall_Elever_Undervisning_Samisk_Utenfor_Samisk_Distrikt) },\r\n           { KontrollerId: \"GG-A86\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord4.GG_108_Sum_Samisk_Extra_Ressurser_Enkeltelev_Eller_Gruppe_1_10) },\r\n           { KontrollerId: \"GG-A89\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord4.GG_156_Totalt_Assistenttimer_Elevrettet_Arbeid_Trinn1_10) },\r\n           { KontrollerId: \"GG-A92\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord5.GG_217_Antall_Laerere_Kompetente_Trinn_1_7) },\r\n           { KontrollerId: \"GG-A93\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord5.GG_218_Antall_Laerere_Kompetente_Trinn_8_10) },\r\n           { KontrollerId: \"GG-A94\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord4.GG_73_Antall_Timer_Undervisning_Sum1_10) },\r\n           { KontrollerId: \"GG-A95\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord4.GG_77_Sum_Aarstimer_Underkompetent_Personale_Trinn1_10) },\r\n           { KontrollerId: \"GG-A96\", Placeholder: \"(X)\", Value: $\"{IfError(RoundDown(nfSelectedRecord4.GG_73_Antall_Timer_Undervisning_Sum1_10/\r\n            (nfSelectedRecord5.GG_217_Antall_Laerere_Kompetente_Trinn_1_7+nfSelectedRecord5.GG_218_Antall_Laerere_Kompetente_Trinn_8_10 +\r\n            nfSelectedRecord5.GG_994_Antall_Ansatte_Underviser_1_7_Og_8_10_Oppfyller_Kompetansekrav_1_7+\r\n            nfSelectedRecord5.GG_995_Antall_Ansatte_Underviser_1_7_Og_8_10_Oppfyller_Kompetansekrav_8_10+\r\n            nfSelectedRecord5.GG_995_Antall_Ansatte_1_4_Oppfyller_Kompetansekrav_5_10_1_7+\r\n            nfSelectedRecord5.GG_996_Antall_Ansatte_1_4_Oppfyller_Kompetansekrav_5_10_8_10), 1), 0)}\"},\r\n           { KontrollerId: \"GG-A97\", Placeholder: \"(X)\", Value: $\"{IfError(RoundDown(nfSelectedRecord4.GG_77_Sum_Aarstimer_Underkompetent_Personale_Trinn1_10 /\r\n           (nfSelectedRecord5.GG_219_Antall_Laerere_Underkompetent_Trinn_1_7+nfSelectedRecord5.GG_220_Antall_Laerere_Underkompetent_Trinn_8_10),0),0)}\"},\r\n           { KontrollerId: \"GG-F56\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord13.GG_723_Antall_Elever_Skoleskyss_Trinn_2_10) },\r\n           { KontrollerId: \"GG-F56\", Placeholder: \"(Y)\", Value: Text(nfSelectedRecord3.GG_39_Antall_Elever_Sum_EleverTotalt - nfSelectedRecord3.GG_3_Antall_Elever_Trinn1_Sum) },\r\n           { KontrollerId: \"GG-F60\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord13.GG_722_Antall_Elever_Skoleskyss_Trinn_1)}, \r\n           { KontrollerId: \"GG-F60\", Placeholder: \"(Y)\", Value: Text(nfSelectedRecord3.GG_3_Antall_Elever_Trinn1_Sum)},\r\n           { KontrollerId: \"GG-F66\", Placeholder: \"(X)\", Value: $\"{nfSum_GG_874FromShadowColGG8SpC}\"  },\r\n           { KontrollerId: \"GG-F66\", Placeholder: \"(Y)\", Value: Text(nfSelectedRecord8.GG_345_Sum_Elever_Saerskilt_Norsk_Opplaering) },\r\n           { KontrollerId: \"GG-F9\", Placeholder: \"{x}\", Value: Text(nfSelectedRecord3.GG_3_Antall_Elever_Trinn1_Sum) },\r\n           { KontrollerId: \"GG-F9\", Placeholder: \"{y}\", Value: Text(nfSelectedRecord9.GG_412_Sum_Elever_Opplaeringsmaalform_Trinn_1) },\r\n           { KontrollerId: \"GG-F10\", Placeholder: \"{x}\", Value: Text(nfSelectedRecord3.GG_6_Antall_Elever_Trinn2_Sum) },\r\n           { KontrollerId: \"GG-F10\", Placeholder: \"{y}\", Value: Text(nfSelectedRecord9.GG_413_Sum_Elever_Opplaeringsmaalform_Trinn_2) },\r\n           { KontrollerId: \"GG-F11\", Placeholder: \"{x}\", Value: Text(nfSelectedRecord3.GG_9_Antall_Elever_Trinn3_Sum) },\r\n           { KontrollerId: \"GG-F11\", Placeholder: \"{y}\", Value: Text(nfSelectedRecord9.GG_414_Sum_Elever_Opplaeringsmaalform_Trinn_3) },\r\n           { KontrollerId: \"GG-F12\", Placeholder: \"{x}\", Value: Text(nfSelectedRecord3.GG_12_Antall_Elever_Trinn4_Sum) },\r\n           { KontrollerId: \"GG-F12\", Placeholder: \"{y}\", Value: Text(nfSelectedRecord9.GG_415_Sum_Elever_Opplaeringsmaalform_Trinn_4) },\r\n           { KontrollerId: \"GG-F13\", Placeholder: \"{x}\", Value: Text(nfSelectedRecord3.GG_15_Antall_Elever_Trinn5_Sum) },\r\n           { KontrollerId: \"GG-F13\", Placeholder: \"{y}\", Value: Text(nfSelectedRecord9.GG_416_Sum_Elever_Opplaeringsmaalform_Trinn_5) },\r\n           { KontrollerId: \"GG-F14\", Placeholder: \"{x}\", Value: Text(nfSelectedRecord3.GG_18_Antall_Elever_Trinn6_Sum) },\r\n           { KontrollerId: \"GG-F14\", Placeholder: \"{y}\", Value: Text(nfSelectedRecord9.GG_417_Sum_Elever_Opplaeringsmaalform_Trinn_6) },\r\n           { KontrollerId: \"GG-F15\", Placeholder: \"{x}\", Value: Text(nfSelectedRecord3.GG_21_Antall_Elever_Trinn7_Sum) },\r\n           { KontrollerId: \"GG-F15\", Placeholder: \"{y}\", Value: Text(nfSelectedRecord9.GG_418_Sum_Elever_Opplaeringsmaalform_Trinn_7) },\r\n           { KontrollerId: \"GG-F16\", Placeholder: \"{x}\", Value: Text(nfSelectedRecord3.GG_27_Antall_Elever_Trinn8_Sum) },\r\n           { KontrollerId: \"GG-F16\", Placeholder: \"{y}\", Value: Text(nfSelectedRecord9.GG_419_Sum_Elever_Opplaeringsmaalform_Trinn_8) },\r\n           { KontrollerId: \"GG-F17\", Placeholder: \"{x}\", Value: Text(nfSelectedRecord3.GG_30_Antall_Elever_Trinn9_Sum) },\r\n           { KontrollerId: \"GG-F17\", Placeholder: \"{y}\", Value: Text(nfSelectedRecord9.GG_420_Sum_Elever_Opplaeringsmaalform_Trinn_9) },\r\n           { KontrollerId: \"GG-F18\", Placeholder: \"{x}\", Value: Text(nfSelectedRecord3.GG_33_Antall_Elever_Trinn10_Sum)},\r\n           { KontrollerId: \"GG-F18\", Placeholder: \"{y}\", Value: Text(nfSelectedRecord9.GG_421_Sum_Elever_Opplaeringsmaalform_Trinn_10) },\r\n           { KontrollerId: \"GG-F37\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord8.GG_356_Sum_Elever_Grunnleggende_Norsk_For_Spraaklige_Minoriteter) },\r\n           { KontrollerId: \"GG-F37\", Placeholder: \"(Y)\", Value: Text(nfSelectedRecord8.GG_345_Sum_Elever_Saerskilt_Norsk_Opplaering) },\r\n           { KontrollerId: \"GG-A73\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord7.GG_928_Antall_Elever_Individuell_Tilrettelagt_Opplaering_Sum_Rad_2) },\r\n           { KontrollerId: \"GG-A73\", Placeholder: \"(Y)\", Value: Text(nfSelectedRecord7.GG_264_Sum_Elever_Spesialundervisning_Trinn_1_10) },\r\n           { KontrollerId: \"GG-A121\", Placeholder:\"(X)\", Value: Text( Sum((Filter(ShadowColGG9SpC,  (GG_915_Opplaering_Samisk_Kvensk_Finsk = \"Kvensk som andrespråk\" ) &&   GsiGrunnskoleSvarDel9Id = nfSelectedRecord9.GsiGrunnskoleSvarDel9Id)),     GG_914_Total_Sum_Antall_Elever_Opplaering_Trinn_1_10)) },\r\n           { KontrollerId: \"GG-F117\", Placeholder: \"(X)\", Value: Text(Sum(nfSelectedRecord5.GG_184_Antall_Laerere_Sum_Norsk_Trinn_1_7 + nfSelectedRecord5.GG_188_Antall_Laerere_Sum_Norsk_Trinn_8_10)) },\r\n           { KontrollerId: \"GG-F118\", Placeholder: \"(Y)\", Value: Text(Sum(nfSelectedRecord5.GG_217_Antall_Laerere_Kompetente_Trinn_1_7 + nfSelectedRecord5.GG_218_Antall_Laerere_Kompetente_Trinn_8_10 + nfSelectedRecord5.GG_994_Antall_Ansatte_Underviser_1_7_Og_8_10_Oppfyller_Kompetansekrav_1_7 + nfSelectedRecord5.GG_995_Antall_Ansatte_Underviser_1_7_Og_8_10_Oppfyller_Kompetansekrav_8_10 + nfSelectedRecord5.GG_995_Antall_Ansatte_1_4_Oppfyller_Kompetansekrav_5_10_1_7 + nfSelectedRecord5.GG_996_Antall_Ansatte_1_4_Oppfyller_Kompetansekrav_5_10_8_10)) },\r\n           { KontrollerId: \"GG-F119\", Placeholder: \"(X)\", Value:Text(Sum(nfSelectedRecord5.GG_198_Antall_Laerere_Sum_Engelsk_Trinn_1_7 + nfSelectedRecord5.GG_202_Antall_Laerere_Sum_Engelsk_Trinn_8_10)) },\r\n           { KontrollerId: \"GG-F119\", Placeholder: \"(Y)\", Value: Text(Sum(nfSelectedRecord5.GG_217_Antall_Laerere_Kompetente_Trinn_1_7 + nfSelectedRecord5.GG_218_Antall_Laerere_Kompetente_Trinn_8_10 + nfSelectedRecord5.GG_994_Antall_Ansatte_Underviser_1_7_Og_8_10_Oppfyller_Kompetansekrav_1_7 + nfSelectedRecord5.GG_995_Antall_Ansatte_Underviser_1_7_Og_8_10_Oppfyller_Kompetansekrav_8_10 + nfSelectedRecord5.GG_995_Antall_Ansatte_1_4_Oppfyller_Kompetansekrav_5_10_1_7 + nfSelectedRecord5.GG_996_Antall_Ansatte_1_4_Oppfyller_Kompetansekrav_5_10_8_10)) },\r\n           { KontrollerId: \"GG-F120\", Placeholder: \"(X)\", Value: Text(Sum(nfSelectedRecord5.GG_205_Antall_Laerere_Sum_Samisk_Trinn_1_7 + nfSelectedRecord5.GG_209_Antall_Laerere_Sum_Samisk_Trinn_8_10)) },\r\n           { KontrollerId: \"GG-F120\", Placeholder: \"(Y)\", Value: Text(Sum(nfSelectedRecord5.GG_217_Antall_Laerere_Kompetente_Trinn_1_7 + nfSelectedRecord5.GG_218_Antall_Laerere_Kompetente_Trinn_8_10 + nfSelectedRecord5.GG_994_Antall_Ansatte_Underviser_1_7_Og_8_10_Oppfyller_Kompetansekrav_1_7 + nfSelectedRecord5.GG_995_Antall_Ansatte_Underviser_1_7_Og_8_10_Oppfyller_Kompetansekrav_8_10 + nfSelectedRecord5.GG_995_Antall_Ansatte_1_4_Oppfyller_Kompetansekrav_5_10_1_7 + nfSelectedRecord5.GG_996_Antall_Ansatte_1_4_Oppfyller_Kompetansekrav_5_10_8_10)) },\r\n           { KontrollerId: \"GG-F121\", Placeholder: \"(X)\", Value: Text(Sum(nfSelectedRecord5.GG_212_Antall_Laerere_Sum_Norsk_Tegnspraak_Trinn_1_7 + nfSelectedRecord5.GG_216_Antall_Laerere_Sum_Norsk_Tegnspraak_Trinn_8_10)) },\r\n           { KontrollerId: \"GG-F121\", Placeholder: \"(Y)\", Value: Text(Sum(nfSelectedRecord5.GG_217_Antall_Laerere_Kompetente_Trinn_1_7 + nfSelectedRecord5.GG_218_Antall_Laerere_Kompetente_Trinn_8_10 + nfSelectedRecord5.GG_994_Antall_Ansatte_Underviser_1_7_Og_8_10_Oppfyller_Kompetansekrav_1_7 + nfSelectedRecord5.GG_995_Antall_Ansatte_Underviser_1_7_Og_8_10_Oppfyller_Kompetansekrav_8_10 + nfSelectedRecord5.GG_995_Antall_Ansatte_1_4_Oppfyller_Kompetansekrav_5_10_1_7 + nfSelectedRecord5.GG_996_Antall_Ansatte_1_4_Oppfyller_Kompetansekrav_5_10_8_10)) },\r\n           { KontrollerId: \"GG-F122\", Placeholder: \"(X)\", Value:Text(Sum(nfSelectedRecord5.GG_166_Sum_Antall_Laerere)) },\r\n           { KontrollerId: \"GG-F122\", Placeholder: \"(Y)\", Value: Text(Sum(Coalesce(nfSelectedRecord5.GG_217_Antall_Laerere_Kompetente_Trinn_1_7+nfSelectedRecord5.GG_218_Antall_Laerere_Kompetente_Trinn_8_10+nfSelectedRecord5.GG_219_Antall_Laerere_Underkompetent_Trinn_1_7+nfSelectedRecord5.GG_220_Antall_Laerere_Underkompetent_Trinn_8_10+nfSelectedRecord5.GG_994_Antall_Ansatte_Underviser_1_7_Og_8_10_Oppfyller_Kompetansekrav_1_7+nfSelectedRecord5.GG_995_Antall_Ansatte_Underviser_1_7_Og_8_10_Oppfyller_Kompetansekrav_8_10+nfSelectedRecord5.GG_995_Antall_Ansatte_1_4_Oppfyller_Kompetansekrav_5_10_1_7+nfSelectedRecord5.GG_996_Antall_Ansatte_1_4_Oppfyller_Kompetansekrav_5_10_8_10,0)))},\r\n           { KontrollerId: \"GG-F123\", Placeholder: \"(X)\", Value: $\"{IfError(RoundDown(nfSelectedRecord4.GG_73_Antall_Timer_Undervisning_Sum1_10/(nfSelectedRecord5.GG_217_Antall_Laerere_Kompetente_Trinn_1_7+nfSelectedRecord5.GG_218_Antall_Laerere_Kompetente_Trinn_8_10+nfSelectedRecord5.GG_994_Antall_Ansatte_Underviser_1_7_Og_8_10_Oppfyller_Kompetansekrav_1_7+nfSelectedRecord5.GG_995_Antall_Ansatte_Underviser_1_7_Og_8_10_Oppfyller_Kompetansekrav_8_10+nfSelectedRecord5.GG_995_Antall_Ansatte_1_4_Oppfyller_Kompetansekrav_5_10_1_7+nfSelectedRecord5.GG_996_Antall_Ansatte_1_4_Oppfyller_Kompetansekrav_5_10_8_10), 1), 0)}\"},\r\n           { KontrollerId: \"GG-F124\", Placeholder: \"(X)\", Value: $\"{IfError(RoundDown(nfSelectedRecord4.GG_77_Sum_Aarstimer_Underkompetent_Personale_Trinn1_10/(nfSelectedRecord5.GG_219_Antall_Laerere_Underkompetent_Trinn_1_7+nfSelectedRecord5.GG_220_Antall_Laerere_Underkompetent_Trinn_8_10), 1), 0)}\"},\r\n           { KontrollerId: \"GG-A82\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord12.GG_721_Sum_Timer_Tilbydd_Leksehjelp) },\r\n           { KontrollerId: \"GG-A83\", Placeholder: \"(X + Y)\", Value: Text(Sum(nfSelectedRecord7.GG_270_Antall_Elever_Alternativ_Opplaeringsarena_Trinn_1_7 + nfSelectedRecord7.GG_271_Antall_Elever_Alternativ_Opplaeringsarena_Trinn_8_10)) },\r\n           { KontrollerId: \"GG-A83\", Placeholder: \"(Z)\", Value: Text(Sum(nfSelectedRecord7.GG_272_Antall_Elever_Alternativ_Opplaeringsarena_Gutter + nfSelectedRecord7.GG_273_Antall_Elever_Alternativ_Opplaeringsarena_Jenter)) },\r\n           { KontrollerId: \"GG-A41\", Placeholder: \"(X)\", Value: $\"{nfSum_GG_874FromShadowColGG8SpC}\"  },\r\n           { KontrollerId: \"GG-A39\", Placeholder: \"(X)\", Value: $\"{nfSum_GG_874FromShadowColGG8SpC}\"  },\r\n           { KontrollerId: \"GG-A39\", Placeholder: \"(Y)\", Value: $\"{Sum(nfSelectedRecord4.GG_92_Sum_Morsmaalsopplaering_Trinn1_10 +nfSelectedRecord4.GG_96_Sum_Tospraaklig_Fagopplaering_Trinn1_10+nfSelectedRecord4.GG_100_Sum_Tilrettelagt_Opplaering_Trinn1_10)}\"  },\r\n           { KontrollerId: \"GG-F113\", Placeholder: \"(X + Y)\", Value: $\"({Coalesce(nfSelectedRecord7.GG_267_Antall_Elever_Fast_Avdeling_Spesialundervisning_Gutter, 0)} + {Coalesce(nfSelectedRecord7.GG_268_Antall_Elever_Fast_Avdeling_Spesialundervisning_Jenter, 0)})\"  },\r\n           { KontrollerId: \"GG-F113\", Placeholder: \"{Z}\", Value: $\"{Sum(nfSelectedRecord7.GG_265_Antall_Elever_Fast_Avdeling_Spesialundervisning_Trinn_1_7+nfSelectedRecord7.GG_266_Antall_Elever_Fast_Avdeling_Spesialundervisning_Trinn_8_10)}\"  },\r\n           { KontrollerId: \"GG-F115\", Placeholder: \"(X)\", Value:$\"{Coalesce(nfSelectedRecord5.GG_217_Antall_Laerere_Kompetente_Trinn_1_7 + nfSelectedRecord5.GG_218_Antall_Laerere_Kompetente_Trinn_8_10 +\r\n           nfSelectedRecord5.GG_994_Antall_Ansatte_Underviser_1_7_Og_8_10_Oppfyller_Kompetansekrav_1_7 + \r\n           nfSelectedRecord5.GG_995_Antall_Ansatte_Underviser_1_7_Og_8_10_Oppfyller_Kompetansekrav_8_10 +\r\n           nfSelectedRecord5.GG_995_Antall_Ansatte_1_4_Oppfyller_Kompetansekrav_5_10_1_7 + \r\n           nfSelectedRecord5.GG_996_Antall_Ansatte_1_4_Oppfyller_Kompetansekrav_5_10_8_10,0)}\"  },\r\n           { KontrollerId: \"GG-F116\", Placeholder: \"(X)\", Value:$\"{Coalesce(nfSelectedRecord5.GG_219_Antall_Laerere_Underkompetent_Trinn_1_7+nfSelectedRecord5.GG_220_Antall_Laerere_Underkompetent_Trinn_8_10, 0)}\"  },\r\n           { KontrollerId: \"GG-F117\", Placeholder: \"(X)\", Value:$\"{Coalesce(nfSelectedRecord5.GG_161_Antall_Laerere_Totalt_Trinn1_4 + nfSelectedRecord5.GG_162_Antall_Laerere_Totalt_Trinn5_7, 0)}\"  },\r\n           { KontrollerId: \"GG-F117\", Placeholder: \"(Y)\", Value:$\"{Coalesce(nfSelectedRecord5.GG_217_Antall_Laerere_Kompetente_Trinn_1_7 +\r\n            nfSelectedRecord5.GG_219_Antall_Laerere_Underkompetent_Trinn_1_7+nfSelectedRecord5.GG_995_Antall_Ansatte_1_4_Oppfyller_Kompetansekrav_5_10_1_7,0)}\" },\r\n           { KontrollerId: \"GG-F118\", Placeholder: \"(X)\", Value:$\"{Coalesce(nfSelectedRecord5.GG_163_Antall_Laerere_Totalt_Trinn8_10, 0)} \" },\r\n           { KontrollerId: \"GG-F118\", Placeholder: \"(Y)\", Value:$\"{Coalesce(nfSelectedRecord5.GG_218_Antall_Laerere_Kompetente_Trinn_8_10 + nfSelectedRecord5.GG_220_Antall_Laerere_Underkompetent_Trinn_8_10 + nfSelectedRecord5.GG_995_Antall_Ansatte_Underviser_1_7_Og_8_10_Oppfyller_Kompetansekrav_8_10, 0)}\" },\r\n\r\n           { KontrollerId: \"GG-F147\", Placeholder: \"(X)\", Value: Text(Sum(nfSelectedRecord7.GG_287_AE_Spesial_Uvpersonale_1_75_Timer_Trinn_1_4+nfSelectedRecord7.GG_288_AE_Spesial_Uvpersonale_1_75_Timer_Trinn_5_7+nfSelectedRecord7.GG_289_AE_Spesial_Uvpersonale_1_75_Timer_Trinn_8_10))}, \r\n           { KontrollerId: \"GG-F147\", Placeholder: \"(Y)\", Value: Text(Sum(nfSelectedRecord7.GG_290_AE_Spesial_Uvpersonale_1_75_Timer_Gutter+nfSelectedRecord7.GG_291_AE_Spesial_Uvpersonale_1_75_Timer_Jenter))},\r\n           { KontrollerId: \"GG-F148\", Placeholder: \"(X)\", Value: Text(Sum(nfSelectedRecord7.GG_293_AE_Spesial_Uvpersonale_76_190_Timer_Trinn_1_4+nfSelectedRecord7.GG_294_AE_Spesial_Uvpersonale_76_190_Timer_Trinn_5_7+nfSelectedRecord7.GG_295_AE_Spesial_Uvpersonale_76_190_Timer_Trinn_8_10))}, \r\n           { KontrollerId: \"GG-F148\", Placeholder: \"(Y)\", Value: Text(Sum(nfSelectedRecord7.GG_296_AE_Spesial_Uvpersonale_76_190_Timer_Gutter+nfSelectedRecord7.GG_297_AE_Spesial_Uvpersonale_76_190_Timer_Jenter))},\r\n           { KontrollerId: \"GG-F149\", Placeholder: \"(X)\", Value: Text(Sum(nfSelectedRecord7.GG_299_AE_Spesial_Uvpersonale_191_270_Timer_Trinn_1_4+nfSelectedRecord7.GG_300_AE_Spesial_Uvpersonale_191_270_Timer_Trinn_5_7+nfSelectedRecord7.GG_301_AE_Spesial_Uvpersonale_191_270_Timer_Trinn_8_10))}, \r\n           { KontrollerId: \"GG-F149\", Placeholder: \"(Y)\", Value: Text(Sum(nfSelectedRecord7.GG_302_AE_Spesial_Uvpersonale_191_270_Timer_Gutter+nfSelectedRecord7.GG_303_AE_Spesial_Uvpersonale_191_270_Timer_Jenter))},\r\n           { KontrollerId: \"GG-F150\", Placeholder: \"(X)\", Value: Text(Sum(nfSelectedRecord7.GG_305_AE_Spesial_Uvpersonale_Over_271_Timer_Trinn_1_4+nfSelectedRecord7.GG_306_AE_Spesial_Uvpersonale_Over_271_Timer_Trinn_5_7+nfSelectedRecord7.GG_307_AE_Spesial_Uvpersonale_Over_271_Timer_Trinn_8_10))},\r\n           { KontrollerId: \"GG-F150\", Placeholder: \"(Y)\", Value: Text(Sum(nfSelectedRecord7.GG_308_AE_Spesial_Uvpersonale_Over_271_Timer_Gutter+nfSelectedRecord7.GG_309_AE_Spesial_Uvpersonale_Over_271_Timer_Jenter))},\r\n           {KontrollerId: \"GG-A98\",  Placeholder: \"(hovedmaalform)\" , Value: $\"{LookUp(Filter(nfViewSprakSvarAlternativer, SprakInputFeltId = 1), Verdi = nfSelectedRecord2.GG_227_Skolens_Maalform).Tekst}\"},\r\n           {KontrollerId: \"GG-A99\",  Placeholder: \"(hovedmaalform)\" , Value: $\"{LookUp(Filter(nfViewSprakSvarAlternativer, SprakInputFeltId = 1), Verdi = nfSelectedRecord2.GG_227_Skolens_Maalform).Tekst}\"},\r\n           {KontrollerId: \"GG-A100\", Placeholder: \"(hovedmaalform)\" , Value: $\"{LookUp(Filter(nfViewSprakSvarAlternativer, SprakInputFeltId = 1), Verdi = nfSelectedRecord2.GG_227_Skolens_Maalform).Tekst}\"},\r\n           {KontrollerId: \"GG-A101\", Placeholder: \"(hovedmaalform)\" , Value: $\"{LookUp(Filter(nfViewSprakSvarAlternativer, SprakInputFeltId = 1), Verdi = nfSelectedRecord2.GG_227_Skolens_Maalform).Tekst}\"},\r\n           {KontrollerId: \"GG-A102\", Placeholder: \"(hovedmaalform)\" , Value: $\"{LookUp(Filter(nfViewSprakSvarAlternativer, SprakInputFeltId = 1), Verdi = nfSelectedRecord2.GG_227_Skolens_Maalform).Tekst}\"},\r\n           {KontrollerId: \"GG-A103\", Placeholder: \"(hovedmaalform)\" , Value: $\"{LookUp(Filter(nfViewSprakSvarAlternativer, SprakInputFeltId = 1), Verdi = nfSelectedRecord2.GG_227_Skolens_Maalform).Tekst}\"},\r\n           {KontrollerId: \"GG-A104\", Placeholder: \"(hovedmaalform)\" , Value: $\"{LookUp(Filter(nfViewSprakSvarAlternativer, SprakInputFeltId = 1), Verdi = nfSelectedRecord2.GG_227_Skolens_Maalform).Tekst}\"},\r\n           {KontrollerId: \"GG-A105\", Placeholder: \"(hovedmaalform)\" , Value: $\"{LookUp(Filter(nfViewSprakSvarAlternativer, SprakInputFeltId = 1), Verdi = nfSelectedRecord2.GG_227_Skolens_Maalform).Tekst}\"},\r\n           {KontrollerId: \"GG-A106\", Placeholder: \"(hovedmaalform)\" , Value: $\"{LookUp(Filter(nfViewSprakSvarAlternativer, SprakInputFeltId = 1), Verdi = nfSelectedRecord2.GG_227_Skolens_Maalform).Tekst}\"},\r\n           {KontrollerId: \"GG-A107\", Placeholder: \"(hovedmaalform)\" , Value: $\"{LookUp(Filter(nfViewSprakSvarAlternativer, SprakInputFeltId = 1), Verdi = nfSelectedRecord2.GG_227_Skolens_Maalform).Tekst}\"},\r\n           {KontrollerId: \"GG-A116\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord5.GG_172_Sum_Antall_Kontaktlaerere) },\r\n           {KontrollerId: \"GG-A116\", Placeholder: \"(Y)\", Value: Text(nfSelectedRecord5.GG_172_Sum_Antall_Kontaktlaerere * 28.5) },\r\n           {KontrollerId: \"GG-A116\", Placeholder: \"(Z)\", Value: Text(nfSelectedRecord4.GG_135_Sum_Andre_Aarstimer_Undervisningspersonale_Trinn1_10) },\r\n           {KontrollerId: \"GG-A123\", Placeholder: \"(X)\" , Value: $\"{nfSelectedRecord13.GG_1013_Antall_Elever_Omdisponert_Timer_1_7_Trinn}\"},\r\n           {KontrollerId: \"GG-A124\", Placeholder: \"(X)\" , Value: $\"{nfSelectedRecord13.GG_1014_Antall_Elever_Omdisponert_Timer_8_10_Trinn}\"},\r\n           {KontrollerId: \"GG-A140\", Placeholder: \"(X)\", Value: $\"{IfError(RoundDown((nfSelectedRecord4.GG_84_Sum_Spesialundervisning_Enkeltvedtak_Trinn1_10*100)/nfSelectedRecord4.GG_81_Sum_Aarstimer_Undervisning_Trinn1_10, 1), 0)}\"},\r\n           {KontrollerId: \"GG-A128\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord4.GG_156_Totalt_Assistenttimer_Elevrettet_Arbeid_Trinn1_10) },\r\n           {KontrollerId: \"GG-A128\", Placeholder: \"(Y)\", Value: $\"{IfError(RoundDown(nfSelectedRecord4.GG_156_Totalt_Assistenttimer_Elevrettet_Arbeid_Trinn1_10*100 / 1687.5, 2 ),0)}\"},\r\n           {KontrollerId: \"GG-A129\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord4.GG_160_Aarstimer_Spesialundervisning_Enkeltvedtak_Trinn1_10) },\r\n           {KontrollerId: \"GG-A129\", Placeholder: \"(Y)\", Value: $\"{IfError(RoundDown(nfSelectedRecord4.GG_160_Aarstimer_Spesialundervisning_Enkeltvedtak_Trinn1_10*100 / 1687.5, 2 ),0)}\"},\r\n           {KontrollerId: \"GG-A130\", Placeholder: \"(X)\", Value: $\"{IfError(Round(Coalesce(nfSelectedRecord4.GG_81_Sum_Aarstimer_Undervisning_Trinn1_10,0) /Coalesce(nfSelectedRecord3.GG_39_Antall_Elever_Sum_EleverTotalt,0), 0), 0)}\"},\r\n           {KontrollerId: \"GG-A131\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord12.GG_698_Sum_Elevtimer_Fysisk_Aktivitet)},\r\n           {KontrollerId: \"GG-A125\", Placeholder: \"(X)\" , Value : $\"{Sum(nfSumBeregnendeårsverk)}\"},\r\n           {KontrollerId: \"GG-A125\", Placeholder: \"(Y)\" , Value : $\"{nfSelectedRecord5.GG_166_Sum_Antall_Laerere}\"},\r\n           {KontrollerId: \"GG-A125\", Placeholder: \"(Z %)\", Value: $\"{IfError(Round(nfSumBeregnendeårsverk * 100 / nfSelectedRecord5.GG_166_Sum_Antall_Laerere, 1),0)}%\"},\r\n           {KontrollerId: \"GG-A152\", Placeholder: \"(X)\" , Value : $\"{nfSelectedRecord3.GG_48_Timetallsfordeling_Trinn8}\"},\r\n           {KontrollerId: \"GG-A153\", Placeholder: \"(X)\" , Value : $\"{nfSelectedRecord3.GG_49_Timetallsfordeling_Trinn9}\"},\r\n           {KontrollerId: \"GG-A154\", Placeholder: \"(X)\" , Value : $\"{nfSelectedRecord3.GG_50_Timetallsfordeling_Trinn10}\"},\r\n           {KontrollerId: \"GG-A161\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord4.GG_156_Totalt_Assistenttimer_Elevrettet_Arbeid_Trinn1_10)},\r\n           {KontrollerId: \"GG-A161\", Placeholder: \"(Y)\", Value: $\"{IfError(RoundDown(nfSelectedRecord4.GG_156_Totalt_Assistenttimer_Elevrettet_Arbeid_Trinn1_10 / 1687.5, 2), 0)}\"},\r\n           {KontrollerId: \"GG-A161\", Placeholder: \"(Z)\", Value: $\"{IfError(RoundDown((nfSelectedRecord4.GG_156_Totalt_Assistenttimer_Elevrettet_Arbeid_Trinn1_10 / 1687.5 /nfSelectedRecord5.GG_181_Sum_Assistent_Oevrige_Elevrettet_Personale), 2), 0)}\"},\r\n           {KontrollerId: \"GG-A149\", Placeholder: \"(X)\" , Value : $\"{nfSelectedRecord3.GG_47_Timetallsfordeling_Sum1_7}\"},\r\n           {KontrollerId: \"GG-A150\", Placeholder: \"(X)\" , Value : $\"{nfSelectedRecord3.GG_47_Timetallsfordeling_Sum1_7}\"},\r\n           {KontrollerId: \"GG-A144\", Placeholder: \"(X)\", Value: $\"{IfError(RoundDown((100 * nfSelectedRecord12.GG_699_Antall_Aarstimer_Fysisk_Aktivitet_Trinn_5_7)/nfSelectedRecord12.GG_698_Sum_Elevtimer_Fysisk_Aktivitet, 0), 0)}\"},\r\n           {KontrollerId: \"GG-F138\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord4.GG_130_Sum_Spesialundervisning_Ressurser_Trinn5_7) },\r\n           {KontrollerId: \"GG-F138\", Placeholder: \"(Y)\", Value: Text(nfSelectedRecord4.GG_79_Sum_Aarstimer_Undervisning_Trinn5_7) },\r\n           {KontrollerId: \"GG-F139\", Placeholder: \"(X)\", Value: Text(nfSelectedRecord4.GG_131_Sum_Spesialundervisning_Ressurser_Trinn8_10) },\r\n           {KontrollerId: \"GG-F139\", Placeholder: \"(Y)\", Value: Text(nfSelectedRecord4.GG_80_Sum_Aarstimer_Undervisning_Trinn8_10) },\r\n           {KontrollerId: \"GG-A145\", Placeholder: \"{SumTimetall}\", Value: $\"{Sum(nfSelectedRecord3.GG_43_Timetallsfordeling_Trinn4+nfSelectedRecord3.GG_42_Timetallsfordeling_Trinn3+nfSelectedRecord3.GG_41_Timetallsfordeling_Trinn2+nfSelectedRecord3.GG_40_Timetallsfordeling_Trinn1)}\"},\r\n           {KontrollerId: \"GG-A145\", Placeholder: \"{NedreGrense}\", Value: Text(NedreGrense) },\r\n           {KontrollerId: \"GG-A145\", Placeholder: \"{OvreGrense}\", Value: Text(OvreGrense) },\r\n           {KontrollerId: \"GG-A146\", Placeholder: \"{SumTimetall}\", Value: $\"{Sum(nfSelectedRecord3.GG_44_Timetallsfordeling_Trinn5+nfSelectedRecord3.GG_45_Timetallsfordeling_Trinn6+nfSelectedRecord3.GG_46_Timetallsfordeling_Trinn7)}\"},\r\n           {KontrollerId: \"GG-A146\", Placeholder: \"{NedreGrense}\", Value: Text(NedreGrenseA146) },\r\n           {KontrollerId: \"GG-A146\", Placeholder: \"{OvreGrense}\", Value: Text(OvreGrenseA146) },\r\n           {KontrollerId: \"GG-A147\", Placeholder: \"{SumTimetall}\", Value: $\"{Sum(nfSelectedRecord3.GG_43_Timetallsfordeling_Trinn4+nfSelectedRecord3.GG_42_Timetallsfordeling_Trinn3+nfSelectedRecord3.GG_41_Timetallsfordeling_Trinn2+nfSelectedRecord3.GG_40_Timetallsfordeling_Trinn1)}\"},\r\n           {KontrollerId: \"GG-A147\", Placeholder: \"{NedreGrense}\", Value: Text(NedreGrenseA147) },\r\n           {KontrollerId: \"GG-A147\", Placeholder: \"{OvreGrense}\", Value: Text(OvreGrenseA147) },\r\n           {KontrollerId: \"GG-A148\", Placeholder: \"{SumTimetall}\", Value: $\"{Sum(nfSelectedRecord3.GG_44_Timetallsfordeling_Trinn5+nfSelectedRecord3.GG_45_Timetallsfordeling_Trinn6+nfSelectedRecord3.GG_46_Timetallsfordeling_Trinn7)}\"},\r\n           {KontrollerId: \"GG-A148\", Placeholder: \"{NedreGrense}\", Value: Text(NedreGrenseA148) },\r\n           {KontrollerId: \"GG-A148\", Placeholder: \"{OvreGrense}\", Value: Text(OvreGrenseA148) },\r\n           {KontrollerId: \"GG-F126\", Placeholder: \"(X)\", Value: $\"{Coalesce(nfSelectedRecord3.GG_40_Timetallsfordeling_Trinn1, 0)}\" },\r\n           {KontrollerId: \"GG-F127\", Placeholder: \"(X)\", Value: $\"{Coalesce(nfSelectedRecord3.GG_41_Timetallsfordeling_Trinn2, 0)}\" },\r\n           {KontrollerId: \"GG-F128\", Placeholder: \"(X)\", Value: $\"{Coalesce(nfSelectedRecord3.GG_42_Timetallsfordeling_Trinn3, 0)}\" },\r\n           {KontrollerId: \"GG-F129\", Placeholder: \"(X)\", Value: $\"{Coalesce(nfSelectedRecord3.GG_43_Timetallsfordeling_Trinn4, 0)}\" },\r\n           {KontrollerId: \"GG-F130\", Placeholder: \"(X)\", Value: $\"{Coalesce(nfSelectedRecord3.GG_44_Timetallsfordeling_Trinn5, 0)}\" },\r\n           {KontrollerId: \"GG-F131\", Placeholder: \"(X)\", Value: $\"{Coalesce(nfSelectedRecord3.GG_45_Timetallsfordeling_Trinn6, 0)}\" },\r\n           {KontrollerId: \"GG-F132\", Placeholder: \"(X)\", Value: $\"{Coalesce(nfSelectedRecord3.GG_46_Timetallsfordeling_Trinn7, 0)}\" },\r\n           {KontrollerId: \"GG-F133\", Placeholder: \"(X)\", Value: $\"{Coalesce(nfSelectedRecord3.GG_48_Timetallsfordeling_Trinn8, 0)}\" },\r\n           {KontrollerId: \"GG-F134\", Placeholder: \"(X)\", Value: $\"{Coalesce(nfSelectedRecord3.GG_49_Timetallsfordeling_Trinn9, 0)}\" },\r\n           {KontrollerId: \"GG-F135\", Placeholder: \"(X)\", Value: $\"{Coalesce(nfSelectedRecord3.GG_50_Timetallsfordeling_Trinn10, 0)}\" },\r\n           {KontrollerId: \"GG-A151\", Placeholder: \"(X)\", Value: $\"{Sum(nfSelectedRecord3.GG_48_Timetallsfordeling_Trinn8+nfSelectedRecord3.GG_49_Timetallsfordeling_Trinn9+nfSelectedRecord3.GG_50_Timetallsfordeling_Trinn10)}\" },\r\n           {KontrollerId: \"GG-A156\"},\r\n           {KontrollerId: \"GG-A157\"},\r\n           {KontrollerId: \"GG-F156\"}\r\n\r\n    )\r\n);\r\n\r\n// ----------------------------------------------------\r\n// 3. Rebuild controller collection from fresh Status formulas\r\n// Remove bulky columns and keep only active false controllers\r\n// ----------------------------------------------------\r\nClearCollect(\r\n    tempcolKontrollereSkole,\r\n    Filter(\r\n        DropColumns(\r\n            nfKontrolleretable,\r\n            HovedsporsmalBokmal,\r\n            HovedsporsmalNynorsk,\r\n            KontrollTekstBokmal,\r\n            KontrollTekstNynorsk,\r\n            Tekst,\r\n            DatabaseFeltNavn\r\n        ),\r\n        Status = false\r\n    )\r\n);\r\n\r\n// ----------------------------------------------------\r\n// 4. Merge comments from previous collection into fresh false controllers\r\n// ----------------------------------------------------\r\nForAll(\r\n    tempcolKontrollereSkole As t,\r\n    Patch(\r\n        tempcolKontrollereSkole,\r\n        t,\r\n        {\r\n            KontrollKommentar: LookUp(\r\n                colKontrollereSkole,\r\n                KontrollerId = t.KontrollerId,\r\n                KontrollKommentar\r\n            )\r\n        }\r\n    )\r\n);\r\n\r\n// ----------------------------------------------------\r\n// 5. Replace original controller collection\r\n// ----------------------------------------------------\r\nClearCollect(\r\n    colKontrollereSkole,\r\n    tempcolKontrollereSkole\r\n);\r\n\r\n// ----------------------------------------------------\r\n// 6. Recount warnings AFTER fresh controller status\r\n// ----------------------------------------------------\r\nSet(\r\n    vargblCountfalseadvarsler,\r\n    CountIf(\r\n        nfKontrolleretable,\r\n        KontrollKategori = \"Advarsel\" && Status = false\r\n    )\r\n);\r\n\r\n// ----------------------------------------------------\r\n// 7. Patch ONCE at the end\r\n// ----------------------------------------------------\r\nIf(\r\n    nfDisplayMode = DisplayMode.Edit &&\r\n    (\r\n        nfLoginRole.RolleId = 9 ||\r\n        (\r\n            nfLoginRole.RolleId = 10 &&\r\n            !IsBlank(Find(\"kommune sentralt\", vargblGallerySelectedSkole.Navn))\r\n        )\r\n    ),\r\n    Patch(\r\n        GsiGrunnskoleSvar,\r\n        nfSelectedRecord,\r\n        {\r\n            Kontrollere: JSON(colKontrollereSkole)\r\n        }\r\n    )\r\n);\r\n\r\n// ----------------------------------------------------\r\n// 8. Final screen marker\r\n// ----------------------------------------------------\r\nSet(CurrentViewScreen, \"Del17\");"
+    Children:
+      - MainScreenContainer2_13:
+          Control: GroupContainer@1.5.0
+          Variant: AutoLayout
+          Properties:
+            DropShadow: =DropShadow.None
+            Height: =Parent.Height
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutOverflowY: =LayoutOverflow.Scroll
+            Width: =Parent.Width
+          Children:
+            - HeaderContainer3_17:
+                Control: GroupContainer@1.5.0
+                Variant: AutoLayout
+                Properties:
+                  AlignInContainer: =AlignInContainer.SetByContainer
+                  DropShadow: =DropShadow.None
+                  FillPortions: =0
+                  Height: =Local_comp_GSI_Header_1.Height
+                  LayoutAlignItems: =LayoutAlignItems.Stretch
+                  LayoutDirection: =LayoutDirection.Vertical
+                  LayoutMaxHeight: =
+                  LayoutMaxWidth: =
+                  Visible: =If(Parent.Width < 800, false, true)
+                  Width: =Parent.Width
+                Children:
+                  - Local_comp_GSI_Header_1:
+                      Control: CanvasComponent
+                      ComponentName: Local_comp_GSI_Header
+                      Properties:
+                        Beliggenhet: |-
+                          =/*Switch(nfLoginRole.RolleId,
+                          9, vargblLookupNSR.Kommunenavn,
+                          10, vargblLookupNSR.Kommunenavn,
+                          11, vargblLookupNSR.Fylkesnavn, 
+                          12, "Utdanningsdirektoratet",
+                          13, "Utdanningsdirektoratet")*/
+                        CurrentScreen: ="Text"
+                        Custom_Environment: |
+                          =nfEnv_Name
+                        Custom_Input_Role: =nfLoginRole.RolleId
+                        Custom_SolutionVersion: |+
+                          =//Henter solution versjon
+                          nfSolutionVersion
+
+
+                        Custom_Version: =nfAppVersion
+                        Fill: =RGBA(255, 255, 255, 1)
+                        Font: =Font.'Segoe UI'
+                        Header: =App.ActiveScreen
+                        Height: =80
+                        HideShowReponsiveNavbar: =Set(vargblResponsiveShowNavbar, !vargblResponsiveShowNavbar)
+                        Kommunenavn: =nfLookupNSR.Kommunenavn
+                        LayoutMaxHeight: =
+                        LayoutMaxWidth: =
+                        Navn: =nfLookupNSR.Navn
+                        Rolleid: =nfLoginRole.RolleId
+                        Skole: =//vargblLookupNSR.Navn
+                        Width: =App.Width
+            - InnholdsContainer_14:
+                Control: GroupContainer@1.5.0
+                Variant: AutoLayout
+                Properties:
+                  AlignInContainer: =AlignInContainer.SetByContainer
+                  DropShadow: =DropShadow.None
+                  Height: =Parent.Height - HeaderContainer3_17.Height - Comp_Liba_Footer_14.Height
+                  LayoutAlignItems: =LayoutAlignItems.Stretch
+                  LayoutDirection: =LayoutDirection.Horizontal
+                  LayoutMaxHeight: =
+                  LayoutMaxWidth: =
+                  Width: =Parent.Width
+                Children:
+                  - NavigasjonsContainer2_14:
+                      Control: GroupContainer@1.5.0
+                      Variant: AutoLayout
+                      Properties:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        Height: =Parent.Height
+                        LayoutDirection: =LayoutDirection.Horizontal
+                        LayoutMaxHeight: =
+                        LayoutMaxWidth: =
+                        PaddingLeft: =10
+                        Width: =If(Del17_Kontroller.Size >2 || vargblResponsiveShowNavbar  , 260, 0)
+                      Children:
+                        - Local_comp_navbar_15:
+                            Control: CanvasComponent
+                            ComponentName: Local_comp_navbar
+                            Properties:
+                              Fill: =Color.Transparent
+                              Height: = Parent.Height
+                              Input_Statussteg_Table: "=Table(\r\n    {Steg: 1, Status: Statussteg1},\r\n    {Steg: 2, Status: Statussteg2},\r\n    {Steg: 3, Status: Statussteg3},\r\n    {Steg: 4, Status: Statussteg4},\r\n    {Steg: 5, Status: Statussteg5},\r\n    {Steg: 6, Status: Statussteg6},\r\n    {Steg: 7, Status: Statussteg7},\r\n    {Steg: 8, Status: Statussteg8},\r\n    {Steg: 9, Status: Statussteg9},\r\n    {Steg: 10, Status: Statussteg10},\r\n    {Steg: 11, Status: Statussteg11},\r\n    {Steg: 12, Status: Statussteg12},\r\n    {Steg: 13, Status: Statussteg13},\r\n    {Steg: 14, Status: Statussteg14},\r\n    {Steg: 15, Status: Statussteg15},\r\n    {Steg: 16, Status: Statussteg16},\r\n    {Steg: 17, Status: Statussteg17},\r\n    {Steg: 18, Status: nfTotalStatus}\r\n   \r\n\r\n)\r\n\r\n\r\n"
+                              LayoutMaxHeight: =
+                              LayoutMaxWidth: =
+                              NavigationItems: |+
+                                =vargblNavbarItems
+
+
+                                /*Table(
+                                    {
+                                        Steg: "1",
+                                        Tittel: "Enhetsopplysninger",
+                                        Naviger_to_screen: Del1
+                                        ,Status: Statussteg1
+                                    },
+                                    {
+                                        Steg: "2",
+                                        Tittel: "Om skolen",
+                                        Naviger_to_screen: Del2
+                                        ,Status: Statussteg2
+                                    },
+                                    {
+                                        Steg: "3",
+                                        Tittel: "Elever og timer",
+                                        Naviger_to_screen: Del3
+                                        ,Status: Statussteg3
+                                    },
+                                    {
+                                        Steg: "4",
+                                        Tittel: "Årstimer",
+                                        Naviger_to_screen: Del4
+                                        ,Status: Statussteg4
+                                    },
+                                    {
+                                        Steg: "5",
+                                        Tittel: "Lærere og assistenter",
+                                        Naviger_to_screen: Del5
+                                        ,Status: Statussteg5
+                                    },
+                                    {
+                                        Steg: "6",
+                                        Tittel: "Årsverk og ansatte",
+                                        Naviger_to_screen: Del6
+                                        ,Status: Statussteg6
+                                    }
+                                    ,
+                                    {
+                                        Steg: "7",
+                                        Tittel: "Spesialundervisning",
+                                        Naviger_to_screen: Del7
+                                        ,Status: Statussteg7
+                                    }
+                                    ,
+                                    {
+                                        Steg: "8",
+                                        Tittel: "Særskilt språkopplæring",
+                                        Naviger_to_screen: Del8
+                                        ,Status: Statussteg8
+                                    }
+                                    ,
+                                    {
+                                        Steg: "9",
+                                        Tittel: "Opplæringsspråk",
+                                        Naviger_to_screen: Del9
+                                        //,Status: Del9
+                                    }
+                                    ,
+                                    {
+                                        Steg: "10",
+                                        Tittel: "Fremmedspråk, språklig fordypning og arbeidslivsfag",
+                                        Naviger_to_screen: Del10
+                                        //,Status: Del10
+                                    }
+                                    ,
+                                    {
+                                        Steg: "11",
+                                        Tittel: "Valgfag",
+                                        Naviger_to_screen: Del11
+                                        //,Status: Del11
+                                    }
+                                    ,
+                                    {
+                                        Steg: "12",
+                                        Tittel: "Fysisk aktivitet og leksehjelp",
+                                        Naviger_to_screen: Del12
+                                        //,Status: Del11
+                                    }
+                                    ,
+                                    {
+                                        Steg: "13",
+                                        Tittel: "Andre opplysninger",
+                                        Naviger_to_screen: Del13
+                                        //,Status: Del11
+                                    }
+                                      ,
+                                    {
+                                        Steg: "14",
+                                        Tittel: "Skolefritidsordningen (SFO)",
+                                        Naviger_to_screen: Del14
+                                        //,Status: Del11
+                                    }
+                                    ,
+                                    {
+                                        Steg: "15",
+                                        Tittel: "Kontroller",
+                                        Naviger_to_screen: 'Del17 - Kontroller'
+                                        ,Status: Statussteg15
+                                    }
+                                    ,
+                                    {
+                                        Steg: "16",
+                                        Tittel: "Fullfør",
+                                        Naviger_to_screen: 'Del18 - Fullfør'
+                                        ,Status: nfTotalStatus
+                                    }
+                                )*/
+
+                              Standardfarge: =Color.White
+                              StardardTekstFarge: =RGBA(48, 48, 48, 1)
+                              Valgsteg_farge: =RGBA(48, 48, 48, 1)
+                              Valgtsteg_tekstfarge: =Color.White
+                              Width: =250
+                  - SpmContainer2_14:
+                      Control: GroupContainer@1.5.0
+                      Variant: AutoLayout
+                      Properties:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        DropShadow: =DropShadow.None
+                        Height: =Parent.Height
+                        LayoutAlignItems: =LayoutAlignItems.Stretch
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutMaxHeight: =
+                        LayoutMaxWidth: =
+                        Width: =Parent.Width - NavigasjonsContainer2_14.Width
+                      Children:
+                        - SpmInnholdContainer2_14:
+                            Control: GroupContainer@1.5.0
+                            Variant: AutoLayout
+                            Properties:
+                              DropShadow: =DropShadow.None
+                              Height: =Parent.Height
+                              LayoutDirection: =LayoutDirection.Vertical
+                              LayoutMaxHeight: =
+                              LayoutMaxWidth: =
+                              Width: =Parent.Width
+                            Children:
+                              - Container4_24:
+                                  Control: GroupContainer@1.5.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    DropShadow: =DropShadow.None
+                                    Height: =Comp_Liba_Footer_14.Height
+                                    LayoutDirection: =LayoutDirection.Vertical
+                                    LayoutMaxHeight: =
+                                    LayoutMaxWidth: =
+                                    Width: =Parent.Width
+                                  Children:
+                                    - Container4_28:
+                                        Control: GroupContainer@1.5.0
+                                        Variant: AutoLayout
+                                        Properties:
+                                          DropShadow: =DropShadow.None
+                                          Height: =Comp_Liba_Footer_14.Height
+                                          LayoutDirection: =LayoutDirection.Vertical
+                                          LayoutMaxHeight: =
+                                          LayoutMaxWidth: =
+                                          Width: =Parent.Width
+                                        Children:
+                                          - ScrollSkjema-Canvas_steg10_1:
+                                              Control: FluidGrid@2.3.0
+                                              Properties:
+                                                AlignInContainer: =AlignInContainer.SetByContainer
+                                                BorderThickness: =0
+                                                Height: =523
+                                                LayoutMaxHeight: =
+                                                LayoutMaxWidth: =
+                                                Width: =Parent.Width
+                                                X: =300
+                                                Y: =38
+                                              Children:
+                                                - Kontrollere_sammendrag:
+                                                    Control: DataCard@1.0.2
+                                                    Properties:
+                                                      BorderColor: =Color.White
+                                                      DisplayMode: =nfDisplayMode
+                                                      Fill: =Color.Transparent
+                                                      Height: =471
+                                                      Width: =vargblDatacardWidth
+                                                      X: =0
+                                                      Y: =78
+                                                    Children:
+                                                      - Local_Comp_Kontroller_Oversikt_1:
+                                                          Control: CanvasComponent
+                                                          ComponentName: Local_Comp_Kontroller_Oversikt
+                                                          Properties:
+                                                            Height: |-
+                                                              =//If(Local_comp_kontroller_Steg11.Comp_Height < 101 , 300 ,Local_comp_kontroller_Steg11.Comp_Height) 
+
+                                                              400
+                                                            ReplaceValueTable: |
+                                                              =ColDel17Kontrolleroverikt
+                                                            Width: =1078
+                                                            varlclKontrollerSkjema: |-
+                                                              =true
+
+                                                              //varlclKontrollerSkjema
+                                                      - Container_NoMessages:
+                                                          Control: GroupContainer@1.5.0
+                                                          Variant: AutoLayout
+                                                          Properties:
+                                                            DropShadow: =DropShadow.None
+                                                            Fill: =farge_gronn01
+                                                            Height: =66
+                                                            LayoutDirection: =LayoutDirection.Vertical
+                                                            LayoutGap: =3
+                                                            LayoutJustifyContent: =LayoutJustifyContent.Center
+                                                            RadiusBottomLeft: =5
+                                                            RadiusBottomRight: =5
+                                                            RadiusTopLeft: =5
+                                                            RadiusTopRight: =5
+                                                            Visible: |+
+                                                              =If( nfKontrollerSkjema  && 
+                                                              CountRows(Filter(nfKontrolleretable,  Status = false ) ) = 0 , true, false)
+
+
+
+                                                            Width: =Parent.Width/2 + 50
+                                                            X: =16
+                                                            Y: =16
+                                                          Children:
+                                                            - Kontroll_tekst_11:
+                                                                Control: Label@2.5.1
+                                                                Properties:
+                                                                  AutoHeight: =true
+                                                                  BorderColor: =RGBA(32, 54, 71, 1)
+                                                                  Font: ="Segoe UI"
+                                                                  Height: =
+                                                                  LayoutMaxHeight: =
+                                                                  LayoutMaxWidth: =
+                                                                  Text: =LookUp(ColTekstDiverse, ID = 92).Tekst
+                                                                  Width: =Parent.Width - 10
+                                                                  X: =5
+                                                - Steg17_Overskrift:
+                                                    Control: DataCard@1.0.2
+                                                    Variant: BlankCard
+                                                    Properties:
+                                                      DisplayMode: =nfDisplayMode
+                                                      Height: =140
+                                                      Width: =vargblDatacardWidth
+                                                      X: =0
+                                                      Y: =0
+                                                    Children:
+                                                      - Container40_1:
+                                                          Control: GroupContainer@1.5.0
+                                                          Variant: AutoLayout
+                                                          Properties:
+                                                            DropShadow: =DropShadow.None
+                                                            Height: =220
+                                                            LayoutDirection: =LayoutDirection.Vertical
+                                                            Width: =Parent.Width-15
+                                                          Children:
+                                                            - Steg10_Overskrift_Label_3:
+                                                                Control: Label@2.5.1
+                                                                Properties:
+                                                                  DisplayMode: =nfDisplayMode
+                                                                  Font: =FontHeading
+                                                                  FontWeight: =FontWeight.Semibold
+                                                                  Height: =78
+                                                                  LayoutMaxHeight: =
+                                                                  LayoutMaxWidth: =
+                                                                  Size: =20
+                                                                  Text: ="17. " & LookUp(ColTekstDiverse, ID = 215).Tekst
+                                                                  Width: =Parent.Width - 60
+                                                                  X: =4
+                                                            - Kontroller_info_tekst_1:
+                                                                Control: Label@2.5.1
+                                                                Properties:
+                                                                  Font: =FontBody
+                                                                  Height: =30
+                                                                  LayoutMaxHeight: =
+                                                                  LayoutMaxWidth: =
+                                                                  Size: =Size_StandardText
+                                                                  Text: =LookUp(ColTekstDiverse, ID = 97).Tekst
+                                                                  Width: =1066
+                                                                  X: =4
+                                                                  Y: =54
+                                                            - Container59:
+                                                                Control: GroupContainer@1.5.0
+                                                                Variant: AutoLayout
+                                                                Properties:
+                                                                  DropShadow: =DropShadow.None
+                                                                  FillPortions: =0
+                                                                  Height: =30
+                                                                  LayoutDirection: =LayoutDirection.Horizontal
+                                                                  LayoutMaxHeight: =
+                                                                  LayoutMaxWidth: =
+                                                                  LayoutMinHeight: =30
+                                                                  PaddingLeft: =5
+                                                                Children:
+                                                                  - Image1:
+                                                                      Control: Image@2.2.3
+                                                                      Properties:
+                                                                        AlignInContainer: =AlignInContainer.Center
+                                                                        Height: =20
+                                                                        Image: ='Error Circle'
+                                                                        LayoutMaxHeight: =
+                                                                        LayoutMaxWidth: =
+                                                                        Width: =20
+                                                                  - Kontroller_info_tekst_2:
+                                                                      Control: Label@2.5.1
+                                                                      Properties:
+                                                                        Font: =FontBody
+                                                                        Height: =30
+                                                                        LayoutMaxHeight: =
+                                                                        LayoutMaxWidth: =
+                                                                        Size: =Size_StandardText
+                                                                        Text: =LookUp(ColTekstDiverse, ID = 98).Tekst
+                                                                        Width: =1066
+                                                                        X: =4
+                                                                        Y: =54
+                                                            - Container59_5:
+                                                                Control: GroupContainer@1.5.0
+                                                                Variant: AutoLayout
+                                                                Properties:
+                                                                  DropShadow: =DropShadow.None
+                                                                  FillPortions: =0
+                                                                  Height: =30
+                                                                  LayoutDirection: =LayoutDirection.Horizontal
+                                                                  LayoutMaxHeight: =
+                                                                  LayoutMaxWidth: =
+                                                                  LayoutMinHeight: =30
+                                                                  PaddingLeft: =5
+                                                                Children:
+                                                                  - Image1_3:
+                                                                      Control: Image@2.2.3
+                                                                      Properties:
+                                                                        AlignInContainer: =AlignInContainer.Center
+                                                                        Height: =20
+                                                                        Image: =Warning
+                                                                        LayoutMaxHeight: =
+                                                                        LayoutMaxWidth: =
+                                                                        Width: =20
+                                                                  - Kontroller_info_tekst_3:
+                                                                      Control: Label@2.5.1
+                                                                      Properties:
+                                                                        Font: =FontBody
+                                                                        Height: =30
+                                                                        LayoutMaxHeight: =
+                                                                        LayoutMaxWidth: =
+                                                                        Size: =Size_StandardText
+                                                                        Text: =LookUp(ColTekstDiverse, ID = 99).Tekst
+                                                                        Width: =1066
+                                                                        X: =4
+                                                                        Y: =54
+                                                            - Container38_1:
+                                                                Control: GroupContainer@1.5.0
+                                                                Variant: ManualLayout
+                                                                Properties:
+                                                                  DropShadow: =DropShadow.None
+                                                                  FillPortions: =0
+                                                                  Height: =50
+                                                                  LayoutMaxHeight: =
+                                                                  LayoutMaxWidth: =
+                                                                Children:
+                                                                  - KontrollerSkjema_2:
+                                                                      Control: Classic/Button@2.2.0
+                                                                      Properties:
+                                                                        BorderColor: =Color.Black
+                                                                        Color: =Color.White
+                                                                        Fill: =Color.Black
+                                                                        Font: =FontHeading
+                                                                        Height: =30
+                                                                        HoverColor: =RGBA(255, 255, 255, 1)
+                                                                        OnSelect: |
+                                                                          =
+                                                                          If(nfDisplayMode = DisplayMode.Edit, ////BOGI-3524
+                                                                              Patch(GsiGrunnskoleSvar,nfSelectedRecord,
+                                                                              {
+                                                                                  KontrollerSkjemaStatus: true
+                                                                              })
+                                                                          );
+
+                                                                          // Hvis kontrollere kolonne ikke blitt populert,skall data skrives inn en gang, slik at man kan lagre kommentarer på siden. ////BOGI-3524
+                                                                          With({SelectedRecordKontrollere: LookUp(GsiGrunnskoleSvar, SkjemaStatusId = vargblSkjemaStatusId).Kontrollere },
+                                                                          If(  
+                                                                                  IsBlank(SelectedRecordKontrollere) || (Len(SelectedRecordKontrollere) < 5),
+                                                                                      ClearCollect( 
+                                                                                          colKontrollereSkole,
+                                                                                              DropColumns( // Rydder bort unødvendig tekst i json, denne sendes som en del av selected record å bør være så liten som mulig
+                                                                                                          nfKontrolleretable,
+                                                                                                              HovedsporsmalBokmal,
+                                                                                                              HovedsporsmalNynorsk,
+                                                                                                              KontrollTekstBokmal,
+                                                                                                              KontrollTekstNynorsk, 
+                                                                                                              Tekst, 
+                                                                                                              DatabaseFeltNavn
+                                                                                                          ) 
+                                                                                      ), false
+                                                                          ));
+
+                                                                          If(nfDisplayMode = DisplayMode.Edit, ////BOGI-3524
+                                                                              Patch(GsiGrunnskoleSvar,nfSelectedRecord,
+                                                                              {
+                                                                                  Kontrollere:JSON(colKontrollereSkole) 
+                                                                              })
+                                                                          );
+                                                                        RadiusBottomLeft: =2
+                                                                        RadiusBottomRight: =2
+                                                                        RadiusTopLeft: =2
+                                                                        RadiusTopRight: =2
+                                                                        Size: =10
+                                                                        Text: ="Kontroller skjema"
+                                                                        Width: =120
+                                                                        X: =10
+                                                                        Y: =12
+                                                                  - Kontroller_info_tekst_4:
+                                                                      Control: Label@2.5.1
+                                                                      Properties:
+                                                                        Font: =FontBody
+                                                                        Height: =30
+                                                                        Size: =Size_StandardText
+                                                                        Text: =LookUp(ColTekstDiverse, ID = 92).Tekst
+                                                                        Visible: |-
+                                                                          =false   //If(nfLoginRole.RolleId = 1  && (Statussteg1 * Statussteg2 
+                                                                          //* Statussteg3 * Statussteg4 * Statussteg5
+                                                                          // * Statussteg6 * Statussteg7 * Statussteg8 ) = 1  , true, false)
+                                                                        Width: =946
+                                                                        X: =165
+                                                                        Y: =12
+                                                                  - Container4:
+                                                                      Control: GroupContainer@1.5.0
+                                                                      Variant: ManualLayout
+                                                                      Properties:
+                                                                        DropShadow: =DropShadow.None
+                                                                        Height: =50
+                                                                        Width: =150
+                                                                        X: =900
+                                                                      Children:
+                                                                        - Label3:
+                                                                            Control: Label@2.5.1
+                                                                            Properties:
+                                                                              FontWeight: =FontWeight.Lighter
+                                                                              PaddingBottom: =0
+                                                                              PaddingLeft: =0
+                                                                              PaddingRight: =0
+                                                                              PaddingTop: =0
+                                                                              Text: |-
+                                                                                =//Sjekker om knappen Kontroller skjema er aktivert, teller så hvor mange aktive kontrollere det er 
+                                                                                //Beregner antall advarsler som ikke har kommentarer og feilmeldinger som ikke er løst ut
+                                                                                If(
+                                                                                        nfSelectedRecord.KontrollerSkjemaStatus = false || nfSelectedRecord.KontrollerSkjemaStatus = Blank(),
+                                                                                        "Antall: 0",
+                                                                                        Concatenate(
+                                                                                            "Antall: ",
+                                                                                            Text(
+                                                                                                Coalesce(
+                                                                                                    CountRows(
+                                                                                                        Filter(
+                                                                                                            nfKontrolleretable,
+                                                                                                            KontrollKategori = "Advarsel" && Status = false
+                                                                                                        )
+                                                                                                    ) - 
+                                                                                                    CountRows(
+                                                                                                        Filter(
+                                                                                                            colKontrollereSkole,
+                                                                                                            KontrollKategori = "Advarsel" && !IsBlank(KontrollKommentar)
+                                                                                                        )
+                                                                                                    ) + 
+                                                                                                    CountRows(
+                                                                                                        Filter(
+                                                                                                            nfKontrolleretable,
+                                                                                                            KontrollKategori = "Feilmelding" && Status = false
+                                                                                                        )
+                                                                                                    ),
+                                                                                                    0
+                                                                                                )
+                                                                                            )
+                                                                                    )
+                                                                                )
+
+
+                                                                                /*$"Antall: {CountRows(
+                                                                                        Filter(
+                                                                                            nfKontrolleretable,
+                                                                                            KontrollKategori = "Advarsel" && Status = false
+                                                                                        )
+                                                                                ) - CountRows(
+                                                                                            Filter(
+                                                                                                colKontrollereSkole,
+                                                                                                KontrollKategori = "Advarsel"  && !IsBlank(KontrollKommentar)
+                                                                                    )
+                                                                                ) + CountRows(
+                                                                                        Filter(
+                                                                                            nfKontrolleretable, Status = false && KontrollKategori = "Feilmelding"
+                                                                                        )
+                                                                                    )}" */
+                                                                              X: =40
+                                                                              Y: =10
+                                                                  - Label8:
+                                                                      Control: Label@2.5.1
+                                                                      Properties:
+                                                                        Text: |-
+                                                                          ="
+                                                                          "
+                                                                        Width: =245
+                                                                        X: =352
+                                                                        Y: =10
+                                                - Steg17_Skjulte_Knapper:
+                                                    Control: DataCard@1.0.2
+                                                    Variant: BlankCard
+                                                    Properties:
+                                                      DisplayMode: =nfDisplayMode
+                                                      Height: =100
+                                                      Visible: =false
+                                                      Width: =1126
+                                                      X: =0
+                                                      Y: =400
+                                                    Children:
+                                                      - Steg10_Kontrollerskjema:
+                                                          Control: Classic/Button@2.2.0
+                                                          Properties:
+                                                            Color: =RGBA(0, 0, 0, 1)
+                                                            DisplayMode: =nfDisplayMode
+                                                            Fill: =farge_gronn01
+                                                            Height: =30
+                                                            HoverColor: =RGBA(255, 255, 255, 1)
+                                                            OnSelect: |-
+                                                              =Patch(GsiGrunnskoleSvar, nfSelectedRecord, {KontrollerSkjemaStatus: true});
+                                                            PaddingRight: =3.59
+                                                            PaddingTop: =3.59
+                                                            RadiusBottomLeft: =4
+                                                            RadiusBottomRight: =4
+                                                            RadiusTopLeft: =4
+                                                            RadiusTopRight: =4
+                                                            Text: ="Kontroller skjema"
+                                                            Width: =142
+                                                            X: =60
+                                                            Y: =60
+                                                      - Timer_SpinnerVisible:
+                                                          Control: Timer@2.1.0
+                                                          Properties:
+                                                            AutoStart: =true
+                                                            Color: =RGBA(255, 255, 255, 1)
+                                                            DisplayMode: =nfDisplayMode
+                                                            Duration: =5000
+                                                            HoverColor: =RGBA(255, 255, 255, 1)
+                                                            OnTimerEnd: |-
+                                                              =UpdateContext({varclcSpinnerVisible: false})
+                                                            OnTimerStart: |-
+                                                              =UpdateContext({varclcSpinnerVisible: true})
+                                                            Start: =true
+                        - Comp_Liba_Footer_14:
+                            Control: CanvasComponent
+                            ComponentName: Comp_Liba_Footer
+                            ComponentLibraryUniqueName: cr734_gsidesignprofil_81df1
+                            Properties:
+                              AlignInContainer: =AlignInContainer.Start
+                              ButtonMaxWidth: =100
+                              ButtonPadding: =If(Comp_Liba_Footer_14.Width < 1200, 100,Comp_Liba_Footer_14.Width < 1200,0, 200)
+                              ColorPrimaryButton: =Color.Black
+                              ColorSecondaryButton: =Color.White
+                              Fill: =RGBA(255, 255, 255, 1)
+                              Font: ="Roboto"
+                              FontSize: =10
+                              ForrigeSkjerm: |-
+                                =If(
+                                    Iskommunesentralt = false,
+                                    If(
+                                        !Coalesce(nfSelectedRecord2.GG_230_Tilbyr_SFO, false),
+                                        Del13,
+                                        Del14
+                                    ),
+                                    If(
+                                        !Coalesce(nfSelectedRecord2.GG_230_Tilbyr_SFO, false),
+                                        Del13,
+                                        Del16_Ukraina
+                                    )
+                                )
+                              ForsideSkjerm: =Forside_Statusside
+                              Height: =50
+                              KontrollerSteg: =
+                              LayoutMaxHeight: =
+                              LayoutMaxWidth: =
+                              NesteSkjerm: =Del18_Fullfør
+                              OnSelectLeverSkjema: ="Text"
+                              VisKontrollerSkjema: =false
+                              VisLeverSkjema: =false
+                              VisNeste: =true
+                              Width: =Max(1078)
+      - Spmtegn_drawer_bagrunn_Steg2_14:
+          Control: Rectangle@2.3.0
+          Properties:
+            DisplayMode: =nfDisplayMode
+            Fill: =RGBA(0, 0, 0, 0.40)
+            Height: =Parent.Height
+            Visible: =vargblVisDrawer
+            Width: =Parent.Width
+      - Popup_MistetTilgang_21:
+          Control: CanvasComponent
+          ComponentName: Popup_MistetTilgang
+          Properties:
+            Height: |-
+              =/*
+              If(Or(varHarMistetTilgang,nfHarMistetTilgang)&&LookUp('Environment Variable Values','Environment Variable Definition'.'Schema Name'="bogi_env_name").Value in ["test","qa","prod",
+                     // "dev"
+              ],App.Height,0)
+              */
+
+              If(
+                  nfHarMistetTilgang &&
+                  Lower(Trim(vargblEnvironment)) in ["test", "qa", "prod", "dev"],
+                  Parent.Height,
+                  0
+              )
+            Visible: =If(vargblEnvironment <> "dev", true, false)
+            Width: =App.Width
+            nfHarMistetTilgang: =varHarMistetTilgang

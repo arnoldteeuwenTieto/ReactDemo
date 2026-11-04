@@ -22,7 +22,7 @@ export default defineConfig({
     url: baseURL,
     // Own the server so an existing instance cannot silently omit the demo flag.
     reuseExistingServer: false,
-    env: { VITE_ENABLE_DEMO_USERS: 'true', VITE_APP_ENV: '', VITE_BUILD_NUMBER: '', VITE_COMMIT_SHA: '' },
+    env: { VITE_ENABLE_DEMO_USERS: 'true', VITE_APP_ENV: process.env.E2E_APP_ENV ?? '', VITE_BUILD_NUMBER: '', VITE_COMMIT_SHA: '' },
     timeout: 60_000,
   }, {
     // Build with the flag deliberately set: production must still disable it.
