@@ -11,15 +11,16 @@ The existing `.github/workflows/deploy.yml` build step supplies these public val
 
 | Header field | Source | Local fallback |
 | --- | --- | --- |
-| Miljø | `VITE_APP_ENV`, from the GitHub repository/environment variable of the same name | `Local` |
+| Miljø | `VITE_APP_ENV`, explicitly set to DEMO by the dedicated Pages workflow | `Local` |
 | Versjon | `package.json` version | Package version, always present |
 | Bygg | `VITE_BUILD_NUMBER` = `${{ github.run_number }}` | `Local` |
 | Commit | First seven characters of `VITE_COMMIT_SHA` = `${{ github.sha }}` | `Local` |
 
-Set `VITE_APP_ENV` in the repository's Actions variables or the existing
-`github-pages` deployment environment's variables to `TEST`, `QA` or `PROD` as
-appropriate. The workflow defaults to **TEST** when that deployment variable is
-missing. The label is never inferred from Vite's `production` mode or `NODE_ENV`.
+The Pages workflow publishes fictional demo data using `npm run build:demo`,
+mode `demo`, `VITE_APP_ENV=DEMO` and `VITE_ENABLE_DEMO_USERS=true`. Real-user
+deployment workflows must use the normal `npm run build` command with their own
+explicit TEST, QA or PROD label; these labels cannot enable demonstration users.
+The label is never inferred from Vite's `production` mode or `NODE_ENV`.
 A production-optimized bundle can therefore display QA or TEST. These are compile-
 time values: changing the deployment label requires a new build/deployment.
 

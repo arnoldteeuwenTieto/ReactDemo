@@ -37,12 +37,13 @@ jobs:
 
       - name: Build React application
         env:
-          # Set VITE_APP_ENV in repository/environment variables to TEST, QA or PROD.
-          # The deployment label is independent of Vite's production build mode.
-          VITE_APP_ENV: ${{ vars.VITE_APP_ENV || 'TEST' }}
+          # This workflow publishes fictional demo data only. Real-user deployments
+          # must use npm run build without the dedicated demo mode/opt-in.
+          VITE_APP_ENV: DEMO
+          VITE_ENABLE_DEMO_USERS: 'true'
           VITE_BUILD_NUMBER: ${{ github.run_number }}
           VITE_COMMIT_SHA: ${{ github.sha }}
-        run: npm run build
+        run: npm run build:demo
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5

@@ -32,6 +32,8 @@ import { ImportedWorkflowSection } from './components/ImportedWorkflowSection'
 
 const initialFilters: Filters = { search: '', municipality: '', year: '2026', statusId: '' }
 const reportKey = (school: School) => `${school.id}:${school.year}`
+// Deployment fixture selection is independent of a user's assigned unit.
+const initialDemoSchool = __DEPLOYED_DEMO__ ? schools.find(school => school.id === '1' && school.year === 2026) : null
 
 function App() {
   useTranslation('ui')
@@ -43,8 +45,8 @@ function App() {
     return statusId === undefined ? school : { ...school, statusId }
   }), [demoEnabled, statusOverrides])
   const [filters, setFilters] = useState<Filters>(initialFilters)
-  const [selectedId, setSelectedId] = useState<string | null>(null)
-  const [openReport, setOpenReport] = useState<{ id: string; year: number } | null>(null)
+  const [selectedId, setSelectedId] = useState<string | null>(initialDemoSchool?.id ?? null)
+  const [openReport, setOpenReport] = useState<{ id: string; year: number } | null>(initialDemoSchool ? { id: initialDemoSchool.id, year: initialDemoSchool.year } : null)
   const openSchool = schoolReports.find(school => school.id === openReport?.id && school.year === openReport.year) ?? null
   const { sectionIssueCounts, updateDel2, visitSection, leaveSection } = useSectionValidation({ enabled: demoEnabled, user: selectedUser, school: openSchool })
   const validationKey = openSchool ? `${mockSkjemaStatusId(openSchool)}` : null

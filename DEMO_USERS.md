@@ -1,12 +1,56 @@
 # Demonstration users
 
-The selector is opt-in and development-only. In `.env.development.local`, set
+The selector is opt-in. For local development, in `.env.development.local`, set
 `VITE_ENABLE_DEMO_USERS=true`, then restart `npm run dev`. Alternatively set that
 environment variable in your shell. Without the exact value `true`, switching is
-disabled. `npm run build` disables switching even when the flag is set; the entire
-demo-control section is removed from the layout. No deployment settings change.
-Vite defines the enablement constant only for its development-server command in
-development mode; build commands always define it as false, regardless of NODE_ENV.
+disabled. Normal `npm run build` disables switching even when the flag is set.
+Explicit TEST/QA/PROD labels disable simulation for both local and built applications.
+
+The GitHub Pages workflow is a dedicated fictional demonstration deployment:
+`npm run build:demo` uses Vite mode `demo`, `.env.demo`, `VITE_APP_ENV=DEMO` and
+`VITE_ENABLE_DEMO_USERS=true`. All three conditions (mode, label and opt-in) are
+required for a deployed demo. The workflow explicitly sets the label and opt-in;
+it no longer defaults this fictional deployment to TEST. Real-user deployment
+workflows must use `npm run build` with their own TEST/QA/PROD label and no demo
+opt-in. Do not deploy the demo artifact to an environment handling real users.
+
+Only the dedicated deployed demo initially opens the 2026 Fjordgløtt report with
+the existing default fictional profile Ada Fjord. This is an explicit fixture,
+not automatic selection of whichever unit a user is assigned. Changing users
+does not change the selected school. Status overrides and mock answers remain
+in memory and reset on reload. The header labels this build DEMO rather than KUN DEV.
+SQL metadata is independently gated and is absent in DEMO builds.
+
+The missing-access deployment defect came from the former build-wide ban on demo
+users: GitHub Pages shipped mock data but no authenticated session and no demo
+profile. Imported screens correctly denied access to the null context. No Altinn
+authentication is added here; the separate real-user panel correctly continues
+to show `Ingen innlogget bruker`. All services remain fictional in-memory mocks.
+Permissions, explicit unit access and selected-unit `isKommunesentralt` remain
+authoritative for simulated actions; no permission checks are bypassed.
+
+Verify the built Pages artifact with
+`npx playwright test --config=playwright.pages-demo.config.ts` (port 5194).
+The dedicated test is excluded from the normal local/QA projects because it
+requires its own demo artifact. Both new tests passed: real-deployment label
+rejection (TEST/QA/PROD, with both demo and normal modes) and built-app navigation,
+mock editing, user/status switching, reset, explicit unit access, central-unit
+effective permissions and absence of SQL metadata.
+
+Targeted existing local/normal-production regressions passed 14 of 15 tests.
+The remaining local `demo-status-navigation` test fails on exact accessible name
+`Nynorsk` after disabling the form: the existing DEV-only ReportingFields wrapper
+contributes `DEV field metadata 2` to the native radio label. The failure snapshot
+shows the answer still checked and disabled. This pre-existing wrapper/naming
+issue is not changed by the Pages deployment fix and does not occur in the DEMO
+artifact, where SQL metadata wrappers are absent. The initial new Pages test also
+had a wrong home-button locator; it was corrected to the existing `Hjem` label.
+Both normal and demo builds passed TypeScript checks; normal production build
+passed with the existing bundle-size warning. Full-suite tests, full accessibility
+audit and lint were intentionally skipped in favor of the affected checks.
+
+Current implemented navigation contains Del 1–10, 17 and 18. Del 11–16 have no
+implemented entries in this repository; this deployment fix does not add them.
 
 `DemoUserProvider` wraps the application. Screens can read `useDemoUser()` from
 `src/demoUserContext.ts`. Selection is memory-only and resets on reload. Navigation,
@@ -39,7 +83,7 @@ The context contains profile metadata and an explicit mock access scope, marked
 demo context, StatusId 1, explicit selected-report access in `schoolIds`, and
 RolleId 9 or RolleId 10 with the legacy profile flag `municipalityCentral === true`.
 That legacy flag is distinct from the selected unit's BOGIAPI `IsKommunesentralt`.
-All other cases are read-only, including missing context and production builds.
+All other cases are read-only, including missing context and ordinary non-demo builds.
 Inputs, local-save callbacks and retries enforce the same rule. Switching users
 updates permission immediately without clearing answers. Already initiated local
 saves may finish; switching users does not initiate new saves. Del 1 remains
@@ -163,7 +207,7 @@ to role and explicit school access. Status 0 is not started; status 8 is inactiv
 both remain read-only. Switching to status 1 grants no additional role or school
 access. Status changes do not alter answers or initiate saves. Already initiated
 local saves may finish. Neither source mock records nor API data are mutated, and
-no status update is sent to a backend. Production builds have no status selector,
+no status update is sent to a backend. Ordinary non-demo builds have no status selector,
 reset action or effective overrides. These controls do not represent approval or
 real authorization workflows.
 

@@ -8,14 +8,18 @@ const { version } = JSON.parse(readFileSync(new URL('./package.json', import.met
 
 export default defineConfig(({ command, mode, isPreview }) => {
   let fieldMetadataEnabled = false
+  const env = loadEnv(mode, process.cwd(), 'VITE_')
+  const deployedDemo = mode === 'demo' && env.VITE_APP_ENV?.trim().toUpperCase() === 'DEMO'
+    && env.VITE_ENABLE_DEMO_USERS === 'true'
   return ({
   define: {
     __DEV_FIELD_METADATA__: JSON.stringify(fieldMetadataEnabled),
     __APP_VERSION__: JSON.stringify(version),
-    // Build commands must never include an enabled user switcher, regardless
-    // of NODE_ENV or a caller's VITE_ENABLE_DEMO_USERS setting.
-    __DEMO_USERS_ENABLED__: JSON.stringify(command === 'serve' && !isPreview && mode === 'development'
-      && loadEnv(mode, process.cwd(), 'VITE_').VITE_ENABLE_DEMO_USERS === 'true'),
+    // A deployed demo needs its own build mode, label and explicit opt-in.
+    __DEPLOYED_DEMO__: JSON.stringify(deployedDemo),
+    __DEMO_USERS_ENABLED__: JSON.stringify(deployedDemo || (command === 'serve' && !isPreview && mode === 'development'
+      && !['TEST', 'QA', 'PROD'].includes(env.VITE_APP_ENV?.trim().toUpperCase())
+      && env.VITE_ENABLE_DEMO_USERS === 'true')),
   },
   plugins: [
     { name: 'gsi-production-report-metadata', enforce: 'pre', load(id) {

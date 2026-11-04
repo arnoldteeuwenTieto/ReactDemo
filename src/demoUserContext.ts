@@ -1,7 +1,7 @@
 import { createContext, useContext } from 'react'
 import type { DemoUser } from './demoUser'
 
-// Both conditions are required. A production build cannot enable switching.
+// Local opt-in or an explicitly configured fictional deployed demo only.
 export const demoUsersEnabled = __DEMO_USERS_ENABLED__
 
 export interface DemoUserState {

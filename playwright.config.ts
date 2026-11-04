@@ -14,7 +14,7 @@ export default defineConfig({
     trace: 'retain-on-failure',
   },
   projects: [
-    { name: 'chromium', testIgnore: '**/demo-production.spec.ts', use: { ...devices['Desktop Chrome'] } },
+    { name: 'chromium', testIgnore: ['**/demo-production.spec.ts', '**/pages-demo.spec.ts'], use: { ...devices['Desktop Chrome'] } },
     { name: 'chromium-production', testMatch: '**/demo-production.spec.ts', use: { ...devices['Desktop Chrome'], baseURL: productionURL } },
   ],
   webServer: [{

@@ -17,7 +17,7 @@ export function DemoUserHeader({ school, hasStatusOverride, onStatusChange, onSt
   const { enabled, selectedUser, selectUser } = useDemoUser()
   if (!enabled || !selectedUser) return null
   return <section className="header-demo" aria-label={ui('Brukerinformasjon (demonstrasjon)')} aria-describedby="demo-dev-label">
-      <span id="demo-dev-label" className="header-dev-label">KUN DEV</span>
+      <span id="demo-dev-label" className="header-dev-label">{__DEPLOYED_DEMO__ ? 'DEMO' : 'KUN DEV'}</span>
       <label className="header-user-demo demo-user-selector">
         {ui('Demonstrasjonsbruker')} <strong>DEMO</strong>
         <select value={selectedUser.id} onChange={event => selectUser(event.target.value)}>

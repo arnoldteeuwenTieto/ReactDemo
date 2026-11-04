@@ -1,6 +1,7 @@
 /// <reference types="vite/client" />
 
 declare const __DEMO_USERS_ENABLED__: boolean
+declare const __DEPLOYED_DEMO__: boolean
 declare const __APP_VERSION__: string
 declare const __DEV_FIELD_METADATA__: boolean
 declare module 'virtual:gsi-field-metadata' {
