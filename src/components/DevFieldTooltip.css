@@ -2,3 +2,6 @@
 .dev-field-tooltip dl { display: block; }
 .dev-field-tooltip dt { font-weight: 600; margin-top: 6px; }
 .dev-field-tooltip dd { font-weight: 400; overflow-wrap: anywhere; }
+.report-field-target { display: block; width: 100%; min-width: 0; }
+.report-field-target--choice { display: inline-block; width: auto; }
+.report-field-target > :disabled, fieldset:disabled .report-field-target > input, fieldset:disabled .report-field-target > select { pointer-events: none; }

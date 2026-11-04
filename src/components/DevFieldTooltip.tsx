@@ -2,7 +2,7 @@ import './DevFieldTooltip.css'
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import catalog from 'virtual:gsi-field-metadata'
-interface Target {element:HTMLElement;column:string;section:string;origin:string;type:string;left:number;top:number}
+interface Target {element:HTMLElement;anchor:HTMLElement;column:string;section:string;origin:string;type:string;left:number;top:number}
 export default function DevFieldTooltip(){
  const [target,setTarget]=useState<Target|null>(null)
  const tooltipRef=useRef<HTMLDivElement>(null)
@@ -11,16 +11,23 @@ export default function DevFieldTooltip(){
   let owner:HTMLElement|null=null
   const cancel=()=>{if(timer)clearTimeout(timer)}
   const hide=()=>{cancel();timer=setTimeout(()=>{owner=null;setTarget(null)},150)}
-  const show=(event:Event)=>{const element=event.target;if(!(element instanceof HTMLElement)||!element.matches('[data-report-field]'))return;cancel();owner=element;const r=element.getBoundingClientRect();setTarget({element,column:element.dataset.reportField??'',section:element.dataset.reportSection??'',origin:element.dataset.fieldOrigin??'user',type:element.dataset.reportType??'',left:Math.max(8,Math.min(r.left,innerWidth-328)),top:Math.max(8,Math.min(r.bottom+6,innerHeight-230))})}
-  const leave=(event:Event)=>{const e=event as PointerEvent;if(owner===document.activeElement||e.relatedTarget instanceof Element&&e.relatedTarget.closest('#dev-field-tooltip'))return;hide()}
+  const show=(event:Event)=>{const source=event.target;if(!(source instanceof Element))return;const element=source.closest<HTMLElement>('[data-report-field]');if(!element){if(event.type==='focusin'||source.closest('.field-rule-info')){cancel();owner=null;setTarget(null)}return}cancel();const anchor=element.closest<HTMLElement>('[data-report-wrapper]')??element;owner=anchor;const r=anchor.getBoundingClientRect();setTarget({element,anchor,column:anchor.dataset.reportField??'',section:anchor.dataset.reportSection??'',origin:anchor.dataset.fieldOrigin??'user',type:anchor.dataset.reportType??'',left:Math.max(8,Math.min(r.left,innerWidth-328)),top:Math.max(8,Math.min(r.bottom+6,innerHeight-230))})}
+  const leave=(event:Event)=>{const e=event as PointerEvent;if(owner?.contains(document.activeElement)||e.relatedTarget instanceof Element&&(owner?.contains(e.relatedTarget)||e.relatedTarget.closest('#dev-field-tooltip')))return;hide()}
   const close=()=>{cancel();owner=null;setTarget(null)}
+  const reposition=(event:Event)=>{
+   if(event.target instanceof Element&&event.target.closest('#dev-field-tooltip'))return
+   if(!owner)return
+   const r=owner.getBoundingClientRect()
+   if(r.bottom<0||r.top>innerHeight||r.right<0||r.left>innerWidth){close();return}
+   setTarget(current=>current?{...current,left:Math.max(8,Math.min(r.left,innerWidth-328)),top:Math.max(8,Math.min(r.bottom+6,innerHeight-230))}:null)
+  }
   const escape=(event:KeyboardEvent)=>{if(event.key==='Escape')close()}
   const hover=(event:Event)=>{if((event.target as Element)?.closest?.('#dev-field-tooltip'))cancel()}
-  document.addEventListener('pointerover',show);document.addEventListener('focusin',show);document.addEventListener('pointerout',leave);document.addEventListener('focusout',hide);document.addEventListener('pointerover',hover);document.addEventListener('keydown',escape);window.addEventListener('scroll',close,true);window.addEventListener('resize',close)
+  document.addEventListener('pointerover',show);document.addEventListener('focusin',show);document.addEventListener('pointerout',leave);document.addEventListener('focusout',hide);document.addEventListener('pointerover',hover);document.addEventListener('keydown',escape);window.addEventListener('scroll',reposition,true);window.addEventListener('resize',reposition)
   const frame=requestAnimationFrame(()=>{if(document.activeElement instanceof HTMLElement)show({target:document.activeElement} as unknown as Event)})
-  return()=>{cancel();cancelAnimationFrame(frame);document.removeEventListener('pointerover',show);document.removeEventListener('focusin',show);document.removeEventListener('pointerout',leave);document.removeEventListener('focusout',hide);document.removeEventListener('pointerover',hover);document.removeEventListener('keydown',escape);window.removeEventListener('scroll',close,true);window.removeEventListener('resize',close)}
+  return()=>{cancel();cancelAnimationFrame(frame);document.removeEventListener('pointerover',show);document.removeEventListener('focusin',show);document.removeEventListener('pointerout',leave);document.removeEventListener('focusout',hide);document.removeEventListener('pointerover',hover);document.removeEventListener('keydown',escape);window.removeEventListener('scroll',reposition,true);window.removeEventListener('resize',reposition)}
  },[])
- useLayoutEffect(()=>{const tip=tooltipRef.current;if(!target||!tip)return;const r=target.element.getBoundingClientRect(),height=tip.offsetHeight,belowSpace=innerHeight-r.bottom-16,aboveSpace=r.top-16,below=belowSpace>=height||belowSpace>=aboveSpace;tip.style.maxHeight=`${Math.max(60,below?belowSpace:aboveSpace)}px`;tip.style.top=`${below?r.bottom+6:Math.max(8,r.top-6-Math.min(height,aboveSpace))}px`},[target])
+ useLayoutEffect(()=>{const tip=tooltipRef.current;if(!target||!tip)return;const r=target.anchor.getBoundingClientRect(),height=tip.offsetHeight,belowSpace=innerHeight-r.bottom-16,aboveSpace=r.top-16,below=belowSpace>=height||belowSpace>=aboveSpace;tip.style.maxHeight=`${Math.max(60,below?belowSpace:aboveSpace)}px`;tip.style.top=`${below?r.bottom+6:Math.max(8,r.top-6-Math.min(height,aboveSpace))}px`},[target])
  useEffect(()=>{
   if(!target)return
   const element=target.element,id='dev-field-tooltip'

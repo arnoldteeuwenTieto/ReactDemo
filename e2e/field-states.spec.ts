@@ -84,7 +84,7 @@ for (const scenario of scenarios) {
     await expect(badge3(page)).toHaveCount(0) // Unanswered optional/unknown-required fields are warnings.
     await expect(cell(page, boys[0])).toHaveValue('10')
     if (scenario.lo === 2 && !readonly) {
-      const lock = cell(page, boys[0]).locator('..').getByRole('button')
+      const lock = page.locator('.field-control').filter({ has: cell(page, boys[0]) }).getByRole('button')
       await lock.focus()
       await expect(page.getByRole('tooltip')).toContainText('2–6')
       await expect(lock).toHaveAccessibleDescription(/del 2 B og C/)
