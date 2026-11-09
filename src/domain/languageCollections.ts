@@ -2,15 +2,19 @@ import type { Del2Data } from './del2'
 import type { Finding, ImportedReport } from './importedReporting'
 import { gradeApplicability } from './fieldState'
 
-export type CollectionId = '8C' | '8D' | '9C'
+export type CollectionId = '8C' | '8D' | '9C' | '11A'
 export interface CollectionRow { id: string; [field: string]: string }
 export interface CollectionColumn { key: string; label: string; positiveOnly?: boolean; grade?: number; allowExistingWithoutChoice?: boolean }
 export interface CollectionDefinition {
- section: 8|9; group: string; storeKey: string; selector: string; selectorLabel: string; municipality?: boolean; lockChoice?: boolean
+ section: 8|9|11; group: string; storeKey: string; selector: string; selectorLabel: string; municipality?: boolean; lockChoice?: boolean
  options: string[]; columns: CollectionColumn[]; totalKey?: string
 }
 // Fictional demo options: authoritative nfViewSprakSvarAlternativer was not supplied.
 export const languageCollections: Record<CollectionId, CollectionDefinition> = {
+ '11A': {section:11,group:'A',storeKey:'ColGG11SpA',selector:'GG_875_Valgfag',selectorLabel:'Valgfag',options:['Fysisk aktivitet og helse','Programmering','Design og redesign'],columns:[8,9,10].flatMap((grade,index)=>[
+  {key:`GG_${876+index*3}_Antall_Gutter_Med_Valgfag_Trinn_${grade}`,label:`${grade}. trinn, Gutter`,grade,positiveOnly:true},
+  {key:`GG_${877+index*3}_Antall_Jenter_Med_Valgfag_Trinn_${grade}`,label:`${grade}. trinn, Jenter`,grade,positiveOnly:true},
+ ])},
  '8C': {section:8,group:'C',storeKey:'ColGG8SpC',selector:'GG_869_Morsmaal',selectorLabel:'Morsmål',options:['Arabisk','Engelsk','Polsk','Somali','Ukrainsk'],columns:[
   {key:'GG_870_Elever_med_bare_morsmaalsopplaering',label:'Elever med bare morsmålsopplæring',positiveOnly:true,allowExistingWithoutChoice:true},
   {key:'GG_871_Elever_med_bare_tospraaklig_fagopplaering',label:'Elever med bare tospråklig fagopplæring',positiveOnly:true},

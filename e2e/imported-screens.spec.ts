@@ -1,15 +1,16 @@
 import { test, expect, type Page } from '@playwright/test'
 import AxeBuilder from '@axe-core/playwright'
-import { importedScreens, calculateValues, numericError, fullMockFindings, canSubmitMock, mockValidationOverview } from '../src/domain/importedReporting'
+import { importedScreens, calculateValues, numericError, fullMockFindings, canSubmitMock, mockValidationOverview, numericSections } from '../src/domain/importedReporting'
 import { readImportedReport, saveImportedNumber, performMockAction, actionTarget } from '../src/services/importedReportService'
 import { mockSkjemaStatusId } from '../src/services/grunnskoleApi'
 import { schools } from '../src/mockData'
 import { demoUsers } from '../src/demoUser'
+import { schoolOpeningAction } from './helpers/schoolActions'
 
 const menu = (page: Page) => page.getByRole('navigation', { name: /^(Grunnskoleseksjoner|Grunnskuleseksjonar)$/ })
 const input = (page: Page, key: string) => page.locator(`input[data-field="${key}"]`)
 async function open(page: Page, name = 'Fjordgløtt barneskole') {
-  await page.getByRole('button', { name: `Åpne skjema for ${name}, 2026`, exact: true }).click()
+  await schoolOpeningAction(page, name).click()
   await page.getByRole('button', { name: 'Gå til rapporteringen', exact: true }).click()
 }
 async function section(page: Page, name: string) { await menu(page).getByRole('button', { name, exact: true }).click() }
@@ -36,8 +37,9 @@ test('all exported fields and local arithmetic are preserved; unsupported formul
   expect(canSubmitMock({ ...report, checked: true }, 'Bergen')).toBe(false)
   const completed = { ...report, checked: true, del2: { GG_227_Skolens_Maalform: 'Bokmål', GG_228_Laveste_Trinn_Paa_Skolen: 1, GG_229_Hoeyeste_Trinn_Paa_Skolen: 10, GG_230_Tilbyr_SFO: false },
     numbers: { ...report.numbers,
-      ...Object.fromEntries(([3, 4, 5, 6, 7, 8, 9, 10] as const).map(section => [section, Object.fromEntries(importedScreens[section].fields.filter(field => !field.hidden && !field.readOnly).map(field => [field.key, field.numericKind === 'decimal' ? '1' : '0']))])) } }
-  expect(mockValidationOverview(completed, 'Bergen').passedNumericChecks).toBe(382)
+      ...Object.fromEntries(numericSections.map(section => [section, Object.fromEntries(importedScreens[section].fields.filter(field => !field.hidden && !field.readOnly).map(field => [field.key, field.numericKind === 'decimal' ? '1' : '0']))])) } }
+  // SFO is false and PPT organisation is unanswered: only Del 16 adds 26 applicable inputs.
+  expect(mockValidationOverview(completed, 'Bergen').passedNumericChecks).toBe(541)
   expect(mockValidationOverview(completed, 'Bergen').findings.every(finding => finding.kind === 'unsupported')).toBe(true)
   expect(canSubmitMock(completed, 'Bergen')).toBe(false)
 })

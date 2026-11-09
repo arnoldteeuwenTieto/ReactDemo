@@ -5,6 +5,7 @@ import { numericError } from '../domain/importedReporting'
 import type { MunicipalityRow } from '../domain/importedReporting'
 import { resolveFieldState } from '../domain/fieldState'
 import { FieldAvailability } from './FieldAvailability'
+import { calculatedNumberText } from '../domain/fieldPresentation'
 
 function MunicipalityCount({ row, canEdit, validated, onChange, dependencyReason, countLabel, sqlFields, sectionRef }: { row: MunicipalityRow; canEdit: boolean; validated: boolean; onChange: (value: string) => void; dependencyReason: string; countLabel: string; sqlFields: {choice:string;count:string}; sectionRef:string }) {
   const [interacted, setInteracted] = useState(false)
@@ -55,7 +56,7 @@ export function MunicipalityFinancingTable({ rows, municipalities, ownMunicipali
             <td className="municipality-action-cell"><button className="municipality-remove-button" type="button" disabled={!canEdit} aria-label={removeLabel} title={removeLabel} onClick={() => onChange(rows.filter(item => item.id !== row.id))}><span aria-hidden="true">×</span></button></td>
           </tr>
         })}</tbody>
-        <tfoot><tr className="imported-total-row"><th scope="row" colSpan={2}>{ui(totalLabel)}</th><td><ReportingInput origin="calculated" sectionRef={sectionRef} dataType="integer" className="imported-number gsi-field" data-field-state="calculated" aria-label={ui(totalLabel)} value={total} readOnly /></td><td /></tr></tfoot>
+        <tfoot><tr className="imported-total-row"><th scope="row" colSpan={2}>{ui(totalLabel)}</th><td><ReportingInput origin="calculated" sectionRef={sectionRef} dataType="integer" className="imported-number gsi-field" data-field-state="calculated" aria-label={ui(totalLabel)} value={calculatedNumberText(total)} readOnly /></td><td /></tr></tfoot>
       </table>
     </div>
     <button className="gsi-button municipality-add-button" type="button" disabled={!canEdit} onClick={() => onChange([...rows, { id: crypto.randomUUID(), GG_887_Finansiert_Annen_Kommune: '', GG_886_Elever_Finansiert_Annen_Kommune: '' }])}><span aria-hidden="true">+</span> {ui('Legg til kommune')}</button>

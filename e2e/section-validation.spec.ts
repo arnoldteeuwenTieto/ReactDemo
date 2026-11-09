@@ -1,3 +1,4 @@
+import { schoolOpeningAction } from './helpers/schoolActions'
 import { expect, test, type Page } from '@playwright/test'
 import { runValidation } from '../src/domain/sectionValidation'
 import { emptyDel2 } from '../src/domain/del2'
@@ -10,7 +11,7 @@ const lower = (page: Page) => page.getByRole('combobox', { name: 'B. Hva er norm
 const upper = (page: Page) => page.getByRole('combobox', { name: 'C. Hva er normalt høyeste trinn ved skolen?', exact: true })
 
 async function openReport(page: Page, name = 'Fjordgløtt barneskole', year = 2026) {
-  await page.getByRole('button', { name: `Åpne skjema for ${name}, ${year}`, exact: true }).click()
+  await schoolOpeningAction(page, `${name}`, `${year}`).click()
   await page.getByRole('button', { name: 'Gå til rapporteringen' }).click()
   await expect(page.getByRole('heading', { name: '1. Enhetsopplysninger', exact: true })).toBeVisible()
 }
@@ -21,7 +22,7 @@ test('blocking badges remain visible on active sections; Next, menu, Previous an
   await expect(menu(page).locator('.section-issue-badge')).toHaveCount(1)
   await page.getByRole('button', { name: 'Neste', exact: true }).click()
   await expect(language(page)).toBeVisible()
-  await expect(page.getByText('Velg et svar. (Demonstrasjonsvalidering)', { exact: true })).toHaveCount(4)
+  await expect(page.getByText('Velg et svar.', { exact: true })).toHaveCount(4)
   await expect(badge(page)).toHaveText('4')
   await expect(section2(page)).toHaveAccessibleDescription('4 problemer i seksjonen')
   await page.getByRole('button', { name: 'Neste', exact: true }).click()

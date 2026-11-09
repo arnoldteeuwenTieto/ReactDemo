@@ -1,20 +1,24 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { ui } from '../i18n'
 
 // A focusable explanation for native disabled controls, without expanding rows.
 export function FieldAvailability({ id, label, reason }: { id: string; label: string; reason: string }) {
   const [anchor, setAnchor] = useState<DOMRect | null>(null)
+  const trigger = useRef<HTMLButtonElement>(null)
   useEffect(() => {
     if (!anchor) return
-    const close = () => setAnchor(null)
-    window.addEventListener('scroll', close, true)
-    window.addEventListener('resize', close)
-    return () => { window.removeEventListener('scroll', close, true); window.removeEventListener('resize', close) }
+    const reposition = () => {
+      const rect = trigger.current?.getBoundingClientRect()
+      setAnchor(rect && rect.bottom >= 0 && rect.top <= innerHeight && rect.right >= 0 && rect.left <= innerWidth ? rect : null)
+    }
+    window.addEventListener('scroll', reposition, true)
+    window.addEventListener('resize', reposition)
+    return () => { window.removeEventListener('scroll', reposition, true); window.removeEventListener('resize', reposition) }
   }, [anchor])
   return <>
     <span className="visually-hidden" id={id}>{reason}</span>
-    <button className="field-rule-info" type="button" aria-label={`${ui('Hvorfor er feltet utilgjengelig?')} ${label}`} aria-describedby={id}
+    <button ref={trigger} className="field-rule-info" type="button" aria-label={`${ui('Hvorfor er feltet utilgjengelig?')} ${label}`} aria-describedby={id}
       onFocus={event => setAnchor(event.currentTarget.getBoundingClientRect())} onBlur={() => setAnchor(null)}
       onMouseEnter={event => setAnchor(event.currentTarget.getBoundingClientRect())}
       onMouseLeave={event => { if (document.activeElement !== event.currentTarget) setAnchor(null) }}

@@ -1,3 +1,4 @@
+import { schoolOpeningAction } from './helpers/schoolActions'
 import { expect, test, type Page } from '@playwright/test'
 
 const status = (page: Page) => page.getByRole('combobox', { name: 'Demonstrasjonsstatus', exact: true })
@@ -37,7 +38,7 @@ test('opening a report directly enables status through Innledning, Del 1, Del 2 
   await page.goto('./')
   await expect(status(page)).toBeDisabled()
   // Do not select an overview radio first: opening the form must resolve its school.
-  await page.getByRole('button', { name: 'Åpne skjema for Fjordgløtt barneskole, 2026', exact: true }).click()
+  await schoolOpeningAction(page, 'Fjordgløtt barneskole', '2026').click()
   await expect(page.getByRole('heading', { name: 'Innledning', exact: true })).toBeVisible()
   await expectSchoolStatus(page, 'Fjordgløtt barneskole', '1', 'Under behandling')
   await status(page).selectOption('2')
@@ -90,7 +91,7 @@ test('opening a report directly enables status through Innledning, Del 1, Del 2 
 
 test('the active report uses its own original zero status, independently of the assigned user school', async ({ page }) => {
   await page.goto('./')
-  await page.getByRole('button', { name: 'Åpne skjema for Nordmyra barneskole, 2026', exact: true }).click()
+  await schoolOpeningAction(page, 'Nordmyra barneskole', '2026').click()
   await expectSchoolStatus(page, 'Nordmyra barneskole', '0', 'Ikke påbegynt')
   await user(page).selectOption('demo-owner-central')
   await expectSchoolStatus(page, 'Nordmyra barneskole', '0', 'Ikke påbegynt')
@@ -109,7 +110,7 @@ test('the active report uses its own original zero status, independently of the 
 test('opening a previous-year report resolves that report through every reporting section', async ({ page }) => {
   await page.goto('./')
   await page.getByRole('combobox', { name: 'Rapporteringsår', exact: true }).selectOption('2025')
-  await page.getByRole('button', { name: 'Åpne skjema for Fjordgløtt barneskole, 2025', exact: true }).click()
+  await schoolOpeningAction(page, 'Fjordgløtt barneskole', '2025').click()
   await expectSchoolStatus(page, 'Fjordgløtt barneskole', '4', 'Godkjent av kommunen')
   await status(page).selectOption('1')
   await page.getByRole('button', { name: 'Gå til rapporteringen' }).click()

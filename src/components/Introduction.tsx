@@ -7,10 +7,12 @@ export function Introduction({
   school,
   onBack,
   onStartReporting,
+  initializing = false,
 }: {
   school: School
   onBack: () => void
   onStartReporting: () => void
+  initializing?: boolean
 }) {
   useTranslation('ui')
   const headingRef = useRef<HTMLHeadingElement>(null)
@@ -24,7 +26,7 @@ export function Introduction({
       </div>
       <footer className="introduction-actions">
         <button className="gsi-button open-button" type="button" onClick={onBack}><span aria-hidden="true">←</span> {ui("Tilbake til statusoversikten")}</button>
-        <button className="gsi-button start-reporting-button" type="button" onClick={onStartReporting}>{ui("Gå til rapporteringen")} <span aria-hidden="true">→</span></button>
+        <button className="gsi-button start-reporting-button" type="button" disabled={initializing} aria-busy={initializing} onClick={onStartReporting}>{ui("Gå til rapporteringen")} <span aria-hidden="true">→</span></button>
       </footer>
     </section>
   </>

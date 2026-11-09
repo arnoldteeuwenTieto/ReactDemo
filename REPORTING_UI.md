@@ -4,19 +4,110 @@
 
 `src/domain/fieldPresentation.ts` treats only null, undefined and the empty string as empty. Numeric zero, string zero and boolean false remain populated answers. Value presence, origin, edit permission, applicability and validation remain separate concepts.
 
-`ReportingFields.tsx` supplies shared native input, select, textarea and backend-value elements. It preserves existing handlers, labels, names, IDs, disabled/read-only rules and validation attributes. Numeric cells, municipality rows, language rows, Del 2 questions, Del 1 backend details, Del 17/18 text fields and the shared placeholder controls use it. Existing implemented screens are Del 1–10, 17 and 18; this task does not implement missing Del 11–16 questions.
+`ReportingFields.tsx` supplies shared native input, select, textarea and backend-value elements. It preserves existing handlers, labels, names, IDs, disabled/read-only rules and validation attributes. Numeric cells, municipality rows, language rows, Del 2 questions, Del 1 backend details, Del 17/18 text fields and the shared placeholder controls use it. All Del 1–18 screens are implemented. Del 14 follows the selected report's SFO answer; PPT C/D follow active source conditions. See gsi-react-import/DEL14_15_16_IMPLEMENTATION.md.
 
 | Origin/state | Background | Behavior |
 | --- | --- | --- |
 | User field with no answer | #FFFFFF | Existing edit permissions and blue-grey border |
 | Populated user field, including 0/false | #F1F3F5 | Same color for a read-only viewer; a locked user-selected language remains user-origin |
 | Calculated or backend-owned | #D9DDE3 | Read-only; origins are explicitly distinct in metadata |
-| Business-inapplicable | #F8E7E0 | #D9A58F border, existing disabled behavior, lock and explanation; overrides ordinary origin/value colors |
+| Business-inapplicable | #EAF0F7 | #BBCBDD border, #627894 lock, #54677E text; existing disabled behavior and explanation; overrides ordinary origin/value colors |
 | Invalid applicable value | Existing red border | Existing aria-invalid and error explanation; independent of background |
 
 App.css owns the shared color variables. The lock button retains its size and explanation; a small grid reserves space beside the input so it does not cover entered text. Header, sidebar, font sizes, question structures, routing, permission matrix, IsKommunesentralt, mock records, grade rules, validation counts and submission behavior are unchanged.
 
+## Del 2 alignment
+
+Del 2 retains its question cards and uses ReportingInput/ReportingSelect, the same
+field-presentation and field-state helpers as numeric screens. Null/empty fields
+remain white; zero, false and selected values count as populated. Applicability
+takes precedence over ownership, followed by applicable validation borders and
+value presence. Permission-readonly is separate from business-inapplicability.
+CSS also prevents stale invalid attributes from making blocked/derived fields red.
+
+Existing editableDel2Issues and useSectionValidation remain the single validation
+source for inline messages and sidebar counts, including active Del 2. Required
+messages now say “Velg et svar.”; the same rules/counts still apply. Native controls
+reference their error descriptions directly. Explicit radio labels preserve the
+accessible name when a disabled DEV metadata wrapper is present.
+
+Technical validation references and unavailable-formula diagnostics are kept in
+collapsed DEV-only details. API diagnostics use the same DEV metadata gate; TEST,
+QA, PROD and deployed DEMO have neither diagnostic controls nor SQL attributes.
+SQL mappings use the existing Del 2 model/catalog, with no invented physical table
+mapping. The application-level language system and grade-dependent mock behavior
+are unchanged.
+
+Verification for the Del 2/blue-grey update: 21 of the initial 22 reporting/state
+checks passed; one was interrupted by Vite reloading after an in-progress source
+edit and passed on rerun. The next 22 targeted checks all passed, including Del 2
+axe checks across statuses 0–8, cross-field errors, help dialogs, read-only roles,
+other sections' grade restrictions and normal production isolation. All 12
+environment-specific tooltip cases passed. These runs contain overlapping cases.
+The first build caught a duplicate translation key introduced during this change;
+the existing translation was retained and the duplicate removed. Final
+`npm run build` passed, including TypeScript, with only the existing bundle-size
+warning. Full-suite testing, full-application accessibility audit and lint were
+intentionally skipped under the targeted-testing policy.
+
 ## Width and calculated displays
+
+### Del 11–13 layout refinement
+
+Browser measurements at 1920/1440 px found 1066 px available inside question
+frames, and 906 px at 1280 px. The former 1144 px Del 13 E minimum forced scrolling
+at every desktop size; Del 11 B–D's 940 px minimum also overflowed at 1280 px.
+Scoped responsive table rules now reserve a compact 32 px question column,
+readable wrapping descriptions and uniform numeric columns. Elective columns use
+relative widths instead of a full set of fixed pixel widths. Font size remains
+13 px, headers/columns are preserved, and the shared grid children retain min-width:0.
+
+All Del 11–13 tables fit the normal fixture at 1920, 1440 and 1280 px. At 390 px,
+the measured 336 px content width still needs one table scroller for:
+
+| Tables | Minimum table width | Reason |
+| --- | --- | --- |
+| 11 A | 784 px | Choice, ten numeric/result columns, number and delete action |
+| 11 B–D | 780 px | Grouped 8./9./10. trinn gender/sum columns plus overall sum |
+| 13 A | 360 px | Description and three numeric columns |
+| 13 C, G | 420 px | Description and four numeric columns |
+| 13 E | 840 px | Ten grade columns plus sum and readable row labels |
+
+Del 12 tables and the single-column reference/reallocation tables fit at the
+tested mobile width. When retained business-blocked values have three or more
+characters, the wide tables deliberately reserve more room for the value and lock
+icon. Such content can require desktop scrolling (tested with four-digit values
+in 11 A and 13 E). This preserves the value, lock and font size instead of clipping.
+
+The reusable subquestion-list/subquestion classes add a 1 px #DCE5F3 divider only
+between Del 13 F's independent questions, with compact 12 px spacing. Library
+multi-select options and ordinary table rows do not get these dividers.
+
+Visible validation messages now remain in table-cell flow; only affected error
+rows grow, and normal rows stay compact. SQL/help tooltips remain body portals.
+Business-help tooltips reposition during focus scrolling instead of immediately
+disappearing, and close when their trigger leaves the viewport.
+
+Known empty/inapplicable sums already return numeric zero from the existing
+calculation engine. Shared calculatedNumberText presentation consistently renders
+that as 0 across fixed, collection, elective and municipality totals. Null or
+undefined remains unavailable, including missing backend values and invalid
+calculations; no database values, editable answers, formulas or permissions change.
+
+Verification: 18 distinct targeted cases passed across final runs, including
+the four viewport measurements/screenshots, divider styling, retained blocked
+values, unclipped validation/help/SQL metadata, zero/backend distinctions,
+existing input/permission regressions and scoped WCAG 2.1 A/AA axe checks. Edge
+tests initially exposed insufficient retained-value width and the existing help
+tooltip focus-scroll dismissal; both were corrected and passed on rerun.
+Final npm run build passed, including TypeScript; Vite retains its non-blocking
+main-chunk size warning (approximately 824 kB). Full-suite testing, full application
+accessibility audit and lint were intentionally skipped in favor of targeted checks.
+
+Changed areas for this refinement: App.css, ImportedQuestionTable, ElectiveTable,
+AdditionalChoices, LanguageCollectionTable, MunicipalityFinancingTable,
+FieldAvailability and domain/fieldPresentation, plus additional-layout and
+calculated-values tests. No question text replacement was attempted.
 
 Question sections stretch within the existing application shell's width, max-width and margins. Tables retain fixed column structure and grouped headings. Numeric-column counts determine a readable minimum width instead of the former blanket 740/1080 px limits. Description/numeric proportions and collection columns use the available space. Wider 5D/Del 10 tables fit the 1440 and 1920 px desktop checks; narrower viewports get one scrollbar per table without horizontal page overflow. No columns or text were removed and fonts were not reduced. Description columns are not made sticky: preserving unobstructed inputs and grouped headings is sufficient with these widths.
 

@@ -1,9 +1,9 @@
 import fs from 'node:fs';
-const sections=[3,4,5,6,7,8,9,10,17,18];
-const names={3:'Del3',4:'Del4',5:'Del5',6:'Del6',7:'Del7',8:'Del8',9:'Del9',10:'Del10',17:'Del17_Kontroller',18:'Del18_Fullfor'};
+const sections=[3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18];
+const names={3:'Del3',4:'Del4',5:'Del5',6:'Del6',7:'Del7',8:'Del8',9:'Del9',10:'Del10',11:'Del11',12:'Del12',13:'Del13',14:'Del14',15:'Del15',16:'Del16',17:'Del17_Kontroller',18:'Del18_Fullfor'};
 const all={};
 for(const section of sections){
- const lines=fs.readFileSync(`gsi-react-import/source/${names[section]}${[5,6,7,8,9,10].includes(section)?'':'.powerapps'}.yaml`,'utf8').split(/\r?\n/);const nodes=[];const stack=[];
+ const lines=fs.readFileSync(`gsi-react-import/source/${names[section]}${[5,6,7,8,9,10,11,12,13,14,15,16].includes(section)?'':'.powerapps'}.yaml`,'utf8').split(/\r?\n/);const nodes=[];const stack=[];
  for(let i=0;i<lines.length;i++){
   const line=lines[i], indent=line.search(/\S/);const control=line.match(/^\s*- (.+):\s*$/);
   if(control){while(stack.length&&stack.at(-1).indent>=indent)stack.pop();const node={name:control[1],indent,parent:stack.at(-1)?.name,props:{}};nodes.push(node);stack.push(node);continue;}

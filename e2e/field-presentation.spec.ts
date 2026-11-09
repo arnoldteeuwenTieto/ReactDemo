@@ -1,6 +1,7 @@
+import { schoolOpeningAction } from './helpers/schoolActions'
 import {test,expect,type Page}from'@playwright/test'
 import AxeBuilder from '@axe-core/playwright'
-async function open(page:Page){await page.goto('./');await page.getByRole('button',{name:'Åpne skjema for Fjordgløtt barneskole, 2026',exact:true}).click();await page.getByRole('button',{name:'Gå til rapporteringen',exact:true}).click()}
+async function open(page:Page){await page.goto('./');await schoolOpeningAction(page, 'Fjordgløtt barneskole', '2026').click();await page.getByRole('button',{name:'Gå til rapporteringen',exact:true}).click()}
 const nav=(p:Page)=>p.getByRole('navigation',{name:'Grunnskoleseksjoner',exact:true})
 const field=(p:Page,key:string)=>p.locator(`input[data-field="${key}"]`)
 const boys='GG_1_Antall_Elever_Trinn1_Gutter',sum='GG_3_Antall_Elever_Trinn1_Sum'
@@ -21,9 +22,9 @@ test('blank, zero, filled, readonly and calculated origins retain distinct backg
 test('business blocking and validation borders survive the new presentation',async({page})=>{
  await page.route('**/src/services/grunnskoleApi.ts*',async route=>{const response=await route.fetch();await route.fulfill({response,body:(await response.text())+"\npatchMockSection('demo:1:2026',2,{GG_228_Laveste_Trinn_Paa_Skolen:2,GG_229_Hoeyeste_Trinn_Paa_Skolen:6});patchMockSection('demo:1:2026',3,{GG_1_Antall_Elever_Trinn1_Gutter:'0'});"})})
  await open(page);await nav(page).getByRole('button',{name:'Elever og timer',exact:true}).click()
- await expect(field(page,boys)).toBeDisabled();await expect(field(page,boys)).toHaveValue('0');await expect(field(page,boys)).toHaveCSS('background-color','rgb(248, 231, 224)');await expect(field(page,boys)).toHaveCSS('border-top-color','rgb(217, 165, 143)')
+ await expect(field(page,boys)).toBeDisabled();await expect(field(page,boys)).toHaveValue('0');await expect(field(page,boys)).toHaveCSS('background-color','rgb(234, 240, 247)');await expect(field(page,boys)).toHaveCSS('border-top-color','rgb(187, 203, 221)')
  const editable=field(page,'GG_4_Antall_Elever_Trinn2_Gutter');await editable.fill('-1');await editable.blur();await expect(editable).toHaveAttribute('aria-invalid','true');await expect(editable).toHaveCSS('background-color','rgb(241, 243, 245)')
- expect(await editable.evaluate(el=>getComputedStyle(el).borderTopColor)).not.toBe('rgb(217, 165, 143)')
+ expect(await editable.evaluate(el=>getComputedStyle(el).borderTopColor)).not.toBe('rgb(187, 203, 221)')
  const result=await new AxeBuilder({page}).include('main').withTags(['wcag2a','wcag2aa','wcag21a','wcag21aa']).analyze();expect(result.violations).toEqual([])
 })
 test('desktop tables use available width and narrow screens keep one local scrollbar',async({page})=>{

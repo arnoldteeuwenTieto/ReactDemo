@@ -1,0 +1,4752 @@
+{
+  "11": {
+    "groups": [
+      {
+        "id": "A",
+        "title": "A. Antall elever med valgfag",
+        "reference": "GG_H41",
+        "helpId": "GG-H131",
+        "controllers": [
+          "GG-F157",
+          "GG-F73",
+          "GG-F145",
+          "GG-F146"
+        ],
+        "sourceCard": "A. Antall elever med valgfag"
+      },
+      {
+        "id": "B",
+        "title": "B. Antall elever som tar fag fra videregående i stedet for valgfag",
+        "reference": "GG_H126_U384",
+        "helpId": "GG-H133",
+        "controllers": [],
+        "sourceCard": "B. Antall elever som tar fag fra videregående i stedet for valgfag(NY))",
+        "columnGroups": [
+          {
+            "title": "8. trinn",
+            "table": "8. trinn",
+            "columns": [
+              {
+                "fieldColumn": "Gutter",
+                "label": "Gutter"
+              },
+              {
+                "fieldColumn": "Jenter",
+                "label": "Jenter"
+              },
+              {
+                "fieldColumn": "Sum",
+                "label": "Sum"
+              }
+            ]
+          },
+          {
+            "title": "9. trinn",
+            "table": "9. trinn",
+            "columns": [
+              {
+                "fieldColumn": "Gutter",
+                "label": "Gutter"
+              },
+              {
+                "fieldColumn": "Jenter",
+                "label": "Jenter"
+              },
+              {
+                "fieldColumn": "Sum",
+                "label": "Sum"
+              }
+            ]
+          },
+          {
+            "title": "10. trinn",
+            "table": "10. trinn",
+            "columns": [
+              {
+                "fieldColumn": "Gutter",
+                "label": "Gutter"
+              },
+              {
+                "fieldColumn": "Jenter",
+                "label": "Jenter"
+              },
+              {
+                "fieldColumn": "Sum",
+                "label": "Sum"
+              }
+            ]
+          },
+          {
+            "title": "8.–10. trinn",
+            "table": "8.–10. trinn",
+            "columns": [
+              {
+                "fieldColumn": "Sum",
+                "label": "Sum"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "C",
+        "title": "C. Antall elever uten valgfag",
+        "reference": "GG_H42_U138",
+        "helpId": "GG-H132",
+        "controllers": [
+          "GG-A85"
+        ],
+        "sourceCard": "C. Antall elever uten valgfag",
+        "columnGroups": [
+          {
+            "title": "8. trinn",
+            "table": "8. trinn",
+            "columns": [
+              {
+                "fieldColumn": "Gutter",
+                "label": "Gutter"
+              },
+              {
+                "fieldColumn": "Jenter",
+                "label": "Jenter"
+              },
+              {
+                "fieldColumn": "Sum",
+                "label": "Sum"
+              }
+            ]
+          },
+          {
+            "title": "9. trinn",
+            "table": "9. trinn",
+            "columns": [
+              {
+                "fieldColumn": "Gutter",
+                "label": "Gutter"
+              },
+              {
+                "fieldColumn": "Jenter",
+                "label": "Jenter"
+              },
+              {
+                "fieldColumn": "Sum",
+                "label": "Sum"
+              }
+            ]
+          },
+          {
+            "title": "10. trinn",
+            "table": "10. trinn",
+            "columns": [
+              {
+                "fieldColumn": "Gutter",
+                "label": "Gutter"
+              },
+              {
+                "fieldColumn": "Jenter",
+                "label": "Jenter"
+              },
+              {
+                "fieldColumn": "Sum",
+                "label": "Sum"
+              }
+            ]
+          },
+          {
+            "title": "8.–10. trinn",
+            "table": "8.–10. trinn",
+            "columns": [
+              {
+                "fieldColumn": "Sum",
+                "label": "Sum"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "D",
+        "title": "D. Sum elever med og uten valgfag",
+        "reference": "GG_H127",
+        "controllers": [
+          "BK-A10"
+        ],
+        "sourceCard": "D. Sum elever med og uten valgfag",
+        "columnGroups": [
+          {
+            "title": "8. trinn",
+            "table": "8. trinn",
+            "columns": [
+              {
+                "fieldColumn": "Gutter",
+                "label": "Gutter"
+              },
+              {
+                "fieldColumn": "Jenter",
+                "label": "Jenter"
+              },
+              {
+                "fieldColumn": "Sum",
+                "label": "Sum"
+              }
+            ]
+          },
+          {
+            "title": "9. trinn",
+            "table": "9. trinn",
+            "columns": [
+              {
+                "fieldColumn": "Gutter",
+                "label": "Gutter"
+              },
+              {
+                "fieldColumn": "Jenter",
+                "label": "Jenter"
+              },
+              {
+                "fieldColumn": "Sum",
+                "label": "Sum"
+              }
+            ]
+          },
+          {
+            "title": "10. trinn",
+            "table": "10. trinn",
+            "columns": [
+              {
+                "fieldColumn": "Gutter",
+                "label": "Gutter"
+              },
+              {
+                "fieldColumn": "Jenter",
+                "label": "Jenter"
+              },
+              {
+                "fieldColumn": "Sum",
+                "label": "Sum"
+              }
+            ]
+          },
+          {
+            "title": "8.–10. trinn",
+            "table": "8.–10. trinn",
+            "columns": [
+              {
+                "fieldColumn": "Sum",
+                "label": "Sum"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "key": "GG_1052_Antall_Gutter_Istedenfor_Valgfag_Trinn_8",
+        "control": "Local_Comp_Input_Number_588",
+        "group": "B",
+        "questionNumber": "1",
+        "label": "Antall elever som tar fag fra videregående i stedet for valgfag",
+        "rowLabel": "Antall elever som tar fag fra videregående i stedet for valgfag",
+        "column": "Gutter",
+        "table": "8. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord11.GG_1052_Antall_Gutter_Istedenfor_Valgfag_Trinn_8",
+        "sqlColumn": "GG_1052_Antall_Gutter_Istedenfor_Valgfag_Trinn_8",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_1053_Antall_Jenter_Istedenfor_Valgfag_Trinn_8",
+        "control": "Local_Comp_Input_Number_589",
+        "group": "B",
+        "questionNumber": "1",
+        "label": "Antall elever som tar fag fra videregående i stedet for valgfag",
+        "rowLabel": "Antall elever som tar fag fra videregående i stedet for valgfag",
+        "column": "Jenter",
+        "table": "8. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord11.GG_1053_Antall_Jenter_Istedenfor_Valgfag_Trinn_8",
+        "sqlColumn": "GG_1053_Antall_Jenter_Istedenfor_Valgfag_Trinn_8",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_691_Antall_Elever_Med_Videregaaendefag_Istedenfor_Valgfag_Trinn_8",
+        "control": "Local_Comp_Input_Number_590",
+        "group": "B",
+        "questionNumber": "1",
+        "label": "Antall elever som tar fag fra videregående i stedet for valgfag",
+        "rowLabel": "Antall elever som tar fag fra videregående i stedet for valgfag",
+        "column": "Sum",
+        "table": "8. trinn",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_1052_Antall_Gutter_Istedenfor_Valgfag_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_1053_Antall_Jenter_Istedenfor_Valgfag_Trinn_8",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord11.GG_691_Antall_Elever_Med_Videregaaendefag_Istedenfor_Valgfag_Trinn_8",
+        "sqlColumn": "GG_691_Antall_Elever_Med_Videregaaendefag_Istedenfor_Valgfag_Trinn_8",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_1054_Antall_Gutter_Istedenfor_Valgfag_Trinn_9",
+        "control": "Local_Comp_Input_Number_591",
+        "group": "B",
+        "questionNumber": "1",
+        "label": "Antall elever som tar fag fra videregående i stedet for valgfag",
+        "rowLabel": "Antall elever som tar fag fra videregående i stedet for valgfag",
+        "column": "Gutter",
+        "table": "9. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord11.GG_1054_Antall_Gutter_Istedenfor_Valgfag_Trinn_9",
+        "sqlColumn": "GG_1054_Antall_Gutter_Istedenfor_Valgfag_Trinn_9",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_1055_Antall_Jenter_Istedenfor_Valgfag_Trinn_9",
+        "control": "Local_Comp_Input_Number_592",
+        "group": "B",
+        "questionNumber": "1",
+        "label": "Antall elever som tar fag fra videregående i stedet for valgfag",
+        "rowLabel": "Antall elever som tar fag fra videregående i stedet for valgfag",
+        "column": "Jenter",
+        "table": "9. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=\n\nnfSelectedRecord11.GG_1055_Antall_Jenter_Istedenfor_Valgfag_Trinn_9",
+        "sqlColumn": "GG_1055_Antall_Jenter_Istedenfor_Valgfag_Trinn_9",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_692_Antall_Elever_Med_Videregaaendefag_Istedenfor_Valgfag_Trinn_9",
+        "control": "Local_Comp_Input_Number_593",
+        "group": "B",
+        "questionNumber": "1",
+        "label": "Antall elever som tar fag fra videregående i stedet for valgfag",
+        "rowLabel": "Antall elever som tar fag fra videregående i stedet for valgfag",
+        "column": "Sum",
+        "table": "9. trinn",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_1054_Antall_Gutter_Istedenfor_Valgfag_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_1055_Antall_Jenter_Istedenfor_Valgfag_Trinn_9",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord11.GG_692_Antall_Elever_Med_Videregaaendefag_Istedenfor_Valgfag_Trinn_9",
+        "sqlColumn": "GG_692_Antall_Elever_Med_Videregaaendefag_Istedenfor_Valgfag_Trinn_9",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_1056_Antall_Gutter_Istedenfor_Valgfag_Trinn_10",
+        "control": "Local_Comp_Input_Number_594",
+        "group": "B",
+        "questionNumber": "1",
+        "label": "Antall elever som tar fag fra videregående i stedet for valgfag",
+        "rowLabel": "Antall elever som tar fag fra videregående i stedet for valgfag",
+        "column": "Gutter",
+        "table": "10. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=\n\nnfSelectedRecord11.GG_1056_Antall_Gutter_Istedenfor_Valgfag_Trinn_10",
+        "sqlColumn": "GG_1056_Antall_Gutter_Istedenfor_Valgfag_Trinn_10",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_1057_Antall_Jenter_Istedenfor_Valgfag_Trinn_10",
+        "control": "Local_Comp_Input_Number_595",
+        "group": "B",
+        "questionNumber": "1",
+        "label": "Antall elever som tar fag fra videregående i stedet for valgfag",
+        "rowLabel": "Antall elever som tar fag fra videregående i stedet for valgfag",
+        "column": "Jenter",
+        "table": "10. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord11.GG_1057_Antall_Jenter_Istedenfor_Valgfag_Trinn_10",
+        "sqlColumn": "GG_1057_Antall_Jenter_Istedenfor_Valgfag_Trinn_10",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_693_Antall_Elever_Med_Videregaaendefag_Istedenfor_Valgfag_Trinn_10",
+        "control": "Local_Comp_Input_Number_596",
+        "group": "B",
+        "questionNumber": "1",
+        "label": "Antall elever som tar fag fra videregående i stedet for valgfag",
+        "rowLabel": "Antall elever som tar fag fra videregående i stedet for valgfag",
+        "column": "Sum",
+        "table": "10. trinn",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_1056_Antall_Gutter_Istedenfor_Valgfag_Trinn_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_1057_Antall_Jenter_Istedenfor_Valgfag_Trinn_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord11.GG_693_Antall_Elever_Med_Videregaaendefag_Istedenfor_Valgfag_Trinn_10",
+        "sqlColumn": "GG_693_Antall_Elever_Med_Videregaaendefag_Istedenfor_Valgfag_Trinn_10",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_694_Sum_Elever_Med_Videregaaendefag_Istedenfor_Valgfag_Trinn_8_10",
+        "control": "Local_Comp_Input_Number_606",
+        "group": "B",
+        "questionNumber": "1",
+        "label": "Antall elever som tar fag fra videregående i stedet for valgfag",
+        "rowLabel": "Antall elever som tar fag fra videregående i stedet for valgfag",
+        "column": "Sum",
+        "table": "8.–10. trinn",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_691_Antall_Elever_Med_Videregaaendefag_Istedenfor_Valgfag_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_692_Antall_Elever_Med_Videregaaendefag_Istedenfor_Valgfag_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_693_Antall_Elever_Med_Videregaaendefag_Istedenfor_Valgfag_Trinn_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord11.GG_694_Sum_Elever_Med_Videregaaendefag_Istedenfor_Valgfag_Trinn_8_10\n",
+        "sqlColumn": "GG_694_Sum_Elever_Med_Videregaaendefag_Istedenfor_Valgfag_Trinn_8_10",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_677_Antall_Gutter_Uten_Valgfag_Trinn_8",
+        "control": "Local_Comp_Input_Number_113",
+        "group": "C",
+        "questionNumber": "1",
+        "label": "Antall elever uten valgfag",
+        "rowLabel": "Antall elever uten valgfag",
+        "column": "Gutter",
+        "table": "8. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord11.GG_677_Antall_Gutter_Uten_Valgfag_Trinn_8",
+        "sqlColumn": "GG_677_Antall_Gutter_Uten_Valgfag_Trinn_8",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_678_Antall_Jenter_Uten_Valgfag_Trinn_8",
+        "control": "Local_Comp_Input_Number_114",
+        "group": "C",
+        "questionNumber": "1",
+        "label": "Antall elever uten valgfag",
+        "rowLabel": "Antall elever uten valgfag",
+        "column": "Jenter",
+        "table": "8. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord11.GG_678_Antall_Jenter_Uten_Valgfag_Trinn_8",
+        "sqlColumn": "GG_678_Antall_Jenter_Uten_Valgfag_Trinn_8",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_679_Sum_Uten_Valgfag_Trinn_8",
+        "control": "Local_Comp_Input_Number_320",
+        "group": "C",
+        "questionNumber": "1",
+        "label": "Antall elever uten valgfag",
+        "rowLabel": "Antall elever uten valgfag",
+        "column": "Sum",
+        "table": "8. trinn",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_677_Antall_Gutter_Uten_Valgfag_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_678_Antall_Jenter_Uten_Valgfag_Trinn_8",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord11.GG_679_Sum_Uten_Valgfag_Trinn_8",
+        "sqlColumn": "GG_679_Sum_Uten_Valgfag_Trinn_8",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_680_Antall_Gutter_Uten_Valgfag_Trinn_9",
+        "control": "Local_Comp_Input_Number_115",
+        "group": "C",
+        "questionNumber": "1",
+        "label": "Antall elever uten valgfag",
+        "rowLabel": "Antall elever uten valgfag",
+        "column": "Gutter",
+        "table": "9. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord11.GG_680_Antall_Gutter_Uten_Valgfag_Trinn_9",
+        "sqlColumn": "GG_680_Antall_Gutter_Uten_Valgfag_Trinn_9",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_681_Antall_Jenter_Uten_Valgfag_Trinn_9",
+        "control": "Local_Comp_Input_Number_116",
+        "group": "C",
+        "questionNumber": "1",
+        "label": "Antall elever uten valgfag",
+        "rowLabel": "Antall elever uten valgfag",
+        "column": "Jenter",
+        "table": "9. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord11.GG_681_Antall_Jenter_Uten_Valgfag_Trinn_9",
+        "sqlColumn": "GG_681_Antall_Jenter_Uten_Valgfag_Trinn_9",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_682_Sum_Uten_Valgfag_Trinn_9",
+        "control": "Local_Comp_Input_Number_321",
+        "group": "C",
+        "questionNumber": "1",
+        "label": "Antall elever uten valgfag",
+        "rowLabel": "Antall elever uten valgfag",
+        "column": "Sum",
+        "table": "9. trinn",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_680_Antall_Gutter_Uten_Valgfag_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_681_Antall_Jenter_Uten_Valgfag_Trinn_9",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord11.GG_682_Sum_Uten_Valgfag_Trinn_9",
+        "sqlColumn": "GG_682_Sum_Uten_Valgfag_Trinn_9",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_683_Antall_Gutter_Uten_Valgfag_Trinn_10",
+        "control": "Local_Comp_Input_Number_117",
+        "group": "C",
+        "questionNumber": "1",
+        "label": "Antall elever uten valgfag",
+        "rowLabel": "Antall elever uten valgfag",
+        "column": "Gutter",
+        "table": "10. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord11.GG_683_Antall_Gutter_Uten_Valgfag_Trinn_10",
+        "sqlColumn": "GG_683_Antall_Gutter_Uten_Valgfag_Trinn_10",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_684_Antall_Jenter_Uten_Valgfag_Trinn_10",
+        "control": "Local_Comp_Input_Number_118",
+        "group": "C",
+        "questionNumber": "1",
+        "label": "Antall elever uten valgfag",
+        "rowLabel": "Antall elever uten valgfag",
+        "column": "Jenter",
+        "table": "10. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord11.GG_684_Antall_Jenter_Uten_Valgfag_Trinn_10",
+        "sqlColumn": "GG_684_Antall_Jenter_Uten_Valgfag_Trinn_10",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_685_Sum_Uten_Valgfag_Trinn_10",
+        "control": "Local_Comp_Input_Number_322",
+        "group": "C",
+        "questionNumber": "1",
+        "label": "Antall elever uten valgfag",
+        "rowLabel": "Antall elever uten valgfag",
+        "column": "Sum",
+        "table": "10. trinn",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_683_Antall_Gutter_Uten_Valgfag_Trinn_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_684_Antall_Jenter_Uten_Valgfag_Trinn_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord11.GG_685_Sum_Uten_Valgfag_Trinn_10",
+        "sqlColumn": "GG_685_Sum_Uten_Valgfag_Trinn_10",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_686_Sum_Uten_Valgfag_Trinn_8_10",
+        "control": "Local_Comp_Input_Number_323",
+        "group": "C",
+        "questionNumber": "1",
+        "label": "Antall elever uten valgfag",
+        "rowLabel": "Antall elever uten valgfag",
+        "column": "Sum",
+        "table": "8.–10. trinn",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_679_Sum_Uten_Valgfag_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_682_Sum_Uten_Valgfag_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_685_Sum_Uten_Valgfag_Trinn_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord11.GG_686_Sum_Uten_Valgfag_Trinn_8_10",
+        "sqlColumn": "GG_686_Sum_Uten_Valgfag_Trinn_8_10",
+        "gradeRestricted": true
+      },
+      {
+        "key": "calculated-11-Local_Comp_Input_Number_659",
+        "control": "Local_Comp_Input_Number_659",
+        "group": "D",
+        "questionNumber": "1",
+        "label": "Sum elever med og uten valgfag",
+        "rowLabel": "Sum elever med og uten valgfag",
+        "column": "Gutter",
+        "table": "8. trinn",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_1052_Antall_Gutter_Istedenfor_Valgfag_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_677_Antall_Gutter_Uten_Valgfag_Trinn_8",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=\n\nCoalesce(\n\n\nSum(Filter(ShadowColGG11SpA,GsiGrunnskoleSvarDel11Id = nfSelectedRecord11.GsiGrunnskoleSvarDel11Id),GG_876_Antall_Gutter_Med_Valgfag_Trinn_8)\n+ \n\nnfSelectedRecord11.GG_1052_Antall_Gutter_Istedenfor_Valgfag_Trinn_8\n+ \n\nnfSelectedRecord11.GG_677_Antall_Gutter_Uten_Valgfag_Trinn_8, 0 \n)",
+        "sqlColumn": "",
+        "origin": "calculated",
+        "gradeRestricted": false,
+        "collectionTerms": [
+          "GG_876_Antall_Gutter_Med_Valgfag_Trinn_8"
+        ]
+      },
+      {
+        "key": "calculated-11-Local_Comp_Input_Number_660",
+        "control": "Local_Comp_Input_Number_660",
+        "group": "D",
+        "questionNumber": "1",
+        "label": "Sum elever med og uten valgfag",
+        "rowLabel": "Sum elever med og uten valgfag",
+        "column": "Jenter",
+        "table": "8. trinn",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_1053_Antall_Jenter_Istedenfor_Valgfag_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_678_Antall_Jenter_Uten_Valgfag_Trinn_8",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=\n\nCoalesce(\n\nSum(Filter(ShadowColGG11SpA,GsiGrunnskoleSvarDel11Id = nfSelectedRecord11.GsiGrunnskoleSvarDel11Id),GG_877_Antall_Jenter_Med_Valgfag_Trinn_8)\n+\n\nnfSelectedRecord11.GG_1053_Antall_Jenter_Istedenfor_Valgfag_Trinn_8\n+\n\nnfSelectedRecord11.GG_678_Antall_Jenter_Uten_Valgfag_Trinn_8, 0\n)",
+        "sqlColumn": "",
+        "origin": "calculated",
+        "gradeRestricted": false,
+        "collectionTerms": [
+          "GG_877_Antall_Jenter_Med_Valgfag_Trinn_8"
+        ]
+      },
+      {
+        "key": "calculated-11-Local_Comp_Input_Number_661",
+        "control": "Local_Comp_Input_Number_661",
+        "group": "D",
+        "questionNumber": "1",
+        "label": "Sum elever med og uten valgfag",
+        "rowLabel": "Sum elever med og uten valgfag",
+        "column": "Sum",
+        "table": "8. trinn",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_1052_Antall_Gutter_Istedenfor_Valgfag_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_677_Antall_Gutter_Uten_Valgfag_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_1053_Antall_Jenter_Istedenfor_Valgfag_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_678_Antall_Jenter_Uten_Valgfag_Trinn_8",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=\n\n\nCoalesce(\n(\n    \n    \n    Sum(Filter(ShadowColGG11SpA,GsiGrunnskoleSvarDel11Id = nfSelectedRecord11.GsiGrunnskoleSvarDel11Id),GG_876_Antall_Gutter_Med_Valgfag_Trinn_8)\n    \n    + \n    \n    nfSelectedRecord11.GG_1052_Antall_Gutter_Istedenfor_Valgfag_Trinn_8\n    + \n    \n    nfSelectedRecord11.GG_677_Antall_Gutter_Uten_Valgfag_Trinn_8\n    +\n    \n    \n    Sum(Filter(ShadowColGG11SpA,GsiGrunnskoleSvarDel11Id = nfSelectedRecord11.GsiGrunnskoleSvarDel11Id),GG_877_Antall_Jenter_Med_Valgfag_Trinn_8)\n    +\n    \n    nfSelectedRecord11.GG_1053_Antall_Jenter_Istedenfor_Valgfag_Trinn_8\n    +\n    \n    nfSelectedRecord11.GG_678_Antall_Jenter_Uten_Valgfag_Trinn_8\n    )\n    , 0\n)",
+        "sqlColumn": "",
+        "origin": "calculated",
+        "gradeRestricted": false,
+        "collectionTerms": [
+          "GG_876_Antall_Gutter_Med_Valgfag_Trinn_8",
+          "GG_877_Antall_Jenter_Med_Valgfag_Trinn_8"
+        ]
+      },
+      {
+        "key": "calculated-11-Local_Comp_Input_Number_662",
+        "control": "Local_Comp_Input_Number_662",
+        "group": "D",
+        "questionNumber": "1",
+        "label": "Sum elever med og uten valgfag",
+        "rowLabel": "Sum elever med og uten valgfag",
+        "column": "Gutter",
+        "table": "9. trinn",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_1054_Antall_Gutter_Istedenfor_Valgfag_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_680_Antall_Gutter_Uten_Valgfag_Trinn_9",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=\n\nCoalesce(\n\nSum(Filter(ShadowColGG11SpA,GsiGrunnskoleSvarDel11Id = nfSelectedRecord11.GsiGrunnskoleSvarDel11Id),GG_879_Antall_Gutter_Med_Valgfag_Trinn_9)\n+\n\nnfSelectedRecord11.GG_1054_Antall_Gutter_Istedenfor_Valgfag_Trinn_9\n+\n\nnfSelectedRecord11.GG_680_Antall_Gutter_Uten_Valgfag_Trinn_9, 0\n)",
+        "sqlColumn": "",
+        "origin": "calculated",
+        "gradeRestricted": false,
+        "collectionTerms": [
+          "GG_879_Antall_Gutter_Med_Valgfag_Trinn_9"
+        ]
+      },
+      {
+        "key": "calculated-11-Local_Comp_Input_Number_663",
+        "control": "Local_Comp_Input_Number_663",
+        "group": "D",
+        "questionNumber": "1",
+        "label": "Sum elever med og uten valgfag",
+        "rowLabel": "Sum elever med og uten valgfag",
+        "column": "Jenter",
+        "table": "9. trinn",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_1055_Antall_Jenter_Istedenfor_Valgfag_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_681_Antall_Jenter_Uten_Valgfag_Trinn_9",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=\n\nCoalesce(\n\nSum(Filter(ShadowColGG11SpA,GsiGrunnskoleSvarDel11Id = nfSelectedRecord11.GsiGrunnskoleSvarDel11Id),GG_880_Antall_Jenter_Med_Valgfag_Trinn_9)\n+\n\nnfSelectedRecord11.GG_1055_Antall_Jenter_Istedenfor_Valgfag_Trinn_9\n+\n\nnfSelectedRecord11.GG_681_Antall_Jenter_Uten_Valgfag_Trinn_9, 0 \n)",
+        "sqlColumn": "",
+        "origin": "calculated",
+        "gradeRestricted": false,
+        "collectionTerms": [
+          "GG_880_Antall_Jenter_Med_Valgfag_Trinn_9"
+        ]
+      },
+      {
+        "key": "calculated-11-Local_Comp_Input_Number_664",
+        "control": "Local_Comp_Input_Number_664",
+        "group": "D",
+        "questionNumber": "1",
+        "label": "Sum elever med og uten valgfag",
+        "rowLabel": "Sum elever med og uten valgfag",
+        "column": "Sum",
+        "table": "9. trinn",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_1054_Antall_Gutter_Istedenfor_Valgfag_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_680_Antall_Gutter_Uten_Valgfag_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_1055_Antall_Jenter_Istedenfor_Valgfag_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_681_Antall_Jenter_Uten_Valgfag_Trinn_9",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=\n\nCoalesce(\n    \n    (\n        \n        \n        Sum(Filter(ShadowColGG11SpA,GsiGrunnskoleSvarDel11Id = nfSelectedRecord11.GsiGrunnskoleSvarDel11Id),GG_879_Antall_Gutter_Med_Valgfag_Trinn_9)\n        +\n        \n        nfSelectedRecord11.GG_1054_Antall_Gutter_Istedenfor_Valgfag_Trinn_9\n        +\n        \n        nfSelectedRecord11.GG_680_Antall_Gutter_Uten_Valgfag_Trinn_9\n        +\n        \n        \n        Sum(Filter(ShadowColGG11SpA,GsiGrunnskoleSvarDel11Id = nfSelectedRecord11.GsiGrunnskoleSvarDel11Id),GG_880_Antall_Jenter_Med_Valgfag_Trinn_9)\n        +\n        \n        nfSelectedRecord11.GG_1055_Antall_Jenter_Istedenfor_Valgfag_Trinn_9\n        +\n        \n        nfSelectedRecord11.GG_681_Antall_Jenter_Uten_Valgfag_Trinn_9\n    )\n,0\n)",
+        "sqlColumn": "",
+        "origin": "calculated",
+        "gradeRestricted": false,
+        "collectionTerms": [
+          "GG_879_Antall_Gutter_Med_Valgfag_Trinn_9",
+          "GG_880_Antall_Jenter_Med_Valgfag_Trinn_9"
+        ]
+      },
+      {
+        "key": "calculated-11-Local_Comp_Input_Number_665",
+        "control": "Local_Comp_Input_Number_665",
+        "group": "D",
+        "questionNumber": "1",
+        "label": "Sum elever med og uten valgfag",
+        "rowLabel": "Sum elever med og uten valgfag",
+        "column": "Gutter",
+        "table": "10. trinn",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_1056_Antall_Gutter_Istedenfor_Valgfag_Trinn_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_683_Antall_Gutter_Uten_Valgfag_Trinn_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=\n\nCoalesce(\n\nSum(Filter(ShadowColGG11SpA,GsiGrunnskoleSvarDel11Id = nfSelectedRecord11.GsiGrunnskoleSvarDel11Id),GG_882_Antall_Gutter_Med_Valgfag_Trinn_10)\n+\n\nnfSelectedRecord11.GG_1056_Antall_Gutter_Istedenfor_Valgfag_Trinn_10\n+\n\nnfSelectedRecord11.GG_683_Antall_Gutter_Uten_Valgfag_Trinn_10, 0\n)",
+        "sqlColumn": "",
+        "origin": "calculated",
+        "gradeRestricted": false,
+        "collectionTerms": [
+          "GG_882_Antall_Gutter_Med_Valgfag_Trinn_10"
+        ]
+      },
+      {
+        "key": "calculated-11-Local_Comp_Input_Number_666",
+        "control": "Local_Comp_Input_Number_666",
+        "group": "D",
+        "questionNumber": "1",
+        "label": "Sum elever med og uten valgfag",
+        "rowLabel": "Sum elever med og uten valgfag",
+        "column": "Jenter",
+        "table": "10. trinn",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_1057_Antall_Jenter_Istedenfor_Valgfag_Trinn_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_684_Antall_Jenter_Uten_Valgfag_Trinn_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=\n\nCoalesce(\n\nSum(Filter(ShadowColGG11SpA,GsiGrunnskoleSvarDel11Id = nfSelectedRecord11.GsiGrunnskoleSvarDel11Id),GG_883_Antall_Jenter_Med_Valgfag_Trinn_10)\n+\n\nnfSelectedRecord11.GG_1057_Antall_Jenter_Istedenfor_Valgfag_Trinn_10\n+\n\nnfSelectedRecord11.GG_684_Antall_Jenter_Uten_Valgfag_Trinn_10, 0 \n)",
+        "sqlColumn": "",
+        "origin": "calculated",
+        "gradeRestricted": false,
+        "collectionTerms": [
+          "GG_883_Antall_Jenter_Med_Valgfag_Trinn_10"
+        ]
+      },
+      {
+        "key": "calculated-11-Local_Comp_Input_Number_667",
+        "control": "Local_Comp_Input_Number_667",
+        "group": "D",
+        "questionNumber": "1",
+        "label": "Sum elever med og uten valgfag",
+        "rowLabel": "Sum elever med og uten valgfag",
+        "column": "Sum",
+        "table": "10. trinn",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_1056_Antall_Gutter_Istedenfor_Valgfag_Trinn_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_683_Antall_Gutter_Uten_Valgfag_Trinn_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_1057_Antall_Jenter_Istedenfor_Valgfag_Trinn_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_684_Antall_Jenter_Uten_Valgfag_Trinn_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=\n\nCoalesce(\n    (\n        \n        \n        Sum(Filter(ShadowColGG11SpA,GsiGrunnskoleSvarDel11Id = nfSelectedRecord11.GsiGrunnskoleSvarDel11Id),GG_882_Antall_Gutter_Med_Valgfag_Trinn_10)\n        +\n        \n        nfSelectedRecord11.GG_1056_Antall_Gutter_Istedenfor_Valgfag_Trinn_10\n        +\n        \n        nfSelectedRecord11.GG_683_Antall_Gutter_Uten_Valgfag_Trinn_10\n        +\n        \n        \n        Sum(Filter(ShadowColGG11SpA,GsiGrunnskoleSvarDel11Id = nfSelectedRecord11.GsiGrunnskoleSvarDel11Id),GG_883_Antall_Jenter_Med_Valgfag_Trinn_10)\n        +\n        \n        nfSelectedRecord11.GG_1057_Antall_Jenter_Istedenfor_Valgfag_Trinn_10\n        +\n        \n        nfSelectedRecord11.GG_684_Antall_Jenter_Uten_Valgfag_Trinn_10\n    ), 0 \n)",
+        "sqlColumn": "",
+        "origin": "calculated",
+        "gradeRestricted": false,
+        "collectionTerms": [
+          "GG_882_Antall_Gutter_Med_Valgfag_Trinn_10",
+          "GG_883_Antall_Jenter_Med_Valgfag_Trinn_10"
+        ]
+      },
+      {
+        "key": "calculated-11-Local_Comp_Input_Number_668",
+        "control": "Local_Comp_Input_Number_668",
+        "group": "D",
+        "questionNumber": "1",
+        "label": "Sum elever med og uten valgfag",
+        "rowLabel": "Sum elever med og uten valgfag",
+        "column": "Sum",
+        "table": "8.–10. trinn",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_1052_Antall_Gutter_Istedenfor_Valgfag_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_677_Antall_Gutter_Uten_Valgfag_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_1053_Antall_Jenter_Istedenfor_Valgfag_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_678_Antall_Jenter_Uten_Valgfag_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_1054_Antall_Gutter_Istedenfor_Valgfag_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_680_Antall_Gutter_Uten_Valgfag_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_1055_Antall_Jenter_Istedenfor_Valgfag_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_681_Antall_Jenter_Uten_Valgfag_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_1056_Antall_Gutter_Istedenfor_Valgfag_Trinn_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_683_Antall_Gutter_Uten_Valgfag_Trinn_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_1057_Antall_Jenter_Istedenfor_Valgfag_Trinn_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_684_Antall_Jenter_Uten_Valgfag_Trinn_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=\n\nCoalesce(\n    \n    (\n        \n        (\n            \n            \n            Sum(Filter(ShadowColGG11SpA,GsiGrunnskoleSvarDel11Id = nfSelectedRecord11.GsiGrunnskoleSvarDel11Id),GG_876_Antall_Gutter_Med_Valgfag_Trinn_8)\n            + \n            \n            nfSelectedRecord11.GG_1052_Antall_Gutter_Istedenfor_Valgfag_Trinn_8\n            + \n            \n            nfSelectedRecord11.GG_677_Antall_Gutter_Uten_Valgfag_Trinn_8\n            +\n            \n            \n            Sum(Filter(ShadowColGG11SpA,GsiGrunnskoleSvarDel11Id = nfSelectedRecord11.GsiGrunnskoleSvarDel11Id),GG_877_Antall_Jenter_Med_Valgfag_Trinn_8)\n            +\n            \n            nfSelectedRecord11.GG_1053_Antall_Jenter_Istedenfor_Valgfag_Trinn_8\n            +\n            \n            nfSelectedRecord11.GG_678_Antall_Jenter_Uten_Valgfag_Trinn_8\n        )\n        +\n        \n        \n        (\n            \n            Sum(Filter(ShadowColGG11SpA,GsiGrunnskoleSvarDel11Id = nfSelectedRecord11.GsiGrunnskoleSvarDel11Id),GG_879_Antall_Gutter_Med_Valgfag_Trinn_9)\n            +\n            \n            nfSelectedRecord11.GG_1054_Antall_Gutter_Istedenfor_Valgfag_Trinn_9\n            +\n            \n            nfSelectedRecord11.GG_680_Antall_Gutter_Uten_Valgfag_Trinn_9\n            +\n            \n            \n            Sum(Filter(ShadowColGG11SpA,GsiGrunnskoleSvarDel11Id = nfSelectedRecord11.GsiGrunnskoleSvarDel11Id),GG_880_Antall_Jenter_Med_Valgfag_Trinn_9)\n            +\n            \n            nfSelectedRecord11.GG_1055_Antall_Jenter_Istedenfor_Valgfag_Trinn_9\n            +\n            \n            nfSelectedRecord11.GG_681_Antall_Jenter_Uten_Valgfag_Trinn_9\n        )\n        +\n        \n        \n        (\n            \n            Sum(Filter(ShadowColGG11SpA,GsiGrunnskoleSvarDel11Id = nfSelectedRecord11.GsiGrunnskoleSvarDel11Id),GG_882_Antall_Gutter_Med_Valgfag_Trinn_10)\n            +\n            \n            nfSelectedRecord11.GG_1056_Antall_Gutter_Istedenfor_Valgfag_Trinn_10\n            +\n            \n            nfSelectedRecord11.GG_683_Antall_Gutter_Uten_Valgfag_Trinn_10\n            +\n            \n            \n            Sum(Filter(ShadowColGG11SpA,GsiGrunnskoleSvarDel11Id = nfSelectedRecord11.GsiGrunnskoleSvarDel11Id),GG_883_Antall_Jenter_Med_Valgfag_Trinn_10)\n            +\n            \n            nfSelectedRecord11.GG_1057_Antall_Jenter_Istedenfor_Valgfag_Trinn_10\n            +\n            \n            nfSelectedRecord11.GG_684_Antall_Jenter_Uten_Valgfag_Trinn_10\n        )\n    )\n    ,0\n)",
+        "sqlColumn": "",
+        "origin": "calculated",
+        "gradeRestricted": false,
+        "collectionTerms": [
+          "GG_876_Antall_Gutter_Med_Valgfag_Trinn_8",
+          "GG_877_Antall_Jenter_Med_Valgfag_Trinn_8",
+          "GG_879_Antall_Gutter_Med_Valgfag_Trinn_9",
+          "GG_880_Antall_Jenter_Med_Valgfag_Trinn_9",
+          "GG_882_Antall_Gutter_Med_Valgfag_Trinn_10",
+          "GG_883_Antall_Jenter_Med_Valgfag_Trinn_10"
+        ]
+      },
+      {
+        "key": "GG_556_Sum_Fransk_Trinn_8_10",
+        "control": "Local_Comp_Input_Number_669",
+        "group": "D",
+        "questionNumber": "1",
+        "label": "Fransk",
+        "rowLabel": "Fransk",
+        "column": "Sum",
+        "table": "Referanseverdier fra del 10",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord10.GG_556_Sum_Fransk_Trinn_8_10",
+        "sourceSection": 10,
+        "sqlColumn": "GG_556_Sum_Fransk_Trinn_8_10",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_566_Sum_Spansk_Trinn_8_10",
+        "control": "Local_Comp_Input_Number_670",
+        "group": "D",
+        "questionNumber": "2",
+        "label": "Spansk",
+        "rowLabel": "Spansk",
+        "column": "Sum",
+        "table": "Referanseverdier fra del 10",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord10.GG_566_Sum_Spansk_Trinn_8_10",
+        "sourceSection": 10,
+        "sqlColumn": "GG_566_Sum_Spansk_Trinn_8_10",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_576_Sum_Italiensk_Trinn_8_10",
+        "control": "Local_Comp_Input_Number_671",
+        "group": "D",
+        "questionNumber": "3",
+        "label": "Italiensk",
+        "rowLabel": "Italiensk",
+        "column": "Sum",
+        "table": "Referanseverdier fra del 10",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord10.GG_576_Sum_Italiensk_Trinn_8_10",
+        "sourceSection": 10,
+        "sqlColumn": "GG_576_Sum_Italiensk_Trinn_8_10",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_586_Sum_Russisk_Trinn_8_10",
+        "control": "Local_Comp_Input_Number_672",
+        "group": "D",
+        "questionNumber": "4",
+        "label": "Russisk",
+        "rowLabel": "Russisk",
+        "column": "Sum",
+        "table": "Referanseverdier fra del 10",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord10.GG_586_Sum_Russisk_Trinn_8_10",
+        "sourceSection": 10,
+        "sqlColumn": "GG_586_Sum_Russisk_Trinn_8_10",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_596_Sum_Andre_Spraak_Trinn_8_10",
+        "control": "Local_Comp_Input_Number_673",
+        "group": "D",
+        "questionNumber": "5",
+        "label": "Andre språk",
+        "rowLabel": "Andre språk",
+        "column": "Sum",
+        "table": "Referanseverdier fra del 10",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord10.GG_596_Sum_Andre_Spraak_Trinn_8_10",
+        "sourceSection": 10,
+        "sqlColumn": "GG_596_Sum_Andre_Spraak_Trinn_8_10",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_606_Sum_Fordypning_Engelsk_Trinn_8_10",
+        "control": "Local_Comp_Input_Number_674",
+        "group": "D",
+        "questionNumber": "6",
+        "label": "Fordypning engelsk",
+        "rowLabel": "Fordypning engelsk",
+        "column": "Sum",
+        "table": "Referanseverdier fra del 10",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord10.GG_606_Sum_Fordypning_Engelsk_Trinn_8_10",
+        "sourceSection": 10,
+        "sqlColumn": "GG_606_Sum_Fordypning_Engelsk_Trinn_8_10",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_616_Sum_Fordypning_Norsk_Trinn_8_10",
+        "control": "Local_Comp_Input_Number_675",
+        "group": "D",
+        "questionNumber": "7",
+        "label": "Fordypning norsk",
+        "rowLabel": "Fordypning norsk",
+        "column": "Sum",
+        "table": "Referanseverdier fra del 10",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord10.GG_616_Sum_Fordypning_Norsk_Trinn_8_10",
+        "sourceSection": 10,
+        "sqlColumn": "GG_616_Sum_Fordypning_Norsk_Trinn_8_10",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_626_Sum_Fordypning_Samisk_Trinn_8_10",
+        "control": "Local_Comp_Input_Number_676",
+        "group": "D",
+        "questionNumber": "8",
+        "label": "Fordypning samisk",
+        "rowLabel": "Fordypning samisk",
+        "column": "Sum",
+        "table": "Referanseverdier fra del 10",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord10.GG_626_Sum_Fordypning_Samisk_Trinn_8_10",
+        "sourceSection": 10,
+        "sqlColumn": "GG_626_Sum_Fordypning_Samisk_Trinn_8_10",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_636_Sum_Arbeidslivsfag_Trinn_8_10",
+        "control": "Local_Comp_Input_Number_677",
+        "group": "D",
+        "questionNumber": "9",
+        "label": "Arbeidslivsfag",
+        "rowLabel": "Arbeidslivsfag",
+        "column": "Sum",
+        "table": "Referanseverdier fra del 10",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord10.GG_636_Sum_Arbeidslivsfag_Trinn_8_10",
+        "sourceSection": 10,
+        "sqlColumn": "GG_636_Sum_Arbeidslivsfag_Trinn_8_10",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_646_Sum_Fordypning_Matematikk_Trinn_8_10",
+        "control": "Local_Comp_Input_Number_678",
+        "group": "D",
+        "questionNumber": "10",
+        "label": "Fordypning matematikk",
+        "rowLabel": "Fordypning matematikk",
+        "column": "Sum",
+        "table": "Referanseverdier fra del 10",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord10.GG_646_Sum_Fordypning_Matematikk_Trinn_8_10",
+        "sourceSection": 10,
+        "sqlColumn": "GG_646_Sum_Fordypning_Matematikk_Trinn_8_10",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_656_Sum_Fordypning_Arbeid_Trinn_8_10",
+        "control": "Local_Comp_Input_Number_679",
+        "group": "D",
+        "questionNumber": "11",
+        "label": "Fordypning i arbeid",
+        "rowLabel": "Fordypning i arbeid",
+        "column": "Sum",
+        "table": "Referanseverdier fra del 10",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord10.GG_656_Sum_Fordypning_Arbeid_Trinn_8_10",
+        "sourceSection": 10,
+        "sqlColumn": "GG_656_Sum_Fordypning_Arbeid_Trinn_8_10",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_993_Sum_Fremmedspraak_Fordypning_Arbeidslivsfag_Gutter_Jenter_Trinn_1_10",
+        "control": "Local_Comp_Input_Number_680",
+        "group": "D",
+        "questionNumber": "12",
+        "label": "Sum",
+        "rowLabel": "Sum",
+        "column": "Sum",
+        "table": "Referanseverdier fra del 10",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord10.GG_993_Sum_Fremmedspraak_Fordypning_Arbeidslivsfag_Gutter_Jenter_Trinn_1_10",
+        "sourceSection": 10,
+        "sqlColumn": "GG_993_Sum_Fremmedspraak_Fordypning_Arbeidslivsfag_Gutter_Jenter_Trinn_1_10",
+        "gradeRestricted": true
+      }
+    ],
+    "controllers": [
+      "GG-F157",
+      "GG-F73",
+      "GG-F145",
+      "GG-F146",
+      "GG-A85",
+      "BK-A10"
+    ]
+  },
+  "12": {
+    "groups": [
+      {
+        "id": "A",
+        "title": "A. Antall elevtimer til fysisk aktivitet per år",
+        "reference": "GG_H44",
+        "helpId": "GG-H134",
+        "controllers": [
+          "GG-A30",
+          "GG-A110",
+          "GG-A131",
+          "GG-F38",
+          "GG-F39",
+          "GG-F55"
+        ],
+        "sourceCard": "A. Antall elevtimer til fysisk aktivitet per år"
+      },
+      {
+        "id": "B",
+        "title": "B. Antall årstimer til fysisk aktivitet",
+        "reference": "GG_H45",
+        "helpId": "GG-H135",
+        "controllers": [
+          "GG-A144"
+        ],
+        "sourceCard": "B. Antall årstimer til fysisk aktivitet"
+      },
+      {
+        "id": "C",
+        "title": "C. Leksehjelp på 1.–10. trinn",
+        "reference": "GG_H46_U93",
+        "helpId": "GG-H136",
+        "controllers": [
+          "GG-A26",
+          "GG-A27",
+          "GG-A28",
+          "GG-A29",
+          "GG-A82",
+          "GG-A109",
+          "GG-F40",
+          "GG-F41",
+          "GG-F42",
+          "GG-F43",
+          "GG-F44",
+          "GG-F45",
+          "GG-F46",
+          "GG-F47",
+          "GG-F48",
+          "GG-F49",
+          "GG-F67"
+        ],
+        "sourceCard": "C. Leksehjelp på 1.-10. trinnl"
+      }
+    ],
+    "fields": [
+      {
+        "key": "GG_695_Antall_Elevtimer_Fysisk_Aktivitet_Trinn_5",
+        "control": "Local_Comp_Input_Number_154",
+        "group": "A",
+        "questionNumber": "1",
+        "label": "5. trinn",
+        "rowLabel": "5. trinn",
+        "column": "Elevtimer per år",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord12.GG_695_Antall_Elevtimer_Fysisk_Aktivitet_Trinn_5",
+        "sqlColumn": "GG_695_Antall_Elevtimer_Fysisk_Aktivitet_Trinn_5",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_696_Antall_Elevtimer_Fysisk_Aktivitet_Trinn_6",
+        "control": "Local_Comp_Input_Number_155",
+        "group": "A",
+        "questionNumber": "2",
+        "label": "6. trinn",
+        "rowLabel": "6. trinn",
+        "column": "Elevtimer per år",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord12.GG_696_Antall_Elevtimer_Fysisk_Aktivitet_Trinn_6",
+        "sqlColumn": "GG_696_Antall_Elevtimer_Fysisk_Aktivitet_Trinn_6",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_697_Antall_Elevtimer_Fysisk_Aktivitet_Trinn_7",
+        "control": "Local_Comp_Input_Number_156",
+        "group": "A",
+        "questionNumber": "3",
+        "label": "7. trinn",
+        "rowLabel": "7. trinn",
+        "column": "Elevtimer per år",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord12.GG_697_Antall_Elevtimer_Fysisk_Aktivitet_Trinn_7",
+        "sqlColumn": "GG_697_Antall_Elevtimer_Fysisk_Aktivitet_Trinn_7",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_698_Sum_Elevtimer_Fysisk_Aktivitet",
+        "control": "Local_Comp_Input_Number_157",
+        "group": "A",
+        "questionNumber": "4",
+        "label": "Sum elevtimer",
+        "rowLabel": "Sum elevtimer",
+        "column": "Elevtimer per år",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_695_Antall_Elevtimer_Fysisk_Aktivitet_Trinn_5",
+            "sign": 1
+          },
+          {
+            "field": "GG_696_Antall_Elevtimer_Fysisk_Aktivitet_Trinn_6",
+            "sign": 1
+          },
+          {
+            "field": "GG_697_Antall_Elevtimer_Fysisk_Aktivitet_Trinn_7",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord12.GG_698_Sum_Elevtimer_Fysisk_Aktivitet",
+        "sqlColumn": "GG_698_Sum_Elevtimer_Fysisk_Aktivitet",
+        "gradeRestricted": false
+      },
+      {
+        "key": "GG_699_Antall_Aarstimer_Fysisk_Aktivitet_Trinn_5_7",
+        "control": "Local_Comp_Input_Number_326",
+        "group": "B",
+        "questionNumber": "1",
+        "label": "Årstimer til fysisk aktivitet på 5.–7. trinn",
+        "rowLabel": "Årstimer til fysisk aktivitet på 5.–7. trinn",
+        "column": "Årstimer",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord12.GG_699_Antall_Aarstimer_Fysisk_Aktivitet_Trinn_5_7",
+        "sqlColumn": "GG_699_Antall_Aarstimer_Fysisk_Aktivitet_Trinn_5_7",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_700_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_1",
+        "control": "Local_Comp_Input_Number_327",
+        "group": "C",
+        "questionNumber": "1",
+        "label": "1. trinn",
+        "rowLabel": "1. trinn",
+        "column": "Elever",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord12.GG_700_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_1",
+        "sqlColumn": "GG_700_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_1",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_711_Antall_Timer_Tilbydd_Leksehjelp_Trinn_1",
+        "control": "Local_Comp_Input_Number_449",
+        "group": "C",
+        "questionNumber": "1",
+        "label": "1. trinn",
+        "rowLabel": "1. trinn",
+        "column": "Timer per uke",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord12.GG_711_Antall_Timer_Tilbydd_Leksehjelp_Trinn_1",
+        "sqlColumn": "GG_711_Antall_Timer_Tilbydd_Leksehjelp_Trinn_1",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_701_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_2",
+        "control": "Local_Comp_Input_Number_329",
+        "group": "C",
+        "questionNumber": "2",
+        "label": "2. trinn",
+        "rowLabel": "2. trinn",
+        "column": "Elever",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord12.GG_701_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_2",
+        "sqlColumn": "GG_701_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_2",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_712_Antall_Timer_Tilbydd_Leksehjelp_Trinn_2",
+        "control": "Local_Comp_Input_Number_339",
+        "group": "C",
+        "questionNumber": "2",
+        "label": "2. trinn",
+        "rowLabel": "2. trinn",
+        "column": "Timer per uke",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord12.GG_712_Antall_Timer_Tilbydd_Leksehjelp_Trinn_2",
+        "sqlColumn": "GG_712_Antall_Timer_Tilbydd_Leksehjelp_Trinn_2",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_702_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_3",
+        "control": "Local_Comp_Input_Number_330",
+        "group": "C",
+        "questionNumber": "3",
+        "label": "3. trinn",
+        "rowLabel": "3. trinn",
+        "column": "Elever",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord12.GG_702_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_3",
+        "sqlColumn": "GG_702_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_3",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_713_Antall_Timer_Tilbydd_Leksehjelp_Trinn_3",
+        "control": "Local_Comp_Input_Number_340",
+        "group": "C",
+        "questionNumber": "3",
+        "label": "3. trinn",
+        "rowLabel": "3. trinn",
+        "column": "Timer per uke",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord12.GG_713_Antall_Timer_Tilbydd_Leksehjelp_Trinn_3",
+        "sqlColumn": "GG_713_Antall_Timer_Tilbydd_Leksehjelp_Trinn_3",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_703_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_4",
+        "control": "Local_Comp_Input_Number_331",
+        "group": "C",
+        "questionNumber": "4",
+        "label": "4. trinn",
+        "rowLabel": "4. trinn",
+        "column": "Elever",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord12.GG_703_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_4",
+        "sqlColumn": "GG_703_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_4",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_714_Antall_Timer_Tilbydd_Leksehjelp_Trinn_4",
+        "control": "Local_Comp_Input_Number_341",
+        "group": "C",
+        "questionNumber": "4",
+        "label": "4. trinn",
+        "rowLabel": "4. trinn",
+        "column": "Timer per uke",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord12.GG_714_Antall_Timer_Tilbydd_Leksehjelp_Trinn_4",
+        "sqlColumn": "GG_714_Antall_Timer_Tilbydd_Leksehjelp_Trinn_4",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_704_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_5",
+        "control": "Local_Comp_Input_Number_332",
+        "group": "C",
+        "questionNumber": "5",
+        "label": "5. trinn",
+        "rowLabel": "5. trinn",
+        "column": "Elever",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord12.GG_704_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_5",
+        "sqlColumn": "GG_704_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_5",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_715_Antall_Timer_Tilbydd_Leksehjelp_Trinn_5",
+        "control": "Local_Comp_Input_Number_342",
+        "group": "C",
+        "questionNumber": "5",
+        "label": "5. trinn",
+        "rowLabel": "5. trinn",
+        "column": "Timer per uke",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord12.GG_715_Antall_Timer_Tilbydd_Leksehjelp_Trinn_5",
+        "sqlColumn": "GG_715_Antall_Timer_Tilbydd_Leksehjelp_Trinn_5",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_705_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_6",
+        "control": "Local_Comp_Input_Number_333",
+        "group": "C",
+        "questionNumber": "6",
+        "label": "6. trinn",
+        "rowLabel": "6. trinn",
+        "column": "Elever",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord12.GG_705_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_6",
+        "sqlColumn": "GG_705_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_6",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_716_Antall_Timer_Tilbydd_Leksehjelp_Trinn_6",
+        "control": "Local_Comp_Input_Number_343",
+        "group": "C",
+        "questionNumber": "6",
+        "label": "6. trinn",
+        "rowLabel": "6. trinn",
+        "column": "Timer per uke",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord12.GG_716_Antall_Timer_Tilbydd_Leksehjelp_Trinn_6",
+        "sqlColumn": "GG_716_Antall_Timer_Tilbydd_Leksehjelp_Trinn_6",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_706_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_7",
+        "control": "Local_Comp_Input_Number_334",
+        "group": "C",
+        "questionNumber": "7",
+        "label": "7. trinn",
+        "rowLabel": "7. trinn",
+        "column": "Elever",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord12.GG_706_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_7",
+        "sqlColumn": "GG_706_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_7",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_717_Antall_Timer_Tilbydd_Leksehjelp_Trinn_7",
+        "control": "Local_Comp_Input_Number_344",
+        "group": "C",
+        "questionNumber": "7",
+        "label": "7. trinn",
+        "rowLabel": "7. trinn",
+        "column": "Timer per uke",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord12.GG_717_Antall_Timer_Tilbydd_Leksehjelp_Trinn_7",
+        "sqlColumn": "GG_717_Antall_Timer_Tilbydd_Leksehjelp_Trinn_7",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_707_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_8",
+        "control": "Local_Comp_Input_Number_335",
+        "group": "C",
+        "questionNumber": "8",
+        "label": "8. trinn",
+        "rowLabel": "8. trinn",
+        "column": "Elever",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord12.GG_707_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_8",
+        "sqlColumn": "GG_707_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_8",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_718_Antall_Timer_Tilbydd_Leksehjelp_Trinn_8",
+        "control": "Local_Comp_Input_Number_345",
+        "group": "C",
+        "questionNumber": "8",
+        "label": "8. trinn",
+        "rowLabel": "8. trinn",
+        "column": "Timer per uke",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord12.GG_718_Antall_Timer_Tilbydd_Leksehjelp_Trinn_8",
+        "sqlColumn": "GG_718_Antall_Timer_Tilbydd_Leksehjelp_Trinn_8",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_708_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_9",
+        "control": "Local_Comp_Input_Number_336",
+        "group": "C",
+        "questionNumber": "9",
+        "label": "9. trinn",
+        "rowLabel": "9. trinn",
+        "column": "Elever",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord12.GG_708_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_9",
+        "sqlColumn": "GG_708_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_9",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_719_Antall_Timer_Tilbydd_Leksehjelp_Trinn_9",
+        "control": "Local_Comp_Input_Number_346",
+        "group": "C",
+        "questionNumber": "9",
+        "label": "9. trinn",
+        "rowLabel": "9. trinn",
+        "column": "Timer per uke",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord12.GG_719_Antall_Timer_Tilbydd_Leksehjelp_Trinn_9",
+        "sqlColumn": "GG_719_Antall_Timer_Tilbydd_Leksehjelp_Trinn_9",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_709_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_10",
+        "control": "Local_Comp_Input_Number_337",
+        "group": "C",
+        "questionNumber": "10",
+        "label": "10. trinn",
+        "rowLabel": "10. trinn",
+        "column": "Elever",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord12.GG_709_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_10",
+        "sqlColumn": "GG_709_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_10",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_720_Antall_Timer_Tilbydd_Leksehjelp_Trinn_10",
+        "control": "Local_Comp_Input_Number_347",
+        "group": "C",
+        "questionNumber": "10",
+        "label": "10. trinn",
+        "rowLabel": "10. trinn",
+        "column": "Timer per uke",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord12.GG_720_Antall_Timer_Tilbydd_Leksehjelp_Trinn_10",
+        "sqlColumn": "GG_720_Antall_Timer_Tilbydd_Leksehjelp_Trinn_10",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_710_Sum_Elever_Som_Deltar_Paa_Leksehjelp",
+        "control": "Local_Comp_Input_Number_338",
+        "group": "C",
+        "questionNumber": "11",
+        "label": "Sum",
+        "rowLabel": "Sum",
+        "column": "Elever",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_700_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_1",
+            "sign": 1
+          },
+          {
+            "field": "GG_701_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_2",
+            "sign": 1
+          },
+          {
+            "field": "GG_702_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_3",
+            "sign": 1
+          },
+          {
+            "field": "GG_703_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_704_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_5",
+            "sign": 1
+          },
+          {
+            "field": "GG_705_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_6",
+            "sign": 1
+          },
+          {
+            "field": "GG_706_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_707_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_708_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_709_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord12.GG_710_Sum_Elever_Som_Deltar_Paa_Leksehjelp",
+        "sqlColumn": "GG_710_Sum_Elever_Som_Deltar_Paa_Leksehjelp",
+        "gradeRestricted": false
+      },
+      {
+        "key": "GG_721_Sum_Timer_Tilbydd_Leksehjelp",
+        "control": "Local_Comp_Input_Number_348",
+        "group": "C",
+        "questionNumber": "11",
+        "label": "Sum",
+        "rowLabel": "Sum",
+        "column": "Timer per uke",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_711_Antall_Timer_Tilbydd_Leksehjelp_Trinn_1",
+            "sign": 1
+          },
+          {
+            "field": "GG_712_Antall_Timer_Tilbydd_Leksehjelp_Trinn_2",
+            "sign": 1
+          },
+          {
+            "field": "GG_713_Antall_Timer_Tilbydd_Leksehjelp_Trinn_3",
+            "sign": 1
+          },
+          {
+            "field": "GG_714_Antall_Timer_Tilbydd_Leksehjelp_Trinn_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_715_Antall_Timer_Tilbydd_Leksehjelp_Trinn_5",
+            "sign": 1
+          },
+          {
+            "field": "GG_716_Antall_Timer_Tilbydd_Leksehjelp_Trinn_6",
+            "sign": 1
+          },
+          {
+            "field": "GG_717_Antall_Timer_Tilbydd_Leksehjelp_Trinn_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_718_Antall_Timer_Tilbydd_Leksehjelp_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_719_Antall_Timer_Tilbydd_Leksehjelp_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_720_Antall_Timer_Tilbydd_Leksehjelp_Trinn_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord12.GG_721_Sum_Timer_Tilbydd_Leksehjelp",
+        "sqlColumn": "GG_721_Sum_Timer_Tilbydd_Leksehjelp",
+        "gradeRestricted": false
+      }
+    ],
+    "controllers": [
+      "GG-A30",
+      "GG-A110",
+      "GG-A131",
+      "GG-F38",
+      "GG-F39",
+      "GG-F55",
+      "GG-A144",
+      "GG-A26",
+      "GG-A27",
+      "GG-A28",
+      "GG-A29",
+      "GG-A82",
+      "GG-A109",
+      "GG-F40",
+      "GG-F41",
+      "GG-F42",
+      "GG-F43",
+      "GG-F44",
+      "GG-F45",
+      "GG-F46",
+      "GG-F47",
+      "GG-F48",
+      "GG-F49",
+      "GG-F67"
+    ]
+  },
+  "13": {
+    "groups": [
+      {
+        "id": "A",
+        "title": "A. Skoleskyss",
+        "reference": "GG_H47_U95",
+        "helpId": "GG-H137",
+        "controllers": [
+          "GG-A7",
+          "GG-F56",
+          "GG-F60"
+        ],
+        "sourceCard": "A. Skoleskyss"
+      },
+      {
+        "id": "B",
+        "title": "B. Omdisponering av timetall (25 %-regelen)",
+        "reference": "GG_H75_U177",
+        "helpId": "GG-H138",
+        "controllers": [
+          "BK-A10",
+          "GG-A123",
+          "GG-A124"
+        ],
+        "sourceCard": "B. Omdisponering av timetall (25 %-regelen)"
+      },
+      {
+        "id": "C",
+        "title": "C. Leirskole",
+        "reference": "GG_H48_U96",
+        "helpId": "GG-H139",
+        "controllers": [
+          "GG-F75",
+          "GG-F76",
+          "GG-F77",
+          "GG-F78",
+          "GG-F79",
+          "GG-F80",
+          "GG-F81",
+          "GG-F82",
+          "GG-F83",
+          "GG-F84"
+        ],
+        "sourceCard": "C. Leirskole"
+      },
+      {
+        "id": "D",
+        "title": "D. Tilgang til skolebibliotek",
+        "reference": "GG_H49_U100",
+        "helpId": "GG-H140",
+        "controllers": [
+          "GG-A119",
+          "GG-F137"
+        ],
+        "sourceCard": "D. Tilgang til skolebibliotek"
+      },
+      {
+        "id": "E",
+        "title": "E. Tilgang på digitale enheter",
+        "reference": "GG_H50_U157",
+        "helpId": "GG-H141",
+        "controllers": [
+          "GG-F85",
+          "GG-F86",
+          "GG-F87",
+          "GG-F88",
+          "GG-F89",
+          "GG-F90",
+          "GG-F91",
+          "GG-F92",
+          "GG-F93",
+          "GG-F94",
+          "GG-F95",
+          "GG-F96",
+          "GG-F97",
+          "GG-F98",
+          "GG-F99",
+          "GG-F100",
+          "GG-F101",
+          "GG-F102",
+          "GG-F103",
+          "GG-F104"
+        ],
+        "sourceCard": "E. Tilgang på digitale enheter"
+      },
+      {
+        "id": "F",
+        "title": "F. Beredskap",
+        "reference": "GG_H51_U102",
+        "helpId": "GG-H142",
+        "controllers": [
+          "GG-F7"
+        ],
+        "sourceCard": "F. Beredskap"
+      },
+      {
+        "id": "G",
+        "title": "G. Elever som tar fag fra videregående opplæring",
+        "reference": "GG_H129_U382",
+        "controllers": [
+          "BK-A10"
+        ],
+        "sourceCard": "G."
+      }
+    ],
+    "fields": [
+      {
+        "key": "GG_722_Antall_Elever_Skoleskyss_Trinn_1",
+        "control": "Local_Comp_Input_Number_137",
+        "group": "A",
+        "questionNumber": "1",
+        "label": "Antall elever med skoleskyss",
+        "rowLabel": "Antall elever med skoleskyss",
+        "column": "1. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_722_Antall_Elever_Skoleskyss_Trinn_1",
+        "sqlColumn": "GG_722_Antall_Elever_Skoleskyss_Trinn_1",
+        "gradeRestricted": true,
+        "gradeRange": [
+          1,
+          1
+        ]
+      },
+      {
+        "key": "GG_723_Antall_Elever_Skoleskyss_Trinn_2_10",
+        "control": "Local_Comp_Input_Number_138",
+        "group": "A",
+        "questionNumber": "1",
+        "label": "Antall elever med skoleskyss",
+        "rowLabel": "Antall elever med skoleskyss",
+        "column": "2.–10. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_723_Antall_Elever_Skoleskyss_Trinn_2_10",
+        "sqlColumn": "GG_723_Antall_Elever_Skoleskyss_Trinn_2_10",
+        "gradeRestricted": true,
+        "gradeRange": [
+          2,
+          10
+        ]
+      },
+      {
+        "key": "GG_724_Sum_Elever_Skoleskyss_Trinn_1_10",
+        "control": "Label2",
+        "group": "A",
+        "questionNumber": "1",
+        "label": "Antall elever med skoleskyss",
+        "rowLabel": "Antall elever med skoleskyss",
+        "column": "Sum",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_722_Antall_Elever_Skoleskyss_Trinn_1",
+            "sign": 1
+          },
+          {
+            "field": "GG_723_Antall_Elever_Skoleskyss_Trinn_2_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord13.GG_724_Sum_Elever_Skoleskyss_Trinn_1_10",
+        "sqlColumn": "GG_724_Sum_Elever_Skoleskyss_Trinn_1_10",
+        "gradeRestricted": true,
+        "gradeRange": [
+          1,
+          10
+        ]
+      },
+      {
+        "key": "GG_1013_Antall_Elever_Omdisponert_Timer_1_7_Trinn",
+        "control": "Local_Comp_Input_Number_149",
+        "group": "B",
+        "questionNumber": "1",
+        "label": "Elever med omdisponert timetall på 1.–7. trinn",
+        "rowLabel": "Elever med omdisponert timetall på 1.–7. trinn",
+        "column": "Elever",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_1013_Antall_Elever_Omdisponert_Timer_1_7_Trinn",
+        "sqlColumn": "GG_1013_Antall_Elever_Omdisponert_Timer_1_7_Trinn",
+        "gradeRestricted": false,
+        "gradeRange": [
+          1,
+          7
+        ]
+      },
+      {
+        "key": "GG_1014_Antall_Elever_Omdisponert_Timer_8_10_Trinn",
+        "control": "Local_Comp_Input_Number_150",
+        "group": "B",
+        "questionNumber": "2",
+        "label": "Elever med omdisponert timetall på 8.–10. trinn",
+        "rowLabel": "Elever med omdisponert timetall på 8.–10. trinn",
+        "column": "Elever",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_1014_Antall_Elever_Omdisponert_Timer_8_10_Trinn",
+        "sqlColumn": "GG_1014_Antall_Elever_Omdisponert_Timer_8_10_Trinn",
+        "gradeRestricted": false,
+        "gradeRange": [
+          8,
+          10
+        ]
+      },
+      {
+        "key": "GG_725_Antall_Elever_Leirskole_H23_Trinn_1",
+        "control": "Local_Comp_Input_Number_133",
+        "group": "C",
+        "questionNumber": "1",
+        "label": "1. trinn",
+        "rowLabel": "1. trinn",
+        "column": "Høst {year}",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_725_Antall_Elever_Leirskole_H23_Trinn_1",
+        "sqlColumn": "GG_725_Antall_Elever_Leirskole_H23_Trinn_1",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_736_Antall_Elever_Leirskole_V24_Trinn_1",
+        "control": "Local_Comp_Input_Number_161",
+        "group": "C",
+        "questionNumber": "1",
+        "label": "1. trinn",
+        "rowLabel": "1. trinn",
+        "column": "Vår {nextYear}",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_736_Antall_Elever_Leirskole_V24_Trinn_1",
+        "sqlColumn": "GG_736_Antall_Elever_Leirskole_V24_Trinn_1",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_747_Antall_Elever_Leirskole_V23_Trinn_1",
+        "control": "Local_Comp_Input_Number_162",
+        "group": "C",
+        "questionNumber": "1",
+        "label": "1. trinn",
+        "rowLabel": "1. trinn",
+        "column": "Vår {year}",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_747_Antall_Elever_Leirskole_V23_Trinn_1",
+        "sqlColumn": "GG_747_Antall_Elever_Leirskole_V23_Trinn_1",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_758_Antall_Overnattinger_Leirskole_Trinn_1",
+        "control": "Local_Comp_Input_Number_163",
+        "group": "C",
+        "questionNumber": "1",
+        "label": "1. trinn",
+        "rowLabel": "1. trinn",
+        "column": "Overnattinger",
+        "readOnly": false,
+        "maxDigits": 2,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_758_Antall_Overnattinger_Leirskole_Trinn_1",
+        "sqlColumn": "GG_758_Antall_Overnattinger_Leirskole_Trinn_1",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_726_Antall_Elever_Leirskole_H23_Trinn_2",
+        "control": "Local_Comp_Input_Number_164",
+        "group": "C",
+        "questionNumber": "2",
+        "label": "2. trinn",
+        "rowLabel": "2. trinn",
+        "column": "Høst {year}",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_726_Antall_Elever_Leirskole_H23_Trinn_2",
+        "sqlColumn": "GG_726_Antall_Elever_Leirskole_H23_Trinn_2",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_737_Antall_Elever_Leirskole_V24_Trinn_2",
+        "control": "Local_Comp_Input_Number_165",
+        "group": "C",
+        "questionNumber": "2",
+        "label": "2. trinn",
+        "rowLabel": "2. trinn",
+        "column": "Vår {nextYear}",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_737_Antall_Elever_Leirskole_V24_Trinn_2",
+        "sqlColumn": "GG_737_Antall_Elever_Leirskole_V24_Trinn_2",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_748_Antall_Elever_Leirskole_V23_Trinn_2",
+        "control": "Local_Comp_Input_Number_166",
+        "group": "C",
+        "questionNumber": "2",
+        "label": "2. trinn",
+        "rowLabel": "2. trinn",
+        "column": "Vår {year}",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_748_Antall_Elever_Leirskole_V23_Trinn_2",
+        "sqlColumn": "GG_748_Antall_Elever_Leirskole_V23_Trinn_2",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_759_Antall_Overnattinger_Leirskole_Trinn_2",
+        "control": "Local_Comp_Input_Number_167",
+        "group": "C",
+        "questionNumber": "2",
+        "label": "2. trinn",
+        "rowLabel": "2. trinn",
+        "column": "Overnattinger",
+        "readOnly": false,
+        "maxDigits": 2,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_759_Antall_Overnattinger_Leirskole_Trinn_2",
+        "sqlColumn": "GG_759_Antall_Overnattinger_Leirskole_Trinn_2",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_727_Antall_Elever_Leirskole_H23_Trinn_3",
+        "control": "Local_Comp_Input_Number_168",
+        "group": "C",
+        "questionNumber": "3",
+        "label": "3. trinn",
+        "rowLabel": "3. trinn",
+        "column": "Høst {year}",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_727_Antall_Elever_Leirskole_H23_Trinn_3",
+        "sqlColumn": "GG_727_Antall_Elever_Leirskole_H23_Trinn_3",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_738_Antall_Elever_Leirskole_V24_Trinn_3",
+        "control": "Local_Comp_Input_Number_274",
+        "group": "C",
+        "questionNumber": "3",
+        "label": "3. trinn",
+        "rowLabel": "3. trinn",
+        "column": "Vår {nextYear}",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_738_Antall_Elever_Leirskole_V24_Trinn_3",
+        "sqlColumn": "GG_738_Antall_Elever_Leirskole_V24_Trinn_3",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_749_Antall_Elever_Leirskole_V23_Trinn_3",
+        "control": "Local_Comp_Input_Number_276",
+        "group": "C",
+        "questionNumber": "3",
+        "label": "3. trinn",
+        "rowLabel": "3. trinn",
+        "column": "Vår {year}",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_749_Antall_Elever_Leirskole_V23_Trinn_3",
+        "sqlColumn": "GG_749_Antall_Elever_Leirskole_V23_Trinn_3",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_760_Antall_Overnattinger_Leirskole_Trinn_3",
+        "control": "Local_Comp_Input_Number_349",
+        "group": "C",
+        "questionNumber": "3",
+        "label": "3. trinn",
+        "rowLabel": "3. trinn",
+        "column": "Overnattinger",
+        "readOnly": false,
+        "maxDigits": 2,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_760_Antall_Overnattinger_Leirskole_Trinn_3",
+        "sqlColumn": "GG_760_Antall_Overnattinger_Leirskole_Trinn_3",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_728_Antall_Elever_Leirskole_H23_Trinn_4",
+        "control": "Local_Comp_Input_Number_350",
+        "group": "C",
+        "questionNumber": "4",
+        "label": "4. trinn",
+        "rowLabel": "4. trinn",
+        "column": "Høst {year}",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_728_Antall_Elever_Leirskole_H23_Trinn_4",
+        "sqlColumn": "GG_728_Antall_Elever_Leirskole_H23_Trinn_4",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_739_Antall_Elever_Leirskole_V24_Trinn_4",
+        "control": "Local_Comp_Input_Number_351",
+        "group": "C",
+        "questionNumber": "4",
+        "label": "4. trinn",
+        "rowLabel": "4. trinn",
+        "column": "Vår {nextYear}",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_739_Antall_Elever_Leirskole_V24_Trinn_4",
+        "sqlColumn": "GG_739_Antall_Elever_Leirskole_V24_Trinn_4",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_750_Antall_Elever_Leirskole_V23_Trinn_4",
+        "control": "Local_Comp_Input_Number_352",
+        "group": "C",
+        "questionNumber": "4",
+        "label": "4. trinn",
+        "rowLabel": "4. trinn",
+        "column": "Vår {year}",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_750_Antall_Elever_Leirskole_V23_Trinn_4",
+        "sqlColumn": "GG_750_Antall_Elever_Leirskole_V23_Trinn_4",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_761_Antall_Overnattinger_Leirskole_Trinn_4",
+        "control": "Local_Comp_Input_Number_353",
+        "group": "C",
+        "questionNumber": "4",
+        "label": "4. trinn",
+        "rowLabel": "4. trinn",
+        "column": "Overnattinger",
+        "readOnly": false,
+        "maxDigits": 2,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_761_Antall_Overnattinger_Leirskole_Trinn_4",
+        "sqlColumn": "GG_761_Antall_Overnattinger_Leirskole_Trinn_4",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_729_Antall_Elever_Leirskole_H23_Trinn_5",
+        "control": "Local_Comp_Input_Number_354",
+        "group": "C",
+        "questionNumber": "5",
+        "label": "5. trinn",
+        "rowLabel": "5. trinn",
+        "column": "Høst {year}",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_729_Antall_Elever_Leirskole_H23_Trinn_5",
+        "sqlColumn": "GG_729_Antall_Elever_Leirskole_H23_Trinn_5",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_740_Antall_Elever_Leirskole_V24_Trinn_5",
+        "control": "Local_Comp_Input_Number_355",
+        "group": "C",
+        "questionNumber": "5",
+        "label": "5. trinn",
+        "rowLabel": "5. trinn",
+        "column": "Vår {nextYear}",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_740_Antall_Elever_Leirskole_V24_Trinn_5",
+        "sqlColumn": "GG_740_Antall_Elever_Leirskole_V24_Trinn_5",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_751_Antall_Elever_Leirskole_V23_Trinn_5",
+        "control": "Local_Comp_Input_Number_356",
+        "group": "C",
+        "questionNumber": "5",
+        "label": "5. trinn",
+        "rowLabel": "5. trinn",
+        "column": "Vår {year}",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_751_Antall_Elever_Leirskole_V23_Trinn_5",
+        "sqlColumn": "GG_751_Antall_Elever_Leirskole_V23_Trinn_5",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_762_Antall_Overnattinger_Leirskole_Trinn_5",
+        "control": "Local_Comp_Input_Number_357",
+        "group": "C",
+        "questionNumber": "5",
+        "label": "5. trinn",
+        "rowLabel": "5. trinn",
+        "column": "Overnattinger",
+        "readOnly": false,
+        "maxDigits": 2,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_762_Antall_Overnattinger_Leirskole_Trinn_5",
+        "sqlColumn": "GG_762_Antall_Overnattinger_Leirskole_Trinn_5",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_730_Antall_Elever_Leirskole_H23_Trinn_6",
+        "control": "Local_Comp_Input_Number_358",
+        "group": "C",
+        "questionNumber": "6",
+        "label": "6. trinn",
+        "rowLabel": "6. trinn",
+        "column": "Høst {year}",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_730_Antall_Elever_Leirskole_H23_Trinn_6",
+        "sqlColumn": "GG_730_Antall_Elever_Leirskole_H23_Trinn_6",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_741_Antall_Elever_Leirskole_V24_Trinn_6",
+        "control": "Local_Comp_Input_Number_359",
+        "group": "C",
+        "questionNumber": "6",
+        "label": "6. trinn",
+        "rowLabel": "6. trinn",
+        "column": "Vår {nextYear}",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_741_Antall_Elever_Leirskole_V24_Trinn_6",
+        "sqlColumn": "GG_741_Antall_Elever_Leirskole_V24_Trinn_6",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_752_Antall_Elever_Leirskole_V23_Trinn_6",
+        "control": "Local_Comp_Input_Number_360",
+        "group": "C",
+        "questionNumber": "6",
+        "label": "6. trinn",
+        "rowLabel": "6. trinn",
+        "column": "Vår {year}",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_752_Antall_Elever_Leirskole_V23_Trinn_6",
+        "sqlColumn": "GG_752_Antall_Elever_Leirskole_V23_Trinn_6",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_763_Antall_Overnattinger_Leirskole_Trinn_6",
+        "control": "Local_Comp_Input_Number_361",
+        "group": "C",
+        "questionNumber": "6",
+        "label": "6. trinn",
+        "rowLabel": "6. trinn",
+        "column": "Overnattinger",
+        "readOnly": false,
+        "maxDigits": 2,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_763_Antall_Overnattinger_Leirskole_Trinn_6",
+        "sqlColumn": "GG_763_Antall_Overnattinger_Leirskole_Trinn_6",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_731_Antall_Elever_Leirskole_H23_Trinn_7",
+        "control": "Local_Comp_Input_Number_374",
+        "group": "C",
+        "questionNumber": "7",
+        "label": "7. trinn",
+        "rowLabel": "7. trinn",
+        "column": "Høst {year}",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_731_Antall_Elever_Leirskole_H23_Trinn_7",
+        "sqlColumn": "GG_731_Antall_Elever_Leirskole_H23_Trinn_7",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_742_Antall_Elever_Leirskole_V24_Trinn_7",
+        "control": "Local_Comp_Input_Number_375",
+        "group": "C",
+        "questionNumber": "7",
+        "label": "7. trinn",
+        "rowLabel": "7. trinn",
+        "column": "Vår {nextYear}",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_742_Antall_Elever_Leirskole_V24_Trinn_7",
+        "sqlColumn": "GG_742_Antall_Elever_Leirskole_V24_Trinn_7",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_753_Antall_Elever_Leirskole_V23_Trinn_7",
+        "control": "Local_Comp_Input_Number_376",
+        "group": "C",
+        "questionNumber": "7",
+        "label": "7. trinn",
+        "rowLabel": "7. trinn",
+        "column": "Vår {year}",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_753_Antall_Elever_Leirskole_V23_Trinn_7",
+        "sqlColumn": "GG_753_Antall_Elever_Leirskole_V23_Trinn_7",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_764_Antall_Overnattinger_Leirskole_Trinn_7",
+        "control": "Local_Comp_Input_Number_378",
+        "group": "C",
+        "questionNumber": "7",
+        "label": "7. trinn",
+        "rowLabel": "7. trinn",
+        "column": "Overnattinger",
+        "readOnly": false,
+        "maxDigits": 2,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_764_Antall_Overnattinger_Leirskole_Trinn_7",
+        "sqlColumn": "GG_764_Antall_Overnattinger_Leirskole_Trinn_7",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_732_Antall_Elever_Leirskole_H23_Trinn_8",
+        "control": "Local_Comp_Input_Number_373",
+        "group": "C",
+        "questionNumber": "8",
+        "label": "8. trinn",
+        "rowLabel": "8. trinn",
+        "column": "Høst {year}",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_732_Antall_Elever_Leirskole_H23_Trinn_8",
+        "sqlColumn": "GG_732_Antall_Elever_Leirskole_H23_Trinn_8",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_743_Antall_Elever_Leirskole_V24_Trinn_8",
+        "control": "Local_Comp_Input_Number_372",
+        "group": "C",
+        "questionNumber": "8",
+        "label": "8. trinn",
+        "rowLabel": "8. trinn",
+        "column": "Vår {nextYear}",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_743_Antall_Elever_Leirskole_V24_Trinn_8",
+        "sqlColumn": "GG_743_Antall_Elever_Leirskole_V24_Trinn_8",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_754_Antall_Elever_Leirskole_V23_Trinn_8",
+        "control": "Local_Comp_Input_Number_371",
+        "group": "C",
+        "questionNumber": "8",
+        "label": "8. trinn",
+        "rowLabel": "8. trinn",
+        "column": "Vår {year}",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_754_Antall_Elever_Leirskole_V23_Trinn_8",
+        "sqlColumn": "GG_754_Antall_Elever_Leirskole_V23_Trinn_8",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_765_Antall_Overnattinger_Leirskole_Trinn_8",
+        "control": "Local_Comp_Input_Number_370",
+        "group": "C",
+        "questionNumber": "8",
+        "label": "8. trinn",
+        "rowLabel": "8. trinn",
+        "column": "Overnattinger",
+        "readOnly": false,
+        "maxDigits": 2,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_765_Antall_Overnattinger_Leirskole_Trinn_8",
+        "sqlColumn": "GG_765_Antall_Overnattinger_Leirskole_Trinn_8",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_733_Antall_Elever_Leirskole_H23_Trinn_9",
+        "control": "Local_Comp_Input_Number_365",
+        "group": "C",
+        "questionNumber": "9",
+        "label": "9. trinn",
+        "rowLabel": "9. trinn",
+        "column": "Høst {year}",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_733_Antall_Elever_Leirskole_H23_Trinn_9",
+        "sqlColumn": "GG_733_Antall_Elever_Leirskole_H23_Trinn_9",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_744_Antall_Elever_Leirskole_V24_Trinn_9",
+        "control": "Local_Comp_Input_Number_366",
+        "group": "C",
+        "questionNumber": "9",
+        "label": "9. trinn",
+        "rowLabel": "9. trinn",
+        "column": "Vår {nextYear}",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_744_Antall_Elever_Leirskole_V24_Trinn_9",
+        "sqlColumn": "GG_744_Antall_Elever_Leirskole_V24_Trinn_9",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_755_Antall_Elever_Leirskole_V23_Trinn_9",
+        "control": "Local_Comp_Input_Number_367",
+        "group": "C",
+        "questionNumber": "9",
+        "label": "9. trinn",
+        "rowLabel": "9. trinn",
+        "column": "Vår {year}",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_755_Antall_Elever_Leirskole_V23_Trinn_9",
+        "sqlColumn": "GG_755_Antall_Elever_Leirskole_V23_Trinn_9",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_766_Antall_Overnattinger_Leirskole_Trinn_9",
+        "control": "Local_Comp_Input_Number_369",
+        "group": "C",
+        "questionNumber": "9",
+        "label": "9. trinn",
+        "rowLabel": "9. trinn",
+        "column": "Overnattinger",
+        "readOnly": false,
+        "maxDigits": 2,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_766_Antall_Overnattinger_Leirskole_Trinn_9",
+        "sqlColumn": "GG_766_Antall_Overnattinger_Leirskole_Trinn_9",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_734_Antall_Elever_Leirskole_H23_Trinn_10",
+        "control": "Local_Comp_Input_Number_368",
+        "group": "C",
+        "questionNumber": "10",
+        "label": "10. trinn",
+        "rowLabel": "10. trinn",
+        "column": "Høst {year}",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_734_Antall_Elever_Leirskole_H23_Trinn_10",
+        "sqlColumn": "GG_734_Antall_Elever_Leirskole_H23_Trinn_10",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_745_Antall_Elever_Leirskole_V24_Trinn_10",
+        "control": "Local_Comp_Input_Number_362",
+        "group": "C",
+        "questionNumber": "10",
+        "label": "10. trinn",
+        "rowLabel": "10. trinn",
+        "column": "Vår {nextYear}",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_745_Antall_Elever_Leirskole_V24_Trinn_10",
+        "sqlColumn": "GG_745_Antall_Elever_Leirskole_V24_Trinn_10",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_756_Antall_Elever_Leirskole_V23_Trinn_10",
+        "control": "Local_Comp_Input_Number_363",
+        "group": "C",
+        "questionNumber": "10",
+        "label": "10. trinn",
+        "rowLabel": "10. trinn",
+        "column": "Vår {year}",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_756_Antall_Elever_Leirskole_V23_Trinn_10",
+        "sqlColumn": "GG_756_Antall_Elever_Leirskole_V23_Trinn_10",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_767_Antall_Overnattinger_Leirskole_Trinn_10",
+        "control": "Local_Comp_Input_Number_364",
+        "group": "C",
+        "questionNumber": "10",
+        "label": "10. trinn",
+        "rowLabel": "10. trinn",
+        "column": "Overnattinger",
+        "readOnly": false,
+        "maxDigits": 2,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_767_Antall_Overnattinger_Leirskole_Trinn_10",
+        "sqlColumn": "GG_767_Antall_Overnattinger_Leirskole_Trinn_10",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_735_Sum_Elever_Leirskole_H23",
+        "control": "Label8_11",
+        "group": "C",
+        "questionNumber": "11",
+        "label": "Sum",
+        "rowLabel": "Sum",
+        "column": "Høst {year}",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_725_Antall_Elever_Leirskole_H23_Trinn_1",
+            "sign": 1
+          },
+          {
+            "field": "GG_726_Antall_Elever_Leirskole_H23_Trinn_2",
+            "sign": 1
+          },
+          {
+            "field": "GG_727_Antall_Elever_Leirskole_H23_Trinn_3",
+            "sign": 1
+          },
+          {
+            "field": "GG_728_Antall_Elever_Leirskole_H23_Trinn_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_729_Antall_Elever_Leirskole_H23_Trinn_5",
+            "sign": 1
+          },
+          {
+            "field": "GG_730_Antall_Elever_Leirskole_H23_Trinn_6",
+            "sign": 1
+          },
+          {
+            "field": "GG_731_Antall_Elever_Leirskole_H23_Trinn_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_732_Antall_Elever_Leirskole_H23_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_733_Antall_Elever_Leirskole_H23_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_734_Antall_Elever_Leirskole_H23_Trinn_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord13.GG_735_Sum_Elever_Leirskole_H23",
+        "sqlColumn": "GG_735_Sum_Elever_Leirskole_H23",
+        "gradeRestricted": false
+      },
+      {
+        "key": "GG_746_Sum_Elever_Leirskole_V24",
+        "control": "Label8_12",
+        "group": "C",
+        "questionNumber": "11",
+        "label": "Sum",
+        "rowLabel": "Sum",
+        "column": "Vår {nextYear}",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_736_Antall_Elever_Leirskole_V24_Trinn_1",
+            "sign": 1
+          },
+          {
+            "field": "GG_737_Antall_Elever_Leirskole_V24_Trinn_2",
+            "sign": 1
+          },
+          {
+            "field": "GG_738_Antall_Elever_Leirskole_V24_Trinn_3",
+            "sign": 1
+          },
+          {
+            "field": "GG_739_Antall_Elever_Leirskole_V24_Trinn_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_740_Antall_Elever_Leirskole_V24_Trinn_5",
+            "sign": 1
+          },
+          {
+            "field": "GG_741_Antall_Elever_Leirskole_V24_Trinn_6",
+            "sign": 1
+          },
+          {
+            "field": "GG_742_Antall_Elever_Leirskole_V24_Trinn_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_743_Antall_Elever_Leirskole_V24_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_744_Antall_Elever_Leirskole_V24_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_745_Antall_Elever_Leirskole_V24_Trinn_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord13.GG_746_Sum_Elever_Leirskole_V24",
+        "sqlColumn": "GG_746_Sum_Elever_Leirskole_V24",
+        "gradeRestricted": false
+      },
+      {
+        "key": "GG_757_Sum_Elever_Leirskole_V23",
+        "control": "Label8_13",
+        "group": "C",
+        "questionNumber": "11",
+        "label": "Sum",
+        "rowLabel": "Sum",
+        "column": "Vår {year}",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_747_Antall_Elever_Leirskole_V23_Trinn_1",
+            "sign": 1
+          },
+          {
+            "field": "GG_748_Antall_Elever_Leirskole_V23_Trinn_2",
+            "sign": 1
+          },
+          {
+            "field": "GG_749_Antall_Elever_Leirskole_V23_Trinn_3",
+            "sign": 1
+          },
+          {
+            "field": "GG_750_Antall_Elever_Leirskole_V23_Trinn_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_751_Antall_Elever_Leirskole_V23_Trinn_5",
+            "sign": 1
+          },
+          {
+            "field": "GG_752_Antall_Elever_Leirskole_V23_Trinn_6",
+            "sign": 1
+          },
+          {
+            "field": "GG_753_Antall_Elever_Leirskole_V23_Trinn_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_754_Antall_Elever_Leirskole_V23_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_755_Antall_Elever_Leirskole_V23_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_756_Antall_Elever_Leirskole_V23_Trinn_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord13.GG_757_Sum_Elever_Leirskole_V23",
+        "sqlColumn": "GG_757_Sum_Elever_Leirskole_V23",
+        "gradeRestricted": false
+      },
+      {
+        "key": "GG_768_Sum_Overnattinger_Leirskole",
+        "control": "Label8_14",
+        "group": "C",
+        "questionNumber": "11",
+        "label": "Sum",
+        "rowLabel": "Sum",
+        "column": "Overnattinger",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_758_Antall_Overnattinger_Leirskole_Trinn_1",
+            "sign": 1
+          },
+          {
+            "field": "GG_759_Antall_Overnattinger_Leirskole_Trinn_2",
+            "sign": 1
+          },
+          {
+            "field": "GG_760_Antall_Overnattinger_Leirskole_Trinn_3",
+            "sign": 1
+          },
+          {
+            "field": "GG_761_Antall_Overnattinger_Leirskole_Trinn_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_762_Antall_Overnattinger_Leirskole_Trinn_5",
+            "sign": 1
+          },
+          {
+            "field": "GG_763_Antall_Overnattinger_Leirskole_Trinn_6",
+            "sign": 1
+          },
+          {
+            "field": "GG_764_Antall_Overnattinger_Leirskole_Trinn_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_765_Antall_Overnattinger_Leirskole_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_766_Antall_Overnattinger_Leirskole_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_767_Antall_Overnattinger_Leirskole_Trinn_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord13.GG_768_Sum_Overnattinger_Leirskole",
+        "sqlColumn": "GG_768_Sum_Overnattinger_Leirskole",
+        "gradeRestricted": false
+      },
+      {
+        "key": "GG_770_Antall_Timer_Skolebibliotek_Er_Aapent",
+        "control": "TextInput5",
+        "group": "D",
+        "questionNumber": "1",
+        "label": "Antall timer skolebiblioteket er åpent per uke",
+        "rowLabel": "Antall timer skolebiblioteket er åpent per uke",
+        "column": "Timer",
+        "readOnly": false,
+        "maxDigits": 2,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_770_Antall_Timer_Skolebibliotek_Er_Aapent",
+        "sqlColumn": "GG_770_Antall_Timer_Skolebibliotek_Er_Aapent",
+        "gradeRestricted": false,
+        "requiresChoice": "GG_1081_Bibliotekstilbud_Egne_Lokaler",
+        "minimumExclusive": 0
+      },
+      {
+        "key": "GG_771_Antall_Elever_PC_Mac_Trinn_1",
+        "control": "Local_Comp_Input_Number_393",
+        "group": "E",
+        "questionNumber": "1",
+        "label": "PC/Mac",
+        "rowLabel": "PC/Mac",
+        "column": "1. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_771_Antall_Elever_PC_Mac_Trinn_1",
+        "sqlColumn": "GG_771_Antall_Elever_PC_Mac_Trinn_1",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_772_Antall_Elever_PC_Mac_Trinn_2",
+        "control": "Local_Comp_Input_Number_396",
+        "group": "E",
+        "questionNumber": "1",
+        "label": "PC/Mac",
+        "rowLabel": "PC/Mac",
+        "column": "2. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_772_Antall_Elever_PC_Mac_Trinn_2",
+        "sqlColumn": "GG_772_Antall_Elever_PC_Mac_Trinn_2",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_773_Antall_Elever_PC_Mac_Trinn_3",
+        "control": "Local_Comp_Input_Number_405",
+        "group": "E",
+        "questionNumber": "1",
+        "label": "PC/Mac",
+        "rowLabel": "PC/Mac",
+        "column": "3. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_773_Antall_Elever_PC_Mac_Trinn_3",
+        "sqlColumn": "GG_773_Antall_Elever_PC_Mac_Trinn_3",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_774_Antall_Elever_PC_Mac_Trinn_4",
+        "control": "Local_Comp_Input_Number_432",
+        "group": "E",
+        "questionNumber": "1",
+        "label": "PC/Mac",
+        "rowLabel": "PC/Mac",
+        "column": "4. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_774_Antall_Elever_PC_Mac_Trinn_4",
+        "sqlColumn": "GG_774_Antall_Elever_PC_Mac_Trinn_4",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_775_Antall_Elever_PC_Mac_Trinn_5",
+        "control": "Local_Comp_Input_Number_433",
+        "group": "E",
+        "questionNumber": "1",
+        "label": "PC/Mac",
+        "rowLabel": "PC/Mac",
+        "column": "5. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_775_Antall_Elever_PC_Mac_Trinn_5",
+        "sqlColumn": "GG_775_Antall_Elever_PC_Mac_Trinn_5",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_776_Antall_Elever_PC_Mac_Trinn_6",
+        "control": "Local_Comp_Input_Number_434",
+        "group": "E",
+        "questionNumber": "1",
+        "label": "PC/Mac",
+        "rowLabel": "PC/Mac",
+        "column": "6. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_776_Antall_Elever_PC_Mac_Trinn_6",
+        "sqlColumn": "GG_776_Antall_Elever_PC_Mac_Trinn_6",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_777_Antall_Elever_PC_Mac_Trinn_7",
+        "control": "Local_Comp_Input_Number_435",
+        "group": "E",
+        "questionNumber": "1",
+        "label": "PC/Mac",
+        "rowLabel": "PC/Mac",
+        "column": "7. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_777_Antall_Elever_PC_Mac_Trinn_7",
+        "sqlColumn": "GG_777_Antall_Elever_PC_Mac_Trinn_7",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_778_Antall_Elever_PC_Mac_Trinn_8",
+        "control": "Local_Comp_Input_Number_436",
+        "group": "E",
+        "questionNumber": "1",
+        "label": "PC/Mac",
+        "rowLabel": "PC/Mac",
+        "column": "8. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_778_Antall_Elever_PC_Mac_Trinn_8",
+        "sqlColumn": "GG_778_Antall_Elever_PC_Mac_Trinn_8",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_779_Antall_Elever_PC_Mac_Trinn_9",
+        "control": "Local_Comp_Input_Number_437",
+        "group": "E",
+        "questionNumber": "1",
+        "label": "PC/Mac",
+        "rowLabel": "PC/Mac",
+        "column": "9. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_779_Antall_Elever_PC_Mac_Trinn_9",
+        "sqlColumn": "GG_779_Antall_Elever_PC_Mac_Trinn_9",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_780_Antall_Elever_PC_Mac_Trinn_10",
+        "control": "Local_Comp_Input_Number_438",
+        "group": "E",
+        "questionNumber": "1",
+        "label": "PC/Mac",
+        "rowLabel": "PC/Mac",
+        "column": "10. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_780_Antall_Elever_PC_Mac_Trinn_10",
+        "sqlColumn": "GG_780_Antall_Elever_PC_Mac_Trinn_10",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_781_Sum_Elever_PC_Mac",
+        "control": "Label10_11",
+        "group": "E",
+        "questionNumber": "1",
+        "label": "PC/Mac",
+        "rowLabel": "PC/Mac",
+        "column": "Sum",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_771_Antall_Elever_PC_Mac_Trinn_1",
+            "sign": 1
+          },
+          {
+            "field": "GG_772_Antall_Elever_PC_Mac_Trinn_2",
+            "sign": 1
+          },
+          {
+            "field": "GG_773_Antall_Elever_PC_Mac_Trinn_3",
+            "sign": 1
+          },
+          {
+            "field": "GG_774_Antall_Elever_PC_Mac_Trinn_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_775_Antall_Elever_PC_Mac_Trinn_5",
+            "sign": 1
+          },
+          {
+            "field": "GG_776_Antall_Elever_PC_Mac_Trinn_6",
+            "sign": 1
+          },
+          {
+            "field": "GG_777_Antall_Elever_PC_Mac_Trinn_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_778_Antall_Elever_PC_Mac_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_779_Antall_Elever_PC_Mac_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_780_Antall_Elever_PC_Mac_Trinn_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord13.GG_781_Sum_Elever_PC_Mac",
+        "sqlColumn": "GG_781_Sum_Elever_PC_Mac",
+        "gradeRestricted": false
+      },
+      {
+        "key": "GG_782_Antall_Elever_Chromebook_Trinn_1",
+        "control": "Local_Comp_Input_Number_439",
+        "group": "E",
+        "questionNumber": "2",
+        "label": "Chromebook",
+        "rowLabel": "Chromebook",
+        "column": "1. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_782_Antall_Elever_Chromebook_Trinn_1",
+        "sqlColumn": "GG_782_Antall_Elever_Chromebook_Trinn_1",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_783_Antall_Elever_Chromebook_Trinn_2",
+        "control": "Local_Comp_Input_Number_440",
+        "group": "E",
+        "questionNumber": "2",
+        "label": "Chromebook",
+        "rowLabel": "Chromebook",
+        "column": "2. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_783_Antall_Elever_Chromebook_Trinn_2",
+        "sqlColumn": "GG_783_Antall_Elever_Chromebook_Trinn_2",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_784_Antall_Elever_Chromebook_Trinn_3",
+        "control": "Local_Comp_Input_Number_441",
+        "group": "E",
+        "questionNumber": "2",
+        "label": "Chromebook",
+        "rowLabel": "Chromebook",
+        "column": "3. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_784_Antall_Elever_Chromebook_Trinn_3",
+        "sqlColumn": "GG_784_Antall_Elever_Chromebook_Trinn_3",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_785_Antall_Elever_Chromebook_Trinn_4",
+        "control": "Local_Comp_Input_Number_442",
+        "group": "E",
+        "questionNumber": "2",
+        "label": "Chromebook",
+        "rowLabel": "Chromebook",
+        "column": "4. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_785_Antall_Elever_Chromebook_Trinn_4",
+        "sqlColumn": "GG_785_Antall_Elever_Chromebook_Trinn_4",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_786_Antall_Elever_Chromebook_Trinn_5",
+        "control": "Local_Comp_Input_Number_443",
+        "group": "E",
+        "questionNumber": "2",
+        "label": "Chromebook",
+        "rowLabel": "Chromebook",
+        "column": "5. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_786_Antall_Elever_Chromebook_Trinn_5",
+        "sqlColumn": "GG_786_Antall_Elever_Chromebook_Trinn_5",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_787_Antall_Elever_Chromebook_Trinn_6",
+        "control": "Local_Comp_Input_Number_444",
+        "group": "E",
+        "questionNumber": "2",
+        "label": "Chromebook",
+        "rowLabel": "Chromebook",
+        "column": "6. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_787_Antall_Elever_Chromebook_Trinn_6",
+        "sqlColumn": "GG_787_Antall_Elever_Chromebook_Trinn_6",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_788_Antall_Elever_Chromebook_Trinn_7",
+        "control": "Local_Comp_Input_Number_445",
+        "group": "E",
+        "questionNumber": "2",
+        "label": "Chromebook",
+        "rowLabel": "Chromebook",
+        "column": "7. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_788_Antall_Elever_Chromebook_Trinn_7",
+        "sqlColumn": "GG_788_Antall_Elever_Chromebook_Trinn_7",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_789_Antall_Elever_Chromebook_Trinn_8",
+        "control": "Local_Comp_Input_Number_446",
+        "group": "E",
+        "questionNumber": "2",
+        "label": "Chromebook",
+        "rowLabel": "Chromebook",
+        "column": "8. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_789_Antall_Elever_Chromebook_Trinn_8",
+        "sqlColumn": "GG_789_Antall_Elever_Chromebook_Trinn_8",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_790_Antall_Elever_Chromebook_Trinn_9",
+        "control": "Local_Comp_Input_Number_447",
+        "group": "E",
+        "questionNumber": "2",
+        "label": "Chromebook",
+        "rowLabel": "Chromebook",
+        "column": "9. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_790_Antall_Elever_Chromebook_Trinn_9",
+        "sqlColumn": "GG_790_Antall_Elever_Chromebook_Trinn_9",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_791_Antall_Elever_Chromebook_Trinn_10",
+        "control": "Local_Comp_Input_Number_448",
+        "group": "E",
+        "questionNumber": "2",
+        "label": "Chromebook",
+        "rowLabel": "Chromebook",
+        "column": "10. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_791_Antall_Elever_Chromebook_Trinn_10",
+        "sqlColumn": "GG_791_Antall_Elever_Chromebook_Trinn_10",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_792_Sum_Elever_Chromebook",
+        "control": "Label10_12",
+        "group": "E",
+        "questionNumber": "2",
+        "label": "Chromebook",
+        "rowLabel": "Chromebook",
+        "column": "Sum",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_782_Antall_Elever_Chromebook_Trinn_1",
+            "sign": 1
+          },
+          {
+            "field": "GG_783_Antall_Elever_Chromebook_Trinn_2",
+            "sign": 1
+          },
+          {
+            "field": "GG_784_Antall_Elever_Chromebook_Trinn_3",
+            "sign": 1
+          },
+          {
+            "field": "GG_785_Antall_Elever_Chromebook_Trinn_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_786_Antall_Elever_Chromebook_Trinn_5",
+            "sign": 1
+          },
+          {
+            "field": "GG_787_Antall_Elever_Chromebook_Trinn_6",
+            "sign": 1
+          },
+          {
+            "field": "GG_788_Antall_Elever_Chromebook_Trinn_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_789_Antall_Elever_Chromebook_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_790_Antall_Elever_Chromebook_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_791_Antall_Elever_Chromebook_Trinn_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord13.GG_792_Sum_Elever_Chromebook",
+        "sqlColumn": "GG_792_Sum_Elever_Chromebook",
+        "gradeRestricted": false
+      },
+      {
+        "key": "GG_793_Antall_Elever_Nettbrett_Trinn_1",
+        "control": "Local_Comp_Input_Number_408",
+        "group": "E",
+        "questionNumber": "3",
+        "label": "Nettbrett",
+        "rowLabel": "Nettbrett",
+        "column": "1. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_793_Antall_Elever_Nettbrett_Trinn_1",
+        "sqlColumn": "GG_793_Antall_Elever_Nettbrett_Trinn_1",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_794_Antall_Elever_Nettbrett_Trinn_2",
+        "control": "Local_Comp_Input_Number_411",
+        "group": "E",
+        "questionNumber": "3",
+        "label": "Nettbrett",
+        "rowLabel": "Nettbrett",
+        "column": "2. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_794_Antall_Elever_Nettbrett_Trinn_2",
+        "sqlColumn": "GG_794_Antall_Elever_Nettbrett_Trinn_2",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_795_Antall_Elever_Nettbrett_Trinn_3",
+        "control": "Local_Comp_Input_Number_424",
+        "group": "E",
+        "questionNumber": "3",
+        "label": "Nettbrett",
+        "rowLabel": "Nettbrett",
+        "column": "3. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_795_Antall_Elever_Nettbrett_Trinn_3",
+        "sqlColumn": "GG_795_Antall_Elever_Nettbrett_Trinn_3",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_796_Antall_Elever_Nettbrett_Trinn_4",
+        "control": "Local_Comp_Input_Number_425",
+        "group": "E",
+        "questionNumber": "3",
+        "label": "Nettbrett",
+        "rowLabel": "Nettbrett",
+        "column": "4. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_796_Antall_Elever_Nettbrett_Trinn_4",
+        "sqlColumn": "GG_796_Antall_Elever_Nettbrett_Trinn_4",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_797_Antall_Elever_Nettbrett_Trinn_5",
+        "control": "Local_Comp_Input_Number_426",
+        "group": "E",
+        "questionNumber": "3",
+        "label": "Nettbrett",
+        "rowLabel": "Nettbrett",
+        "column": "5. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_797_Antall_Elever_Nettbrett_Trinn_5",
+        "sqlColumn": "GG_797_Antall_Elever_Nettbrett_Trinn_5",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_798_Antall_Elever_Nettbrett_Trinn_6",
+        "control": "Local_Comp_Input_Number_427",
+        "group": "E",
+        "questionNumber": "3",
+        "label": "Nettbrett",
+        "rowLabel": "Nettbrett",
+        "column": "6. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_798_Antall_Elever_Nettbrett_Trinn_6",
+        "sqlColumn": "GG_798_Antall_Elever_Nettbrett_Trinn_6",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_799_Antall_Elever_Nettbrett_Trinn_7",
+        "control": "Local_Comp_Input_Number_428",
+        "group": "E",
+        "questionNumber": "3",
+        "label": "Nettbrett",
+        "rowLabel": "Nettbrett",
+        "column": "7. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_799_Antall_Elever_Nettbrett_Trinn_7",
+        "sqlColumn": "GG_799_Antall_Elever_Nettbrett_Trinn_7",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_800_Antall_Elever_Nettbrett_Trinn_8",
+        "control": "Local_Comp_Input_Number_429",
+        "group": "E",
+        "questionNumber": "3",
+        "label": "Nettbrett",
+        "rowLabel": "Nettbrett",
+        "column": "8. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_800_Antall_Elever_Nettbrett_Trinn_8",
+        "sqlColumn": "GG_800_Antall_Elever_Nettbrett_Trinn_8",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_801_Antall_Elever_Nettbrett_Trinn_9",
+        "control": "Local_Comp_Input_Number_430",
+        "group": "E",
+        "questionNumber": "3",
+        "label": "Nettbrett",
+        "rowLabel": "Nettbrett",
+        "column": "9. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_801_Antall_Elever_Nettbrett_Trinn_9",
+        "sqlColumn": "GG_801_Antall_Elever_Nettbrett_Trinn_9",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_802_Antall_Elever_Nettbrett_Trinn_10",
+        "control": "Local_Comp_Input_Number_431",
+        "group": "E",
+        "questionNumber": "3",
+        "label": "Nettbrett",
+        "rowLabel": "Nettbrett",
+        "column": "10. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_802_Antall_Elever_Nettbrett_Trinn_10",
+        "sqlColumn": "GG_802_Antall_Elever_Nettbrett_Trinn_10",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_803_Sum_Elever_Nettbrett",
+        "control": "Label10_13",
+        "group": "E",
+        "questionNumber": "3",
+        "label": "Nettbrett",
+        "rowLabel": "Nettbrett",
+        "column": "Sum",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_793_Antall_Elever_Nettbrett_Trinn_1",
+            "sign": 1
+          },
+          {
+            "field": "GG_794_Antall_Elever_Nettbrett_Trinn_2",
+            "sign": 1
+          },
+          {
+            "field": "GG_795_Antall_Elever_Nettbrett_Trinn_3",
+            "sign": 1
+          },
+          {
+            "field": "GG_796_Antall_Elever_Nettbrett_Trinn_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_797_Antall_Elever_Nettbrett_Trinn_5",
+            "sign": 1
+          },
+          {
+            "field": "GG_798_Antall_Elever_Nettbrett_Trinn_6",
+            "sign": 1
+          },
+          {
+            "field": "GG_799_Antall_Elever_Nettbrett_Trinn_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_800_Antall_Elever_Nettbrett_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_801_Antall_Elever_Nettbrett_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_802_Antall_Elever_Nettbrett_Trinn_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord13.GG_803_Sum_Elever_Nettbrett",
+        "sqlColumn": "GG_803_Sum_Elever_Nettbrett",
+        "gradeRestricted": false
+      },
+      {
+        "key": "GG_804_Antall_Elever_Andre_digitale_Enheter_Trinn_1",
+        "control": "Local_Comp_Input_Number_139",
+        "group": "E",
+        "questionNumber": "4",
+        "label": "Andre digitale enheter",
+        "rowLabel": "Andre digitale enheter",
+        "column": "1. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_804_Antall_Elever_Andre_digitale_Enheter_Trinn_1",
+        "sqlColumn": "GG_804_Antall_Elever_Andre_digitale_Enheter_Trinn_1",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_805_Antall_Elever_Andre_digitale_Enheter_Trinn_2",
+        "control": "Local_Comp_Input_Number_140",
+        "group": "E",
+        "questionNumber": "4",
+        "label": "Andre digitale enheter",
+        "rowLabel": "Andre digitale enheter",
+        "column": "2. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_805_Antall_Elever_Andre_digitale_Enheter_Trinn_2",
+        "sqlColumn": "GG_805_Antall_Elever_Andre_digitale_Enheter_Trinn_2",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_806_Antall_Elever_Andre_digitale_Enheter_Trinn_3",
+        "control": "Local_Comp_Input_Number_141",
+        "group": "E",
+        "questionNumber": "4",
+        "label": "Andre digitale enheter",
+        "rowLabel": "Andre digitale enheter",
+        "column": "3. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_806_Antall_Elever_Andre_digitale_Enheter_Trinn_3",
+        "sqlColumn": "GG_806_Antall_Elever_Andre_digitale_Enheter_Trinn_3",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_807_Antall_Elever_Andre_digitale_Enheter_Trinn_4",
+        "control": "Local_Comp_Input_Number_142",
+        "group": "E",
+        "questionNumber": "4",
+        "label": "Andre digitale enheter",
+        "rowLabel": "Andre digitale enheter",
+        "column": "4. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_807_Antall_Elever_Andre_digitale_Enheter_Trinn_4",
+        "sqlColumn": "GG_807_Antall_Elever_Andre_digitale_Enheter_Trinn_4",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_808_Antall_Elever_Andre_digitale_Enheter_Trinn_5",
+        "control": "Local_Comp_Input_Number_143",
+        "group": "E",
+        "questionNumber": "4",
+        "label": "Andre digitale enheter",
+        "rowLabel": "Andre digitale enheter",
+        "column": "5. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_808_Antall_Elever_Andre_digitale_Enheter_Trinn_5",
+        "sqlColumn": "GG_808_Antall_Elever_Andre_digitale_Enheter_Trinn_5",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_809_Antall_Elever_Andre_digitale_Enheter_Trinn_6",
+        "control": "Local_Comp_Input_Number_144",
+        "group": "E",
+        "questionNumber": "4",
+        "label": "Andre digitale enheter",
+        "rowLabel": "Andre digitale enheter",
+        "column": "6. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_809_Antall_Elever_Andre_digitale_Enheter_Trinn_6",
+        "sqlColumn": "GG_809_Antall_Elever_Andre_digitale_Enheter_Trinn_6",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_810_Antall_Elever_Andre_digitale_Enheter_Trinn_7",
+        "control": "Local_Comp_Input_Number_145",
+        "group": "E",
+        "questionNumber": "4",
+        "label": "Andre digitale enheter",
+        "rowLabel": "Andre digitale enheter",
+        "column": "7. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_810_Antall_Elever_Andre_digitale_Enheter_Trinn_7",
+        "sqlColumn": "GG_810_Antall_Elever_Andre_digitale_Enheter_Trinn_7",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_811_Antall_Elever_Andre_digitale_Enheter_Trinn_8",
+        "control": "Local_Comp_Input_Number_146",
+        "group": "E",
+        "questionNumber": "4",
+        "label": "Andre digitale enheter",
+        "rowLabel": "Andre digitale enheter",
+        "column": "8. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_811_Antall_Elever_Andre_digitale_Enheter_Trinn_8",
+        "sqlColumn": "GG_811_Antall_Elever_Andre_digitale_Enheter_Trinn_8",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_812_Antall_Elever_Andre_digitale_Enheter_Trinn_9",
+        "control": "Local_Comp_Input_Number_147",
+        "group": "E",
+        "questionNumber": "4",
+        "label": "Andre digitale enheter",
+        "rowLabel": "Andre digitale enheter",
+        "column": "9. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_812_Antall_Elever_Andre_digitale_Enheter_Trinn_9",
+        "sqlColumn": "GG_812_Antall_Elever_Andre_digitale_Enheter_Trinn_9",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_813_Antall_Elever_Andre_digitale_Enheter_Trinn_10",
+        "control": "Local_Comp_Input_Number_148",
+        "group": "E",
+        "questionNumber": "4",
+        "label": "Andre digitale enheter",
+        "rowLabel": "Andre digitale enheter",
+        "column": "10. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_813_Antall_Elever_Andre_digitale_Enheter_Trinn_10",
+        "sqlColumn": "GG_813_Antall_Elever_Andre_digitale_Enheter_Trinn_10",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_814_Sum_Elever_Andre_digitale_Enheter",
+        "control": "Label10_14",
+        "group": "E",
+        "questionNumber": "4",
+        "label": "Andre digitale enheter",
+        "rowLabel": "Andre digitale enheter",
+        "column": "Sum",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_804_Antall_Elever_Andre_digitale_Enheter_Trinn_1",
+            "sign": 1
+          },
+          {
+            "field": "GG_805_Antall_Elever_Andre_digitale_Enheter_Trinn_2",
+            "sign": 1
+          },
+          {
+            "field": "GG_806_Antall_Elever_Andre_digitale_Enheter_Trinn_3",
+            "sign": 1
+          },
+          {
+            "field": "GG_807_Antall_Elever_Andre_digitale_Enheter_Trinn_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_808_Antall_Elever_Andre_digitale_Enheter_Trinn_5",
+            "sign": 1
+          },
+          {
+            "field": "GG_809_Antall_Elever_Andre_digitale_Enheter_Trinn_6",
+            "sign": 1
+          },
+          {
+            "field": "GG_810_Antall_Elever_Andre_digitale_Enheter_Trinn_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_811_Antall_Elever_Andre_digitale_Enheter_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_812_Antall_Elever_Andre_digitale_Enheter_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_813_Antall_Elever_Andre_digitale_Enheter_Trinn_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord13.GG_814_Sum_Elever_Andre_digitale_Enheter",
+        "sqlColumn": "GG_814_Sum_Elever_Andre_digitale_Enheter",
+        "gradeRestricted": false
+      },
+      {
+        "key": "GG_815_Antall_Elever_Ingen_digitale_Enheter_Trinn_1",
+        "control": "Local_Comp_Input_Number_401",
+        "group": "E",
+        "questionNumber": "5",
+        "label": "Ingen digitale enheter",
+        "rowLabel": "Ingen digitale enheter",
+        "column": "1. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_815_Antall_Elever_Ingen_digitale_Enheter_Trinn_1",
+        "sqlColumn": "GG_815_Antall_Elever_Ingen_digitale_Enheter_Trinn_1",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_816_Antall_Elever_Ingen_digitale_Enheter_Trinn_2",
+        "control": "Local_Comp_Input_Number_402",
+        "group": "E",
+        "questionNumber": "5",
+        "label": "Ingen digitale enheter",
+        "rowLabel": "Ingen digitale enheter",
+        "column": "2. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_816_Antall_Elever_Ingen_digitale_Enheter_Trinn_2",
+        "sqlColumn": "GG_816_Antall_Elever_Ingen_digitale_Enheter_Trinn_2",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_817_Antall_Elever_Ingen_digitale_Enheter_Trinn_3",
+        "control": "Local_Comp_Input_Number_403",
+        "group": "E",
+        "questionNumber": "5",
+        "label": "Ingen digitale enheter",
+        "rowLabel": "Ingen digitale enheter",
+        "column": "3. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_817_Antall_Elever_Ingen_digitale_Enheter_Trinn_3",
+        "sqlColumn": "GG_817_Antall_Elever_Ingen_digitale_Enheter_Trinn_3",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_818_Antall_Elever_Ingen_digitale_Enheter_Trinn_4",
+        "control": "Local_Comp_Input_Number_404",
+        "group": "E",
+        "questionNumber": "5",
+        "label": "Ingen digitale enheter",
+        "rowLabel": "Ingen digitale enheter",
+        "column": "4. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_818_Antall_Elever_Ingen_digitale_Enheter_Trinn_4",
+        "sqlColumn": "GG_818_Antall_Elever_Ingen_digitale_Enheter_Trinn_4",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_819_Antall_Elever_Ingen_digitale_Enheter_Trinn_5",
+        "control": "Local_Comp_Input_Number_406",
+        "group": "E",
+        "questionNumber": "5",
+        "label": "Ingen digitale enheter",
+        "rowLabel": "Ingen digitale enheter",
+        "column": "5. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_819_Antall_Elever_Ingen_digitale_Enheter_Trinn_5",
+        "sqlColumn": "GG_819_Antall_Elever_Ingen_digitale_Enheter_Trinn_5",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_820_Antall_Elever_Ingen_digitale_Enheter_Trinn_6",
+        "control": "Local_Comp_Input_Number_407",
+        "group": "E",
+        "questionNumber": "5",
+        "label": "Ingen digitale enheter",
+        "rowLabel": "Ingen digitale enheter",
+        "column": "6. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_820_Antall_Elever_Ingen_digitale_Enheter_Trinn_6",
+        "sqlColumn": "GG_820_Antall_Elever_Ingen_digitale_Enheter_Trinn_6",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_821_Antall_Elever_Ingen_digitale_Enheter_Trinn_7",
+        "control": "Local_Comp_Input_Number_409",
+        "group": "E",
+        "questionNumber": "5",
+        "label": "Ingen digitale enheter",
+        "rowLabel": "Ingen digitale enheter",
+        "column": "7. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_821_Antall_Elever_Ingen_digitale_Enheter_Trinn_7",
+        "sqlColumn": "GG_821_Antall_Elever_Ingen_digitale_Enheter_Trinn_7",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_822_Antall_Elever_Ingen_digitale_Enheter_Trinn_8",
+        "control": "Local_Comp_Input_Number_410",
+        "group": "E",
+        "questionNumber": "5",
+        "label": "Ingen digitale enheter",
+        "rowLabel": "Ingen digitale enheter",
+        "column": "8. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_822_Antall_Elever_Ingen_digitale_Enheter_Trinn_8",
+        "sqlColumn": "GG_822_Antall_Elever_Ingen_digitale_Enheter_Trinn_8",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_823_Antall_Elever_Ingen_digitale_Enheter_Trinn_9",
+        "control": "Local_Comp_Input_Number_422",
+        "group": "E",
+        "questionNumber": "5",
+        "label": "Ingen digitale enheter",
+        "rowLabel": "Ingen digitale enheter",
+        "column": "9. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_823_Antall_Elever_Ingen_digitale_Enheter_Trinn_9",
+        "sqlColumn": "GG_823_Antall_Elever_Ingen_digitale_Enheter_Trinn_9",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_824_Antall_Elever_Ingen_digitale_Enheter_Trinn_10",
+        "control": "Local_Comp_Input_Number_423",
+        "group": "E",
+        "questionNumber": "5",
+        "label": "Ingen digitale enheter",
+        "rowLabel": "Ingen digitale enheter",
+        "column": "10. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord13.GG_824_Antall_Elever_Ingen_digitale_Enheter_Trinn_10",
+        "sqlColumn": "GG_824_Antall_Elever_Ingen_digitale_Enheter_Trinn_10",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_825_Sum_Elever_PC_Mac",
+        "control": "Label10_15",
+        "group": "E",
+        "questionNumber": "5",
+        "label": "Ingen digitale enheter",
+        "rowLabel": "Ingen digitale enheter",
+        "column": "Sum",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_815_Antall_Elever_Ingen_digitale_Enheter_Trinn_1",
+            "sign": 1
+          },
+          {
+            "field": "GG_816_Antall_Elever_Ingen_digitale_Enheter_Trinn_2",
+            "sign": 1
+          },
+          {
+            "field": "GG_817_Antall_Elever_Ingen_digitale_Enheter_Trinn_3",
+            "sign": 1
+          },
+          {
+            "field": "GG_818_Antall_Elever_Ingen_digitale_Enheter_Trinn_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_819_Antall_Elever_Ingen_digitale_Enheter_Trinn_5",
+            "sign": 1
+          },
+          {
+            "field": "GG_820_Antall_Elever_Ingen_digitale_Enheter_Trinn_6",
+            "sign": 1
+          },
+          {
+            "field": "GG_821_Antall_Elever_Ingen_digitale_Enheter_Trinn_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_822_Antall_Elever_Ingen_digitale_Enheter_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_823_Antall_Elever_Ingen_digitale_Enheter_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_824_Antall_Elever_Ingen_digitale_Enheter_Trinn_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord13.GG_825_Sum_Elever_PC_Mac",
+        "sqlColumn": "GG_825_Sum_Elever_PC_Mac",
+        "gradeRestricted": false
+      },
+      {
+        "key": "GG_826_Sum_Digitale_Enheter_Trinn_1",
+        "control": "Label19_23",
+        "group": "E",
+        "questionNumber": "6",
+        "label": "Sum digitale enheter",
+        "rowLabel": "Sum digitale enheter",
+        "column": "1. trinn",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_771_Antall_Elever_PC_Mac_Trinn_1",
+            "sign": 1
+          },
+          {
+            "field": "GG_782_Antall_Elever_Chromebook_Trinn_1",
+            "sign": 1
+          },
+          {
+            "field": "GG_793_Antall_Elever_Nettbrett_Trinn_1",
+            "sign": 1
+          },
+          {
+            "field": "GG_804_Antall_Elever_Andre_digitale_Enheter_Trinn_1",
+            "sign": 1
+          },
+          {
+            "field": "GG_815_Antall_Elever_Ingen_digitale_Enheter_Trinn_1",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord13.GG_826_Sum_Digitale_Enheter_Trinn_1",
+        "sqlColumn": "GG_826_Sum_Digitale_Enheter_Trinn_1",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_827_Sum_Digitale_Enheter_Trinn_2",
+        "control": "Label19_24",
+        "group": "E",
+        "questionNumber": "6",
+        "label": "Sum digitale enheter",
+        "rowLabel": "Sum digitale enheter",
+        "column": "2. trinn",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_772_Antall_Elever_PC_Mac_Trinn_2",
+            "sign": 1
+          },
+          {
+            "field": "GG_783_Antall_Elever_Chromebook_Trinn_2",
+            "sign": 1
+          },
+          {
+            "field": "GG_794_Antall_Elever_Nettbrett_Trinn_2",
+            "sign": 1
+          },
+          {
+            "field": "GG_805_Antall_Elever_Andre_digitale_Enheter_Trinn_2",
+            "sign": 1
+          },
+          {
+            "field": "GG_816_Antall_Elever_Ingen_digitale_Enheter_Trinn_2",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord13.GG_827_Sum_Digitale_Enheter_Trinn_2",
+        "sqlColumn": "GG_827_Sum_Digitale_Enheter_Trinn_2",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_828_Sum_Digitale_Enheter_Trinn_3",
+        "control": "Label19_25",
+        "group": "E",
+        "questionNumber": "6",
+        "label": "Sum digitale enheter",
+        "rowLabel": "Sum digitale enheter",
+        "column": "3. trinn",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_773_Antall_Elever_PC_Mac_Trinn_3",
+            "sign": 1
+          },
+          {
+            "field": "GG_784_Antall_Elever_Chromebook_Trinn_3",
+            "sign": 1
+          },
+          {
+            "field": "GG_795_Antall_Elever_Nettbrett_Trinn_3",
+            "sign": 1
+          },
+          {
+            "field": "GG_806_Antall_Elever_Andre_digitale_Enheter_Trinn_3",
+            "sign": 1
+          },
+          {
+            "field": "GG_817_Antall_Elever_Ingen_digitale_Enheter_Trinn_3",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord13.GG_828_Sum_Digitale_Enheter_Trinn_3",
+        "sqlColumn": "GG_828_Sum_Digitale_Enheter_Trinn_3",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_829_Sum_Digitale_Enheter_Trinn_4",
+        "control": "Label19_26",
+        "group": "E",
+        "questionNumber": "6",
+        "label": "Sum digitale enheter",
+        "rowLabel": "Sum digitale enheter",
+        "column": "4. trinn",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_774_Antall_Elever_PC_Mac_Trinn_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_785_Antall_Elever_Chromebook_Trinn_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_796_Antall_Elever_Nettbrett_Trinn_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_807_Antall_Elever_Andre_digitale_Enheter_Trinn_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_818_Antall_Elever_Ingen_digitale_Enheter_Trinn_4",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord13.GG_829_Sum_Digitale_Enheter_Trinn_4",
+        "sqlColumn": "GG_829_Sum_Digitale_Enheter_Trinn_4",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_830_Sum_Digitale_Enheter_Trinn_5",
+        "control": "Label19_27",
+        "group": "E",
+        "questionNumber": "6",
+        "label": "Sum digitale enheter",
+        "rowLabel": "Sum digitale enheter",
+        "column": "5. trinn",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_775_Antall_Elever_PC_Mac_Trinn_5",
+            "sign": 1
+          },
+          {
+            "field": "GG_786_Antall_Elever_Chromebook_Trinn_5",
+            "sign": 1
+          },
+          {
+            "field": "GG_797_Antall_Elever_Nettbrett_Trinn_5",
+            "sign": 1
+          },
+          {
+            "field": "GG_808_Antall_Elever_Andre_digitale_Enheter_Trinn_5",
+            "sign": 1
+          },
+          {
+            "field": "GG_819_Antall_Elever_Ingen_digitale_Enheter_Trinn_5",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord13.GG_830_Sum_Digitale_Enheter_Trinn_5",
+        "sqlColumn": "GG_830_Sum_Digitale_Enheter_Trinn_5",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_831_Sum_Digitale_Enheter_Trinn_6",
+        "control": "Label19_28",
+        "group": "E",
+        "questionNumber": "6",
+        "label": "Sum digitale enheter",
+        "rowLabel": "Sum digitale enheter",
+        "column": "6. trinn",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_776_Antall_Elever_PC_Mac_Trinn_6",
+            "sign": 1
+          },
+          {
+            "field": "GG_787_Antall_Elever_Chromebook_Trinn_6",
+            "sign": 1
+          },
+          {
+            "field": "GG_798_Antall_Elever_Nettbrett_Trinn_6",
+            "sign": 1
+          },
+          {
+            "field": "GG_809_Antall_Elever_Andre_digitale_Enheter_Trinn_6",
+            "sign": 1
+          },
+          {
+            "field": "GG_820_Antall_Elever_Ingen_digitale_Enheter_Trinn_6",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord13.GG_831_Sum_Digitale_Enheter_Trinn_6",
+        "sqlColumn": "GG_831_Sum_Digitale_Enheter_Trinn_6",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_832_Sum_Digitale_Enheter_Trinn_7",
+        "control": "Label19_29",
+        "group": "E",
+        "questionNumber": "6",
+        "label": "Sum digitale enheter",
+        "rowLabel": "Sum digitale enheter",
+        "column": "7. trinn",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_777_Antall_Elever_PC_Mac_Trinn_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_788_Antall_Elever_Chromebook_Trinn_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_799_Antall_Elever_Nettbrett_Trinn_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_810_Antall_Elever_Andre_digitale_Enheter_Trinn_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_821_Antall_Elever_Ingen_digitale_Enheter_Trinn_7",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord13.GG_832_Sum_Digitale_Enheter_Trinn_7",
+        "sqlColumn": "GG_832_Sum_Digitale_Enheter_Trinn_7",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_833_Sum_Digitale_Enheter_Trinn_8",
+        "control": "Label19_30",
+        "group": "E",
+        "questionNumber": "6",
+        "label": "Sum digitale enheter",
+        "rowLabel": "Sum digitale enheter",
+        "column": "8. trinn",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_778_Antall_Elever_PC_Mac_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_789_Antall_Elever_Chromebook_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_800_Antall_Elever_Nettbrett_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_811_Antall_Elever_Andre_digitale_Enheter_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_822_Antall_Elever_Ingen_digitale_Enheter_Trinn_8",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord13.GG_833_Sum_Digitale_Enheter_Trinn_8",
+        "sqlColumn": "GG_833_Sum_Digitale_Enheter_Trinn_8",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_834_Sum_Digitale_Enheter_Trinn_9",
+        "control": "Label19_31",
+        "group": "E",
+        "questionNumber": "6",
+        "label": "Sum digitale enheter",
+        "rowLabel": "Sum digitale enheter",
+        "column": "9. trinn",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_779_Antall_Elever_PC_Mac_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_790_Antall_Elever_Chromebook_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_801_Antall_Elever_Nettbrett_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_812_Antall_Elever_Andre_digitale_Enheter_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_823_Antall_Elever_Ingen_digitale_Enheter_Trinn_9",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord13.GG_834_Sum_Digitale_Enheter_Trinn_9",
+        "sqlColumn": "GG_834_Sum_Digitale_Enheter_Trinn_9",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_835_Sum_Digitale_Enheter_Trinn_10",
+        "control": "Label19_32",
+        "group": "E",
+        "questionNumber": "6",
+        "label": "Sum digitale enheter",
+        "rowLabel": "Sum digitale enheter",
+        "column": "10. trinn",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_780_Antall_Elever_PC_Mac_Trinn_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_791_Antall_Elever_Chromebook_Trinn_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_802_Antall_Elever_Nettbrett_Trinn_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_813_Antall_Elever_Andre_digitale_Enheter_Trinn_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_824_Antall_Elever_Ingen_digitale_Enheter_Trinn_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord13.GG_835_Sum_Digitale_Enheter_Trinn_10",
+        "sqlColumn": "GG_835_Sum_Digitale_Enheter_Trinn_10",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_836_Sum_Digitale_Enheter",
+        "control": "Label19_33",
+        "group": "E",
+        "questionNumber": "6",
+        "label": "Sum digitale enheter",
+        "rowLabel": "Sum digitale enheter",
+        "column": "Sum",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_826_Sum_Digitale_Enheter_Trinn_1",
+            "sign": 1
+          },
+          {
+            "field": "GG_827_Sum_Digitale_Enheter_Trinn_2",
+            "sign": 1
+          },
+          {
+            "field": "GG_828_Sum_Digitale_Enheter_Trinn_3",
+            "sign": 1
+          },
+          {
+            "field": "GG_829_Sum_Digitale_Enheter_Trinn_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_830_Sum_Digitale_Enheter_Trinn_5",
+            "sign": 1
+          },
+          {
+            "field": "GG_831_Sum_Digitale_Enheter_Trinn_6",
+            "sign": 1
+          },
+          {
+            "field": "GG_832_Sum_Digitale_Enheter_Trinn_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_833_Sum_Digitale_Enheter_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_834_Sum_Digitale_Enheter_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_835_Sum_Digitale_Enheter_Trinn_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=nfSelectedRecord13.GG_836_Sum_Digitale_Enheter",
+        "sqlColumn": "GG_836_Sum_Digitale_Enheter",
+        "gradeRestricted": false
+      },
+      {
+        "key": "GG_3_Antall_Elever_Trinn1_Sum",
+        "control": "Label19_34",
+        "group": "E",
+        "questionNumber": "7",
+        "label": "Elevtall (hentet fra del 3 A)",
+        "rowLabel": "Elevtall (hentet fra del 3 A)",
+        "column": "1. trinn",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord3.GG_3_Antall_Elever_Trinn1_Sum",
+        "sourceSection": 3,
+        "sqlColumn": "GG_3_Antall_Elever_Trinn1_Sum",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_6_Antall_Elever_Trinn2_Sum",
+        "control": "Label19_35",
+        "group": "E",
+        "questionNumber": "7",
+        "label": "Elevtall (hentet fra del 3 A)",
+        "rowLabel": "Elevtall (hentet fra del 3 A)",
+        "column": "2. trinn",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord3.GG_6_Antall_Elever_Trinn2_Sum",
+        "sourceSection": 3,
+        "sqlColumn": "GG_6_Antall_Elever_Trinn2_Sum",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_9_Antall_Elever_Trinn3_Sum",
+        "control": "Label19_36",
+        "group": "E",
+        "questionNumber": "7",
+        "label": "Elevtall (hentet fra del 3 A)",
+        "rowLabel": "Elevtall (hentet fra del 3 A)",
+        "column": "3. trinn",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord3.GG_9_Antall_Elever_Trinn3_Sum",
+        "sourceSection": 3,
+        "sqlColumn": "GG_9_Antall_Elever_Trinn3_Sum",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_12_Antall_Elever_Trinn4_Sum",
+        "control": "Label19_37",
+        "group": "E",
+        "questionNumber": "7",
+        "label": "Elevtall (hentet fra del 3 A)",
+        "rowLabel": "Elevtall (hentet fra del 3 A)",
+        "column": "4. trinn",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord3.GG_12_Antall_Elever_Trinn4_Sum",
+        "sourceSection": 3,
+        "sqlColumn": "GG_12_Antall_Elever_Trinn4_Sum",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_15_Antall_Elever_Trinn5_Sum",
+        "control": "Label19_38",
+        "group": "E",
+        "questionNumber": "7",
+        "label": "Elevtall (hentet fra del 3 A)",
+        "rowLabel": "Elevtall (hentet fra del 3 A)",
+        "column": "5. trinn",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord3.GG_15_Antall_Elever_Trinn5_Sum",
+        "sourceSection": 3,
+        "sqlColumn": "GG_15_Antall_Elever_Trinn5_Sum",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_18_Antall_Elever_Trinn6_Sum",
+        "control": "Label19_39",
+        "group": "E",
+        "questionNumber": "7",
+        "label": "Elevtall (hentet fra del 3 A)",
+        "rowLabel": "Elevtall (hentet fra del 3 A)",
+        "column": "6. trinn",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord3.GG_18_Antall_Elever_Trinn6_Sum",
+        "sourceSection": 3,
+        "sqlColumn": "GG_18_Antall_Elever_Trinn6_Sum",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_21_Antall_Elever_Trinn7_Sum",
+        "control": "Label19_40",
+        "group": "E",
+        "questionNumber": "7",
+        "label": "Elevtall (hentet fra del 3 A)",
+        "rowLabel": "Elevtall (hentet fra del 3 A)",
+        "column": "7. trinn",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord3.GG_21_Antall_Elever_Trinn7_Sum",
+        "sourceSection": 3,
+        "sqlColumn": "GG_21_Antall_Elever_Trinn7_Sum",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_27_Antall_Elever_Trinn8_Sum",
+        "control": "Label19_41",
+        "group": "E",
+        "questionNumber": "7",
+        "label": "Elevtall (hentet fra del 3 A)",
+        "rowLabel": "Elevtall (hentet fra del 3 A)",
+        "column": "8. trinn",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord3.GG_27_Antall_Elever_Trinn8_Sum",
+        "sourceSection": 3,
+        "sqlColumn": "GG_27_Antall_Elever_Trinn8_Sum",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_30_Antall_Elever_Trinn9_Sum",
+        "control": "Label19_42",
+        "group": "E",
+        "questionNumber": "7",
+        "label": "Elevtall (hentet fra del 3 A)",
+        "rowLabel": "Elevtall (hentet fra del 3 A)",
+        "column": "9. trinn",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord3.GG_30_Antall_Elever_Trinn9_Sum",
+        "sourceSection": 3,
+        "sqlColumn": "GG_30_Antall_Elever_Trinn9_Sum",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_33_Antall_Elever_Trinn10_Sum",
+        "control": "Label19_43",
+        "group": "E",
+        "questionNumber": "7",
+        "label": "Elevtall (hentet fra del 3 A)",
+        "rowLabel": "Elevtall (hentet fra del 3 A)",
+        "column": "10. trinn",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord3.GG_33_Antall_Elever_Trinn10_Sum",
+        "sourceSection": 3,
+        "sqlColumn": "GG_33_Antall_Elever_Trinn10_Sum",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_39_Antall_Elever_Sum_EleverTotalt",
+        "control": "Label19_44",
+        "group": "E",
+        "questionNumber": "7",
+        "label": "Elevtall (hentet fra del 3 A)",
+        "rowLabel": "Elevtall (hentet fra del 3 A)",
+        "column": "Sum",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord3.GG_39_Antall_Elever_Sum_EleverTotalt",
+        "sourceSection": 3,
+        "sqlColumn": "GG_39_Antall_Elever_Sum_EleverTotalt",
+        "gradeRestricted": false
+      },
+      {
+        "key": "GG_691_Antall_Elever_Med_Videregaaendefag_Istedenfor_Valgfag_Trinn_8",
+        "control": "Local_Comp_Input_Number_493",
+        "group": "G",
+        "questionNumber": "1",
+        "label": "Elever som tar fag fra videregående i stedet for valgfag",
+        "rowLabel": "Elever som tar fag fra videregående i stedet for valgfag",
+        "column": "8. trinn",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=\nnfSelectedRecord11.GG_691_Antall_Elever_Med_Videregaaendefag_Istedenfor_Valgfag_Trinn_8",
+        "sourceSection": 11,
+        "sqlColumn": "GG_691_Antall_Elever_Med_Videregaaendefag_Istedenfor_Valgfag_Trinn_8",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_692_Antall_Elever_Med_Videregaaendefag_Istedenfor_Valgfag_Trinn_9",
+        "control": "Local_Comp_Input_Number_494",
+        "group": "G",
+        "questionNumber": "1",
+        "label": "Elever som tar fag fra videregående i stedet for valgfag",
+        "rowLabel": "Elever som tar fag fra videregående i stedet for valgfag",
+        "column": "9. trinn",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=\nnfSelectedRecord11.GG_692_Antall_Elever_Med_Videregaaendefag_Istedenfor_Valgfag_Trinn_9",
+        "sourceSection": 11,
+        "sqlColumn": "GG_692_Antall_Elever_Med_Videregaaendefag_Istedenfor_Valgfag_Trinn_9",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_693_Antall_Elever_Med_Videregaaendefag_Istedenfor_Valgfag_Trinn_10",
+        "control": "Local_Comp_Input_Number_496",
+        "group": "G",
+        "questionNumber": "1",
+        "label": "Elever som tar fag fra videregående i stedet for valgfag",
+        "rowLabel": "Elever som tar fag fra videregående i stedet for valgfag",
+        "column": "10. trinn",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=\nnfSelectedRecord11.GG_693_Antall_Elever_Med_Videregaaendefag_Istedenfor_Valgfag_Trinn_10",
+        "sourceSection": 11,
+        "sqlColumn": "GG_693_Antall_Elever_Med_Videregaaendefag_Istedenfor_Valgfag_Trinn_10",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_694_Sum_Elever_Med_Videregaaendefag_Istedenfor_Valgfag_Trinn_8_10",
+        "control": "Local_Comp_Input_Number_497",
+        "group": "G",
+        "questionNumber": "1",
+        "label": "Elever som tar fag fra videregående i stedet for valgfag",
+        "rowLabel": "Elever som tar fag fra videregående i stedet for valgfag",
+        "column": "Sum",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=nfSelectedRecord11.GG_694_Sum_Elever_Med_Videregaaendefag_Istedenfor_Valgfag_Trinn_8_10",
+        "sourceSection": 11,
+        "sqlColumn": "GG_694_Sum_Elever_Med_Videregaaendefag_Istedenfor_Valgfag_Trinn_8_10",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_1070_Antall_Elever_Videregaaende_Ordinaer_Valgfag_13G_Trinn_8",
+        "control": "Local_Comp_Input_Number_128",
+        "group": "G",
+        "questionNumber": "2",
+        "label": "Elever som tar fag fra videregående i tillegg til ordinært valgfag",
+        "rowLabel": "Elever som tar fag fra videregående i tillegg til ordinært valgfag",
+        "column": "8. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=\nnfSelectedRecord13.GG_1070_Antall_Elever_Videregaaende_Ordinaer_Valgfag_13G_Trinn_8",
+        "sqlColumn": "GG_1070_Antall_Elever_Videregaaende_Ordinaer_Valgfag_13G_Trinn_8",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_1071_Antall_Elever_Videregaaende_Ordinaer_Valgfag_13G_Trinn_9",
+        "control": "Local_Comp_Input_Number_129",
+        "group": "G",
+        "questionNumber": "2",
+        "label": "Elever som tar fag fra videregående i tillegg til ordinært valgfag",
+        "rowLabel": "Elever som tar fag fra videregående i tillegg til ordinært valgfag",
+        "column": "9. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=\nnfSelectedRecord13.GG_1071_Antall_Elever_Videregaaende_Ordinaer_Valgfag_13G_Trinn_9",
+        "sqlColumn": "GG_1071_Antall_Elever_Videregaaende_Ordinaer_Valgfag_13G_Trinn_9",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_1072_Antall_Elever_Videregaaende_Ordinaer_Valgfag_13G_Trinn_10",
+        "control": "Local_Comp_Input_Number_495",
+        "group": "G",
+        "questionNumber": "2",
+        "label": "Elever som tar fag fra videregående i tillegg til ordinært valgfag",
+        "rowLabel": "Elever som tar fag fra videregående i tillegg til ordinært valgfag",
+        "column": "10. trinn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "sourceFormula": "=\n\nnfSelectedRecord13.GG_1072_Antall_Elever_Videregaaende_Ordinaer_Valgfag_13G_Trinn_10",
+        "sqlColumn": "GG_1072_Antall_Elever_Videregaaende_Ordinaer_Valgfag_13G_Trinn_10",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_1073_Sum_Elever_Videregaaende_Ordinaer_Valgfag_13G_Trinn_8_10",
+        "control": "Local_Comp_Input_Number_498",
+        "group": "G",
+        "questionNumber": "2",
+        "label": "Elever som tar fag fra videregående i tillegg til ordinært valgfag",
+        "rowLabel": "Elever som tar fag fra videregående i tillegg til ordinært valgfag",
+        "column": "Sum",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_1070_Antall_Elever_Videregaaende_Ordinaer_Valgfag_13G_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_1071_Antall_Elever_Videregaaende_Ordinaer_Valgfag_13G_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_1072_Antall_Elever_Videregaaende_Ordinaer_Valgfag_13G_Trinn_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=\n\n\n\n\nnfSelectedRecord13.GG_1073_Sum_Elever_Videregaaende_Ordinaer_Valgfag_13G_Trinn_8_10",
+        "sqlColumn": "GG_1073_Sum_Elever_Videregaaende_Ordinaer_Valgfag_13G_Trinn_8_10",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_1074_Sum_13G_Trinn_8",
+        "control": "Local_Comp_Input_Number_499",
+        "group": "G",
+        "questionNumber": "3",
+        "label": "Sum elever",
+        "rowLabel": "Sum elever",
+        "column": "8. trinn",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_691_Antall_Elever_Med_Videregaaendefag_Istedenfor_Valgfag_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_1070_Antall_Elever_Videregaaende_Ordinaer_Valgfag_13G_Trinn_8",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=\n\nIf(nfSelectedRecord13.GG_1074_Sum_13G_Trinn_8 = Blank(), 0, nfSelectedRecord13.GG_1074_Sum_13G_Trinn_8)",
+        "sqlColumn": "GG_1074_Sum_13G_Trinn_8",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_1075_Sum_13G_Trinn_9",
+        "control": "Local_Comp_Input_Number_500",
+        "group": "G",
+        "questionNumber": "3",
+        "label": "Sum elever",
+        "rowLabel": "Sum elever",
+        "column": "9. trinn",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_692_Antall_Elever_Med_Videregaaendefag_Istedenfor_Valgfag_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_1071_Antall_Elever_Videregaaende_Ordinaer_Valgfag_13G_Trinn_9",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=\n\n\n\n\nIf(nfSelectedRecord13.GG_1075_Sum_13G_Trinn_9 = Blank(), 0, nfSelectedRecord13.GG_1075_Sum_13G_Trinn_9)",
+        "sqlColumn": "GG_1075_Sum_13G_Trinn_9",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_1076_Sum_13G_Trinn_10",
+        "control": "Local_Comp_Input_Number_501",
+        "group": "G",
+        "questionNumber": "3",
+        "label": "Sum elever",
+        "rowLabel": "Sum elever",
+        "column": "10. trinn",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_693_Antall_Elever_Med_Videregaaendefag_Istedenfor_Valgfag_Trinn_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_1072_Antall_Elever_Videregaaende_Ordinaer_Valgfag_13G_Trinn_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=\n\n\n\n\nIf(nfSelectedRecord13.GG_1076_Sum_13G_Trinn_10 = Blank(), 0, nfSelectedRecord13.GG_1076_Sum_13G_Trinn_10)",
+        "sqlColumn": "GG_1076_Sum_13G_Trinn_10",
+        "gradeRestricted": true
+      },
+      {
+        "key": "GG_1077_Sum_13G_Trinn_8_10",
+        "control": "Local_Comp_Input_Number_502",
+        "group": "G",
+        "questionNumber": "3",
+        "label": "Sum elever",
+        "rowLabel": "Sum elever",
+        "column": "Sum",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_694_Sum_Elever_Med_Videregaaendefag_Istedenfor_Valgfag_Trinn_8_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_1073_Sum_Elever_Videregaaende_Ordinaer_Valgfag_13G_Trinn_8_10",
+            "sign": 1
+          }
+        ],
+        "sourceFormula": "=\n\n\n\n\nIf(nfSelectedRecord13.GG_1077_Sum_13G_Trinn_8_10 = Blank(), 0, nfSelectedRecord13.GG_1077_Sum_13G_Trinn_8_10)",
+        "sqlColumn": "GG_1077_Sum_13G_Trinn_8_10",
+        "gradeRestricted": true
+      }
+    ],
+    "controllers": [
+      "GG-A7",
+      "GG-F56",
+      "GG-F60",
+      "BK-A10",
+      "GG-A123",
+      "GG-A124",
+      "GG-F75",
+      "GG-F76",
+      "GG-F77",
+      "GG-F78",
+      "GG-F79",
+      "GG-F80",
+      "GG-F81",
+      "GG-F82",
+      "GG-F83",
+      "GG-F84",
+      "GG-A119",
+      "GG-F137",
+      "GG-F85",
+      "GG-F86",
+      "GG-F87",
+      "GG-F88",
+      "GG-F89",
+      "GG-F90",
+      "GG-F91",
+      "GG-F92",
+      "GG-F93",
+      "GG-F94",
+      "GG-F95",
+      "GG-F96",
+      "GG-F97",
+      "GG-F98",
+      "GG-F99",
+      "GG-F100",
+      "GG-F101",
+      "GG-F102",
+      "GG-F103",
+      "GG-F104",
+      "GG-F7"
+    ]
+  }
+}

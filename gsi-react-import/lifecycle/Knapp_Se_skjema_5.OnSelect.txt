@@ -1,0 +1,33 @@
+// Power Apps: Knapp_Se_skjema_5.OnSelect
+// Source supplied separately in ChatGPT conversation on 2026-11-04.
+// Reproduced without modification to the business logic.
+
+Set(vargblSelectedYear, Gallery_Statusside.Selected.Ar);
+Set(vargblEnvironment, LookUp('Environment Variable Values', 'Environment Variable Definition'.'Schema Name' = "bogi_env_name").Value);
+//Kunne ikke bruke named formulas da den ikke var rask nok til å endre variabel innhold
+Set(vargblSkjemaStatusId, LookUp(SkjemaStatus, Organisasjonsnummer = Gallery_Statusside.Selected.Organisasjonsnummer && Ar = Gallery_Statusside.Selected.Ar && SkjemaType = vargblSelectedSkjema).SkjemaStatusId);
+
+//Denne brukes til nfGallerySelectedBarnehageStatus, som igjen brukes til nfDisplayMode. Mulig at denne kan fjernes og man kan refaktorere nfDisplayMode
+Set(vargblGallerySelectedSkole, ThisItem);
+
+//Hente rolle fra UIDP/Altinn //BOGI-3358 start
+If(!IsBlank(vargblDevModeSelectedRoleRecord) && vargblEnvironment = "dev", 9, // overstyr rolle med vargblDevModeSelectedRoleRecord = skip altinncheck
+    Set(
+    vargblAltinnRolle,
+        If( nfLoginRole.RolleId in [10, 11, 12, 13], 0, // er logget inn bruker en myndighet skall den ikke spørre etter altinn id. den får da 0
+
+        Value('UIDPConnector2'.GetRole({
+            userId:Coalesce( vargblDevModeSelectedRoleRecord.UserId,LookUp(Tilgang, SessionId = GUID(Param("sessionId"))).UserId),
+            organizationNumber: Gallery_Statusside.Selected.Organisasjonsnummer,
+            requestedForm: "4"
+        })))
+    )
+);
+
+//Årsmelding - [1, 3,4,7,8] || vargblAltinnRolle = 1
+If(!IsBlank(vargblDevModeSelectedRoleRecord) || nfLoginRole.RolleId in [9, 10, 11, 12, 13] || vargblAltinnRolle = 9
+,  Navigate(Innledning)
+     ,
+    UpdateContext({varErrorMessage: LookUp(ColTekstDiverse, ID = 239).Tekst&" "& LookUp(ColTekstDiverse, ID = 240 ).Tekst }) ;Set(varlcl0ClickOnOpenbutton, false);
+              // Vis feilmelding // ingen gyltig altinn rolle
+);  //BOGI-3358 end

@@ -1,0 +1,809 @@
+
+
+Set(vargblReleaseChange, false);
+
+Set(IsGrunnskole, nfLookupNSR.ErGrunnskole);
+
+Set(Iskommunesentralt, false);&#x20;
+
+Set(IsFrittstaendeSFO, true); //Kontrollere ??&#x20;
+
+Set(IsOffentligskole, true);&#x20;
+
+Set(IsPrivatSkole, nfLookupNSR.ErPrivatskole);&#x20;
+
+
+
+
+
+
+
+Set(vargblAppLanguage, "nb") ;
+
+Set(vargblYear, Year(Today()));&#x20;
+
+Set(vargblDatacardWidth, 1126);&#x20;
+
+Set(vargblScreenWidth, 1366);
+
+Set(vargblResponsiveShowNavbar, true);
+
+Set(vargblSelectedSkjema, "grunnskole");
+
+Set(vargblTusenSkilleTegn,false);
+
+
+
+Set(vargblEnvironment, LookUp('Environment Variable Values', 'Environment Variable Definition'.'Schema Name' = "bogi_env_name").Value);
+
+//Set(nfSelectedOrganisasjon, 811584312);
+
+//Set(nfSelectedOrganisasjon, 811584312);
+
+//Fetching from database
+
+//Edit org and ar when statusside is implemented&#x20;
+
+//If(LookUp(GsiGrunnskoleSvar, Organisasjonsnummer =nfSelectedOrganisasjon && Ar=2024).Ar=Blank(),Patch(GsiGrunnskoleSvar,Defaults(GsiGrunnskoleSvar),{Ar:2024,Organisasjonsnummer:nfSelectedOrganisasjon, SkjemaStatusId:3}));
+
+//Set(nfLookupNSR,LookUp(NsrEnhet,Organisasjonsnummer=nfSelectedOrganisasjon) );
+
+
+
+//Hvis ikke man er i innsamlingsperioden, skal man ikke kunne lage rader i svarstabellen og ha Read-Only, regelen utgår om man er i dev, test eller qa. Innsamlingperioden for Grunnskole TBD
+
+//Forskjellig verdier for dato er satt opp for å håndtere typer i databasen
+
+Set(normalizedToday, DateValue(Text(Today(), "yyyy-mm-dd")));
+
+Set(startDate, DateValue(Text(LookUp(SchemaConfiguration, SkjemaTypeId = 4).ReportingStart, "yyyy-mm-dd")));
+
+Set(endDate, DateValue(Text(LookUp(SchemaConfiguration, SkjemaTypeId = 4).ReportingEnd, "yyyy-mm-dd")));
+
+
+
+Set(vargblGrunnskoleInnsamlingsperiode,
+
+  If(
+
+      LookUp('Environment Variable Values', 'Environment Variable Definition'.'Schema Name' = "bogi_env_name").Value in ["dev"], //ikke lagt inn for ["test", "qa"] for å kunne teste dato i database&#x20;
+
+      true,
+
+      If(
+
+          startDate <= normalizedToday && endDate >= normalizedToday,
+
+          true,
+
+          false
+
+      )
+
+  )
+
+);
+
+
+
+//BOGI-3532 / BOGI-3531
+
+//Henter kolonne NewFeature med skjematype Grunnskole
+
+Set(NewFeature, LookUp(SchemaConfiguration, NewFeature && SkjemaTypeId = 4).NewFeature);
+
+
+
+//Lansering i dev, test, QA&#x20;
+
+Set(vargblReleaseChange,&#x20;
+
+    If(
+
+        (vargblEnvironment in ["dev", "test", "qa"])
+
+        &&&#x20;
+
+        (NewFeature = true),&#x20;
+
+    true, false
+
+    )
+
+);
+
+
+
+//BOGI-3934 Sjekker om man er Statsforvalter - Godkjenn alle skoler&#x20;
+
+Set(
+
+    varErStatsforvalter,
+
+    LookUp(
+
+        Tilgang,
+
+        UserId = nfUserId && SessionId = nfSessionId,
+
+        ErStatsforvalter
+
+    )
+
+);
+
+
+
+Set(vargblPatchingInProgress, false);
+
+//Farge Variabler&#x20;
+
+
+
+Set(farge_morkgra, ColorValue("#303030"));
+
+Set(farge_spm_kantlinje,ColorValue("#DCE5F3"));
+
+Set(farge_udirgronn,RGBA(222,242, 231, 1));
+
+
+
+Set(farge_stalblaa, RGBA(186, 198, 216, 1));
+
+Set(farge_stalblaa01,RGBA(220, 229, 243, 1));
+
+Set(farge_stalblaa04,RGBA(78, 102, 137, 1));
+
+Set(farge_lysegraa01,RGBA(194, 194, 194, 1)); //Gammel fargeRGBA(234, 234, 234, 1)
+
+Set(farge_lysegraa02,RGBA(244, 244, 244, 1));
+
+Set(farge_gronn01, RGBA(222, 242, 231, 1));
+
+Set(farge_gronn02, RGBA(186, 225, 204, 1));
+
+Set(farge_fersken_01, RGBA(248, 231, 224, 1));
+
+Set(farge_fersken_04, RGBA(157, 80, 56, 1));
+
+
+
+
+
+//Farge variabler for kontrollere
+
+Set(farge_kontrollfill, RGBA(248, 231, 224, 1));
+
+Set(farge_kontrollboks, RGBA(248, 231, 224, 1));
+
+
+
+
+
+
+
+//Font Variabler
+
+Set(FontBody, "Segoe UI");
+
+Set(FontHeading, "Segoe UI");
+
+
+
+//Font Størrelse
+
+Set(Size_H2_Headline, 30);
+
+Set(Size_H1_Display, 33);
+
+Set(Size_StandardText, 12);
+
+Set(Font_Size_Statusside, 10);&#x20;
+
+
+
+//Kontroller størrelse
+
+Set(Size_Radiobutton, 32);
+
+Set(Size_CheckBox, 32);
+
+Set(Size_BorderRadius, 8);
+
+Set(Size_Button_BorderRadius, 8);
+
+
+
+
+
+// Språl Vriabler
+
+Set(vargblAppsprak, "Bokmål");
+
+Set(vargblVisDrawer ,false) ;
+
+Set(vargblDrawerOverskrift, "Overskrift");
+
+
+
+
+
+Set(
+
+    vargblExcelEksportLink,
+
+    Switch(
+
+        Lower(
+
+            LookUp(
+
+                'Environment Variable Values',
+
+                'Environment Variable Definition'.'Schema Name' = "bogi_env_name"
+
+            ).Value
+
+        ),
+
+        "test",
+
+        "https\://test-basil-gsi-login.udir.no/api/v1/gsi/grunnskole-excel-eksport",
+
+        "qa",
+
+        "https\://qa-basil-gsi-login.udir.no/api/v1/gsi/grunnskole-excel-eksport",
+
+        "prod",
+
+        "https\://basil-gsi-login.udir.no/api/v1/gsi/grunnskole-excel-eksport",
+
+        "https\://dev-basil-gsi-login.udir.no/api/v1/gsi/grunnskole-excel-eksport"
+
+    )
+
+);
+
+Set(BaseUri, LookUp('Environment Variable Values', 'Environment Variable Definition'.'Schema Name' = "bogi_login_base_url").Value);
+
+
+
+
+
+//Trengs for popup mistet tilgang&#x20;
+
+// corrected links BOGI 3494
+
+Set( vargblLoggInnLink, Switch( vargblEnvironment,
+
+            "test", "https\://testuespudir.sharepoint.com/sites/pir/SitePages/redirect-grunnskole.aspx",
+
+            "qa", "https\://qauespudir.sharepoint.com/sites/pir/SitePages/redirect-to-Grunnskole.aspx",&#x20;
+
+            "prod", "https\://uespudir.sharepoint.com/sites/pir/SitePages/redirect-to-Grunnskole.aspx",&#x20;
+
+            "https\://testuespudir.sharepoint.com/sites/pir/SitePages/redirect-grunnskole-dev.aspx"
+
+            ));
+
+
+
+
+
+//Need to put in collection due to there were som data that wassnt imported in nfViewSprak by importting directly from DB
+
+ClearCollect(colViewSprakFiltered, Filter(ViewSprak, SkjemaTypeId = 4 && BeregnetId <> Blank()));
+
+ClearCollect(colViewSprakSvarAlternativerFiltered, Filter(ViewSprakSvarAlternativer, SkjemaTypeId = 4 && SprakInputFeltId <> Blank() && Verdi <> Blank() && SprakSvarAlternativId <> Blank()));
+
+
+
+ClearCollect(colKommune, Filter(NsrEnhet, Kommunenavn = Kommunenavn)); // liste på kommunenavn, brukes til dynamiske kommune tabeller. // liste på kommunenavn, brukes til dynamiske kommune tabeller.&#x20;
+
+
+
+
+
+//BOGI-3906
+
+ClearCollect(colViewKommune, ViewKommuner);
+
+
+
+ClearCollect(ShadowColGG8SpC,&#x20;
+
+   Table(
+
+       { GG_869_Morsmaal: Blank(),&#x20;
+
+         GG_870_Elever_med_bare_morsmaalsopplaering: Blank(),&#x20;
+
+         GG_871_Elever_med_bare_tospraaklig_fagopplaering: Blank(),&#x20;
+
+         GG_872_Elever_med_baade_morsmaalopplaering_og_tospraaklig_fagopplaering: Blank(),&#x20;
+
+         GG_873_Elever_med_tilrettelagt_opplaering: Blank(),&#x20;
+
+         SprakOpplaeringId: Blank() ,
+
+         GsiGrunnskoleSvarDel8Id : Blank()
+
+       }
+
+   )
+
+);
+
+ClearCollect(ShadowColGG9SpC,&#x20;
+
+   Table(
+
+       {&#x20;
+
+           OpplaeringssprakSamiskKvenskFinskId: Blank(),
+
+           GsiGrunnskoleSvarDel9Id: Blank(),
+
+           GG_904_Antall_Elever_Opplaering_Trinn_1: Blank(),
+
+           GG_905_Antall_Elever_Opplaering_Trinn_2: Blank(),
+
+           GG_906_Antall_Elever_Opplaering_Trinn_3: Blank(),
+
+           GG_907_Antall_Elever_Opplaering_Trinn_4: Blank(),
+
+           GG_908_Antall_Elever_Opplaering_Trinn_5: Blank(),
+
+           GG_909_Antall_Elever_Opplaering_Trinn_6: Blank(),
+
+           GG_910_Antall_Elever_Opplaering_Trinn_7: Blank(),
+
+           GG_911_Antall_Elever_Opplaering_Trinn_8: Blank(),
+
+           GG_912_Antall_Elever_Opplaering_Trinn_9: Blank(),
+
+           GG_913_Antall_Elever_Opplaering_Trinn_10: Blank(),
+
+           GG_914_Total_Sum_Antall_Elever_Opplaering_Trinn_1_10: Blank(),
+
+           GG_915_Opplaering_Samisk_Kvensk_Finsk: Blank(),
+
+           RowNumber: 0, // Initialize RowNumber as 0
+
+           ShowCombobox: true // Default value for ShowCombobox
+
+       }
+
+   )
+
+);
+
+ClearCollect(ShadowColGG11SpA,
+
+   Table(
+
+       {&#x20;
+
+           GG_875_Valgfag: Blank(),
+
+           GG_876_Antall_Gutter_Med_Valgfag_Trinn_8: Blank(),
+
+           GG_877_Antall_Jenter_Med_Valgfag_Trinn_8: Blank(),
+
+           GG_878_Sum_Med_Valgfag_Trinn_8: Blank(),
+
+           GG_879_Antall_Gutter_Med_Valgfag_Trinn_9: Blank(),
+
+           GG_880_Antall_Jenter_Med_Valgfag_Trinn_9: Blank(),
+
+           GG_881_Sum_Med_Valgfag_Trinn_9: Blank(),
+
+           GG_882_Antall_Gutter_Med_Valgfag_Trinn_10: Blank(),
+
+           GG_883_Antall_Jenter_Med_Valgfag_Trinn_10: Blank(),
+
+           GG_884_Sum_Med_Valgfag_Trinn_10: Blank(),
+
+           GG_885_Sum_Med_Valgfag_Trinn_8_10: Blank(),
+
+           GsiGrunnskoleSvarDel11Id: Blank(),
+
+           ValgfagId: Blank(),
+
+           RowNumber: 0, // Initialize RowNumber as 0
+
+           ShowCombobox: true // Default value for ShowCombobox
+
+       }
+
+   )
+
+);
+
+
+
+
+
+/\*
+
+ClearCollect(
+
+    ColGG3SpA,
+
+
+
+    {RadNr:1,Trinn: "1. trinn", Gutter: "", Jenter: "", Sum: ""},
+
+    {RadNr:2,Trinn: "2. trinn", Gutter: "", Jenter: "", Sum: ""},
+
+    {RadNr:3,Trinn: "3. trinn", Gutter: "", Jenter: "", Sum: ""},
+
+    {RadNr:4,Trinn: "4. trinn", Gutter: "", Jenter: "", Sum: ""},
+
+    {RadNr:5,Trinn: "5. trinn", Gutter: "", Jenter: "", Sum: ""},
+
+    {RadNr:6,Trinn: "6. trinn", Gutter: "", Jenter: "", Sum: ""},
+
+    {RadNr:7,Trinn: "7. trinn", Gutter: "", Jenter: "", Sum: ""},
+
+    {RadNr:8,Trinn: "Sum 1.-7. trinn", Gutter: "", Jenter: "", Sum: ""},
+
+    {RadNr:9,Trinn: "8. trinn", Gutter: "", Jenter: "", Sum: ""},
+
+    {RadNr:10,Trinn: "9. trinn", Gutter: "", Jenter: "", Sum: ""},
+
+    {RadNr:11,Trinn: "10. trinn", Gutter: "", Jenter: "", Sum: ""},
+
+    {RadNr:12,Trinn: "Sum 8.-10. trinn", Gutter: "", Jenter: "", Sum: ""},
+
+    {RadNr:13,Trinn: "Sum elever ved skolen", Gutter: "", Jenter: "", Sum: ""}
+
+
+
+
+
+);
+
+
+
+ClearCollect(
+
+    ColGG3SpB,
+
+    {RadNr:1, Trinn: "1. trinn", Sum: "", Timetallsfordeling: ""},
+
+    {RadNr:2, Trinn: "2. trinn", Sum: "", Timetallsfordeling: ""},
+
+    {RadNr:3, Trinn: "3. trinn", Sum: "", Timetallsfordeling: ""},
+
+    {RadNr:4, Trinn: "4. trinn", Sum: "", Timetallsfordeling: ""},
+
+    {RadNr:5, Trinn: "5. trinn", Sum: "", Timetallsfordeling: ""},
+
+    {RadNr:6, Trinn: "6. trinn", Sum: "", Timetallsfordeling: ""},
+
+    {RadNr:7, Trinn: "7. trinn", Sum: "", Timetallsfordeling: ""},
+
+    {RadNr:8, Trinn: "Sum 1.-7. trinn", Sum: "", Timetallsfordeling: ""},
+
+    {RadNr:9, Trinn: "8. trinn", Sum: "", Timetallsfordeling: ""},
+
+    {RadNr:10, Trinn: "9. trinn", Sum: "", Timetallsfordeling: ""},
+
+    {RadNr:11, Trinn: "10. trinn", Sum: "", Timetallsfordeling: ""},
+
+    {RadNr:12, Trinn: "Sum 8.-10. trinn", Sum: "", Timetallsfordeling: ""},
+
+    {RadNr:13, Trinn: "Sum elever ved skolen", Sum: "", Timetallsfordeling: ""}
+
+);
+
+
+
+ClearCollect(
+
+    ColGG3SpC,
+
+    {RadNr:1, Trinn: "1. trinn", Patch1: ""},
+
+    {RadNr:2, Trinn: "2. trinn", Patch1: ""},
+
+    {RadNr:3, Trinn: "3. trinn", Patch1: ""},
+
+    {RadNr:4, Trinn: "4. trinn", Patch1: ""},
+
+    {RadNr:5, Trinn: "5. trinn", Patch1: ""},
+
+    {RadNr:6, Trinn: "6. trinn", Patch1: ""},
+
+    {RadNr:7, Trinn: "7. trinn", Patch1: ""},
+
+    {RadNr:8, Trinn: "8. trinn", Patch1: ""},
+
+    {RadNr:9, Trinn: "9. trinn", Patch1: ""},
+
+    {RadNr:10, Trinn: "10. trinn", Patch1: ""},
+
+    {RadNr:11, Trinn: "Sum elever ved skolen", Patch1: ""}
+
+);
+
+
+
+
+
+ClearCollect(
+
+    ColGG4SpA,
+
+    {RadNr:1, Trinn: "undervisningspersonale som oppfyller kompetansekravene for tilsetting", Patch1: ""},
+
+    {RadNr:2, Trinn: "undervisningspersonale som ikke oppfyller kompetanse-kravene for tilsetting", Patch1: ""},
+
+    {RadNr:3, Trinn: "Sum årstimer som gis til undervisning ved skolen inneværende skoleår", Patch1: ""}
+
+
+
+);
+
+\*/
+
+
+
+//Vet ikke hvor denne kommer fra ??&#x20;
+
+/\*
+
+ClearCollect(
+
+    ScreenStatus,
+
+    { Screen: "Del1", Status: Statussteg1 },
+
+    { Screen: "Del2", Status: Statussteg2 },
+
+    { Screen: "Del3", Status: Statussteg3 }
+
+);\*/
+
+
+
+
+
+
+
+//dummy - just to show some items if user dont press start on screen "innledning"
+
+Set(vargblNavbarItems, Table(
+
+    {
+
+        Steg: "0",
+
+        Tittel: LookUp(ColTekstDiverse, ID = 200).Tekst,
+
+        Naviger_to_screen: *Forside_Statusside*
+
+    },
+
+    {
+
+        Steg: "1",
+
+        Tittel: LookUp(ColTekstDiverse, ID = 201).Tekst,
+
+        Naviger_to_screen: *Del1*,
+
+        Status: Statussteg1
+
+    },
+
+    {
+
+        Steg: "2",
+
+        Tittel: LookUp(ColTekstDiverse, ID = 202).Tekst,
+
+        Naviger_to_screen: *Del2*,
+
+        Status: Statussteg2
+
+    },
+
+    {
+
+        Steg: "3",
+
+        Tittel: LookUp(ColTekstDiverse, ID = 203).Tekst,
+
+        Naviger_to_screen: *Del3*,
+
+        Status: Statussteg3
+
+    },
+
+    {
+
+        Steg: "4",
+
+        Tittel: LookUp(ColTekstDiverse, ID = 204).Tekst,
+
+        Naviger_to_screen: *Del4*,
+
+        Status: Statussteg4
+
+    },
+
+    {
+
+        Steg: "5",
+
+        Tittel: LookUp(ColTekstDiverse, ID = 205).Tekst,
+
+        Naviger_to_screen: *Del5*,
+
+        Status: Statussteg5
+
+    },
+
+    {
+
+        Steg: "6",
+
+        Tittel: LookUp(ColTekstDiverse, ID = 206).Tekst,
+
+        Naviger_to_screen: *Del6*,
+
+        Status: Statussteg6
+
+    },
+
+    {
+
+        Steg: "7",
+
+        Tittel: LookUp(ColTekstDiverse, ID = 207).Tekst,
+
+        Naviger_to_screen: *Del7*,
+
+        Status: Statussteg7
+
+    },
+
+    {
+
+        Steg: "8",
+
+        Tittel: LookUp(ColTekstDiverse, ID = 208).Tekst,
+
+        Naviger_to_screen: *Del8*,
+
+        Status: Statussteg8
+
+    },
+
+    {
+
+        Steg: "9",
+
+        Tittel: LookUp(ColTekstDiverse, ID = 209).Tekst,
+
+        Naviger_to_screen: *Del9*,
+
+        Status: Statussteg9
+
+    },
+
+    {
+
+        Steg: "10",
+
+        Tittel: LookUp(ColTekstDiverse, ID = 210).Tekst,
+
+        Naviger_to_screen: *Del10*,
+
+        Status: Statussteg10
+
+    },
+
+    {
+
+        Steg: "11",
+
+        Tittel: LookUp(ColTekstDiverse, ID = 211).Tekst,
+
+        Naviger_to_screen: *Del11*,
+
+        Status: Statussteg11
+
+    },
+
+    {
+
+        Steg: "12",
+
+        Tittel: LookUp(ColTekstDiverse, ID = 212).Tekst,
+
+        Naviger_to_screen: *Del12*,
+
+        Status: Statussteg12
+
+    },
+
+    {
+
+        Steg: "13",
+
+        Tittel: LookUp(ColTekstDiverse, ID = 213).Tekst,
+
+        Naviger_to_screen: *Del13*,
+
+        Status: Statussteg13
+
+    },
+
+    {
+
+        Steg: "14",
+
+        Tittel: LookUp(ColTekstDiverse, ID = 214).Tekst,
+
+        Naviger_to_screen: *Del14*,
+
+        Status: Statussteg14
+
+    },
+
+    {
+
+        Steg: "15",
+
+        Tittel: LookUp(ColTekstDiverse, ID = 229).Tekst,
+
+        Naviger_to_screen: *Del15_PPT*,
+
+        Status: Statussteg15
+
+    },
+
+    {
+
+        Steg: "16",
+
+        Tittel: LookUp(ColTekstDiverse, ID = 228).Tekst,
+
+        Naviger_to_screen: *Del16_Ukraina*,
+
+        Status: Statussteg16
+
+    },
+
+    {
+
+        Steg: "17",
+
+        Tittel: LookUp(ColTekstDiverse, ID = 215).Tekst,
+
+        Naviger_to_screen: *Del17_Kontroller*,
+
+        Status: Statussteg17
+
+    },
+
+    {
+
+        Steg: "18",
+
+        Tittel: LookUp(ColTekstDiverse, ID = 216).Tekst,
+
+        Naviger_to_screen: *Del18_Fullfør*,
+
+        Status: nfTotalStatus
+
+
+
+
+
+    }
+
+));

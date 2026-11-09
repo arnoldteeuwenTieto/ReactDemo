@@ -1,3 +1,4 @@
+import type { SectionApplicability } from './grunnskoleSections'
 import { useTranslation } from 'react-i18next'
 import { ui } from '../i18n'
 import type { ReactNode } from 'react'
@@ -13,6 +14,7 @@ interface GrunnskoleLayoutProps {
   onNext: () => void
   canGoPrevious: boolean
   canGoNext: boolean
+  applicability: Record<number, SectionApplicability>
 }
 
 export function GrunnskoleLayout({
@@ -25,11 +27,13 @@ export function GrunnskoleLayout({
   onNext,
   canGoPrevious,
   canGoNext,
+  applicability,
 }: GrunnskoleLayoutProps) {
   useTranslation('ui')
   return (
     <div className="section-layout">
       <GrunnskoleNavigation
+        applicability={applicability}
         activeSection={activeSection}
         sectionIssueCounts={sectionIssueCounts}
         onHome={onHome}

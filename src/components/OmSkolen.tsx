@@ -55,10 +55,10 @@ export function OmSkolen({ school, onDataChange }: { school: School; onDataChang
     {!canEdit && <p role="note">{ui('DEMO: Skrivebeskyttet. Redigering krever status 1, skoletilgang og rolle 9 eller kommunesentral rolle 10.')}</p>}
     {!loaded ? <p role="status">{loadError ? ui("Kunne ikke hente lokale demonstrasjonsdata. Last siden på nytt.") : ui("Henter lokale demonstrasjonsdata...")}</p> : <div className="question-list">{questions.map(question => <QuestionCard key={question.field} id={question.field} heading={gsi(question.field)} kind={question.kind} canEdit={canEdit} options={question.options.map(option => ({ ...option, label: gsi(`${question.field}:${String(option.value)}`) }))} value={form[question.field]} onChange={value => save(question.field, value)} validation={validation[question.field] ? ui(validation[question.field]!) : undefined} status={statuses[question.field] ?? 'idle'} onRetry={() => save(question.field, form[question.field])} onHelp={(helpId, trigger) => setHelp({ id: helpId, trigger })} {...questionReferences[question.field]} />)}</div>}
     {help && <HelpDrawer key={help.id} helpId={help.id} returnFocusTo={help.trigger} onClose={() => setHelp(null)} />}
-    <details className="api-debug"><summary>{ui("API Debug")}</summary>
+    {__DEV_FIELD_METADATA__ && <details className="api-debug"><summary>{ui("API Debug")}</summary>
       <p>{ui("Valgt skole:")} {school.name} · {school.id} · {school.year}</p><p>{ui("SkjemaStatusId (mock):")} {id} {ui("· Del: 2")}</p>
       <p>{ui("Kun lokal simulering. Hver sjuende lagring feiler før data endres. Avhengige oppdateringer inngår i samme simulerte operasjon.")}</p>
       {logs.length ? logs.map((log, index) => <pre key={index}>{JSON.stringify(log, null, 2)}</pre>) : <p>{ui("Ingen lagringskall ennå.")}</p>}
-    </details>
+    </details>}
   </>
 }

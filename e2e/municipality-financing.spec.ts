@@ -1,3 +1,4 @@
+import { schoolOpeningAction } from './helpers/schoolActions'
 import { expect, test, type Page } from '@playwright/test'
 import AxeBuilder from '@axe-core/playwright'
 import { demoUsers } from '../src/demoUser'
@@ -11,7 +12,7 @@ const total = (page: Page) => table(page).getByRole('textbox', { name: 'Sum fina
 const add = (page: Page) => page.getByRole('button', { name: 'Legg til kommune', exact: true })
 async function open(page: Page) {
   await page.goto('./')
-  await page.getByRole('button', { name: 'Åpne skjema for Fjordgløtt barneskole, 2026', exact: true }).click()
+  await schoolOpeningAction(page, 'Fjordgløtt barneskole', '2026').click()
   await page.getByRole('button', { name: 'Gå til rapporteringen', exact: true }).click()
   await page.getByRole('navigation', { name: 'Grunnskoleseksjoner', exact: true }).getByRole('button', { name: 'Elever og timer', exact: true }).click()
 }

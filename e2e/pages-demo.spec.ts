@@ -1,3 +1,4 @@
+import { schoolOpeningAction } from './helpers/schoolActions'
 import { expect, test } from '@playwright/test'
 import { grunnskoleSections } from '../src/components/grunnskoleSections'
 import { resolveConfig } from 'vite'
@@ -35,6 +36,9 @@ test('built Pages demo resolves fictional context and preserves access, statuses
   await expect(header.locator('.header-dev-label')).toHaveText('DEMO')
   await page.getByRole('button', { name: 'Gå til rapporteringen', exact: true }).click()
   const nav = page.getByRole('navigation', { name: 'Grunnskoleseksjoner', exact: true })
+  await nav.getByRole('button',{name:'Om skolen',exact:true}).click()
+  await page.getByRole('group',{name:'D. Har skolen tilbud om SFO?',exact:true}).getByRole('radio',{name:'Ja',exact:true}).check()
+  await expect(page.getByRole('region',{name:'D. Har skolen tilbud om SFO?',exact:true}).getByRole('status')).toHaveText('Lagret')
   for (const section of grunnskoleSections) {
     await nav.getByRole('button', { name: section.title, exact: true }).click()
     await expect(page.getByRole('main').getByText('Ingen tilgang', { exact: true })).toHaveCount(0)
@@ -53,7 +57,7 @@ test('built Pages demo resolves fictional context and preserves access, statuses
   await expect(page.locator('[data-report-field], [data-report-wrapper]')).toHaveCount(0)
   await field.hover(); await expect(page.getByRole('tooltip')).toHaveCount(0)
   await nav.getByRole('button', { name: 'Hjem', exact: true }).click()
-  await page.getByRole('button', { name: 'Åpne skjema for Bergen kommune sentralt, 2026', exact: true }).click()
+  await schoolOpeningAction(page, 'Bergen kommune sentralt', '2026').click()
   await page.getByRole('button', { name: 'Gå til rapporteringen', exact: true }).click()
   await nav.getByRole('button', { name: 'Elever og timer', exact: true }).click()
   await expect(field).toBeEnabled() // Explicit isKommunesentralt=true plus unit access.

@@ -10,6 +10,11 @@ declare module 'virtual:gsi-field-metadata' {
 }
 
 interface ImportMetaEnv {
+  readonly VITE_REPORTING_START?: string
+  readonly VITE_REPORTING_END?: string
+  readonly VITE_REPORTING_YEAR?: string
+  readonly VITE_ALLOW_DEMO_PERIOD_OVERRIDE?: string
+  readonly VITE_ENABLE_NEW_FEATURE?: string
   readonly VITE_ENABLE_DEMO_USERS?: string
   readonly VITE_APP_ENV?: string
   readonly VITE_BUILD_NUMBER?: string

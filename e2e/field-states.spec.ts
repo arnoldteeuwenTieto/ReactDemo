@@ -1,3 +1,4 @@
+import { schoolOpeningAction } from './helpers/schoolActions'
 import { test, expect, type Page } from '@playwright/test'
 import AxeBuilder from '@axe-core/playwright'
 import { gradeApplicability, resolveFieldState } from '../src/domain/fieldState'
@@ -26,7 +27,7 @@ async function seed(page: Page, lo: number, hi: number) {
 async function open(page: Page, user = 'demo-school-leader', name = 'Fjordgløtt barneskole') {
   await page.goto('./')
   await page.getByRole('combobox', { name: 'Demonstrasjonsbruker DEMO', exact: true }).selectOption(user)
-  await page.getByRole('button', { name: `Åpne skjema for ${name}, 2026`, exact: true }).click()
+  await schoolOpeningAction(page, `${name}`, `2026`).click()
   await page.getByRole('button', { name: 'Gå til rapporteringen', exact: true }).click()
   await section3(page).click()
 }
@@ -73,8 +74,8 @@ for (const scenario of scenarios) {
       if (excluded || readonly) await expect(field).toBeDisabled()
       else { await expect(field).toBeEnabled(); await expect(field).toHaveCSS('background-color', answers[boys[grade - 1] as keyof typeof answers] !== undefined ? 'rgb(241, 243, 245)' : 'rgb(255, 255, 255)') }
       if (excluded) {
-        await expect(field).toHaveCSS('background-color', 'rgb(248, 231, 224)')
-        await expect(field).toHaveCSS('border-top-color', 'rgb(217, 165, 143)')
+        await expect(field).toHaveCSS('background-color', 'rgb(234, 240, 247)')
+        await expect(field).toHaveCSS('border-top-color', 'rgb(187, 203, 221)')
         await expect(field).toHaveAccessibleDescription(/del 2 B og C/)
       }
     }
@@ -131,7 +132,7 @@ test('read-only unanswered fields and dependent disabled counts do not create re
   await open(page, 'demo-udir-support')
   await expect(nav(page).locator('.section-issue-badge')).toHaveCount(0)
   await nav(page).getByRole('button', { name: 'Om skolen', exact: true }).click()
-  await expect(page.getByText('Velg et svar. (Demonstrasjonsvalidering)', { exact: true })).toHaveCount(0)
+  await expect(page.getByText('Velg et svar.', { exact: true })).toHaveCount(0)
   await page.getByRole('combobox', { name: 'Demonstrasjonsbruker DEMO', exact: true }).selectOption('demo-school-leader')
   await expect(nav(page).getByRole('button', { name: 'Om skolen', exact: true }).locator('.section-issue-badge')).toHaveText('4')
   await section3(page).click(); await page.getByRole('button', { name: 'Legg til kommune', exact: true }).click()

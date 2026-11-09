@@ -1,3 +1,4 @@
+import { schoolOpeningAction } from './helpers/schoolActions'
 import { expect, test, type Page } from '@playwright/test'
 
 // Requirements fixtures: do not calculate expectations from the UI status model.
@@ -13,7 +14,7 @@ const reset = (page: Page) => page.getByRole('button', { name: 'Tilbakestill sta
 const languageCard = (page: Page) => page.getByRole('region', { name: 'A. Skolens målform', exact: true })
 
 async function openReport(page: Page, name = 'Fjordgløtt barneskole', year = 2026) {
-  await page.getByRole('button', { name: `Åpne skjema for ${name}, ${year}`, exact: true }).click()
+  await schoolOpeningAction(page, `${name}`, `${year}`).click()
   await expect(page.getByRole('heading', { name: 'Innledning', exact: true })).toBeVisible()
 }
 

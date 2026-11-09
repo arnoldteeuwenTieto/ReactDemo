@@ -1,6 +1,7 @@
 import { dependentClears, emptyDel2 } from '../domain/del2'
 import type { Del2Data, DependentClear } from '../domain/del2'
 import type { School } from '../mockData'
+import { isReportWriteRestricted } from '../domain/reportOpeningPolicy'
 
 export interface GsiSkjemaStatus { skjemaStatusId: string; schoolId: string; year: number; del2: Del2Data }
 export interface SaveResponse { ok: true; savedAt: string; dependentOperations: DependentClear[] }
@@ -12,9 +13,21 @@ const listeners = new Set<() => void>()
 export function subscribeMockReports(listener: () => void) { listeners.add(listener); return () => { listeners.delete(listener) } }
 export function getMockReportRevision() { return revision }
 function notifyMockReports() { revision++; listeners.forEach(listener => listener()) }
+// One mock transaction. Caller is the authorized opening adapter, never a browser
+// batch of individual production inserts. Repeated calls preserve existing data.
+export function initializeMockReportingForm(key: string) {
+  if (store.has(key)) return false
+  if (isReportWriteRestricted(key)) throw new Error('Skjemaet er skrivebeskyttet.')
+  const sections: Sections = Object.fromEntries(Array.from({ length: 16 }, (_, index) => [index + 1, {}]))
+  sections[6] = { GG_224_Aarsramme_Undervisning_Trinn_1_7: 741, GG_225_Aarsramme_Undervisning_Trinn_8_10: 656 }
+  store.set(key, sections)
+  notifyMockReports()
+  return true
+}
 export function readMockSection(key: string, section: number): Record<string, unknown> { return { ...store.get(key)?.[section] } }
 // Shared in-memory store only. Callers must enforce their centralized demo guards.
 export function patchMockSection(key: string, section: number, patch: Record<string, unknown>) {
+  if (isReportWriteRestricted(key)) throw new Error('Skjemaet er åpnet skrivebeskyttet eller utenfor rapporteringsperioden.')
   const sections = store.get(key) ?? {}
   sections[section] = { ...sections[section], ...patch }
   store.set(key, sections)
@@ -37,6 +50,7 @@ export function grunnskoleSave(skjemaStatusId: string, del: 2, data: Partial<Del
   const payload = { ...data }
   const run = async (): Promise<SaveResponse> => {
     await delay()
+    if (isReportWriteRestricted(skjemaStatusId)) throw new Error('Skjemaet er skrivebeskyttet. Ingen svar er lagret.')
     const timestamp = new Date().toISOString()
     // Predictable occasional failures make retries easy to demonstrate.
     if (++attempt % 7 === 0) {

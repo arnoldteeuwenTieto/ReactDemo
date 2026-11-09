@@ -1,11 +1,12 @@
 import { expect, test, type Page } from '@playwright/test'
 import { schools } from '../src/mockData'
+import { schoolOpeningAction } from './helpers/schoolActions'
 
 const selector = (page: Page) => page.getByRole('combobox', { name: 'Demonstrasjonsbruker DEMO', exact: true })
 const language = (page: Page) => page.getByRole('group', { name: 'A. Skolens målform', exact: true })
 
 async function openDel2(page: Page, name = 'Fjordgløtt barneskole') {
-  await page.getByRole('button', { name: `Åpne skjema for ${name}, 2026`, exact: true }).click()
+  await schoolOpeningAction(page, name).click()
   await page.getByRole('button', { name: 'Gå til rapporteringen' }).click()
   await expect(page.getByRole('heading', { name: '1. Enhetsopplysninger', exact: true })).toBeVisible()
   await page.getByRole('button', { name: 'Neste', exact: true }).click()
@@ -28,7 +29,7 @@ async function expectControls(page: Page, editable: boolean) {
 // Expected permissions are requirements fixtures, not computed using the helper.
 const profiles = [
   { id: 'demo-school-leader', label: 'role 9', editStatus1: true },
-  { id: 'demo-owner-central', label: 'central role 10', editStatus1: true },
+  { id: 'demo-owner-central', label: 'central role 10 on ordinary school', editStatus1: false },
   { id: 'demo-owner-noncentral', label: 'non-central role 10', editStatus1: false },
   { id: 'demo-county', label: 'role 11', editStatus1: false },
   { id: 'demo-udir-admin', label: 'role 12', editStatus1: false },
@@ -60,7 +61,7 @@ for (const profile of profiles) {
         await expect(page.getByRole('region', { name: 'A. Skolens målform', exact: true }).getByRole('status')).toHaveText('Lagret')
         await expect(page.getByRole('main').locator('pre')).toContainText('"GG_227_Skolens_Maalform": "Nynorsk"')
       } else {
-        await expect(page.getByRole('note')).toContainText('Skrivebeskyttet')
+        await expect(page.getByRole('note').filter({ hasText: 'Skrivebeskyttet' })).toBeVisible()
         await expect(page.getByText('Ingen lagringskall ennå.', { exact: true })).toBeVisible()
         // Help remains available outside the disabled answer fieldsets.
         await page.getByRole('region', { name: 'A. Skolens målform', exact: true })
@@ -80,10 +81,9 @@ for (const id of ['demo-school-leader', 'demo-owner-central']) {
     await page.goto('./')
     await selector(page).selectOption(id)
     // Havblikk has status 1 but neither of these users has report 5 in its scope.
-    await openDel2(page, 'Havblikk ungdomsskole')
-    await expectControls(page, false)
-    await page.getByText('API Debug', { exact: true }).click()
-    await expect(page.getByText('Ingen lagringskall ennå.', { exact: true })).toBeVisible()
+    const row = page.getByRole('row', { name: /Havblikk ungdomsskole/ })
+    await expect(row.getByText('Ingen tilgang', { exact: true })).toBeVisible()
+    await expect(row.getByRole('button')).toHaveCount(0)
   })
 }
 
@@ -98,8 +98,9 @@ test('switching users immediately revokes and restores editing without losing an
   await expectControls(page, false)
   await expect(answer).toBeChecked()
   await selector(page).selectOption('demo-owner-central')
-  await expectControls(page, true)
+  await expectControls(page, false)
   await expect(answer).toBeChecked()
+  await selector(page).selectOption('demo-school-leader')
   // Preserve the existing cross-field validation.
   await page.getByRole('combobox', { name: 'B. Hva er normalt laveste trinn ved skolen?', exact: true }).selectOption('8')
   await page.getByRole('combobox', { name: 'C. Hva er normalt høyeste trinn ved skolen?', exact: true }).selectOption('7')

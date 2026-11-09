@@ -1,3 +1,4 @@
+import { schoolOpeningAction } from './helpers/schoolActions'
 import { expect, test, type Locator } from '@playwright/test'
 import { readFile, writeFile } from 'node:fs/promises'
 
@@ -70,7 +71,7 @@ for (const width of [1024, 1280, 1440, 1920]) {
     await header.getByText('Demokontekst', { exact: true }).click()
     expect((await header.boundingBox())!.height).toBe(bounds.height)
     await header.getByText('Demokontekst', { exact: true }).click()
-    await page.getByRole('button', { name: 'Åpne skjema for Fjordgløtt barneskole, 2026', exact: true }).click()
+    await schoolOpeningAction(page, 'Fjordgløtt barneskole', '2026').click()
     await header.getByRole('combobox', { name: 'Demonstrasjonsstatus', exact: true }).selectOption('8')
     expect((await header.boundingBox())!.height).toBe(bounds.height)
   })
@@ -125,7 +126,7 @@ test('header identity text and footer focus indicator have sufficient measured c
   const demoLabel = await contrast(page.locator('.header-user-demo').first())
   const contextToggle = await contrast(page.getByText('Demokontekst', { exact: true }))
   const devLabel = await contrast(page.getByText('KUN DEV', { exact: true }))
-  await page.getByRole('button', { name: 'Åpne skjema for Fjordgløtt barneskole, 2026', exact: true }).click()
+  await schoolOpeningAction(page, 'Fjordgløtt barneskole', '2026').click()
   await page.getByRole('combobox', { name: 'Demonstrasjonsstatus', exact: true }).selectOption('2')
   const resetButton = page.getByRole('button', { name: 'Tilbakestill status', exact: true })
   await expect(resetButton).toBeEnabled()

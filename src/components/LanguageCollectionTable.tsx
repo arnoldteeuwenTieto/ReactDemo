@@ -6,6 +6,7 @@ import type { ImportedField } from '../domain/importedReporting'
 import { collectionApplicable, collectionTotals, languageCollections } from '../domain/languageCollections'
 import type { CollectionId, CollectionRow } from '../domain/languageCollections'
 import { NumericCell } from './ImportedQuestionTable'
+import { calculatedNumberText } from '../domain/fieldPresentation'
 
 function CollectionChoice({ id, row, rows, canEdit, municipalities, ownMunicipality, onChange, validated }: {id: CollectionId;row: CollectionRow;rows: CollectionRow[];canEdit:boolean;municipalities:string[];ownMunicipality:string;onChange:(value:string)=>void;validated:boolean}){
  const def=languageCollections[id],value=row[def.selector]??'',inputId=`${id}-${row.id}-choice`
@@ -27,7 +28,7 @@ export function LanguageCollectionTable({id,rows,del2,canEdit,validated,municipa
  const columnWidths=def.columns.map(column=>rows.some(row=>!collectionApplicable(def,row,column,del2)&&(row[column.key]?.length??0)>2)?80:64)
  const update=(rowId:string,key:string,value:string)=>onChange(rows.map(row=>row.id===rowId?{...row,[key]:value}:row))
  const title=id==='8C'?'Morsmålsopplæring og tospråklig fagopplæring':id==='8D'?'Elever med forsterket opplæring fra andre kommuner':'Opplæring i samiske språk, kvensk og finsk'
- const calculated=(value:number,label:string,key:string)=><NumericCell key={key} id={`collection-${id}-${key}`} field={{...cellField(key,label,false,true),sectionRef:id,sqlColumn:key.startsWith('total-')?key.slice(6):def.totalKey}} label={label} value={String(value)} relevant editable={false} validated={validated} businessReason="" onChange={()=>{}} />
+ const calculated=(value:number,label:string,key:string)=><NumericCell key={key} id={`collection-${id}-${key}`} field={{...cellField(key,label,false,true),sectionRef:id,sqlColumn:key.startsWith('total-')?key.slice(6):def.totalKey}} label={label} value={calculatedNumberText(value)} relevant editable={false} validated={validated} businessReason="" onChange={()=>{}} />
  return <><div className="imported-grid-scroll" role="region" aria-label={ui(title)} tabIndex={0}>
  <table style={{minWidth:32+(def.columns.length>6?140:180)+columnWidths.reduce((sum,width)=>sum+width,0)+(hasRowTotal?70:0)+32}} className={`imported-grid imported-grid--collection${def.columns.length>6?' imported-grid--wide':''}`}>
  <caption className="visually-hidden">{ui(title)}</caption>

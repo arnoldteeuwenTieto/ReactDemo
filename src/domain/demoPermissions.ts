@@ -1,5 +1,6 @@
 import type { DemoUser } from '../demoUser'
 import type { School } from '../mockData'
+import { isReportWriteRestricted, openingKey } from './reportOpeningPolicy'
 
 export interface DemoPermissionContext {
   enabled: boolean
@@ -17,10 +18,14 @@ export function getEffectiveDemoRoleId(user: DemoUser | null, school: School | n
 // Preserve the previously specified, enforced baseline until its conflicts with
 // the Power Apps capability matrix are explicitly resolved. See DEMO_USERS.md.
 // This guard controls local form editing/saving, never backend authorization.
-export function canEditDemoReport({ enabled, user, school }: DemoPermissionContext): boolean {
+export function hasBaselineDemoEditPermission({ enabled, user, school }: DemoPermissionContext): boolean {
   if (!enabled || !user || !school || school.statusId !== 1) return false
   if (!user.mockAccessScope.schoolIds.includes(school.id)) return false
-  return user.roleId === 9 || (user.roleId === 10 && user.mockAccessScope.municipalityCentral === true)
+  return getEffectiveDemoRoleId(user, school) === 9
+}
+
+export function canEditDemoReport(context: DemoPermissionContext): boolean {
+  return !!context.school && !isReportWriteRestricted(openingKey(context.school)) && hasBaselineDemoEditPermission(context)
 }
 
 // User-supplied Power Apps matrix, columns StatusId 0 through 8.
@@ -35,7 +40,7 @@ const capabilityMatrix: Record<number, readonly string[]> = {
 
 // Shared capabilities for indicators and future action prerequisites. These do
 // not execute actions, bypass the baseline guard, or authorize API operations.
-export function getDemoReportPermissions({ enabled, user, school }: DemoPermissionContext) {
+export function getDemoRoleCapabilities({ enabled, user, school }: DemoPermissionContext) {
   const effectiveRoleId = getEffectiveDemoRoleId(user, school)
   const status = school?.statusId
   const hasAccess = enabled && user && school && user.mockAccessScope.schoolIds.includes(school.id)
@@ -48,4 +53,10 @@ export function getDemoReportPermissions({ enabled, user, school }: DemoPermissi
     approve: flags.includes('G'),
     reject: flags.includes('A'),
   }
+}
+
+export function getDemoReportPermissions(context: DemoPermissionContext) {
+  const rights = getDemoRoleCapabilities(context)
+  if (context.school && isReportWriteRestricted(openingKey(context.school))) return { ...rights, edit: false, submit: false, approve: false, reject: false }
+  return rights
 }

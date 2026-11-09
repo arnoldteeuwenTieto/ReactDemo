@@ -1,0 +1,3362 @@
+{
+  "11": {
+    "groups": [
+      {
+        "id": "A",
+        "title": "A. Antall elever med valgfag",
+        "reference": "GG_H41",
+        "helpId": "GG-H131",
+        "controllers": [
+          "GG-F157",
+          "GG-F73",
+          "GG-F145",
+          "GG-F146"
+        ],
+        "sourceCard": "A. Antall elever med valgfag"
+      },
+      {
+        "id": "B",
+        "title": "B. Antall elever som tar fag fra videregående i stedet for valgfag",
+        "reference": "GG_H126_U384",
+        "helpId": "GG-H133",
+        "controllers": [],
+        "sourceCard": "B. Antall elever som tar fag fra videregående i stedet for valgfag(NY))",
+        "columnGroups": [
+          {
+            "title": "8. trinn",
+            "table": "8. trinn",
+            "columns": [
+              {
+                "fieldColumn": "Gutter",
+                "label": "Gutter"
+              },
+              {
+                "fieldColumn": "Jenter",
+                "label": "Jenter"
+              },
+              {
+                "fieldColumn": "Sum",
+                "label": "Sum"
+              }
+            ]
+          },
+          {
+            "title": "9. trinn",
+            "table": "9. trinn",
+            "columns": [
+              {
+                "fieldColumn": "Gutter",
+                "label": "Gutter"
+              },
+              {
+                "fieldColumn": "Jenter",
+                "label": "Jenter"
+              },
+              {
+                "fieldColumn": "Sum",
+                "label": "Sum"
+              }
+            ]
+          },
+          {
+            "title": "10. trinn",
+            "table": "10. trinn",
+            "columns": [
+              {
+                "fieldColumn": "Gutter",
+                "label": "Gutter"
+              },
+              {
+                "fieldColumn": "Jenter",
+                "label": "Jenter"
+              },
+              {
+                "fieldColumn": "Sum",
+                "label": "Sum"
+              }
+            ]
+          },
+          {
+            "title": "8.–10. trinn",
+            "table": "8.–10. trinn",
+            "columns": [
+              {
+                "fieldColumn": "Sum",
+                "label": "Sum"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "C",
+        "title": "C. Antall elever uten valgfag",
+        "reference": "GG_H42_U138",
+        "helpId": "GG-H132",
+        "controllers": [
+          "GG-A85"
+        ],
+        "sourceCard": "C. Antall elever uten valgfag",
+        "columnGroups": [
+          {
+            "title": "8. trinn",
+            "table": "8. trinn",
+            "columns": [
+              {
+                "fieldColumn": "Gutter",
+                "label": "Gutter"
+              },
+              {
+                "fieldColumn": "Jenter",
+                "label": "Jenter"
+              },
+              {
+                "fieldColumn": "Sum",
+                "label": "Sum"
+              }
+            ]
+          },
+          {
+            "title": "9. trinn",
+            "table": "9. trinn",
+            "columns": [
+              {
+                "fieldColumn": "Gutter",
+                "label": "Gutter"
+              },
+              {
+                "fieldColumn": "Jenter",
+                "label": "Jenter"
+              },
+              {
+                "fieldColumn": "Sum",
+                "label": "Sum"
+              }
+            ]
+          },
+          {
+            "title": "10. trinn",
+            "table": "10. trinn",
+            "columns": [
+              {
+                "fieldColumn": "Gutter",
+                "label": "Gutter"
+              },
+              {
+                "fieldColumn": "Jenter",
+                "label": "Jenter"
+              },
+              {
+                "fieldColumn": "Sum",
+                "label": "Sum"
+              }
+            ]
+          },
+          {
+            "title": "8.–10. trinn",
+            "table": "8.–10. trinn",
+            "columns": [
+              {
+                "fieldColumn": "Sum",
+                "label": "Sum"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "D",
+        "title": "D. Sum elever med og uten valgfag",
+        "reference": "GG_H127",
+        "controllers": [
+          "BK-A10"
+        ],
+        "sourceCard": "D. Sum elever med og uten valgfag",
+        "columnGroups": [
+          {
+            "title": "8. trinn",
+            "table": "8. trinn",
+            "columns": [
+              {
+                "fieldColumn": "Gutter",
+                "label": "Gutter"
+              },
+              {
+                "fieldColumn": "Jenter",
+                "label": "Jenter"
+              },
+              {
+                "fieldColumn": "Sum",
+                "label": "Sum"
+              }
+            ]
+          },
+          {
+            "title": "9. trinn",
+            "table": "9. trinn",
+            "columns": [
+              {
+                "fieldColumn": "Gutter",
+                "label": "Gutter"
+              },
+              {
+                "fieldColumn": "Jenter",
+                "label": "Jenter"
+              },
+              {
+                "fieldColumn": "Sum",
+                "label": "Sum"
+              }
+            ]
+          },
+          {
+            "title": "10. trinn",
+            "table": "10. trinn",
+            "columns": [
+              {
+                "fieldColumn": "Gutter",
+                "label": "Gutter"
+              },
+              {
+                "fieldColumn": "Jenter",
+                "label": "Jenter"
+              },
+              {
+                "fieldColumn": "Sum",
+                "label": "Sum"
+              }
+            ]
+          },
+          {
+            "title": "8.–10. trinn",
+            "table": "8.–10. trinn",
+            "columns": [
+              {
+                "fieldColumn": "Sum",
+                "label": "Sum"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "key": "GG_1052_Antall_Gutter_Istedenfor_Valgfag_Trinn_8",
+        "control": "Local_Comp_Input_Number_588",
+        "group": "B",
+        "question": "1",
+        "column": "Gutter",
+        "table": "8. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_1053_Antall_Jenter_Istedenfor_Valgfag_Trinn_8",
+        "control": "Local_Comp_Input_Number_589",
+        "group": "B",
+        "question": "1",
+        "column": "Jenter",
+        "table": "8. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_691_Antall_Elever_Med_Videregaaendefag_Istedenfor_Valgfag_Trinn_8",
+        "control": "Local_Comp_Input_Number_590",
+        "group": "B",
+        "question": "1",
+        "column": "Sum",
+        "table": "8. trinn",
+        "readOnly": true,
+        "terms": [
+          {
+            "field": "GG_1052_Antall_Gutter_Istedenfor_Valgfag_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_1053_Antall_Jenter_Istedenfor_Valgfag_Trinn_8",
+            "sign": 1
+          }
+        ]
+      },
+      {
+        "key": "GG_1054_Antall_Gutter_Istedenfor_Valgfag_Trinn_9",
+        "control": "Local_Comp_Input_Number_591",
+        "group": "B",
+        "question": "1",
+        "column": "Gutter",
+        "table": "9. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_1055_Antall_Jenter_Istedenfor_Valgfag_Trinn_9",
+        "control": "Local_Comp_Input_Number_592",
+        "group": "B",
+        "question": "1",
+        "column": "Jenter",
+        "table": "9. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_692_Antall_Elever_Med_Videregaaendefag_Istedenfor_Valgfag_Trinn_9",
+        "control": "Local_Comp_Input_Number_593",
+        "group": "B",
+        "question": "1",
+        "column": "Sum",
+        "table": "9. trinn",
+        "readOnly": true,
+        "terms": [
+          {
+            "field": "GG_1054_Antall_Gutter_Istedenfor_Valgfag_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_1055_Antall_Jenter_Istedenfor_Valgfag_Trinn_9",
+            "sign": 1
+          }
+        ]
+      },
+      {
+        "key": "GG_1056_Antall_Gutter_Istedenfor_Valgfag_Trinn_10",
+        "control": "Local_Comp_Input_Number_594",
+        "group": "B",
+        "question": "1",
+        "column": "Gutter",
+        "table": "10. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_1057_Antall_Jenter_Istedenfor_Valgfag_Trinn_10",
+        "control": "Local_Comp_Input_Number_595",
+        "group": "B",
+        "question": "1",
+        "column": "Jenter",
+        "table": "10. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_693_Antall_Elever_Med_Videregaaendefag_Istedenfor_Valgfag_Trinn_10",
+        "control": "Local_Comp_Input_Number_596",
+        "group": "B",
+        "question": "1",
+        "column": "Sum",
+        "table": "10. trinn",
+        "readOnly": true,
+        "terms": [
+          {
+            "field": "GG_1056_Antall_Gutter_Istedenfor_Valgfag_Trinn_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_1057_Antall_Jenter_Istedenfor_Valgfag_Trinn_10",
+            "sign": 1
+          }
+        ]
+      },
+      {
+        "key": "GG_694_Sum_Elever_Med_Videregaaendefag_Istedenfor_Valgfag_Trinn_8_10",
+        "control": "Local_Comp_Input_Number_606",
+        "group": "B",
+        "question": "1",
+        "column": "Sum",
+        "table": "8.–10. trinn",
+        "readOnly": true,
+        "terms": [
+          {
+            "field": "GG_691_Antall_Elever_Med_Videregaaendefag_Istedenfor_Valgfag_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_692_Antall_Elever_Med_Videregaaendefag_Istedenfor_Valgfag_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_693_Antall_Elever_Med_Videregaaendefag_Istedenfor_Valgfag_Trinn_10",
+            "sign": 1
+          }
+        ]
+      },
+      {
+        "key": "GG_677_Antall_Gutter_Uten_Valgfag_Trinn_8",
+        "control": "Local_Comp_Input_Number_113",
+        "group": "C",
+        "question": "1",
+        "column": "Gutter",
+        "table": "8. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_678_Antall_Jenter_Uten_Valgfag_Trinn_8",
+        "control": "Local_Comp_Input_Number_114",
+        "group": "C",
+        "question": "1",
+        "column": "Jenter",
+        "table": "8. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_679_Sum_Uten_Valgfag_Trinn_8",
+        "control": "Local_Comp_Input_Number_320",
+        "group": "C",
+        "question": "1",
+        "column": "Sum",
+        "table": "8. trinn",
+        "readOnly": true,
+        "terms": [
+          {
+            "field": "GG_677_Antall_Gutter_Uten_Valgfag_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_678_Antall_Jenter_Uten_Valgfag_Trinn_8",
+            "sign": 1
+          }
+        ]
+      },
+      {
+        "key": "GG_680_Antall_Gutter_Uten_Valgfag_Trinn_9",
+        "control": "Local_Comp_Input_Number_115",
+        "group": "C",
+        "question": "1",
+        "column": "Gutter",
+        "table": "9. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_681_Antall_Jenter_Uten_Valgfag_Trinn_9",
+        "control": "Local_Comp_Input_Number_116",
+        "group": "C",
+        "question": "1",
+        "column": "Jenter",
+        "table": "9. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_682_Sum_Uten_Valgfag_Trinn_9",
+        "control": "Local_Comp_Input_Number_321",
+        "group": "C",
+        "question": "1",
+        "column": "Sum",
+        "table": "9. trinn",
+        "readOnly": true,
+        "terms": [
+          {
+            "field": "GG_680_Antall_Gutter_Uten_Valgfag_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_681_Antall_Jenter_Uten_Valgfag_Trinn_9",
+            "sign": 1
+          }
+        ]
+      },
+      {
+        "key": "GG_683_Antall_Gutter_Uten_Valgfag_Trinn_10",
+        "control": "Local_Comp_Input_Number_117",
+        "group": "C",
+        "question": "1",
+        "column": "Gutter",
+        "table": "10. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_684_Antall_Jenter_Uten_Valgfag_Trinn_10",
+        "control": "Local_Comp_Input_Number_118",
+        "group": "C",
+        "question": "1",
+        "column": "Jenter",
+        "table": "10. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_685_Sum_Uten_Valgfag_Trinn_10",
+        "control": "Local_Comp_Input_Number_322",
+        "group": "C",
+        "question": "1",
+        "column": "Sum",
+        "table": "10. trinn",
+        "readOnly": true,
+        "terms": [
+          {
+            "field": "GG_683_Antall_Gutter_Uten_Valgfag_Trinn_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_684_Antall_Jenter_Uten_Valgfag_Trinn_10",
+            "sign": 1
+          }
+        ]
+      },
+      {
+        "key": "GG_686_Sum_Uten_Valgfag_Trinn_8_10",
+        "control": "Local_Comp_Input_Number_323",
+        "group": "C",
+        "question": "1",
+        "column": "Sum",
+        "table": "8.–10. trinn",
+        "readOnly": true,
+        "terms": [
+          {
+            "field": "GG_679_Sum_Uten_Valgfag_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_682_Sum_Uten_Valgfag_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_685_Sum_Uten_Valgfag_Trinn_10",
+            "sign": 1
+          }
+        ]
+      },
+      {
+        "key": "calculated-11-Local_Comp_Input_Number_659",
+        "control": "Local_Comp_Input_Number_659",
+        "group": "D",
+        "question": "1",
+        "column": "Gutter",
+        "table": "8. trinn",
+        "readOnly": true,
+        "terms": [
+          {
+            "field": "GG_1052_Antall_Gutter_Istedenfor_Valgfag_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_677_Antall_Gutter_Uten_Valgfag_Trinn_8",
+            "sign": 1
+          }
+        ]
+      },
+      {
+        "key": "calculated-11-Local_Comp_Input_Number_660",
+        "control": "Local_Comp_Input_Number_660",
+        "group": "D",
+        "question": "1",
+        "column": "Jenter",
+        "table": "8. trinn",
+        "readOnly": true,
+        "terms": [
+          {
+            "field": "GG_1053_Antall_Jenter_Istedenfor_Valgfag_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_678_Antall_Jenter_Uten_Valgfag_Trinn_8",
+            "sign": 1
+          }
+        ]
+      },
+      {
+        "key": "calculated-11-Local_Comp_Input_Number_661",
+        "control": "Local_Comp_Input_Number_661",
+        "group": "D",
+        "question": "1",
+        "column": "Sum",
+        "table": "8. trinn",
+        "readOnly": true,
+        "terms": [
+          {
+            "field": "GG_1052_Antall_Gutter_Istedenfor_Valgfag_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_677_Antall_Gutter_Uten_Valgfag_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_1053_Antall_Jenter_Istedenfor_Valgfag_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_678_Antall_Jenter_Uten_Valgfag_Trinn_8",
+            "sign": 1
+          }
+        ]
+      },
+      {
+        "key": "calculated-11-Local_Comp_Input_Number_662",
+        "control": "Local_Comp_Input_Number_662",
+        "group": "D",
+        "question": "1",
+        "column": "Gutter",
+        "table": "9. trinn",
+        "readOnly": true,
+        "terms": [
+          {
+            "field": "GG_1054_Antall_Gutter_Istedenfor_Valgfag_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_680_Antall_Gutter_Uten_Valgfag_Trinn_9",
+            "sign": 1
+          }
+        ]
+      },
+      {
+        "key": "calculated-11-Local_Comp_Input_Number_663",
+        "control": "Local_Comp_Input_Number_663",
+        "group": "D",
+        "question": "1",
+        "column": "Jenter",
+        "table": "9. trinn",
+        "readOnly": true,
+        "terms": [
+          {
+            "field": "GG_1055_Antall_Jenter_Istedenfor_Valgfag_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_681_Antall_Jenter_Uten_Valgfag_Trinn_9",
+            "sign": 1
+          }
+        ]
+      },
+      {
+        "key": "calculated-11-Local_Comp_Input_Number_664",
+        "control": "Local_Comp_Input_Number_664",
+        "group": "D",
+        "question": "1",
+        "column": "Sum",
+        "table": "9. trinn",
+        "readOnly": true,
+        "terms": [
+          {
+            "field": "GG_1054_Antall_Gutter_Istedenfor_Valgfag_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_680_Antall_Gutter_Uten_Valgfag_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_1055_Antall_Jenter_Istedenfor_Valgfag_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_681_Antall_Jenter_Uten_Valgfag_Trinn_9",
+            "sign": 1
+          }
+        ]
+      },
+      {
+        "key": "calculated-11-Local_Comp_Input_Number_665",
+        "control": "Local_Comp_Input_Number_665",
+        "group": "D",
+        "question": "1",
+        "column": "Gutter",
+        "table": "10. trinn",
+        "readOnly": true,
+        "terms": [
+          {
+            "field": "GG_1056_Antall_Gutter_Istedenfor_Valgfag_Trinn_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_683_Antall_Gutter_Uten_Valgfag_Trinn_10",
+            "sign": 1
+          }
+        ]
+      },
+      {
+        "key": "calculated-11-Local_Comp_Input_Number_666",
+        "control": "Local_Comp_Input_Number_666",
+        "group": "D",
+        "question": "1",
+        "column": "Jenter",
+        "table": "10. trinn",
+        "readOnly": true,
+        "terms": [
+          {
+            "field": "GG_1057_Antall_Jenter_Istedenfor_Valgfag_Trinn_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_684_Antall_Jenter_Uten_Valgfag_Trinn_10",
+            "sign": 1
+          }
+        ]
+      },
+      {
+        "key": "calculated-11-Local_Comp_Input_Number_667",
+        "control": "Local_Comp_Input_Number_667",
+        "group": "D",
+        "question": "1",
+        "column": "Sum",
+        "table": "10. trinn",
+        "readOnly": true,
+        "terms": [
+          {
+            "field": "GG_1056_Antall_Gutter_Istedenfor_Valgfag_Trinn_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_683_Antall_Gutter_Uten_Valgfag_Trinn_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_1057_Antall_Jenter_Istedenfor_Valgfag_Trinn_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_684_Antall_Jenter_Uten_Valgfag_Trinn_10",
+            "sign": 1
+          }
+        ]
+      },
+      {
+        "key": "calculated-11-Local_Comp_Input_Number_668",
+        "control": "Local_Comp_Input_Number_668",
+        "group": "D",
+        "question": "1",
+        "column": "Sum",
+        "table": "8.–10. trinn",
+        "readOnly": true,
+        "terms": [
+          {
+            "field": "GG_1052_Antall_Gutter_Istedenfor_Valgfag_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_677_Antall_Gutter_Uten_Valgfag_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_1053_Antall_Jenter_Istedenfor_Valgfag_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_678_Antall_Jenter_Uten_Valgfag_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_1054_Antall_Gutter_Istedenfor_Valgfag_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_680_Antall_Gutter_Uten_Valgfag_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_1055_Antall_Jenter_Istedenfor_Valgfag_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_681_Antall_Jenter_Uten_Valgfag_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_1056_Antall_Gutter_Istedenfor_Valgfag_Trinn_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_683_Antall_Gutter_Uten_Valgfag_Trinn_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_1057_Antall_Jenter_Istedenfor_Valgfag_Trinn_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_684_Antall_Jenter_Uten_Valgfag_Trinn_10",
+            "sign": 1
+          }
+        ]
+      },
+      {
+        "key": "GG_556_Sum_Fransk_Trinn_8_10",
+        "control": "Local_Comp_Input_Number_669",
+        "group": "D",
+        "question": "1",
+        "column": "Sum",
+        "table": "Referanseverdier fra del 10",
+        "readOnly": true,
+        "terms": [],
+        "sourceSection": 10
+      },
+      {
+        "key": "GG_566_Sum_Spansk_Trinn_8_10",
+        "control": "Local_Comp_Input_Number_670",
+        "group": "D",
+        "question": "2",
+        "column": "Sum",
+        "table": "Referanseverdier fra del 10",
+        "readOnly": true,
+        "terms": [],
+        "sourceSection": 10
+      },
+      {
+        "key": "GG_576_Sum_Italiensk_Trinn_8_10",
+        "control": "Local_Comp_Input_Number_671",
+        "group": "D",
+        "question": "3",
+        "column": "Sum",
+        "table": "Referanseverdier fra del 10",
+        "readOnly": true,
+        "terms": [],
+        "sourceSection": 10
+      },
+      {
+        "key": "GG_586_Sum_Russisk_Trinn_8_10",
+        "control": "Local_Comp_Input_Number_672",
+        "group": "D",
+        "question": "4",
+        "column": "Sum",
+        "table": "Referanseverdier fra del 10",
+        "readOnly": true,
+        "terms": [],
+        "sourceSection": 10
+      },
+      {
+        "key": "GG_596_Sum_Andre_Spraak_Trinn_8_10",
+        "control": "Local_Comp_Input_Number_673",
+        "group": "D",
+        "question": "5",
+        "column": "Sum",
+        "table": "Referanseverdier fra del 10",
+        "readOnly": true,
+        "terms": [],
+        "sourceSection": 10
+      },
+      {
+        "key": "GG_606_Sum_Fordypning_Engelsk_Trinn_8_10",
+        "control": "Local_Comp_Input_Number_674",
+        "group": "D",
+        "question": "6",
+        "column": "Sum",
+        "table": "Referanseverdier fra del 10",
+        "readOnly": true,
+        "terms": [],
+        "sourceSection": 10
+      },
+      {
+        "key": "GG_616_Sum_Fordypning_Norsk_Trinn_8_10",
+        "control": "Local_Comp_Input_Number_675",
+        "group": "D",
+        "question": "7",
+        "column": "Sum",
+        "table": "Referanseverdier fra del 10",
+        "readOnly": true,
+        "terms": [],
+        "sourceSection": 10
+      },
+      {
+        "key": "GG_626_Sum_Fordypning_Samisk_Trinn_8_10",
+        "control": "Local_Comp_Input_Number_676",
+        "group": "D",
+        "question": "8",
+        "column": "Sum",
+        "table": "Referanseverdier fra del 10",
+        "readOnly": true,
+        "terms": [],
+        "sourceSection": 10
+      },
+      {
+        "key": "GG_636_Sum_Arbeidslivsfag_Trinn_8_10",
+        "control": "Local_Comp_Input_Number_677",
+        "group": "D",
+        "question": "9",
+        "column": "Sum",
+        "table": "Referanseverdier fra del 10",
+        "readOnly": true,
+        "terms": [],
+        "sourceSection": 10
+      },
+      {
+        "key": "GG_646_Sum_Fordypning_Matematikk_Trinn_8_10",
+        "control": "Local_Comp_Input_Number_678",
+        "group": "D",
+        "question": "10",
+        "column": "Sum",
+        "table": "Referanseverdier fra del 10",
+        "readOnly": true,
+        "terms": [],
+        "sourceSection": 10
+      },
+      {
+        "key": "GG_656_Sum_Fordypning_Arbeid_Trinn_8_10",
+        "control": "Local_Comp_Input_Number_679",
+        "group": "D",
+        "question": "11",
+        "column": "Sum",
+        "table": "Referanseverdier fra del 10",
+        "readOnly": true,
+        "terms": [],
+        "sourceSection": 10
+      },
+      {
+        "key": "GG_993_Sum_Fremmedspraak_Fordypning_Arbeidslivsfag_Gutter_Jenter_Trinn_1_10",
+        "control": "Local_Comp_Input_Number_680",
+        "group": "D",
+        "question": "12",
+        "column": "Sum",
+        "table": "Referanseverdier fra del 10",
+        "readOnly": true,
+        "terms": [],
+        "sourceSection": 10
+      }
+    ],
+    "backendOwned": []
+  },
+  "12": {
+    "groups": [
+      {
+        "id": "A",
+        "title": "A. Antall elevtimer til fysisk aktivitet per år",
+        "reference": "GG_H44",
+        "helpId": "GG-H134",
+        "controllers": [
+          "GG-A30",
+          "GG-A110",
+          "GG-A131",
+          "GG-F38",
+          "GG-F39",
+          "GG-F55"
+        ],
+        "sourceCard": "A. Antall elevtimer til fysisk aktivitet per år"
+      },
+      {
+        "id": "B",
+        "title": "B. Antall årstimer til fysisk aktivitet",
+        "reference": "GG_H45",
+        "helpId": "GG-H135",
+        "controllers": [
+          "GG-A144"
+        ],
+        "sourceCard": "B. Antall årstimer til fysisk aktivitet"
+      },
+      {
+        "id": "C",
+        "title": "C. Leksehjelp på 1.–10. trinn",
+        "reference": "GG_H46_U93",
+        "helpId": "GG-H136",
+        "controllers": [
+          "GG-A26",
+          "GG-A27",
+          "GG-A28",
+          "GG-A29",
+          "GG-A82",
+          "GG-A109",
+          "GG-F40",
+          "GG-F41",
+          "GG-F42",
+          "GG-F43",
+          "GG-F44",
+          "GG-F45",
+          "GG-F46",
+          "GG-F47",
+          "GG-F48",
+          "GG-F49",
+          "GG-F67"
+        ],
+        "sourceCard": "C. Leksehjelp på 1.-10. trinnl"
+      }
+    ],
+    "fields": [
+      {
+        "key": "GG_695_Antall_Elevtimer_Fysisk_Aktivitet_Trinn_5",
+        "control": "Local_Comp_Input_Number_154",
+        "group": "A",
+        "question": "1",
+        "column": "Elevtimer per år",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_696_Antall_Elevtimer_Fysisk_Aktivitet_Trinn_6",
+        "control": "Local_Comp_Input_Number_155",
+        "group": "A",
+        "question": "2",
+        "column": "Elevtimer per år",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_697_Antall_Elevtimer_Fysisk_Aktivitet_Trinn_7",
+        "control": "Local_Comp_Input_Number_156",
+        "group": "A",
+        "question": "3",
+        "column": "Elevtimer per år",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_698_Sum_Elevtimer_Fysisk_Aktivitet",
+        "control": "Local_Comp_Input_Number_157",
+        "group": "A",
+        "question": "4",
+        "column": "Elevtimer per år",
+        "readOnly": true,
+        "terms": [
+          {
+            "field": "GG_695_Antall_Elevtimer_Fysisk_Aktivitet_Trinn_5",
+            "sign": 1
+          },
+          {
+            "field": "GG_696_Antall_Elevtimer_Fysisk_Aktivitet_Trinn_6",
+            "sign": 1
+          },
+          {
+            "field": "GG_697_Antall_Elevtimer_Fysisk_Aktivitet_Trinn_7",
+            "sign": 1
+          }
+        ]
+      },
+      {
+        "key": "GG_699_Antall_Aarstimer_Fysisk_Aktivitet_Trinn_5_7",
+        "control": "Local_Comp_Input_Number_326",
+        "group": "B",
+        "question": "1",
+        "column": "Årstimer",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_700_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_1",
+        "control": "Local_Comp_Input_Number_327",
+        "group": "C",
+        "question": "1",
+        "column": "Elever",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_711_Antall_Timer_Tilbydd_Leksehjelp_Trinn_1",
+        "control": "Local_Comp_Input_Number_449",
+        "group": "C",
+        "question": "1",
+        "column": "Timer per uke",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_701_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_2",
+        "control": "Local_Comp_Input_Number_329",
+        "group": "C",
+        "question": "2",
+        "column": "Elever",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_712_Antall_Timer_Tilbydd_Leksehjelp_Trinn_2",
+        "control": "Local_Comp_Input_Number_339",
+        "group": "C",
+        "question": "2",
+        "column": "Timer per uke",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_702_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_3",
+        "control": "Local_Comp_Input_Number_330",
+        "group": "C",
+        "question": "3",
+        "column": "Elever",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_713_Antall_Timer_Tilbydd_Leksehjelp_Trinn_3",
+        "control": "Local_Comp_Input_Number_340",
+        "group": "C",
+        "question": "3",
+        "column": "Timer per uke",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_703_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_4",
+        "control": "Local_Comp_Input_Number_331",
+        "group": "C",
+        "question": "4",
+        "column": "Elever",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_714_Antall_Timer_Tilbydd_Leksehjelp_Trinn_4",
+        "control": "Local_Comp_Input_Number_341",
+        "group": "C",
+        "question": "4",
+        "column": "Timer per uke",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_704_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_5",
+        "control": "Local_Comp_Input_Number_332",
+        "group": "C",
+        "question": "5",
+        "column": "Elever",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_715_Antall_Timer_Tilbydd_Leksehjelp_Trinn_5",
+        "control": "Local_Comp_Input_Number_342",
+        "group": "C",
+        "question": "5",
+        "column": "Timer per uke",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_705_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_6",
+        "control": "Local_Comp_Input_Number_333",
+        "group": "C",
+        "question": "6",
+        "column": "Elever",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_716_Antall_Timer_Tilbydd_Leksehjelp_Trinn_6",
+        "control": "Local_Comp_Input_Number_343",
+        "group": "C",
+        "question": "6",
+        "column": "Timer per uke",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_706_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_7",
+        "control": "Local_Comp_Input_Number_334",
+        "group": "C",
+        "question": "7",
+        "column": "Elever",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_717_Antall_Timer_Tilbydd_Leksehjelp_Trinn_7",
+        "control": "Local_Comp_Input_Number_344",
+        "group": "C",
+        "question": "7",
+        "column": "Timer per uke",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_707_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_8",
+        "control": "Local_Comp_Input_Number_335",
+        "group": "C",
+        "question": "8",
+        "column": "Elever",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_718_Antall_Timer_Tilbydd_Leksehjelp_Trinn_8",
+        "control": "Local_Comp_Input_Number_345",
+        "group": "C",
+        "question": "8",
+        "column": "Timer per uke",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_708_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_9",
+        "control": "Local_Comp_Input_Number_336",
+        "group": "C",
+        "question": "9",
+        "column": "Elever",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_719_Antall_Timer_Tilbydd_Leksehjelp_Trinn_9",
+        "control": "Local_Comp_Input_Number_346",
+        "group": "C",
+        "question": "9",
+        "column": "Timer per uke",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_709_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_10",
+        "control": "Local_Comp_Input_Number_337",
+        "group": "C",
+        "question": "10",
+        "column": "Elever",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_720_Antall_Timer_Tilbydd_Leksehjelp_Trinn_10",
+        "control": "Local_Comp_Input_Number_347",
+        "group": "C",
+        "question": "10",
+        "column": "Timer per uke",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_710_Sum_Elever_Som_Deltar_Paa_Leksehjelp",
+        "control": "Local_Comp_Input_Number_338",
+        "group": "C",
+        "question": "11",
+        "column": "Elever",
+        "readOnly": true,
+        "terms": [
+          {
+            "field": "GG_700_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_1",
+            "sign": 1
+          },
+          {
+            "field": "GG_701_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_2",
+            "sign": 1
+          },
+          {
+            "field": "GG_702_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_3",
+            "sign": 1
+          },
+          {
+            "field": "GG_703_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_704_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_5",
+            "sign": 1
+          },
+          {
+            "field": "GG_705_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_6",
+            "sign": 1
+          },
+          {
+            "field": "GG_706_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_707_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_708_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_709_Antall_Elever_Som_Deltar_Paa_Leksehjelp_Trinn_10",
+            "sign": 1
+          }
+        ]
+      },
+      {
+        "key": "GG_721_Sum_Timer_Tilbydd_Leksehjelp",
+        "control": "Local_Comp_Input_Number_348",
+        "group": "C",
+        "question": "11",
+        "column": "Timer per uke",
+        "readOnly": true,
+        "terms": [
+          {
+            "field": "GG_711_Antall_Timer_Tilbydd_Leksehjelp_Trinn_1",
+            "sign": 1
+          },
+          {
+            "field": "GG_712_Antall_Timer_Tilbydd_Leksehjelp_Trinn_2",
+            "sign": 1
+          },
+          {
+            "field": "GG_713_Antall_Timer_Tilbydd_Leksehjelp_Trinn_3",
+            "sign": 1
+          },
+          {
+            "field": "GG_714_Antall_Timer_Tilbydd_Leksehjelp_Trinn_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_715_Antall_Timer_Tilbydd_Leksehjelp_Trinn_5",
+            "sign": 1
+          },
+          {
+            "field": "GG_716_Antall_Timer_Tilbydd_Leksehjelp_Trinn_6",
+            "sign": 1
+          },
+          {
+            "field": "GG_717_Antall_Timer_Tilbydd_Leksehjelp_Trinn_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_718_Antall_Timer_Tilbydd_Leksehjelp_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_719_Antall_Timer_Tilbydd_Leksehjelp_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_720_Antall_Timer_Tilbydd_Leksehjelp_Trinn_10",
+            "sign": 1
+          }
+        ]
+      }
+    ],
+    "backendOwned": []
+  },
+  "13": {
+    "groups": [
+      {
+        "id": "A",
+        "title": "A. Skoleskyss",
+        "reference": "GG_H47_U95",
+        "helpId": "GG-H137",
+        "controllers": [
+          "GG-A7",
+          "GG-F56",
+          "GG-F60"
+        ],
+        "sourceCard": "A. Skoleskyss"
+      },
+      {
+        "id": "B",
+        "title": "B. Omdisponering av timetall (25 %-regelen)",
+        "reference": "GG_H75_U177",
+        "helpId": "GG-H138",
+        "controllers": [
+          "BK-A10",
+          "GG-A123",
+          "GG-A124"
+        ],
+        "sourceCard": "B. Omdisponering av timetall (25 %-regelen)"
+      },
+      {
+        "id": "C",
+        "title": "C. Leirskole",
+        "reference": "GG_H48_U96",
+        "helpId": "GG-H139",
+        "controllers": [
+          "GG-F75",
+          "GG-F76",
+          "GG-F77",
+          "GG-F78",
+          "GG-F79",
+          "GG-F80",
+          "GG-F81",
+          "GG-F82",
+          "GG-F83",
+          "GG-F84"
+        ],
+        "sourceCard": "C. Leirskole"
+      },
+      {
+        "id": "D",
+        "title": "D. Tilgang til skolebibliotek",
+        "reference": "GG_H49_U100",
+        "helpId": "GG-H140",
+        "controllers": [
+          "GG-A119",
+          "GG-F137"
+        ],
+        "sourceCard": "D. Tilgang til skolebibliotek"
+      },
+      {
+        "id": "E",
+        "title": "E. Tilgang på digitale enheter",
+        "reference": "GG_H50_U157",
+        "helpId": "GG-H141",
+        "controllers": [
+          "GG-F85",
+          "GG-F86",
+          "GG-F87",
+          "GG-F88",
+          "GG-F89",
+          "GG-F90",
+          "GG-F91",
+          "GG-F92",
+          "GG-F93",
+          "GG-F94",
+          "GG-F95",
+          "GG-F96",
+          "GG-F97",
+          "GG-F98",
+          "GG-F99",
+          "GG-F100",
+          "GG-F101",
+          "GG-F102",
+          "GG-F103",
+          "GG-F104"
+        ],
+        "sourceCard": "E. Tilgang på digitale enheter"
+      },
+      {
+        "id": "F",
+        "title": "F. Beredskap",
+        "reference": "GG_H51_U102",
+        "helpId": "GG-H142",
+        "controllers": [
+          "GG-F7"
+        ],
+        "sourceCard": "F. Beredskap"
+      },
+      {
+        "id": "G",
+        "title": "G. Elever som tar fag fra videregående opplæring",
+        "reference": "GG_H129_U382",
+        "controllers": [
+          "BK-A10"
+        ],
+        "sourceCard": "G."
+      }
+    ],
+    "fields": [
+      {
+        "key": "GG_722_Antall_Elever_Skoleskyss_Trinn_1",
+        "control": "Local_Comp_Input_Number_137",
+        "group": "A",
+        "question": "1",
+        "column": "1. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_723_Antall_Elever_Skoleskyss_Trinn_2_10",
+        "control": "Local_Comp_Input_Number_138",
+        "group": "A",
+        "question": "1",
+        "column": "2.–10. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_724_Sum_Elever_Skoleskyss_Trinn_1_10",
+        "control": "Label2",
+        "group": "A",
+        "question": "1",
+        "column": "Sum",
+        "readOnly": true,
+        "terms": [
+          {
+            "field": "GG_722_Antall_Elever_Skoleskyss_Trinn_1",
+            "sign": 1
+          },
+          {
+            "field": "GG_723_Antall_Elever_Skoleskyss_Trinn_2_10",
+            "sign": 1
+          }
+        ]
+      },
+      {
+        "key": "GG_1013_Antall_Elever_Omdisponert_Timer_1_7_Trinn",
+        "control": "Local_Comp_Input_Number_149",
+        "group": "B",
+        "question": "1",
+        "column": "Elever",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_1014_Antall_Elever_Omdisponert_Timer_8_10_Trinn",
+        "control": "Local_Comp_Input_Number_150",
+        "group": "B",
+        "question": "2",
+        "column": "Elever",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_725_Antall_Elever_Leirskole_H23_Trinn_1",
+        "control": "Local_Comp_Input_Number_133",
+        "group": "C",
+        "question": "1",
+        "column": "Høst {year}",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_736_Antall_Elever_Leirskole_V24_Trinn_1",
+        "control": "Local_Comp_Input_Number_161",
+        "group": "C",
+        "question": "1",
+        "column": "Vår {nextYear}",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_747_Antall_Elever_Leirskole_V23_Trinn_1",
+        "control": "Local_Comp_Input_Number_162",
+        "group": "C",
+        "question": "1",
+        "column": "Vår {year}",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_758_Antall_Overnattinger_Leirskole_Trinn_1",
+        "control": "Local_Comp_Input_Number_163",
+        "group": "C",
+        "question": "1",
+        "column": "Overnattinger",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_726_Antall_Elever_Leirskole_H23_Trinn_2",
+        "control": "Local_Comp_Input_Number_164",
+        "group": "C",
+        "question": "2",
+        "column": "Høst {year}",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_737_Antall_Elever_Leirskole_V24_Trinn_2",
+        "control": "Local_Comp_Input_Number_165",
+        "group": "C",
+        "question": "2",
+        "column": "Vår {nextYear}",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_748_Antall_Elever_Leirskole_V23_Trinn_2",
+        "control": "Local_Comp_Input_Number_166",
+        "group": "C",
+        "question": "2",
+        "column": "Vår {year}",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_759_Antall_Overnattinger_Leirskole_Trinn_2",
+        "control": "Local_Comp_Input_Number_167",
+        "group": "C",
+        "question": "2",
+        "column": "Overnattinger",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_727_Antall_Elever_Leirskole_H23_Trinn_3",
+        "control": "Local_Comp_Input_Number_168",
+        "group": "C",
+        "question": "3",
+        "column": "Høst {year}",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_738_Antall_Elever_Leirskole_V24_Trinn_3",
+        "control": "Local_Comp_Input_Number_274",
+        "group": "C",
+        "question": "3",
+        "column": "Vår {nextYear}",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_749_Antall_Elever_Leirskole_V23_Trinn_3",
+        "control": "Local_Comp_Input_Number_276",
+        "group": "C",
+        "question": "3",
+        "column": "Vår {year}",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_760_Antall_Overnattinger_Leirskole_Trinn_3",
+        "control": "Local_Comp_Input_Number_349",
+        "group": "C",
+        "question": "3",
+        "column": "Overnattinger",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_728_Antall_Elever_Leirskole_H23_Trinn_4",
+        "control": "Local_Comp_Input_Number_350",
+        "group": "C",
+        "question": "4",
+        "column": "Høst {year}",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_739_Antall_Elever_Leirskole_V24_Trinn_4",
+        "control": "Local_Comp_Input_Number_351",
+        "group": "C",
+        "question": "4",
+        "column": "Vår {nextYear}",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_750_Antall_Elever_Leirskole_V23_Trinn_4",
+        "control": "Local_Comp_Input_Number_352",
+        "group": "C",
+        "question": "4",
+        "column": "Vår {year}",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_761_Antall_Overnattinger_Leirskole_Trinn_4",
+        "control": "Local_Comp_Input_Number_353",
+        "group": "C",
+        "question": "4",
+        "column": "Overnattinger",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_729_Antall_Elever_Leirskole_H23_Trinn_5",
+        "control": "Local_Comp_Input_Number_354",
+        "group": "C",
+        "question": "5",
+        "column": "Høst {year}",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_740_Antall_Elever_Leirskole_V24_Trinn_5",
+        "control": "Local_Comp_Input_Number_355",
+        "group": "C",
+        "question": "5",
+        "column": "Vår {nextYear}",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_751_Antall_Elever_Leirskole_V23_Trinn_5",
+        "control": "Local_Comp_Input_Number_356",
+        "group": "C",
+        "question": "5",
+        "column": "Vår {year}",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_762_Antall_Overnattinger_Leirskole_Trinn_5",
+        "control": "Local_Comp_Input_Number_357",
+        "group": "C",
+        "question": "5",
+        "column": "Overnattinger",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_730_Antall_Elever_Leirskole_H23_Trinn_6",
+        "control": "Local_Comp_Input_Number_358",
+        "group": "C",
+        "question": "6",
+        "column": "Høst {year}",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_741_Antall_Elever_Leirskole_V24_Trinn_6",
+        "control": "Local_Comp_Input_Number_359",
+        "group": "C",
+        "question": "6",
+        "column": "Vår {nextYear}",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_752_Antall_Elever_Leirskole_V23_Trinn_6",
+        "control": "Local_Comp_Input_Number_360",
+        "group": "C",
+        "question": "6",
+        "column": "Vår {year}",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_763_Antall_Overnattinger_Leirskole_Trinn_6",
+        "control": "Local_Comp_Input_Number_361",
+        "group": "C",
+        "question": "6",
+        "column": "Overnattinger",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_731_Antall_Elever_Leirskole_H23_Trinn_7",
+        "control": "Local_Comp_Input_Number_374",
+        "group": "C",
+        "question": "7",
+        "column": "Høst {year}",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_742_Antall_Elever_Leirskole_V24_Trinn_7",
+        "control": "Local_Comp_Input_Number_375",
+        "group": "C",
+        "question": "7",
+        "column": "Vår {nextYear}",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_753_Antall_Elever_Leirskole_V23_Trinn_7",
+        "control": "Local_Comp_Input_Number_376",
+        "group": "C",
+        "question": "7",
+        "column": "Vår {year}",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_764_Antall_Overnattinger_Leirskole_Trinn_7",
+        "control": "Local_Comp_Input_Number_378",
+        "group": "C",
+        "question": "7",
+        "column": "Overnattinger",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_732_Antall_Elever_Leirskole_H23_Trinn_8",
+        "control": "Local_Comp_Input_Number_373",
+        "group": "C",
+        "question": "8",
+        "column": "Høst {year}",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_743_Antall_Elever_Leirskole_V24_Trinn_8",
+        "control": "Local_Comp_Input_Number_372",
+        "group": "C",
+        "question": "8",
+        "column": "Vår {nextYear}",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_754_Antall_Elever_Leirskole_V23_Trinn_8",
+        "control": "Local_Comp_Input_Number_371",
+        "group": "C",
+        "question": "8",
+        "column": "Vår {year}",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_765_Antall_Overnattinger_Leirskole_Trinn_8",
+        "control": "Local_Comp_Input_Number_370",
+        "group": "C",
+        "question": "8",
+        "column": "Overnattinger",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_733_Antall_Elever_Leirskole_H23_Trinn_9",
+        "control": "Local_Comp_Input_Number_365",
+        "group": "C",
+        "question": "9",
+        "column": "Høst {year}",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_744_Antall_Elever_Leirskole_V24_Trinn_9",
+        "control": "Local_Comp_Input_Number_366",
+        "group": "C",
+        "question": "9",
+        "column": "Vår {nextYear}",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_755_Antall_Elever_Leirskole_V23_Trinn_9",
+        "control": "Local_Comp_Input_Number_367",
+        "group": "C",
+        "question": "9",
+        "column": "Vår {year}",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_766_Antall_Overnattinger_Leirskole_Trinn_9",
+        "control": "Local_Comp_Input_Number_369",
+        "group": "C",
+        "question": "9",
+        "column": "Overnattinger",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_734_Antall_Elever_Leirskole_H23_Trinn_10",
+        "control": "Local_Comp_Input_Number_368",
+        "group": "C",
+        "question": "10",
+        "column": "Høst {year}",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_745_Antall_Elever_Leirskole_V24_Trinn_10",
+        "control": "Local_Comp_Input_Number_362",
+        "group": "C",
+        "question": "10",
+        "column": "Vår {nextYear}",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_756_Antall_Elever_Leirskole_V23_Trinn_10",
+        "control": "Local_Comp_Input_Number_363",
+        "group": "C",
+        "question": "10",
+        "column": "Vår {year}",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_767_Antall_Overnattinger_Leirskole_Trinn_10",
+        "control": "Local_Comp_Input_Number_364",
+        "group": "C",
+        "question": "10",
+        "column": "Overnattinger",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_735_Sum_Elever_Leirskole_H23",
+        "control": "Label8_11",
+        "group": "C",
+        "question": "11",
+        "column": "Høst {year}",
+        "readOnly": true,
+        "terms": [
+          {
+            "field": "GG_725_Antall_Elever_Leirskole_H23_Trinn_1",
+            "sign": 1
+          },
+          {
+            "field": "GG_726_Antall_Elever_Leirskole_H23_Trinn_2",
+            "sign": 1
+          },
+          {
+            "field": "GG_727_Antall_Elever_Leirskole_H23_Trinn_3",
+            "sign": 1
+          },
+          {
+            "field": "GG_728_Antall_Elever_Leirskole_H23_Trinn_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_729_Antall_Elever_Leirskole_H23_Trinn_5",
+            "sign": 1
+          },
+          {
+            "field": "GG_730_Antall_Elever_Leirskole_H23_Trinn_6",
+            "sign": 1
+          },
+          {
+            "field": "GG_731_Antall_Elever_Leirskole_H23_Trinn_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_732_Antall_Elever_Leirskole_H23_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_733_Antall_Elever_Leirskole_H23_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_734_Antall_Elever_Leirskole_H23_Trinn_10",
+            "sign": 1
+          }
+        ]
+      },
+      {
+        "key": "GG_746_Sum_Elever_Leirskole_V24",
+        "control": "Label8_12",
+        "group": "C",
+        "question": "11",
+        "column": "Vår {nextYear}",
+        "readOnly": true,
+        "terms": [
+          {
+            "field": "GG_736_Antall_Elever_Leirskole_V24_Trinn_1",
+            "sign": 1
+          },
+          {
+            "field": "GG_737_Antall_Elever_Leirskole_V24_Trinn_2",
+            "sign": 1
+          },
+          {
+            "field": "GG_738_Antall_Elever_Leirskole_V24_Trinn_3",
+            "sign": 1
+          },
+          {
+            "field": "GG_739_Antall_Elever_Leirskole_V24_Trinn_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_740_Antall_Elever_Leirskole_V24_Trinn_5",
+            "sign": 1
+          },
+          {
+            "field": "GG_741_Antall_Elever_Leirskole_V24_Trinn_6",
+            "sign": 1
+          },
+          {
+            "field": "GG_742_Antall_Elever_Leirskole_V24_Trinn_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_743_Antall_Elever_Leirskole_V24_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_744_Antall_Elever_Leirskole_V24_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_745_Antall_Elever_Leirskole_V24_Trinn_10",
+            "sign": 1
+          }
+        ]
+      },
+      {
+        "key": "GG_757_Sum_Elever_Leirskole_V23",
+        "control": "Label8_13",
+        "group": "C",
+        "question": "11",
+        "column": "Vår {year}",
+        "readOnly": true,
+        "terms": [
+          {
+            "field": "GG_747_Antall_Elever_Leirskole_V23_Trinn_1",
+            "sign": 1
+          },
+          {
+            "field": "GG_748_Antall_Elever_Leirskole_V23_Trinn_2",
+            "sign": 1
+          },
+          {
+            "field": "GG_749_Antall_Elever_Leirskole_V23_Trinn_3",
+            "sign": 1
+          },
+          {
+            "field": "GG_750_Antall_Elever_Leirskole_V23_Trinn_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_751_Antall_Elever_Leirskole_V23_Trinn_5",
+            "sign": 1
+          },
+          {
+            "field": "GG_752_Antall_Elever_Leirskole_V23_Trinn_6",
+            "sign": 1
+          },
+          {
+            "field": "GG_753_Antall_Elever_Leirskole_V23_Trinn_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_754_Antall_Elever_Leirskole_V23_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_755_Antall_Elever_Leirskole_V23_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_756_Antall_Elever_Leirskole_V23_Trinn_10",
+            "sign": 1
+          }
+        ]
+      },
+      {
+        "key": "GG_768_Sum_Overnattinger_Leirskole",
+        "control": "Label8_14",
+        "group": "C",
+        "question": "11",
+        "column": "Overnattinger",
+        "readOnly": true,
+        "terms": [
+          {
+            "field": "GG_758_Antall_Overnattinger_Leirskole_Trinn_1",
+            "sign": 1
+          },
+          {
+            "field": "GG_759_Antall_Overnattinger_Leirskole_Trinn_2",
+            "sign": 1
+          },
+          {
+            "field": "GG_760_Antall_Overnattinger_Leirskole_Trinn_3",
+            "sign": 1
+          },
+          {
+            "field": "GG_761_Antall_Overnattinger_Leirskole_Trinn_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_762_Antall_Overnattinger_Leirskole_Trinn_5",
+            "sign": 1
+          },
+          {
+            "field": "GG_763_Antall_Overnattinger_Leirskole_Trinn_6",
+            "sign": 1
+          },
+          {
+            "field": "GG_764_Antall_Overnattinger_Leirskole_Trinn_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_765_Antall_Overnattinger_Leirskole_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_766_Antall_Overnattinger_Leirskole_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_767_Antall_Overnattinger_Leirskole_Trinn_10",
+            "sign": 1
+          }
+        ]
+      },
+      {
+        "key": "GG_770_Antall_Timer_Skolebibliotek_Er_Aapent",
+        "control": "TextInput5",
+        "group": "D",
+        "question": "1",
+        "column": "Timer",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_771_Antall_Elever_PC_Mac_Trinn_1",
+        "control": "Local_Comp_Input_Number_393",
+        "group": "E",
+        "question": "1",
+        "column": "1. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_772_Antall_Elever_PC_Mac_Trinn_2",
+        "control": "Local_Comp_Input_Number_396",
+        "group": "E",
+        "question": "1",
+        "column": "2. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_773_Antall_Elever_PC_Mac_Trinn_3",
+        "control": "Local_Comp_Input_Number_405",
+        "group": "E",
+        "question": "1",
+        "column": "3. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_774_Antall_Elever_PC_Mac_Trinn_4",
+        "control": "Local_Comp_Input_Number_432",
+        "group": "E",
+        "question": "1",
+        "column": "4. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_775_Antall_Elever_PC_Mac_Trinn_5",
+        "control": "Local_Comp_Input_Number_433",
+        "group": "E",
+        "question": "1",
+        "column": "5. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_776_Antall_Elever_PC_Mac_Trinn_6",
+        "control": "Local_Comp_Input_Number_434",
+        "group": "E",
+        "question": "1",
+        "column": "6. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_777_Antall_Elever_PC_Mac_Trinn_7",
+        "control": "Local_Comp_Input_Number_435",
+        "group": "E",
+        "question": "1",
+        "column": "7. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_778_Antall_Elever_PC_Mac_Trinn_8",
+        "control": "Local_Comp_Input_Number_436",
+        "group": "E",
+        "question": "1",
+        "column": "8. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_779_Antall_Elever_PC_Mac_Trinn_9",
+        "control": "Local_Comp_Input_Number_437",
+        "group": "E",
+        "question": "1",
+        "column": "9. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_780_Antall_Elever_PC_Mac_Trinn_10",
+        "control": "Local_Comp_Input_Number_438",
+        "group": "E",
+        "question": "1",
+        "column": "10. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_781_Sum_Elever_PC_Mac",
+        "control": "Label10_11",
+        "group": "E",
+        "question": "1",
+        "column": "Sum",
+        "readOnly": true,
+        "terms": [
+          {
+            "field": "GG_771_Antall_Elever_PC_Mac_Trinn_1",
+            "sign": 1
+          },
+          {
+            "field": "GG_772_Antall_Elever_PC_Mac_Trinn_2",
+            "sign": 1
+          },
+          {
+            "field": "GG_773_Antall_Elever_PC_Mac_Trinn_3",
+            "sign": 1
+          },
+          {
+            "field": "GG_774_Antall_Elever_PC_Mac_Trinn_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_775_Antall_Elever_PC_Mac_Trinn_5",
+            "sign": 1
+          },
+          {
+            "field": "GG_776_Antall_Elever_PC_Mac_Trinn_6",
+            "sign": 1
+          },
+          {
+            "field": "GG_777_Antall_Elever_PC_Mac_Trinn_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_778_Antall_Elever_PC_Mac_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_779_Antall_Elever_PC_Mac_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_780_Antall_Elever_PC_Mac_Trinn_10",
+            "sign": 1
+          }
+        ]
+      },
+      {
+        "key": "GG_782_Antall_Elever_Chromebook_Trinn_1",
+        "control": "Local_Comp_Input_Number_439",
+        "group": "E",
+        "question": "2",
+        "column": "1. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_783_Antall_Elever_Chromebook_Trinn_2",
+        "control": "Local_Comp_Input_Number_440",
+        "group": "E",
+        "question": "2",
+        "column": "2. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_784_Antall_Elever_Chromebook_Trinn_3",
+        "control": "Local_Comp_Input_Number_441",
+        "group": "E",
+        "question": "2",
+        "column": "3. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_785_Antall_Elever_Chromebook_Trinn_4",
+        "control": "Local_Comp_Input_Number_442",
+        "group": "E",
+        "question": "2",
+        "column": "4. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_786_Antall_Elever_Chromebook_Trinn_5",
+        "control": "Local_Comp_Input_Number_443",
+        "group": "E",
+        "question": "2",
+        "column": "5. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_787_Antall_Elever_Chromebook_Trinn_6",
+        "control": "Local_Comp_Input_Number_444",
+        "group": "E",
+        "question": "2",
+        "column": "6. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_788_Antall_Elever_Chromebook_Trinn_7",
+        "control": "Local_Comp_Input_Number_445",
+        "group": "E",
+        "question": "2",
+        "column": "7. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_789_Antall_Elever_Chromebook_Trinn_8",
+        "control": "Local_Comp_Input_Number_446",
+        "group": "E",
+        "question": "2",
+        "column": "8. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_790_Antall_Elever_Chromebook_Trinn_9",
+        "control": "Local_Comp_Input_Number_447",
+        "group": "E",
+        "question": "2",
+        "column": "9. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_791_Antall_Elever_Chromebook_Trinn_10",
+        "control": "Local_Comp_Input_Number_448",
+        "group": "E",
+        "question": "2",
+        "column": "10. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_792_Sum_Elever_Chromebook",
+        "control": "Label10_12",
+        "group": "E",
+        "question": "2",
+        "column": "Sum",
+        "readOnly": true,
+        "terms": [
+          {
+            "field": "GG_782_Antall_Elever_Chromebook_Trinn_1",
+            "sign": 1
+          },
+          {
+            "field": "GG_783_Antall_Elever_Chromebook_Trinn_2",
+            "sign": 1
+          },
+          {
+            "field": "GG_784_Antall_Elever_Chromebook_Trinn_3",
+            "sign": 1
+          },
+          {
+            "field": "GG_785_Antall_Elever_Chromebook_Trinn_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_786_Antall_Elever_Chromebook_Trinn_5",
+            "sign": 1
+          },
+          {
+            "field": "GG_787_Antall_Elever_Chromebook_Trinn_6",
+            "sign": 1
+          },
+          {
+            "field": "GG_788_Antall_Elever_Chromebook_Trinn_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_789_Antall_Elever_Chromebook_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_790_Antall_Elever_Chromebook_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_791_Antall_Elever_Chromebook_Trinn_10",
+            "sign": 1
+          }
+        ]
+      },
+      {
+        "key": "GG_793_Antall_Elever_Nettbrett_Trinn_1",
+        "control": "Local_Comp_Input_Number_408",
+        "group": "E",
+        "question": "3",
+        "column": "1. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_794_Antall_Elever_Nettbrett_Trinn_2",
+        "control": "Local_Comp_Input_Number_411",
+        "group": "E",
+        "question": "3",
+        "column": "2. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_795_Antall_Elever_Nettbrett_Trinn_3",
+        "control": "Local_Comp_Input_Number_424",
+        "group": "E",
+        "question": "3",
+        "column": "3. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_796_Antall_Elever_Nettbrett_Trinn_4",
+        "control": "Local_Comp_Input_Number_425",
+        "group": "E",
+        "question": "3",
+        "column": "4. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_797_Antall_Elever_Nettbrett_Trinn_5",
+        "control": "Local_Comp_Input_Number_426",
+        "group": "E",
+        "question": "3",
+        "column": "5. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_798_Antall_Elever_Nettbrett_Trinn_6",
+        "control": "Local_Comp_Input_Number_427",
+        "group": "E",
+        "question": "3",
+        "column": "6. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_799_Antall_Elever_Nettbrett_Trinn_7",
+        "control": "Local_Comp_Input_Number_428",
+        "group": "E",
+        "question": "3",
+        "column": "7. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_800_Antall_Elever_Nettbrett_Trinn_8",
+        "control": "Local_Comp_Input_Number_429",
+        "group": "E",
+        "question": "3",
+        "column": "8. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_801_Antall_Elever_Nettbrett_Trinn_9",
+        "control": "Local_Comp_Input_Number_430",
+        "group": "E",
+        "question": "3",
+        "column": "9. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_802_Antall_Elever_Nettbrett_Trinn_10",
+        "control": "Local_Comp_Input_Number_431",
+        "group": "E",
+        "question": "3",
+        "column": "10. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_803_Sum_Elever_Nettbrett",
+        "control": "Label10_13",
+        "group": "E",
+        "question": "3",
+        "column": "Sum",
+        "readOnly": true,
+        "terms": [
+          {
+            "field": "GG_793_Antall_Elever_Nettbrett_Trinn_1",
+            "sign": 1
+          },
+          {
+            "field": "GG_794_Antall_Elever_Nettbrett_Trinn_2",
+            "sign": 1
+          },
+          {
+            "field": "GG_795_Antall_Elever_Nettbrett_Trinn_3",
+            "sign": 1
+          },
+          {
+            "field": "GG_796_Antall_Elever_Nettbrett_Trinn_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_797_Antall_Elever_Nettbrett_Trinn_5",
+            "sign": 1
+          },
+          {
+            "field": "GG_798_Antall_Elever_Nettbrett_Trinn_6",
+            "sign": 1
+          },
+          {
+            "field": "GG_799_Antall_Elever_Nettbrett_Trinn_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_800_Antall_Elever_Nettbrett_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_801_Antall_Elever_Nettbrett_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_802_Antall_Elever_Nettbrett_Trinn_10",
+            "sign": 1
+          }
+        ]
+      },
+      {
+        "key": "GG_804_Antall_Elever_Andre_digitale_Enheter_Trinn_1",
+        "control": "Local_Comp_Input_Number_139",
+        "group": "E",
+        "question": "4",
+        "column": "1. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_805_Antall_Elever_Andre_digitale_Enheter_Trinn_2",
+        "control": "Local_Comp_Input_Number_140",
+        "group": "E",
+        "question": "4",
+        "column": "2. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_806_Antall_Elever_Andre_digitale_Enheter_Trinn_3",
+        "control": "Local_Comp_Input_Number_141",
+        "group": "E",
+        "question": "4",
+        "column": "3. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_807_Antall_Elever_Andre_digitale_Enheter_Trinn_4",
+        "control": "Local_Comp_Input_Number_142",
+        "group": "E",
+        "question": "4",
+        "column": "4. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_808_Antall_Elever_Andre_digitale_Enheter_Trinn_5",
+        "control": "Local_Comp_Input_Number_143",
+        "group": "E",
+        "question": "4",
+        "column": "5. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_809_Antall_Elever_Andre_digitale_Enheter_Trinn_6",
+        "control": "Local_Comp_Input_Number_144",
+        "group": "E",
+        "question": "4",
+        "column": "6. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_810_Antall_Elever_Andre_digitale_Enheter_Trinn_7",
+        "control": "Local_Comp_Input_Number_145",
+        "group": "E",
+        "question": "4",
+        "column": "7. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_811_Antall_Elever_Andre_digitale_Enheter_Trinn_8",
+        "control": "Local_Comp_Input_Number_146",
+        "group": "E",
+        "question": "4",
+        "column": "8. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_812_Antall_Elever_Andre_digitale_Enheter_Trinn_9",
+        "control": "Local_Comp_Input_Number_147",
+        "group": "E",
+        "question": "4",
+        "column": "9. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_813_Antall_Elever_Andre_digitale_Enheter_Trinn_10",
+        "control": "Local_Comp_Input_Number_148",
+        "group": "E",
+        "question": "4",
+        "column": "10. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_814_Sum_Elever_Andre_digitale_Enheter",
+        "control": "Label10_14",
+        "group": "E",
+        "question": "4",
+        "column": "Sum",
+        "readOnly": true,
+        "terms": [
+          {
+            "field": "GG_804_Antall_Elever_Andre_digitale_Enheter_Trinn_1",
+            "sign": 1
+          },
+          {
+            "field": "GG_805_Antall_Elever_Andre_digitale_Enheter_Trinn_2",
+            "sign": 1
+          },
+          {
+            "field": "GG_806_Antall_Elever_Andre_digitale_Enheter_Trinn_3",
+            "sign": 1
+          },
+          {
+            "field": "GG_807_Antall_Elever_Andre_digitale_Enheter_Trinn_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_808_Antall_Elever_Andre_digitale_Enheter_Trinn_5",
+            "sign": 1
+          },
+          {
+            "field": "GG_809_Antall_Elever_Andre_digitale_Enheter_Trinn_6",
+            "sign": 1
+          },
+          {
+            "field": "GG_810_Antall_Elever_Andre_digitale_Enheter_Trinn_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_811_Antall_Elever_Andre_digitale_Enheter_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_812_Antall_Elever_Andre_digitale_Enheter_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_813_Antall_Elever_Andre_digitale_Enheter_Trinn_10",
+            "sign": 1
+          }
+        ]
+      },
+      {
+        "key": "GG_815_Antall_Elever_Ingen_digitale_Enheter_Trinn_1",
+        "control": "Local_Comp_Input_Number_401",
+        "group": "E",
+        "question": "5",
+        "column": "1. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_816_Antall_Elever_Ingen_digitale_Enheter_Trinn_2",
+        "control": "Local_Comp_Input_Number_402",
+        "group": "E",
+        "question": "5",
+        "column": "2. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_817_Antall_Elever_Ingen_digitale_Enheter_Trinn_3",
+        "control": "Local_Comp_Input_Number_403",
+        "group": "E",
+        "question": "5",
+        "column": "3. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_818_Antall_Elever_Ingen_digitale_Enheter_Trinn_4",
+        "control": "Local_Comp_Input_Number_404",
+        "group": "E",
+        "question": "5",
+        "column": "4. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_819_Antall_Elever_Ingen_digitale_Enheter_Trinn_5",
+        "control": "Local_Comp_Input_Number_406",
+        "group": "E",
+        "question": "5",
+        "column": "5. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_820_Antall_Elever_Ingen_digitale_Enheter_Trinn_6",
+        "control": "Local_Comp_Input_Number_407",
+        "group": "E",
+        "question": "5",
+        "column": "6. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_821_Antall_Elever_Ingen_digitale_Enheter_Trinn_7",
+        "control": "Local_Comp_Input_Number_409",
+        "group": "E",
+        "question": "5",
+        "column": "7. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_822_Antall_Elever_Ingen_digitale_Enheter_Trinn_8",
+        "control": "Local_Comp_Input_Number_410",
+        "group": "E",
+        "question": "5",
+        "column": "8. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_823_Antall_Elever_Ingen_digitale_Enheter_Trinn_9",
+        "control": "Local_Comp_Input_Number_422",
+        "group": "E",
+        "question": "5",
+        "column": "9. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_824_Antall_Elever_Ingen_digitale_Enheter_Trinn_10",
+        "control": "Local_Comp_Input_Number_423",
+        "group": "E",
+        "question": "5",
+        "column": "10. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_825_Sum_Elever_PC_Mac",
+        "control": "Label10_15",
+        "group": "E",
+        "question": "5",
+        "column": "Sum",
+        "readOnly": true,
+        "terms": [
+          {
+            "field": "GG_815_Antall_Elever_Ingen_digitale_Enheter_Trinn_1",
+            "sign": 1
+          },
+          {
+            "field": "GG_816_Antall_Elever_Ingen_digitale_Enheter_Trinn_2",
+            "sign": 1
+          },
+          {
+            "field": "GG_817_Antall_Elever_Ingen_digitale_Enheter_Trinn_3",
+            "sign": 1
+          },
+          {
+            "field": "GG_818_Antall_Elever_Ingen_digitale_Enheter_Trinn_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_819_Antall_Elever_Ingen_digitale_Enheter_Trinn_5",
+            "sign": 1
+          },
+          {
+            "field": "GG_820_Antall_Elever_Ingen_digitale_Enheter_Trinn_6",
+            "sign": 1
+          },
+          {
+            "field": "GG_821_Antall_Elever_Ingen_digitale_Enheter_Trinn_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_822_Antall_Elever_Ingen_digitale_Enheter_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_823_Antall_Elever_Ingen_digitale_Enheter_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_824_Antall_Elever_Ingen_digitale_Enheter_Trinn_10",
+            "sign": 1
+          }
+        ]
+      },
+      {
+        "key": "GG_826_Sum_Digitale_Enheter_Trinn_1",
+        "control": "Label19_23",
+        "group": "E",
+        "question": "6",
+        "column": "1. trinn",
+        "readOnly": true,
+        "terms": [
+          {
+            "field": "GG_771_Antall_Elever_PC_Mac_Trinn_1",
+            "sign": 1
+          },
+          {
+            "field": "GG_782_Antall_Elever_Chromebook_Trinn_1",
+            "sign": 1
+          },
+          {
+            "field": "GG_793_Antall_Elever_Nettbrett_Trinn_1",
+            "sign": 1
+          },
+          {
+            "field": "GG_804_Antall_Elever_Andre_digitale_Enheter_Trinn_1",
+            "sign": 1
+          },
+          {
+            "field": "GG_815_Antall_Elever_Ingen_digitale_Enheter_Trinn_1",
+            "sign": 1
+          }
+        ]
+      },
+      {
+        "key": "GG_827_Sum_Digitale_Enheter_Trinn_2",
+        "control": "Label19_24",
+        "group": "E",
+        "question": "6",
+        "column": "2. trinn",
+        "readOnly": true,
+        "terms": [
+          {
+            "field": "GG_772_Antall_Elever_PC_Mac_Trinn_2",
+            "sign": 1
+          },
+          {
+            "field": "GG_783_Antall_Elever_Chromebook_Trinn_2",
+            "sign": 1
+          },
+          {
+            "field": "GG_794_Antall_Elever_Nettbrett_Trinn_2",
+            "sign": 1
+          },
+          {
+            "field": "GG_805_Antall_Elever_Andre_digitale_Enheter_Trinn_2",
+            "sign": 1
+          },
+          {
+            "field": "GG_816_Antall_Elever_Ingen_digitale_Enheter_Trinn_2",
+            "sign": 1
+          }
+        ]
+      },
+      {
+        "key": "GG_828_Sum_Digitale_Enheter_Trinn_3",
+        "control": "Label19_25",
+        "group": "E",
+        "question": "6",
+        "column": "3. trinn",
+        "readOnly": true,
+        "terms": [
+          {
+            "field": "GG_773_Antall_Elever_PC_Mac_Trinn_3",
+            "sign": 1
+          },
+          {
+            "field": "GG_784_Antall_Elever_Chromebook_Trinn_3",
+            "sign": 1
+          },
+          {
+            "field": "GG_795_Antall_Elever_Nettbrett_Trinn_3",
+            "sign": 1
+          },
+          {
+            "field": "GG_806_Antall_Elever_Andre_digitale_Enheter_Trinn_3",
+            "sign": 1
+          },
+          {
+            "field": "GG_817_Antall_Elever_Ingen_digitale_Enheter_Trinn_3",
+            "sign": 1
+          }
+        ]
+      },
+      {
+        "key": "GG_829_Sum_Digitale_Enheter_Trinn_4",
+        "control": "Label19_26",
+        "group": "E",
+        "question": "6",
+        "column": "4. trinn",
+        "readOnly": true,
+        "terms": [
+          {
+            "field": "GG_774_Antall_Elever_PC_Mac_Trinn_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_785_Antall_Elever_Chromebook_Trinn_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_796_Antall_Elever_Nettbrett_Trinn_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_807_Antall_Elever_Andre_digitale_Enheter_Trinn_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_818_Antall_Elever_Ingen_digitale_Enheter_Trinn_4",
+            "sign": 1
+          }
+        ]
+      },
+      {
+        "key": "GG_830_Sum_Digitale_Enheter_Trinn_5",
+        "control": "Label19_27",
+        "group": "E",
+        "question": "6",
+        "column": "5. trinn",
+        "readOnly": true,
+        "terms": [
+          {
+            "field": "GG_775_Antall_Elever_PC_Mac_Trinn_5",
+            "sign": 1
+          },
+          {
+            "field": "GG_786_Antall_Elever_Chromebook_Trinn_5",
+            "sign": 1
+          },
+          {
+            "field": "GG_797_Antall_Elever_Nettbrett_Trinn_5",
+            "sign": 1
+          },
+          {
+            "field": "GG_808_Antall_Elever_Andre_digitale_Enheter_Trinn_5",
+            "sign": 1
+          },
+          {
+            "field": "GG_819_Antall_Elever_Ingen_digitale_Enheter_Trinn_5",
+            "sign": 1
+          }
+        ]
+      },
+      {
+        "key": "GG_831_Sum_Digitale_Enheter_Trinn_6",
+        "control": "Label19_28",
+        "group": "E",
+        "question": "6",
+        "column": "6. trinn",
+        "readOnly": true,
+        "terms": [
+          {
+            "field": "GG_776_Antall_Elever_PC_Mac_Trinn_6",
+            "sign": 1
+          },
+          {
+            "field": "GG_787_Antall_Elever_Chromebook_Trinn_6",
+            "sign": 1
+          },
+          {
+            "field": "GG_798_Antall_Elever_Nettbrett_Trinn_6",
+            "sign": 1
+          },
+          {
+            "field": "GG_809_Antall_Elever_Andre_digitale_Enheter_Trinn_6",
+            "sign": 1
+          },
+          {
+            "field": "GG_820_Antall_Elever_Ingen_digitale_Enheter_Trinn_6",
+            "sign": 1
+          }
+        ]
+      },
+      {
+        "key": "GG_832_Sum_Digitale_Enheter_Trinn_7",
+        "control": "Label19_29",
+        "group": "E",
+        "question": "6",
+        "column": "7. trinn",
+        "readOnly": true,
+        "terms": [
+          {
+            "field": "GG_777_Antall_Elever_PC_Mac_Trinn_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_788_Antall_Elever_Chromebook_Trinn_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_799_Antall_Elever_Nettbrett_Trinn_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_810_Antall_Elever_Andre_digitale_Enheter_Trinn_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_821_Antall_Elever_Ingen_digitale_Enheter_Trinn_7",
+            "sign": 1
+          }
+        ]
+      },
+      {
+        "key": "GG_833_Sum_Digitale_Enheter_Trinn_8",
+        "control": "Label19_30",
+        "group": "E",
+        "question": "6",
+        "column": "8. trinn",
+        "readOnly": true,
+        "terms": [
+          {
+            "field": "GG_778_Antall_Elever_PC_Mac_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_789_Antall_Elever_Chromebook_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_800_Antall_Elever_Nettbrett_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_811_Antall_Elever_Andre_digitale_Enheter_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_822_Antall_Elever_Ingen_digitale_Enheter_Trinn_8",
+            "sign": 1
+          }
+        ]
+      },
+      {
+        "key": "GG_834_Sum_Digitale_Enheter_Trinn_9",
+        "control": "Label19_31",
+        "group": "E",
+        "question": "6",
+        "column": "9. trinn",
+        "readOnly": true,
+        "terms": [
+          {
+            "field": "GG_779_Antall_Elever_PC_Mac_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_790_Antall_Elever_Chromebook_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_801_Antall_Elever_Nettbrett_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_812_Antall_Elever_Andre_digitale_Enheter_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_823_Antall_Elever_Ingen_digitale_Enheter_Trinn_9",
+            "sign": 1
+          }
+        ]
+      },
+      {
+        "key": "GG_835_Sum_Digitale_Enheter_Trinn_10",
+        "control": "Label19_32",
+        "group": "E",
+        "question": "6",
+        "column": "10. trinn",
+        "readOnly": true,
+        "terms": [
+          {
+            "field": "GG_780_Antall_Elever_PC_Mac_Trinn_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_791_Antall_Elever_Chromebook_Trinn_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_802_Antall_Elever_Nettbrett_Trinn_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_813_Antall_Elever_Andre_digitale_Enheter_Trinn_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_824_Antall_Elever_Ingen_digitale_Enheter_Trinn_10",
+            "sign": 1
+          }
+        ]
+      },
+      {
+        "key": "GG_836_Sum_Digitale_Enheter",
+        "control": "Label19_33",
+        "group": "E",
+        "question": "6",
+        "column": "Sum",
+        "readOnly": true,
+        "terms": [
+          {
+            "field": "GG_826_Sum_Digitale_Enheter_Trinn_1",
+            "sign": 1
+          },
+          {
+            "field": "GG_827_Sum_Digitale_Enheter_Trinn_2",
+            "sign": 1
+          },
+          {
+            "field": "GG_828_Sum_Digitale_Enheter_Trinn_3",
+            "sign": 1
+          },
+          {
+            "field": "GG_829_Sum_Digitale_Enheter_Trinn_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_830_Sum_Digitale_Enheter_Trinn_5",
+            "sign": 1
+          },
+          {
+            "field": "GG_831_Sum_Digitale_Enheter_Trinn_6",
+            "sign": 1
+          },
+          {
+            "field": "GG_832_Sum_Digitale_Enheter_Trinn_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_833_Sum_Digitale_Enheter_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_834_Sum_Digitale_Enheter_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_835_Sum_Digitale_Enheter_Trinn_10",
+            "sign": 1
+          }
+        ]
+      },
+      {
+        "key": "GG_3_Antall_Elever_Trinn1_Sum",
+        "control": "Label19_34",
+        "group": "E",
+        "question": "7",
+        "column": "1. trinn",
+        "readOnly": true,
+        "terms": [],
+        "sourceSection": 3
+      },
+      {
+        "key": "GG_6_Antall_Elever_Trinn2_Sum",
+        "control": "Label19_35",
+        "group": "E",
+        "question": "7",
+        "column": "2. trinn",
+        "readOnly": true,
+        "terms": [],
+        "sourceSection": 3
+      },
+      {
+        "key": "GG_9_Antall_Elever_Trinn3_Sum",
+        "control": "Label19_36",
+        "group": "E",
+        "question": "7",
+        "column": "3. trinn",
+        "readOnly": true,
+        "terms": [],
+        "sourceSection": 3
+      },
+      {
+        "key": "GG_12_Antall_Elever_Trinn4_Sum",
+        "control": "Label19_37",
+        "group": "E",
+        "question": "7",
+        "column": "4. trinn",
+        "readOnly": true,
+        "terms": [],
+        "sourceSection": 3
+      },
+      {
+        "key": "GG_15_Antall_Elever_Trinn5_Sum",
+        "control": "Label19_38",
+        "group": "E",
+        "question": "7",
+        "column": "5. trinn",
+        "readOnly": true,
+        "terms": [],
+        "sourceSection": 3
+      },
+      {
+        "key": "GG_18_Antall_Elever_Trinn6_Sum",
+        "control": "Label19_39",
+        "group": "E",
+        "question": "7",
+        "column": "6. trinn",
+        "readOnly": true,
+        "terms": [],
+        "sourceSection": 3
+      },
+      {
+        "key": "GG_21_Antall_Elever_Trinn7_Sum",
+        "control": "Label19_40",
+        "group": "E",
+        "question": "7",
+        "column": "7. trinn",
+        "readOnly": true,
+        "terms": [],
+        "sourceSection": 3
+      },
+      {
+        "key": "GG_27_Antall_Elever_Trinn8_Sum",
+        "control": "Label19_41",
+        "group": "E",
+        "question": "7",
+        "column": "8. trinn",
+        "readOnly": true,
+        "terms": [],
+        "sourceSection": 3
+      },
+      {
+        "key": "GG_30_Antall_Elever_Trinn9_Sum",
+        "control": "Label19_42",
+        "group": "E",
+        "question": "7",
+        "column": "9. trinn",
+        "readOnly": true,
+        "terms": [],
+        "sourceSection": 3
+      },
+      {
+        "key": "GG_33_Antall_Elever_Trinn10_Sum",
+        "control": "Label19_43",
+        "group": "E",
+        "question": "7",
+        "column": "10. trinn",
+        "readOnly": true,
+        "terms": [],
+        "sourceSection": 3
+      },
+      {
+        "key": "GG_39_Antall_Elever_Sum_EleverTotalt",
+        "control": "Label19_44",
+        "group": "E",
+        "question": "7",
+        "column": "Sum",
+        "readOnly": true,
+        "terms": [],
+        "sourceSection": 3
+      },
+      {
+        "key": "GG_691_Antall_Elever_Med_Videregaaendefag_Istedenfor_Valgfag_Trinn_8",
+        "control": "Local_Comp_Input_Number_493",
+        "group": "G",
+        "question": "1",
+        "column": "8. trinn",
+        "readOnly": true,
+        "terms": [],
+        "sourceSection": 11
+      },
+      {
+        "key": "GG_692_Antall_Elever_Med_Videregaaendefag_Istedenfor_Valgfag_Trinn_9",
+        "control": "Local_Comp_Input_Number_494",
+        "group": "G",
+        "question": "1",
+        "column": "9. trinn",
+        "readOnly": true,
+        "terms": [],
+        "sourceSection": 11
+      },
+      {
+        "key": "GG_693_Antall_Elever_Med_Videregaaendefag_Istedenfor_Valgfag_Trinn_10",
+        "control": "Local_Comp_Input_Number_496",
+        "group": "G",
+        "question": "1",
+        "column": "10. trinn",
+        "readOnly": true,
+        "terms": [],
+        "sourceSection": 11
+      },
+      {
+        "key": "GG_694_Sum_Elever_Med_Videregaaendefag_Istedenfor_Valgfag_Trinn_8_10",
+        "control": "Local_Comp_Input_Number_497",
+        "group": "G",
+        "question": "1",
+        "column": "Sum",
+        "readOnly": true,
+        "terms": [],
+        "sourceSection": 11
+      },
+      {
+        "key": "GG_1070_Antall_Elever_Videregaaende_Ordinaer_Valgfag_13G_Trinn_8",
+        "control": "Local_Comp_Input_Number_128",
+        "group": "G",
+        "question": "2",
+        "column": "8. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_1071_Antall_Elever_Videregaaende_Ordinaer_Valgfag_13G_Trinn_9",
+        "control": "Local_Comp_Input_Number_129",
+        "group": "G",
+        "question": "2",
+        "column": "9. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_1072_Antall_Elever_Videregaaende_Ordinaer_Valgfag_13G_Trinn_10",
+        "control": "Local_Comp_Input_Number_495",
+        "group": "G",
+        "question": "2",
+        "column": "10. trinn",
+        "readOnly": false,
+        "terms": []
+      },
+      {
+        "key": "GG_1073_Sum_Elever_Videregaaende_Ordinaer_Valgfag_13G_Trinn_8_10",
+        "control": "Local_Comp_Input_Number_498",
+        "group": "G",
+        "question": "2",
+        "column": "Sum",
+        "readOnly": true,
+        "terms": [
+          {
+            "field": "GG_1070_Antall_Elever_Videregaaende_Ordinaer_Valgfag_13G_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_1071_Antall_Elever_Videregaaende_Ordinaer_Valgfag_13G_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_1072_Antall_Elever_Videregaaende_Ordinaer_Valgfag_13G_Trinn_10",
+            "sign": 1
+          }
+        ]
+      },
+      {
+        "key": "GG_1074_Sum_13G_Trinn_8",
+        "control": "Local_Comp_Input_Number_499",
+        "group": "G",
+        "question": "3",
+        "column": "8. trinn",
+        "readOnly": true,
+        "terms": [
+          {
+            "field": "GG_691_Antall_Elever_Med_Videregaaendefag_Istedenfor_Valgfag_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_1070_Antall_Elever_Videregaaende_Ordinaer_Valgfag_13G_Trinn_8",
+            "sign": 1
+          }
+        ]
+      },
+      {
+        "key": "GG_1075_Sum_13G_Trinn_9",
+        "control": "Local_Comp_Input_Number_500",
+        "group": "G",
+        "question": "3",
+        "column": "9. trinn",
+        "readOnly": true,
+        "terms": [
+          {
+            "field": "GG_692_Antall_Elever_Med_Videregaaendefag_Istedenfor_Valgfag_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_1071_Antall_Elever_Videregaaende_Ordinaer_Valgfag_13G_Trinn_9",
+            "sign": 1
+          }
+        ]
+      },
+      {
+        "key": "GG_1076_Sum_13G_Trinn_10",
+        "control": "Local_Comp_Input_Number_501",
+        "group": "G",
+        "question": "3",
+        "column": "10. trinn",
+        "readOnly": true,
+        "terms": [
+          {
+            "field": "GG_693_Antall_Elever_Med_Videregaaendefag_Istedenfor_Valgfag_Trinn_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_1072_Antall_Elever_Videregaaende_Ordinaer_Valgfag_13G_Trinn_10",
+            "sign": 1
+          }
+        ]
+      },
+      {
+        "key": "GG_1077_Sum_13G_Trinn_8_10",
+        "control": "Local_Comp_Input_Number_502",
+        "group": "G",
+        "question": "3",
+        "column": "Sum",
+        "readOnly": true,
+        "terms": [
+          {
+            "field": "GG_694_Sum_Elever_Med_Videregaaendefag_Istedenfor_Valgfag_Trinn_8_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_1073_Sum_Elever_Videregaaende_Ordinaer_Valgfag_13G_Trinn_8_10",
+            "sign": 1
+          }
+        ]
+      }
+    ],
+    "backendOwned": []
+  }
+}

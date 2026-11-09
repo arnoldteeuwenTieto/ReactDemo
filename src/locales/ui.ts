@@ -1,6 +1,18 @@
 import { importedUi } from './importedUi'
 // Static React UI text. Keys retain the Bokmål wording for easy review.
 export const nnUi: Record<string, string> = {
+  'Åpningsmodus': 'Opningsmodus',
+  'Tilpass tilgang': 'Tilpass tilgang',
+  'Se skjema (skrivebeskyttet)': 'Sjå skjema (skriveverna)',
+  'Se skjema': 'Sjå skjema',
+  'Se skjema for {{school}}, {{year}}': 'Sjå skjema for {{school}}, {{year}}',
+  'Henter skjema…': 'Hentar skjema…',
+  'Starter applikasjonen…': 'Startar applikasjonen…',
+  'Kunne ikke åpne skjemaet.': 'Kunne ikkje opne skjemaet.',
+  'Du har ikke lesetilgang til denne skolen.': 'Du har ikkje lesetilgang til denne skulen.',
+  'Skjemaet er åpnet for visning. Svar, kommentarer og status kan ikke endres.': 'Skjemaet er opna for visning. Svar, kommentarar og status kan ikkje endrast.',
+  'Del 14 er ikke aktuell fordi skolen ikke tilbyr SFO (se Del 2).': 'Del 14 er ikkje aktuell fordi skulen ikkje tilbyr SFO (sjå Del 2).',
+  'SFO-tilbudet er ikke avklart. Velg Ja eller Nei i Del 2.': 'SFO-tilbodet er ikkje avklart. Vel Ja eller Nei i Del 2.',
   'Skolen har trinn {{lowest}}–{{highest}}. Tilgjengelige trinn styres av del 2 B og C (laveste og høyeste trinn).': 'Skulen har trinn {{lowest}}–{{highest}}. Tilgjengelege trinn blir styrte av del 2 B og C (lågaste og høgaste trinn).',
   'Velg et svar.': 'Vel eit svar.',
   ...importedUi,

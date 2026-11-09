@@ -1,0 +1,36 @@
+# GSI Grunnskole React — Import Del 11, 12 and 13 + compact navigation
+
+## Context
+Integrate into the EXISTING React/Vite TypeScript project. These three YAML exports are original Power Apps screen definitions, not directly executable React code. Inspect the existing architecture, data bindings and shared table/input/validation/navigation components first. Do not overwrite other screens or rewrite existing business behavior. This archive is deliberately FLAT at its root: `source/` and this uniquely named instruction file. Do not create an extra `gsi-react-import/` subfolder.
+
+## Source files
+- `source/Del11.yaml` — **11. Valgfag**. Active sections: A. Antall elever med valgfag; B. Antall elever som tar fag fra videregående i stedet for valgfag (NY); C. Antall elever uten valgfag; D. Sum elever med og uten valgfag. An older `NotVisible_C. Antall elever som tar fag fra videregående` card is explicitly `Visible = false` with BOGI-3719 removal note. Do not reintroduce it. Some BOGI-3797 field expressions are commented out: don't treat them as active mappings or write to those fields.
+- `source/Del12.yaml` — **12. Fysisk aktivitet og leksehjelp**. Sections A. Antall elevtimer til fysisk aktivitet per år; B. Antall årstimer til fysisk aktivitet; C. Leksehjelp på 1.–10. trinn. Del 12 has grade-specific participation and weekly hours, cross-references Del 3 pupils by grade, and validation IDs including GG-F40–F49, GG-F67, GG-A26–A29, GG-A82 and GG-A109. Only implement rules whose formulas are verifiable; preserve unresolved references in developer diagnostics rather than invent formulas.
+- `source/Del13.yaml` — **13. Andre opplysninger**. Sections A. Skoleskyss; B. Omdisponering av timetall (25 %-regelen); C. Leirskole; D. Tilgang til skolebibliotek; E. Tilgang på digitale enheter; F. Beredskap. Follow actual section heading/letter mapping, not physical YAML control order. Del 13 includes multi-select library offering (`GG_769_Bibliotekstilbud`), dependent library opening hours (`GG_770_Antall_Timer_Skolebibliotek_Er_Aapent`), and year-sensitive leirskole column headings. Respect their verified conditional logic. Avoid blindly performing old OnVisible side effects marked obsolete (BOGI-3929).
+
+## Implementation stages
+1. Audit each YAML for visible sections, question labels, row/column structures, field names, controls, editable/computed values, conditionals, formulas and validation IDs. Produce a concise mapping per section, preferably maintained in code or a developer report. Differentiation between active code and commented/outdated Power Fx is critical.
+2. Add Del 11–13 to existing routing, sidebar (correct titles/order) and mock data/answer state. Preserve any existing screens; implement complete visible question structure rather than generic filler forms. Keep input data keyed to verified fields; show Norwegian fallback question texts when `nfViewSprak` or `ColTekstDiverse` data is unavailable. Do not display SQL names or technical keys in ordinary UI.
+3. Match the established Del 3–10 visual design: dark-blue section headers, pale-blue outer frame, white gaps between sections, compact tables, question-number column, multi-tier grouped headings where needed, responsive layout using available width, no screen-specific language switch. Use consistent typography (13 px standard text) and shared components. Calculated sums and backend-owned values are grey/read-only; unanswered editable inputs white; entered manual values very light grey; business-rule-disabled inputs soft blue-grey with small lock icon and helpful explanation; real validation errors red. For valid calculations with no inputs show 0, not a dash. Never confuse an unavailable backend value with a real zero.
+4. Preserve grade-range dependencies from Del 2, role-based edit permissions incl. `IsKommunesentralt` from the existing data model (no school name detection), cross-section calculations/validation and red navigation error counts even for the active section. Do not count fields inapplicable under genuine business rules as required-field errors.
+5. Implement DEV-only SQL metadata hover/focus for verified mappings via the existing environment gating and field registry, including disabled fields through accessible wrappers. Do not expose technical metadata in TEST/QA/PROD. Do not add real BOGIAPI calls or pretend to save data externally.
+6. Keep deliberate demo mode for isolated fictional data on GitHub Pages where already configured. Do not regress deployment access/rendering; do not confuse local `import.meta.env.DEV` with named deployment environment.
+
+## Sidebar compactness — global change
+Apply to the existing LEFT navigation component across all screens, not just Del 11–13:
+- All item labels, including active section, should use **13px** font; consistent line height ~17–18px. Avoid reducing below 13px.
+- Tighter vertical padding, around 6px top/bottom per single-line item; target about **36–40px** height where feasible, while maintaining comfortable click/tap targets (prefer >=40–44px interactive height on touch). Allow dynamic height for wrapped labels; never clip full labels or overlap elements.
+- Number circle diameter about 24–26px, with 13px digits, and a stable narrow column. Keep active selected circle filled dark blue; inactive circles outlined. Keep error-count badge on the right, including the active section. Ensure number, text and badge don't overlap, especially long Del 10 name.
+- Use narrower inter-item padding/divider spacing and reduce unnecessary sidebar header gaps. Consider sidebar width ~235–250px if it improves available content, but prioritize readable long labels. Independent vertical scrolling for sidebar on shorter viewports, preserving access to every available section and keyboard navigation.
+- Render all applicable sections, ultimately at least 18 numbered entries, using the existing established business rules for visibility (e.g. conditional sections 14–16). Do NOT invent pages for missing source exports or incorrectly renumber Del 17/18.
+- Preserve accessibility focus indicators, aria-current, semantic navigation and responsive/mobile drawer behavior.
+
+## QA acceptance
+- Del 11 has exactly the currently active A–D sections and avoids disabled legacy sections/fields.
+- Del 12 grade-specific values and cross-checks are logically connected to Del 3 where implemented.
+- Del 13 A–F has correct structure, verified field mappings and no misleading automatic clearing.
+- Compact left menu shows 13px label typography on every section, all items reachable without collisions, and red error badges still update.
+- No clipped labels, overlapped inputs, excessive table scrollbars at normal desktop widths; allow horizontal scrolling only when genuinely needed.
+- Test grade range 1–10, 4–6, role 9, role 10 with IsKommunesentralt true, and read-only users; verify navigation and unrelated screens unchanged.
+- TypeScript checks, relevant unit/e2e tests and production build succeed. Verify GitHub DEMO build still displays screens with a valid fictional demo role.
+- Report changed files, hidden/retired Power Apps cards excluded, missing source text/validation dependencies and any unverified mappings (do not silently improvise).

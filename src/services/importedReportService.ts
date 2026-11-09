@@ -1,4 +1,6 @@
 import { emptyDel2 } from '../domain/del2'
+import { isReportWriteRestricted, openingKey } from '../domain/reportOpeningPolicy'
+import { additionalGroupVisible } from '../domain/additionalRules'
 import type { ImportedReport, MunicipalityRow, SupportMunicipalityRow, NumericAnswers, NumericSection } from '../domain/importedReporting'
 import { importedScreens, canSubmitMock, applicable } from '../domain/importedReporting'
 import { getDemoReportPermissions, getEffectiveDemoRoleId } from '../domain/demoPermissions'
@@ -14,7 +16,11 @@ export function readImportedReport(key: string): ImportedReport {
   const finish = readMockSection(key, 18)
   return {
     del2: { ...emptyDel2, ...readMockSection(key, 2) },
-    numbers: { 3: three as NumericAnswers, 4: readMockSection(key, 4) as NumericAnswers, 5: readMockSection(key, 5) as NumericAnswers, 6: readMockSection(key, 6) as NumericAnswers, 7: readMockSection(key, 7) as NumericAnswers, 8: readMockSection(key, 8) as NumericAnswers, 9: readMockSection(key, 9) as NumericAnswers, 10: readMockSection(key, 10) as NumericAnswers },
+    numbers: { 3: three as NumericAnswers, 4: readMockSection(key, 4) as NumericAnswers, 5: readMockSection(key, 5) as NumericAnswers, 6: readMockSection(key, 6) as NumericAnswers, 7: readMockSection(key, 7) as NumericAnswers, 8: readMockSection(key, 8) as NumericAnswers, 9: readMockSection(key, 9) as NumericAnswers, 10: readMockSection(key, 10) as NumericAnswers, 11: readMockSection(key, 11) as NumericAnswers, 12: readMockSection(key, 12) as NumericAnswers, 13: readMockSection(key, 13) as NumericAnswers, 14: readMockSection(key, 14) as NumericAnswers, 15: readMockSection(key, 15) as NumericAnswers, 16: readMockSection(key, 16) as NumericAnswers },
+    additionalChoices: Object.fromEntries(Object.entries(readMockSection(key, 13)).filter((entry): entry is [string, boolean] => typeof entry[1] === 'boolean')),
+    finalChoices: Object.fromEntries([14,15].flatMap(section=>Object.entries(readMockSection(key,section))).filter((entry):entry is [string,boolean]=>typeof entry[1]==='boolean')),
+    pptMunicipality: String(readMockSection(key,15).GG_950_Kommune_I_Interkommunal_Tjeneste??''),
+    pptRecipients: (readMockSection(key,15).ColGG15SpD as {id:string;KommuneNavn:string}[]|undefined)??[],
     municipalities: (three.municipalities as MunicipalityRow[] | undefined) ?? [],
     supportMunicipalities: (readMockSection(key, 7).municipalities ?? []) as SupportMunicipalityRow[],
     collections: Object.fromEntries((Object.entries(languageCollections) as [CollectionId, typeof languageCollections[CollectionId]][]).map(([id, definition]) => [id, (readMockSection(key, definition.section)[definition.storeKey] as CollectionRow[] | undefined) ?? initialCollectionRows(id)])),
@@ -26,7 +32,9 @@ export function readImportedReport(key: string): ImportedReport {
 }
 export function saveImportedNumber(context: DemoPermissionContext, section: NumericSection, field: string, value: string) {
   const definition = importedScreens[section].fields.find(item => item.key === field && !item.readOnly)
-  if (!context.school || !getDemoReportPermissions(context).edit || !definition || !applicable(definition, readImportedReport(mockSkjemaStatusId(context.school)).del2)) return false
+  if (!context.school || !getDemoReportPermissions(context).edit || !definition) return false
+  const report = readImportedReport(mockSkjemaStatusId(context.school))
+  if (!additionalGroupVisible(section,definition.group,report.del2,report.finalChoices) || !applicable(definition, report.del2, report.additionalChoices)) return false
   patchMockSection(mockSkjemaStatusId(context.school), section, { [field]: value })
   return true
 }
@@ -45,6 +53,7 @@ export function saveSupportMunicipalities(context: DemoPermissionContext, rows: 
   return true
 }
 export function markMockChecked(context: DemoPermissionContext) {
+  if (!context.school || isReportWriteRestricted(openingKey(context.school))) return false
   if (!context.school || !getDemoReportPermissions(context).read) return false
   patchMockSection(mockSkjemaStatusId(context.school), 17, { checked: true })
   return true

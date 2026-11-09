@@ -1,14 +1,17 @@
 import fs from 'node:fs';
 import ts from 'typescript';
-const data={...JSON.parse(fs.readFileSync('src/domain/importedScreens.json','utf8')),...JSON.parse(fs.readFileSync('src/domain/staffScreens.json','utf8')),...JSON.parse(fs.readFileSync('src/domain/languageScreens.json','utf8'))};
+const data={...JSON.parse(fs.readFileSync('src/domain/importedScreens.json','utf8')),...JSON.parse(fs.readFileSync('src/domain/staffScreens.json','utf8')),...JSON.parse(fs.readFileSync('src/domain/languageScreens.json','utf8')),...JSON.parse(fs.readFileSync('src/domain/additionalScreens.json','utf8')),...JSON.parse(fs.readFileSync('src/domain/finalScreens.json','utf8'))};
 const strings=new Set();
-for(const path of ['src/components/ImportedNumericSection.tsx','src/components/MunicipalityFinancingTable.tsx','src/components/ImportedWorkflowSection.tsx','src/components/ImportedQuestionTable.tsx','src/components/importedQuestionLayout.ts','src/components/FieldAvailability.tsx','src/domain/importedReporting.ts','src/domain/languageCollections.ts','src/components/LanguageCollectionTable.tsx']){
+for(const grade of [8,9,10])for(const gender of ['Gutter','Jenter'])strings.add(`${grade}. trinn, ${gender}`);
+strings.add('Høst {{year}}');strings.add('Vår {{year}}');
+for(const path of ['src/components/ImportedNumericSection.tsx','src/components/MunicipalityFinancingTable.tsx','src/components/ImportedWorkflowSection.tsx','src/components/ImportedQuestionTable.tsx','src/components/importedQuestionLayout.ts','src/components/FieldAvailability.tsx','src/domain/importedReporting.ts','src/domain/languageCollections.ts','src/components/LanguageCollectionTable.tsx','src/components/ElectiveTable.tsx','src/components/AdditionalChoices.tsx','src/domain/additionalChoices.ts','src/components/BooleanSubquestions.tsx','src/components/PptMunicipalities.tsx','src/domain/finalScreenRules.ts']){
  const text=fs.readFileSync(path,'utf8');
  const ast=ts.createSourceFile(path,text,ts.ScriptTarget.Latest,true,path.endsWith('.tsx')?ts.ScriptKind.TSX:ts.ScriptKind.TS);
  function visit(node){if(ts.isStringLiteral(node)&&node.text.length>1&&!/[{};=]|^\.\.?\//.test(node.text))strings.add(node.text);ts.forEachChild(node,visit)}
  visit(ast);
 }
 for(const [section,screen]of Object.entries(data)){
+ for(const choice of screen.choices??[])strings.add(choice.label);
  for(const group of screen.groups){strings.add(group.title);if(group.description)strings.add(group.description);for(const header of group.columnGroups??[]){strings.add(header.title);for(const column of header.columns)strings.add(column.label);}for(const table of group.tables??[])strings.add(`${group.title} – ${table}`);}
  for(const field of screen.fields){strings.add(field.label); if(field.rowLabel)strings.add(field.rowLabel);if(field.column)strings.add(field.column);if(field.table)strings.add(field.table);const name=field.key.replace(/^GG_\d+_/, '');if(section==='3'){const grade=name.match(/(?:Trinn|Sum)(\d+(?:_\d+)?)/i)?.[1];if(grade)strings.add(`${field.readOnly?'Sum ':''}${grade.replace('_','–')}. trinn`);}
  if(section==='3'&&field.group==='A'){const grade=name.match(/Trinn(\d+(?:_\d+)?)/)?.[1];strings.add(grade?`${grade.replace('_','–')}. trinn`:'Sum');}

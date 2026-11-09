@@ -6,6 +6,9 @@ export interface School {
   year: number
   // Mock counterpart of BOGIAPI IsKommunesentralt; never derive from the name.
   isKommunesentralt: boolean
+  isGrunnskole?: boolean
+  isOffentligskole?: boolean
+  isPrivatSkole?: boolean
   // Sole status source: absent/invalid IDs display "Status ukjent".
   statusId?: number | null
 }

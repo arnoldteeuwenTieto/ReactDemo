@@ -1,3 +1,4 @@
+import { schoolOpeningAction } from './helpers/schoolActions'
 import { expect, test, type Locator, type Page } from '@playwright/test'
 import { writeFile } from 'node:fs/promises'
 
@@ -37,7 +38,7 @@ async function expectSharedButtons(page: Page) {
 test('opt-in actions retain the reference styling across overview, reporting and help', async ({ page }) => {
   await page.goto('./')
   await expectSharedButtons(page)
-  await page.getByRole('button', { name: 'Åpne skjema for Fjordgløtt barneskole, 2026', exact: true }).click()
+  await schoolOpeningAction(page, 'Fjordgløtt barneskole', '2026').click()
   await expectSharedButtons(page)
   await page.getByRole('button', { name: 'Gå til rapporteringen' }).click()
   await expectSharedButtons(page)
@@ -53,7 +54,7 @@ test('opt-in actions retain the reference styling across overview, reporting and
 test('normal, hover, pressed, disabled and keyboard-focus states remain accessible', async ({ page }, info) => {
   await page.emulateMedia({ reducedMotion: 'reduce' })
   await page.goto('./')
-  await page.getByRole('button', { name: 'Åpne skjema for Fjordgløtt barneskole, 2026', exact: true }).click()
+  await schoolOpeningAction(page, 'Fjordgløtt barneskole', '2026').click()
   const reference = page.getByRole('button', { name: 'Gå til rapporteringen' })
   await page.mouse.move(0, 0)
   const normal = await buttonColors(reference)
@@ -110,7 +111,7 @@ test('specialized language, sorting and menu controls keep their original indepe
   await page.getByRole('button', { name: 'Nynorsk', exact: true }).click()
   await expect(page.locator('html')).toHaveAttribute('lang', 'nn')
   await page.getByRole('button', { name: 'Bokmål', exact: true }).click()
-  await page.getByRole('button', { name: 'Åpne skjema for Fjordgløtt barneskole, 2026', exact: true }).click()
+  await schoolOpeningAction(page, 'Fjordgløtt barneskole', '2026').click()
   await page.getByRole('button', { name: 'Gå til rapporteringen' }).click()
   const section = page.getByRole('navigation', { name: 'Grunnskoleseksjoner', exact: true }).getByRole('button', { name: 'Enhetsopplysninger', exact: true })
   await expect(section).toHaveAttribute('aria-current', 'page')

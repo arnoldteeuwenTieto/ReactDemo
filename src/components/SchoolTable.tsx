@@ -4,6 +4,11 @@ import { useState } from 'react'
 import type { School } from '../mockData'
 import { FormStatusBadge } from './FormStatusBadge'
 import { getFormStatus } from '../domain/formStatus'
+import { useDemoUser } from '../demoUserContext'
+import { getDemoRoleCapabilities } from '../domain/demoPermissions'
+import { mayOpenForEditing } from '../services/schoolOpeningService'
+import type { OpeningMode } from '../domain/reportOpeningPolicy'
+import { useApplication } from '../applicationContext'
 
 const sortColumns = [
   { key: 'name', label: 'Skolenavn' },
@@ -21,10 +26,13 @@ interface SchoolTableProps {
   schools: School[]
   selectedId: string | null
   onSelect: (id: string) => void
-  onOpen: (school: School) => void
+  onOpen: (school: School, mode: OpeningMode) => void
 }
 export function SchoolTable({ schools, selectedId, onSelect, onOpen }: SchoolTableProps) {
   useTranslation('ui')
+  const { enabled, selectedUser } = useDemoUser()
+  const application = useApplication()
+  const [preferView, setPreferView] = useState(false)
   const [sort, setSort] = useState<{ key: SortKey; direction: SortDirection } | null>(null)
   function toggleSort(key: SortKey) {
     setSort(current => ({
@@ -45,6 +53,9 @@ export function SchoolTable({ schools, selectedId, onSelect, onOpen }: SchoolTab
   }) : schools
 
   return <div className="table-scroll" role="region" aria-label={ui("Skoleoversikt")} tabIndex={0}>
+    <label>{ui('Åpningsmodus')} <select value={preferView ? 'view' : 'auto'} onChange={event => setPreferView(event.target.value === 'view')}>
+      <option value="auto">{ui('Tilpass tilgang')}</option><option value="view">{ui('Se skjema (skrivebeskyttet)')}</option>
+    </select></label>
     <table className="school-table">
       <caption className="visually-hidden">{ui("Skolenes rapportering. Velg en rad eller åpne skolens skjema.")}</caption>
       <thead><tr>
@@ -60,11 +71,16 @@ export function SchoolTable({ schools, selectedId, onSelect, onOpen }: SchoolTab
         </th>)}
         <th scope="col">{ui("Handling")}</th>
       </tr></thead>
-      <tbody>{sortedSchools.map(school => <tr key={school.id} className={selectedId === school.id ? 'selected-row' : ''} onClick={() => onSelect(school.id)}>
+      <tbody>{sortedSchools.map(school => {
+        const context = { enabled, user: selectedUser, school }
+        const canRead = getDemoRoleCapabilities(context).read
+        const mode = !preferView && mayOpenForEditing(context, application.period, application.reportingYear) ? 'edit' : 'view'
+        const label = mode === 'edit' ? 'Åpne skjema' : 'Se skjema'
+        return <tr key={school.id} className={selectedId === school.id ? 'selected-row' : ''} onClick={() => onSelect(school.id)}>
         <td><label className="school-row-selector"><input type="radio" name="selected-school" checked={selectedId === school.id} onChange={() => onSelect(school.id)} aria-label={ui("Velg {{school}}, {{year}}", { school: school.name, year: school.year })} /></label></td>
         <th scope="row">{school.name}</th><td className="organization-number" data-label={ui('Organisasjonsnr.')}>{school.organizationNumber}</td><td data-label={ui('Kommune')}>{school.municipality}</td><td data-label={ui('År')}>{school.year}</td><td data-label={ui('Status')}><FormStatusBadge statusId={school.statusId} /></td>
-        <td><button className="gsi-button open-button" aria-label={ui("Åpne skjema for {{school}}, {{year}}", { school: school.name, year: school.year })} onClick={event => { event.stopPropagation(); onOpen(school) }}>{ui("Åpne skjema")} <span aria-hidden="true">→</span></button></td>
-      </tr>)}</tbody>
+        <td>{canRead ? <button className="gsi-button open-button" aria-label={ui(`${label} for {{school}}, {{year}}`, { school: school.name, year: school.year })} onClick={event => { event.stopPropagation(); onOpen(school, mode) }}>{ui(label)} <span aria-hidden="true">→</span></button> : <span>{ui('Ingen tilgang')}</span>}</td>
+      </tr>})}</tbody>
     </table>
     {schools.length === 0 && <div className="empty-state"><h4>{ui("Ingen skoler funnet")}</h4><p>{ui("Prøv et annet søk eller nullstill filtrene.")}</p></div>}
   </div>

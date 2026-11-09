@@ -27,7 +27,7 @@ export function runValidation({ mode, section, data }: {
   for (const { field } of questions) {
     if (data[field] === null) issues.push({
       id: `${field}:required`, section: 2, field, kind: 'required',
-      message: 'Velg et svar. (Demonstrasjonsvalidering)',
+      message: 'Velg et svar.',
     })
   }
   const lower = data.GG_228_Laveste_Trinn_Paa_Skolen

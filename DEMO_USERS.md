@@ -49,8 +49,8 @@ Both normal and demo builds passed TypeScript checks; normal production build
 passed with the existing bundle-size warning. Full-suite tests, full accessibility
 audit and lint were intentionally skipped in favor of the affected checks.
 
-Current implemented navigation contains Del 1–10, 17 and 18. Del 11–16 have no
-implemented entries in this repository; this deployment fix does not add them.
+All Del 1–18 screens are implemented. Del 14 navigation is shown only when the
+selected report offers SFO. See gsi-react-import/DEL14_15_16_IMPLEMENTATION.md.
 
 `DemoUserProvider` wraps the application. Screens can read `useDemoUser()` from
 `src/demoUserContext.ts`. Selection is memory-only and resets on reload. Navigation,

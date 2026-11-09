@@ -1,3 +1,4 @@
+import { schoolOpeningAction } from './helpers/schoolActions'
 import { test, expect, type Page } from '@playwright/test'
 import { importedScreens, calculateValues, sectionFindings, isBlockingFinding, fullMockFindings } from '../src/domain/importedReporting'
 import { readImportedReport, saveImportedNumber, saveSupportMunicipalities } from '../src/services/importedReportService'
@@ -11,7 +12,7 @@ const range=(lo:number,hi:number)=>Array.from({length:hi-lo+1},(_,i)=>lo+i)
 const nav=(page:Page)=>page.getByRole('navigation',{name:'Grunnskoleseksjoner',exact:true})
 const section=(page:Page,id:string)=>page.locator(`section[aria-labelledby="import-7-${id}"]`)
 const cell=(page:Page,id:number)=>page.locator(`input[data-field="${field(id).key}"]`)
-async function open(page:Page){await page.goto('./');await page.getByRole('combobox',{name:'Demonstrasjonsbruker DEMO',exact:true}).selectOption('demo-school-leader');await page.getByRole('button',{name:'Åpne skjema for Fjordgløtt barneskole, 2026',exact:true}).click();await page.getByRole('button',{name:'Gå til rapporteringen',exact:true}).click();await nav(page).getByRole('button',{name:'Spesialundervisning',exact:true}).click()}
+async function open(page:Page){await page.goto('./');await page.getByRole('combobox',{name:'Demonstrasjonsbruker DEMO',exact:true}).selectOption('demo-school-leader');await schoolOpeningAction(page, 'Fjordgløtt barneskole', '2026').click();await page.getByRole('button',{name:'Gå til rapporteringen',exact:true}).click();await nav(page).getByRole('button',{name:'Spesialundervisning',exact:true}).click()}
 
 test('Del 7 source-card mapping and arithmetic contracts cover all sections',()=>{
  const mapping={A:range(232,264),B:[...range(920,931),1018,1019],C:range(265,269),D:range(270,274),E:range(275,286),F:range(287,316),G:range(317,331),H:[]}

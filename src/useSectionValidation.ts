@@ -32,5 +32,6 @@ export function useSectionValidation(context: DemoPermissionContext) {
   // Sidebar is presentational: active section and visit history never suppress errors.
   const sectionIssueCounts = Object.fromEntries(Object.entries(issuesBySection)
     .map(([section, issues]) => [section, issues.filter(isBlockingFinding).length]))
-  return { reports, issuesBySection, sectionIssueCounts, updateDel2, visitSection, leaveSection }
+  const activeDel2=context.school?snapshots[mockSkjemaStatusId(context.school)]??readImportedReport(mockSkjemaStatusId(context.school)).del2:null
+  return { reports, issuesBySection, sectionIssueCounts, updateDel2, visitSection, leaveSection, activeDel2 }
 }

@@ -10,9 +10,10 @@ export interface DemoUserHeaderProps {
   hasStatusOverride: boolean
   onStatusChange: (statusId: number) => void
   onStatusReset: () => void
+  statusReadOnly?: boolean
 }
 
-export function DemoUserHeader({ school, hasStatusOverride, onStatusChange, onStatusReset }: DemoUserHeaderProps) {
+export function DemoUserHeader({ school, hasStatusOverride, onStatusChange, onStatusReset, statusReadOnly = false }: DemoUserHeaderProps) {
   useTranslation('ui')
   const { enabled, selectedUser, selectUser } = useDemoUser()
   if (!enabled || !selectedUser) return null
@@ -27,12 +28,12 @@ export function DemoUserHeader({ school, hasStatusOverride, onStatusChange, onSt
       <div className="demo-status-controls">
         <label className="header-user-demo demo-user-selector">
           {ui('Demonstrasjonsstatus')}
-          <select value={school?.statusId ?? ''} disabled={!school} aria-describedby={hasStatusOverride ? 'demo-status-override' : undefined} onChange={event => onStatusChange(Number(event.target.value))}>
+          <select value={school?.statusId ?? ''} disabled={!school || statusReadOnly} aria-describedby={hasStatusOverride ? 'demo-status-override' : undefined} onChange={event => onStatusChange(Number(event.target.value))}>
             {(!school || !formStatuses.some(status => status.id === school.statusId)) && <option value="" disabled>{ui(school ? 'Status ukjent' : 'Velg en skole')}</option>}
             {formStatuses.map(status => <option key={status.id} value={status.id}>{status.id} {ui(status.label)}</option>)}
           </select>
         </label>
-        <button className="gsi-button text-button demo-status-reset" type="button" disabled={!hasStatusOverride} onClick={onStatusReset}>{ui('Tilbakestill status')}</button>
+        <button className="gsi-button text-button demo-status-reset" type="button" disabled={!hasStatusOverride || statusReadOnly} onClick={onStatusReset}>{ui('Tilbakestill status')}</button>
         {hasStatusOverride && <span id="demo-status-override" className="visually-hidden" role="status">{ui('Midlertidig DEMO-status')}</span>}
       </div>
       <details className="demo-user-details">

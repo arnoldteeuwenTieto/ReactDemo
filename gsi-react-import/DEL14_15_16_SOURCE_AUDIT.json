@@ -1,0 +1,3715 @@
+[
+  {
+    "section": 14,
+    "name": "Steg3_Overskrift_10",
+    "card": "Steg3_Overskrift_10",
+    "parent": "Canvas_10",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "DataCard@1.0.2",
+      "DisplayMode": "=nfDisplayMode",
+      "Y": "=0"
+    }
+  },
+  {
+    "section": 14,
+    "name": "Header_4",
+    "card": "Header_4",
+    "parent": "Canvas_10",
+    "hidden": false,
+    "conditions": [
+      {
+        "name": "Header_4",
+        "visible": "=If(App.Width > 888, false, true)"
+      }
+    ],
+    "props": {
+      "Control": "DataCard@1.0.2",
+      "DisplayMode": "=nfDisplayMode",
+      "Visible": "=If(App.Width > 888, false, true)",
+      "Y": "=1"
+    }
+  },
+  {
+    "section": 14,
+    "name": "14D",
+    "card": "14D",
+    "parent": "Canvas_10",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "DataCard@1.0.2",
+      "Y": "=5"
+    }
+  },
+  {
+    "section": 14,
+    "name": "Comp_liba_DatacardBkgGSI_61",
+    "card": "14D",
+    "parent": "14D",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Comp_liba_DatacardBkgGSI",
+      "Input_HeaderText": "=\nLookUp(nfViewSprak, BeregnetId = \"GG_H55_U141\").HovedsporsmalTekst",
+      "Input_Kontrollere": "=  Table(\r\n        {ID: \"GG-A9\", Boolean:Kontroll_GG_A9}\r\n       \r\n    )",
+      "VisDrawer": "=Set (vargblVisDrawer ,true) ;       \nSet(vargblDrawerHjelpetekst,LookUp(colHjelpetekster, HjelpetekstId = \"GG-H146\" ,Tekst)); \nSet(vargblDrawerOverskrift,LookUp(colHjelpetekster, HjelpetekstId = \"GG-H146\" ,Overskrift));\nCom_liba_spmtegn_drawer_GSI_14.SetFocusDrawer();"
+    }
+  },
+  {
+    "section": 14,
+    "name": "Radio1_7",
+    "card": "14D",
+    "parent": "Container17_4",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Classic/Radio@2.3.0",
+      "Default": "=\n\n\nIf(nfSelectedRecord14.GG_1016_Lokale_Inntektsgraderte_Satser = true, \"Ja\", If(nfSelectedRecord14.GG_1016_Lokale_Inntektsgraderte_Satser = false, \"Nei\", Blank()))",
+      "DisplayMode": "=nfDisplayMode",
+      "Items": "=[\"Ja\", \"Nei\"]",
+      "OnChange": "=Patch(\n    GsiGrunnskoleSvarDel14,\n    nfSelectedRecord14, {GG_1016_Lokale_Inntektsgraderte_Satser: If(Radio1_7.Selected.Value = \"Ja\", 1, If( Radio1_7.Selected.Value = \"Nei\", 0))});",
+      "Y": "=2"
+    }
+  },
+  {
+    "section": 14,
+    "name": "Radio1_8",
+    "card": "14D",
+    "parent": "Container17_5",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Classic/Radio@2.3.0",
+      "Default": "=\n\n\n If(nfSelectedRecord14.GG_1017_Lokale_Friplasser = true, \"Ja\", If(nfSelectedRecord14.GG_1017_Lokale_Friplasser = false, \"Nei\", Blank()))",
+      "DisplayMode": "=nfDisplayMode",
+      "Items": "=[\"Ja\", \"Nei\"]",
+      "OnChange": "=Patch(\n    GsiGrunnskoleSvarDel14,\n    nfSelectedRecord14, {GG_1017_Lokale_Friplasser: If(Radio1_8.Selected.Value = \"Ja\", 1, If( Radio1_8.Selected.Value = \"Nei\", 0))});",
+      "Y": "=2"
+    }
+  },
+  {
+    "section": 14,
+    "name": "Radio1_9",
+    "card": "14D",
+    "parent": "Container17_6",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Classic/Radio@2.3.0",
+      "Default": "=\n\n\nIf(nfSelectedRecord14.GG_858_Soeskenmoderasjon = true, \"Ja\", If(nfSelectedRecord14.GG_858_Soeskenmoderasjon = false, \"Nei\", Blank()))",
+      "DisplayMode": "=nfDisplayMode",
+      "Items": "=[\"Ja\", \"Nei\"]",
+      "OnChange": "=Patch(\n    GsiGrunnskoleSvarDel14,\n    nfSelectedRecord14, {GG_858_Soeskenmoderasjon: If(Radio1_9.Selected.Value = \"Ja\", 1, If( Radio1_9.Selected.Value = \"Nei\", 0))});",
+      "Y": "=2"
+    }
+  },
+  {
+    "section": 14,
+    "name": "14E",
+    "card": "14E",
+    "parent": "Canvas_10",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "DataCard@1.0.2",
+      "Y": "=6"
+    }
+  },
+  {
+    "section": 14,
+    "name": "Comp_liba_DatacardBkgGSI_62",
+    "card": "14E",
+    "parent": "14E",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Comp_liba_DatacardBkgGSI",
+      "Input_HeaderText": "=\nLookUp(nfViewSprak, BeregnetId = \"GG_H56_U112\").HovedsporsmalTekst",
+      "Input_Kontrollere": "=  Table(\n        {ID: \"GG-F2\", Boolean:Kontroll_GG_F2},\n        {ID: \"GG-F125\", Boolean: Kontroll_GG_F125}\n    )",
+      "VisDrawer": "=Set (vargblVisDrawer ,true) ;       \nSet(vargblDrawerHjelpetekst,LookUp(colHjelpetekster, HjelpetekstId = \"GG-H147\" ,Tekst)); \nSet(vargblDrawerOverskrift,LookUp(colHjelpetekster, HjelpetekstId = \"GG-H147\" ,Overskrift));\nCom_liba_spmtegn_drawer_GSI_14.SetFocusDrawer();"
+    }
+  },
+  {
+    "section": 14,
+    "name": "Label4_833",
+    "card": "14E",
+    "parent": "Container1_211",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Label@2.5.1",
+      "DisplayMode": "=DisplayMode.View",
+      "Text": "=\"1\""
+    }
+  },
+  {
+    "section": 14,
+    "name": "Local_Comp_Input_Number_93",
+    "card": "14E",
+    "parent": "Container7_1032",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord14.GG_859_Antall_Elever_Paa_Lokale_Ordninger_Med_Inntektsgraderte_Satser_Trinn_1",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel14,\n    nfSelectedRecord14,\n    {GG_859_Antall_Elever_Paa_Lokale_Ordninger_Med_Inntektsgraderte_Satser_Trinn_1:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 14,
+    "name": "Local_Comp_Input_Number_101",
+    "card": "14E",
+    "parent": "Container7_1034",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord14.GG_864_Antall_Elever_Paa_Nasjonale_Ordninger_Med_Inntektsgraderte_Satser_Trinn_1",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel14,\n    nfSelectedRecord14,\n    {GG_864_Antall_Elever_Paa_Nasjonale_Ordninger_Med_Inntektsgraderte_Satser_Trinn_1:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 14,
+    "name": "Label4_835",
+    "card": "14E",
+    "parent": "Container1_212",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Label@2.5.1",
+      "DisplayMode": "=DisplayMode.View",
+      "Text": "=\"2\""
+    }
+  },
+  {
+    "section": 14,
+    "name": "Local_Comp_Input_Number_102",
+    "card": "14E",
+    "parent": "Container7_1035",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord14.GG_860_Antall_Elever_Paa_Lokale_Ordninger_Med_Inntektsgraderte_Satser_Trinn_2",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel14,\n    nfSelectedRecord14,\n    {GG_860_Antall_Elever_Paa_Lokale_Ordninger_Med_Inntektsgraderte_Satser_Trinn_2:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 14,
+    "name": "Local_Comp_Input_Number_103",
+    "card": "14E",
+    "parent": "Container7_1036",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord14.GG_865_Antall_Elever_Paa_Nasjonale_Ordninger_Med_Inntektsgraderte_Satser_Trinn_2",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel14,\n    nfSelectedRecord14,\n    {GG_865_Antall_Elever_Paa_Nasjonale_Ordninger_Med_Inntektsgraderte_Satser_Trinn_2:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 14,
+    "name": "Label4_837",
+    "card": "14E",
+    "parent": "Container1_213",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Label@2.5.1",
+      "DisplayMode": "=DisplayMode.View",
+      "Text": "=\"3\""
+    }
+  },
+  {
+    "section": 14,
+    "name": "Local_Comp_Input_Number_104",
+    "card": "14E",
+    "parent": "Container7_1039",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord14.GG_861_Antall_Elever_Paa_Lokale_Ordninger_Med_Inntektsgraderte_Satser_Trinn_3",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel14,\n    nfSelectedRecord14,\n    {GG_861_Antall_Elever_Paa_Lokale_Ordninger_Med_Inntektsgraderte_Satser_Trinn_3:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 14,
+    "name": "Local_Comp_Input_Number_105",
+    "card": "14E",
+    "parent": "Container7_1040",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord14.GG_866_Antall_Elever_Paa_Nasjonale_Ordninger_Med_Inntektsgraderte_Satser_Trinn_3",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel14,\n    nfSelectedRecord14,\n    {GG_866_Antall_Elever_Paa_Nasjonale_Ordninger_Med_Inntektsgraderte_Satser_Trinn_3:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 14,
+    "name": "Label4_839",
+    "card": "14E",
+    "parent": "Container1_216",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Label@2.5.1",
+      "DisplayMode": "=DisplayMode.View",
+      "Text": "=\"4\""
+    }
+  },
+  {
+    "section": 14,
+    "name": "Local_Comp_Input_Number_106",
+    "card": "14E",
+    "parent": "Container7_1041",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord14.GG_862_Antall_Elever_Paa_Lokale_Ordninger_Med_Inntektsgraderte_Satser_Trinn_4",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel14,\n    nfSelectedRecord14,\n    {GG_862_Antall_Elever_Paa_Lokale_Ordninger_Med_Inntektsgraderte_Satser_Trinn_4:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 14,
+    "name": "Local_Comp_Input_Number_107",
+    "card": "14E",
+    "parent": "Container7_1042",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord14.GG_867_Antall_Elever_Paa_Nasjonale_Ordninger_Med_Inntektsgraderte_Satser_Trinn_4",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel14,\n    nfSelectedRecord14,\n    {GG_867_Antall_Elever_Paa_Nasjonale_Ordninger_Med_Inntektsgraderte_Satser_Trinn_4:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 14,
+    "name": "Label4_843",
+    "card": "14E",
+    "parent": "Container1_273",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Label@2.5.1",
+      "DisplayMode": "=DisplayMode.View",
+      "Text": "=\"5\""
+    }
+  },
+  {
+    "section": 14,
+    "name": "Local_Comp_Input_Number_484",
+    "card": "14E",
+    "parent": "Container7_1045",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=",
+      "Default": "=nfSelectedRecord14.GG_863_Sum_Elever_Paa_Lokale_Ordninger_Med_Inntektsgraderte_Satser",
+      "Displaymode": "=DisplayMode.View",
+      "Onchange": "="
+    }
+  },
+  {
+    "section": 14,
+    "name": "Local_Comp_Input_Number_390",
+    "card": "14E",
+    "parent": "Container7_1046",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=",
+      "Default": "=nfSelectedRecord14.GG_868_Sum_Elever_Paa_Nasjonale_Ordninger_Med_Inntektsgraderte_Satser",
+      "Displaymode": "=DisplayMode.View",
+      "Onchange": "="
+    }
+  },
+  {
+    "section": 14,
+    "name": "14C",
+    "card": "14C",
+    "parent": "Canvas_10",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "DataCard@1.0.2",
+      "Y": "=4"
+    }
+  },
+  {
+    "section": 14,
+    "name": "Comp_liba_DatacardBkgGSI_60",
+    "card": "14C",
+    "parent": "14C",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Comp_liba_DatacardBkgGSI",
+      "Input_HeaderText": "=\n\nLookUp(nfViewSprak, BeregnetId = \"GG_H54_U111\").HovedsporsmalTekst",
+      "Input_Kontrollere": "= Table(\r\n      \r\n        {ID: \"GG-A74\", Boolean: Kontroll_GG_A74},\r\n        {ID: \"GG-A76\", Boolean: Kontroll_GG_A76},\r\n        {ID: \"GG-A77\", Boolean: Kontroll_GG_A77},\r\n        {ID: \"GG-A78\", Boolean: Kontroll_GG_A78},\r\n        {ID: \"GG-F109\", Boolean: Kontroll_GG_F109},\r\n        {ID: \"GG-A122\", Boolean: Kontroll_GG_A122}\r\n\r\n    )",
+      "VisDrawer": "=Set (vargblVisDrawer ,true) ;       \nSet(vargblDrawerHjelpetekst,LookUp(colHjelpetekster, HjelpetekstId = \"GG-H145\" ,Tekst)); \nSet(vargblDrawerOverskrift,LookUp(colHjelpetekster, HjelpetekstId = \"GG-H145\" ,Overskrift));\nCom_liba_spmtegn_drawer_GSI_14.SetFocusDrawer();"
+    }
+  },
+  {
+    "section": 14,
+    "name": "Label4_826",
+    "card": "14C",
+    "parent": "Container1_270",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Label@2.5.1",
+      "DisplayMode": "=DisplayMode.View",
+      "Text": "=\"1\""
+    }
+  },
+  {
+    "section": 14,
+    "name": "Local_Comp_Input_Number_96",
+    "card": "14C",
+    "parent": "Container7_1031",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord14.GG_856_Maanedlig_Foreldrebetaling_Heltidsplass_SFO_1_3_Trinn",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel14,\n    nfSelectedRecord14,\n    {GG_856_Maanedlig_Foreldrebetaling_Heltidsplass_SFO_1_3_Trinn:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 14,
+    "name": "Label4_830",
+    "card": "14C",
+    "parent": "Container1_272",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Label@2.5.1",
+      "DisplayMode": "=DisplayMode.View",
+      "Text": "=\"2\""
+    }
+  },
+  {
+    "section": 14,
+    "name": "Local_Comp_Input_Number_95",
+    "card": "14C",
+    "parent": "Container7_1033",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord14.GG_1014_Maanedlig_Foreldrebetaling_Heltidsplass_SFO_4_Trinn",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel14,\n    nfSelectedRecord14,\n    {GG_1014_Maanedlig_Foreldrebetaling_Heltidsplass_SFO_4_Trinn:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 14,
+    "name": "Label4_841",
+    "card": "14C",
+    "parent": "Container1_274",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Label@2.5.1",
+      "DisplayMode": "=DisplayMode.View",
+      "Text": "=\"3\""
+    }
+  },
+  {
+    "section": 14,
+    "name": "Local_Comp_Input_Number_94",
+    "card": "14C",
+    "parent": "Container7_1043",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord14.GG_1015_Maanedlig_Foreldrebetaling_Deltidsplass_SFO_4_Trinn",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel14,\n    nfSelectedRecord14,\n    {GG_1015_Maanedlig_Foreldrebetaling_Deltidsplass_SFO_4_Trinn:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 14,
+    "name": "Label4_845",
+    "card": "14C",
+    "parent": "Container1_271",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Label@2.5.1",
+      "DisplayMode": "=DisplayMode.View",
+      "Text": "=\"4\""
+    }
+  },
+  {
+    "section": 14,
+    "name": "Local_Comp_Input_Number_97",
+    "card": "14C",
+    "parent": "Container7_1044",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=2",
+      "Default": "=nfSelectedRecord14.GG_857_Antall_Timer_Heltidsplass",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel14,\n    nfSelectedRecord14,\n    {GG_857_Antall_Timer_Heltidsplass:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 14,
+    "name": "Label4_891",
+    "card": "14C",
+    "parent": "Container1_290",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Label@2.5.1",
+      "DisplayMode": "=DisplayMode.View",
+      "Text": "=\"5\""
+    }
+  },
+  {
+    "section": 14,
+    "name": "Local_Comp_Input_Number_450",
+    "card": "14C",
+    "parent": "Container7_1067",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=2",
+      "Default": "=nfSelectedRecord14.GG_1020_Antall_Timer_Deltidsplass",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel14,\n    nfSelectedRecord14,\n    {GG_1020_Antall_Timer_Deltidsplass:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 14,
+    "name": "14B",
+    "card": "14B",
+    "parent": "Canvas_10",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "DataCard@1.0.2",
+      "Y": "=3"
+    }
+  },
+  {
+    "section": 14,
+    "name": "Comp_liba_DatacardBkgGSI_54",
+    "card": "14B",
+    "parent": "14B",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Comp_liba_DatacardBkgGSI",
+      "Input_HeaderText": "=\n\nLookUp(nfViewSprak, BeregnetId = \"GG_H53_U107\").HovedsporsmalTekst",
+      "Input_Kontrollere": "=Table(\r\n       \r\n        {ID: \"GG-A61\", Boolean: Kontroll_GG_A61}\r\n      \r\n    )",
+      "VisDrawer": "=Set (vargblVisDrawer ,true) ;       \nSet(vargblDrawerHjelpetekst,LookUp(colHjelpetekster, HjelpetekstId = \"GG-H144\" ,Tekst)); \nSet(vargblDrawerOverskrift,LookUp(colHjelpetekster, HjelpetekstId = \"GG-H144\" ,Overskrift));\nCom_liba_spmtegn_drawer_GSI_14.SetFocusDrawer();"
+    }
+  },
+  {
+    "section": 14,
+    "name": "Label4_802",
+    "card": "14B",
+    "parent": "Container1_262",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Label@2.5.1",
+      "DisplayMode": "=DisplayMode.View",
+      "Text": "=\"1\""
+    }
+  },
+  {
+    "section": 14,
+    "name": "Local_Comp_Input_Number_100",
+    "card": "14B",
+    "parent": "Container7_1027",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=\nnfSelectedRecord14.GG_852_Menn_Ansatte_SFO_Med_Laerer_Eller_Barnehageutdanning",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel14,\n    nfSelectedRecord14,\n    {GG_852_Menn_Ansatte_SFO_Med_Laerer_Eller_Barnehageutdanning:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 14,
+    "name": "Local_Comp_Input_Number_475",
+    "card": "14B",
+    "parent": "Container7_1072",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord14.GG_1030_Kvinner_Ansatte_SFO_Med_Laerer_Eller_Barnehageutdanning",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel14,\n    nfSelectedRecord14,\n    {GG_1030_Kvinner_Ansatte_SFO_Med_Laerer_Eller_Barnehageutdanning:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 14,
+    "name": "Local_Comp_Input_Number_476",
+    "card": "14B",
+    "parent": "Container7_1073",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=",
+      "Default": "=nfSelectedRecord14.GG_1031_Sum_Ansatte_SFO_Med_Laerer_Eller_Barnehageutdanning",
+      "Displaymode": "=DisplayMode.View",
+      "Onchange": "="
+    }
+  },
+  {
+    "section": 14,
+    "name": "TextInput7",
+    "card": "14B",
+    "parent": "Container7_1074",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Classic/TextInput@2.3.2",
+      "Default": "=nfSelectedRecord14.GG_1032_Arsverk_Ansatte_SFO_Med_Laerer_Eller_Barnehageutdanning",
+      "DisplayMode": "=nfDisplayMode",
+      "MaxLength": "=4",
+      "OnChange": "=\r\nIf(\r\n    \n    ( !IsMatch((Self.Text), \"^[0-9]+(?:[.,][0-9]+)?$\") || Value(Self.Text) = Blank() || Value(Self.Text) = 0 || Value(Self.Text) > 9999),\r\n    Patch(GsiGrunnskoleSvarDel14,nfSelectedRecord14,{GG_1032_Arsverk_Ansatte_SFO_Med_Laerer_Eller_Barnehageutdanning: Blank() });\r\n        Reset(Self), \r\n    \r\n    \n    Len(Self.Text) > 3 && IsMatch((Self.Text), \"^[0-9]+(?:[.,][0-9]+)?$\" ), \r\n        Patch(GsiGrunnskoleSvarDel14,nfSelectedRecord14,{GG_1032_Arsverk_Ansatte_SFO_Med_Laerer_Eller_Barnehageutdanning:Round(Value (Self.Text),2)});\r\n        Reset(Self), \r\n    \r\n    \n    Patch(GsiGrunnskoleSvarDel14,nfSelectedRecord14,{GG_1032_Arsverk_Ansatte_SFO_Med_Laerer_Eller_Barnehageutdanning: Value(Self.Text) })\r\n    \n    \r\n    );"
+    }
+  },
+  {
+    "section": 14,
+    "name": "Label4_804",
+    "card": "14B",
+    "parent": "Container1_263",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Label@2.5.1",
+      "DisplayMode": "=DisplayMode.View",
+      "Text": "=\"2\""
+    }
+  },
+  {
+    "section": 14,
+    "name": "Local_Comp_Input_Number_99",
+    "card": "14B",
+    "parent": "Container7_1028",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord14.GG_853_Menn_Ansatte_SFO_Med_Fagbrev_Barne_Ungdomsarbeidsfag",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel14,\n    nfSelectedRecord14,\n    {GG_853_Menn_Ansatte_SFO_Med_Fagbrev_Barne_Ungdomsarbeidsfag:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 14,
+    "name": "Local_Comp_Input_Number_478",
+    "card": "14B",
+    "parent": "Container7_1075",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord14.GG_1033_Kvinner_Ansatte_SFO_Med_Fagbrev_Barne_Ungdomsarbeidsfag",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel14,\n    nfSelectedRecord14,\n    {GG_1033_Kvinner_Ansatte_SFO_Med_Fagbrev_Barne_Ungdomsarbeidsfag :HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 14,
+    "name": "Local_Comp_Input_Number_479",
+    "card": "14B",
+    "parent": "Container7_1076",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=",
+      "Default": "=nfSelectedRecord14.GG_1035_Sum_Ansatte_SFO_Med_Fagbrev_Barne_Ungdomsarbeidsfag",
+      "Displaymode": "=DisplayMode.View",
+      "Onchange": "="
+    }
+  },
+  {
+    "section": 14,
+    "name": "TextInput7_1",
+    "card": "14B",
+    "parent": "Container7_1077",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Classic/TextInput@2.3.2",
+      "Default": "=nfSelectedRecord14.GG_1036_Arsverk_Ansatte_SFO_Med_Fagbrev_Barne_Ungdomsarbeidsfag",
+      "DisplayMode": "=nfDisplayMode",
+      "MaxLength": "=4",
+      "OnChange": "=\r\nIf(\r\n    \n    ( !IsMatch((Self.Text), \"^[0-9]+(?:[.,][0-9]+)?$\") || Value(Self.Text) = Blank() || Value(Self.Text) = 0 || Value(Self.Text) > 9999),\r\n    Patch(GsiGrunnskoleSvarDel14,nfSelectedRecord14,{GG_1036_Arsverk_Ansatte_SFO_Med_Fagbrev_Barne_Ungdomsarbeidsfag: Blank() });\r\n        Reset(Self), \r\n    \r\n    \n    Len(Self.Text) > 3 && IsMatch((Self.Text), \"^[0-9]+(?:[.,][0-9]+)?$\" ), \r\n        Patch(GsiGrunnskoleSvarDel14,nfSelectedRecord14,{GG_1036_Arsverk_Ansatte_SFO_Med_Fagbrev_Barne_Ungdomsarbeidsfag:Round(Value (Self.Text),2)});\r\n        Reset(Self), \r\n    \r\n    \n    Patch(GsiGrunnskoleSvarDel14,nfSelectedRecord14,{GG_1036_Arsverk_Ansatte_SFO_Med_Fagbrev_Barne_Ungdomsarbeidsfag: Value(Self.Text) })\r\n    \n    \r\n    );"
+    }
+  },
+  {
+    "section": 14,
+    "name": "Label4_806",
+    "card": "14B",
+    "parent": "Container1_264",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Label@2.5.1",
+      "DisplayMode": "=DisplayMode.View",
+      "Text": "=\"3\""
+    }
+  },
+  {
+    "section": 14,
+    "name": "Local_Comp_Input_Number_98",
+    "card": "14B",
+    "parent": "Container7_1029",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord14.GG_854_Menn_Ansatte_SFO_Med_Annen_Kompetanse",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel14,\n    nfSelectedRecord14,\n    {GG_854_Menn_Ansatte_SFO_Med_Annen_Kompetanse:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 14,
+    "name": "Local_Comp_Input_Number_481",
+    "card": "14B",
+    "parent": "Container7_1078",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord14.GG_1037_Kvinner_Ansatte_SFO_Med_Annen_Kompetanse",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel14,\n    nfSelectedRecord14,\n    {GG_1037_Kvinner_Ansatte_SFO_Med_Annen_Kompetanse:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 14,
+    "name": "Local_Comp_Input_Number_482",
+    "card": "14B",
+    "parent": "Container7_1079",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=",
+      "Default": "=nfSelectedRecord14.GG_1038_Sum_Ansatte_SFO_Med_Annen_Kompetanse",
+      "Displaymode": "=DisplayMode.View",
+      "Onchange": "="
+    }
+  },
+  {
+    "section": 14,
+    "name": "TextInput7_2",
+    "card": "14B",
+    "parent": "Container7_1080",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Classic/TextInput@2.3.2",
+      "Default": "=nfSelectedRecord14.GG_1039_Arsverk_SFO_Med_Annen_Kompetanse",
+      "DisplayMode": "=nfDisplayMode",
+      "MaxLength": "=4",
+      "OnChange": "=\r\nIf(\r\n    \n    ( !IsMatch((Self.Text), \"^[0-9]+(?:[.,][0-9]+)?$\") || Value(Self.Text) = Blank() || Value(Self.Text) = 0 || Value(Self.Text) > 9999),\r\n    Patch(GsiGrunnskoleSvarDel14,nfSelectedRecord14,{GG_1039_Arsverk_SFO_Med_Annen_Kompetanse: Blank() });\r\n        Reset(Self), \r\n    \r\n    \n    Len(Self.Text) > 3 && IsMatch((Self.Text), \"^[0-9]+(?:[.,][0-9]+)?$\" ), \r\n        Patch(GsiGrunnskoleSvarDel14,nfSelectedRecord14,{GG_1039_Arsverk_SFO_Med_Annen_Kompetanse:Round(Value (Self.Text),2)});\r\n        Reset(Self), \r\n    \r\n    \n    Patch(GsiGrunnskoleSvarDel14,nfSelectedRecord14,{GG_1039_Arsverk_SFO_Med_Annen_Kompetanse: Value(Self.Text) })\r\n    \n    \r\n    );"
+    }
+  },
+  {
+    "section": 14,
+    "name": "Label4_808",
+    "card": "14B",
+    "parent": "Container1_265",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Label@2.5.1",
+      "DisplayMode": "=DisplayMode.View",
+      "Text": "=\"4\""
+    }
+  },
+  {
+    "section": 14,
+    "name": "Local_Comp_Input_Number_483",
+    "card": "14B",
+    "parent": "Container7_1030",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=",
+      "Default": "=nfSelectedRecord14.GG_855_Sum_Menn_Ansatte_SFO",
+      "Displaymode": "=DisplayMode.View",
+      "Onchange": "="
+    }
+  },
+  {
+    "section": 14,
+    "name": "Local_Comp_Input_Number_489",
+    "card": "14B",
+    "parent": "Container7_1081",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=",
+      "Default": "=nfSelectedRecord14.GG_1040_Sum_Kvinner_Ansatte_SFO",
+      "Displaymode": "=DisplayMode.View",
+      "Onchange": "="
+    }
+  },
+  {
+    "section": 14,
+    "name": "Local_Comp_Input_Number_490",
+    "card": "14B",
+    "parent": "Container7_1082",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=",
+      "Default": "=nfSelectedRecord14.GG_1041_Sum_Alle_Menn_Kvinner_Ansatte_SFO",
+      "Displaymode": "=DisplayMode.View",
+      "Onchange": "="
+    }
+  },
+  {
+    "section": 14,
+    "name": "TextInput7_3",
+    "card": "14B",
+    "parent": "Container7_1083",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Classic/TextInput@2.3.2",
+      "Default": "=nfSelectedRecord14.GG_1042_Sum_Arsverk_SFO",
+      "DisplayMode": "=DisplayMode.View",
+      "OnChange": "="
+    }
+  },
+  {
+    "section": 14,
+    "name": "Local_Comp_Input_Number_491",
+    "card": "14B",
+    "parent": "Container7_1083",
+    "hidden": true,
+    "conditions": [
+      {
+        "name": "Local_Comp_Input_Number_491",
+        "visible": "=false"
+      }
+    ],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=",
+      "Default": "=nfSelectedRecord14.GG_1042_Sum_Arsverk_SFO",
+      "Displaymode": "=DisplayMode.View",
+      "Onchange": "=",
+      "Visible": "=false"
+    }
+  },
+  {
+    "section": 14,
+    "name": "14A",
+    "card": "14A",
+    "parent": "Canvas_10",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "DataCard@1.0.2",
+      "Y": "=2"
+    }
+  },
+  {
+    "section": 14,
+    "name": "Comp_liba_DatacardBkgGSI_53",
+    "card": "14A",
+    "parent": "14A",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Comp_liba_DatacardBkgGSI",
+      "Input_HeaderText": "=\nLookUp(nfViewSprak, BeregnetId = \"GG_H52_U105\").HovedsporsmalTekst",
+      "Input_Kontrollere": "=  Table(\r\n        \n        {ID: \"GG-A10\", Boolean:Kontroll_GG_A10},\r\n        {ID: \"GG-A11\", Boolean:Kontroll_GG_A11},\r\n        {ID: \"GG-A12\", Boolean:Kontroll_GG_A12},\r\n        {ID: \"GG-A13\", Boolean:Kontroll_GG_A13},\r\n        {ID: \"GG-A31\", Boolean:Kontroll_GG_A31},\r\n        {ID: \"GG-A34\", Boolean:Kontroll_GG_A34},\r\n        {ID: \"GG-A37\", Boolean:Kontroll_GG_A37},\r\n        {ID: \"GG-A62\", Boolean: Kontroll_GG_A62}\r\n\r\n    \r\n    )",
+      "VisDrawer": "=Set (vargblVisDrawer ,true) ;       \nSet(vargblDrawerHjelpetekst,LookUp(colHjelpetekster, HjelpetekstId = \"GG-H143\" ,Tekst)); \nSet(vargblDrawerOverskrift,LookUp(colHjelpetekster, HjelpetekstId = \"GG-H143\" ,Overskrift));\nCom_liba_spmtegn_drawer_GSI_14.SetFocusDrawer();"
+    }
+  },
+  {
+    "section": 14,
+    "name": "Label4_790",
+    "card": "14A",
+    "parent": "Container1_191",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Label@2.5.1",
+      "DisplayMode": "=DisplayMode.View",
+      "Text": "=\"1\""
+    }
+  },
+  {
+    "section": 14,
+    "name": "Local_Comp_Input_Number_412",
+    "card": "14A",
+    "parent": "Container7_1017",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=\n\nnfSelectedRecord14.GG_840_Antall_Barn_SFO_Trinn_1",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=Patch(\n   GsiGrunnskoleSvarDel14,\n    nfSelectedRecord14,\n    {GG_840_Antall_Barn_SFO_Trinn_1 :HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 14,
+    "name": "Local_Comp_Input_Number_413",
+    "card": "14A",
+    "parent": "Container7_1018",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord14.GG_846_Antall_Barn_SFO_Med_100_Prosent_Plass_Trinn_1",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=Patch(\n   GsiGrunnskoleSvarDel14,\n    nfSelectedRecord14,\n    {GG_846_Antall_Barn_SFO_Med_100_Prosent_Plass_Trinn_1 :HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 14,
+    "name": "Label4_792",
+    "card": "14A",
+    "parent": "Container1_192",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Label@2.5.1",
+      "DisplayMode": "=DisplayMode.View",
+      "Text": "=\"2\""
+    }
+  },
+  {
+    "section": 14,
+    "name": "Local_Comp_Input_Number_414",
+    "card": "14A",
+    "parent": "Container7_1019",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord14.GG_841_Antall_Barn_SFO_Trinn_2",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=Patch(\n   GsiGrunnskoleSvarDel14,\n    nfSelectedRecord14,\n    {GG_841_Antall_Barn_SFO_Trinn_2:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 14,
+    "name": "Local_Comp_Input_Number_415",
+    "card": "14A",
+    "parent": "Container7_1020",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord14.GG_847_Antall_Barn_SFO_Med_100_Prosent_Plass_Trinn_2",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=Patch(\n   GsiGrunnskoleSvarDel14,\n    nfSelectedRecord14,\n    {GG_847_Antall_Barn_SFO_Med_100_Prosent_Plass_Trinn_2 :HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 14,
+    "name": "Label4_794",
+    "card": "14A",
+    "parent": "Container1_193",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Label@2.5.1",
+      "DisplayMode": "=DisplayMode.View",
+      "Text": "=\"3\""
+    }
+  },
+  {
+    "section": 14,
+    "name": "Local_Comp_Input_Number_416",
+    "card": "14A",
+    "parent": "Container7_1021",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord14.GG_842_Antall_Barn_SFO_Trinn_3",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=Patch(\n   GsiGrunnskoleSvarDel14,\n    nfSelectedRecord14,\n    {GG_842_Antall_Barn_SFO_Trinn_3:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 14,
+    "name": "Local_Comp_Input_Number_417",
+    "card": "14A",
+    "parent": "Container7_1022",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord14.GG_848_Antall_Barn_SFO_Med_100_Prosent_Plass_Trinn_3",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=Patch(\n   GsiGrunnskoleSvarDel14,\n    nfSelectedRecord14,\n    {GG_848_Antall_Barn_SFO_Med_100_Prosent_Plass_Trinn_3 :HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 14,
+    "name": "Label4_796",
+    "card": "14A",
+    "parent": "Container1_194",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Label@2.5.1",
+      "DisplayMode": "=DisplayMode.View",
+      "Text": "=\"4\""
+    }
+  },
+  {
+    "section": 14,
+    "name": "Local_Comp_Input_Number_418",
+    "card": "14A",
+    "parent": "Container7_1023",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord14.GG_843_Antall_Barn_SFO_Trinn_4",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=Patch(\n   GsiGrunnskoleSvarDel14,\n    nfSelectedRecord14,\n    {GG_843_Antall_Barn_SFO_Trinn_4:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 14,
+    "name": "Local_Comp_Input_Number_419",
+    "card": "14A",
+    "parent": "Container7_1024",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord14.GG_849_Antall_Barn_SFO_Med_100_Prosent_Plass_Trinn_4",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=Patch(\n   GsiGrunnskoleSvarDel14,\n    nfSelectedRecord14,\n    {GG_849_Antall_Barn_SFO_Med_100_Prosent_Plass_Trinn_4 :HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 14,
+    "name": "Label4_798",
+    "card": "14A",
+    "parent": "Container1_195",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Label@2.5.1",
+      "DisplayMode": "=DisplayMode.View",
+      "Text": "=\"5\""
+    }
+  },
+  {
+    "section": 14,
+    "name": "Local_Comp_Input_Number_420",
+    "card": "14A",
+    "parent": "Container7_1025",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord14.GG_844_Antall_Barn_SFO_Trinn_5_7",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=Patch(\n   GsiGrunnskoleSvarDel14,\n    nfSelectedRecord14,\n    {GG_844_Antall_Barn_SFO_Trinn_5_7:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 14,
+    "name": "Local_Comp_Input_Number_421",
+    "card": "14A",
+    "parent": "Container7_1026",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord14.GG_850_Antall_Barn_SFO_Med_100_Prosent_Plass_Trinn_5_7",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=Patch(\n   GsiGrunnskoleSvarDel14,\n    nfSelectedRecord14,\n    {GG_850_Antall_Barn_SFO_Med_100_Prosent_Plass_Trinn_5_7:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 14,
+    "name": "Label4_810",
+    "card": "14A",
+    "parent": "Container1_267",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Label@2.5.1",
+      "DisplayMode": "=DisplayMode.View",
+      "Text": "=\"6\""
+    }
+  },
+  {
+    "section": 14,
+    "name": "Local_Comp_Input_Number_391",
+    "card": "14A",
+    "parent": "Container7_1037",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=",
+      "Default": "=nfSelectedRecord14.GG_845_Sum_Barn_SFO_Trinn_1_7",
+      "Displaymode": "=DisplayMode.View",
+      "Onchange": "="
+    }
+  },
+  {
+    "section": 14,
+    "name": "Local_Comp_Input_Number_485",
+    "card": "14A",
+    "parent": "Container7_1038",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=",
+      "Default": "=nfSelectedRecord14.GG_851_Sum_Barn_SFO_Med_100_Prosent_Plass_Trinn_1_7",
+      "Displaymode": "=DisplayMode.View",
+      "Onchange": "="
+    }
+  },
+  {
+    "section": 15,
+    "name": "Steg3_Overskrift_11",
+    "card": "Steg3_Overskrift_11",
+    "parent": "Canvas_11",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "DataCard@1.0.2",
+      "DisplayMode": "=nfDisplayMode",
+      "Y": "=0"
+    }
+  },
+  {
+    "section": 15,
+    "name": "Header_5",
+    "card": "Header_5",
+    "parent": "Canvas_11",
+    "hidden": false,
+    "conditions": [
+      {
+        "name": "Header_5",
+        "visible": "=If(App.Width > 888, false, true)"
+      }
+    ],
+    "props": {
+      "Control": "DataCard@1.0.2",
+      "DisplayMode": "=nfDisplayMode",
+      "Visible": "=If(App.Width > 888, false, true)",
+      "Y": "=1"
+    }
+  },
+  {
+    "section": 15,
+    "name": "15A",
+    "card": "15A",
+    "parent": "Canvas_11",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "DataCard@1.0.2",
+      "Y": "=2"
+    }
+  },
+  {
+    "section": 15,
+    "name": "Comp_liba_DatacardBkgGSI_66",
+    "card": "15A",
+    "parent": "15A",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Comp_liba_DatacardBkgGSI",
+      "Input_HeaderText": "=LookUp(nfViewSprak, BeregnetId = \"GG_H66_U148\").HovedsporsmalTekst",
+      "Input_Kontrollere": "= Table(\r\n        {ID: \"GG-F151\", Boolean:Kontroll_GG_F151},\r\n        {ID: \"GG-F152\", Boolean:Kontroll_GG_F152}\r\n       \r\n    )",
+      "VisDrawer": "=Set (vargblVisDrawer ,true) ;       \nSet(vargblDrawerHjelpetekst,LookUp(colHjelpetekster, HjelpetekstId = \"GG-H148\" ,Tekst)); \nSet(vargblDrawerOverskrift,LookUp(colHjelpetekster, HjelpetekstId = \"GG-H148\" ,Overskrift));\nCom_liba_spmtegn_drawer_GSI_15.SetFocusDrawer();"
+    }
+  },
+  {
+    "section": 15,
+    "name": "Radio1_13",
+    "card": "15A",
+    "parent": "Container17_9",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Classic/Radio@2.3.0",
+      "Default": "=\n\n\n\nIf(nfSelectedRecord15.GG_946_Egen_Kommunal_Tjeneste = true, \"Ja\", If(nfSelectedRecord15.GG_946_Egen_Kommunal_Tjeneste = false, \"Nei\", Blank()))",
+      "DisplayMode": "=nfDisplayMode",
+      "Items": "=[\"Ja\", \"Nei\"]",
+      "OnChange": "=\nPatch(\n    GsiGrunnskoleSvarDel15,\n    nfSelectedRecord15, {GG_946_Egen_Kommunal_Tjeneste: If(Radio1_13.Selected.Value = \"Ja\", 1, If( Radio1_13.Selected.Value = \"Nei\", 0))});\n\nIf(Self.Selected.Value = \"Nei\" && Radio1_10.Selected.Value = \"Nei\", \n    Patch(GsiGrunnskoleSvarDel15, nfSelectedRecord15, {\n        GG_952_Stillingsgrupper_Og_Utdanningsbakgrunn_I_PPtjenesten_Psykologi: Blank(),\n            \n        GG_953_Stillingsgrupper_Og_Utdanningsbakgrunn_I_PPtjenesten_Spesialpedagogikk: Blank(),\n\n        GG_954_Stillingsgrupper_Og_Utdanningsbakgrunn_I_PPtjenesten_Pedagogikk: Blank(),\n\n        GG_955_Stillingsgrupper_Og_Utdanningsbakgrunn_I_PPtjenesten_Fagstillinger: Blank(),\n\n        GG_956_Stillingsgrupper_Og_Utdanningsbakgrunn_I_PPtjenesten_Ledelse: Blank(),\n\n        GG_957_Stillingsgrupper_Og_Utdanningsbakgrunn_I_PPtjenesten_Merkantilt_Personell: Blank()\n        }\n    );\n    Reset(TextInput2_124);\n    Reset(TextInput2_126);\n    Reset(TextInput2_138);\n    Reset(TextInput2_139);\n    Reset(TextInput2_140);\n    Reset(TextInput2_141);\n);",
+      "Y": "=2"
+    }
+  },
+  {
+    "section": 15,
+    "name": "Radio1_10",
+    "card": "15A",
+    "parent": "Container17_7",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Classic/Radio@2.3.0",
+      "Default": "=\n\n\n\nIf(nfSelectedRecord15.GG_947_Drifter_Interkommunal_Tjeneste = true, \"Ja\", If(nfSelectedRecord15.GG_947_Drifter_Interkommunal_Tjeneste = false, \"Nei\", Blank()))",
+      "DisplayMode": "=nfDisplayMode",
+      "Items": "=[\"Ja\", \"Nei\"]",
+      "OnChange": "=Patch(\n    GsiGrunnskoleSvarDel15,\n    nfSelectedRecord15, {GG_947_Drifter_Interkommunal_Tjeneste: If(Radio1_10.Selected.Value = \"Ja\", 1, If( Radio1_10.Selected.Value = \"Nei\", 0))});\n\nIf(Self.Selected.Value = \"Nei\" && Radio1_13.Selected.Value = \"Nei\", \n    Patch(GsiGrunnskoleSvarDel15, nfSelectedRecord15, {\n        GG_952_Stillingsgrupper_Og_Utdanningsbakgrunn_I_PPtjenesten_Psykologi: Blank(),\n            \n        GG_953_Stillingsgrupper_Og_Utdanningsbakgrunn_I_PPtjenesten_Spesialpedagogikk: Blank(),\n\n        GG_954_Stillingsgrupper_Og_Utdanningsbakgrunn_I_PPtjenesten_Pedagogikk: Blank(),\n\n        GG_955_Stillingsgrupper_Og_Utdanningsbakgrunn_I_PPtjenesten_Fagstillinger: Blank(),\n\n        GG_956_Stillingsgrupper_Og_Utdanningsbakgrunn_I_PPtjenesten_Ledelse: Blank(),\n\n        GG_957_Stillingsgrupper_Og_Utdanningsbakgrunn_I_PPtjenesten_Merkantilt_Personell: Blank()\n        }\n    );\n    Reset(TextInput2_124);\n    Reset(TextInput2_126);\n    Reset(TextInput2_138);\n    Reset(TextInput2_139);\n    Reset(TextInput2_140);\n    Reset(TextInput2_141);\n);\n\nIf(Self.Selected.Value = \"Nei\",\n        \n        RemoveIf(GrunnskoleMottakereAvPpt, GsiGrunnskoleSvarDel15Id = nfSelectedRecord15.GsiGrunnskoleSvarDel15Id\n        ) ;\n        RemoveIf(ColGG15SpD, GsiGrunnskoleSvarDel15Id = nfSelectedRecord15.GsiGrunnskoleSvarDel15Id\n        );\n      \n);",
+      "Y": "=2"
+    }
+  },
+  {
+    "section": 15,
+    "name": "Radio1_11",
+    "card": "15A",
+    "parent": "Container17_8",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Classic/Radio@2.3.0",
+      "Default": "=\n\n\nIf(nfSelectedRecord15.GG_948_Deltar_I_Interkommunal_Tjeneste = true, \"Ja\", If(nfSelectedRecord15.GG_948_Deltar_I_Interkommunal_Tjeneste = false, \"Nei\", Blank()))",
+      "DisplayMode": "=nfDisplayMode",
+      "Items": "=[\"Ja\", \"Nei\"]",
+      "OnChange": "=Patch(\n    GsiGrunnskoleSvarDel15,\n    nfSelectedRecord15, {GG_948_Deltar_I_Interkommunal_Tjeneste: If(Radio1_11.Selected.Value = \"Ja\", 1, If( Radio1_11.Selected.Value = \"Nei\", 0))});\n\n    If(Self.Selected.Value <> \"1\",\nPatch(GsiGrunnskoleSvarDel15, nfSelectedRecord15, {GG_950_Kommune_I_Interkommunal_Tjeneste:Blank()});\n);\nReset(ComboboxCanvas2_7) ;",
+      "Y": "=2"
+    }
+  },
+  {
+    "section": 15,
+    "name": "Radio1_12",
+    "card": "15A",
+    "parent": "Container17_10",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Classic/Radio@2.3.0",
+      "Default": "=\n\n\nIf(nfSelectedRecord15.GG_949_Annen_Organisering = true, \"Ja\", If(nfSelectedRecord15.GG_949_Annen_Organisering = false, \"Nei\", Blank()))",
+      "DisplayMode": "=nfDisplayMode",
+      "Items": "=[\"Ja\", \"Nei\"]",
+      "OnChange": "=Patch(\n    GsiGrunnskoleSvarDel15,\n    nfSelectedRecord15, {GG_949_Annen_Organisering: If(Radio1_12.Selected.Value = \"Ja\", 1, If( Radio1_12.Selected.Value = \"Nei\", 0))});",
+      "Y": "=2"
+    }
+  },
+  {
+    "section": 15,
+    "name": "ComboboxCanvas2_7",
+    "card": "15A",
+    "parent": "Container_Kommuner_som deltar_i_interkommunal_tjeneste",
+    "hidden": false,
+    "conditions": [
+      {
+        "name": "Container_Kommuner_som deltar_i_interkommunal_tjeneste",
+        "visible": "=If(Radio1_11.Selected.Value = \"Ja\", true,false)"
+      }
+    ],
+    "props": {
+      "Control": "ComboBox@0.0.51",
+      "DefaultSelectedItems": "=\n{Value: nfSelectedRecord15.GG_950_Kommune_I_Interkommunal_Tjeneste}",
+      "DisplayMode": "=If(vargblPatchingInProgress, DisplayMode.Disabled, nfDisplayMode)",
+      "Items": "=\n\n\nDistinct(\n    SortByColumns(\n        Filter(colKommune, !(Kommunenavn in nfSelectedRecord15.GG_950_Kommune_I_Interkommunal_Tjeneste) &&\n        Kommunenavn <> nfLookupNSR.Kommunenavn), \n       \"Kommunenavn\", \n       SortOrder.Ascending\n   ), \n   Kommunenavn\n)",
+      "OnChange": "=Patch(GsiGrunnskoleSvarDel15,\nnfSelectedRecord15,{GG_950_Kommune_I_Interkommunal_Tjeneste:Self.Selected.Value})"
+    }
+  },
+  {
+    "section": 15,
+    "name": "15B",
+    "card": "15B",
+    "parent": "Canvas_11",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "DataCard@1.0.2",
+      "Y": "=3"
+    }
+  },
+  {
+    "section": 15,
+    "name": "Comp_liba_DatacardBkgGSI_65",
+    "card": "15B",
+    "parent": "15B",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Comp_liba_DatacardBkgGSI",
+      "Input_HeaderText": "=LookUp(nfViewSprak, BeregnetId = \"GG_H67_U149\").HovedsporsmalTekst",
+      "Input_Kontrollere": "=",
+      "VisDrawer": "=Set (vargblVisDrawer ,true) ;       \nSet(vargblDrawerHjelpetekst,LookUp(colHjelpetekster, HjelpetekstId = \"GG-H149\" ,Tekst)); \nSet(vargblDrawerOverskrift,LookUp(colHjelpetekster, HjelpetekstId = \"GG-H149\" ,Overskrift));\nCom_liba_spmtegn_drawer_GSI_15.SetFocusDrawer();"
+    }
+  },
+  {
+    "section": 15,
+    "name": "Radio1_15",
+    "card": "15B",
+    "parent": "Container17_11",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Classic/Radio@2.3.0",
+      "Default": "=\n\n\nIf(nfSelectedRecord15.GG_951_Samordnet_Med_PPT_I_Videregående_Opplæring = true, \"Ja\", If(nfSelectedRecord15.GG_951_Samordnet_Med_PPT_I_Videregående_Opplæring = false, \"Nei\", Blank()))",
+      "DisplayMode": "=nfDisplayMode",
+      "Items": "=[\"Ja\", \"Nei\"]",
+      "OnChange": "=Patch(\n    GsiGrunnskoleSvarDel15,\n    nfSelectedRecord15, {GG_951_Samordnet_Med_PPT_I_Videregående_Opplæring: If(Radio1_15.Selected.Value = \"Ja\", 1, If( Radio1_15.Selected.Value = \"Nei\", 0))});",
+      "Y": "=2"
+    }
+  },
+  {
+    "section": 15,
+    "name": "15C",
+    "card": "15C",
+    "parent": "Canvas_11",
+    "hidden": false,
+    "conditions": [
+      {
+        "name": "15C",
+        "visible": "=\n\n\n\nRadio1_13.Selected.Value = \"Ja\" || Radio1_10.Selected.Value = \"Ja\""
+      }
+    ],
+    "props": {
+      "Control": "DataCard@1.0.2",
+      "Visible": "=\n\n\n\nRadio1_13.Selected.Value = \"Ja\" || Radio1_10.Selected.Value = \"Ja\"",
+      "Y": "=4"
+    }
+  },
+  {
+    "section": 15,
+    "name": "Comp_liba_DatacardBkgGSI_67",
+    "card": "15C",
+    "parent": "15C",
+    "hidden": false,
+    "conditions": [
+      {
+        "name": "15C",
+        "visible": "=\n\n\n\nRadio1_13.Selected.Value = \"Ja\" || Radio1_10.Selected.Value = \"Ja\""
+      }
+    ],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Comp_liba_DatacardBkgGSI",
+      "Input_HeaderText": "=\nLookUp(nfViewSprak, BeregnetId = \"GG_H68_U150\").HovedsporsmalTekst",
+      "Input_Kontrollere": "=\r\nTable(\r\n        {ID: \"GG-F155\", Boolean:Kontroll_GG_F155}\r\n       \r\n    )",
+      "VisDrawer": "=Set (vargblVisDrawer ,true) ;       \nSet(vargblDrawerHjelpetekst,LookUp(colHjelpetekster, HjelpetekstId = \"GG-H150\" ,Tekst)); \nSet(vargblDrawerOverskrift,LookUp(colHjelpetekster, HjelpetekstId = \"GG-H150\" ,Overskrift));\nCom_liba_spmtegn_drawer_GSI_15.SetFocusDrawer();"
+    }
+  },
+  {
+    "section": 15,
+    "name": "Label4_865",
+    "card": "15C",
+    "parent": "Container1_281",
+    "hidden": false,
+    "conditions": [
+      {
+        "name": "15C",
+        "visible": "=\n\n\n\nRadio1_13.Selected.Value = \"Ja\" || Radio1_10.Selected.Value = \"Ja\""
+      }
+    ],
+    "props": {
+      "Control": "Label@2.5.1",
+      "DisplayMode": "=DisplayMode.View",
+      "Text": "=\"1\""
+    }
+  },
+  {
+    "section": 15,
+    "name": "TextInput2_124",
+    "card": "15C",
+    "parent": "Container7_539",
+    "hidden": false,
+    "conditions": [
+      {
+        "name": "15C",
+        "visible": "=\n\n\n\nRadio1_13.Selected.Value = \"Ja\" || Radio1_10.Selected.Value = \"Ja\""
+      }
+    ],
+    "props": {
+      "Control": "Classic/TextInput@2.3.2",
+      "Default": "=nfSelectedRecord15.GG_952_Stillingsgrupper_Og_Utdanningsbakgrunn_I_PPtjenesten_Psykologi",
+      "DisplayMode": "=nfDisplayMode",
+      "MaxLength": "=4",
+      "OnChange": "=\n\n  If(\n    \n    ( !IsMatch((Self.Text), \"^[0-9]+(?:[.,][0-9]+)?$\") || Value(Self.Text) = Blank() || Value(Self.Text) = 0 || Value(Self.Text) > 9999),\n    Patch(GsiGrunnskoleSvarDel15,nfSelectedRecord15,{GG_952_Stillingsgrupper_Og_Utdanningsbakgrunn_I_PPtjenesten_Psykologi: Blank() });\n        Reset(Self), \n    \n    \n    Len(Self.Text) > 3 && IsMatch((Self.Text), \"^[0-9]+(?:[.,][0-9]+)?$\" ), \n        Patch(GsiGrunnskoleSvarDel15,nfSelectedRecord15,{GG_952_Stillingsgrupper_Og_Utdanningsbakgrunn_I_PPtjenesten_Psykologi:Round(Value (Self.Text),2)});\n        Reset(Self), \n    \n    \n    Patch(GsiGrunnskoleSvarDel15,nfSelectedRecord15,{GG_952_Stillingsgrupper_Og_Utdanningsbakgrunn_I_PPtjenesten_Psykologi: Value(Self.Text) })\n    \n    \n    );"
+    }
+  },
+  {
+    "section": 15,
+    "name": "Label4_867",
+    "card": "15C",
+    "parent": "Container1_282",
+    "hidden": false,
+    "conditions": [
+      {
+        "name": "15C",
+        "visible": "=\n\n\n\nRadio1_13.Selected.Value = \"Ja\" || Radio1_10.Selected.Value = \"Ja\""
+      }
+    ],
+    "props": {
+      "Control": "Label@2.5.1",
+      "DisplayMode": "=DisplayMode.View",
+      "Text": "=\"2\""
+    }
+  },
+  {
+    "section": 15,
+    "name": "TextInput2_126",
+    "card": "15C",
+    "parent": "Container7_687",
+    "hidden": false,
+    "conditions": [
+      {
+        "name": "15C",
+        "visible": "=\n\n\n\nRadio1_13.Selected.Value = \"Ja\" || Radio1_10.Selected.Value = \"Ja\""
+      }
+    ],
+    "props": {
+      "Control": "Classic/TextInput@2.3.2",
+      "Default": "=nfSelectedRecord15.GG_953_Stillingsgrupper_Og_Utdanningsbakgrunn_I_PPtjenesten_Spesialpedagogikk",
+      "DisplayMode": "=nfDisplayMode",
+      "MaxLength": "=4",
+      "OnChange": "=\n\n  If(\n    \n    ( !IsMatch((Self.Text), \"^[0-9]+(?:[.,][0-9]+)?$\") || Value(Self.Text) = Blank() || Value(Self.Text) = 0 || Value(Self.Text) > 9999),\n    Patch(GsiGrunnskoleSvarDel15,nfSelectedRecord15,{GG_953_Stillingsgrupper_Og_Utdanningsbakgrunn_I_PPtjenesten_Spesialpedagogikk: Blank() });\n        Reset(Self), \n    \n    \n    Len(Self.Text) > 3 && IsMatch((Self.Text), \"^[0-9]+(?:[.,][0-9]+)?$\" ), \n        Patch(GsiGrunnskoleSvarDel15,nfSelectedRecord15,{GG_953_Stillingsgrupper_Og_Utdanningsbakgrunn_I_PPtjenesten_Spesialpedagogikk:Round(Value (Self.Text),2)});Reset(Self), \n    \n    \n    Patch(GsiGrunnskoleSvarDel15,nfSelectedRecord15,{GG_953_Stillingsgrupper_Og_Utdanningsbakgrunn_I_PPtjenesten_Spesialpedagogikk: Value(Self.Text) })\n    \n    \n    );"
+    }
+  },
+  {
+    "section": 15,
+    "name": "Label4_869",
+    "card": "15C",
+    "parent": "Container1_283",
+    "hidden": false,
+    "conditions": [
+      {
+        "name": "15C",
+        "visible": "=\n\n\n\nRadio1_13.Selected.Value = \"Ja\" || Radio1_10.Selected.Value = \"Ja\""
+      }
+    ],
+    "props": {
+      "Control": "Label@2.5.1",
+      "DisplayMode": "=DisplayMode.View",
+      "Text": "=\"3\""
+    }
+  },
+  {
+    "section": 15,
+    "name": "TextInput2_138",
+    "card": "15C",
+    "parent": "Container7_688",
+    "hidden": false,
+    "conditions": [
+      {
+        "name": "15C",
+        "visible": "=\n\n\n\nRadio1_13.Selected.Value = \"Ja\" || Radio1_10.Selected.Value = \"Ja\""
+      }
+    ],
+    "props": {
+      "Control": "Classic/TextInput@2.3.2",
+      "Default": "=nfSelectedRecord15.GG_954_Stillingsgrupper_Og_Utdanningsbakgrunn_I_PPtjenesten_Pedagogikk",
+      "DisplayMode": "=nfDisplayMode",
+      "MaxLength": "=4",
+      "OnChange": "=\n\n  If(\n    \n    ( !IsMatch((Self.Text), \"^[0-9]+(?:[.,][0-9]+)?$\") || Value(Self.Text) = Blank() || Value(Self.Text) = 0 || Value(Self.Text) > 9999),\n    Patch(GsiGrunnskoleSvarDel15,nfSelectedRecord15,{GG_954_Stillingsgrupper_Og_Utdanningsbakgrunn_I_PPtjenesten_Pedagogikk: Blank() });\n        Reset(Self), \n    \n    \n    Len(Self.Text) > 3 && IsMatch((Self.Text), \"^[0-9]+(?:[.,][0-9]+)?$\" ), \n        Patch(GsiGrunnskoleSvarDel15,nfSelectedRecord15,{GG_954_Stillingsgrupper_Og_Utdanningsbakgrunn_I_PPtjenesten_Pedagogikk:Round(Value (Self.Text),2)});Reset(Self), \n    \n    \n    Patch(GsiGrunnskoleSvarDel15,nfSelectedRecord15,{GG_954_Stillingsgrupper_Og_Utdanningsbakgrunn_I_PPtjenesten_Pedagogikk: Value(Self.Text) })\n    \n    \n    );"
+    }
+  },
+  {
+    "section": 15,
+    "name": "Label4_871",
+    "card": "15C",
+    "parent": "Container1_284",
+    "hidden": false,
+    "conditions": [
+      {
+        "name": "15C",
+        "visible": "=\n\n\n\nRadio1_13.Selected.Value = \"Ja\" || Radio1_10.Selected.Value = \"Ja\""
+      }
+    ],
+    "props": {
+      "Control": "Label@2.5.1",
+      "DisplayMode": "=DisplayMode.View",
+      "Text": "=\"4\""
+    }
+  },
+  {
+    "section": 15,
+    "name": "TextInput2_139",
+    "card": "15C",
+    "parent": "Container7_689",
+    "hidden": false,
+    "conditions": [
+      {
+        "name": "15C",
+        "visible": "=\n\n\n\nRadio1_13.Selected.Value = \"Ja\" || Radio1_10.Selected.Value = \"Ja\""
+      }
+    ],
+    "props": {
+      "Control": "Classic/TextInput@2.3.2",
+      "Default": "=nfSelectedRecord15.GG_955_Stillingsgrupper_Og_Utdanningsbakgrunn_I_PPtjenesten_Fagstillinger",
+      "DisplayMode": "=nfDisplayMode",
+      "MaxLength": "=4",
+      "OnChange": "=\n\n  If(\n    \n    ( !IsMatch((Self.Text), \"^[0-9]+(?:[.,][0-9]+)?$\") || Value(Self.Text) = Blank() || Value(Self.Text) = 0 || Value(Self.Text) > 9999),\n    Patch(GsiGrunnskoleSvarDel15,nfSelectedRecord15,{GG_955_Stillingsgrupper_Og_Utdanningsbakgrunn_I_PPtjenesten_Fagstillinger: Blank() });\n        Reset(Self), \n    \n    \n    Len(Self.Text) > 3 && IsMatch((Self.Text), \"^[0-9]+(?:[.,][0-9]+)?$\" ), \n        Patch(GsiGrunnskoleSvarDel15,nfSelectedRecord15,{GG_955_Stillingsgrupper_Og_Utdanningsbakgrunn_I_PPtjenesten_Fagstillinger:Round(Value (Self.Text),2)});Reset(Self), \n    \n    \n    Patch(GsiGrunnskoleSvarDel15,nfSelectedRecord15,{GG_955_Stillingsgrupper_Og_Utdanningsbakgrunn_I_PPtjenesten_Fagstillinger: Value(Self.Text) })\n    \n    \n    );"
+    }
+  },
+  {
+    "section": 15,
+    "name": "Label4_873",
+    "card": "15C",
+    "parent": "Container1_285",
+    "hidden": false,
+    "conditions": [
+      {
+        "name": "15C",
+        "visible": "=\n\n\n\nRadio1_13.Selected.Value = \"Ja\" || Radio1_10.Selected.Value = \"Ja\""
+      }
+    ],
+    "props": {
+      "Control": "Label@2.5.1",
+      "DisplayMode": "=DisplayMode.View",
+      "Text": "=\"5\""
+    }
+  },
+  {
+    "section": 15,
+    "name": "TextInput2_140",
+    "card": "15C",
+    "parent": "Container7_690",
+    "hidden": false,
+    "conditions": [
+      {
+        "name": "15C",
+        "visible": "=\n\n\n\nRadio1_13.Selected.Value = \"Ja\" || Radio1_10.Selected.Value = \"Ja\""
+      }
+    ],
+    "props": {
+      "Control": "Classic/TextInput@2.3.2",
+      "Default": "=nfSelectedRecord15.GG_956_Stillingsgrupper_Og_Utdanningsbakgrunn_I_PPtjenesten_Ledelse",
+      "DisplayMode": "=nfDisplayMode",
+      "MaxLength": "=4",
+      "OnChange": "=\n\n If(\n    \n    ( !IsMatch((Self.Text), \"^[0-9]+(?:[.,][0-9]+)?$\") || Value(Self.Text) = Blank() || Value(Self.Text) = 0 || Value(Self.Text) > 9999),\n    Patch(GsiGrunnskoleSvarDel15,nfSelectedRecord15,{GG_956_Stillingsgrupper_Og_Utdanningsbakgrunn_I_PPtjenesten_Ledelse: Blank() });\n        Reset(Self), \n    \n    \n    Len(Self.Text) > 3 && IsMatch((Self.Text), \"^[0-9]+(?:[.,][0-9]+)?$\" ), \n        Patch(GsiGrunnskoleSvarDel15,nfSelectedRecord15,{GG_956_Stillingsgrupper_Og_Utdanningsbakgrunn_I_PPtjenesten_Ledelse:Round(Value (Self.Text),2)});Reset(Self), \n    \n    \n    Patch(GsiGrunnskoleSvarDel15,nfSelectedRecord15,{GG_956_Stillingsgrupper_Og_Utdanningsbakgrunn_I_PPtjenesten_Ledelse: Value(Self.Text) })\n    \n    \n    );"
+    }
+  },
+  {
+    "section": 15,
+    "name": "Label4_875",
+    "card": "15C",
+    "parent": "Container1_286",
+    "hidden": false,
+    "conditions": [
+      {
+        "name": "15C",
+        "visible": "=\n\n\n\nRadio1_13.Selected.Value = \"Ja\" || Radio1_10.Selected.Value = \"Ja\""
+      }
+    ],
+    "props": {
+      "Control": "Label@2.5.1",
+      "DisplayMode": "=DisplayMode.View",
+      "Text": "=\"6\""
+    }
+  },
+  {
+    "section": 15,
+    "name": "TextInput2_141",
+    "card": "15C",
+    "parent": "Container7_691",
+    "hidden": false,
+    "conditions": [
+      {
+        "name": "15C",
+        "visible": "=\n\n\n\nRadio1_13.Selected.Value = \"Ja\" || Radio1_10.Selected.Value = \"Ja\""
+      }
+    ],
+    "props": {
+      "Control": "Classic/TextInput@2.3.2",
+      "Default": "=nfSelectedRecord15.GG_957_Stillingsgrupper_Og_Utdanningsbakgrunn_I_PPtjenesten_Merkantilt_Personell",
+      "DisplayMode": "=nfDisplayMode",
+      "MaxLength": "=4",
+      "OnChange": "=\nIf(\n    \n    ( !IsMatch((Self.Text), \"^[0-9]+(?:[.,][0-9]+)?$\") || Value(Self.Text) = Blank() || Value(Self.Text) = 0 || Value(Self.Text) > 9999),\n    Patch(GsiGrunnskoleSvarDel15,nfSelectedRecord15,{GG_957_Stillingsgrupper_Og_Utdanningsbakgrunn_I_PPtjenesten_Merkantilt_Personell: Blank() });\n        Reset(Self), \n    \n    \n    Len(Self.Text) > 3 && IsMatch((Self.Text), \"^[0-9]+(?:[.,][0-9]+)?$\" ), \n        Patch(GsiGrunnskoleSvarDel15,nfSelectedRecord15,{GG_957_Stillingsgrupper_Og_Utdanningsbakgrunn_I_PPtjenesten_Merkantilt_Personell:Round(Value (Self.Text),2)});Reset(Self), \n    \n    \n    Patch(GsiGrunnskoleSvarDel15,nfSelectedRecord15,{GG_957_Stillingsgrupper_Og_Utdanningsbakgrunn_I_PPtjenesten_Merkantilt_Personell: Value(Self.Text) })\n    \n    \n    );"
+    }
+  },
+  {
+    "section": 15,
+    "name": "Label4_877",
+    "card": "15C",
+    "parent": "Container1_287",
+    "hidden": false,
+    "conditions": [
+      {
+        "name": "15C",
+        "visible": "=\n\n\n\nRadio1_13.Selected.Value = \"Ja\" || Radio1_10.Selected.Value = \"Ja\""
+      }
+    ],
+    "props": {
+      "Control": "Label@2.5.1",
+      "DisplayMode": "=DisplayMode.View",
+      "Text": "=\"7\""
+    }
+  },
+  {
+    "section": 15,
+    "name": "TextInput2_142",
+    "card": "15C",
+    "parent": "Container7_533",
+    "hidden": false,
+    "conditions": [
+      {
+        "name": "15C",
+        "visible": "=\n\n\n\nRadio1_13.Selected.Value = \"Ja\" || Radio1_10.Selected.Value = \"Ja\""
+      }
+    ],
+    "props": {
+      "Control": "Classic/TextInput@2.3.2",
+      "Default": "=\n\n\nRound(nfSelectedRecord15.GG_958_Stillingsgrupper_Og_Utdanningsbakgrunn_I_PPtjenesten_Sum,2)",
+      "DisplayMode": "=DisplayMode.View",
+      "OnChange": "=\n \n    If(\n    \n    ( !IsMatch((Self.Text), \"^[0-9]+(?:[.,][0-9]+)?$\" ) || Value(Self.Text) = Blank() || Value(Self.Text) = 0 || Value(Self.Text) > 99)\n        , Patch(GsiGrunnskoleSvarDel15,nfSelectedRecord15,{GG_958_Stillingsgrupper_Og_Utdanningsbakgrunn_I_PPtjenesten_Sum: Blank() });\n        Reset(Self), \n    \n    IsMatch((Self.Text), \"^[0-9]+(?:[.,][0-9]+)?$\" ), \n        Patch(GsiGrunnskoleSvarDel15,nfSelectedRecord15,{GG_958_Stillingsgrupper_Og_Utdanningsbakgrunn_I_PPtjenesten_Sum:Round(Value (Self.Text),2)});\n        Reset(Self), \n    Reset(Self));"
+    }
+  },
+  {
+    "section": 15,
+    "name": "15D",
+    "card": "15D",
+    "parent": "Canvas_11",
+    "hidden": false,
+    "conditions": [
+      {
+        "name": "15D",
+        "visible": "'=If( Radio1_10.Selected.Value = \"Ja\", true,false) '"
+      }
+    ],
+    "props": {
+      "Control": "DataCard@1.0.2",
+      "Visible": "'=If( Radio1_10.Selected.Value = \"Ja\", true,false) '",
+      "Y": "=5"
+    }
+  },
+  {
+    "section": 15,
+    "name": "Comp_liba_DatacardBkgGSI_64",
+    "card": "15D",
+    "parent": "15D",
+    "hidden": false,
+    "conditions": [
+      {
+        "name": "15D",
+        "visible": "'=If( Radio1_10.Selected.Value = \"Ja\", true,false) '"
+      }
+    ],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Comp_liba_DatacardBkgGSI",
+      "Input_HeaderText": "=\nLookUp(nfViewSprak, BeregnetId = \"GG_H69\").HovedsporsmalTekst",
+      "Input_Kontrollere": "= Table(\n        {ID: \"GG-F154\", Boolean: Kontroll_GG_F154}\n    )",
+      "VisDrawer": "=Set (vargblVisDrawer ,true) ;       \nSet(vargblDrawerHjelpetekst,LookUp(colHjelpetekster, HjelpetekstId = \"GG-H151\" ,Tekst)); \nSet(vargblDrawerOverskrift,LookUp(colHjelpetekster, HjelpetekstId = \"GG-H151\" ,Overskrift));\nCom_liba_spmtegn_drawer_GSI_15.SetFocusDrawer();"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Steg3_Overskrift_12",
+    "card": "Steg3_Overskrift_12",
+    "parent": "Canvas_12",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "DataCard@1.0.2",
+      "DisplayMode": "=nfDisplayMode",
+      "Y": "=0"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Header_6",
+    "card": "Header_6",
+    "parent": "Canvas_12",
+    "hidden": false,
+    "conditions": [
+      {
+        "name": "Header_6",
+        "visible": "=If(App.Width > 888, false, true)"
+      }
+    ],
+    "props": {
+      "Control": "DataCard@1.0.2",
+      "DisplayMode": "=nfDisplayMode",
+      "Visible": "=If(App.Width > 888, false, true)",
+      "Y": "=1"
+    }
+  },
+  {
+    "section": 16,
+    "name": "A.(Gammel) Fordrevne ukrainske elever",
+    "card": "A.(Gammel) Fordrevne ukrainske elever",
+    "parent": "Canvas_12",
+    "hidden": true,
+    "conditions": [
+      {
+        "name": "A.(Gammel) Fordrevne ukrainske elever",
+        "visible": "=false"
+      }
+    ],
+    "props": {
+      "Control": "DataCard@1.0.2",
+      "Visible": "=false",
+      "Y": "=2"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Comp_liba_DatacardBkgGSI_35",
+    "card": "A.(Gammel) Fordrevne ukrainske elever",
+    "parent": "A.(Gammel) Fordrevne ukrainske elever",
+    "hidden": true,
+    "conditions": [
+      {
+        "name": "A.(Gammel) Fordrevne ukrainske elever",
+        "visible": "=false"
+      }
+    ],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Comp_liba_DatacardBkgGSI",
+      "Input_HeaderText": "=\nLookUp(nfViewSprak, BeregnetId = \"GG_H70_U165\").HovedsporsmalTekst",
+      "Input_Kontrollere": "= Table(\r\n        {ID: \"BK-A10\", Boolean: true ,ByttFra: \"{X}\" , ByttTil : \"{X}\", ByttFra2: \"{Y}\" , ByttTil2 : \"{Y}\",ByttFra3: \"{Z}\" , ByttTil3 : \"{Z}\"}\r\n      \r\n    )",
+      "VisDrawer": "=Set (vargblVisDrawer ,true) ;       \nSet(vargblDrawerHjelpetekst,LookUp(colHjelpetekster, HjelpetekstId = \"GG-H75\" ,Tekst));\nSet(vargblDrawerOverskrift,LookUp(colHjelpetekster, HjelpetekstId = \"GG-H75\" ,Overskrift));\nCom_liba_spmtegn_drawer_GSI_16.SetFocusDrawer();"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Label4_965",
+    "card": "A.(Gammel) Fordrevne ukrainske elever",
+    "parent": "Container1_310",
+    "hidden": true,
+    "conditions": [
+      {
+        "name": "A.(Gammel) Fordrevne ukrainske elever",
+        "visible": "=false"
+      }
+    ],
+    "props": {
+      "Control": "Label@2.5.1",
+      "DisplayMode": "=DisplayMode.View",
+      "Text": "=\"1\""
+    }
+  },
+  {
+    "section": 16,
+    "name": "Local_Comp_Input_Number_377",
+    "card": "A.(Gammel) Fordrevne ukrainske elever",
+    "parent": "Container7_1188",
+    "hidden": true,
+    "conditions": [
+      {
+        "name": "A.(Gammel) Fordrevne ukrainske elever",
+        "visible": "=false"
+      }
+    ],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord16.GG_959_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_1",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel16,\n    nfSelectedRecord16,\n    {GG_959_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_1:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 16,
+    "name": "TextInput2_245",
+    "card": "A.(Gammel) Fordrevne ukrainske elever",
+    "parent": "Container7_1189",
+    "hidden": true,
+    "conditions": [
+      {
+        "name": "TextInput2_245",
+        "visible": "=false"
+      },
+      {
+        "name": "A.(Gammel) Fordrevne ukrainske elever",
+        "visible": "=false"
+      }
+    ],
+    "props": {
+      "Control": "Classic/TextInput@2.3.2",
+      "Default": "=nfSelectedRecord11.GG_693_Antall_Elever_Med_Videregaaendefag_Istedenfor_Valgfag_Trinn_10",
+      "DisplayMode": "=DisplayMode.View",
+      "OnChange": "=",
+      "Visible": "=false"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Local_Comp_Input_Number_379",
+    "card": "A.(Gammel) Fordrevne ukrainske elever",
+    "parent": "Container7_1189",
+    "hidden": true,
+    "conditions": [
+      {
+        "name": "A.(Gammel) Fordrevne ukrainske elever",
+        "visible": "=false"
+      }
+    ],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord16.GG_960_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_2",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel16,\n    nfSelectedRecord16,\n    {GG_960_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_2:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Local_Comp_Input_Number_380",
+    "card": "A.(Gammel) Fordrevne ukrainske elever",
+    "parent": "Container7_1190",
+    "hidden": true,
+    "conditions": [
+      {
+        "name": "A.(Gammel) Fordrevne ukrainske elever",
+        "visible": "=false"
+      }
+    ],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord16.GG_961_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_3",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel16,\n    nfSelectedRecord16,\n    {GG_961_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_3:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Local_Comp_Input_Number_381",
+    "card": "A.(Gammel) Fordrevne ukrainske elever",
+    "parent": "Container7_1191",
+    "hidden": true,
+    "conditions": [
+      {
+        "name": "A.(Gammel) Fordrevne ukrainske elever",
+        "visible": "=false"
+      }
+    ],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord16.GG_962_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_4",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel16,\n    nfSelectedRecord16,\n    {GG_962_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_4:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Local_Comp_Input_Number_382",
+    "card": "A.(Gammel) Fordrevne ukrainske elever",
+    "parent": "Container7_1192",
+    "hidden": true,
+    "conditions": [
+      {
+        "name": "A.(Gammel) Fordrevne ukrainske elever",
+        "visible": "=false"
+      }
+    ],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord16.GG_963_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_5",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel16,\n    nfSelectedRecord16,\n    {GG_963_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_5:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Local_Comp_Input_Number_383",
+    "card": "A.(Gammel) Fordrevne ukrainske elever",
+    "parent": "Container7_1193",
+    "hidden": true,
+    "conditions": [
+      {
+        "name": "A.(Gammel) Fordrevne ukrainske elever",
+        "visible": "=false"
+      }
+    ],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord16.GG_964_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_6",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel16,\n    nfSelectedRecord16,\n    {GG_964_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_6:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 16,
+    "name": "TextInput2_248",
+    "card": "A.(Gammel) Fordrevne ukrainske elever",
+    "parent": "Container7_1194",
+    "hidden": true,
+    "conditions": [
+      {
+        "name": "TextInput2_248",
+        "visible": "=false"
+      },
+      {
+        "name": "A.(Gammel) Fordrevne ukrainske elever",
+        "visible": "=false"
+      }
+    ],
+    "props": {
+      "Control": "Classic/TextInput@2.3.2",
+      "Default": "=nfSelectedRecord11.GG_693_Antall_Elever_Med_Videregaaendefag_Istedenfor_Valgfag_Trinn_10",
+      "DisplayMode": "=DisplayMode.View",
+      "OnChange": "=",
+      "Visible": "=false"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Local_Comp_Input_Number_384",
+    "card": "A.(Gammel) Fordrevne ukrainske elever",
+    "parent": "Container7_1194",
+    "hidden": true,
+    "conditions": [
+      {
+        "name": "A.(Gammel) Fordrevne ukrainske elever",
+        "visible": "=false"
+      }
+    ],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord16.GG_965_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_7",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel16,\n    nfSelectedRecord16,\n    {GG_965_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_7:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Local_Comp_Input_Number_385",
+    "card": "A.(Gammel) Fordrevne ukrainske elever",
+    "parent": "Container7_1195",
+    "hidden": true,
+    "conditions": [
+      {
+        "name": "A.(Gammel) Fordrevne ukrainske elever",
+        "visible": "=false"
+      }
+    ],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord16.GG_966_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_8",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel16,\n    nfSelectedRecord16,\n    {GG_966_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_8:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Local_Comp_Input_Number_386",
+    "card": "A.(Gammel) Fordrevne ukrainske elever",
+    "parent": "Container7_1196",
+    "hidden": true,
+    "conditions": [
+      {
+        "name": "A.(Gammel) Fordrevne ukrainske elever",
+        "visible": "=false"
+      }
+    ],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord16.GG_967_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_9",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel16,\n    nfSelectedRecord16,\n    {GG_967_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_9:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 16,
+    "name": "TextInput2_277",
+    "card": "A.(Gammel) Fordrevne ukrainske elever",
+    "parent": "Container7_1197",
+    "hidden": true,
+    "conditions": [
+      {
+        "name": "TextInput2_277",
+        "visible": "=false"
+      },
+      {
+        "name": "A.(Gammel) Fordrevne ukrainske elever",
+        "visible": "=false"
+      }
+    ],
+    "props": {
+      "Control": "Classic/TextInput@2.3.2",
+      "Default": "=nfSelectedRecord11.GG_693_Antall_Elever_Med_Videregaaendefag_Istedenfor_Valgfag_Trinn_10",
+      "DisplayMode": "=DisplayMode.View",
+      "OnChange": "=",
+      "Visible": "=false"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Local_Comp_Input_Number_387",
+    "card": "A.(Gammel) Fordrevne ukrainske elever",
+    "parent": "Container7_1197",
+    "hidden": true,
+    "conditions": [
+      {
+        "name": "A.(Gammel) Fordrevne ukrainske elever",
+        "visible": "=false"
+      }
+    ],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord16.GG_968_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_10",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel16,\n    nfSelectedRecord16,\n    {GG_968_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_10:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 16,
+    "name": "TextInput2_278",
+    "card": "A.(Gammel) Fordrevne ukrainske elever",
+    "parent": "Container7_1198",
+    "hidden": true,
+    "conditions": [
+      {
+        "name": "TextInput2_278",
+        "visible": "=false"
+      },
+      {
+        "name": "A.(Gammel) Fordrevne ukrainske elever",
+        "visible": "=false"
+      }
+    ],
+    "props": {
+      "Control": "Classic/TextInput@2.3.2",
+      "Default": "=nfSelectedRecord16.GG_969_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Sum",
+      "DisplayMode": "=DisplayMode.View",
+      "OnChange": "=",
+      "Visible": "=false"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Label21",
+    "card": "A.(Gammel) Fordrevne ukrainske elever",
+    "parent": "Container7_1198",
+    "hidden": true,
+    "conditions": [
+      {
+        "name": "A.(Gammel) Fordrevne ukrainske elever",
+        "visible": "=false"
+      }
+    ],
+    "props": {
+      "Control": "Label@2.5.1",
+      "Text": "=nfSelectedRecord16.GG_969_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Sum"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Label4_967",
+    "card": "A.(Gammel) Fordrevne ukrainske elever",
+    "parent": "Container1_312",
+    "hidden": true,
+    "conditions": [
+      {
+        "name": "A.(Gammel) Fordrevne ukrainske elever",
+        "visible": "=false"
+      }
+    ],
+    "props": {
+      "Control": "Label@2.5.1",
+      "DisplayMode": "=DisplayMode.View",
+      "Text": "=\"2\""
+    }
+  },
+  {
+    "section": 16,
+    "name": "Local_Comp_Input_Number_388",
+    "card": "A.(Gammel) Fordrevne ukrainske elever",
+    "parent": "Container7_1200",
+    "hidden": true,
+    "conditions": [
+      {
+        "name": "A.(Gammel) Fordrevne ukrainske elever",
+        "visible": "=false"
+      }
+    ],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord16.GG_970_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_1",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel16,\n    nfSelectedRecord16,\n    {GG_970_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_1:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Local_Comp_Input_Number_389",
+    "card": "A.(Gammel) Fordrevne ukrainske elever",
+    "parent": "Container7_1201",
+    "hidden": true,
+    "conditions": [
+      {
+        "name": "A.(Gammel) Fordrevne ukrainske elever",
+        "visible": "=false"
+      }
+    ],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord16.GG_971_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_2",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel16,\n    nfSelectedRecord16,\n    {GG_971_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_2:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Local_Comp_Input_Number_392",
+    "card": "A.(Gammel) Fordrevne ukrainske elever",
+    "parent": "Container7_1202",
+    "hidden": true,
+    "conditions": [
+      {
+        "name": "A.(Gammel) Fordrevne ukrainske elever",
+        "visible": "=false"
+      }
+    ],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord16.GG_972_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_3",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel16,\n    nfSelectedRecord16,\n    {GG_972_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_3:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Local_Comp_Input_Number_394",
+    "card": "A.(Gammel) Fordrevne ukrainske elever",
+    "parent": "Container7_1203",
+    "hidden": true,
+    "conditions": [
+      {
+        "name": "A.(Gammel) Fordrevne ukrainske elever",
+        "visible": "=false"
+      }
+    ],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord16.GG_973_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_4",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel16,\n    nfSelectedRecord16,\n    {GG_973_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_4:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Local_Comp_Input_Number_395",
+    "card": "A.(Gammel) Fordrevne ukrainske elever",
+    "parent": "Container7_1204",
+    "hidden": true,
+    "conditions": [
+      {
+        "name": "A.(Gammel) Fordrevne ukrainske elever",
+        "visible": "=false"
+      }
+    ],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord16.GG_974_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_5",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel16,\n    nfSelectedRecord16,\n    {GG_974_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_5:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Local_Comp_Input_Number_397",
+    "card": "A.(Gammel) Fordrevne ukrainske elever",
+    "parent": "Container7_1205",
+    "hidden": true,
+    "conditions": [
+      {
+        "name": "A.(Gammel) Fordrevne ukrainske elever",
+        "visible": "=false"
+      }
+    ],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord16.GG_975_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_6",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel16,\n    nfSelectedRecord16,\n    {GG_975_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_6:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Local_Comp_Input_Number_398",
+    "card": "A.(Gammel) Fordrevne ukrainske elever",
+    "parent": "Container7_1206",
+    "hidden": true,
+    "conditions": [
+      {
+        "name": "A.(Gammel) Fordrevne ukrainske elever",
+        "visible": "=false"
+      }
+    ],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord16.GG_976_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_7",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel16,\n    nfSelectedRecord16,\n    {GG_976_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_7:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Local_Comp_Input_Number_399",
+    "card": "A.(Gammel) Fordrevne ukrainske elever",
+    "parent": "Container7_1207",
+    "hidden": true,
+    "conditions": [
+      {
+        "name": "A.(Gammel) Fordrevne ukrainske elever",
+        "visible": "=false"
+      }
+    ],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord16.GG_977_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_8",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel16,\n    nfSelectedRecord16,\n    {GG_977_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_8:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Local_Comp_Input_Number_400",
+    "card": "A.(Gammel) Fordrevne ukrainske elever",
+    "parent": "Container7_1208",
+    "hidden": true,
+    "conditions": [
+      {
+        "name": "A.(Gammel) Fordrevne ukrainske elever",
+        "visible": "=false"
+      }
+    ],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord16.GG_978_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_9",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel16,\n    nfSelectedRecord16,\n    {GG_978_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_9:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Local_Comp_Input_Number_134",
+    "card": "A.(Gammel) Fordrevne ukrainske elever",
+    "parent": "Container7_1209",
+    "hidden": true,
+    "conditions": [
+      {
+        "name": "A.(Gammel) Fordrevne ukrainske elever",
+        "visible": "=false"
+      }
+    ],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord16.GG_979_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_10",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=Patch(\n   GsiGrunnskoleSvarDel16,\n    nfSelectedRecord16,\n    {GG_979_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_10:HeltallsFilter(OutPatchVerdi,true,4,false)}\n);"
+    }
+  },
+  {
+    "section": 16,
+    "name": "TextInput2_285",
+    "card": "A.(Gammel) Fordrevne ukrainske elever",
+    "parent": "Container7_1210",
+    "hidden": true,
+    "conditions": [
+      {
+        "name": "TextInput2_285",
+        "visible": "=false"
+      },
+      {
+        "name": "A.(Gammel) Fordrevne ukrainske elever",
+        "visible": "=false"
+      }
+    ],
+    "props": {
+      "Control": "Classic/TextInput@2.3.2",
+      "Default": "=nfSelectedRecord16.GG_980_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Sum",
+      "DisplayMode": "=DisplayMode.View",
+      "OnChange": "=",
+      "Visible": "=false"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Label23_11",
+    "card": "A.(Gammel) Fordrevne ukrainske elever",
+    "parent": "Container7_1210",
+    "hidden": true,
+    "conditions": [
+      {
+        "name": "A.(Gammel) Fordrevne ukrainske elever",
+        "visible": "=false"
+      }
+    ],
+    "props": {
+      "Control": "Label@2.5.1",
+      "Text": "=nfSelectedRecord16.GG_980_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Sum"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Label4_969",
+    "card": "A.(Gammel) Fordrevne ukrainske elever",
+    "parent": "Container1_314",
+    "hidden": true,
+    "conditions": [
+      {
+        "name": "A.(Gammel) Fordrevne ukrainske elever",
+        "visible": "=false"
+      }
+    ],
+    "props": {
+      "Control": "Label@2.5.1",
+      "DisplayMode": "=DisplayMode.View",
+      "Text": "=\"3\""
+    }
+  },
+  {
+    "section": 16,
+    "name": "Label22",
+    "card": "A.(Gammel) Fordrevne ukrainske elever",
+    "parent": "Container7_1211",
+    "hidden": true,
+    "conditions": [
+      {
+        "name": "A.(Gammel) Fordrevne ukrainske elever",
+        "visible": "=false"
+      }
+    ],
+    "props": {
+      "Control": "Label@2.5.1",
+      "Text": "=nfSelectedRecord16.GG_1002_Sum_Fordrevne_Ukrainske_Elever_Trinn_1"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Label23",
+    "card": "A.(Gammel) Fordrevne ukrainske elever",
+    "parent": "Container7_1212",
+    "hidden": true,
+    "conditions": [
+      {
+        "name": "A.(Gammel) Fordrevne ukrainske elever",
+        "visible": "=false"
+      }
+    ],
+    "props": {
+      "Control": "Label@2.5.1",
+      "Text": "=nfSelectedRecord16.GG_1003_Sum_Fordrevne_Ukrainske_Elever_Trinn_2"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Label23_1",
+    "card": "A.(Gammel) Fordrevne ukrainske elever",
+    "parent": "Container7_1213",
+    "hidden": true,
+    "conditions": [
+      {
+        "name": "A.(Gammel) Fordrevne ukrainske elever",
+        "visible": "=false"
+      }
+    ],
+    "props": {
+      "Control": "Label@2.5.1",
+      "Text": "=nfSelectedRecord16.GG_1004_Sum_Fordrevne_Ukrainske_Elever_Trinn_3"
+    }
+  },
+  {
+    "section": 16,
+    "name": "TextInput2_287",
+    "card": "A.(Gammel) Fordrevne ukrainske elever",
+    "parent": "Container7_1213",
+    "hidden": true,
+    "conditions": [
+      {
+        "name": "TextInput2_287",
+        "visible": "=false"
+      },
+      {
+        "name": "A.(Gammel) Fordrevne ukrainske elever",
+        "visible": "=false"
+      }
+    ],
+    "props": {
+      "Control": "Classic/TextInput@2.3.2",
+      "Default": "=nfSelectedRecord11.GG_693_Antall_Elever_Med_Videregaaendefag_Istedenfor_Valgfag_Trinn_10",
+      "DisplayMode": "=DisplayMode.View",
+      "OnChange": "=",
+      "Visible": "=false"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Label23_2",
+    "card": "A.(Gammel) Fordrevne ukrainske elever",
+    "parent": "Container7_1214",
+    "hidden": true,
+    "conditions": [
+      {
+        "name": "A.(Gammel) Fordrevne ukrainske elever",
+        "visible": "=false"
+      }
+    ],
+    "props": {
+      "Control": "Label@2.5.1",
+      "Text": "=nfSelectedRecord16.GG_1005_Sum_Fordrevne_Ukrainske_Elever_Trinn_4"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Label23_3",
+    "card": "A.(Gammel) Fordrevne ukrainske elever",
+    "parent": "Container7_1215",
+    "hidden": true,
+    "conditions": [
+      {
+        "name": "A.(Gammel) Fordrevne ukrainske elever",
+        "visible": "=false"
+      }
+    ],
+    "props": {
+      "Control": "Label@2.5.1",
+      "Text": "=nfSelectedRecord16.GG_1006_Sum_Fordrevne_Ukrainske_Elever_Trinn_5"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Label23_4",
+    "card": "A.(Gammel) Fordrevne ukrainske elever",
+    "parent": "Container7_1216",
+    "hidden": true,
+    "conditions": [
+      {
+        "name": "A.(Gammel) Fordrevne ukrainske elever",
+        "visible": "=false"
+      }
+    ],
+    "props": {
+      "Control": "Label@2.5.1",
+      "Text": "=nfSelectedRecord16.GG_1007_Sum_Fordrevne_Ukrainske_Elever_Trinn_6"
+    }
+  },
+  {
+    "section": 16,
+    "name": "TextInput2_289",
+    "card": "A.(Gammel) Fordrevne ukrainske elever",
+    "parent": "Container7_1216",
+    "hidden": true,
+    "conditions": [
+      {
+        "name": "TextInput2_289",
+        "visible": "=false"
+      },
+      {
+        "name": "A.(Gammel) Fordrevne ukrainske elever",
+        "visible": "=false"
+      }
+    ],
+    "props": {
+      "Control": "Classic/TextInput@2.3.2",
+      "Default": "=nfSelectedRecord11.GG_693_Antall_Elever_Med_Videregaaendefag_Istedenfor_Valgfag_Trinn_10",
+      "DisplayMode": "=DisplayMode.View",
+      "OnChange": "=",
+      "Visible": "=false"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Label23_5",
+    "card": "A.(Gammel) Fordrevne ukrainske elever",
+    "parent": "Container7_1217",
+    "hidden": true,
+    "conditions": [
+      {
+        "name": "A.(Gammel) Fordrevne ukrainske elever",
+        "visible": "=false"
+      }
+    ],
+    "props": {
+      "Control": "Label@2.5.1",
+      "Text": "=nfSelectedRecord16.GG_1008_Sum_Fordrevne_Ukrainske_Elever_Trinn_7"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Label23_6",
+    "card": "A.(Gammel) Fordrevne ukrainske elever",
+    "parent": "Container7_1218",
+    "hidden": true,
+    "conditions": [
+      {
+        "name": "A.(Gammel) Fordrevne ukrainske elever",
+        "visible": "=false"
+      }
+    ],
+    "props": {
+      "Control": "Label@2.5.1",
+      "Text": "=nfSelectedRecord16.GG_1009_Sum_Fordrevne_Ukrainske_Elever_Trinn_8"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Label23_7",
+    "card": "A.(Gammel) Fordrevne ukrainske elever",
+    "parent": "Container7_1219",
+    "hidden": true,
+    "conditions": [
+      {
+        "name": "A.(Gammel) Fordrevne ukrainske elever",
+        "visible": "=false"
+      }
+    ],
+    "props": {
+      "Control": "Label@2.5.1",
+      "Text": "=nfSelectedRecord16.GG_1010_Sum_Fordrevne_Ukrainske_Elever_Trinn_9"
+    }
+  },
+  {
+    "section": 16,
+    "name": "TextInput2_291",
+    "card": "A.(Gammel) Fordrevne ukrainske elever",
+    "parent": "Container7_1219",
+    "hidden": true,
+    "conditions": [
+      {
+        "name": "TextInput2_291",
+        "visible": "=false"
+      },
+      {
+        "name": "A.(Gammel) Fordrevne ukrainske elever",
+        "visible": "=false"
+      }
+    ],
+    "props": {
+      "Control": "Classic/TextInput@2.3.2",
+      "Default": "=nfSelectedRecord11.GG_693_Antall_Elever_Med_Videregaaendefag_Istedenfor_Valgfag_Trinn_10",
+      "DisplayMode": "=DisplayMode.View",
+      "OnChange": "=",
+      "Visible": "=false"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Label23_8",
+    "card": "A.(Gammel) Fordrevne ukrainske elever",
+    "parent": "Container7_1220",
+    "hidden": true,
+    "conditions": [
+      {
+        "name": "A.(Gammel) Fordrevne ukrainske elever",
+        "visible": "=false"
+      }
+    ],
+    "props": {
+      "Control": "Label@2.5.1",
+      "Text": "=nfSelectedRecord16.GG_1011_Sum_Fordrevne_Ukrainske_Elever_Trinn_10"
+    }
+  },
+  {
+    "section": 16,
+    "name": "TextInput2_292",
+    "card": "A.(Gammel) Fordrevne ukrainske elever",
+    "parent": "Container7_1221",
+    "hidden": true,
+    "conditions": [
+      {
+        "name": "TextInput2_292",
+        "visible": "=false"
+      },
+      {
+        "name": "A.(Gammel) Fordrevne ukrainske elever",
+        "visible": "=false"
+      }
+    ],
+    "props": {
+      "Control": "Classic/TextInput@2.3.2",
+      "Default": "=nfSelectedRecord16.GG_1012_Total_Sum_Fordrevne_Ukrainske_Elever_Trinn_1_10",
+      "DisplayMode": "=DisplayMode.View",
+      "OnChange": "=",
+      "Visible": "=false"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Label23_10",
+    "card": "A.(Gammel) Fordrevne ukrainske elever",
+    "parent": "Container7_1221",
+    "hidden": true,
+    "conditions": [
+      {
+        "name": "A.(Gammel) Fordrevne ukrainske elever",
+        "visible": "=false"
+      }
+    ],
+    "props": {
+      "Control": "Label@2.5.1",
+      "Text": "=nfSelectedRecord16.GG_1012_Total_Sum_Fordrevne_Ukrainske_Elever_Trinn_1_10"
+    }
+  },
+  {
+    "section": 16,
+    "name": "B. Forsterket opplæring i norsk",
+    "card": "B. Forsterket opplæring i norsk",
+    "parent": "Canvas_12",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "DataCard@1.0.2",
+      "Y": "=3"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Comp_liba_DatacardBkgGSI_68",
+    "card": "B. Forsterket opplæring i norsk",
+    "parent": "B. Forsterket opplæring i norsk",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Comp_liba_DatacardBkgGSI",
+      "Input_HeaderText": "=\nLookUp(nfViewSprak, BeregnetId = \"GG_H71_U167\").HovedsporsmalTekst",
+      "Input_Kontrollere": "=Table(\r\n     \r\n        {ID: \"GG-A64\", Boolean: Kontroll_GG_A64},\r\n        {ID: \"GG-A67\", Boolean: Kontroll_GG_A67}\r\n      \r\n    )",
+      "VisDrawer": "=Set (vargblVisDrawer ,true) ;       \nSet(vargblDrawerHjelpetekst,LookUp(colHjelpetekster, HjelpetekstId = \"GG-H153\" ,Tekst)); \nSet(vargblDrawerOverskrift,LookUp(colHjelpetekster, HjelpetekstId = \"GG-H153\" ,Overskrift));\nCom_liba_spmtegn_drawer_GSI_16.SetFocusDrawer();"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Label4_882",
+    "card": "B. Forsterket opplæring i norsk",
+    "parent": "Container1_289",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Label@2.5.1",
+      "DisplayMode": "=DisplayMode.View",
+      "Text": "=\"1\""
+    }
+  },
+  {
+    "section": 16,
+    "name": "TextInput2_249",
+    "card": "B. Forsterket opplæring i norsk",
+    "parent": "Container7_1059",
+    "hidden": true,
+    "conditions": [
+      {
+        "name": "TextInput2_249",
+        "visible": "=false"
+      }
+    ],
+    "props": {
+      "Control": "Classic/TextInput@2.3.2",
+      "Default": "=nfSelectedRecord16.GG_981_Antall_Fordrevne_Ukrainske_Elever_Med_Vedtak_Om_Forsterket_Norskopplaering",
+      "DisplayMode": "=DisplayMode.View",
+      "OnChange": "=",
+      "Visible": "=false"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Local_Comp_Input_Number_486",
+    "card": "B. Forsterket opplæring i norsk",
+    "parent": "Container7_1059",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord16.GG_981_Antall_Fordrevne_Ukrainske_Elever_Med_Vedtak_Om_Forsterket_Norskopplaering",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel16,\n    nfSelectedRecord16,\n    {GG_981_Antall_Fordrevne_Ukrainske_Elever_Med_Vedtak_Om_Forsterket_Norskopplaering:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 16,
+    "name": "C. Egne undervisningsgrupper",
+    "card": "C. Egne undervisningsgrupper",
+    "parent": "Canvas_12",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "DataCard@1.0.2",
+      "Y": "=4"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Comp_liba_DatacardBkgGSI_69",
+    "card": "C. Egne undervisningsgrupper",
+    "parent": "C. Egne undervisningsgrupper",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Comp_liba_DatacardBkgGSI",
+      "Input_HeaderText": "=\nLookUp(nfViewSprak, BeregnetId = \"GG_H72_U169\").HovedsporsmalTekst",
+      "Input_Kontrollere": "=  Table(\r\n       \r\n    \r\n        {ID: \"GG-A69\", Boolean: Kontroll_GG_A69},\r\n        {ID: \"GG-A70\", Boolean: Kontroll_GG_A70},\r\n        {ID: \"GG-A71\", Boolean: Kontroll_GG_A71}\r\n      \r\n    )",
+      "VisDrawer": "=Set (vargblVisDrawer ,true) ;       \nSet(vargblDrawerHjelpetekst,LookUp(colHjelpetekster, HjelpetekstId = \"GG-H154\" ,Tekst));  \nSet(vargblDrawerOverskrift,LookUp(colHjelpetekster, HjelpetekstId = \"GG-H154\" ,Overskrift));\nCom_liba_spmtegn_drawer_GSI_16.SetFocusDrawer();"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Label4_913",
+    "card": "C. Egne undervisningsgrupper",
+    "parent": "Container1_302",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Label@2.5.1",
+      "DisplayMode": "=DisplayMode.View",
+      "Text": "=\"1\""
+    }
+  },
+  {
+    "section": 16,
+    "name": "TextInput2_257",
+    "card": "C. Egne undervisningsgrupper",
+    "parent": "Container7_1091",
+    "hidden": true,
+    "conditions": [
+      {
+        "name": "TextInput2_257",
+        "visible": "=false"
+      }
+    ],
+    "props": {
+      "Control": "Classic/TextInput@2.3.2",
+      "Default": "=nfSelectedRecord16.GG_982_Antall_Fordevne_Fra_Ukraina_Undervisning_I_Egne_Undervinsningsgrupper",
+      "DisplayMode": "=DisplayMode.View",
+      "OnChange": "=",
+      "Visible": "=false"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Local_Comp_Input_Number_487",
+    "card": "C. Egne undervisningsgrupper",
+    "parent": "Container7_1091",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord16.GG_982_Antall_Fordevne_Fra_Ukraina_Undervisning_I_Egne_Undervinsningsgrupper",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel16,\n    nfSelectedRecord16,\n    {GG_982_Antall_Fordevne_Fra_Ukraina_Undervisning_I_Egne_Undervinsningsgrupper:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 16,
+    "name": "D. Morsmålsopplæring og/eller tospråklig opplæring i fag",
+    "card": "D. Morsmålsopplæring og/eller tospråklig opplæring i fag",
+    "parent": "Canvas_12",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "DataCard@1.0.2",
+      "Y": "=5"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Comp_liba_DatacardBkgGSI_70",
+    "card": "D. Morsmålsopplæring og/eller tospråklig opplæring i fag",
+    "parent": "D. Morsmålsopplæring og/eller tospråklig opplæring i fag",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Comp_liba_DatacardBkgGSI",
+      "Input_HeaderText": "=\nLookUp(nfViewSprak, BeregnetId = \"GG_H73_U172\").HovedsporsmalTekst",
+      "Input_Kontrollere": "=  Table(\r\n     \r\n        {ID: \"GG-A66\", Boolean: Kontroll_GG_A66}, \r\n        {ID: \"GG-A68\", Boolean: Kontroll_GG_A68} \r\n      \r\n    )",
+      "VisDrawer": "=Set (vargblVisDrawer ,true) ;       \nSet(vargblDrawerHjelpetekst,LookUp(colHjelpetekster, HjelpetekstId = \"GG-H155\" ,Tekst)); \nSet(vargblDrawerOverskrift,LookUp(colHjelpetekster, HjelpetekstId = \"GG-H155\" ,Overskrift));\nCom_liba_spmtegn_drawer_GSI_16.SetFocusDrawer();"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Label4_905",
+    "card": "D. Morsmålsopplæring og/eller tospråklig opplæring i fag",
+    "parent": "Container1_296",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Label@2.5.1",
+      "DisplayMode": "=DisplayMode.View",
+      "Text": "=\"1\""
+    }
+  },
+  {
+    "section": 16,
+    "name": "Local_Comp_Input_Number_172",
+    "card": "D. Morsmålsopplæring og/eller tospråklig opplæring i fag",
+    "parent": "Container7_1111",
+    "hidden": true,
+    "conditions": [
+      {
+        "name": "Container7_1111",
+        "visible": "=false"
+      }
+    ],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord11.GG_693_Antall_Elever_Med_Videregaaendefag_Istedenfor_Valgfag_Trinn_10",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel11,\n    nfSelectedRecord11,\n    {GG_693_Antall_Elever_Med_Videregaaendefag_Istedenfor_Valgfag_Trinn_10:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 16,
+    "name": "TextInput2_270",
+    "card": "D. Morsmålsopplæring og/eller tospråklig opplæring i fag",
+    "parent": "Container7_1111",
+    "hidden": true,
+    "conditions": [
+      {
+        "name": "TextInput2_270",
+        "visible": "=false"
+      },
+      {
+        "name": "Container7_1111",
+        "visible": "=false"
+      }
+    ],
+    "props": {
+      "Control": "Classic/TextInput@2.3.2",
+      "Default": "=nfSelectedRecord11.GG_693_Antall_Elever_Med_Videregaaendefag_Istedenfor_Valgfag_Trinn_10",
+      "DisplayMode": "=DisplayMode.View",
+      "OnChange": "=",
+      "Visible": "=false"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Local_Comp_Input_Number_169",
+    "card": "D. Morsmålsopplæring og/eller tospråklig opplæring i fag",
+    "parent": "Container7_1105",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord16.GG_997_Antall_Fordrevne_Ukraina_Forsterket_Norskopplaering_Bare_Morsmaalsopplaering",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel16,\n    nfSelectedRecord16,\n    {GG_997_Antall_Fordrevne_Ukraina_Forsterket_Norskopplaering_Bare_Morsmaalsopplaering:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Local_Comp_Input_Number_170",
+    "card": "D. Morsmålsopplæring og/eller tospråklig opplæring i fag",
+    "parent": "Container7_1106",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord16.GG_998_Antall_Fordrevne_Ukraina_Baade_Morsmaalsopplaering_Tospraaklig_Fagopplaering",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel16,\n    nfSelectedRecord16,\n    {GG_998_Antall_Fordrevne_Ukraina_Baade_Morsmaalsopplaering_Tospraaklig_Fagopplaering:HeltallsFilter(OutPatchVerdi,true,4,false)}\n);"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Local_Comp_Input_Number_171",
+    "card": "D. Morsmålsopplæring og/eller tospråklig opplæring i fag",
+    "parent": "Container7_1107",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord16.GG_999_Antall_Fordrevne_Ukraina_Tospraaklig_Fagopplaering",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel16,\n    nfSelectedRecord16,\n    {GG_999_Antall_Fordrevne_Ukraina_Tospraaklig_Fagopplaering:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 16,
+    "name": "TextInput2_256",
+    "card": "D. Morsmålsopplæring og/eller tospråklig opplæring i fag",
+    "parent": "Container7_1107",
+    "hidden": true,
+    "conditions": [
+      {
+        "name": "TextInput2_256",
+        "visible": "=false"
+      }
+    ],
+    "props": {
+      "Control": "Classic/TextInput@2.3.2",
+      "Default": "=nfSelectedRecord11.GG_693_Antall_Elever_Med_Videregaaendefag_Istedenfor_Valgfag_Trinn_10",
+      "DisplayMode": "=DisplayMode.View",
+      "OnChange": "=",
+      "Visible": "=false"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Local_Comp_Input_Number_173",
+    "card": "D. Morsmålsopplæring og/eller tospråklig opplæring i fag",
+    "parent": "Container7_1110",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord16.GG_1000_Antall_Fordrevne_Fra_Ukraina_Annen_Tilrettelagt_Opplaering",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel16,\n    nfSelectedRecord16,\n    {GG_1000_Antall_Fordrevne_Fra_Ukraina_Annen_Tilrettelagt_Opplaering:HeltallsFilter(OutPatchVerdi,true,4,false)}\n);"
+    }
+  },
+  {
+    "section": 16,
+    "name": "TextInput2_269",
+    "card": "D. Morsmålsopplæring og/eller tospråklig opplæring i fag",
+    "parent": "Container7_1108",
+    "hidden": true,
+    "conditions": [
+      {
+        "name": "TextInput2_269",
+        "visible": "=false"
+      }
+    ],
+    "props": {
+      "Control": "Classic/TextInput@2.3.2",
+      "Default": "=nfSelectedRecord16.GG_983_Antall_Fordrevne_Fra_Ukraina_I_Tillegg_Til_Forsterket_Norskopplaering_Faar_Morsmaalsopplaering",
+      "DisplayMode": "=DisplayMode.View",
+      "OnChange": "=",
+      "Visible": "=false"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Label23_12",
+    "card": "D. Morsmålsopplæring og/eller tospråklig opplæring i fag",
+    "parent": "Container7_1108",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Label@2.5.1",
+      "Text": "=nfSelectedRecord16.GG_1001_Antall_Fordrevne_Fra_Ukraina_Sum"
+    }
+  },
+  {
+    "section": 16,
+    "name": "A. Fordrevne ukrainske elever",
+    "card": "A. Fordrevne ukrainske elever",
+    "parent": "Canvas_12",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "DataCard@1.0.2",
+      "Y": "=2"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Comp_liba_DatacardBkgGSI_73",
+    "card": "A. Fordrevne ukrainske elever",
+    "parent": "A. Fordrevne ukrainske elever",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Comp_liba_DatacardBkgGSI",
+      "Input_HeaderText": "=\nLookUp(nfViewSprak, BeregnetId = \"GG_H70_U165\").HovedsporsmalTekst",
+      "Input_Kontrollere": "=",
+      "VisDrawer": "=Set (vargblVisDrawer ,true) ;       \nSet(vargblDrawerHjelpetekst,LookUp(colHjelpetekster, HjelpetekstId = \"GG-H152\" ,Tekst)); \nSet(vargblDrawerOverskrift,LookUp(colHjelpetekster, HjelpetekstId = \"GG-H152\" ,Overskrift));\nCom_liba_spmtegn_drawer_GSI_16.SetFocusDrawer();"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Label4_1058",
+    "card": "A. Fordrevne ukrainske elever",
+    "parent": "Container1_345",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Label@2.5.1",
+      "DisplayMode": "=DisplayMode.View",
+      "Text": "=\"1\""
+    }
+  },
+  {
+    "section": 16,
+    "name": "Local_Comp_Input_Number_451",
+    "card": "A. Fordrevne ukrainske elever",
+    "parent": "Container7_774",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord16.GG_959_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_1",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel16,\n    nfSelectedRecord16,\n    {GG_959_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_1:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Local_Comp_Input_Number_452",
+    "card": "A. Fordrevne ukrainske elever",
+    "parent": "Container7_775",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord16.GG_970_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_1",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel16,\n    nfSelectedRecord16,\n    {GG_970_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_1:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 16,
+    "name": "TextInput2_134",
+    "card": "A. Fordrevne ukrainske elever",
+    "parent": "Container7_776",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Classic/TextInput@2.3.2",
+      "Default": "=nfSelectedRecord16.GG_1002_Sum_Fordrevne_Ukrainske_Elever_Trinn_1",
+      "DisplayMode": "=DisplayMode.View",
+      "OnChange": "="
+    }
+  },
+  {
+    "section": 16,
+    "name": "Label4_1060",
+    "card": "A. Fordrevne ukrainske elever",
+    "parent": "Container1_346",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Label@2.5.1",
+      "DisplayMode": "=DisplayMode.View",
+      "Text": "=\"2\""
+    }
+  },
+  {
+    "section": 16,
+    "name": "Local_Comp_Input_Number_453",
+    "card": "A. Fordrevne ukrainske elever",
+    "parent": "Container7_777",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord16.GG_960_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_2",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel16,\n    nfSelectedRecord16,\n    {GG_960_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_2:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Local_Comp_Input_Number_454",
+    "card": "A. Fordrevne ukrainske elever",
+    "parent": "Container7_778",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord16.GG_971_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_2",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel16,\n    nfSelectedRecord16,\n    {GG_971_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_2:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 16,
+    "name": "TextInput2_135",
+    "card": "A. Fordrevne ukrainske elever",
+    "parent": "Container7_779",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Classic/TextInput@2.3.2",
+      "Default": "=nfSelectedRecord16.GG_1003_Sum_Fordrevne_Ukrainske_Elever_Trinn_2",
+      "DisplayMode": "=DisplayMode.View",
+      "OnChange": "="
+    }
+  },
+  {
+    "section": 16,
+    "name": "Label4_1062",
+    "card": "A. Fordrevne ukrainske elever",
+    "parent": "Container1_347",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Label@2.5.1",
+      "DisplayMode": "=DisplayMode.View",
+      "Text": "=\"3\""
+    }
+  },
+  {
+    "section": 16,
+    "name": "Local_Comp_Input_Number_455",
+    "card": "A. Fordrevne ukrainske elever",
+    "parent": "Container7_781",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord16.GG_961_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_3",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel16,\n    nfSelectedRecord16,\n    {GG_961_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_3:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Local_Comp_Input_Number_456",
+    "card": "A. Fordrevne ukrainske elever",
+    "parent": "Container7_783",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord16.GG_972_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_3",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel16,\n    nfSelectedRecord16,\n    {GG_972_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_3:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 16,
+    "name": "TextInput2_136",
+    "card": "A. Fordrevne ukrainske elever",
+    "parent": "Container7_784",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Classic/TextInput@2.3.2",
+      "Default": "=nfSelectedRecord16.GG_1004_Sum_Fordrevne_Ukrainske_Elever_Trinn_3",
+      "DisplayMode": "=DisplayMode.View",
+      "OnChange": "="
+    }
+  },
+  {
+    "section": 16,
+    "name": "Label4_1064",
+    "card": "A. Fordrevne ukrainske elever",
+    "parent": "Container1_348",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Label@2.5.1",
+      "DisplayMode": "=DisplayMode.View",
+      "Text": "=\"4\""
+    }
+  },
+  {
+    "section": 16,
+    "name": "Local_Comp_Input_Number_457",
+    "card": "A. Fordrevne ukrainske elever",
+    "parent": "Container7_785",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord16.GG_962_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_4",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel16,\n    nfSelectedRecord16,\n    {GG_962_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_4:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Local_Comp_Input_Number_458",
+    "card": "A. Fordrevne ukrainske elever",
+    "parent": "Container7_786",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord16.GG_973_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_4",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel16,\n    nfSelectedRecord16,\n    {GG_973_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_4:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 16,
+    "name": "TextInput2_145",
+    "card": "A. Fordrevne ukrainske elever",
+    "parent": "Container7_787",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Classic/TextInput@2.3.2",
+      "Default": "=nfSelectedRecord16.GG_1005_Sum_Fordrevne_Ukrainske_Elever_Trinn_4",
+      "DisplayMode": "=DisplayMode.View",
+      "OnChange": "="
+    }
+  },
+  {
+    "section": 16,
+    "name": "Label4_1066",
+    "card": "A. Fordrevne ukrainske elever",
+    "parent": "Container1_349",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Label@2.5.1",
+      "DisplayMode": "=DisplayMode.View",
+      "Text": "=\"5\""
+    }
+  },
+  {
+    "section": 16,
+    "name": "Local_Comp_Input_Number_459",
+    "card": "A. Fordrevne ukrainske elever",
+    "parent": "Container7_788",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord16.GG_963_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_5",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel16,\n    nfSelectedRecord16,\n    {GG_963_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_5:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Local_Comp_Input_Number_460",
+    "card": "A. Fordrevne ukrainske elever",
+    "parent": "Container7_789",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord16.GG_974_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_5",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel16,\n    nfSelectedRecord16,\n    {GG_974_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_5:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 16,
+    "name": "TextInput2_146",
+    "card": "A. Fordrevne ukrainske elever",
+    "parent": "Container7_790",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Classic/TextInput@2.3.2",
+      "Default": "=nfSelectedRecord16.GG_1006_Sum_Fordrevne_Ukrainske_Elever_Trinn_5",
+      "DisplayMode": "=DisplayMode.View",
+      "OnChange": "="
+    }
+  },
+  {
+    "section": 16,
+    "name": "Label4_1070",
+    "card": "A. Fordrevne ukrainske elever",
+    "parent": "Container1_350",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Label@2.5.1",
+      "DisplayMode": "=DisplayMode.View",
+      "Text": "=\"6\""
+    }
+  },
+  {
+    "section": 16,
+    "name": "Local_Comp_Input_Number_461",
+    "card": "A. Fordrevne ukrainske elever",
+    "parent": "Container7_791",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord16.GG_964_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_6",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel16,\n    nfSelectedRecord16,\n    {GG_964_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_6:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Local_Comp_Input_Number_462",
+    "card": "A. Fordrevne ukrainske elever",
+    "parent": "Container7_792",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord16.GG_975_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_6",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel16,\n    nfSelectedRecord16,\n    {GG_975_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_6:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 16,
+    "name": "TextInput2_148",
+    "card": "A. Fordrevne ukrainske elever",
+    "parent": "Container7_793",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Classic/TextInput@2.3.2",
+      "Default": "=nfSelectedRecord16.GG_1007_Sum_Fordrevne_Ukrainske_Elever_Trinn_6",
+      "DisplayMode": "=DisplayMode.View",
+      "OnChange": "="
+    }
+  },
+  {
+    "section": 16,
+    "name": "Label4_1074",
+    "card": "A. Fordrevne ukrainske elever",
+    "parent": "Container1_352",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Label@2.5.1",
+      "DisplayMode": "=DisplayMode.View",
+      "Text": "=\"7\""
+    }
+  },
+  {
+    "section": 16,
+    "name": "Local_Comp_Input_Number_463",
+    "card": "A. Fordrevne ukrainske elever",
+    "parent": "Container7_794",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord16.GG_965_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_7",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel16,\n    nfSelectedRecord16,\n    {GG_965_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_7:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Local_Comp_Input_Number_464",
+    "card": "A. Fordrevne ukrainske elever",
+    "parent": "Container7_795",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord16.GG_976_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_7",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel16,\n    nfSelectedRecord16,\n    {GG_976_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_7:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 16,
+    "name": "TextInput2_149",
+    "card": "A. Fordrevne ukrainske elever",
+    "parent": "Container7_796",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Classic/TextInput@2.3.2",
+      "Default": "=nfSelectedRecord16.GG_1008_Sum_Fordrevne_Ukrainske_Elever_Trinn_7",
+      "DisplayMode": "=DisplayMode.View",
+      "OnChange": "="
+    }
+  },
+  {
+    "section": 16,
+    "name": "Label4_1076",
+    "card": "A. Fordrevne ukrainske elever",
+    "parent": "Container1_354",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Label@2.5.1",
+      "DisplayMode": "=DisplayMode.View",
+      "Text": "=\"8\""
+    }
+  },
+  {
+    "section": 16,
+    "name": "Local_Comp_Input_Number_465",
+    "card": "A. Fordrevne ukrainske elever",
+    "parent": "Container7_797",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord16.GG_966_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_8",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel16,\n    nfSelectedRecord16,\n    {GG_966_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_8:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Local_Comp_Input_Number_466",
+    "card": "A. Fordrevne ukrainske elever",
+    "parent": "Container7_798",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord16.GG_977_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_8",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel16,\n    nfSelectedRecord16,\n    {GG_977_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_8:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 16,
+    "name": "TextInput2_150",
+    "card": "A. Fordrevne ukrainske elever",
+    "parent": "Container7_828",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Classic/TextInput@2.3.2",
+      "Default": "=nfSelectedRecord16.GG_1009_Sum_Fordrevne_Ukrainske_Elever_Trinn_8",
+      "DisplayMode": "=DisplayMode.View",
+      "OnChange": "="
+    }
+  },
+  {
+    "section": 16,
+    "name": "Label4_1078",
+    "card": "A. Fordrevne ukrainske elever",
+    "parent": "Container1_355",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Label@2.5.1",
+      "DisplayMode": "=DisplayMode.View",
+      "Text": "=\"9\""
+    }
+  },
+  {
+    "section": 16,
+    "name": "Local_Comp_Input_Number_467",
+    "card": "A. Fordrevne ukrainske elever",
+    "parent": "Container7_829",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord16.GG_967_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_9",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel16,\n    nfSelectedRecord16,\n    {GG_967_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_9:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Local_Comp_Input_Number_468",
+    "card": "A. Fordrevne ukrainske elever",
+    "parent": "Container7_830",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord16.GG_978_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_9",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel16,\n    nfSelectedRecord16,\n    {GG_978_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_9:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 16,
+    "name": "TextInput2_151",
+    "card": "A. Fordrevne ukrainske elever",
+    "parent": "Container7_831",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Classic/TextInput@2.3.2",
+      "Default": "=nfSelectedRecord16.GG_1010_Sum_Fordrevne_Ukrainske_Elever_Trinn_9",
+      "DisplayMode": "=DisplayMode.View",
+      "OnChange": "="
+    }
+  },
+  {
+    "section": 16,
+    "name": "Label4_1080",
+    "card": "A. Fordrevne ukrainske elever",
+    "parent": "Container1_356",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Label@2.5.1",
+      "DisplayMode": "=DisplayMode.View",
+      "Text": "=\"10\""
+    }
+  },
+  {
+    "section": 16,
+    "name": "Local_Comp_Input_Number_469",
+    "card": "A. Fordrevne ukrainske elever",
+    "parent": "Container7_832",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord16.GG_968_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_10",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=\nPatch(\n   GsiGrunnskoleSvarDel16,\n    nfSelectedRecord16,\n    {GG_968_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_10:HeltallsFilter(OutPatchVerdi,true,4,false) }\n);"
+    }
+  },
+  {
+    "section": 16,
+    "name": "Local_Comp_Input_Number_470",
+    "card": "A. Fordrevne ukrainske elever",
+    "parent": "Container7_833",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "CanvasComponent",
+      "ComponentName": "Local_Comp_Input_Number",
+      "AntallSiffer": "=4",
+      "Default": "=nfSelectedRecord16.GG_979_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_10",
+      "Displaymode": "=nfDisplayMode",
+      "Onchange": "=Patch(\n   GsiGrunnskoleSvarDel16,\n    nfSelectedRecord16,\n    {GG_979_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_10:HeltallsFilter(OutPatchVerdi,true,4,false)}\n);"
+    }
+  },
+  {
+    "section": 16,
+    "name": "TextInput2_152",
+    "card": "A. Fordrevne ukrainske elever",
+    "parent": "Container7_834",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Classic/TextInput@2.3.2",
+      "Default": "=nfSelectedRecord16.GG_1011_Sum_Fordrevne_Ukrainske_Elever_Trinn_10",
+      "DisplayMode": "=DisplayMode.View",
+      "OnChange": "="
+    }
+  },
+  {
+    "section": 16,
+    "name": "Label4_1082",
+    "card": "A. Fordrevne ukrainske elever",
+    "parent": "Container1_357",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Label@2.5.1",
+      "DisplayMode": "=DisplayMode.View",
+      "Text": "=\"11\""
+    }
+  },
+  {
+    "section": 16,
+    "name": "TextInput3_371",
+    "card": "A. Fordrevne ukrainske elever",
+    "parent": "Container7_835",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Classic/TextInput@2.3.2",
+      "Default": "=nfSelectedRecord16.GG_969_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Sum",
+      "DisplayMode": "=DisplayMode.View",
+      "OnChange": "="
+    }
+  },
+  {
+    "section": 16,
+    "name": "TextInput3_372",
+    "card": "A. Fordrevne ukrainske elever",
+    "parent": "Container7_836",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Classic/TextInput@2.3.2",
+      "Default": "=nfSelectedRecord16.GG_980_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Sum",
+      "DisplayMode": "=DisplayMode.View",
+      "OnChange": "="
+    }
+  },
+  {
+    "section": 16,
+    "name": "TextInput2_153",
+    "card": "A. Fordrevne ukrainske elever",
+    "parent": "Container7_837",
+    "hidden": false,
+    "conditions": [],
+    "props": {
+      "Control": "Classic/TextInput@2.3.2",
+      "Default": "=nfSelectedRecord16.GG_1012_Total_Sum_Fordrevne_Ukrainske_Elever_Trinn_1_10",
+      "DisplayMode": "=DisplayMode.View",
+      "OnChange": "="
+    }
+  }
+]

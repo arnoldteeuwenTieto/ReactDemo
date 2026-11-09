@@ -23,7 +23,7 @@ export default defineConfig(({ command, mode, isPreview }) => {
   },
   plugins: [
     { name: 'gsi-production-report-metadata', enforce: 'pre', load(id) {
-      if (command !== 'build' || !/src[\\/]domain[\\/](importedScreens|staffScreens|languageScreens)\.json$/.test(id)) return
+      if (command !== 'build' || !/src[\\/]domain[\\/](importedScreens|staffScreens|languageScreens|additionalScreens|finalScreens)\.json$/.test(id)) return
       const strip = value => Array.isArray(value) ? value.map(strip) : value && typeof value === 'object' ? Object.fromEntries(Object.entries(value).filter(([key]) => !['sourceFormula', 'sourceCard', 'sourceOrder', 'textReferences'].includes(key)).map(([key, item]) => [key, strip(item)])) : value
       return JSON.stringify(strip(JSON.parse(readFileSync(id, 'utf8'))))
     } },

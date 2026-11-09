@@ -1,0 +1,823 @@
+
+
+Set(vargblShowspinnerPageloading, true);
+
+
+
+// First, evaluate the condition for Iskommunesentralt
+
+//Set(Iskommunesentralt, If((nfLoginRole.RolleId = 10) && !IsBlank(Find("kommune sentralt", vargblGallerySelectedSkole.Navn)), true, false));
+
+Set(     Iskommunesentralt,    nfLoginRole.RolleId = 10 &&     "kommune sentralt" in Lower(vargblGallerySelectedSkole.Navn));
+
+
+
+
+
+// Check if Iskommunesentralt is true
+
+If(
+
+    Iskommunesentralt,
+
+    // If true, set all other variables to false
+
+    Set(IsGrunnskole, false);
+
+    Set(IsFrittstaendeSFO, false);
+
+    Set(IsOffentligskole, false);
+
+    Set(IsPrivatSkole, false),
+
+    // If false, set the variables as per the original logic
+
+    Set(IsGrunnskole, nfLookupNSR.ErGrunnskole);
+
+    Set(IsFrittstaendeSFO, true);
+
+    Set(IsOffentligskole, nfLookupNSR.ErOffentligSkole);
+
+    Set(IsPrivatSkole, nfLookupNSR.ErPrivatskole)
+
+);
+
+
+
+///Resett alle kontrollere som har vargblReset i reset kontroller
+
+    Set(vargblReset, true);
+
+    Set(vargblReset, false);
+
+//Time at start innledning
+
+Set(varTimeStampInnledning, Now());
+
+
+
+//////Kontrollere/////////////////////////7
+
+With(
+
+    {
+
+        SelectedRecordKontrollere: LookUp(
+
+            GsiGrunnskoleSvar,
+
+            Organisasjonsnummer = vargblGallerySelectedSkole.Organisasjonsnummer && Ar = vargblGallerySelectedSkole.Ar
+
+        ).Kontrollere
+
+    },
+
+        //Hente tidligare kontrollere info/kommentarer fra DB om det ligger data i kontrollertabellen
+
+        If( !IsBlank(SelectedRecordKontrollere) || (Len(SelectedRecordKontrollere) > 5),  ////BOGI-3524
+
+            ClearCollect(
+
+                colKontrollereSkole,
+
+                ForAll(
+
+                    Table(ParseJSON(nfSelectedRecord.Kontrollere)),
+
+                    {
+
+                        KontrollerId: Text(Value.KontrollerId),
+
+                        KontrollKategori: Text(Value.KontrollKategori),
+
+                        KontrollKommentar: Text(Value.KontrollKommentar),
+
+                        KontrollSteg: Value(Value.KontrollSteg)
+
+                    }
+
+                )
+
+            );
+
+                  //BOGI-3572 Patch kontrollere om skriverettigheter
+
+        If(
+
+                (nfDisplayMode = DisplayMode.Edit && nfLoginRole.RolleId = 9 || (nfLoginRole.RolleId = 10 && !IsBlank(Find("kommune sentralt", vargblGallerySelectedSkole.Navn)))),  
+
+                Patch(GsiGrunnskoleSvar, nfSelectedRecord,{Kontrollere:JSON(colKontrollereSkole)})
+
+            );
+
+        );
+
+
+
+);
+
+
+
+ClearCollect(colHjelpetekster, DropColumns(AddColumns(Filter(Hjelpetekst, StartsWith(HjelpetekstId, "GG")) ,&#x20;
+
+                Tekst , If(vargblAppLanguage = "nb", TekstBokmal, TekstNynorsk),&#x20;
+
+                Overskrift , If(vargblAppLanguage = "nb", OverskriftBokmal, OverskriftNynorsk) ),&#x20;
+
+            TekstNynorsk, TekstBokmal, SkjemaTypeId, Steg, OverskriftNynorsk, OverskriftBokmal )) ;
+
+
+
+///////Pre populere dynamiske tabeller (sette opp headers i collction uten datarows)///////////////
+
+
+
+//Set(vargblSpinnerInfo, "Setter opp tabeller");
+
+Concurrent(
+
+    ClearCollect(ColGG2Maalform, ShowColumns(Filter(nfViewSprakSvarAlternativer, SprakInputFeltId = 1), Tekst, Verdi)),
+
+
+
+    ClearCollect(ColGG3Sp, AddColumns(ShowColumns(Filter(GsiGrunnskoleFinansiertAnnenKommune, GsiGrunnskoleSvarDel3Id = nfSelectedRecord3.GsiGrunnskoleSvarDel3Id),&#x20;
+
+    GG_887_Finansiert_Annen_Kommune, GG_886_Elever_Finansiert_Annen_Kommune, FinansiertAnnenKommuneId,GsiGrunnskoleSvarDel3Id),RowNumber,0)) ,
+
+
+
+    ClearCollect(ColGG7SpH,AddColumns(ShowColumns(Filter(GsiGrunnskoleIndividuellTilrettelagtOpplaering, GsiGrunnskoleSvarDel7Id=nfSelectedRecord7.GsiGrunnskoleSvarDel7Id),IndividuellTilrettelagtOpplaeringId,
+
+      GsiGrunnskoleSvarDel7Id,
+
+      GG_918_Individuell_Tilrettelagt_Opplaering,
+
+      GG_919_Elever_Individuell_Tilrettelagt_Opplaering),RowNumber,0)),
+
+
+
+    ClearCollect(ColGG8SpC,AddColumns(ShowColumns(Filter(GsiGrunnskoleSprakOpplaering, GsiGrunnskoleSvarDel8Id=LookUp(GsiGrunnskoleSvarDel8, SkjemaStatusId = vargblSkjemaStatusId).GsiGrunnskoleSvarDel8Id),GG_869_Morsmaal, GG_870_Elever_med_bare_morsmaalsopplaering,GG_871_Elever_med_bare_tospraaklig_fagopplaering,GG_872_Elever_med_baade_morsmaalopplaering_og_tospraaklig_fagopplaering,GG_873_Elever_med_tilrettelagt_opplaering, GG_874_Sum_Elever_morsmaal_tospraaklig_tilrettelagtopplaering, SprakOpplaeringId,GsiGrunnskoleSvarDel8Id),RowNumber,0)) ,
+
+
+
+    ClearCollect(ColGG8SpD,AddColumns(ShowColumns(Filter(GsiGrunnskoleSprakOpplaeringAnnenKommune, GsiGrunnskoleSvarDel8Id=LookUp(GsiGrunnskoleSvarDel8, SkjemaStatusId = vargblSkjemaStatusId).GsiGrunnskoleSvarDel8Id),SprakOpplaeringAnnenKommuneId,
+
+        GG_916_Forstaerket_SpraakOpplaering_Annen_Kommune,
+
+        GG_917_Elever_Forstaerket_SpraakOpplaering_Annen_Kommune,
+
+        GsiGrunnskoleSvarDel8Id),RowNumber,0))  ,
+
+
+
+    ClearCollect(ColGG9SpC,
+
+        AddColumns(
+
+            ShowColumns(
+
+                Filter(GrunnskoleOpplaeringssprakSamiskKvenskFinsk, GsiGrunnskoleSvarDel9Id = nfSelectedRecord9.GsiGrunnskoleSvarDel9Id),
+
+                OpplaeringssprakSamiskKvenskFinskId,
+
+                GsiGrunnskoleSvarDel9Id,
+
+                GG_904_Antall_Elever_Opplaering_Trinn_1,
+
+                GG_905_Antall_Elever_Opplaering_Trinn_2,
+
+                GG_906_Antall_Elever_Opplaering_Trinn_3,
+
+                GG_907_Antall_Elever_Opplaering_Trinn_4,
+
+                GG_908_Antall_Elever_Opplaering_Trinn_5,
+
+                GG_909_Antall_Elever_Opplaering_Trinn_6,
+
+                GG_910_Antall_Elever_Opplaering_Trinn_7,
+
+                GG_911_Antall_Elever_Opplaering_Trinn_8,
+
+                GG_912_Antall_Elever_Opplaering_Trinn_9,
+
+                GG_913_Antall_Elever_Opplaering_Trinn_10,
+
+                GG_914_Total_Sum_Antall_Elever_Opplaering_Trinn_1_10,
+
+                GG_915_Opplaering_Samisk_Kvensk_Finsk
+
+            ),
+
+    RowNumber, 0, // Initialize RowNumber as Blank
+
+    ShowCombobox, If(ThisRecord.GG_915_Opplaering_Samisk_Kvensk_Finsk = Blank(),true, false)
+
+   )),
+
+
+
+    ClearCollect(ColGG11SpA,AddColumns(ShowColumns(Filter(GsiGrunnskoleValgfag, GsiGrunnskoleSvarDel11Id=nfSelectedRecord11.GsiGrunnskoleSvarDel11Id),GG_875_Valgfag,
+
+        GG_876_Antall_Gutter_Med_Valgfag_Trinn_8,
+
+        GG_877_Antall_Jenter_Med_Valgfag_Trinn_8,
+
+        GG_878_Sum_Med_Valgfag_Trinn_8,
+
+        GG_879_Antall_Gutter_Med_Valgfag_Trinn_9,
+
+        GG_880_Antall_Jenter_Med_Valgfag_Trinn_9,
+
+        GG_881_Sum_Med_Valgfag_Trinn_9,
+
+        GG_882_Antall_Gutter_Med_Valgfag_Trinn_10,
+
+        GG_883_Antall_Jenter_Med_Valgfag_Trinn_10,
+
+        GG_884_Sum_Med_Valgfag_Trinn_10,
+
+        GG_885_Sum_Med_Valgfag_Trinn_8_10,
+
+        GsiGrunnskoleSvarDel11Id,
+
+        ValgfagId),
+
+        RowNumber,0,
+
+        ShowCombobox, If(ThisRecord.GG_875_Valgfag = Blank(),true, false))),
+
+
+
+    ClearCollect(ColGG15SpD, AddColumns(ShowColumns(Filter(GrunnskoleMottakereAvPpt,
+
+            GsiGrunnskoleSvarDel15Id = nfSelectedRecord15.GsiGrunnskoleSvarDel15Id),&#x20;
+
+            GsiGrunnskoleMottakereAvPptId,&#x20;
+
+            KommuneNavn,
+
+            GsiGrunnskoleSvarDel15Id),
+
+        RowNumber, 0))
+
+); // End Concurrent
+
+
+
+ClearCollect(ShadowColGG8SpC,ColGG8SpC);    // brukes til kontrollere og dynamisk default verdi i tabell
+
+ClearCollect(ShadowColGG9SpC,ColGG9SpC);    // brukes til kontrollere og dynamisk default verdi i tabell
+
+ClearCollect(ShadowColGG11SpA,ColGG11SpA);  // brukes til kontrollere og dynamisk default verdi i tabell
+
+
+
+//Sett oppdatert index i Rownumber
+
+Concurrent(&#x20;
+
+
+
+    If(!IsBlank(ColGG8SpC),
+
+    ClearCollect(ColGG8SpC,
+
+          ForAll(Sequence(CountRows(ColGG8SpC)),
+
+                Patch(            Last(FirstN(ColGG8SpC, Value)), 
+
+                   {RowNumber: Value}        )    )    
+
+        ),
+
+   ClearCollect(ShadowColGG8SpC,
+
+          ForAll(Sequence(CountRows(ShadowColGG8SpC)),
+
+                Patch(            Last(FirstN(ShadowColGG8SpC, Value)), 
+
+                   {RowNumber: Value}        )    )    
+
+        )),
+
+
+
+    If(!IsBlank(ColGG8SpD),
+
+    ClearCollect(ColGG8SpD,
+
+          ForAll(Sequence(CountRows(ColGG8SpD)),
+
+                Patch(            Last(FirstN(ColGG8SpD, Value)), 
+
+                   {RowNumber: Value}        )    )    
+
+        )),
+
+
+
+    If(!IsBlank(ColGG9SpC),
+
+    ClearCollect(ColGG9SpC,
+
+    ForAll(
+
+        Sequence(CountRows(ColGG9SpC)),
+
+        Patch(
+
+            ColGG9SpC,
+
+            LookUp(ColGG9SpC, RowNumber =0 ), // Look for the record with RowNumber initialized to Blank
+
+            {RowNumber: Value} // Assign RowNumber starting from 1
+
+        )
+
+    )),
+
+    ClearCollect(ShadowColGG9SpC,
+
+    ForAll(
+
+        Sequence(CountRows(ShadowColGG9SpC)),
+
+        Patch(
+
+            ShadowColGG9SpC,
+
+            LookUp(ShadowColGG9SpC, RowNumber =0 ), // Look for the record with RowNumber initialized to Blank
+
+            {RowNumber: Value} // Assign RowNumber starting from 1
+
+        )
+
+    ))),
+
+
+
+
+
+   If(!IsBlank(ColGG11SpA),
+
+    ClearCollect(ColGG11SpA,
+
+    ForAll(
+
+        Sequence(CountRows(ColGG11SpA)),
+
+        Patch(
+
+            ColGG11SpA,
+
+            LookUp(ColGG11SpA, RowNumber =0 ), // Look for the record with RowNumber initialized to Blank
+
+            {RowNumber: Value} // Assign RowNumber starting from 1
+
+        )
+
+    )),
+
+
+
+    ClearCollect(ShadowColGG11SpA,
+
+    ForAll(
+
+        Sequence(CountRows(ShadowColGG11SpA)),
+
+        Patch(
+
+            ShadowColGG11SpA,
+
+            LookUp(ShadowColGG11SpA, RowNumber =0 ), // Look for the record with RowNumber initialized to Blank
+
+            {RowNumber: Value} // Assign RowNumber starting from 1
+
+        )
+
+    ))
+
+   ),// end blank check
+
+
+
+      If(!IsBlank(ColGG3Sp),
+
+    ClearCollect(ColGG3Sp,
+
+      ForAll(Sequence(CountRows(ColGG3Sp)),
+
+            Patch(            Last(FirstN(ColGG3Sp, Value)), 
+
+               {RowNumber: Value}        )    )    
+
+    )),
+
+      If(!IsBlank(ColGG7SpH),
+
+    ClearCollect(ColGG7SpH,
+
+      ForAll(Sequence(CountRows(ColGG7SpH)),
+
+            Patch(            Last(FirstN(ColGG7SpH, Value)), 
+
+               {RowNumber: Value}        )    )    
+
+    )),
+
+     If(!IsBlank(ColGG15SpD),
+
+    ClearCollect(ColGG15SpD,
+
+      ForAll(Sequence(CountRows(ColGG15SpD)),
+
+            Patch(            Last(FirstN(ColGG15SpD, Value)), 
+
+               {RowNumber: Value}        )    )    
+
+    ))
+
+
+
+); // end concurrent
+
+//////END Pre populere dynamiske tabeller  //////////
+
+
+
+
+
+//Sjekk om alle kontrollere er løst ut, oppdater del 17 kontroller Advarsler&#x20;
+
+//FUNKER IKKE DENNE Set(vargblCountfalseadvarsler, CountIf(nfKontrolleretable, KontrollKategori = "Advarsel"  && Status = false));&#x20;
+
+
+
+
+
+
+
+/////Navbar //////
+
+
+
+Set(vargblNavbarItems, Table(
+
+    {
+
+        Steg: "0",
+
+        Tittel: LookUp(ColTekstDiverse, ID = 200).Tekst,
+
+        Naviger_to_screen: *Forside_Statusside*
+
+    },
+
+    {
+
+        Steg: "1",
+
+        Tittel: LookUp(ColTekstDiverse, ID = 201).Tekst,
+
+        Naviger_to_screen: *Del1*,
+
+        Status: Statussteg1
+
+    },
+
+    {
+
+        Steg: "2",
+
+        Tittel: LookUp(ColTekstDiverse, ID = 202).Tekst,
+
+        Naviger_to_screen: *Del2*,
+
+        Status: Statussteg2
+
+    },
+
+    {
+
+        Steg: "3",
+
+        Tittel: LookUp(ColTekstDiverse, ID = 203).Tekst,
+
+        Naviger_to_screen: *Del3*,
+
+        Status: Statussteg3
+
+    },
+
+    {
+
+        Steg: "4",
+
+        Tittel: LookUp(ColTekstDiverse, ID = 204).Tekst,
+
+        Naviger_to_screen: *Del4*,
+
+        Status: Statussteg4
+
+    },
+
+    {
+
+        Steg: "5",
+
+        Tittel: LookUp(ColTekstDiverse, ID = 205).Tekst,
+
+        Naviger_to_screen: *Del5*,
+
+        Status: Statussteg5
+
+    },
+
+    {
+
+        Steg: "6",
+
+        Tittel: LookUp(ColTekstDiverse, ID = 206).Tekst,
+
+        Naviger_to_screen: *Del6*,
+
+        Status: Statussteg6
+
+    },
+
+    {
+
+        Steg: "7",
+
+        Tittel: LookUp(ColTekstDiverse, ID = 207).Tekst,
+
+        Naviger_to_screen: *Del7*,
+
+        Status: Statussteg7
+
+    },
+
+    {
+
+        Steg: "8",
+
+        Tittel: LookUp(ColTekstDiverse, ID = 208).Tekst,
+
+        Naviger_to_screen: *Del8*,
+
+        Status: Statussteg8
+
+    },
+
+    {
+
+        Steg: "9",
+
+        Tittel: LookUp(ColTekstDiverse, ID = 209).Tekst,
+
+        Naviger_to_screen: *Del9*,
+
+        Status: Statussteg9
+
+    },
+
+    {
+
+        Steg: "10",
+
+        Tittel: LookUp(ColTekstDiverse, ID = 210).Tekst,
+
+        Naviger_to_screen: *Del10*,
+
+        Status: Statussteg10
+
+    },
+
+    {
+
+        Steg: "11",
+
+        Tittel: LookUp(ColTekstDiverse, ID = 211).Tekst,
+
+        Naviger_to_screen: *Del11*,
+
+        Status: Statussteg11
+
+    },
+
+    {
+
+        Steg: "12",
+
+        Tittel: LookUp(ColTekstDiverse, ID = 212).Tekst,
+
+        Naviger_to_screen: *Del12*,
+
+        Status: Statussteg12
+
+    },
+
+    {
+
+        Steg: "13",
+
+        Tittel: LookUp(ColTekstDiverse, ID = 213).Tekst,
+
+        Naviger_to_screen: *Del13*,
+
+        Status: Statussteg13
+
+    },
+
+    {
+
+        Steg: "14",
+
+        Tittel: LookUp(ColTekstDiverse, ID = 214).Tekst,
+
+        Naviger_to_screen: *Del14*,
+
+        Status: Statussteg14
+
+    },
+
+    {
+
+        Steg: "15",
+
+        Tittel: LookUp(ColTekstDiverse, ID = 229).Tekst,
+
+        Naviger_to_screen: *Del15_PPT*,
+
+        Status: Statussteg15
+
+    },
+
+    {
+
+        Steg: "16",
+
+        Tittel: LookUp(ColTekstDiverse, ID = 228).Tekst,
+
+        Naviger_to_screen: *Del16_Ukraina*,
+
+        Status: Statussteg16
+
+    },
+
+    {
+
+        Steg: "17",
+
+        Tittel: LookUp(ColTekstDiverse, ID = 215).Tekst,
+
+        Naviger_to_screen: *Del17_Kontroller*,
+
+        Status: nfTotalStatus
+
+    },
+
+    {
+
+        Steg: "18",
+
+        Tittel: LookUp(ColTekstDiverse, ID = 216).Tekst,
+
+        Naviger_to_screen: *Del18_Fullfør*
+
+
+
+
+
+    }
+
+));
+
+
+
+
+
+/\* Blir ersattet med kode som bae lagrer false kontroller i databasen
+
+//Oppdater kontrollere&#x20;
+
+ForAll(nfKontrolleretable,&#x20;
+
+    If(ThisRecord.KontrollKategori = "Advarsel" && Status = true ,
+
+
+
+        With({TempRecord: ThisRecord.KontrollerId},&#x20;
+
+            If((nfDisplayMode = DisplayMode.Edit && nfLoginRole.RolleId = 9 || (nfLoginRole.RolleId = 10 &&  !IsBlank(Find("kommune sentralt", vargblGallerySelectedSkole.Navn)))),  //BOGI-3572
+
+                Patch(colKontrollereSkole, LookUp(colKontrollereSkole, KontrollerId = TempRecord), {KontrollKommentar: Blank()})
+
+            );
+
+        )
+
+    )
+
+);
+
+
+
+
+
+
+
+
+
+
+
+ClearCollect(
+
+    colViewKontroll,
+
+    AddColumns(
+
+        ShowColumns(
+
+            Filter(
+
+                ViewKontroll,
+
+                StartsWith(KontrollerId, "GG")
+
+            ),
+
+            KontrollTekstNynorsk,
+
+            KontrollTekstBokmal,
+
+            HovedsporsmalBokmal,
+
+            HovedsporsmalNynorsk,
+
+            KontrollerId,
+
+            KontrollSteg,
+
+            KontrollKategori
+
+        ),
+
+        Tekst,
+
+        If(
+
+            vargblAppLanguage = "nb",
+
+            KontrollTekstBokmal,
+
+            KontrollTekstNynorsk
+
+        )
+
+    )
+
+);\*/
+
+
+
+
+
+//Trace til app insight
+
+Trace(     "Innledning Grunnskole Action",      TraceSeverity.Information,      
+
+    {  
+
+        Organisasjonsnummer : *Gallery_Statusside*.Selected.Organisasjonsnummer,&#x20;
+
+        Barnehagenavn: *Gallery_Statusside*.Selected.Navn,
+
+        SessionID: nfSessionId,
+
+        UserID: nfUserId,&#x20;
+
+        Time: Now() ,
+
+        Lese_Skrive : nfDisplayMode,
+
+        env: vargblEnvironment     ,
+
+        Ar: *Gallery_Statusside*.Selected.Ar,
+
+        AltinnRolle : vargblAltinnRolle,
+
+        MyndighetsRolle : nfLoginRole.RolleId,
+
+        Kontrollere: JSON(colKontrollereSkole) //BOGI-3572
+
+    }&#x20;
+
+);
+
+
+
+Navigate(*Del1*);
+
+Set(vargblShowspinnerPageloading, false);

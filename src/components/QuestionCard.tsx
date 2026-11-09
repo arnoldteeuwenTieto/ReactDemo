@@ -50,14 +50,14 @@ function InputQuestionCard({ id, heading, kind, options, value, onChange, canEdi
     <fieldset disabled={!canEdit} aria-describedby={describedBy}>
       <legend className="visually-hidden">{heading}</legend>
       {kind === 'radio' ? <div className="question-options">{options.map((option, index) => <label key={index}>
-        <ReportingInput fieldKey={id} sectionRef="2" dataType={typeof options[0]?.value === 'number' ? 'integer' : typeof options[0]?.value === 'boolean' ? 'boolean' : 'text'} reportValue={value} className="gsi-field" data-field-state={state.kind} type="radio" name={id} checked={value === option.value} onChange={() => onChange(option.value)} aria-invalid={state.invalid} />{option.label}
+        <ReportingInput fieldKey={id} sectionRef="2" dataType={typeof options[0]?.value === 'number' ? 'integer' : typeof options[0]?.value === 'boolean' ? 'boolean' : 'text'} reportValue={value} className="gsi-field" data-field-state={state.kind} type="radio" name={id} aria-label={option.label} aria-describedby={describedBy} checked={value === option.value} onChange={() => onChange(option.value)} aria-invalid={state.invalid} />{option.label}
       </label>)}</div> : <><label className="visually-hidden" htmlFor={id}>{heading}</label><ReportingSelect fieldKey={id} sectionRef="2" dataType="integer" className="gsi-field" data-field-state={state.kind} id={id} value={value === null ? '' : String(value)} onChange={event => {
         const selected = options.find(option => String(option.value) === event.target.value)
         if (selected) onChange(selected.value)
-      }} aria-invalid={!!validation}><option value="" disabled>{ui("Velg trinn")}</option>{options.map(option => <option key={String(option.value)} value={String(option.value)}>{option.label}</option>)}</ReportingSelect></>}
+      }} aria-describedby={describedBy} aria-invalid={state.invalid}><option value="" disabled>{ui("Velg trinn")}</option>{options.map(option => <option key={String(option.value)} value={String(option.value)}>{option.label}</option>)}</ReportingSelect></>}
       {validation && <p className="question-validation" id={`${id}-validation`}>{validation}</p>}
       {!canEdit && <span className="visually-hidden" id={`${id}-permission`}>{ui('Valgt rolle eller rapporteringsstatus gir ikke redigeringstilgang.')}</span>}
-      <p className="question-reference">{ui("Valideringsreferanser:")} {validationIds.join(', ')}{ui(". Offisielle formler er ikke implementert.")}</p>
+      {__DEV_FIELD_METADATA__ && <details className="question-reference"><summary>DEV: {ui('Valideringsreferanser:')}</summary>{validationIds.join(', ')}{ui('. Offisielle formler er ikke implementert.')}</details>}
     </fieldset>
     <div className={`question-save question-save-${status}`} role="status">{status === 'saving' ? ui("Lagrer...") : status === 'saved' ? ui("Lagret") : status === 'error' ? <>{ui("Simulert lagringsfeil. Svaret er ikke lagret.")} <button className="gsi-button text-button" type="button" onClick={onRetry} disabled={!canEdit}>{ui("Prøv igjen")}</button></> : ui("Ikke endret")}</div>
     </div>

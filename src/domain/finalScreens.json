@@ -1,0 +1,1974 @@
+{
+  "14": {
+    "groups": [
+      {
+        "id": "A",
+        "title": "A. Barn i skolefritidsordningen",
+        "reference": "GG_H52_U105",
+        "helpId": "GG-H143",
+        "sourceCard": "14A",
+        "controllers": [
+          "GG-A10",
+          "GG-A11",
+          "GG-A12",
+          "GG-A13",
+          "GG-A31",
+          "GG-A34",
+          "GG-A37",
+          "GG-A62"
+        ]
+      },
+      {
+        "id": "B",
+        "title": "B. Ansatte i skolefritidsordningen",
+        "reference": "GG_H53_U107",
+        "helpId": "GG-H144",
+        "sourceCard": "14B",
+        "controllers": [
+          "GG-A61"
+        ]
+      },
+      {
+        "id": "C",
+        "title": "C. Foreldrebetaling og oppholdstid",
+        "reference": "GG_H54_U111",
+        "helpId": "GG-H145",
+        "sourceCard": "14C",
+        "controllers": [
+          "GG-A74",
+          "GG-A76",
+          "GG-A77",
+          "GG-A78",
+          "GG-F109",
+          "GG-A122"
+        ]
+      },
+      {
+        "id": "D",
+        "title": "D. Lokale moderasjonsordninger",
+        "reference": "GG_H55_U141",
+        "helpId": "GG-H146",
+        "sourceCard": "14D",
+        "controllers": [
+          "GG-A9"
+        ]
+      },
+      {
+        "id": "E",
+        "title": "E. Elever med inntektsgraderte satser",
+        "reference": "GG_H56_U112",
+        "helpId": "GG-H147",
+        "sourceCard": "14E",
+        "controllers": [
+          "GG-F2",
+          "GG-F125"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "key": "GG_840_Antall_Barn_SFO_Trinn_1",
+        "control": "Local_Comp_Input_Number_412",
+        "group": "A",
+        "questionNumber": "1",
+        "label": "1. trinn",
+        "rowLabel": "1. trinn",
+        "column": "Barn i SFO",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": true,
+        "sourceFormula": "=\n\nnfSelectedRecord14.GG_840_Antall_Barn_SFO_Trinn_1"
+      },
+      {
+        "key": "GG_846_Antall_Barn_SFO_Med_100_Prosent_Plass_Trinn_1",
+        "control": "Local_Comp_Input_Number_413",
+        "group": "A",
+        "questionNumber": "1",
+        "label": "1. trinn",
+        "rowLabel": "1. trinn",
+        "column": "Herav med 100 prosent plass",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": true,
+        "sourceFormula": "=nfSelectedRecord14.GG_846_Antall_Barn_SFO_Med_100_Prosent_Plass_Trinn_1"
+      },
+      {
+        "key": "GG_841_Antall_Barn_SFO_Trinn_2",
+        "control": "Local_Comp_Input_Number_414",
+        "group": "A",
+        "questionNumber": "2",
+        "label": "2. trinn",
+        "rowLabel": "2. trinn",
+        "column": "Barn i SFO",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": true,
+        "sourceFormula": "=nfSelectedRecord14.GG_841_Antall_Barn_SFO_Trinn_2"
+      },
+      {
+        "key": "GG_847_Antall_Barn_SFO_Med_100_Prosent_Plass_Trinn_2",
+        "control": "Local_Comp_Input_Number_415",
+        "group": "A",
+        "questionNumber": "2",
+        "label": "2. trinn",
+        "rowLabel": "2. trinn",
+        "column": "Herav med 100 prosent plass",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": true,
+        "sourceFormula": "=nfSelectedRecord14.GG_847_Antall_Barn_SFO_Med_100_Prosent_Plass_Trinn_2"
+      },
+      {
+        "key": "GG_842_Antall_Barn_SFO_Trinn_3",
+        "control": "Local_Comp_Input_Number_416",
+        "group": "A",
+        "questionNumber": "3",
+        "label": "3. trinn",
+        "rowLabel": "3. trinn",
+        "column": "Barn i SFO",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": true,
+        "sourceFormula": "=nfSelectedRecord14.GG_842_Antall_Barn_SFO_Trinn_3"
+      },
+      {
+        "key": "GG_848_Antall_Barn_SFO_Med_100_Prosent_Plass_Trinn_3",
+        "control": "Local_Comp_Input_Number_417",
+        "group": "A",
+        "questionNumber": "3",
+        "label": "3. trinn",
+        "rowLabel": "3. trinn",
+        "column": "Herav med 100 prosent plass",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": true,
+        "sourceFormula": "=nfSelectedRecord14.GG_848_Antall_Barn_SFO_Med_100_Prosent_Plass_Trinn_3"
+      },
+      {
+        "key": "GG_843_Antall_Barn_SFO_Trinn_4",
+        "control": "Local_Comp_Input_Number_418",
+        "group": "A",
+        "questionNumber": "4",
+        "label": "4. trinn",
+        "rowLabel": "4. trinn",
+        "column": "Barn i SFO",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": true,
+        "sourceFormula": "=nfSelectedRecord14.GG_843_Antall_Barn_SFO_Trinn_4"
+      },
+      {
+        "key": "GG_849_Antall_Barn_SFO_Med_100_Prosent_Plass_Trinn_4",
+        "control": "Local_Comp_Input_Number_419",
+        "group": "A",
+        "questionNumber": "4",
+        "label": "4. trinn",
+        "rowLabel": "4. trinn",
+        "column": "Herav med 100 prosent plass",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": true,
+        "sourceFormula": "=nfSelectedRecord14.GG_849_Antall_Barn_SFO_Med_100_Prosent_Plass_Trinn_4"
+      },
+      {
+        "key": "GG_844_Antall_Barn_SFO_Trinn_5_7",
+        "control": "Local_Comp_Input_Number_420",
+        "group": "A",
+        "questionNumber": "5",
+        "label": "5.–7. trinn",
+        "rowLabel": "5.–7. trinn",
+        "column": "Barn i SFO",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": true,
+        "sourceFormula": "=nfSelectedRecord14.GG_844_Antall_Barn_SFO_Trinn_5_7"
+      },
+      {
+        "key": "GG_850_Antall_Barn_SFO_Med_100_Prosent_Plass_Trinn_5_7",
+        "control": "Local_Comp_Input_Number_421",
+        "group": "A",
+        "questionNumber": "5",
+        "label": "5.–7. trinn",
+        "rowLabel": "5.–7. trinn",
+        "column": "Herav med 100 prosent plass",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": true,
+        "sourceFormula": "=nfSelectedRecord14.GG_850_Antall_Barn_SFO_Med_100_Prosent_Plass_Trinn_5_7"
+      },
+      {
+        "key": "GG_845_Sum_Barn_SFO_Trinn_1_7",
+        "control": "Local_Comp_Input_Number_391",
+        "group": "A",
+        "questionNumber": "6",
+        "label": "Sum barn",
+        "rowLabel": "Sum barn",
+        "column": "Barn i SFO",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_840_Antall_Barn_SFO_Trinn_1",
+            "sign": 1
+          },
+          {
+            "field": "GG_841_Antall_Barn_SFO_Trinn_2",
+            "sign": 1
+          },
+          {
+            "field": "GG_842_Antall_Barn_SFO_Trinn_3",
+            "sign": 1
+          },
+          {
+            "field": "GG_843_Antall_Barn_SFO_Trinn_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_844_Antall_Barn_SFO_Trinn_5_7",
+            "sign": 1
+          }
+        ],
+        "gradeRestricted": true,
+        "sourceFormula": "=nfSelectedRecord14.GG_845_Sum_Barn_SFO_Trinn_1_7"
+      },
+      {
+        "key": "GG_851_Sum_Barn_SFO_Med_100_Prosent_Plass_Trinn_1_7",
+        "control": "Local_Comp_Input_Number_485",
+        "group": "A",
+        "questionNumber": "6",
+        "label": "Sum barn",
+        "rowLabel": "Sum barn",
+        "column": "Herav med 100 prosent plass",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_846_Antall_Barn_SFO_Med_100_Prosent_Plass_Trinn_1",
+            "sign": 1
+          },
+          {
+            "field": "GG_847_Antall_Barn_SFO_Med_100_Prosent_Plass_Trinn_2",
+            "sign": 1
+          },
+          {
+            "field": "GG_848_Antall_Barn_SFO_Med_100_Prosent_Plass_Trinn_3",
+            "sign": 1
+          },
+          {
+            "field": "GG_849_Antall_Barn_SFO_Med_100_Prosent_Plass_Trinn_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_850_Antall_Barn_SFO_Med_100_Prosent_Plass_Trinn_5_7",
+            "sign": 1
+          }
+        ],
+        "gradeRestricted": true,
+        "sourceFormula": "=nfSelectedRecord14.GG_851_Sum_Barn_SFO_Med_100_Prosent_Plass_Trinn_1_7"
+      },
+      {
+        "key": "GG_852_Menn_Ansatte_SFO_Med_Laerer_Eller_Barnehageutdanning",
+        "control": "Local_Comp_Input_Number_100",
+        "group": "B",
+        "questionNumber": "1",
+        "label": "Lærer- eller barnehagelærerutdanning",
+        "rowLabel": "Lærer- eller barnehagelærerutdanning",
+        "column": "Menn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": false,
+        "sourceFormula": "=\nnfSelectedRecord14.GG_852_Menn_Ansatte_SFO_Med_Laerer_Eller_Barnehageutdanning"
+      },
+      {
+        "key": "GG_1030_Kvinner_Ansatte_SFO_Med_Laerer_Eller_Barnehageutdanning",
+        "control": "Local_Comp_Input_Number_475",
+        "group": "B",
+        "questionNumber": "1",
+        "label": "Lærer- eller barnehagelærerutdanning",
+        "rowLabel": "Lærer- eller barnehagelærerutdanning",
+        "column": "Kvinner",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": false,
+        "sourceFormula": "=nfSelectedRecord14.GG_1030_Kvinner_Ansatte_SFO_Med_Laerer_Eller_Barnehageutdanning"
+      },
+      {
+        "key": "GG_1031_Sum_Ansatte_SFO_Med_Laerer_Eller_Barnehageutdanning",
+        "control": "Local_Comp_Input_Number_476",
+        "group": "B",
+        "questionNumber": "1",
+        "label": "Lærer- eller barnehagelærerutdanning",
+        "rowLabel": "Lærer- eller barnehagelærerutdanning",
+        "column": "Sum",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_852_Menn_Ansatte_SFO_Med_Laerer_Eller_Barnehageutdanning",
+            "sign": 1
+          },
+          {
+            "field": "GG_1030_Kvinner_Ansatte_SFO_Med_Laerer_Eller_Barnehageutdanning",
+            "sign": 1
+          }
+        ],
+        "gradeRestricted": false,
+        "sourceFormula": "=nfSelectedRecord14.GG_1031_Sum_Ansatte_SFO_Med_Laerer_Eller_Barnehageutdanning"
+      },
+      {
+        "key": "GG_1032_Arsverk_Ansatte_SFO_Med_Laerer_Eller_Barnehageutdanning",
+        "control": "TextInput7",
+        "group": "B",
+        "questionNumber": "1",
+        "label": "Lærer- eller barnehagelærerutdanning",
+        "rowLabel": "Lærer- eller barnehagelærerutdanning",
+        "column": "Årsverk",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": false,
+        "sourceFormula": "=nfSelectedRecord14.GG_1032_Arsverk_Ansatte_SFO_Med_Laerer_Eller_Barnehageutdanning",
+        "numericKind": "decimal",
+        "minimumExclusive": 0,
+        "maximum": 9999,
+        "precision": 2
+      },
+      {
+        "key": "GG_853_Menn_Ansatte_SFO_Med_Fagbrev_Barne_Ungdomsarbeidsfag",
+        "control": "Local_Comp_Input_Number_99",
+        "group": "B",
+        "questionNumber": "2",
+        "label": "Fagbrev i barne- og ungdomsarbeiderfag",
+        "rowLabel": "Fagbrev i barne- og ungdomsarbeiderfag",
+        "column": "Menn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": false,
+        "sourceFormula": "=nfSelectedRecord14.GG_853_Menn_Ansatte_SFO_Med_Fagbrev_Barne_Ungdomsarbeidsfag"
+      },
+      {
+        "key": "GG_1033_Kvinner_Ansatte_SFO_Med_Fagbrev_Barne_Ungdomsarbeidsfag",
+        "control": "Local_Comp_Input_Number_478",
+        "group": "B",
+        "questionNumber": "2",
+        "label": "Fagbrev i barne- og ungdomsarbeiderfag",
+        "rowLabel": "Fagbrev i barne- og ungdomsarbeiderfag",
+        "column": "Kvinner",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": false,
+        "sourceFormula": "=nfSelectedRecord14.GG_1033_Kvinner_Ansatte_SFO_Med_Fagbrev_Barne_Ungdomsarbeidsfag"
+      },
+      {
+        "key": "GG_1035_Sum_Ansatte_SFO_Med_Fagbrev_Barne_Ungdomsarbeidsfag",
+        "control": "Local_Comp_Input_Number_479",
+        "group": "B",
+        "questionNumber": "2",
+        "label": "Fagbrev i barne- og ungdomsarbeiderfag",
+        "rowLabel": "Fagbrev i barne- og ungdomsarbeiderfag",
+        "column": "Sum",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_853_Menn_Ansatte_SFO_Med_Fagbrev_Barne_Ungdomsarbeidsfag",
+            "sign": 1
+          },
+          {
+            "field": "GG_1033_Kvinner_Ansatte_SFO_Med_Fagbrev_Barne_Ungdomsarbeidsfag",
+            "sign": 1
+          }
+        ],
+        "gradeRestricted": false,
+        "sourceFormula": "=nfSelectedRecord14.GG_1035_Sum_Ansatte_SFO_Med_Fagbrev_Barne_Ungdomsarbeidsfag"
+      },
+      {
+        "key": "GG_1036_Arsverk_Ansatte_SFO_Med_Fagbrev_Barne_Ungdomsarbeidsfag",
+        "control": "TextInput7_1",
+        "group": "B",
+        "questionNumber": "2",
+        "label": "Fagbrev i barne- og ungdomsarbeiderfag",
+        "rowLabel": "Fagbrev i barne- og ungdomsarbeiderfag",
+        "column": "Årsverk",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": false,
+        "sourceFormula": "=nfSelectedRecord14.GG_1036_Arsverk_Ansatte_SFO_Med_Fagbrev_Barne_Ungdomsarbeidsfag",
+        "numericKind": "decimal",
+        "minimumExclusive": 0,
+        "maximum": 9999,
+        "precision": 2
+      },
+      {
+        "key": "GG_854_Menn_Ansatte_SFO_Med_Annen_Kompetanse",
+        "control": "Local_Comp_Input_Number_98",
+        "group": "B",
+        "questionNumber": "3",
+        "label": "Annen kompetanse",
+        "rowLabel": "Annen kompetanse",
+        "column": "Menn",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": false,
+        "sourceFormula": "=nfSelectedRecord14.GG_854_Menn_Ansatte_SFO_Med_Annen_Kompetanse"
+      },
+      {
+        "key": "GG_1037_Kvinner_Ansatte_SFO_Med_Annen_Kompetanse",
+        "control": "Local_Comp_Input_Number_481",
+        "group": "B",
+        "questionNumber": "3",
+        "label": "Annen kompetanse",
+        "rowLabel": "Annen kompetanse",
+        "column": "Kvinner",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": false,
+        "sourceFormula": "=nfSelectedRecord14.GG_1037_Kvinner_Ansatte_SFO_Med_Annen_Kompetanse"
+      },
+      {
+        "key": "GG_1038_Sum_Ansatte_SFO_Med_Annen_Kompetanse",
+        "control": "Local_Comp_Input_Number_482",
+        "group": "B",
+        "questionNumber": "3",
+        "label": "Annen kompetanse",
+        "rowLabel": "Annen kompetanse",
+        "column": "Sum",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_854_Menn_Ansatte_SFO_Med_Annen_Kompetanse",
+            "sign": 1
+          },
+          {
+            "field": "GG_1037_Kvinner_Ansatte_SFO_Med_Annen_Kompetanse",
+            "sign": 1
+          }
+        ],
+        "gradeRestricted": false,
+        "sourceFormula": "=nfSelectedRecord14.GG_1038_Sum_Ansatte_SFO_Med_Annen_Kompetanse"
+      },
+      {
+        "key": "GG_1039_Arsverk_SFO_Med_Annen_Kompetanse",
+        "control": "TextInput7_2",
+        "group": "B",
+        "questionNumber": "3",
+        "label": "Annen kompetanse",
+        "rowLabel": "Annen kompetanse",
+        "column": "Årsverk",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": false,
+        "sourceFormula": "=nfSelectedRecord14.GG_1039_Arsverk_SFO_Med_Annen_Kompetanse",
+        "numericKind": "decimal",
+        "minimumExclusive": 0,
+        "maximum": 9999,
+        "precision": 2
+      },
+      {
+        "key": "GG_855_Sum_Menn_Ansatte_SFO",
+        "control": "Local_Comp_Input_Number_483",
+        "group": "B",
+        "questionNumber": "4",
+        "label": "Sum ansatte",
+        "rowLabel": "Sum ansatte",
+        "column": "Menn",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_852_Menn_Ansatte_SFO_Med_Laerer_Eller_Barnehageutdanning",
+            "sign": 1
+          },
+          {
+            "field": "GG_853_Menn_Ansatte_SFO_Med_Fagbrev_Barne_Ungdomsarbeidsfag",
+            "sign": 1
+          },
+          {
+            "field": "GG_854_Menn_Ansatte_SFO_Med_Annen_Kompetanse",
+            "sign": 1
+          }
+        ],
+        "gradeRestricted": false,
+        "sourceFormula": "=nfSelectedRecord14.GG_855_Sum_Menn_Ansatte_SFO"
+      },
+      {
+        "key": "GG_1040_Sum_Kvinner_Ansatte_SFO",
+        "control": "Local_Comp_Input_Number_489",
+        "group": "B",
+        "questionNumber": "4",
+        "label": "Sum ansatte",
+        "rowLabel": "Sum ansatte",
+        "column": "Kvinner",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_1030_Kvinner_Ansatte_SFO_Med_Laerer_Eller_Barnehageutdanning",
+            "sign": 1
+          },
+          {
+            "field": "GG_1033_Kvinner_Ansatte_SFO_Med_Fagbrev_Barne_Ungdomsarbeidsfag",
+            "sign": 1
+          },
+          {
+            "field": "GG_1037_Kvinner_Ansatte_SFO_Med_Annen_Kompetanse",
+            "sign": 1
+          }
+        ],
+        "gradeRestricted": false,
+        "sourceFormula": "=nfSelectedRecord14.GG_1040_Sum_Kvinner_Ansatte_SFO"
+      },
+      {
+        "key": "GG_1041_Sum_Alle_Menn_Kvinner_Ansatte_SFO",
+        "control": "Local_Comp_Input_Number_490",
+        "group": "B",
+        "questionNumber": "4",
+        "label": "Sum ansatte",
+        "rowLabel": "Sum ansatte",
+        "column": "Sum",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_1031_Sum_Ansatte_SFO_Med_Laerer_Eller_Barnehageutdanning",
+            "sign": 1
+          },
+          {
+            "field": "GG_1035_Sum_Ansatte_SFO_Med_Fagbrev_Barne_Ungdomsarbeidsfag",
+            "sign": 1
+          },
+          {
+            "field": "GG_1038_Sum_Ansatte_SFO_Med_Annen_Kompetanse",
+            "sign": 1
+          }
+        ],
+        "gradeRestricted": false,
+        "sourceFormula": "=nfSelectedRecord14.GG_1041_Sum_Alle_Menn_Kvinner_Ansatte_SFO"
+      },
+      {
+        "key": "GG_1042_Sum_Arsverk_SFO",
+        "control": "TextInput7_3",
+        "group": "B",
+        "questionNumber": "4",
+        "label": "Sum ansatte",
+        "rowLabel": "Sum ansatte",
+        "column": "Årsverk",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_1032_Arsverk_Ansatte_SFO_Med_Laerer_Eller_Barnehageutdanning",
+            "sign": 1
+          },
+          {
+            "field": "GG_1036_Arsverk_Ansatte_SFO_Med_Fagbrev_Barne_Ungdomsarbeidsfag",
+            "sign": 1
+          },
+          {
+            "field": "GG_1039_Arsverk_SFO_Med_Annen_Kompetanse",
+            "sign": 1
+          }
+        ],
+        "gradeRestricted": false,
+        "sourceFormula": "=nfSelectedRecord14.GG_1042_Sum_Arsverk_SFO",
+        "numericKind": "decimal",
+        "minimumExclusive": 0,
+        "maximum": 9999,
+        "precision": 2
+      },
+      {
+        "key": "GG_856_Maanedlig_Foreldrebetaling_Heltidsplass_SFO_1_3_Trinn",
+        "control": "Local_Comp_Input_Number_96",
+        "group": "C",
+        "questionNumber": "1",
+        "label": "Månedlig foreldrebetaling for heltidsplass på 1.–3. trinn",
+        "rowLabel": "Månedlig foreldrebetaling for heltidsplass på 1.–3. trinn",
+        "column": "Verdi",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": false,
+        "sourceFormula": "=nfSelectedRecord14.GG_856_Maanedlig_Foreldrebetaling_Heltidsplass_SFO_1_3_Trinn"
+      },
+      {
+        "key": "GG_1014_Maanedlig_Foreldrebetaling_Heltidsplass_SFO_4_Trinn",
+        "control": "Local_Comp_Input_Number_95",
+        "group": "C",
+        "questionNumber": "2",
+        "label": "Månedlig foreldrebetaling for heltidsplass på 4. trinn",
+        "rowLabel": "Månedlig foreldrebetaling for heltidsplass på 4. trinn",
+        "column": "Verdi",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": false,
+        "sourceFormula": "=nfSelectedRecord14.GG_1014_Maanedlig_Foreldrebetaling_Heltidsplass_SFO_4_Trinn"
+      },
+      {
+        "key": "GG_1015_Maanedlig_Foreldrebetaling_Deltidsplass_SFO_4_Trinn",
+        "control": "Local_Comp_Input_Number_94",
+        "group": "C",
+        "questionNumber": "3",
+        "label": "Månedlig foreldrebetaling for deltidsplass på 4. trinn",
+        "rowLabel": "Månedlig foreldrebetaling for deltidsplass på 4. trinn",
+        "column": "Verdi",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": false,
+        "sourceFormula": "=nfSelectedRecord14.GG_1015_Maanedlig_Foreldrebetaling_Deltidsplass_SFO_4_Trinn"
+      },
+      {
+        "key": "GG_857_Antall_Timer_Heltidsplass",
+        "control": "Local_Comp_Input_Number_97",
+        "group": "C",
+        "questionNumber": "4",
+        "label": "Antall timer for heltidsplass",
+        "rowLabel": "Antall timer for heltidsplass",
+        "column": "Verdi",
+        "readOnly": false,
+        "maxDigits": 2,
+        "terms": [],
+        "gradeRestricted": false,
+        "sourceFormula": "=nfSelectedRecord14.GG_857_Antall_Timer_Heltidsplass"
+      },
+      {
+        "key": "GG_1020_Antall_Timer_Deltidsplass",
+        "control": "Local_Comp_Input_Number_450",
+        "group": "C",
+        "questionNumber": "5",
+        "label": "Antall timer for deltidsplass",
+        "rowLabel": "Antall timer for deltidsplass",
+        "column": "Verdi",
+        "readOnly": false,
+        "maxDigits": 2,
+        "terms": [],
+        "gradeRestricted": false,
+        "sourceFormula": "=nfSelectedRecord14.GG_1020_Antall_Timer_Deltidsplass"
+      },
+      {
+        "key": "GG_859_Antall_Elever_Paa_Lokale_Ordninger_Med_Inntektsgraderte_Satser_Trinn_1",
+        "control": "Local_Comp_Input_Number_93",
+        "group": "E",
+        "questionNumber": "1",
+        "label": "1. trinn",
+        "rowLabel": "1. trinn",
+        "column": "Lokale ordninger",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": true,
+        "sourceFormula": "=nfSelectedRecord14.GG_859_Antall_Elever_Paa_Lokale_Ordninger_Med_Inntektsgraderte_Satser_Trinn_1"
+      },
+      {
+        "key": "GG_864_Antall_Elever_Paa_Nasjonale_Ordninger_Med_Inntektsgraderte_Satser_Trinn_1",
+        "control": "Local_Comp_Input_Number_101",
+        "group": "E",
+        "questionNumber": "1",
+        "label": "1. trinn",
+        "rowLabel": "1. trinn",
+        "column": "Nasjonale ordninger",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": true,
+        "sourceFormula": "=nfSelectedRecord14.GG_864_Antall_Elever_Paa_Nasjonale_Ordninger_Med_Inntektsgraderte_Satser_Trinn_1"
+      },
+      {
+        "key": "GG_860_Antall_Elever_Paa_Lokale_Ordninger_Med_Inntektsgraderte_Satser_Trinn_2",
+        "control": "Local_Comp_Input_Number_102",
+        "group": "E",
+        "questionNumber": "2",
+        "label": "2. trinn",
+        "rowLabel": "2. trinn",
+        "column": "Lokale ordninger",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": true,
+        "sourceFormula": "=nfSelectedRecord14.GG_860_Antall_Elever_Paa_Lokale_Ordninger_Med_Inntektsgraderte_Satser_Trinn_2"
+      },
+      {
+        "key": "GG_865_Antall_Elever_Paa_Nasjonale_Ordninger_Med_Inntektsgraderte_Satser_Trinn_2",
+        "control": "Local_Comp_Input_Number_103",
+        "group": "E",
+        "questionNumber": "2",
+        "label": "2. trinn",
+        "rowLabel": "2. trinn",
+        "column": "Nasjonale ordninger",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": true,
+        "sourceFormula": "=nfSelectedRecord14.GG_865_Antall_Elever_Paa_Nasjonale_Ordninger_Med_Inntektsgraderte_Satser_Trinn_2"
+      },
+      {
+        "key": "GG_861_Antall_Elever_Paa_Lokale_Ordninger_Med_Inntektsgraderte_Satser_Trinn_3",
+        "control": "Local_Comp_Input_Number_104",
+        "group": "E",
+        "questionNumber": "3",
+        "label": "3. trinn",
+        "rowLabel": "3. trinn",
+        "column": "Lokale ordninger",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": true,
+        "sourceFormula": "=nfSelectedRecord14.GG_861_Antall_Elever_Paa_Lokale_Ordninger_Med_Inntektsgraderte_Satser_Trinn_3"
+      },
+      {
+        "key": "GG_866_Antall_Elever_Paa_Nasjonale_Ordninger_Med_Inntektsgraderte_Satser_Trinn_3",
+        "control": "Local_Comp_Input_Number_105",
+        "group": "E",
+        "questionNumber": "3",
+        "label": "3. trinn",
+        "rowLabel": "3. trinn",
+        "column": "Nasjonale ordninger",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": true,
+        "sourceFormula": "=nfSelectedRecord14.GG_866_Antall_Elever_Paa_Nasjonale_Ordninger_Med_Inntektsgraderte_Satser_Trinn_3"
+      },
+      {
+        "key": "GG_862_Antall_Elever_Paa_Lokale_Ordninger_Med_Inntektsgraderte_Satser_Trinn_4",
+        "control": "Local_Comp_Input_Number_106",
+        "group": "E",
+        "questionNumber": "4",
+        "label": "4. trinn",
+        "rowLabel": "4. trinn",
+        "column": "Lokale ordninger",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": true,
+        "sourceFormula": "=nfSelectedRecord14.GG_862_Antall_Elever_Paa_Lokale_Ordninger_Med_Inntektsgraderte_Satser_Trinn_4"
+      },
+      {
+        "key": "GG_867_Antall_Elever_Paa_Nasjonale_Ordninger_Med_Inntektsgraderte_Satser_Trinn_4",
+        "control": "Local_Comp_Input_Number_107",
+        "group": "E",
+        "questionNumber": "4",
+        "label": "4. trinn",
+        "rowLabel": "4. trinn",
+        "column": "Nasjonale ordninger",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": true,
+        "sourceFormula": "=nfSelectedRecord14.GG_867_Antall_Elever_Paa_Nasjonale_Ordninger_Med_Inntektsgraderte_Satser_Trinn_4"
+      },
+      {
+        "key": "GG_863_Sum_Elever_Paa_Lokale_Ordninger_Med_Inntektsgraderte_Satser",
+        "control": "Local_Comp_Input_Number_484",
+        "group": "E",
+        "questionNumber": "5",
+        "label": "Sum elever",
+        "rowLabel": "Sum elever",
+        "column": "Lokale ordninger",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_859_Antall_Elever_Paa_Lokale_Ordninger_Med_Inntektsgraderte_Satser_Trinn_1",
+            "sign": 1
+          },
+          {
+            "field": "GG_860_Antall_Elever_Paa_Lokale_Ordninger_Med_Inntektsgraderte_Satser_Trinn_2",
+            "sign": 1
+          },
+          {
+            "field": "GG_861_Antall_Elever_Paa_Lokale_Ordninger_Med_Inntektsgraderte_Satser_Trinn_3",
+            "sign": 1
+          },
+          {
+            "field": "GG_862_Antall_Elever_Paa_Lokale_Ordninger_Med_Inntektsgraderte_Satser_Trinn_4",
+            "sign": 1
+          }
+        ],
+        "gradeRestricted": false,
+        "sourceFormula": "=nfSelectedRecord14.GG_863_Sum_Elever_Paa_Lokale_Ordninger_Med_Inntektsgraderte_Satser"
+      },
+      {
+        "key": "GG_868_Sum_Elever_Paa_Nasjonale_Ordninger_Med_Inntektsgraderte_Satser",
+        "control": "Local_Comp_Input_Number_390",
+        "group": "E",
+        "questionNumber": "5",
+        "label": "Sum elever",
+        "rowLabel": "Sum elever",
+        "column": "Nasjonale ordninger",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_864_Antall_Elever_Paa_Nasjonale_Ordninger_Med_Inntektsgraderte_Satser_Trinn_1",
+            "sign": 1
+          },
+          {
+            "field": "GG_865_Antall_Elever_Paa_Nasjonale_Ordninger_Med_Inntektsgraderte_Satser_Trinn_2",
+            "sign": 1
+          },
+          {
+            "field": "GG_866_Antall_Elever_Paa_Nasjonale_Ordninger_Med_Inntektsgraderte_Satser_Trinn_3",
+            "sign": 1
+          },
+          {
+            "field": "GG_867_Antall_Elever_Paa_Nasjonale_Ordninger_Med_Inntektsgraderte_Satser_Trinn_4",
+            "sign": 1
+          }
+        ],
+        "gradeRestricted": false,
+        "sourceFormula": "=nfSelectedRecord14.GG_868_Sum_Elever_Paa_Nasjonale_Ordninger_Med_Inntektsgraderte_Satser"
+      }
+    ],
+    "choices": [
+      {
+        "key": "GG_1016_Lokale_Inntektsgraderte_Satser",
+        "control": "Radio1_7",
+        "group": "D",
+        "label": "Har SFO lokale inntektsgraderte satser?",
+        "questionNumber": "1"
+      },
+      {
+        "key": "GG_1017_Lokale_Friplasser",
+        "control": "Radio1_8",
+        "group": "D",
+        "label": "Har SFO lokale friplasser?",
+        "questionNumber": "2"
+      },
+      {
+        "key": "GG_858_Soeskenmoderasjon",
+        "control": "Radio1_9",
+        "group": "D",
+        "label": "Har SFO søskenmoderasjon?",
+        "questionNumber": "3"
+      }
+    ],
+    "controllers": [
+      "GG-A10",
+      "GG-A11",
+      "GG-A12",
+      "GG-A13",
+      "GG-A31",
+      "GG-A34",
+      "GG-A37",
+      "GG-A62",
+      "GG-A61",
+      "GG-A74",
+      "GG-A76",
+      "GG-A77",
+      "GG-A78",
+      "GG-F109",
+      "GG-A122",
+      "GG-A9",
+      "GG-F2",
+      "GG-F125"
+    ]
+  },
+  "15": {
+    "groups": [
+      {
+        "id": "A",
+        "title": "A. Organisering av PP-tjenesten",
+        "reference": "GG_H66_U148",
+        "helpId": "GG-H148",
+        "sourceCard": "15A",
+        "controllers": [
+          "GG-F151",
+          "GG-F152"
+        ]
+      },
+      {
+        "id": "B",
+        "title": "B. Samordning med PPT i videregående opplæring",
+        "reference": "GG_H67_U149",
+        "helpId": "GG-H149",
+        "sourceCard": "15B",
+        "controllers": []
+      },
+      {
+        "id": "C",
+        "title": "C. Stillingsgrupper og utdanningsbakgrunn i PP-tjenesten",
+        "reference": "GG_H68_U150",
+        "helpId": "GG-H150",
+        "sourceCard": "15C",
+        "controllers": [
+          "GG-F155"
+        ]
+      },
+      {
+        "id": "D",
+        "title": "D. Kommuner som mottar PPT-tjenester",
+        "reference": "GG_H69",
+        "helpId": "GG-H151",
+        "sourceCard": "15D",
+        "controllers": [
+          "GG-F154"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "key": "GG_952_Stillingsgrupper_Og_Utdanningsbakgrunn_I_PPtjenesten_Psykologi",
+        "control": "TextInput2_124",
+        "group": "C",
+        "questionNumber": "1",
+        "label": "Psykologi",
+        "rowLabel": "Psykologi",
+        "column": "Årsverk",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": false,
+        "sourceFormula": "=nfSelectedRecord15.GG_952_Stillingsgrupper_Og_Utdanningsbakgrunn_I_PPtjenesten_Psykologi",
+        "numericKind": "decimal",
+        "minimumExclusive": 0,
+        "maximum": 9999,
+        "precision": 2
+      },
+      {
+        "key": "GG_953_Stillingsgrupper_Og_Utdanningsbakgrunn_I_PPtjenesten_Spesialpedagogikk",
+        "control": "TextInput2_126",
+        "group": "C",
+        "questionNumber": "2",
+        "label": "Spesialpedagogikk",
+        "rowLabel": "Spesialpedagogikk",
+        "column": "Årsverk",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": false,
+        "sourceFormula": "=nfSelectedRecord15.GG_953_Stillingsgrupper_Og_Utdanningsbakgrunn_I_PPtjenesten_Spesialpedagogikk",
+        "numericKind": "decimal",
+        "minimumExclusive": 0,
+        "maximum": 9999,
+        "precision": 2
+      },
+      {
+        "key": "GG_954_Stillingsgrupper_Og_Utdanningsbakgrunn_I_PPtjenesten_Pedagogikk",
+        "control": "TextInput2_138",
+        "group": "C",
+        "questionNumber": "3",
+        "label": "Pedagogikk",
+        "rowLabel": "Pedagogikk",
+        "column": "Årsverk",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": false,
+        "sourceFormula": "=nfSelectedRecord15.GG_954_Stillingsgrupper_Og_Utdanningsbakgrunn_I_PPtjenesten_Pedagogikk",
+        "numericKind": "decimal",
+        "minimumExclusive": 0,
+        "maximum": 9999,
+        "precision": 2
+      },
+      {
+        "key": "GG_955_Stillingsgrupper_Og_Utdanningsbakgrunn_I_PPtjenesten_Fagstillinger",
+        "control": "TextInput2_139",
+        "group": "C",
+        "questionNumber": "4",
+        "label": "Andre fagstillinger",
+        "rowLabel": "Andre fagstillinger",
+        "column": "Årsverk",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": false,
+        "sourceFormula": "=nfSelectedRecord15.GG_955_Stillingsgrupper_Og_Utdanningsbakgrunn_I_PPtjenesten_Fagstillinger",
+        "numericKind": "decimal",
+        "minimumExclusive": 0,
+        "maximum": 9999,
+        "precision": 2
+      },
+      {
+        "key": "GG_956_Stillingsgrupper_Og_Utdanningsbakgrunn_I_PPtjenesten_Ledelse",
+        "control": "TextInput2_140",
+        "group": "C",
+        "questionNumber": "5",
+        "label": "Ledelse",
+        "rowLabel": "Ledelse",
+        "column": "Årsverk",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": false,
+        "sourceFormula": "=nfSelectedRecord15.GG_956_Stillingsgrupper_Og_Utdanningsbakgrunn_I_PPtjenesten_Ledelse",
+        "numericKind": "decimal",
+        "minimumExclusive": 0,
+        "maximum": 9999,
+        "precision": 2
+      },
+      {
+        "key": "GG_957_Stillingsgrupper_Og_Utdanningsbakgrunn_I_PPtjenesten_Merkantilt_Personell",
+        "control": "TextInput2_141",
+        "group": "C",
+        "questionNumber": "6",
+        "label": "Merkantilt personell",
+        "rowLabel": "Merkantilt personell",
+        "column": "Årsverk",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": false,
+        "sourceFormula": "=nfSelectedRecord15.GG_957_Stillingsgrupper_Og_Utdanningsbakgrunn_I_PPtjenesten_Merkantilt_Personell",
+        "numericKind": "decimal",
+        "minimumExclusive": 0,
+        "maximum": 9999,
+        "precision": 2
+      },
+      {
+        "key": "GG_958_Stillingsgrupper_Og_Utdanningsbakgrunn_I_PPtjenesten_Sum",
+        "control": "TextInput2_142",
+        "group": "C",
+        "questionNumber": "7",
+        "label": "Sum årsverk",
+        "rowLabel": "Sum årsverk",
+        "column": "Årsverk",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_952_Stillingsgrupper_Og_Utdanningsbakgrunn_I_PPtjenesten_Psykologi",
+            "sign": 1
+          },
+          {
+            "field": "GG_953_Stillingsgrupper_Og_Utdanningsbakgrunn_I_PPtjenesten_Spesialpedagogikk",
+            "sign": 1
+          },
+          {
+            "field": "GG_954_Stillingsgrupper_Og_Utdanningsbakgrunn_I_PPtjenesten_Pedagogikk",
+            "sign": 1
+          },
+          {
+            "field": "GG_955_Stillingsgrupper_Og_Utdanningsbakgrunn_I_PPtjenesten_Fagstillinger",
+            "sign": 1
+          },
+          {
+            "field": "GG_956_Stillingsgrupper_Og_Utdanningsbakgrunn_I_PPtjenesten_Ledelse",
+            "sign": 1
+          },
+          {
+            "field": "GG_957_Stillingsgrupper_Og_Utdanningsbakgrunn_I_PPtjenesten_Merkantilt_Personell",
+            "sign": 1
+          }
+        ],
+        "gradeRestricted": false,
+        "sourceFormula": "=\n\n\nRound(nfSelectedRecord15.GG_958_Stillingsgrupper_Og_Utdanningsbakgrunn_I_PPtjenesten_Sum,2)",
+        "numericKind": "decimal",
+        "minimumExclusive": 0,
+        "maximum": 9999,
+        "precision": 2
+      }
+    ],
+    "choices": [
+      {
+        "key": "GG_946_Egen_Kommunal_Tjeneste",
+        "control": "Radio1_13",
+        "group": "A",
+        "label": "Har kommunen egen kommunal PP-tjeneste?",
+        "questionNumber": "1"
+      },
+      {
+        "key": "GG_947_Drifter_Interkommunal_Tjeneste",
+        "control": "Radio1_10",
+        "group": "A",
+        "label": "Drifter kommunen en interkommunal PP-tjeneste?",
+        "questionNumber": "2"
+      },
+      {
+        "key": "GG_948_Deltar_I_Interkommunal_Tjeneste",
+        "control": "Radio1_11",
+        "group": "A",
+        "label": "Deltar kommunen i en interkommunal PP-tjeneste?",
+        "questionNumber": "3"
+      },
+      {
+        "key": "GG_949_Annen_Organisering",
+        "control": "Radio1_12",
+        "group": "A",
+        "label": "Har PP-tjenesten annen organisering?",
+        "questionNumber": "4"
+      },
+      {
+        "key": "GG_951_Samordnet_Med_PPT_I_Videregående_Opplæring",
+        "control": "Radio1_15",
+        "group": "B",
+        "label": "Er tjenesten samordnet med PPT i videregående opplæring?",
+        "questionNumber": "1"
+      }
+    ],
+    "controllers": [
+      "GG-F151",
+      "GG-F152",
+      "GG-F155",
+      "GG-F154"
+    ]
+  },
+  "16": {
+    "groups": [
+      {
+        "id": "A",
+        "title": "A. Fordrevne ukrainske elever",
+        "reference": "GG_H70_U165",
+        "helpId": "GG-H152",
+        "sourceCard": "A. Fordrevne ukrainske elever",
+        "controllers": []
+      },
+      {
+        "id": "B",
+        "title": "B. Forsterket opplæring i norsk",
+        "reference": "GG_H71_U167",
+        "helpId": "GG-H153",
+        "sourceCard": "B. Forsterket opplæring i norsk",
+        "controllers": [
+          "GG-A64",
+          "GG-A67"
+        ]
+      },
+      {
+        "id": "C",
+        "title": "C. Egne undervisningsgrupper",
+        "reference": "GG_H72_U169",
+        "helpId": "GG-H154",
+        "sourceCard": "C. Egne undervisningsgrupper",
+        "controllers": [
+          "GG-A69",
+          "GG-A70",
+          "GG-A71"
+        ]
+      },
+      {
+        "id": "D",
+        "title": "D. Morsmålsopplæring og/eller tospråklig opplæring i fag",
+        "reference": "GG_H73_U172",
+        "helpId": "GG-H155",
+        "sourceCard": "D. Morsmålsopplæring og/eller tospråklig opplæring i fag",
+        "controllers": [
+          "GG-A66",
+          "GG-A68"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "key": "GG_959_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_1",
+        "control": "Local_Comp_Input_Number_451",
+        "group": "A",
+        "questionNumber": "1",
+        "label": "1. trinn",
+        "rowLabel": "1. trinn",
+        "column": "Fullverdig opplæringstilbud",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": true,
+        "sourceFormula": "=nfSelectedRecord16.GG_959_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_1"
+      },
+      {
+        "key": "GG_970_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_1",
+        "control": "Local_Comp_Input_Number_452",
+        "group": "A",
+        "questionNumber": "1",
+        "label": "1. trinn",
+        "rowLabel": "1. trinn",
+        "column": "Opphold over tre måneder uten fullverdig opplæringstilbud",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": true,
+        "sourceFormula": "=nfSelectedRecord16.GG_970_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_1"
+      },
+      {
+        "key": "GG_1002_Sum_Fordrevne_Ukrainske_Elever_Trinn_1",
+        "control": "TextInput2_134",
+        "group": "A",
+        "questionNumber": "1",
+        "label": "1. trinn",
+        "rowLabel": "1. trinn",
+        "column": "Sum",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_959_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_1",
+            "sign": 1
+          },
+          {
+            "field": "GG_970_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_1",
+            "sign": 1
+          }
+        ],
+        "gradeRestricted": true,
+        "sourceFormula": "=nfSelectedRecord16.GG_1002_Sum_Fordrevne_Ukrainske_Elever_Trinn_1"
+      },
+      {
+        "key": "GG_960_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_2",
+        "control": "Local_Comp_Input_Number_453",
+        "group": "A",
+        "questionNumber": "2",
+        "label": "2. trinn",
+        "rowLabel": "2. trinn",
+        "column": "Fullverdig opplæringstilbud",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": true,
+        "sourceFormula": "=nfSelectedRecord16.GG_960_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_2"
+      },
+      {
+        "key": "GG_971_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_2",
+        "control": "Local_Comp_Input_Number_454",
+        "group": "A",
+        "questionNumber": "2",
+        "label": "2. trinn",
+        "rowLabel": "2. trinn",
+        "column": "Opphold over tre måneder uten fullverdig opplæringstilbud",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": true,
+        "sourceFormula": "=nfSelectedRecord16.GG_971_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_2"
+      },
+      {
+        "key": "GG_1003_Sum_Fordrevne_Ukrainske_Elever_Trinn_2",
+        "control": "TextInput2_135",
+        "group": "A",
+        "questionNumber": "2",
+        "label": "2. trinn",
+        "rowLabel": "2. trinn",
+        "column": "Sum",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_960_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_2",
+            "sign": 1
+          },
+          {
+            "field": "GG_971_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_2",
+            "sign": 1
+          }
+        ],
+        "gradeRestricted": true,
+        "sourceFormula": "=nfSelectedRecord16.GG_1003_Sum_Fordrevne_Ukrainske_Elever_Trinn_2"
+      },
+      {
+        "key": "GG_961_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_3",
+        "control": "Local_Comp_Input_Number_455",
+        "group": "A",
+        "questionNumber": "3",
+        "label": "3. trinn",
+        "rowLabel": "3. trinn",
+        "column": "Fullverdig opplæringstilbud",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": true,
+        "sourceFormula": "=nfSelectedRecord16.GG_961_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_3"
+      },
+      {
+        "key": "GG_972_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_3",
+        "control": "Local_Comp_Input_Number_456",
+        "group": "A",
+        "questionNumber": "3",
+        "label": "3. trinn",
+        "rowLabel": "3. trinn",
+        "column": "Opphold over tre måneder uten fullverdig opplæringstilbud",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": true,
+        "sourceFormula": "=nfSelectedRecord16.GG_972_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_3"
+      },
+      {
+        "key": "GG_1004_Sum_Fordrevne_Ukrainske_Elever_Trinn_3",
+        "control": "TextInput2_136",
+        "group": "A",
+        "questionNumber": "3",
+        "label": "3. trinn",
+        "rowLabel": "3. trinn",
+        "column": "Sum",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_961_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_3",
+            "sign": 1
+          },
+          {
+            "field": "GG_972_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_3",
+            "sign": 1
+          }
+        ],
+        "gradeRestricted": true,
+        "sourceFormula": "=nfSelectedRecord16.GG_1004_Sum_Fordrevne_Ukrainske_Elever_Trinn_3"
+      },
+      {
+        "key": "GG_962_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_4",
+        "control": "Local_Comp_Input_Number_457",
+        "group": "A",
+        "questionNumber": "4",
+        "label": "4. trinn",
+        "rowLabel": "4. trinn",
+        "column": "Fullverdig opplæringstilbud",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": true,
+        "sourceFormula": "=nfSelectedRecord16.GG_962_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_4"
+      },
+      {
+        "key": "GG_973_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_4",
+        "control": "Local_Comp_Input_Number_458",
+        "group": "A",
+        "questionNumber": "4",
+        "label": "4. trinn",
+        "rowLabel": "4. trinn",
+        "column": "Opphold over tre måneder uten fullverdig opplæringstilbud",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": true,
+        "sourceFormula": "=nfSelectedRecord16.GG_973_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_4"
+      },
+      {
+        "key": "GG_1005_Sum_Fordrevne_Ukrainske_Elever_Trinn_4",
+        "control": "TextInput2_145",
+        "group": "A",
+        "questionNumber": "4",
+        "label": "4. trinn",
+        "rowLabel": "4. trinn",
+        "column": "Sum",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_962_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_973_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_4",
+            "sign": 1
+          }
+        ],
+        "gradeRestricted": true,
+        "sourceFormula": "=nfSelectedRecord16.GG_1005_Sum_Fordrevne_Ukrainske_Elever_Trinn_4"
+      },
+      {
+        "key": "GG_963_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_5",
+        "control": "Local_Comp_Input_Number_459",
+        "group": "A",
+        "questionNumber": "5",
+        "label": "5. trinn",
+        "rowLabel": "5. trinn",
+        "column": "Fullverdig opplæringstilbud",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": true,
+        "sourceFormula": "=nfSelectedRecord16.GG_963_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_5"
+      },
+      {
+        "key": "GG_974_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_5",
+        "control": "Local_Comp_Input_Number_460",
+        "group": "A",
+        "questionNumber": "5",
+        "label": "5. trinn",
+        "rowLabel": "5. trinn",
+        "column": "Opphold over tre måneder uten fullverdig opplæringstilbud",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": true,
+        "sourceFormula": "=nfSelectedRecord16.GG_974_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_5"
+      },
+      {
+        "key": "GG_1006_Sum_Fordrevne_Ukrainske_Elever_Trinn_5",
+        "control": "TextInput2_146",
+        "group": "A",
+        "questionNumber": "5",
+        "label": "5. trinn",
+        "rowLabel": "5. trinn",
+        "column": "Sum",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_963_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_5",
+            "sign": 1
+          },
+          {
+            "field": "GG_974_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_5",
+            "sign": 1
+          }
+        ],
+        "gradeRestricted": true,
+        "sourceFormula": "=nfSelectedRecord16.GG_1006_Sum_Fordrevne_Ukrainske_Elever_Trinn_5"
+      },
+      {
+        "key": "GG_964_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_6",
+        "control": "Local_Comp_Input_Number_461",
+        "group": "A",
+        "questionNumber": "6",
+        "label": "6. trinn",
+        "rowLabel": "6. trinn",
+        "column": "Fullverdig opplæringstilbud",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": true,
+        "sourceFormula": "=nfSelectedRecord16.GG_964_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_6"
+      },
+      {
+        "key": "GG_975_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_6",
+        "control": "Local_Comp_Input_Number_462",
+        "group": "A",
+        "questionNumber": "6",
+        "label": "6. trinn",
+        "rowLabel": "6. trinn",
+        "column": "Opphold over tre måneder uten fullverdig opplæringstilbud",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": true,
+        "sourceFormula": "=nfSelectedRecord16.GG_975_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_6"
+      },
+      {
+        "key": "GG_1007_Sum_Fordrevne_Ukrainske_Elever_Trinn_6",
+        "control": "TextInput2_148",
+        "group": "A",
+        "questionNumber": "6",
+        "label": "6. trinn",
+        "rowLabel": "6. trinn",
+        "column": "Sum",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_964_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_6",
+            "sign": 1
+          },
+          {
+            "field": "GG_975_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_6",
+            "sign": 1
+          }
+        ],
+        "gradeRestricted": true,
+        "sourceFormula": "=nfSelectedRecord16.GG_1007_Sum_Fordrevne_Ukrainske_Elever_Trinn_6"
+      },
+      {
+        "key": "GG_965_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_7",
+        "control": "Local_Comp_Input_Number_463",
+        "group": "A",
+        "questionNumber": "7",
+        "label": "7. trinn",
+        "rowLabel": "7. trinn",
+        "column": "Fullverdig opplæringstilbud",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": true,
+        "sourceFormula": "=nfSelectedRecord16.GG_965_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_7"
+      },
+      {
+        "key": "GG_976_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_7",
+        "control": "Local_Comp_Input_Number_464",
+        "group": "A",
+        "questionNumber": "7",
+        "label": "7. trinn",
+        "rowLabel": "7. trinn",
+        "column": "Opphold over tre måneder uten fullverdig opplæringstilbud",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": true,
+        "sourceFormula": "=nfSelectedRecord16.GG_976_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_7"
+      },
+      {
+        "key": "GG_1008_Sum_Fordrevne_Ukrainske_Elever_Trinn_7",
+        "control": "TextInput2_149",
+        "group": "A",
+        "questionNumber": "7",
+        "label": "7. trinn",
+        "rowLabel": "7. trinn",
+        "column": "Sum",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_965_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_976_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_7",
+            "sign": 1
+          }
+        ],
+        "gradeRestricted": true,
+        "sourceFormula": "=nfSelectedRecord16.GG_1008_Sum_Fordrevne_Ukrainske_Elever_Trinn_7"
+      },
+      {
+        "key": "GG_966_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_8",
+        "control": "Local_Comp_Input_Number_465",
+        "group": "A",
+        "questionNumber": "8",
+        "label": "8. trinn",
+        "rowLabel": "8. trinn",
+        "column": "Fullverdig opplæringstilbud",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": true,
+        "sourceFormula": "=nfSelectedRecord16.GG_966_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_8"
+      },
+      {
+        "key": "GG_977_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_8",
+        "control": "Local_Comp_Input_Number_466",
+        "group": "A",
+        "questionNumber": "8",
+        "label": "8. trinn",
+        "rowLabel": "8. trinn",
+        "column": "Opphold over tre måneder uten fullverdig opplæringstilbud",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": true,
+        "sourceFormula": "=nfSelectedRecord16.GG_977_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_8"
+      },
+      {
+        "key": "GG_1009_Sum_Fordrevne_Ukrainske_Elever_Trinn_8",
+        "control": "TextInput2_150",
+        "group": "A",
+        "questionNumber": "8",
+        "label": "8. trinn",
+        "rowLabel": "8. trinn",
+        "column": "Sum",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_966_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_977_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_8",
+            "sign": 1
+          }
+        ],
+        "gradeRestricted": true,
+        "sourceFormula": "=nfSelectedRecord16.GG_1009_Sum_Fordrevne_Ukrainske_Elever_Trinn_8"
+      },
+      {
+        "key": "GG_967_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_9",
+        "control": "Local_Comp_Input_Number_467",
+        "group": "A",
+        "questionNumber": "9",
+        "label": "9. trinn",
+        "rowLabel": "9. trinn",
+        "column": "Fullverdig opplæringstilbud",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": true,
+        "sourceFormula": "=nfSelectedRecord16.GG_967_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_9"
+      },
+      {
+        "key": "GG_978_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_9",
+        "control": "Local_Comp_Input_Number_468",
+        "group": "A",
+        "questionNumber": "9",
+        "label": "9. trinn",
+        "rowLabel": "9. trinn",
+        "column": "Opphold over tre måneder uten fullverdig opplæringstilbud",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": true,
+        "sourceFormula": "=nfSelectedRecord16.GG_978_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_9"
+      },
+      {
+        "key": "GG_1010_Sum_Fordrevne_Ukrainske_Elever_Trinn_9",
+        "control": "TextInput2_151",
+        "group": "A",
+        "questionNumber": "9",
+        "label": "9. trinn",
+        "rowLabel": "9. trinn",
+        "column": "Sum",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_967_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_978_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_9",
+            "sign": 1
+          }
+        ],
+        "gradeRestricted": true,
+        "sourceFormula": "=nfSelectedRecord16.GG_1010_Sum_Fordrevne_Ukrainske_Elever_Trinn_9"
+      },
+      {
+        "key": "GG_968_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_10",
+        "control": "Local_Comp_Input_Number_469",
+        "group": "A",
+        "questionNumber": "10",
+        "label": "10. trinn",
+        "rowLabel": "10. trinn",
+        "column": "Fullverdig opplæringstilbud",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": true,
+        "sourceFormula": "=nfSelectedRecord16.GG_968_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_10"
+      },
+      {
+        "key": "GG_979_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_10",
+        "control": "Local_Comp_Input_Number_470",
+        "group": "A",
+        "questionNumber": "10",
+        "label": "10. trinn",
+        "rowLabel": "10. trinn",
+        "column": "Opphold over tre måneder uten fullverdig opplæringstilbud",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": true,
+        "sourceFormula": "=nfSelectedRecord16.GG_979_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_10"
+      },
+      {
+        "key": "GG_1011_Sum_Fordrevne_Ukrainske_Elever_Trinn_10",
+        "control": "TextInput2_152",
+        "group": "A",
+        "questionNumber": "10",
+        "label": "10. trinn",
+        "rowLabel": "10. trinn",
+        "column": "Sum",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_968_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_10",
+            "sign": 1
+          },
+          {
+            "field": "GG_979_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_10",
+            "sign": 1
+          }
+        ],
+        "gradeRestricted": true,
+        "sourceFormula": "=nfSelectedRecord16.GG_1011_Sum_Fordrevne_Ukrainske_Elever_Trinn_10"
+      },
+      {
+        "key": "GG_969_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Sum",
+        "control": "TextInput3_371",
+        "group": "A",
+        "questionNumber": "11",
+        "label": "Sum elever",
+        "rowLabel": "Sum elever",
+        "column": "Fullverdig opplæringstilbud",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_959_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_1",
+            "sign": 1
+          },
+          {
+            "field": "GG_960_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_2",
+            "sign": 1
+          },
+          {
+            "field": "GG_961_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_3",
+            "sign": 1
+          },
+          {
+            "field": "GG_962_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_963_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_5",
+            "sign": 1
+          },
+          {
+            "field": "GG_964_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_6",
+            "sign": 1
+          },
+          {
+            "field": "GG_965_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_966_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_967_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_968_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Trinn_10",
+            "sign": 1
+          }
+        ],
+        "gradeRestricted": false,
+        "sourceFormula": "=nfSelectedRecord16.GG_969_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Mottar_Fullverdig_Opplaeringstilbud_Sum"
+      },
+      {
+        "key": "GG_980_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Sum",
+        "control": "TextInput3_372",
+        "group": "A",
+        "questionNumber": "11",
+        "label": "Sum elever",
+        "rowLabel": "Sum elever",
+        "column": "Opphold over tre måneder uten fullverdig opplæringstilbud",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_970_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_1",
+            "sign": 1
+          },
+          {
+            "field": "GG_971_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_2",
+            "sign": 1
+          },
+          {
+            "field": "GG_972_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_3",
+            "sign": 1
+          },
+          {
+            "field": "GG_973_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_974_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_5",
+            "sign": 1
+          },
+          {
+            "field": "GG_975_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_6",
+            "sign": 1
+          },
+          {
+            "field": "GG_976_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_977_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_978_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_979_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Trinn_10",
+            "sign": 1
+          }
+        ],
+        "gradeRestricted": false,
+        "sourceFormula": "=nfSelectedRecord16.GG_980_Antall_Ukrainske_Fordrevne_Skolepliktig_Alder_Opphold_Mer_Enn_Tre_Mnd_Mottar_Ikke_Fullverdig_Opplaeringstilbud_Sum"
+      },
+      {
+        "key": "GG_1012_Total_Sum_Fordrevne_Ukrainske_Elever_Trinn_1_10",
+        "control": "TextInput2_153",
+        "group": "A",
+        "questionNumber": "11",
+        "label": "Sum elever",
+        "rowLabel": "Sum elever",
+        "column": "Sum",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_1002_Sum_Fordrevne_Ukrainske_Elever_Trinn_1",
+            "sign": 1
+          },
+          {
+            "field": "GG_1003_Sum_Fordrevne_Ukrainske_Elever_Trinn_2",
+            "sign": 1
+          },
+          {
+            "field": "GG_1004_Sum_Fordrevne_Ukrainske_Elever_Trinn_3",
+            "sign": 1
+          },
+          {
+            "field": "GG_1005_Sum_Fordrevne_Ukrainske_Elever_Trinn_4",
+            "sign": 1
+          },
+          {
+            "field": "GG_1006_Sum_Fordrevne_Ukrainske_Elever_Trinn_5",
+            "sign": 1
+          },
+          {
+            "field": "GG_1007_Sum_Fordrevne_Ukrainske_Elever_Trinn_6",
+            "sign": 1
+          },
+          {
+            "field": "GG_1008_Sum_Fordrevne_Ukrainske_Elever_Trinn_7",
+            "sign": 1
+          },
+          {
+            "field": "GG_1009_Sum_Fordrevne_Ukrainske_Elever_Trinn_8",
+            "sign": 1
+          },
+          {
+            "field": "GG_1010_Sum_Fordrevne_Ukrainske_Elever_Trinn_9",
+            "sign": 1
+          },
+          {
+            "field": "GG_1011_Sum_Fordrevne_Ukrainske_Elever_Trinn_10",
+            "sign": 1
+          }
+        ],
+        "gradeRestricted": true,
+        "sourceFormula": "=nfSelectedRecord16.GG_1012_Total_Sum_Fordrevne_Ukrainske_Elever_Trinn_1_10"
+      },
+      {
+        "key": "GG_981_Antall_Fordrevne_Ukrainske_Elever_Med_Vedtak_Om_Forsterket_Norskopplaering",
+        "control": "Local_Comp_Input_Number_486",
+        "group": "B",
+        "questionNumber": "1",
+        "label": "Fordrevne ukrainske elever med vedtak om forsterket norskopplæring",
+        "rowLabel": "Fordrevne ukrainske elever med vedtak om forsterket norskopplæring",
+        "column": "Elever",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": false,
+        "sourceFormula": "=nfSelectedRecord16.GG_981_Antall_Fordrevne_Ukrainske_Elever_Med_Vedtak_Om_Forsterket_Norskopplaering"
+      },
+      {
+        "key": "GG_982_Antall_Fordevne_Fra_Ukraina_Undervisning_I_Egne_Undervinsningsgrupper",
+        "control": "Local_Comp_Input_Number_487",
+        "group": "C",
+        "questionNumber": "1",
+        "label": "Fordrevne ukrainske elever med undervisning i egne undervisningsgrupper",
+        "rowLabel": "Fordrevne ukrainske elever med undervisning i egne undervisningsgrupper",
+        "column": "Elever",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": false,
+        "sourceFormula": "=nfSelectedRecord16.GG_982_Antall_Fordevne_Fra_Ukraina_Undervisning_I_Egne_Undervinsningsgrupper"
+      },
+      {
+        "key": "GG_997_Antall_Fordrevne_Ukraina_Forsterket_Norskopplaering_Bare_Morsmaalsopplaering",
+        "control": "Local_Comp_Input_Number_169",
+        "group": "D",
+        "questionNumber": "1",
+        "label": "Elever med morsmålsopplæring og/eller tospråklig opplæring",
+        "rowLabel": "Elever med morsmålsopplæring og/eller tospråklig opplæring",
+        "column": "Bare morsmålsopplæring",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": false,
+        "sourceFormula": "=nfSelectedRecord16.GG_997_Antall_Fordrevne_Ukraina_Forsterket_Norskopplaering_Bare_Morsmaalsopplaering"
+      },
+      {
+        "key": "GG_998_Antall_Fordrevne_Ukraina_Baade_Morsmaalsopplaering_Tospraaklig_Fagopplaering",
+        "control": "Local_Comp_Input_Number_170",
+        "group": "D",
+        "questionNumber": "1",
+        "label": "Elever med morsmålsopplæring og/eller tospråklig opplæring",
+        "rowLabel": "Elever med morsmålsopplæring og/eller tospråklig opplæring",
+        "column": "Både morsmålsopplæring og tospråklig fagopplæring",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": false,
+        "sourceFormula": "=nfSelectedRecord16.GG_998_Antall_Fordrevne_Ukraina_Baade_Morsmaalsopplaering_Tospraaklig_Fagopplaering"
+      },
+      {
+        "key": "GG_999_Antall_Fordrevne_Ukraina_Tospraaklig_Fagopplaering",
+        "control": "Local_Comp_Input_Number_171",
+        "group": "D",
+        "questionNumber": "1",
+        "label": "Elever med morsmålsopplæring og/eller tospråklig opplæring",
+        "rowLabel": "Elever med morsmålsopplæring og/eller tospråklig opplæring",
+        "column": "Bare tospråklig fagopplæring",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": false,
+        "sourceFormula": "=nfSelectedRecord16.GG_999_Antall_Fordrevne_Ukraina_Tospraaklig_Fagopplaering"
+      },
+      {
+        "key": "GG_1000_Antall_Fordrevne_Fra_Ukraina_Annen_Tilrettelagt_Opplaering",
+        "control": "Local_Comp_Input_Number_173",
+        "group": "D",
+        "questionNumber": "1",
+        "label": "Elever med morsmålsopplæring og/eller tospråklig opplæring",
+        "rowLabel": "Elever med morsmålsopplæring og/eller tospråklig opplæring",
+        "column": "Annen tilrettelagt opplæring",
+        "readOnly": false,
+        "maxDigits": 4,
+        "terms": [],
+        "gradeRestricted": false,
+        "sourceFormula": "=nfSelectedRecord16.GG_1000_Antall_Fordrevne_Fra_Ukraina_Annen_Tilrettelagt_Opplaering"
+      },
+      {
+        "key": "GG_1001_Antall_Fordrevne_Fra_Ukraina_Sum",
+        "control": "Label23_12",
+        "group": "D",
+        "questionNumber": "1",
+        "label": "Elever med morsmålsopplæring og/eller tospråklig opplæring",
+        "rowLabel": "Elever med morsmålsopplæring og/eller tospråklig opplæring",
+        "column": "Sum",
+        "readOnly": true,
+        "maxDigits": 4,
+        "terms": [
+          {
+            "field": "GG_997_Antall_Fordrevne_Ukraina_Forsterket_Norskopplaering_Bare_Morsmaalsopplaering",
+            "sign": 1
+          },
+          {
+            "field": "GG_998_Antall_Fordrevne_Ukraina_Baade_Morsmaalsopplaering_Tospraaklig_Fagopplaering",
+            "sign": 1
+          },
+          {
+            "field": "GG_999_Antall_Fordrevne_Ukraina_Tospraaklig_Fagopplaering",
+            "sign": 1
+          },
+          {
+            "field": "GG_1000_Antall_Fordrevne_Fra_Ukraina_Annen_Tilrettelagt_Opplaering",
+            "sign": 1
+          }
+        ],
+        "gradeRestricted": false,
+        "sourceFormula": "=nfSelectedRecord16.GG_1001_Antall_Fordrevne_Fra_Ukraina_Sum"
+      }
+    ],
+    "choices": [],
+    "controllers": [
+      "GG-A64",
+      "GG-A67",
+      "GG-A69",
+      "GG-A70",
+      "GG-A71",
+      "GG-A66",
+      "GG-A68"
+    ]
+  }
+}

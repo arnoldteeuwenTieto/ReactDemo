@@ -1,3 +1,4 @@
+import { schoolOpeningAction } from './helpers/schoolActions'
 import { test, expect, type Page } from '@playwright/test'
 import AxeBuilder from '@axe-core/playwright'
 import { importedScreens, calculateValues, sectionFindings, isBlockingFinding, fullMockFindings } from '../src/domain/importedReporting'
@@ -16,7 +17,7 @@ const cell=(p:Page,n:8|9|10,id:number)=>p.locator(`input[data-field="${field(n,i
 async function go(p:Page,n:8|9|10){await nav(p).getByRole('button',{name:titles[n],exact:true}).click()}
 async function open(p:Page,user='demo-school-leader',school='Fjordgløtt barneskole'){
  await p.goto('./');await p.getByRole('combobox',{name:'Demonstrasjonsbruker DEMO',exact:true}).selectOption(user)
- await p.getByRole('button',{name:`Åpne skjema for ${school}, 2026`,exact:true}).click();await p.getByRole('button',{name:'Gå til rapporteringen',exact:true}).click()
+ await schoolOpeningAction(p, `${school}`, `2026`).click();await p.getByRole('button',{name:'Gå til rapporteringen',exact:true}).click()
 }
 const grades=(lo:number,hi:number)=>({GG_227_Skolens_Maalform:'Bokmål',GG_228_Laveste_Trinn_Paa_Skolen:lo,GG_229_Hoeyeste_Trinn_Paa_Skolen:hi,GG_230_Tilbyr_SFO:false})
 
@@ -110,5 +111,5 @@ for(const [lo,hi,user,school]of [[1,10,'demo-school-leader','Fjordgløtt barnesk
  await expect(collection.getByRole('textbox',{name:'Sum elever',exact:true})).toHaveValue(hi===10&&lo===1?'12':lo===1?'5':lo===2?'3':'7')
  await expect(collection.locator('input[data-field="GG_904_Antall_Elever_Opplaering_Trinn_1"]')).toHaveValue('2')
  await go(page,10);await expect(cell(page,10,537)).toHaveAttribute('data-field-state',hi<8?'business-disabled':user==='demo-udir-support'?'permission-readonly':'editable')
- if(hi<8)await expect(cell(page,10,537)).toHaveCSS('background-color','rgb(248, 231, 224)')
+ if(hi<8)await expect(cell(page,10,537)).toHaveCSS('background-color','rgb(234, 240, 247)')
 })

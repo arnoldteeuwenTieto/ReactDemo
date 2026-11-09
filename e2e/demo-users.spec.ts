@@ -1,3 +1,4 @@
+import { schoolOpeningAction } from './helpers/schoolActions'
 import { expect, test } from '@playwright/test'
 
 // Explicit requirements fixtures, independent of the production profile array.
@@ -39,7 +40,7 @@ test('keeps the open report and selected demo context across navigation', async 
   await page.goto('./')
   const selector = page.getByRole('combobox', { name: 'Demonstrasjonsbruker DEMO', exact: true })
   await selector.selectOption('demo-owner-central')
-  await page.getByRole('button', { name: 'Åpne skjema for Fjordgløtt barneskole, 2026', exact: true }).click()
+  await schoolOpeningAction(page, 'Fjordgløtt barneskole', '2026').click()
   await expect(page.getByRole('heading', { name: 'Innledning', exact: true })).toBeVisible()
   await expect(selector).toHaveValue('demo-owner-central')
   await selector.selectOption('demo-udir-support')

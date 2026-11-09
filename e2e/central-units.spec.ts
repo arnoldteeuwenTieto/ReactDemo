@@ -1,3 +1,4 @@
+import { schoolOpeningAction } from './helpers/schoolActions'
 import { expect, test } from '@playwright/test'
 import { schools } from '../src/mockData'
 import { demoUsers } from '../src/demoUser'
@@ -30,7 +31,12 @@ for (const [, municipality, organizationNumber] of units) {
     await page.getByRole('searchbox').fill(organizationNumber)
     await expect(page.getByRole('table').getByRole('rowheader')).toHaveText([`${municipality} kommune sentralt`])
     await page.getByRole('combobox', { name: 'Demonstrasjonsbruker DEMO', exact: true }).selectOption('demo-owner-central')
-    await page.getByRole('button', { name: `Åpne skjema for ${municipality} kommune sentralt, 2026`, exact: true }).click()
+    if (municipality !== 'Bergen') {
+      await expect(page.getByRole('row').filter({ hasText: organizationNumber }).getByText('Ingen tilgang', { exact: true })).toBeVisible()
+      await expect(page.getByRole('button', { name: new RegExp(`skjema for ${municipality} kommune sentralt`) })).toHaveCount(0)
+      return
+    }
+    await schoolOpeningAction(page, `${municipality} kommune sentralt`, `2026`).click()
     await expect(page.getByRole('heading', { name: 'Innledning', exact: true })).toBeVisible()
     await page.getByRole('button', { name: 'Gå til rapporteringen' }).click()
     await page.getByRole('button', { name: 'Neste', exact: true }).click()

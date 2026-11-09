@@ -1,0 +1,1 @@
+Extract the CONTENTS of this ZIP into C:\ReactProjects\React_Demo_Grunnskole\gsi-react-import\. The ZIP contains lifecycle/ and CODEX_INSTRUCTIONS_LIFECYCLE.md directly, with NO enclosing gsi-react-import folder. Existing source/ and earlier instruction files should remain untouched.

@@ -1,3 +1,4 @@
+import { schoolOpeningAction } from './helpers/schoolActions'
 import { test, expect, type Page } from '@playwright/test'
 import AxeBuilder from '@axe-core/playwright'
 import { importedScreens, calculateValues, fieldNumericError, normalizeFieldNumber, sectionFindings, isBlockingFinding } from '../src/domain/importedReporting'
@@ -11,7 +12,7 @@ const f = (section: 5|6|7, prefix: string) => importedScreens[section].fields.fi
 async function open(page: Page, user = 'demo-school-leader', school = 'Fjordgløtt barneskole') {
   await page.goto('./')
   await page.getByRole('combobox', { name: 'Demonstrasjonsbruker DEMO', exact: true }).selectOption(user)
-  await page.getByRole('button', { name: `Åpne skjema for ${school}, 2026`, exact: true }).click()
+  await schoolOpeningAction(page, `${school}`, `2026`).click()
   await page.getByRole('button', { name: 'Gå til rapporteringen', exact: true }).click()
 }
 async function go(page: Page, title: string) { await nav(page).getByRole('button', { name: title, exact: true }).click() }

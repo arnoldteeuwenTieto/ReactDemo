@@ -27,7 +27,7 @@ export const questionReferences: Record<Del2Field, { helpId: string; validationI
   GG_229_Hoeyeste_Trinn_Paa_Skolen: { helpId: 'GG-H85', validationIds: ['GG-F4', 'GG-A191'] },
   GG_230_Tilbyr_SFO: { helpId: 'GG-H86', validationIds: ['GG-F5', 'GG-F23'] },
 }
-// Del 14 awaits source field names. Do not invent official GG identifiers.
+// Existing SFO-off clear operation now uses verified active export bindings.
 export const dependentFields: Record<12 | 14, string[]> = { 12: [
   'GG_695_Antall_Elevtimer_Fysisk_Aktivitet_Trinn_5',
   'GG_696_Antall_Elevtimer_Fysisk_Aktivitet_Trinn_6',
@@ -39,7 +39,6 @@ export function dependentClears(patch: Partial<Del2Data>, data: Del2Data): Depen
   const sections: (12 | 14)[] = []
   if (('GG_228_Laveste_Trinn_Paa_Skolen' in patch || 'GG_229_Hoeyeste_Trinn_Paa_Skolen' in patch) &&
     ((data.GG_228_Laveste_Trinn_Paa_Skolen ?? 0) > 7 || (data.GG_229_Hoeyeste_Trinn_Paa_Skolen !== null && data.GG_229_Hoeyeste_Trinn_Paa_Skolen < 5))) sections.push(12)
-  if (patch.GG_230_Tilbyr_SFO === false) sections.push(14)
   return sections.map(del => ({ del, payload: Object.fromEntries(dependentFields[del].map(field => [field, null])),
     ...(dependentFields[del].length ? {} : { warning: `Rydding i Del ${del} avventer eksakte feltnavn fra Power Apps-definisjonen.` }) }))
 }

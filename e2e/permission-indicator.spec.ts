@@ -1,3 +1,4 @@
+import { schoolOpeningAction } from './helpers/schoolActions'
 import { expect, test } from '@playwright/test'
 import AxeBuilder from '@axe-core/playwright'
 import { demoUsers } from '../src/demoUser'
@@ -57,7 +58,7 @@ test('unit flag controls permissions even when names disagree, without changing 
     ['Bergen kommune sentralt', ['Lese']],
     ['Fjordgløtt barneskole', ['Lese', 'Redigere', 'Levere']],
   ] as const) {
-    await page.getByRole('button', { name: `Åpne skjema for ${name}, 2026`, exact: true }).click()
+    await schoolOpeningAction(page, `${name}`, `2026`).click()
     await expect(badges).toHaveText([...expected])
     await expect(user).toHaveValue('demo-owner-central')
     await page.getByText('Demokontekst', { exact: true }).click()
@@ -70,7 +71,7 @@ test('unit flag controls permissions even when names disagree, without changing 
 
 test('header reflects user, status, access and school changes; badges are accessible and compact', async ({ page }) => {
   await page.goto('./')
-  await page.getByRole('button', { name: 'Åpne skjema for Fjordgløtt barneskole, 2026', exact: true }).click()
+  await schoolOpeningAction(page, 'Fjordgløtt barneskole', '2026').click()
   const schoolHeader = page.getByRole('region', { name: 'Valgt skole', exact: true })
   const indicator = schoolHeader.getByRole('group', { name: 'Demotilganger', exact: true })
   const badges = indicator.locator('.demo-permission-badge')
@@ -111,10 +112,10 @@ test('header reflects user, status, access and school changes; badges are access
   expect(audit.violations).toEqual([])
   await page.getByRole('button', { name: 'Tilbake til statusoversikten', exact: true }).click()
   await user.selectOption('demo-owner-central')
-  await page.getByRole('button', { name: 'Åpne skjema for Oslo kommune sentralt, 2026', exact: true }).click()
+  await schoolOpeningAction(page, 'Oslo kommune sentralt', '2026').click()
   await expect(badges).toHaveText(['Ingen tilgang'])
   await page.getByRole('button', { name: 'Tilbake til statusoversikten', exact: true }).click()
-  await page.getByRole('button', { name: 'Åpne skjema for Bergen kommune sentralt, 2026', exact: true }).click()
+  await schoolOpeningAction(page, 'Bergen kommune sentralt', '2026').click()
   await expect(badges).toHaveText(['Lese', 'Redigere', 'Levere'])
   await expect(user).toHaveValue('demo-owner-central')
   await page.getByText('Demokontekst', { exact: true }).click()
@@ -122,7 +123,7 @@ test('header reflects user, status, access and school changes; badges are access
     .toContainText('Skoleeier, kommune sentralt (RolleId 10)')
   await page.getByText('Demokontekst', { exact: true }).click()
   await page.getByRole('button', { name: 'Tilbake til statusoversikten', exact: true }).click()
-  await page.getByRole('button', { name: 'Åpne skjema for Fjordgløtt barneskole, 2026', exact: true }).click()
+  await schoolOpeningAction(page, 'Fjordgløtt barneskole', '2026').click()
   await expect(badges).toHaveText(['Lese'])
   await expect(user).toHaveValue('demo-owner-central')
   await page.setViewportSize({ width: 375, height: 812 })

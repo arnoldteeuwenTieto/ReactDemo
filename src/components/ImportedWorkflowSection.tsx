@@ -1,3 +1,4 @@
+import { isReportWriteRestricted, openingKey } from '../domain/reportOpeningPolicy'
 import { ReportingTextarea } from './ReportingFields'
 import { ReportingValue } from './ReportingFields'
 import { useEffect, useRef, useState, useSyncExternalStore } from 'react'
@@ -68,7 +69,7 @@ export function ImportedWorkflowSection({ school, section, onSection, onStatusCh
     <span className="visually-hidden" id="workflow-permission-reason">{ui('Valgt rolle eller rapporteringsstatus gir ikke redigeringstilgang.')}</span>
     {section === 17 ? <>
       <p>{ui('Kontroller som ikke er tilgjengelige, er ikke vurdert.')}</p>
-      <button type="button" className="gsi-button" onClick={() => markMockChecked(context)}>{ui('Kontroller skjema')}</button>
+      <button type="button" className="gsi-button" disabled={isReportWriteRestricted(openingKey(school))} onClick={() => markMockChecked(context)}>{ui('Kontroller skjema')}</button>
       {!report.checked ? <p role="status">{ui('Kontroll er ikke kjørt.')}</p> : <>
         <p role="status">{ui('Lokale feil')}: {findings.filter(finding => finding.kind === 'error').length} · {ui('Advarsler')}: {findings.filter(finding => finding.kind === 'warning').length} · {ui('Uavklarte kontroller')}: {findings.filter(finding => finding.kind === 'unsupported').length} · {ui('Beståtte lokale tallkontroller')}: {overview?.passedNumericChecks ?? 0}</p>
         <div className="imported-findings">{findings.map((finding, index) => <section className="question-card" key={`${finding.section}-${finding.id}`} data-controller={finding.id} aria-label={`${ui('Kontroll')} ${index + 1}`}>
@@ -77,7 +78,7 @@ export function ImportedWorkflowSection({ school, section, onSection, onStatusCh
           <p>{ui(finding.kind === 'unsupported' ? 'Denne kontrollen kan ikke vurderes ennå.' : finding.kind === 'warning' ? 'Feltet er ikke besvart.' : finding.message.replace(' (Demonstrasjonsvalidering)', ''))}</p>
           <p>{ui(finding.kind === 'error' ? 'Lokal feil' : finding.kind === 'warning' ? 'Advarsel' : 'Ikke vurdert')}</p>
           <button type="button" className="gsi-button" onClick={() => onSection(finding.section)}>{ui('Gå til del')} {finding.section}</button>
-          <label>{ui('Kommentar')} {index + 1}<ReportingTextarea sectionRef={String(section)} dataType="text" className="gsi-field" data-field-state={resolveFieldState({ canEdit: rights.edit }).kind} aria-describedby={!rights.edit ? 'workflow-permission-reason' : undefined} disabled={!rights.edit} value={report.comments[finding.id] ?? ''} onChange={event => saveControllerComment(context, finding.id, event.target.value)} /></label>
+          <label>{ui('Kommentar')} {index + 1}<ReportingTextarea aria-label={`${ui('Kommentar')} ${index + 1}`} sectionRef={String(section)} dataType="text" className="gsi-field" data-field-state={resolveFieldState({ canEdit: rights.edit }).kind} aria-describedby={!rights.edit ? 'workflow-permission-reason' : undefined} disabled={!rights.edit} value={report.comments[finding.id] ?? ''} onChange={event => saveControllerComment(context, finding.id, event.target.value)} /></label>
           </div>
         </section>)}</div>
       </>}
@@ -88,7 +89,7 @@ export function ImportedWorkflowSection({ school, section, onSection, onStatusCh
       </ImportedQuestionSection>
       <ImportedQuestionSection id="finish-remarks" title="Merknader" onHelp={trigger => setHelp({ id: 'GG_H58', trigger })}>
         {(['MerknadSkole', 'MerknadKommune'] as const).map(field => <label className="imported-remark" key={field}>{ui(field === 'MerknadSkole' ? 'Skolens merknader' : 'Kommunens merknader')}
-          <ReportingTextarea sectionRef={String(section)} dataType="text" className="gsi-field" data-field-state={resolveFieldState({ canEdit: canEditRemark(context, field) }).kind} aria-describedby={!canEditRemark(context, field) ? 'workflow-permission-reason' : undefined} fieldKey={field} value={report[field]} disabled={!canEditRemark(context, field)} onChange={event => saveRemark(context, field, event.target.value)} />
+          <ReportingTextarea aria-label={ui(field === 'MerknadSkole' ? 'Skolens merknader' : 'Kommunens merknader')} sectionRef={String(section)} dataType="text" className="gsi-field" data-field-state={resolveFieldState({ canEdit: canEditRemark(context, field) }).kind} aria-describedby={!canEditRemark(context, field) ? 'workflow-permission-reason' : undefined} fieldKey={field} value={report[field]} disabled={!canEditRemark(context, field)} onChange={event => saveRemark(context, field, event.target.value)} />
         </label>)}
       </ImportedQuestionSection>
       <p>{ui('Kontroller og fullfør svarene før du leverer.')}</p>

@@ -1,3 +1,4 @@
+import { schoolOpeningAction } from './helpers/schoolActions'
 import AxeBuilder from '@axe-core/playwright'
 import { expect, test, type Page, type TestInfo } from '@playwright/test'
 import { writeFile } from 'node:fs/promises'
@@ -7,7 +8,7 @@ const demoStatus = (page: Page) => page.getByRole('combobox', { name: 'Demonstra
 const languageCard = (page: Page) => page.getByRole('region', { name: 'A. Skolens målform', exact: true })
 
 async function openScreen(page: Page, screen: 'intro' | 'del1' | 'del2') {
-  await page.getByRole('button', { name: 'Åpne skjema for Fjordgløtt barneskole, 2026', exact: true }).click()
+  await schoolOpeningAction(page, 'Fjordgløtt barneskole', '2026').click()
   await expect(page.getByRole('heading', { name: 'Innledning', exact: true })).toBeVisible()
   if (screen === 'intro') return
   await page.getByRole('button', { name: 'Gå til rapporteringen' }).click()
@@ -72,7 +73,7 @@ test.describe('accessibility axe audit', () => {
   })
   test('Del 2 unanswered validation errors', async ({ page }, info) => {
     await openScreen(page, 'del2')
-    await expect(page.getByText('Velg et svar. (Demonstrasjonsvalidering)', { exact: true })).toHaveCount(4)
+    await expect(page.getByText('Velg et svar.', { exact: true })).toHaveCount(4)
     await audit(page, info)
   })
   test('Del 2 cross-field validation errors', async ({ page }, info) => {
@@ -134,7 +135,7 @@ test.describe('accessibility supplementary keyboard and focus audit', () => {
     const sort = page.getByRole('button', { name: 'Skolenavn: sorter stigende', exact: true })
     await sort.focus(); await page.keyboard.press('Enter')
     await expect(page.getByRole('button', { name: 'Skolenavn: sorter synkende', exact: true })).toBeFocused()
-    const open = page.getByRole('button', { name: 'Åpne skjema for Fjordgløtt barneskole, 2026', exact: true })
+    const open = schoolOpeningAction(page, 'Fjordgløtt barneskole', '2026')
     await open.focus(); await page.keyboard.press('Enter')
     await expect(page.getByRole('heading', { name: 'Innledning', exact: true })).toBeFocused()
   })
@@ -149,6 +150,17 @@ test.describe('accessibility supplementary keyboard and focus audit', () => {
     await openScreen(page, 'del2'); await demoStatus(page).selectOption('0')
     const help = page.getByRole('main').getByRole('button', { name: 'Vis hjelpetekst', exact: true })
     await help.nth(0).focus(); await page.keyboard.press('Tab')
+    const main=page.getByRole('main')
+    if(await main.locator('[data-report-wrapper]').count()){
+      await expect(main.locator('[data-report-wrapper]:focus')).toHaveCount(1)
+      await expect(page.getByRole('tooltip')).toBeVisible()
+      // DEV-only metadata wrappers/diagnostic disclosures are intentional stops.
+      const limit=await main.locator('[tabindex="0"], summary, button, input, select, textarea, a[href]').count()
+      for(let step=0;step<limit&&!await help.nth(1).evaluate(el=>el===document.activeElement);step++){
+        await expect(main.locator('input:disabled:focus, select:disabled:focus, textarea:disabled:focus')).toHaveCount(0)
+        await page.keyboard.press('Tab')
+      }
+    }
     await expect(help.nth(1)).toBeFocused()
     await page.keyboard.press('Enter')
     await expect(page.getByRole('dialog')).toBeVisible()
