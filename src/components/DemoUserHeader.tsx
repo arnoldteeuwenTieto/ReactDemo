@@ -3,9 +3,12 @@ import { demoUsers } from '../demoUser'
 import { useDemoUser } from '../demoUserContext'
 import { ui } from '../i18n'
 import type { School } from '../mockData'
+import type { OpeningPreference } from './SchoolTable'
 import { formStatuses } from '../domain/formStatus'
 
 export interface DemoUserHeaderProps {
+  openingPreference: OpeningPreference
+  onOpeningPreferenceChange: (mode: OpeningPreference) => void
   school: School | null
   hasStatusOverride: boolean
   onStatusChange: (statusId: number) => void
@@ -13,7 +16,7 @@ export interface DemoUserHeaderProps {
   statusReadOnly?: boolean
 }
 
-export function DemoUserHeader({ school, hasStatusOverride, onStatusChange, onStatusReset, statusReadOnly = false }: DemoUserHeaderProps) {
+export function DemoUserHeader({ openingPreference, onOpeningPreferenceChange, school, hasStatusOverride, onStatusChange, onStatusReset, statusReadOnly = false }: DemoUserHeaderProps) {
   useTranslation('ui')
   const { enabled, selectedUser, selectUser } = useDemoUser()
   if (!enabled || !selectedUser) return null
@@ -39,6 +42,14 @@ export function DemoUserHeader({ school, hasStatusOverride, onStatusChange, onSt
       <details className="demo-user-details">
         <summary>{ui('Demokontekst')}</summary>
         <div className="demo-user-popover">
+      <label className="demo-opening-mode">
+        {ui('Åpningsmodus')}
+        <select value={openingPreference} onChange={event => onOpeningPreferenceChange(event.target.value as OpeningPreference)}>
+          <option value="auto">{ui('Tilpass tilgang')}</option>
+          <option value="edit">{ui('Rediger')}</option>
+          <option value="view">{ui('Les')}</option>
+        </select>
+      </label>
       <dl aria-live="polite" aria-atomic="true">
         <div><dt>{ui('Navn')}</dt><dd>{selectedUser.name}</dd></div>
         <div><dt>{ui('Rolle')}</dt><dd>{ui(selectedUser.roleName)} (RolleId {selectedUser.roleId})</dd></div>

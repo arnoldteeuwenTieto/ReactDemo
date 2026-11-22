@@ -450,3 +450,6 @@ dd { margin: 0; font-weight: 600; }
 .section-navigation-reason { position: absolute; top: 100%; left: 0; right: 0; z-index: 20; padding: 8px; background: var(--surface); color: var(--text); border: 1px solid var(--header-background); font-size: 13px; visibility: hidden; }
 .section-navigation-entry:hover > .section-navigation-reason, .section-navigation-entry:focus-within > .section-navigation-reason { visibility: visible; }
 .section-navigation-entry.reason-dismissed > .section-navigation-reason { visibility: hidden; }
+
+.demo-opening-mode { display: grid; gap: 4px; margin-bottom: 12px; }
+.demo-opening-mode select { width: 100%; min-width: 0; }

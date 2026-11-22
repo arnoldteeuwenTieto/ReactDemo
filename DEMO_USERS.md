@@ -55,6 +55,13 @@ selected report offers SFO. See gsi-react-import/DEL14_15_16_IMPLEMENTATION.md.
 `DemoUserProvider` wraps the application. Screens can read `useDemoUser()` from
 `src/demoUserContext.ts`. Selection is memory-only and resets on reload. Navigation,
 school selection, filters and report state are preserved when switching users.
+Åpningsmodus is available inside the header’s collapsible Demokontekst section only
+when demo controls are enabled. Tilpass tilgang is the default; Rediger uses the
+existing permission, status, reporting-year and period checks, while Les opens
+read-only. Changes immediately update overview actions. The preference is shared
+with the overview and ignored when demo controls are disabled. An already opened
+report retains its resolved view/edit session until reopened.
+
 The desktop selectors sit side by side in the compact header. The role, assigned
 unit, scope and simulation notice remain available under the keyboard-operable
 `Demokontekst` disclosure; opening it does not increase desktop header height.

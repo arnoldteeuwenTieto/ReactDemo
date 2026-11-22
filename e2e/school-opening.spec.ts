@@ -144,6 +144,7 @@ test('Innledning initialization preserves child IDs, comments and blank values w
 
 async function openFromOverview(page: Page, view: boolean) {
   await page.goto('./')
+  if (view) await page.getByText('Demokontekst', { exact: true }).click()
   if (view) await page.getByRole('combobox', { name: 'Åpningsmodus', exact: true }).selectOption('view')
   await page.getByRole('button', { name: `${view ? 'Se' : 'Åpne'} skjema for Fjordgløtt barneskole, 2026`, exact: true }).click()
   await expect(page.getByRole('heading', { name: 'Innledning', exact: true })).toBeVisible()
@@ -169,3 +170,6 @@ test('school leader edit opening retains editable Del 2 controls', async ({ page
   await page.getByRole('button', { name: 'Neste', exact: true }).click()
   await expect(page.getByRole('group', { name: 'D. Har skolen tilbud om SFO?', exact: true }).getByRole('radio', { name: 'Ja', exact: true })).toBeEnabled()
 })
+
+import { openingModeTests } from './helpers/openingMode'
+openingModeTests()

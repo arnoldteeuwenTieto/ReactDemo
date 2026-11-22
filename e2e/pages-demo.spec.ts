@@ -64,5 +64,8 @@ test('built Pages demo resolves fictional context and preserves access, statuses
   await header.getByText('Demokontekst', { exact: true }).click()
   await expect(header.locator('.demo-user-popover')).toContainText('RolleId 10')
   await user.selectOption('demo-school-leader')
-  await expect(page.getByRole('main').getByText('Ingen tilgang', { exact: true })).toBeVisible()
+  await expect(page.getByRole('main').getByRole('alert')).toHaveText('Du har ikke lesetilgang til denne skolen.')
 })
+
+import { openingModeTests } from './helpers/openingMode'
+openingModeTests(true)

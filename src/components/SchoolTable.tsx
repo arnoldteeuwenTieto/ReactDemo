@@ -22,17 +22,19 @@ type SortDirection = 'ascending' | 'descending'
 const alphabeticCollator = new Intl.Collator('nb')
 const numericCollator = new Intl.Collator('nb', { numeric: true })
 
+export type OpeningPreference = 'auto' | 'edit' | 'view'
+
 interface SchoolTableProps {
+  openingPreference: OpeningPreference
   schools: School[]
   selectedId: string | null
   onSelect: (id: string) => void
   onOpen: (school: School, mode: OpeningMode) => void
 }
-export function SchoolTable({ schools, selectedId, onSelect, onOpen }: SchoolTableProps) {
+export function SchoolTable({ schools, selectedId, onSelect, onOpen, openingPreference }: SchoolTableProps) {
   useTranslation('ui')
   const { enabled, selectedUser } = useDemoUser()
   const application = useApplication()
-  const [preferView, setPreferView] = useState(false)
   const [sort, setSort] = useState<{ key: SortKey; direction: SortDirection } | null>(null)
   function toggleSort(key: SortKey) {
     setSort(current => ({
@@ -53,9 +55,6 @@ export function SchoolTable({ schools, selectedId, onSelect, onOpen }: SchoolTab
   }) : schools
 
   return <div className="table-scroll" role="region" aria-label={ui("Skoleoversikt")} tabIndex={0}>
-    <label>{ui('Åpningsmodus')} <select value={preferView ? 'view' : 'auto'} onChange={event => setPreferView(event.target.value === 'view')}>
-      <option value="auto">{ui('Tilpass tilgang')}</option><option value="view">{ui('Se skjema (skrivebeskyttet)')}</option>
-    </select></label>
     <table className="school-table">
       <caption className="visually-hidden">{ui("Skolenes rapportering. Velg en rad eller åpne skolens skjema.")}</caption>
       <thead><tr>
@@ -74,7 +73,8 @@ export function SchoolTable({ schools, selectedId, onSelect, onOpen }: SchoolTab
       <tbody>{sortedSchools.map(school => {
         const context = { enabled, user: selectedUser, school }
         const canRead = getDemoRoleCapabilities(context).read
-        const mode = !preferView && mayOpenForEditing(context, application.period, application.reportingYear) ? 'edit' : 'view'
+        // Demo preferences can restrict opening, never grant editing or override real permissions.
+        const mode = (!enabled || openingPreference !== 'view') && mayOpenForEditing(context, application.period, application.reportingYear) ? 'edit' : 'view'
         const label = mode === 'edit' ? 'Åpne skjema' : 'Se skjema'
         return <tr key={school.id} className={selectedId === school.id ? 'selected-row' : ''} onClick={() => onSelect(school.id)}>
         <td><label className="school-row-selector"><input type="radio" name="selected-school" checked={selectedId === school.id} onChange={() => onSelect(school.id)} aria-label={ui("Velg {{school}}, {{year}}", { school: school.name, year: school.year })} /></label></td>

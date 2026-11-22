@@ -3,6 +3,8 @@ import { importedUi } from './importedUi'
 export const nnUi: Record<string, string> = {
   'Åpningsmodus': 'Opningsmodus',
   'Tilpass tilgang': 'Tilpass tilgang',
+  'Rediger': 'Rediger',
+  'Les': 'Les',
   'Se skjema (skrivebeskyttet)': 'Sjå skjema (skriveverna)',
   'Se skjema': 'Sjå skjema',
   'Se skjema for {{school}}, {{year}}': 'Sjå skjema for {{school}}, {{year}}',

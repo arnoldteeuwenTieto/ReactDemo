@@ -5,7 +5,7 @@ import { schools } from './mockData'
 import type { School } from './mockData'
 import { SchoolFilters } from './components/SchoolFilters'
 import type { Filters } from './components/SchoolFilters'
-import { SchoolTable } from './components/SchoolTable'
+import { SchoolTable, type OpeningPreference } from './components/SchoolTable'
 import { Introduction } from './components/Introduction'
 import { grunnskoleSections, sectionApplicability } from './components/grunnskoleSections'
 import { AppHeader } from './components/AppHeader'
@@ -57,6 +57,8 @@ function App() {
   const [filters, setFilters] = useState<Filters>({ ...initialFilters, year: String(application.reportingYear) })
   const [selectedId, setSelectedId] = useState<string | null>(initialDemoSchool?.id ?? null)
   const [openReport, setOpenReport] = useState<{ id: string; year: number } | null>(initialDemoSchool ? { id: initialDemoSchool.id, year: initialDemoSchool.year } : null)
+  // Shared demo preference, lifted from the overview; openingMode below is the resolved report session.
+  const [openingPreference, setOpeningPreference] = useState<OpeningPreference>('auto')
   const [openingMode, setOpeningMode] = useState<OpeningMode>('edit')
   const [openingMessage, setOpeningMessage] = useState('')
   const [reportInitialization, setReportInitialization] = useState<ReportingInitialization | null>(null)
@@ -180,7 +182,7 @@ function App() {
   return (
     <div className="app-shell">
       <a className="skip-link" href="#main">{ui("Gå til hovedinnhold")}</a>
-      <AppHeader school={demoSchool} statusReadOnly={!!openReport && openingMode === 'view'} hasStatusOverride={hasStatusOverride} onStatusChange={changeDemoStatus} onStatusReset={resetDemoStatus} />
+      <AppHeader openingPreference={demoEnabled ? openingPreference : 'auto'} onOpeningPreferenceChange={setOpeningPreference} school={demoSchool} statusReadOnly={!!openReport && openingMode === 'view'} hasStatusOverride={hasStatusOverride} onStatusChange={changeDemoStatus} onStatusReset={resetDemoStatus} />
       <section className={`school-info-bar${openSchool ? '' : ' school-info-bar--overview'}`} aria-label={ui(openSchool ? 'Valgt skole' : 'Status for filtrerte skoler')}>
         <div className="school-info-inner">
           <div className="school-info-details">
@@ -222,7 +224,7 @@ function App() {
           <SchoolFilters filters={filters} municipalities={municipalities} years={years} onChange={setFilters} onReset={() => setFilters({ ...initialFilters, year: String(application.reportingYear) })} />
           <section className="table-panel" aria-labelledby="schools-heading">
             <div className="table-heading"><h3 id="schools-heading">{ui("Skoler")}</h3><p aria-live="polite">{ui("Viser")} {visibleSchools.length} {ui("av")} {schoolReports.length} {ui("rapporteringer")}</p></div>
-            <SchoolTable schools={visibleSchools} selectedId={selectedId} onSelect={setSelectedId} onOpen={openForm} />
+            <SchoolTable openingPreference={demoEnabled ? openingPreference : 'auto'} schools={visibleSchools} selectedId={selectedId} onSelect={setSelectedId} onOpen={openForm} />
           </section>
         </>}
         <p className="page-footer">{ui("Demonstrasjonsdata · Alle skoler og organisasjonsnumre er fiktive. Ingen opplysninger sendes eller lagres eksternt.")} · {ui('Demonstrasjonsoversettelser')}</p>

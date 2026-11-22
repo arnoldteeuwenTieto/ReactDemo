@@ -1,9 +1,11 @@
 import { expect, test } from '@playwright/test'
+import { schools } from '../src/mockData'
 import { readFile } from 'node:fs/promises'
 
 test('production disables demo switching even when built with the demo flag', async ({ page }) => {
   await page.goto('./')
   await expect(page.getByRole('heading', { name: 'Oversikt over skolenes rapportering', exact: true })).toBeVisible()
+  await expect(page.getByRole('combobox', { name: 'Åpningsmodus', exact: true })).toHaveCount(0)
   const header = page.getByRole('banner')
   await expect(header.getByRole('region', { name: 'Brukerinformasjon (demonstrasjon)', exact: true })).toHaveCount(0)
   await expect(header.getByRole('combobox')).toHaveCount(0)
@@ -28,6 +30,6 @@ test('production disables demo switching even when built with the demo flag', as
   expect((await header.boundingBox())!.height).toBeLessThanOrEqual(104)
   // No real session exists in this build: opening a form is now correctly denied.
   await expect(page.getByRole('button', { name: /^(Åpne|Se) skjema for/ })).toHaveCount(0)
-  await expect(page.getByRole('table').getByText('Ingen tilgang', { exact: true })).toHaveCount(16)
+  await expect(page.getByRole('table').getByText('Ingen tilgang', { exact: true })).toHaveCount(schools.filter(school => school.year === 2026).length)
   await expect(page.locator('.api-debug, .question-reference, [data-report-field]')).toHaveCount(0)
 })
